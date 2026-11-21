@@ -1,0 +1,10 @@
+diff --git a/globalplatform/cmake_modules/AddMockedTest.cmake b/globalplatform/cmake_modules/AddMockedTest.cmake
+--- a/globalplatform/cmake_modules/AddMockedTest.cmake
++++ b/globalplatform/cmake_modules/AddMockedTest.cmake
+@@ -46,5 +46,5 @@ function(add_mocked_test name)
+     set(link_flags "")
+     foreach (mock ${ADD_MOCKED_TEST_MOCKS})
+-      set(link_flags "${link_flags} -Wl,--wrap=${mock}")
++      set(link_flags "${link_flags} -Wl,--wrap=${mock} -Wl,--undefined=__wrap_${mock}")
+     endforeach(mock)
+   ELSE()
