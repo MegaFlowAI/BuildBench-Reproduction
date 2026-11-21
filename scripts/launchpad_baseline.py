@@ -56,6 +56,10 @@ def prepare(case, work):
     flags, _ = build_flags(reference, data["mode"])
     data["maintainer"] = next((arg[2:] for arg in flags if arg.startswith("-m")), "")
     (work / "launchpad-settings.json").write_text(json.dumps(data, indent=2) + "\n")
+    packages = read_json(ROOT / "cases.json")[case]["packages"]
+    with (work / "launchpad-pins").open("w", encoding="utf-8") as pins:
+        for package, version in sorted(packages.items()):
+            pins.write(f"Package: {package}\nPin: version {version}\nPin-Priority: 1001\n\n")
 
 
 def compare(case_root, log, exit_code, output):

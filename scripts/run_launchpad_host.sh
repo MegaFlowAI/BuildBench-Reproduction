@@ -33,6 +33,7 @@ if [[ -d "$guest/etc/apt/sources.list.d" ]]; then
 fi
 mkdir "$guest/etc/apt/sources.list.d"
 printf 'deb [trusted=yes] file:/var/local/buildbench-packages ./\n' >"$guest/etc/apt/sources.list"
+install -D -m 0644 /input/apt-pins "$guest/etc/apt/preferences.d/buildbench-versions"
 cat >"/etc/schroot/chroot.d/$build_id" <<EOF
 [build-$build_id]
 description=Historical Launchpad chroot for $build_id
@@ -46,7 +47,14 @@ EOF
 cp /input/source/* "$work/"
 chown buildd:sbuild "$work" "$work/"*.dsc
 runuser -u buildd -- /usr/share/launchpad-buildd/bin/builder-prep
-chroot "$guest" apt-get update
+
+# The original builder updates and upgrades the unpacked chroot before sbuild.
+guest_apt() {
+    schroot -c "chroot:build-$build_id" -u root -d / -- \
+        env LANG=C DEBIAN_FRONTEND=noninteractive TTY=unknown /usr/bin/apt-get "$@"
+}
+guest_apt -uy update
+guest_apt -o DPkg::Options::=--force-confold -uy --purge dist-upgrade
 
 args=(-c "chroot:build-$build_id" "--arch=$arch" "--dist=$suite" --nolog "--jobs=$jobs")
 if [[ "$mode" == -b ]]; then

@@ -61,6 +61,7 @@ jobs:
             --mount "type=bind,src=$case_root/source/input,dst=/input/source,readonly" \
             --mount "type=bind,src=$case_root/dependencies,dst=/input/dependencies,readonly" \
             --mount "type=bind,src=$input/$chroot,dst=/input/chroot,readonly" \
+            --mount "type=bind,src=$input/launchpad-pins,dst=/input/apt-pins,readonly" \
             buildbench-launchpad-236 "${args[@]}" >"$evidence/build.log" 2>&1 || code=$?
           printf '%s\n' "$code" >"$evidence/sbuild.exit"
           python3 scripts/launchpad_baseline.py compare "$case_root" "$evidence/build.log" "$code" "$evidence/exact-result.json"
