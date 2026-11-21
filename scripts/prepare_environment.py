@@ -16,6 +16,8 @@ SEEDS = {
     "coreutils-from-gnu", "gnu-coreutils", "rust-coreutils", "dash", "diffutils",
     "dpkg", "findutils", "grep", "gzip", "libc-bin", "sed", "tar", "xz-utils",
 }
+SERIES = ["focal", "groovy", "hirsute", "impish", "jammy", "kinetic", "lunar",
+          "mantic", "noble", "oracular", "plucky", "questing", "resolute"]
 
 
 def read_control(path):
@@ -78,20 +80,25 @@ def bootstrap(pool, archive, architecture):
                 output.add(path, arcname=path.name, filter=root_owner)
 
 
-def suites_for(case):
-    suites = []
-    for name in (case.get("distribution"), case.get("suite")):
-        if name and name not in suites:
-            suites.append(name)
-    expanded = []
-    for suite in suites:
-        if suite not in expanded:
-            expanded.append(suite)
-        for pocket in ("-proposed", "-updates", "-security"):
-            candidate = suite if suite.endswith(pocket) else suite + pocket
-            if candidate not in expanded:
-                expanded.append(candidate)
-    return expanded
+def candidate_suites(case):
+    names = []
+
+    def add(name):
+        if name and name not in names:
+            names.append(name)
+
+    base = (case.get("suite") or "").split("-")[0]
+    add(case.get("distribution"))
+    add(base + "-proposed")
+    add(base)
+    add(base + "-updates")
+    add(base + "-security")
+    if base in SERIES:
+        index = SERIES.index(base)
+        for offset in (1, 2):
+            if index - offset >= 0:
+                add(SERIES[index - offset])
+    return names
 
 
 def main():
@@ -105,30 +112,49 @@ def main():
     output.mkdir(parents=True)
     pool = output / "pool"
     pool.mkdir()
-    suites = suites_for(case)
-    print("Snapshot suites:", ", ".join(suites), flush=True)
+    suites = candidate_suites(case)
+    print("Snapshot suite candidates:", ", ".join(suites), flush=True)
+    indexed = {}
+    chosen = None
     with tempfile.TemporaryDirectory() as scratch, concurrent.futures.ThreadPoolExecutor(12) as workers:
-        indexed = {}
         if root:
-            indices = [
-                workers.submit(snapshot_index, root, suite, component,
-                               Path(scratch), wanted, architecture)
-                for suite in suites
-                for component in ("main", "universe", "restricted", "multiverse")
-            ]
-            for index in indices:
-                try:
-                    indexed.update(index.result())
-                except Exception as exc:  # noqa: BLE001
-                    print("snapshot index error:", exc, flush=True)
-        print(f"Ubuntu Snapshot indexed {len(indexed)}/{len(wanted)} versions", flush=True)
-        jobs = {
-            name: workers.submit(acquire, name, version, indexed.get(name), root, pool, architecture)
-            for name, version in wanted.items()
-        }
-        records = {name: job.result() for name, job in jobs.items()}
+            for suite in suites:
+                trial = {}
+                futures = [workers.submit(snapshot_index, root, suite, component,
+                                          Path(scratch), wanted, architecture)
+                           for component in ("main", "universe")]
+                for future in futures:
+                    try:
+                        trial.update(future.result())
+                    except Exception as exc:  # noqa: BLE001
+                        print("snapshot index error:", suite, exc, flush=True)
+                ratio = len(trial) / len(wanted)
+                print(f"suite {suite}: indexed {len(trial)}/{len(wanted)} ({ratio:.0%})", flush=True)
+                if len(trial) > len(indexed):
+                    indexed = trial
+                    chosen = suite
+                if ratio >= 0.98:
+                    chosen = suite
+                    break
+            if chosen:
+                futures = [workers.submit(snapshot_index, root, chosen, component,
+                                          Path(scratch), wanted, architecture)
+                           for component in ("restricted", "multiverse")]
+                for future in futures:
+                    try:
+                        indexed.update(future.result())
+                    except Exception:  # noqa: BLE001
+                        pass
+            print(f"Ubuntu Snapshot suite={chosen} indexed {len(indexed)}/{len(wanted)} versions", flush=True)
+            jobs = {
+                name: workers.submit(acquire, name, version, indexed.get(name), root, pool, architecture)
+                for name, version in wanted.items()
+            }
+            records = {name: job.result() for name, job in jobs.items()}
+        else:
+            records = {name: None for name in wanted}
     missing = {name: wanted[name] for name, record in records.items() if record is None}
-    evidence.write_text(json.dumps({"missing": missing, "packages": records}, indent=2))
+    evidence.write_text(json.dumps({"missing": missing, "packages": records, "suite": chosen}, indent=2))
     if missing:
         raise SystemExit(f"Historical dependencies unavailable: {missing}")
     (output / "expected.tsv").write_text("".join(f"{name}\t{version}\n" for name, version in wanted.items()))
