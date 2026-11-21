@@ -3086,7 +3086,8 @@
     "architecture": "amd64",
     "distribution": "groovy-proposed",
     "env": {
-      "attempts": 2
+      "attempts": 2,
+      "go_test_runtime": "qemu10-no-fma-bmi2"
     },
     "handover_status": "matched_diagnostics",
     "jobs": 4,

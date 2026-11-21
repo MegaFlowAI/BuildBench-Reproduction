@@ -39,6 +39,7 @@ options=$(jq -r '"parallel=" + (.jobs|tostring) + " " + (.options|join(" "))' "$
 env_nofile=$(jq -r '.env.nofile // empty' "$work/config.json")
 env_cpus=$(jq -r '.env.cpus // empty' "$work/config.json")
 env_cpuset=$(jq -r '.env.cpuset // empty' "$work/config.json")
+go_test_runtime=$(jq -r '.env.go_test_runtime // empty' "$work/config.json")
 env_memory=$(jq -r '.env.memory // empty' "$work/config.json")
 env_mask_cache=$(jq -r '.env.mask_cpu_cache // false' "$work/config.json")
 env_user=$(jq -r '.env.user // empty' "$work/config.json")
@@ -62,12 +63,22 @@ docker build --network none -f "$work/environment/environment.Dockerfile" \
     exit 1
 }
 
+if [[ "$go_test_runtime" == qemu10-no-fma-bmi2 ]]; then
+    stage=test_runtime_setup_failed
+    test "$arch" = amd64
+    bash scripts/prepare_go_test_runtime.sh "$work/go-test-runtime" "$work/evidence/go-test-runtime.txt"
+fi
+
 run_build() {
     local label=$1
     local patch=${2:-}
     local code=0
     local -a mounts=()
     local -a extra_env=()
+    if [[ "$go_test_runtime" == qemu10-no-fma-bmi2 ]]; then
+        mounts+=(--mount "type=bind,src=$work/go-test-runtime,dst=/buildbench-runtime,readonly")
+        extra_env+=(--env "GOFLAGS=-exec=/buildbench-runtime/go-test")
+    fi
     mkdir -p "$work/$label"
     chmod 0777 "$work/$label"
     if [[ -n "$patch" ]]; then

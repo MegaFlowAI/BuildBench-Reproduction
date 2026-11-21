@@ -34,7 +34,10 @@ CONTROL = {
         "undefined reference", "__wrap_RAND_bytes",
     ),
 }
+AVO = "launchpad-groovy-arm64-amd64-golang-github-mmcloughlin-avo-472bebf32a26"
+AVO_STACK = re.compile(r"(?P<site>(?:dot|geohash)\.s:\d+) (?P<offset>\+0x[0-9a-f]+) fp=")
 CASE_DIAGNOSTICS = {
+    AVO: re.compile(r"^SIGILL: illegal instruction$|^FAIL\s+github.com/mmcloughlin/avo/examples/(?:dot|geohash)\s+"),
     "launchpad-plucky-amd64-arm64-efitools-faf68620bf82": re.compile(
         r"^Invalid DOS header magic$|^make\[1\]: \*\*\* \[Make.rules:\d+: HelloWorld-signed.efi\] Error 1$"
     ),
@@ -101,7 +104,11 @@ def fingerprints(path, start, *, case_id=None):
                 continue
             if len(line) > 2500:
                 continue
-            if case_diagnostics and case_diagnostics.search(line):
+            if case_id == AVO and (stack := AVO_STACK.search(line)):
+                found[f"{stack['site']} {stack['offset']}"] += 1
+            elif case_id == AVO and line.startswith("FAIL\tgithub.com/mmcloughlin/avo/examples/"):
+                found[" ".join(line.split()[:2])] += 1
+            elif case_diagnostics and case_diagnostics.search(line):
                 found[normalize(line)] += 1
             elif case_id == "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6" and AUTOMAKE_SUMMARY.fullmatch(line):
                 continue
