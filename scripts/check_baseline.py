@@ -40,6 +40,12 @@ AVO_STACK = re.compile(r"(?P<site>(?:dot|geohash)\.s:\d+) (?P<offset>\+0x[0-9a-f
 NGINX = "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2"
 NGINX_CONTROL = re.compile(r"^(dpkg-deb: error: parsing file 'debian/nginx-core/DEBIAN/control') near line \d+( package 'nginx-core':)$")
 CASE_DIAGNOSTICS = {
+    "launchpad-plucky-amd64-arm64-libgovirt-627f7c04c776": re.compile(
+        r"^not ok /govirt/[^ ]+ - libgovirt-FATAL-WARNING: .+"
+    ),
+    "launchpad-resolute-amd64-arm64-libsieve-3aad69166304": re.compile(
+        r"^make\[\d+\]: \*\*\* \[Makefile:\d+: header-lex.lo\] Error 1$"
+    ),
     NGINX: re.compile(r"^'Depends' field, reference to 'libnginx-mod-http-geoip2':"),
     AVO: re.compile(r"^SIGILL: illegal instruction$|^FAIL\s+github.com/mmcloughlin/avo/examples/(?:dot|geohash)\s+"),
     "launchpad-plucky-amd64-arm64-efitools-faf68620bf82": re.compile(
