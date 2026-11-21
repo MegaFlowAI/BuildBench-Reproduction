@@ -10,9 +10,12 @@ for row in csv.DictReader(ledger.open()):
     filename = Path(row['official_log'])
     timestamp = versions = None
     parallel, mode = 4, '-b'
+    distribution = None
     options = []
     with filename.open('rb') as handle:
         while line := handle.readline(262144):
+            if line.startswith(b'Distribution:') and distribution is None:
+                distribution = line.decode(errors='replace').split(':',1)[1].strip()
             if line.startswith(b'Package versions: '):
                 versions = dict(item.split('_', 1) for item in line.decode(errors='replace').split()[2:] if '_' in item)
                 versions = {k:v for k,v in versions.items() if not (k.startswith('sbuild-build-depends-') and v == '0.invalid.0')}
@@ -59,6 +62,7 @@ for row in csv.DictReader(ledger.open()):
         'mode':mode,
         'jobs':parallel,
         'options':options,
+        'distribution': distribution,
         'handover_status': row['state'],
         'packages': versions or {},
     }

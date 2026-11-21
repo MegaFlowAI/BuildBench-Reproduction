@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Recover Debian dependencies from public Ubuntu archives."""
+import gzip
 import hashlib
 import lzma
 import subprocess
@@ -10,33 +11,40 @@ SNAPSHOT = "https://snapshot.ubuntu.com/ubuntu"
 LAUNCHPAD = "https://launchpad.net/ubuntu/+archive/primary/+files"
 
 
-def fetch(url, destination, *, max_time=80):
+def fetch(url, destination, *, max_time=120):
     return subprocess.run(
-        ["curl", "--silent", "--fail", "--location", "--retry", "2",
-         "--connect-timeout", "10", "--max-time", str(max_time), url, "-o", str(destination)],
+        ["curl", "--silent", "--fail", "--location", "--retry", "3",
+         "--connect-timeout", "15", "--max-time", str(max_time), url, "-o", str(destination)],
         check=False,
     ).returncode == 0
 
 
+def _parse_index(handle, wanted, matched):
+    fields = {}
+    for line in handle:
+        if line == "\n":
+            name, version = fields.get("Package"), fields.get("Version")
+            if name in wanted and (wanted[name] is None or wanted[name] == version):
+                if {"Filename", "Architecture", "SHA256"} <= fields.keys():
+                    matched[name] = dict(fields)
+            fields = {}
+        elif not line.startswith((" ", "\t")):
+            key, sep, value = line.partition(": ")
+            if sep and key in {"Package", "Version", "Architecture", "Filename", "SHA256"}:
+                fields[key] = value.rstrip("\n")
+
+
 def snapshot_index(root, suite, component, scratch, wanted, architecture):
-    path = scratch / f"{suite}-{component}.xz"
-    url = f"{root}/dists/{suite}/{component}/binary-{architecture}/Packages.xz"
-    if not fetch(url, path):
-        return {}
     matched = {}
-    with lzma.open(path, "rt", encoding="utf-8", errors="replace") as handle:
-        fields = {}
-        for line in handle:
-            if line == "\n":
-                name, version = fields.get("Package"), fields.get("Version")
-                if name in wanted and (wanted[name] is None or wanted[name] == version):
-                    if {"Filename", "Architecture", "SHA256"} <= fields.keys():
-                        matched[name] = fields
-                fields = {}
-            elif not line.startswith((" ", "\t")):
-                key, sep, value = line.partition(": ")
-                if sep and key in {"Package", "Version", "Architecture", "Filename", "SHA256"}:
-                    fields[key] = value.rstrip("\n")
+    for suffix, opener in ((".xz", lzma.open), (".gz", gzip.open)):
+        path = scratch / f"{suite}-{component}{suffix}"
+        url = f"{root}/dists/{suite}/{component}/binary-{architecture}/Packages{suffix}"
+        if not fetch(url, path, max_time=240):
+            continue
+        with opener(path, "rt", encoding="utf-8", errors="replace") as handle:
+            _parse_index(handle, wanted, matched)
+        if len(matched) >= len(wanted):
+            break
     return matched
 
 
@@ -54,7 +62,7 @@ def acquire(name, version, record, root, destination, architecture):
     with tempfile.TemporaryDirectory(dir=destination) as scratch:
         path = Path(scratch) / "package.deb"
         for url, arch in candidates:
-            if not fetch(url, path, max_time=420 if name.startswith("nvidia-cuda-") else 80):
+            if not fetch(url, path, max_time=420 if name.startswith("nvidia-cuda-") else 120):
                 continue
             with path.open("rb") as handle:
                 checksum = hashlib.sha256()

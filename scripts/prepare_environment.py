@@ -78,6 +78,22 @@ def bootstrap(pool, archive, architecture):
                 output.add(path, arcname=path.name, filter=root_owner)
 
 
+def suites_for(case):
+    suites = []
+    for name in (case.get("distribution"), case.get("suite")):
+        if name and name not in suites:
+            suites.append(name)
+    expanded = []
+    for suite in suites:
+        if suite not in expanded:
+            expanded.append(suite)
+        for pocket in ("-proposed", "-updates", "-security"):
+            candidate = suite if suite.endswith(pocket) else suite + pocket
+            if candidate not in expanded:
+                expanded.append(candidate)
+    return expanded
+
+
 def main():
     case_path, output, evidence = map(Path, sys.argv[1:])
     case = json.loads(case_path.read_text())
@@ -89,17 +105,22 @@ def main():
     output.mkdir(parents=True)
     pool = output / "pool"
     pool.mkdir()
-    with tempfile.TemporaryDirectory() as scratch, concurrent.futures.ThreadPoolExecutor(10) as workers:
+    suites = suites_for(case)
+    print("Snapshot suites:", ", ".join(suites), flush=True)
+    with tempfile.TemporaryDirectory() as scratch, concurrent.futures.ThreadPoolExecutor(12) as workers:
         indexed = {}
         if root:
             indices = [
-                workers.submit(snapshot_index, root, case["suite"] + pocket, component,
+                workers.submit(snapshot_index, root, suite, component,
                                Path(scratch), wanted, architecture)
-                for pocket in ("", "-proposed", "-updates", "-security")
+                for suite in suites
                 for component in ("main", "universe", "restricted", "multiverse")
             ]
             for index in indices:
-                indexed.update(index.result())
+                try:
+                    indexed.update(index.result())
+                except Exception as exc:  # noqa: BLE001
+                    print("snapshot index error:", exc, flush=True)
         print(f"Ubuntu Snapshot indexed {len(indexed)}/{len(wanted)} versions", flush=True)
         jobs = {
             name: workers.submit(acquire, name, version, indexed.get(name), root, pool, architecture)
