@@ -43,8 +43,7 @@ def snapshot_index(root, suite, component, scratch, wanted, architecture):
             continue
         with opener(path, "rt", encoding="utf-8", errors="replace") as handle:
             _parse_index(handle, wanted, matched)
-        if len(matched) >= len(wanted):
-            break
+        break
     return matched
 
 

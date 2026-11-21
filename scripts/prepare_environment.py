@@ -116,6 +116,8 @@ def main():
     print("Snapshot suite candidates:", ", ".join(suites), flush=True)
     indexed = {}
     chosen = None
+    best_hits = 0
+    source_suites = {}
     with tempfile.TemporaryDirectory() as scratch, concurrent.futures.ThreadPoolExecutor(12) as workers:
         if root:
             for suite in suites:
@@ -130,21 +132,27 @@ def main():
                         print("snapshot index error:", suite, exc, flush=True)
                 ratio = len(trial) / len(wanted)
                 print(f"suite {suite}: indexed {len(trial)}/{len(wanted)} ({ratio:.0%})", flush=True)
-                if len(trial) > len(indexed):
-                    indexed = trial
-                    chosen = suite
-                if ratio >= 0.98:
-                    chosen = suite
+                if len(trial) > best_hits:
+                    chosen, best_hits = suite, len(trial)
+                for name, record in trial.items():
+                    if name not in indexed:
+                        indexed[name] = record
+                        source_suites[name] = suite
+                if len(indexed) == len(wanted):
                     break
-            if chosen:
+            if chosen and len(indexed) != len(wanted):
+                remaining = wanted.keys() - indexed.keys()
+                needed = {name: wanted[name] for name in remaining}
                 futures = [workers.submit(snapshot_index, root, chosen, component,
-                                          Path(scratch), wanted, architecture)
+                                          Path(scratch), needed, architecture)
                            for component in ("restricted", "multiverse")]
                 for future in futures:
                     try:
-                        indexed.update(future.result())
-                    except Exception:  # noqa: BLE001
-                        pass
+                        for name, record in future.result().items():
+                            indexed[name] = record
+                            source_suites[name] = chosen
+                    except Exception as exc:  # noqa: BLE001
+                        print("snapshot index error:", chosen, exc, flush=True)
             print(f"Ubuntu Snapshot suite={chosen} indexed {len(indexed)}/{len(wanted)} versions", flush=True)
             jobs = {
                 name: workers.submit(acquire, name, version, indexed.get(name), root, pool, architecture)
@@ -153,6 +161,9 @@ def main():
             records = {name: job.result() for name, job in jobs.items()}
         else:
             records = {name: None for name in wanted}
+    for name, record in records.items():
+        if record is not None:
+            record["snapshot_suite"] = source_suites.get(name)
     missing = {name: wanted[name] for name, record in records.items() if record is None}
     evidence.write_text(json.dumps({"missing": missing, "packages": records, "suite": chosen}, indent=2))
     if missing:

@@ -25,7 +25,9 @@ strip_and_unpack() {
     dpkg --force-depends --force-confnew --unpack "$work/patched.deb" >>/tmp/install.log 2>&1
 }
 
-for deb in $(ls /tmp/pool/*.deb | sort); do
+# 由 shell 展开和排序。部分历史 sort 依赖尚未安装的 libcrypto。
+for deb in /tmp/pool/*.deb; do
+    test -f "$deb" || { echo "Historical package pool is empty"; exit 1; }
     if dpkg --force-depends --force-confnew --unpack "$deb" >>/tmp/install.log 2>&1; then
         continue
     fi

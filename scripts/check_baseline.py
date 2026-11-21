@@ -11,7 +11,12 @@ from run_baseline import TIMEOUT, historical_limit
 FAILURE = re.compile(
     r"\berror(?:\[[A-Z0-9]+\])?: |\bFatal: |undefined reference to |"
     r"assertion failed|^FAIL[!: ]|^--- FAIL: |^\[  FAILED  \]|^QFATAL |"
-    r"^panic: |Segmentation fault| ->  (?:failed|broken):",
+    r"^panic: |Segmentation fault| ->  (?:failed|broken):|"
+    r"^help2man: can['’]t get |^dh_installdocs: Cannot find \(any matches for\)|"
+    r"^[\w.]*(?:Error|Exception):\s+|\(NoMethodError\)$|: cxref: syntax error$|"
+    r"^(?:mv: cannot stat|rmdir: failed to remove|chmod: cannot access) .*: No such file or directory$|"
+    r"^/usr/share/cargo/bin/dh-cargo-built-using: abort: |"
+    r"^E: pybuild .*: configure: plugin pyproject failed with: ",
     re.I,
 )
 WRAPPER = re.compile(r"^(?:dpkg-buildpackage:|dh_.*returned exit code|make(?:\[\d+\])?:)")
@@ -36,6 +41,7 @@ EXIT = b"BUILD_BENCH_BUILD_EXIT="
 def normalize(line):
     line = line.translate(str.maketrans({chr(8216): chr(39), chr(8217): chr(39), chr(96): chr(39)}))
     line = line.replace("/work/source", "<source>").replace("/<<PKGBUILDDIR>>", "<source>")
+    line = re.sub(r"/<<BUILDDIR>>/[^/\s]+(?=/)", "<source>", line)
     line = re.sub(r"/tmp/[^ /'\x22]+", "/tmp/<temp>", line)
     line = re.sub(r"\b0x[0-9a-f]+\b", "<address>", line)
     line = re.sub(r"\b\d{2,}\b(?= Segmentation fault| Terminated| Killed| Aborted)", "<pid>", line)
