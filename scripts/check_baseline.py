@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """对比原始构建的失败诊断，缺少明确证据时拒绝进入补丁阶段。"""
 import collections
+import hashlib
 import json
 import re
 import sys
@@ -52,13 +53,32 @@ CASE_DIAGNOSTICS = {
         r"^dh_auto_test: error: .+ returned exit code \d+$"
     ),
 }
+BLIS = "launchpad-resolute-arm64-amd64-python-cython-blis-fedd35dc0412"
+TINYCBOR = "launchpad-plucky-amd64-arm64-tinycbor-835bc0b749b6"
+QT_TEST_RESULT = re.compile(
+    r"^\*+ (?:Start|Finished) testing of |^(?:PASS|FAIL!|SKIP|XFAIL|XPASS|QFATAL)\s*:|"
+    r"^(?:Actual|Expected)\s+\(|^Loc: \[|^Totals: "
+)
+QT_TEST_EXIT = re.compile(
+    r"^make\[\d+\]: \*\*\* \[[^\]]+: (?:check|sub-tojson-check|override_dh_auto_test)\] Error \d+$"
+    r"|^dpkg-buildpackage: error: debian/rules binary-arch subprocess returned exit status 2$"
+)
 TERMINAL_DIAGNOSTICS = {
-    "launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203": re.compile(
+    "launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203": (4, re.compile(
         r"^find docs/reference/html -name '\*\.md5' -print0 \| xargs -0 rm -v$|"
         r"^rm: missing operand$|"
         r"^make: \*\*\* \[debian/rules:24: build/libgnomecanvasmm-2.6-doc\] Error 123$|"
         r"^dpkg-buildpackage: error: debian/rules build subprocess returned exit status 2$"
-    ),
+    )),
+    "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8": (9, re.compile(
+        r"^/usr/bin/ld: \S+\(hash-table\.o\).*: unresolvable R_AARCH64_ADR_PREL_PG_HI21 "
+        r"relocation against symbol .stderr@@GLIBC_2\.17.$|"
+        r"^/usr/bin/ld: final link failed: bad value$|"
+        r"^gnatlink: error when calling /usr/bin/aarch64-linux-gnu-g\+\+-15$|"
+        r"make(?:\[\d+\])?: \*\*\* \[[^\]]+: (?:gnatmake-re|gnattools-cross|all-gnattools|"
+        r"stamp-dir/build-gcc.amd64)\] Error \d+$|"
+        r"^dpkg-buildpackage: error: debian/rules build-arch subprocess returned exit status 2$"
+    )),
 }
 LIBYUV = "launchpad-oracular-amd64-arm64-libyuv-91738d032815"
 LIBMAUS2 = "launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2"
@@ -113,6 +133,9 @@ def fingerprints(path, start, *, case_id=None):
                     cmake = [line]
                     cmake_size = len(line)
                 continue
+            if case_id == BLIS and line.startswith("[COMMAND] gcc ") and "gcc: error:" in line:
+                # 并行输出中，另一条命令的 stdout 可能与实际失败的 stderr 拼接。
+                line = line[line.rindex("gcc: error:"):]
             if len(line) > 2500:
                 continue
             if case_id == NGINX and (control := NGINX_CONTROL.fullmatch(line)):
@@ -135,10 +158,32 @@ def fingerprints(path, start, *, case_id=None):
 def terminal_signature(path, pattern):
     with Path(path).open("rb") as log:
         return [
-            normalize(line)
+            normalize(match.group())
             for data in iter(lambda: log.readline(262144), b"")
-            if pattern.fullmatch(line := data.decode("utf-8", "replace").strip())
+            if (match := pattern.search(data.decode("utf-8", "replace").strip()))
         ]
+
+
+def qt_test_result(path):
+    digest = hashlib.sha256()
+    failures = []
+    totals = []
+    terminal = terminal_signature(path, QT_TEST_EXIT)
+    with Path(path).open("rb") as log:
+        for data in iter(lambda: log.readline(262144), b""):
+            line = data.decode("utf-8", "replace").strip()
+            if not QT_TEST_RESULT.search(line):
+                continue
+            line = re.sub(r", \d+ms$", "", line) if line.startswith("Totals: ") else line
+            if line.startswith("FAIL!"):
+                failures.append(line)
+            if line.startswith("Totals:"):
+                totals.append(line)
+            digest.update((line + "\n").encode("utf-8"))
+    if failures and totals and any("sub-tojson-check" in line for line in terminal):
+        return {"ordered_qt_sha256": digest.hexdigest(), "failures": failures,
+                "totals": totals, "terminal": terminal}
+    return None
 
 
 def projected_test_result(path, case_id):
@@ -243,17 +288,21 @@ def compare(case_id, reference, replay, status, idle):
     if limit is not None:
         return "expected_idle_timeout", {"exit": code, "historical_limit_seconds": limit}
     if case_id in TERMINAL_DIAGNOSTICS:
-        pattern = TERMINAL_DIAGNOSTICS[case_id]
+        minimum, pattern = TERMINAL_DIAGNOSTICS[case_id]
         historical_result = terminal_signature(reference, pattern)
         actual_result = terminal_signature(replay, pattern)
         result = {"exit": code, "kind": "terminal_failure", "historical": historical_result, "actual": actual_result}
-        if len(historical_result) == 4 and historical_result == actual_result and code == 2:
+        if len(historical_result) >= minimum and historical_result == actual_result and code == 2:
             return "matched", result
         return "terminal_diagnostic_mismatch", result
 
-    if case_id in (LIBYUV, LIBMAUS2):
-        historical_result = projected_test_result(reference, case_id)
-        actual_result = projected_test_result(replay, case_id)
+    if case_id in (LIBYUV, LIBMAUS2, TINYCBOR):
+        if case_id == TINYCBOR:
+            historical_result = qt_test_result(reference)
+            actual_result = qt_test_result(replay)
+        else:
+            historical_result = projected_test_result(reference, case_id)
+            actual_result = projected_test_result(replay, case_id)
         result = {"exit": code, "kind": "test_summary", "historical": historical_result, "actual": actual_result}
         if code == 2 and historical_result and historical_result == actual_result:
             return "matched", result
