@@ -52,8 +52,8 @@ def assemble(official, frozen, case_id, platform, destination):
         if source.stat().st_size != record["bytes"] or sha256(source) != record["sha256"]:
             raise ValueError(f"Official source checksum mismatch: {source.name}")
 
-    shutil.copytree(original / "source", destination / "source", copy_function=link_file)
-    shutil.copytree(original / "logs", destination / "logs", copy_function=link_file)
+    shutil.copytree(original / "source", destination / "source")
+    shutil.copytree(original / "logs", destination / "logs")
     shutil.copytree(original / "checksums", destination / "checksums")
     shutil.copyfile(original / "case.json", destination / "case.json")
     shutil.copyfile(original / "README.md", destination / "README.md")
@@ -122,7 +122,8 @@ def assemble(official, frozen, case_id, platform, destination):
         else:
             target_file = dirs[record["arch"]] / name
         if not target_file.exists():
-            link_file(deb, target_file)
+            # Each tar input gets its own inode so concurrent exports can use the same pool.
+            shutil.copyfile(deb, target_file)
     lock["dependency_count"] = len(lock["dependencies"])
     write_json(lock_path, lock)
     # Validator 的补丁路径规则只适用于 source/input 中的源码。
@@ -142,14 +143,6 @@ def assemble(official, frozen, case_id, platform, destination):
             name: locked_versions[name] for name in sorted(locked_versions.keys() - versions.keys())
         },
     })
-
-
-def link_file(source, destination):
-    try:
-        Path(destination).hardlink_to(source)
-    except OSError:
-        shutil.copyfile(source, destination)
-    return destination
 
 
 def main():
