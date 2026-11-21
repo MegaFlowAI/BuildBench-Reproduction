@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-questing-arm64-amd64-ktorrent-2fd1a05c0635",
+  "package": {
+    "name": "ktorrent",
+    "version": "25.07.80-0ubuntu1",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "questing",
+    "source_arch": "aarch64",
+    "target_arch": "x86_64",
+    "direction": "aarch64-to-x86_64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "58e4d0936c2f50802e1af1e3f92d72e5aa68125965b1150e324b5d9ebc825a8c"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

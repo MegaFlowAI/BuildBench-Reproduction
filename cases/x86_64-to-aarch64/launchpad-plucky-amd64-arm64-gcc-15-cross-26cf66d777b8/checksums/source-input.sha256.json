@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gcc-15-cross_4ubuntu2_5ubuntu1.diff.gz",
+      "bytes": 6960,
+      "sha256": "4e3bd4ade8c9f5cf19104a33824afaf3a92fee54526415bb2b8c1a8f402efca0"
+    },
+    {
+      "path": "gcc-15-cross_5ubuntu1.dsc",
+      "bytes": 68558,
+      "sha256": "7b75c6b215bba059b0c500e2efb132c44851fa3a59b34ff6eb667c9364f5fe79"
+    },
+    {
+      "path": "gcc-15-cross_5ubuntu1.tar.xz",
+      "bytes": 48092,
+      "sha256": "c3698b77542ea61b204685673f81f45a3aff3f3d4d2bcf0cceb8c39b1c7da447"
+    }
+  ],
+  "aggregate_sha256": "3381afafd46dfb77fd58b3d9a77ed11f155a49dae44431f268772d4bb5663798"
+}

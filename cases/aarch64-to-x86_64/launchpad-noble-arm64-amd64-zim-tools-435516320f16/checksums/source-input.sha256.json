@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-zim-tools-435516320f16",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "zim-tools_3.2.0-1_3.2.0-1build1.diff.gz",
+      "bytes": 499,
+      "sha256": "11f0e934c2cae7fd85ef7916fa385930015e2b05cce1edeeed7abcef853b06fc"
+    },
+    {
+      "path": "zim-tools_3.2.0-1build1.debian.tar.xz",
+      "bytes": 12584,
+      "sha256": "55c8950b124cc215a8f360bf50db4b8a9ecc7b5027323900aaaa2b96f0ac752e"
+    },
+    {
+      "path": "zim-tools_3.2.0-1build1.dsc",
+      "bytes": 2155,
+      "sha256": "7370cadcc815ec2e13c74ac24c6962ef3a363e65cf228cbe6913774b8ca8b2f2"
+    },
+    {
+      "path": "zim-tools_3.2.0.orig.tar.xz",
+      "bytes": 226568,
+      "sha256": "956d610b8e18c83ae9463dda142f25a07577126079febe348b374184d3942f6c"
+    }
+  ],
+  "aggregate_sha256": "af2d854b4ec87e0db6a0d21d3c45d9703fd670e651be02f5c908ed487ae40859"
+}

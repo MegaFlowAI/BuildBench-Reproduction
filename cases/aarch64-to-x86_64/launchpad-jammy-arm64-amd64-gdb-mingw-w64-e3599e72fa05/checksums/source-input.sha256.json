@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-gdb-mingw-w64-e3599e72fa05",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gdb-mingw-w64_11_11build1.diff.gz",
+      "bytes": 336,
+      "sha256": "4d42c309bdee47f2fa6fc06fc51c351328ce149f17d9c4f95fef3d53dbed4b2f"
+    },
+    {
+      "path": "gdb-mingw-w64_11build1.dsc",
+      "bytes": 1990,
+      "sha256": "3dc4d7c9b343b59e83a47b7415378aebb174262d39729bc9736375e72fb1f0e6"
+    },
+    {
+      "path": "gdb-mingw-w64_11build1.tar.xz",
+      "bytes": 9180,
+      "sha256": "52283a2cdcf9b55a50f8b4b8a09f1f607657ec28eb575e29e9c7842ae4cb5432"
+    }
+  ],
+  "aggregate_sha256": "b89b83fa27fbac5b224de4487bd7a4166bd164093abbf0945ffdcd46fce2aabe"
+}

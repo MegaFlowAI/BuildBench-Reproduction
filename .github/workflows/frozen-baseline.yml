@@ -21,9 +21,12 @@ jobs:
           persist-credentials: false
       - id: cases
         env:
+          GH_TOKEN: ${{ github.token }}
           SELECTION: ${{ inputs.selection }}
         run: |
-          matrix=$(python3 scripts/frozen_release.py matrix "$SELECTION")
+          release_id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/frozen-cases-v1" --jq '.id')
+          gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/releases/$release_id/assets?per_page=100" > "$RUNNER_TEMP/release-assets.json"
+          matrix=$(python3 scripts/frozen_release.py matrix "$SELECTION" --release-assets "$RUNNER_TEMP/release-assets.json")
           printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
   replay:
     name: replay (${{ matrix.case }})

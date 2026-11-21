@@ -6,6 +6,8 @@
 
 [逐例台账](docs/public-baselines.csv)记录 200 个用例和已匹配用例的公开作业链接。`diagnostic_match` 表示该次作业通过诊断比对，`diagnostic_match_rejudged` 表示用更新的判定器复核旧作业的原始日志后通过。`control_signature_match` 是使用预先定义诊断的两个补丁对照。`test_summary_match` 核对测试结果、失败用例及构建退出。`idle_timeout_match` 核对静默时长和终止前日志。`variant_match` 记录在特定实验条件下匹配的作业。`pending` 表示还没有足够的公开 runner 匹配证据。台账记录已观察到的匹配，复跑的稳定性需要继续验证。
 
+逐字节验收使用 [冻结用例工作流](docs/frozen-reproduction.md)。每例的清单、配置和校验值位于 [cases](cases)，源码、历史日志和依赖按用例发布到 [GitHub Release](https://github.com/MegaFlowAI/BuildBench-Reproduction/releases/tag/frozen-cases-v1)。
+
 ## 运行原始构建
 
 在 **Actions → BuildBench original and patched builds → Run workflow** 输入一个 case ID。还可选择 `pending`（交接时等待复现的 10 例）、`pilot`（另加两个对照）、`arm64`、`amd64` 、`unverified`（逐例台账中尚未核验）或 `all`。

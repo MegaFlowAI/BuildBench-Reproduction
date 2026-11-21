@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-pynfft-ab05746a7dae",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "pynfft_1.3.2-7build1_1.3.2-7build2.diff.gz",
+      "bytes": 322,
+      "sha256": "2eb8bbe970557a2b2f1337a28d1fa157b3a24e69fefb87a416a1582b23f3c1ee"
+    },
+    {
+      "path": "pynfft_1.3.2-7build2.debian.tar.xz",
+      "bytes": 5628,
+      "sha256": "65a1766aecd24113ce874005de40acd770559e83fe99d7266d33e1702ee60220"
+    },
+    {
+      "path": "pynfft_1.3.2-7build2.dsc",
+      "bytes": 2258,
+      "sha256": "2ab13cb84cb801f4af902467b2f218d0e8e80c8ea0a16cc492b17819a266812e"
+    },
+    {
+      "path": "pynfft_1.3.2.orig.tar.gz",
+      "bytes": 180500,
+      "sha256": "ae41e720e569d0d99e3a44c82c36b35a49cfc9ecc23a1cd039fe9e2895aada2c"
+    }
+  ],
+  "aggregate_sha256": "25260f45489b7fc93b635f6808e7ba624fb658c3c62407907ba791ca4f26e852"
+}

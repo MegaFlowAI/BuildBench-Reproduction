@@ -1,0 +1,30 @@
+{
+  "additional_bootstrap_packages": {
+    "debootstrap": "1.0.134ubuntu1",
+    "distro-info": "1.7build1",
+    "distro-info-data": "0.60",
+    "libpsl5t64": "0.21.2-1.1build1",
+    "lsb-release": "12.0-2",
+    "usr-is-merged": "36ubuntu1",
+    "wget": "1.21.4-1ubuntu4"
+  },
+  "historical_alternatives": [
+    {
+      "arch": "amd64",
+      "filename": "libpsl5_0.21.2-1build1_amd64.deb",
+      "package": "libpsl5",
+      "path": "dependencies/historical-alternatives/amd64/libpsl5_0.21.2-1build1_amd64.deb",
+      "sha256": "d72e57989d99982c7983b773c347ce40f6594647f05a96d713b7708ae82502dd",
+      "version": "0.21.2-1build1"
+    }
+  ],
+  "historical_version_differences": {
+    "libpsl5": {
+      "historical": "0.21.2-1build1",
+      "locked": null
+    }
+  },
+  "historical_versions_recorded": 278,
+  "provenance": "buildbench-200-exact-v1",
+  "reference_sha256": "0cafd59ec190f302741d76de84f9f301773e63a3631e99520b6b247e71062910"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-plucky-arm64-amd64-geis-fd1a3919010f",
+  "package": {
+    "name": "geis",
+    "version": "2.2.17+16.04.20160126-0ubuntu11",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "plucky",
+    "source_arch": "aarch64",
+    "target_arch": "x86_64",
+    "direction": "aarch64-to-x86_64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "27ce5b4893201729c3f22e54cb6307a71c85f9fb941461845dafd3f6e96d989c"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

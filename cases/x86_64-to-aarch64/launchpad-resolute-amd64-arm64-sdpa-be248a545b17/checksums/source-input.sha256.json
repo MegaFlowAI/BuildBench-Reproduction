@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-sdpa-be248a545b17",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "sdpa_7.3.20-1.debian.tar.xz",
+      "bytes": 5340,
+      "sha256": "d224bdbf91e288bdbd16bea66f3d87c167e7b28629c14197211b1ef87d44c7a6"
+    },
+    {
+      "path": "sdpa_7.3.20-1.dsc",
+      "bytes": 1769,
+      "sha256": "7c060ec765ddb831409d3d4d955fd5992c10ddd4977976e0019ff6c7dca88629"
+    },
+    {
+      "path": "sdpa_7.3.20.orig.tar.gz",
+      "bytes": 315477,
+      "sha256": "fc3dc4848d1f8c3426be034ee6e6705c36eba8895abd133a15a875ea4d29e86b"
+    }
+  ],
+  "aggregate_sha256": "755791a971e5aab5409096cf2ac2f6d9c895aeaf3194b57a8fe9ce8b6ea3137a"
+}

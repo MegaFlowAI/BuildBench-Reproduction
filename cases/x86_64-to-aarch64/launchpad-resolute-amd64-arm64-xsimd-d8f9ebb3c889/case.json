@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-resolute-amd64-arm64-xsimd-d8f9ebb3c889",
+  "package": {
+    "name": "xsimd",
+    "version": "14.0.0-2ubuntu1",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "resolute",
+    "source_arch": "x86_64",
+    "target_arch": "aarch64",
+    "direction": "x86_64-to-aarch64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "e72cb329bf50c0afe4ae1fbd7ea58f7bbfaeb56f996ab64626ea60f082d9172a"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

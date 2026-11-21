@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-glyr-62a9f2a4c575",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "glyr_1.0.10-2build1_1.0.10-2build2.diff.gz",
+      "bytes": 313,
+      "sha256": "bedcfc8494b96ee9aafa5b7255c4f4c4413786f2e5b1a27425f810b4f2885edf"
+    },
+    {
+      "path": "glyr_1.0.10-2build2.debian.tar.xz",
+      "bytes": 7380,
+      "sha256": "b8b6b588f99ab2733185fc0f077d1bb6054d4fd82f7834472c38011915763aa0"
+    },
+    {
+      "path": "glyr_1.0.10-2build2.dsc",
+      "bytes": 2316,
+      "sha256": "bce7968f9764b68b7293eb22814abd73c54ab6a079870fdb8a4d42cf190fcd27"
+    },
+    {
+      "path": "glyr_1.0.10.orig.tar.gz",
+      "bytes": 416414,
+      "sha256": "77e8da60221c8d27612e4a36482069f26f8ed74a1b2768ebc373c8144ca806e8"
+    }
+  ],
+  "aggregate_sha256": "9810f8f8cb0a8e093f78339479336296fd42da3cb8952a6726d2b9e51b785223"
+}

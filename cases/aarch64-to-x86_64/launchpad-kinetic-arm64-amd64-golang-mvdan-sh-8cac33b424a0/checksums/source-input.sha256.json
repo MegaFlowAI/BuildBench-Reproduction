@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-kinetic-arm64-amd64-golang-mvdan-sh-8cac33b424a0",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "golang-mvdan-sh_3.4.3+ds2-1.debian.tar.xz",
+      "bytes": 3268,
+      "sha256": "457beef6bb2834811f17567ed532a34763fb876bc60bbbb86124e0e236a3702f"
+    },
+    {
+      "path": "golang-mvdan-sh_3.4.3+ds2-1.dsc",
+      "bytes": 1921,
+      "sha256": "0c8bc9287a764ec7179f8a86cac2bddb8aaa49f5879a17d642ee11fe52637736"
+    },
+    {
+      "path": "golang-mvdan-sh_3.4.3+ds2.orig.tar.xz",
+      "bytes": 157372,
+      "sha256": "a3cfefb460493e7ee960e5e17fa918d856756844fd5da9beda5a89959a015877"
+    }
+  ],
+  "aggregate_sha256": "34ba9e23511b9c50a0b09e93f3802be2b8471e586b5c51558a91faffc38a2f69"
+}

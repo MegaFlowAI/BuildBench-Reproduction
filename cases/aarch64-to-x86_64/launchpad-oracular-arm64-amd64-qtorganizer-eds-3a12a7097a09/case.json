@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-oracular-arm64-amd64-qtorganizer-eds-3a12a7097a09",
+  "package": {
+    "name": "qtorganizer-eds",
+    "version": "0.2.0-1",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "oracular",
+    "source_arch": "aarch64",
+    "target_arch": "x86_64",
+    "direction": "aarch64-to-x86_64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "d0fe7a85eed1a01473af28a728dfe7e540a492408e5062fae837c5d1d8deffcd"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

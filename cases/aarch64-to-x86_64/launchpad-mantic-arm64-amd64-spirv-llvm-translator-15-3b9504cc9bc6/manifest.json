@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "x86_64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-mantic-proposed-amd64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-mantic-amd64",
+      "dependencies/ubuntu-mantic-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/spirv-llvm-translator-15_15.0.0-1ubuntu3.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-mantic-arm64-amd64-spirv-llvm-translator-15-3b9504cc9bc6",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

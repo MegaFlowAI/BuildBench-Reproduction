@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-pyfftw-f9b533c96808",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "pyfftw_0.11.1-3build1_0.11.1-3ubuntu1.diff.gz",
+      "bytes": 1083,
+      "sha256": "4a49369a1bda0934055c0e1d89b942008e2470728e2f705a903244a382268f2c"
+    },
+    {
+      "path": "pyfftw_0.11.1-3ubuntu1.debian.tar.xz",
+      "bytes": 6264,
+      "sha256": "2a48fdbace79d0c2fe55efc306742d6ac1e10f56d552242e854d5635bb814f47"
+    },
+    {
+      "path": "pyfftw_0.11.1-3ubuntu1.dsc",
+      "bytes": 2441,
+      "sha256": "35c401c31df812dc9060e904deceb9356f76dd18ce314061d63f490dff276586"
+    },
+    {
+      "path": "pyfftw_0.11.1.orig.tar.gz",
+      "bytes": 144055,
+      "sha256": "54db6dd0c290b4a1f7b80d0a66a6022ed6fd66dd67acf1ff3ecb533459175d67"
+    }
+  ],
+  "aggregate_sha256": "766bb9a48e7cf3c9e0827b6dec01250696c7066bf4d7bb9488ea463b5411aeaf"
+}

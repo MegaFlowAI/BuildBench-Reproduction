@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-geis-fd1a3919010f",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "geis_2.2.17+16.04.20160126-0ubuntu10_2.2.17+16.04.20160126-0ubuntu11.diff.gz",
+      "bytes": 330,
+      "sha256": "98bb9166b718adc58e7e3221846c5e6a11147828b2d642f009c992baa95eae6b"
+    },
+    {
+      "path": "geis_2.2.17+16.04.20160126-0ubuntu11.diff.gz",
+      "bytes": 7097,
+      "sha256": "62e62a4fa426b7ce7421be8d969efde5537fc6265be9da686f1013df2ffed2c7"
+    },
+    {
+      "path": "geis_2.2.17+16.04.20160126-0ubuntu11.dsc",
+      "bytes": 2382,
+      "sha256": "731d4690671486e5480867fc93461742319415c0b9a815a438b626cd18fcf532"
+    },
+    {
+      "path": "geis_2.2.17+16.04.20160126.orig.tar.gz",
+      "bytes": 325184,
+      "sha256": "d88309cb4039e66c63ed95864b6cac8612c3b7138c26fab81440d694759c6df4"
+    }
+  ],
+  "aggregate_sha256": "27ce5b4893201729c3f22e54cb6307a71c85f9fb941461845dafd3f6e96d989c"
+}

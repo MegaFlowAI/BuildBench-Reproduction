@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-libkdegames-afa6b8f7c784",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libkdegames_24.12.3-1ubuntu1.debian.tar.xz",
+      "bytes": 27216,
+      "sha256": "6f3f0bac7b2ed7cdee698aaaac7bb9722f6f51ba4ae8832aa7a5a23822842e81"
+    },
+    {
+      "path": "libkdegames_24.12.3-1ubuntu1.dsc",
+      "bytes": 3225,
+      "sha256": "e0f1d965ac0e7663c3165ff65dfb9f1465819181e9f1886ac0a5278c0c9d47f3"
+    },
+    {
+      "path": "libkdegames_24.12.3.orig.tar.xz",
+      "bytes": 5975604,
+      "sha256": "d640d5a590450e476e903a341e916004a46ad72d0db07f4201e75e4e5a7c02e5"
+    },
+    {
+      "path": "libkdegames_4:24.12.3-0ubuntu1_4:24.12.3-1ubuntu1.diff.gz",
+      "bytes": 7913,
+      "sha256": "dbc96eb8638714cdd4bb5459831feb67f384a54ba24f0c81d92a9744068d0c1e"
+    }
+  ],
+  "aggregate_sha256": "0c0d492431fdb7c00ef0ba4c824c0caf8a2b1a200027e39c171b8e2a8340636e"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-jammy-arm64-amd64-tmpreaper-8c42ffb8e477",
+  "package": {
+    "name": "tmpreaper",
+    "version": "1.6.16",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "jammy",
+    "source_arch": "aarch64",
+    "target_arch": "x86_64",
+    "direction": "aarch64-to-x86_64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "8e90f18e1728d925efb7934f16218c2d821690ddd118b6673525123c4f64f819"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

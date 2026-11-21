@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-libbpp-raa-dbef5d241db0",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libbpp-raa_2.4.1-5.debian.tar.xz",
+      "bytes": 11640,
+      "sha256": "a0242cb67faa46d4e73a8aef36fb3fbf1fd9d98a60e256c4941e88d8e6a856a7"
+    },
+    {
+      "path": "libbpp-raa_2.4.1-5.dsc",
+      "bytes": 2131,
+      "sha256": "6845fea2665c809a21646e0f362d7a53b9ee6a1db89e2055ba93f34dad8eff4d"
+    },
+    {
+      "path": "libbpp-raa_2.4.1.orig.tar.gz",
+      "bytes": 83211,
+      "sha256": "21ed87b5c0c80f5b1632493127b30a77ae92ac0853985c048f31bed5fd0fb301"
+    }
+  ],
+  "aggregate_sha256": "6d7ca5f00fabbfa6044e2774356037a96a8f333f1e1bae62d1fed1b8a4828cbb"
+}

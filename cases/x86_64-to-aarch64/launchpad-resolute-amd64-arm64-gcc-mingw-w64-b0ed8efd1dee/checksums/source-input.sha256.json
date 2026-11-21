@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-gcc-mingw-w64-b0ed8efd1dee",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gcc-mingw-w64_28.2_28.3.diff.gz",
+      "bytes": 576,
+      "sha256": "05c449a5fd6d489c87f42b7a7e82c62183311e11c048d633b9d7bf32c447ffaf"
+    },
+    {
+      "path": "gcc-mingw-w64_28.3.dsc",
+      "bytes": 7761,
+      "sha256": "8ada5129f8a850ca545ed542ffe1e4de1b0997c8dfe0de26ba1938e2ad218965"
+    },
+    {
+      "path": "gcc-mingw-w64_28.3.tar.xz",
+      "bytes": 36796,
+      "sha256": "5bdababdc114eed1c7362003877e4652a23be1dcc946da06cf893d005f01bc86"
+    }
+  ],
+  "aggregate_sha256": "b6910a20dbb7b357748a482569c588d84cb487bd3e4e761e1e14c5da04858e55"
+}

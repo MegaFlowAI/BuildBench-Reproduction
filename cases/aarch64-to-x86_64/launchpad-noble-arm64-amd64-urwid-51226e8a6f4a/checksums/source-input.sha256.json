@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-urwid-51226e8a6f4a",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "urwid_2.1.2-4.1.debian.tar.xz",
+      "bytes": 6576,
+      "sha256": "c9dedd303170733083d51bcb0c09ef2ded4bc5c0025bd1c2fe56a8d2a27b5f29"
+    },
+    {
+      "path": "urwid_2.1.2-4.1.dsc",
+      "bytes": 2959,
+      "sha256": "b74d3e640445278012e1b683fd247caa9ac84dd5d3ff9f52d447af196738d08e"
+    },
+    {
+      "path": "urwid_2.1.2-4build2_2.1.2-4.1.diff.gz",
+      "bytes": 1041,
+      "sha256": "c8735bbbaaf0351c0f12b9d7a8083c3c41388c8031241ba9004d21b33d32a889"
+    },
+    {
+      "path": "urwid_2.1.2.orig.tar.gz",
+      "bytes": 634621,
+      "sha256": "588bee9c1cb208d0906a9f73c613d2bd32c3ed3702012f51efe318a3f2127eae"
+    }
+  ],
+  "aggregate_sha256": "3fdc41efaed36d2b551437d5a15067a35087f74750eb8cdf62b813e61901712c"
+}

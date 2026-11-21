@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "nginx_1.24.0-2ubuntu7_1.26.0-1ubuntu1.diff.gz",
+      "bytes": 167563,
+      "sha256": "2d6265fd8c9e5a0289351f25851c48020649c4c1cc5b3dee49073746d55324b1"
+    },
+    {
+      "path": "nginx_1.26.0-1ubuntu1.debian.tar.xz",
+      "bytes": 83484,
+      "sha256": "f4ec05ab07c939923d9a1fb7d408cbd08b3e9e769ca55007b48049f9e086d4e8"
+    },
+    {
+      "path": "nginx_1.26.0-1ubuntu1.dsc",
+      "bytes": 3530,
+      "sha256": "3ac96b3580e540efeaca13cd8b6848a88f56571a3095df532caf6cdf908ea950"
+    },
+    {
+      "path": "nginx_1.26.0.orig.tar.gz",
+      "bytes": 1244118,
+      "sha256": "d2e6c8439d6c6db5015d8eaab2470ab52aef85a7bf363182879977e084370497"
+    }
+  ],
+  "aggregate_sha256": "0e2d5efd58faa609df63260b807923df1072f5d10b1a2a8378ccb5c20941884a"
+}

@@ -1,0 +1,5206 @@
+{
+  "case_id": "launchpad-jammy-amd64-arm64-libayatana-appindicator-be3a9fa69f9d",
+  "dependencies": [
+    {
+      "arch": "all",
+      "filename": "adduser_3.118ubuntu5_all.deb",
+      "package": "adduser",
+      "sha256": "53c30389227d4d16f1108a1df7ae1540c890378318335d1dc7ee95b7257f1f17",
+      "version": "3.118ubuntu5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "advancecomp_2.1-2.1ubuntu1_arm64.deb",
+      "package": "advancecomp",
+      "sha256": "b9cd4bdd698eb8dee25d0ec345962dfcf62d596de7d6236ecfa91dd21b6e069b",
+      "version": "2.1-2.1ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "adwaita-icon-theme_41.0-1ubuntu1_all.deb",
+      "package": "adwaita-icon-theme",
+      "sha256": "9391c87c5479507895be429434d6ebd60593e8f3a708fec6cd7950579128debc",
+      "version": "41.0-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "apt_2.3.13_arm64.deb",
+      "package": "apt",
+      "sha256": "28b51808598d1725aff646ccd531d35dd8c576d72604e1d51d6ff24e98e8a43a",
+      "version": "2.3.13"
+    },
+    {
+      "arch": "arm64",
+      "filename": "at-spi2-core_2.42.0-2ubuntu1_arm64.deb",
+      "package": "at-spi2-core",
+      "sha256": "7cdca0e65496c884623dd0b15afb02c050879671283c8de16a715e02b84b1566",
+      "version": "2.42.0-2ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "autoconf_2.71-2_all.deb",
+      "package": "autoconf",
+      "sha256": "96b528889794c4134015a63c75050f93d8aecdf5e3f2a20993c1433f4c61b80e",
+      "version": "2.71-2"
+    },
+    {
+      "arch": "all",
+      "filename": "automake_1.16.5-1.1_all.deb",
+      "package": "automake",
+      "sha256": "01d9f61baa9903a389d4997fa8a3e4c9ac7de7086fc077679f59521d8cf11191",
+      "version": "1:1.16.5-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "autopoint_0.21-4ubuntu3_all.deb",
+      "package": "autopoint",
+      "sha256": "200e9d890d9f9975cca9e0110ddad3d7f1336a357cee17922893742c91053114",
+      "version": "0.21-4ubuntu3"
+    },
+    {
+      "arch": "all",
+      "filename": "autotools-dev_20180224.1+nmu1_all.deb",
+      "package": "autotools-dev",
+      "sha256": "9980de14e663e137c3111f339b8e4b10912167e65223b4ab395fc6137db92a57",
+      "version": "20180224.1+nmu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "base-files_12ubuntu2_arm64.deb",
+      "package": "base-files",
+      "sha256": "e2f0bca6b809689aa34dd59e379c61f5716aaa70a453810016c7fd3522fb5327",
+      "version": "12ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "base-passwd_3.5.52_arm64.deb",
+      "package": "base-passwd",
+      "sha256": "8deb77bf10aceed2f5e4bec7219f8816da4ec87141a2d1493d4d4250cc6facb4",
+      "version": "3.5.52"
+    },
+    {
+      "arch": "arm64",
+      "filename": "bash_5.1-5ubuntu1_arm64.deb",
+      "package": "bash",
+      "sha256": "add1c4028be5fa19a00ce7095492ee98726747a7eac8d157b74e20f034cc90c2",
+      "version": "5.1-5ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "binutils_2.37-10ubuntu1_arm64.deb",
+      "package": "binutils",
+      "sha256": "e1e0a4132d1f2f83edbca3e346df7ca230215cf0e06b1a25d1072308512d5721",
+      "version": "2.37-10ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "binutils-aarch64-linux-gnu_2.37-10ubuntu1_arm64.deb",
+      "package": "binutils-aarch64-linux-gnu",
+      "sha256": "2f425622f35fc6f2d994af8a3f18a918be96aa86d6e2a224dd17cf3aa8c441b2",
+      "version": "2.37-10ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "binutils-common_2.37-10ubuntu1_arm64.deb",
+      "package": "binutils-common",
+      "sha256": "64e847ecfb49a0aea07341c7f6127cf6336131865c04a9db9c77bfe83c3a14d9",
+      "version": "2.37-10ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "bsdextrautils_2.37.2-4ubuntu1_arm64.deb",
+      "package": "bsdextrautils",
+      "sha256": "18e249fe62233fe1ec7e996101c1ab14d135c72da15258d464c471123aa71867",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "bsdutils_2.37.2-4ubuntu1_arm64.deb",
+      "package": "bsdutils",
+      "sha256": "f09505b08ea57cfb323cdc6ab62152f7526a21d1aed7dc3b4371dad3fe48401c",
+      "version": "1:2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "build-essential_12.9ubuntu2_arm64.deb",
+      "package": "build-essential",
+      "sha256": "c59b36607237bc2c5d36c44b8d6a2b39eec8b6c7307a5e30c6df71c14147f281",
+      "version": "12.9ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "bzip2_1.0.8-5_arm64.deb",
+      "package": "bzip2",
+      "sha256": "94b8413d548e781921034ca351cf534532f7ef5ff642828a6718663063bf2570",
+      "version": "1.0.8-5"
+    },
+    {
+      "arch": "all",
+      "filename": "ca-certificates_20211016_all.deb",
+      "package": "ca-certificates",
+      "sha256": "1eb968fb717640d4661f777a3e1ffb4c4fef956bcd24e1084ff1a7e5ee2f4a03",
+      "version": "20211016"
+    },
+    {
+      "arch": "all",
+      "filename": "ca-certificates-mono_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "ca-certificates-mono",
+      "sha256": "858fd91e1a5c9101f4056445198597b9e447ab11dda9da0f07addb60ddb8e87c",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "cli-common_0.10_all.deb",
+      "package": "cli-common",
+      "sha256": "d9a5ecbb158b275e91e92546160a446ded8febd3304e5ad01e0aab97b2cfe0dc",
+      "version": "0.10"
+    },
+    {
+      "arch": "all",
+      "filename": "cli-common-dev_0.10_all.deb",
+      "package": "cli-common-dev",
+      "sha256": "52788e80e084eb3e967ecb3dca727f725193edf3b992d693d54e87768bf631c3",
+      "version": "0.10"
+    },
+    {
+      "arch": "arm64",
+      "filename": "cmake_3.21.4-1ubuntu2_arm64.deb",
+      "package": "cmake",
+      "sha256": "e245d35813b29c5bcb6b03e6796606a8497b0811dccc4d8544366d08cb66cfaf",
+      "version": "3.21.4-1ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "cmake-data_3.21.4-1ubuntu2_all.deb",
+      "package": "cmake-data",
+      "sha256": "61f1471f806987412e2cacdb63a72fb21576e7cb3fd5439148ffebe38db9cd25",
+      "version": "3.21.4-1ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "cmake-extras_1.5-8_all.deb",
+      "package": "cmake-extras",
+      "sha256": "07d247c8299be6bc4b949f77a6333db2dfdcb1aba56fa38183a76ae3a75c4d40",
+      "version": "1.5-8"
+    },
+    {
+      "arch": "arm64",
+      "filename": "coreutils_8.32-4ubuntu3_arm64.deb",
+      "package": "coreutils",
+      "sha256": "c73714c9a8fc406a1baf7d448526beea88d020012a84bd77d78ffd3ca19b379c",
+      "version": "8.32-4ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "cpp_11.2.0-1ubuntu1_arm64.deb",
+      "package": "cpp",
+      "sha256": "6be683387ebdfe8dfc7c7a983d3d4458ff0c9d02c7ee7247d0252afc87bffd1b",
+      "version": "4:11.2.0-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "cpp-11_11.2.0-12ubuntu1_arm64.deb",
+      "package": "cpp-11",
+      "sha256": "a8e4b32093934af4d19534c7c77bbe5ca4be7c2d8db94ef22cc758117da5127b",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dash_0.5.11+git20210903+057cd650a4ed-3_arm64.deb",
+      "package": "dash",
+      "sha256": "9b55eee2941bbcf1eb0ec5cea3d951be10e700ff61224b05a6435f3d93b03074",
+      "version": "0.5.11+git20210903+057cd650a4ed-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dbus_1.12.20-2ubuntu2_arm64.deb",
+      "package": "dbus",
+      "sha256": "a6614b5bd44582993f61dd0a3007f821f391530d651e562ae4735aa8748f7fdf",
+      "version": "1.12.20-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dbus-test-runner_16.10.0~bzr100+repack1-4.1_arm64.deb",
+      "package": "dbus-test-runner",
+      "sha256": "50a54ea2a1a07493445ba631f73bdf431d46c8f204971a1bf4f87747dfa9c65d",
+      "version": "16.10.0~bzr100+repack1-4.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dbus-user-session_1.12.20-2ubuntu2_arm64.deb",
+      "package": "dbus-user-session",
+      "sha256": "1973f6bde90107f7d7fa56756d255dc1247909b2772f7734f907ca2f8a638e41",
+      "version": "1.12.20-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dconf-gsettings-backend_0.40.0-2_arm64.deb",
+      "package": "dconf-gsettings-backend",
+      "sha256": "56a99a1949daeaf05016774eeae41fc05cdb3beed514ff87654a307998078acc",
+      "version": "0.40.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dconf-service_0.40.0-2_arm64.deb",
+      "package": "dconf-service",
+      "sha256": "8572db7aecf5a9c58d5f6d4d68c39483367477c5adb6916f04ff0ea08b58376a",
+      "version": "0.40.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "debconf_1.5.79_all.deb",
+      "package": "debconf",
+      "sha256": "9d2b4155e35b81710fa183ea4b494da64126d3fc2b11a97c3ed07dfe1455684c",
+      "version": "1.5.79"
+    },
+    {
+      "arch": "all",
+      "filename": "debhelper_13.5.2ubuntu1_all.deb",
+      "package": "debhelper",
+      "sha256": "67b5591b3cf5fb5bdca3b05931c758b64e8cd484e72ca19153bfe26ade58ee57",
+      "version": "13.5.2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "debianutils_5.5-1ubuntu1_arm64.deb",
+      "package": "debianutils",
+      "sha256": "76ce83421cf5e7edb03e595282ce03ba9ab14c3b868f28d5196180fa43a15cbc",
+      "version": "5.5-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "debugedit_5.0-3_arm64.deb",
+      "package": "debugedit",
+      "sha256": "bd8aded4e03d1150b2d3b44b0c9ec8bff6c5957886c0fc53b9b8026ba5946ea1",
+      "version": "1:5.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "dh-autoreconf_20_all.deb",
+      "package": "dh-autoreconf",
+      "sha256": "74230a67249bd81829a52387cd6874b8ec4b36cda59e1457243c32e041637b59",
+      "version": "20"
+    },
+    {
+      "arch": "all",
+      "filename": "dh-elpa-helper_2.0.9ubuntu1_all.deb",
+      "package": "dh-elpa-helper",
+      "sha256": "2caffe232c1264fa384665c73f00959c01b5498a9a668fd903c8020a4d94c773",
+      "version": "2.0.9ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "dh-strip-nondeterminism_1.12.1-1_all.deb",
+      "package": "dh-strip-nondeterminism",
+      "sha256": "1c617828e5e43129e30ad5db7e94a2c86b02a14bf93a3d620ef5c4667c9ec9ff",
+      "version": "1.12.1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "diffutils_3.8-0ubuntu1_arm64.deb",
+      "package": "diffutils",
+      "sha256": "b588ce7acbe61ed8730a5cbbbcc36597b30ec32b4ebeaac2f708820cfc911c2b",
+      "version": "1:3.8-0ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "docbook_4.5-8_all.deb",
+      "package": "docbook",
+      "sha256": "fef6d982af0fe2e34a70a515fe7fabec2ad0dd548e82ac333b9b8bd90efcff9c",
+      "version": "4.5-8"
+    },
+    {
+      "arch": "arm64",
+      "filename": "docbook-to-man_2.0.0-45_arm64.deb",
+      "package": "docbook-to-man",
+      "sha256": "fc31ccde94ab2f57d2cbcb1fe285d45b5500ce9b31807e696a6efd2297913c3f",
+      "version": "1:2.0.0-45"
+    },
+    {
+      "arch": "all",
+      "filename": "docbook-xml_4.5-11_all.deb",
+      "package": "docbook-xml",
+      "sha256": "2eeaec19383c80425eb26d290d133dd11f3259ee2be6e471f6429b8fe845bafa",
+      "version": "4.5-11"
+    },
+    {
+      "arch": "all",
+      "filename": "docbook-xsl_1.79.2+dfsg-1_all.deb",
+      "package": "docbook-xsl",
+      "sha256": "c3f591b6d4ce9b3744719a292448b4ff1b9881f8c8905ee17d9169f8d6a94ad2",
+      "version": "1.79.2+dfsg-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dpkg_1.20.9ubuntu3_arm64.deb",
+      "package": "dpkg",
+      "sha256": "25a749e73dd0365e277c70648680ea12b1bb494808bf4b2e54418280f036e964",
+      "version": "1.20.9ubuntu3"
+    },
+    {
+      "arch": "all",
+      "filename": "dpkg-dev_1.20.9ubuntu3_all.deb",
+      "package": "dpkg-dev",
+      "sha256": "08857f40d489ad38682f404520c7b38152a7c87f116e074938b230d63c14b788",
+      "version": "1.20.9ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "dwz_0.14-1build1_arm64.deb",
+      "package": "dwz",
+      "sha256": "bcf16d3c627e2e4dff6289702aaef949282a954baa450cef410354d1495d1360",
+      "version": "0.14-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "e2fsprogs_1.46.4-1ubuntu1_arm64.deb",
+      "package": "e2fsprogs",
+      "sha256": "1fd1e1df18398d3b67f466672da9be9c13dd98e7759b29c7997046d71a55b03b",
+      "version": "1.46.4-1ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "emacsen-common_3.0.4_all.deb",
+      "package": "emacsen-common",
+      "sha256": "3563c905c330851ebe707ec3ed0604b681e9e76e6c31b86fd913155ab138f98d",
+      "version": "3.0.4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "fakeroot_1.25.3-1.1ubuntu3_arm64.deb",
+      "package": "fakeroot",
+      "sha256": "cf6437b5c511b68ef9063275f1325c9d6912f33b04451b8c0249dea22c1b0486",
+      "version": "1.25.3-1.1ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "file_5.41-2_arm64.deb",
+      "package": "file",
+      "sha256": "2f38e7e071c79dca28d4909c5300dd9ff34aa61c911c9daa5dee8b7ab1bd52e5",
+      "version": "1:5.41-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "findutils_4.8.0-1ubuntu2_arm64.deb",
+      "package": "findutils",
+      "sha256": "ea6c6c952e31e3728b793845e3d87f887cb67d8370ca9cf0410287fbad513f4d",
+      "version": "4.8.0-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "fontconfig_2.13.1-4.2ubuntu4_arm64.deb",
+      "package": "fontconfig",
+      "sha256": "6b62cedb0bde037f64e4484e178d54b71d34d296ddbddb68b5c8f01abc24cedd",
+      "version": "2.13.1-4.2ubuntu4"
+    },
+    {
+      "arch": "all",
+      "filename": "fontconfig-config_2.13.1-4.2ubuntu4_all.deb",
+      "package": "fontconfig-config",
+      "sha256": "e4f6d87cf807e73e0a7bde02cb8394f097b2d3ba4161850ea601a7c0f0e32e93",
+      "version": "2.13.1-4.2ubuntu4"
+    },
+    {
+      "arch": "all",
+      "filename": "fonts-dejavu-core_2.37-2build1_all.deb",
+      "package": "fonts-dejavu-core",
+      "sha256": "c33fe8bf33b50d99d6448804a090123b1bbba37d7a8703c630695676d110a47d",
+      "version": "2.37-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "g++_11.2.0-1ubuntu1_arm64.deb",
+      "package": "g++",
+      "sha256": "43ae21a89a37094b4f744196b8650da39aa69cee1fa881232db36d06d5c18ad7",
+      "version": "4:11.2.0-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "g++-11_11.2.0-12ubuntu1_arm64.deb",
+      "package": "g++-11",
+      "sha256": "d43af5c87842d682eb8820e2bbc437d2dc4a46e39523026b5f1e06ec325f04e9",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gcc_11.2.0-1ubuntu1_arm64.deb",
+      "package": "gcc",
+      "sha256": "426deed543cc32f388ad8336354e312fb76a47450194d2d775d855ad5878f82e",
+      "version": "4:11.2.0-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gcc-11_11.2.0-12ubuntu1_arm64.deb",
+      "package": "gcc-11",
+      "sha256": "8c7b31f3bb03c96cd7cb7e0b77fb98b851dd80dc4498b9b433b807a8e9405ec1",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gcc-11-base_11.2.0-12ubuntu1_arm64.deb",
+      "package": "gcc-11-base",
+      "sha256": "030b1a2d8c5ff1be21dd97893679f8ec769cc257449947e110be487c10c39279",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gettext_0.21-4ubuntu3_arm64.deb",
+      "package": "gettext",
+      "sha256": "6be17eab7e778fe6ace03e82d6fa52691b1388282c5aa1eef04f2784635715fd",
+      "version": "0.21-4ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gettext-base_0.21-4ubuntu3_arm64.deb",
+      "package": "gettext-base",
+      "sha256": "92086db1e1d32bbca31b13da7773ddc470171782aa846ded0852096c1b98c3b1",
+      "version": "0.21-4ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-atk-1.0_2.36.0-3_arm64.deb",
+      "package": "gir1.2-atk-1.0",
+      "sha256": "d562420bae3e62741b46097cd725323726da544057361da4dd0618409513a6f1",
+      "version": "2.36.0-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-atspi-2.0_2.42.0-2ubuntu1_arm64.deb",
+      "package": "gir1.2-atspi-2.0",
+      "sha256": "3760342e9614223c1cd4fdfa0057a1c73bb699cecb95a8ce639cd2ae17916272",
+      "version": "2.42.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-dbusmenu-glib-0.4_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "gir1.2-dbusmenu-glib-0.4",
+      "sha256": "a2405892f6cb66783ca1835f48bbcd755decc2380fe50566441d8aef94a7bfd9",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-dbusmenu-gtk-0.4_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "gir1.2-dbusmenu-gtk-0.4",
+      "sha256": "b2f71962927e70566b26b0e970d8bb351881a93b830754590a421cbdd0841484",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-dbusmenu-gtk3-0.4_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "gir1.2-dbusmenu-gtk3-0.4",
+      "sha256": "7bf082b4da0fdd13fa2983434d00080c3524a5bb17254a8a687cca08729ba2bb",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-freedesktop_1.70.0-2ubuntu1_arm64.deb",
+      "package": "gir1.2-freedesktop",
+      "sha256": "c5bc78a9f2e616a39ba175b448f70e159af6223a9a76d6c3ca94673ea1de24ba",
+      "version": "1.70.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-gdkpixbuf-2.0_2.42.6+dfsg-2ubuntu2_arm64.deb",
+      "package": "gir1.2-gdkpixbuf-2.0",
+      "sha256": "5c8ebbcadcaa8d29e5aef0a970ec550aed3c76dce3ee4e841824020aac6722e2",
+      "version": "2.42.6+dfsg-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-glib-2.0_1.70.0-2ubuntu1_arm64.deb",
+      "package": "gir1.2-glib-2.0",
+      "sha256": "222f73e4546f9144fcff3177dedeb93cbe1029c221420b5b4bcadaa7e0e18832",
+      "version": "1.70.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-gtk-2.0_2.24.33-2ubuntu1_arm64.deb",
+      "package": "gir1.2-gtk-2.0",
+      "sha256": "aa87924601c6693a4a1142ca513c43825b38d5b88164c3942c2f8412436610e5",
+      "version": "2.24.33-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-gtk-3.0_3.24.30-3ubuntu1_arm64.deb",
+      "package": "gir1.2-gtk-3.0",
+      "sha256": "2abe040d3f0314b0c770f0c04a20ab370b9f56bbc1aebbb89e658509fbd4ac1d",
+      "version": "3.24.30-3ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-harfbuzz-0.0_2.7.4-1ubuntu2_arm64.deb",
+      "package": "gir1.2-harfbuzz-0.0",
+      "sha256": "ca3f2397fda68885567aab4a38ee56b70b2b2eef6a372513abcf3543f393bb6d",
+      "version": "2.7.4-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gir1.2-pango-1.0_1.48.10+ds1-1_arm64.deb",
+      "package": "gir1.2-pango-1.0",
+      "sha256": "27681207977a251c18c4560ed2a4fa674078b8c729b8b971b2a1b09c62a56889",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gobject-introspection_1.70.0-2ubuntu1_arm64.deb",
+      "package": "gobject-introspection",
+      "sha256": "d71a99278d7c06beafff932dd8f83abed636f3802da8076212a4574ca3396c64",
+      "version": "1.70.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gpg_2.2.27-2ubuntu1_arm64.deb",
+      "package": "gpg",
+      "sha256": "5d9a8891678aff0c7aecfd425bd884582c68554a11cc125bd8d030df823dbf5c",
+      "version": "2.2.27-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gpg-agent_2.2.27-2ubuntu1_arm64.deb",
+      "package": "gpg-agent",
+      "sha256": "b77fa8dfab0acc430fb4105a861969790835abd2f08e4dbc244af3fb3abf69bb",
+      "version": "2.2.27-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gpgconf_2.2.27-2ubuntu1_arm64.deb",
+      "package": "gpgconf",
+      "sha256": "cc3fc05b47de1218652e04b499be204b4837708012c028b029ca7792a41c7f5f",
+      "version": "2.2.27-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gpgv_2.2.27-2ubuntu1_arm64.deb",
+      "package": "gpgv",
+      "sha256": "516729cb97bc2dff3ed1d4436e651e71e6e78613cd735804f736c08c89f27625",
+      "version": "2.2.27-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "grep_3.7-1_arm64.deb",
+      "package": "grep",
+      "sha256": "d01af5620609695e8c3cc9dd01de17eb6fe14ff5c4b03f92dacfd431a4b8a688",
+      "version": "3.7-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "groff-base_1.22.4-7_arm64.deb",
+      "package": "groff-base",
+      "sha256": "372868ee1d8f47964983e00546f7af3ac7c1e6672b3b39adae9b9e98c1560a55",
+      "version": "1.22.4-7"
+    },
+    {
+      "arch": "all",
+      "filename": "gtk-doc-tools_1.33.2-1_all.deb",
+      "package": "gtk-doc-tools",
+      "sha256": "ca67f0dc9df0592f76ec48aff69fa5c0521c0028688b581cb80b11b66966a445",
+      "version": "1.33.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gtk-sharp2-gapi_2.12.40-3_arm64.deb",
+      "package": "gtk-sharp2-gapi",
+      "sha256": "f1b91b1f415f669d1c7712552d8d43d0eec5c32635a418bbaa311264fe671957",
+      "version": "2.12.40-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gtk-sharp3-gapi_2.99.3-4_arm64.deb",
+      "package": "gtk-sharp3-gapi",
+      "sha256": "220502578f529c3de9668198823586e050cb509c0c6e301311531cec32873870",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gtk-update-icon-cache_3.24.30-3ubuntu1_arm64.deb",
+      "package": "gtk-update-icon-cache",
+      "sha256": "1d32e9f69428e75481f8716bc6b242abd0c6e4941424db7e1cc8bba8bf56f987",
+      "version": "3.24.30-3ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "gzip_1.10-4ubuntu2_arm64.deb",
+      "package": "gzip",
+      "sha256": "ca145f43941d55d159ae1ea261d40295286a3f45e428406a8fabb069c1ff9d22",
+      "version": "1.10-4ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "hicolor-icon-theme_0.17-2_all.deb",
+      "package": "hicolor-icon-theme",
+      "sha256": "9000eb98868252261978ff49501c0ace3124cb369c395e9f5015ddc556fe2ba6",
+      "version": "0.17-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "hostname_3.23ubuntu1_arm64.deb",
+      "package": "hostname",
+      "sha256": "db12b5732194ae9079675b99c122b1a67b0bce1b479c17af9d612ffc87db6279",
+      "version": "3.23ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "humanity-icon-theme_0.6.15_all.deb",
+      "package": "humanity-icon-theme",
+      "sha256": "861b3767d7d2e5b472bc9d001dd959be976b92e61cead0879ccb03fe4a2bde40",
+      "version": "0.6.15"
+    },
+    {
+      "arch": "arm64",
+      "filename": "icu-devtools_67.1-7ubuntu1_arm64.deb",
+      "package": "icu-devtools",
+      "sha256": "601daa46c6cbad9239863e18cdf109e1d2042220231e892a4a95a178572ab12e",
+      "version": "67.1-7ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "init_1.61_arm64.deb",
+      "package": "init",
+      "sha256": "dca644cfc593501423bae6f712c1ed17eda6016c9421fbdf323a83ff79e09ef7",
+      "version": "1.61"
+    },
+    {
+      "arch": "all",
+      "filename": "init-system-helpers_1.61_all.deb",
+      "package": "init-system-helpers",
+      "sha256": "290a974041961f990cbbd913e624a3a6ff4a4cd307f34b68ac732f37eafa7c8c",
+      "version": "1.61"
+    },
+    {
+      "arch": "all",
+      "filename": "intltool_0.51.0-6_all.deb",
+      "package": "intltool",
+      "sha256": "825bd197ab83be4acc1c42b3aead4badbbac62967367914eb3b1acc6b18d358b",
+      "version": "0.51.0-6"
+    },
+    {
+      "arch": "all",
+      "filename": "intltool-debian_0.35.0+20060710.5_all.deb",
+      "package": "intltool-debian",
+      "sha256": "697b4fb9d5380cd63fc03106ecafa8bbcf0f26547421007c11b81b4f2e0ebf1a",
+      "version": "0.35.0+20060710.5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libacl1_2.2.53-10ubuntu2_arm64.deb",
+      "package": "libacl1",
+      "sha256": "60dfad37a522878b7a156bce97da7ec09c6295bccceba9d74db8eace40dc2d32",
+      "version": "2.2.53-10ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libapparmor1_3.0.3-0ubuntu5_arm64.deb",
+      "package": "libapparmor1",
+      "sha256": "7acc6bde7e917a2f661019a5e705e7c47fc6b64ab7d71717aaf59160bbd56e47",
+      "version": "3.0.3-0ubuntu5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libapt-pkg6.0_2.3.13_arm64.deb",
+      "package": "libapt-pkg6.0",
+      "sha256": "ed85924bf7e5b0ca43fc77201c71cf14a8dcceaf71cf9b77c279f430fbb171ed",
+      "version": "2.3.13"
+    },
+    {
+      "arch": "all",
+      "filename": "libarchive-zip-perl_1.68-1_all.deb",
+      "package": "libarchive-zip-perl",
+      "sha256": "44273c5a4315f3ef76c43d6cf15ff40f4075a787d8d6005d81275c2dc88035e2",
+      "version": "1.68-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libarchive13_3.4.3-2build1_arm64.deb",
+      "package": "libarchive13",
+      "sha256": "dd173633a510e8d1a60f48aa69418c47438084ec29b707fbb2432f0c69964d84",
+      "version": "3.4.3-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libargon2-1_0~20171227-0.2build22_arm64.deb",
+      "package": "libargon2-1",
+      "sha256": "96793608d798e6fefa12fa24cddcc6eb0b98db38decbfbcf1105fe73c3c2443d",
+      "version": "0~20171227-0.2build22"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libasan6_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libasan6",
+      "sha256": "283d424d6e5a541ffc52d55d22b876b26faeaa7587e3d9cb2b2eae6dfc053e59",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libassuan0_2.5.5-1_arm64.deb",
+      "package": "libassuan0",
+      "sha256": "590270350a7a472b5542e4b926a27627b8cfc9b12dafed7e77b93172fd550931",
+      "version": "2.5.5-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatk-bridge2.0-0_2.38.0-2_arm64.deb",
+      "package": "libatk-bridge2.0-0",
+      "sha256": "0240033a521211e360822f5735294d9bebcf58cce7b628955746a563a5c06fdf",
+      "version": "2.38.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatk-bridge2.0-dev_2.38.0-2_arm64.deb",
+      "package": "libatk-bridge2.0-dev",
+      "sha256": "17261a24e30c06453fe306cc4efb60aea54c06d9fb321d4469ec32d4c0b8cb1e",
+      "version": "2.38.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatk1.0-0_2.36.0-3_arm64.deb",
+      "package": "libatk1.0-0",
+      "sha256": "8c207a590796333d0e8602fbe527743166c6d5bab1d5a8496f70c39c659b38e7",
+      "version": "2.36.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "libatk1.0-data_2.36.0-3_all.deb",
+      "package": "libatk1.0-data",
+      "sha256": "a386e85e1205a248b3d9cb98cd7c1c832ef864a6deb4f7d7ff01f421ae32ed72",
+      "version": "2.36.0-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatk1.0-dev_2.36.0-3_arm64.deb",
+      "package": "libatk1.0-dev",
+      "sha256": "3d706e60d0fd5c15bd9013915ff5bd76b90f6bdafc0dcec08faff0796072d6db",
+      "version": "2.36.0-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatk3.0-cil_2.99.3-4_arm64.deb",
+      "package": "libatk3.0-cil",
+      "sha256": "c7522fa502c4d4adc0af860e103c5032f4b868c5ee4806f948403a8c4105b651",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatomic1_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libatomic1",
+      "sha256": "b7c39bfef9c31aac129f358d5d403d79a13225f376e3df4b1638078d8cb1b08b",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatspi2.0-0_2.42.0-2ubuntu1_arm64.deb",
+      "package": "libatspi2.0-0",
+      "sha256": "26886b204d95f315ed5979c030fd5896b60d24854dd7107cefdf59c21f6c2a92",
+      "version": "2.42.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libatspi2.0-dev_2.42.0-2ubuntu1_arm64.deb",
+      "package": "libatspi2.0-dev",
+      "sha256": "d2b4120df610ae60f8bda4dd56de34a0c179a1295303ac06d0332f69f74b19da",
+      "version": "2.42.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libattr1_2.5.1-1_arm64.deb",
+      "package": "libattr1",
+      "sha256": "63300f3722be6f98e39326ebc85263f3bf7271bf5e737746097b0bc2bf00617f",
+      "version": "1:2.5.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libaudit-common_3.0-2ubuntu3_all.deb",
+      "package": "libaudit-common",
+      "sha256": "bc040c92df2fba4e5cc87fa4be9dec63e846585bfdbb8606de9ed6abc42849a1",
+      "version": "1:3.0-2ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libaudit1_3.0-2ubuntu3_arm64.deb",
+      "package": "libaudit1",
+      "sha256": "f85349d69e4236bb59235b118958f99a3c6da86f056c01b522dc2c858672c445",
+      "version": "1:3.0-2ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libavahi-client3_0.8-5ubuntu4_arm64.deb",
+      "package": "libavahi-client3",
+      "sha256": "fdde7aacf8de50e1414ffa4e180663bc93fd561bdf69f6debe9c551203f3f588",
+      "version": "0.8-5ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libavahi-common-data_0.8-5ubuntu4_arm64.deb",
+      "package": "libavahi-common-data",
+      "sha256": "45a44cd0c7f2900d9090f67348cc304f3d4401485bf5ab809909013d8b251082",
+      "version": "0.8-5ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libavahi-common3_0.8-5ubuntu4_arm64.deb",
+      "package": "libavahi-common3",
+      "sha256": "3e0c7ae8157c99536bd76100454123e03cfeb599cbccf68f23bc1540a8108dd0",
+      "version": "0.8-5ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libayatana-ido3-0.4-0_0.9.0-1_arm64.deb",
+      "package": "libayatana-ido3-0.4-0",
+      "sha256": "74f2f76c83f194903a59762a42274569f19546db62428aae94eb528436c7a17e",
+      "version": "0.9.0-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libayatana-indicator-dev_0.8.4-4ubuntu2_arm64.deb",
+      "package": "libayatana-indicator-dev",
+      "sha256": "29d1276725887f5e8f9e871bd8c6180241e4c9621795e8c499504cc5d8d50200",
+      "version": "0.8.4-4ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libayatana-indicator3-7_0.8.4-4ubuntu2_arm64.deb",
+      "package": "libayatana-indicator3-7",
+      "sha256": "defe9ee8bec8187c1ddf7a546fe85dd94a33ab1020f28926756918cacc4d4b9e",
+      "version": "0.8.4-4ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libayatana-indicator3-dev_0.8.4-4ubuntu2_arm64.deb",
+      "package": "libayatana-indicator3-dev",
+      "sha256": "c6c23f17a35102ef72945d3c68783969e364ec80f43809692b7c2dc9d4f6f4c9",
+      "version": "0.8.4-4ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libayatana-indicator7_0.8.4-4ubuntu2_arm64.deb",
+      "package": "libayatana-indicator7",
+      "sha256": "66e5d2d84d56ccd1969ed9a3e743a1660be54f4d77da97cc3cbe901ee536078c",
+      "version": "0.8.4-4ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libbinutils_2.37-10ubuntu1_arm64.deb",
+      "package": "libbinutils",
+      "sha256": "27d20be790c83105219d724ab61d238b0289f432fbbe590a9bdaf80dd6909cdd",
+      "version": "2.37-10ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libblkid-dev_2.37.2-4ubuntu1_arm64.deb",
+      "package": "libblkid-dev",
+      "sha256": "03ae2a2487469df44fd3060a42f898a553496f06942c19ed2797c13a508d77f9",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libblkid1_2.37.2-4ubuntu1_arm64.deb",
+      "package": "libblkid1",
+      "sha256": "4441cf7cee3e963dadcca359b781d25dad05eafc2025a4838a9a0f9168e0fa76",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libbrotli-dev_1.0.9-2build4_arm64.deb",
+      "package": "libbrotli-dev",
+      "sha256": "3eada36ee0109cbf037c0410885f01469df572d2e8b8f222112e4b3417e4887c",
+      "version": "1.0.9-2build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libbrotli1_1.0.9-2build4_arm64.deb",
+      "package": "libbrotli1",
+      "sha256": "bcfe130597be62719bb00b1a818119914d128b72c642be37d10f64fbb82b283e",
+      "version": "1.0.9-2build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libbsd0_0.11.3-1ubuntu3_arm64.deb",
+      "package": "libbsd0",
+      "sha256": "fd52123d9c0cd1d409ad89d15eeb112429caf7cf7cffc3ce746e1f4070d25dcc",
+      "version": "0.11.3-1ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libbz2-1.0_1.0.8-5_arm64.deb",
+      "package": "libbz2-1.0",
+      "sha256": "6fbd4e15495b795d24944cdf4671e88f7ea234df91f893f352c63ab86ce73a8f",
+      "version": "1.0.8-5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libc-bin_2.34-0ubuntu3_arm64.deb",
+      "package": "libc-bin",
+      "sha256": "94e79daecaec9e7cd3dd71caed801747ee3e5629331cb35aacd7641aa17eb481",
+      "version": "2.34-0ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libc-dev-bin_2.34-0ubuntu3_arm64.deb",
+      "package": "libc-dev-bin",
+      "sha256": "711d97b7ee201a7dafb8a7b106307110d0cb10cbcd24acfece5bd5bebe5fd1dc",
+      "version": "2.34-0ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libc6_2.34-0ubuntu3_arm64.deb",
+      "package": "libc6",
+      "sha256": "dff0d86afaa4e5e0db9cfffe0ea9d38449df70a5d7ea7d4dcf2b8e217e43aad5",
+      "version": "2.34-0ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libc6-dev_2.34-0ubuntu3_arm64.deb",
+      "package": "libc6-dev",
+      "sha256": "8a23302fe3efd1aeb044d55fa1d3954c80c84d999a80e1ef26eff5d882e57991",
+      "version": "2.34-0ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcairo-gobject2_1.16.0-5ubuntu2_arm64.deb",
+      "package": "libcairo-gobject2",
+      "sha256": "956dd8c7fc919a7ae47d2c45ac55b3843d664e4d004a49f5701a0b5299a9bfd1",
+      "version": "1.16.0-5ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcairo-script-interpreter2_1.16.0-5ubuntu2_arm64.deb",
+      "package": "libcairo-script-interpreter2",
+      "sha256": "39badf224f2ea1488322afed2cc306841e648efc607820fbb70e0148ef991607",
+      "version": "1.16.0-5ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcairo1.10-cil_2.99.3-4_arm64.deb",
+      "package": "libcairo1.10-cil",
+      "sha256": "af4686d6fc9b12ba3b6ef2bd699f6831c7992fd1b6d6eac2ac2dbf9fd0d15754",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcairo2_1.16.0-5ubuntu2_arm64.deb",
+      "package": "libcairo2",
+      "sha256": "29c47595fb1bd0a0708b9eeff821b324d9b4d84d5ad5c201e30e4ca9309cfd4f",
+      "version": "1.16.0-5ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcairo2-dev_1.16.0-5ubuntu2_arm64.deb",
+      "package": "libcairo2-dev",
+      "sha256": "9f7ccb9965a3be0ede2e8b3466e9bc7e6276491ed3c6b888b363f3ecc1058917",
+      "version": "1.16.0-5ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcap-ng0_0.7.9-2.2build2_arm64.deb",
+      "package": "libcap-ng0",
+      "sha256": "1f10a39ca0ae687ba2a6352033199ebe865edeeb8ddf1b688c4cd9ff527e26fb",
+      "version": "0.7.9-2.2build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcap2_2.44-1build2_arm64.deb",
+      "package": "libcap2",
+      "sha256": "1cce02da0d9b04d53fda6ab1cb0e837fd665f1c06896c034856e72e8967ed300",
+      "version": "1:2.44-1build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcc1-0_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libcc1-0",
+      "sha256": "094605cf7692afacd9bfc70dcbf3ca44b2daa39fe03f7996a0225feedfb76cae",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcolord2_1.4.5-3build1_arm64.deb",
+      "package": "libcolord2",
+      "sha256": "179720560b2708a760e19075b1fea13a3c36361e2c924c6b136dbd828b8b1579",
+      "version": "1.4.5-3build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcom-err2_1.46.4-1ubuntu1_arm64.deb",
+      "package": "libcom-err2",
+      "sha256": "79619aba62043e6a0822e51444093dcb7ab7bc772b1356249ca808ab3fe3f683",
+      "version": "1.46.4-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcrypt-dev_4.4.26-1_arm64.deb",
+      "package": "libcrypt-dev",
+      "sha256": "c4fc26529a92ba2aa0874271838f14c0184b0de229d95c2d496f96cb07dd316b",
+      "version": "1:4.4.26-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcrypt1_4.4.26-1_arm64.deb",
+      "package": "libcrypt1",
+      "sha256": "a689f33361310257552e3c092ebe4010fbd52eb2ece0f4b9e2e85d13d2df6467",
+      "version": "1:4.4.26-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcryptsetup12_2.4.2-1ubuntu4_arm64.deb",
+      "package": "libcryptsetup12",
+      "sha256": "f8d611e1024c93d21102173cd8638048dc075feaf653f23841e92ea796c0daab",
+      "version": "2:2.4.2-1ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libctf-nobfd0_2.37-10ubuntu1_arm64.deb",
+      "package": "libctf-nobfd0",
+      "sha256": "86eee8eb602e799f37fbd33a4b1928eaa627ef592a28540fe4b11af633b550ea",
+      "version": "2.37-10ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libctf0_2.37-10ubuntu1_arm64.deb",
+      "package": "libctf0",
+      "sha256": "3e4d526d720defd5f35ccc97bd18828576e5daf32a7af40b795cbabc125cc8a5",
+      "version": "2.37-10ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcups2_2.3.3op2-7ubuntu2_arm64.deb",
+      "package": "libcups2",
+      "sha256": "eb4137b526362e9071d99b0c313220f54242e8d0af253de5b244637be8da565f",
+      "version": "2.3.3op2-7ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libcurl4_7.74.0-1.3ubuntu3_arm64.deb",
+      "package": "libcurl4",
+      "sha256": "762045a9dcf20939684ad0edcad9d7b5a86a7de0753d3e307b5728d350e725d3",
+      "version": "7.74.0-1.3ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdatrie-dev_0.2.13-1ubuntu3_arm64.deb",
+      "package": "libdatrie-dev",
+      "sha256": "6a09dc23c5a66189e65af277d8b6e1da82c63364dafcae4608fdf155be734ffc",
+      "version": "0.2.13-1ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdatrie1_0.2.13-1ubuntu3_arm64.deb",
+      "package": "libdatrie1",
+      "sha256": "504c7d23d62d90afdcc988cf353fdcf568903c1179215663d28fbfc00741ad75",
+      "version": "0.2.13-1ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdb5.3_5.3.28+dfsg1-0.8ubuntu2_arm64.deb",
+      "package": "libdb5.3",
+      "sha256": "9f704e20eba8aa4417500e719f2950425d13b9df9e1ff9b98e0d0e4eb22de16b",
+      "version": "5.3.28+dfsg1-0.8ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbus-1-3_1.12.20-2ubuntu2_arm64.deb",
+      "package": "libdbus-1-3",
+      "sha256": "2400a55347a2e9fd92b64d76099daa1079b47307d2f2c15e3912a85a41d84fd1",
+      "version": "1.12.20-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbus-1-dev_1.12.20-2ubuntu2_arm64.deb",
+      "package": "libdbus-1-dev",
+      "sha256": "97f64f23b8e696b4029c5861e44a7fba6346192021aa19cc30e53b713ccc8c5b",
+      "version": "1.12.20-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbus-glib-1-2_0.112-2_arm64.deb",
+      "package": "libdbus-glib-1-2",
+      "sha256": "19cd1c558a618b7808bbf17cdb604c24c2ce29da38628b7d1d0e6c0b41e87a6a",
+      "version": "0.112-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbus-glib-1-dev_0.112-2_arm64.deb",
+      "package": "libdbus-glib-1-dev",
+      "sha256": "43f4897893632d9a4ff69a6d1e6c93e16e72b38266f5f73b6011c95a674c0717",
+      "version": "0.112-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbus-glib-1-dev-bin_0.112-2_arm64.deb",
+      "package": "libdbus-glib-1-dev-bin",
+      "sha256": "91a95b7b69d54a0e1270edc0bd81d16644ef3a78108c0d192c054a8c2297f305",
+      "version": "0.112-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbusmenu-glib-dev_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "libdbusmenu-glib-dev",
+      "sha256": "355dbcb4aed47f3e60a8971aa9d9be6de7ab5a5d1c832a3037f0676fd0ee2424",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbusmenu-glib4_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "libdbusmenu-glib4",
+      "sha256": "5fc549e3baef10d7d7623d61bb534bdbb5291f8a62d3e11e2c8d4faad62e322c",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbusmenu-gtk-dev_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "libdbusmenu-gtk-dev",
+      "sha256": "3deb2260e63aa8ba86b5cdcdd6e753fed14446d98d46ff3dae6f48fe0b23bf42",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbusmenu-gtk3-4_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "libdbusmenu-gtk3-4",
+      "sha256": "e696f20ef0edeeedbb60ec77fc3b28f629b493dc007a54ed84b57185917a813a",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbusmenu-gtk3-dev_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "libdbusmenu-gtk3-dev",
+      "sha256": "2023f7184ef3e0472c949952f56e3b6cbf7846be972dd8233d027e82ca98e6ad",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbusmenu-gtk4_16.04.1+18.10.20180917-0ubuntu7_arm64.deb",
+      "package": "libdbusmenu-gtk4",
+      "sha256": "555c466f892136123f90cd757f1945ee7f57640182d7e74508ed2b950cae3b3e",
+      "version": "16.04.1+18.10.20180917-0ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdbustest1_16.10.0~bzr100+repack1-4.1_arm64.deb",
+      "package": "libdbustest1",
+      "sha256": "66ffbc261fba8f94cbc21feb9ed069509ed4285132655451e89547b707af827a",
+      "version": "16.10.0~bzr100+repack1-4.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdconf1_0.40.0-2_arm64.deb",
+      "package": "libdconf1",
+      "sha256": "e88b6c889cfd43bd7eca61529610af54afbec56b6b70f9a8686b34e8c5721dd9",
+      "version": "0.40.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdebconfclient0_0.256ubuntu4_arm64.deb",
+      "package": "libdebconfclient0",
+      "sha256": "88daace501544188fed233761399629d4f202e09dd0f01b753841e4f2ede4c4d",
+      "version": "0.256ubuntu4"
+    },
+    {
+      "arch": "all",
+      "filename": "libdebhelper-perl_13.5.2ubuntu1_all.deb",
+      "package": "libdebhelper-perl",
+      "sha256": "3f4b47143298b8af5b69435e73b09df0f3d6316d90a9882bab46d20f15f4b3e0",
+      "version": "13.5.2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdeflate-dev_1.8-1ubuntu1_arm64.deb",
+      "package": "libdeflate-dev",
+      "sha256": "5d242a96f376fcc70198619b9619e40185090226544a11622d88c3461a2f9640",
+      "version": "1.8-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdeflate0_1.8-1ubuntu1_arm64.deb",
+      "package": "libdeflate0",
+      "sha256": "049b7234a370d87ffabc7b418d905d7a910a666ac812e008bb648c4c51258676",
+      "version": "1.8-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdevmapper1.02.1_1.02.175-2.1ubuntu3_arm64.deb",
+      "package": "libdevmapper1.02.1",
+      "sha256": "141fabe66a4c2333a4272c200f33397e44b0e630cf9052f7b70a3976a055133e",
+      "version": "2:1.02.175-2.1ubuntu3"
+    },
+    {
+      "arch": "all",
+      "filename": "libdpkg-perl_1.20.9ubuntu3_all.deb",
+      "package": "libdpkg-perl",
+      "sha256": "ec693e0766bd543010f2694438ed599b714a1fc82aa07d5fdbde4607e66e6adc",
+      "version": "1.20.9ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdrm-amdgpu1_2.4.107-8ubuntu1_arm64.deb",
+      "package": "libdrm-amdgpu1",
+      "sha256": "38cc78bc6236c25354708b990ba99d213b36122e9ba05b642f61aabe6f1b6352",
+      "version": "2.4.107-8ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "libdrm-common_2.4.107-8ubuntu1_all.deb",
+      "package": "libdrm-common",
+      "sha256": "6cde4e036a6570d1f7e914d177db8a7c1190f6970e5f793be583ec8c9ee50007",
+      "version": "2.4.107-8ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdrm-nouveau2_2.4.107-8ubuntu1_arm64.deb",
+      "package": "libdrm-nouveau2",
+      "sha256": "593c7e0efb650ea1c3a5abc51179ad2e5655ae89a85df3b6cd28680c6a129342",
+      "version": "2.4.107-8ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdrm-radeon1_2.4.107-8ubuntu1_arm64.deb",
+      "package": "libdrm-radeon1",
+      "sha256": "937f309de3d9d286f39623f570f2d3558abdf8724c4a9cc1983d05e7abcad1da",
+      "version": "2.4.107-8ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdrm2_2.4.107-8ubuntu1_arm64.deb",
+      "package": "libdrm2",
+      "sha256": "aaefce4ff119c490f0bc754917698a4e6e2665a2a78f76caebeea0c6b6bba69c",
+      "version": "2.4.107-8ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libdw1_0.186-1_arm64.deb",
+      "package": "libdw1",
+      "sha256": "832e608aab5d5bcd63037dab5a7d1cbc81cdf590dfdfcd21a24547a438e1d26e",
+      "version": "0.186-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libedit2_3.1-20210910-1_arm64.deb",
+      "package": "libedit2",
+      "sha256": "a34603c9228327d607526bb89ed5d23c0c2da08fdbfb5ca2832c6e175a409df5",
+      "version": "3.1-20210910-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libegl-dev_1.3.4-2_arm64.deb",
+      "package": "libegl-dev",
+      "sha256": "6deb77260bc47f94f2562da35dc2f16a3050a3fa6caf78cdc5518c00096c48fb",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libegl-mesa0_21.2.6-1_arm64.deb",
+      "package": "libegl-mesa0",
+      "sha256": "37ed23dda444b5dd1307a3abcce99802fcdd4afc7c37573fcc4057b9c3ae0e77",
+      "version": "21.2.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libegl1_1.3.4-2_arm64.deb",
+      "package": "libegl1",
+      "sha256": "1263474e42060fff11f035f0368c699e1d694b6cd6099d167177c194cb665f5b",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libegl1-mesa-dev_21.2.6-1_arm64.deb",
+      "package": "libegl1-mesa-dev",
+      "sha256": "393df2350ca5dadead6157440c8c25b1e9923e27ec9a20479fd243d60a3c6f79",
+      "version": "21.2.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libelf1_0.186-1_arm64.deb",
+      "package": "libelf1",
+      "sha256": "65f3b30735c93d885a829c489567c8287dd1f17d168de6b856cdbd871c00000c",
+      "version": "0.186-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libencode-locale-perl_1.05-1.1_all.deb",
+      "package": "libencode-locale-perl",
+      "sha256": "0dce35b5ca74a33ce2a45fc35a56be5be17b2292cdea36e97e99a28e35a4f852",
+      "version": "1.05-1.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libepoxy-dev_1.5.9-2_arm64.deb",
+      "package": "libepoxy-dev",
+      "sha256": "5ec1353467ad4ea8465234f63fd1bedbf875020762703d0b47104ef1892d3f46",
+      "version": "1.5.9-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libepoxy0_1.5.9-2_arm64.deb",
+      "package": "libepoxy0",
+      "sha256": "32f9dc9c65a4423e21eddf2e21678602cea66d0ff776b5d6e0c8d6f365100c10",
+      "version": "1.5.9-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libexif12_0.6.24-1_arm64.deb",
+      "package": "libexif12",
+      "sha256": "8723fee6e8c66c4e7272883b9fd060600f3bb7c5c8753b2240b15df0b9cc32df",
+      "version": "0.6.24-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libexpat1_2.4.1-3_arm64.deb",
+      "package": "libexpat1",
+      "sha256": "aa7416cd4c2a4935d00e1ce5dfff9426782511feb80390d6687f71125c8815ef",
+      "version": "2.4.1-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libexpat1-dev_2.4.1-3_arm64.deb",
+      "package": "libexpat1-dev",
+      "sha256": "b6824c7d26831db27fa2b2f2a60789674e2ed1c940c559f85ba16f5cce2fa10c",
+      "version": "2.4.1-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libext2fs2_1.46.4-1ubuntu1_arm64.deb",
+      "package": "libext2fs2",
+      "sha256": "fd327eb727da93692fa3130843db97c67ec6e7210a233c3a61508f1efb974b19",
+      "version": "1.46.4-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfakeroot_1.25.3-1.1ubuntu3_arm64.deb",
+      "package": "libfakeroot",
+      "sha256": "7221f6bddb046f263c9fe20e4ccdd48bf8558c3dfa0d1fc2f4944cb1caf0c133",
+      "version": "1.25.3-1.1ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libffi-dev_3.4.2-1ubuntu5_arm64.deb",
+      "package": "libffi-dev",
+      "sha256": "f0f35fd01df85729e478222f312864f1d530c146b6a58fffd1de6c7d160bba9c",
+      "version": "3.4.2-1ubuntu5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libffi8_3.4.2-1ubuntu5_arm64.deb",
+      "package": "libffi8",
+      "sha256": "03f5cb93a26733969b44bead4df4d16cb30c2c3fc2cd0eadc1d8dd5412d600da",
+      "version": "3.4.2-1ubuntu5"
+    },
+    {
+      "arch": "all",
+      "filename": "libfile-listing-perl_6.14-1_all.deb",
+      "package": "libfile-listing-perl",
+      "sha256": "bafc6c762cb6328e8c549c7f3abbf25a79f3d5c4384fb00d5ad424d23554347d",
+      "version": "6.14-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libfile-stripnondeterminism-perl_1.12.1-1_all.deb",
+      "package": "libfile-stripnondeterminism-perl",
+      "sha256": "8fa5bef0185bb91db407303dc0e96eb2515f2b022d8ac1c815f78818d0e92490",
+      "version": "1.12.1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfontconfig1_2.13.1-4.2ubuntu4_arm64.deb",
+      "package": "libfontconfig1",
+      "sha256": "3ad2f7ac8eb19ada9804bfd22ac6305864ccf25acfdee636a719274565e9b943",
+      "version": "2.13.1-4.2ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfontconfig1-dev_2.13.1-4.2ubuntu4_arm64.deb",
+      "package": "libfontconfig1-dev",
+      "sha256": "8e2098212c8aa7edfd13489cbab5897f9fc5b8ac67ca3f67050a6dc93b85e43c",
+      "version": "2.13.1-4.2ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfontenc1_1.1.4-1build2_arm64.deb",
+      "package": "libfontenc1",
+      "sha256": "4d77cc1b786d2e9e1cb43675309eaebda359b2188b55c43d56970dcd465c0533",
+      "version": "1:1.1.4-1build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfreetype-dev_2.11.0+dfsg-1_arm64.deb",
+      "package": "libfreetype-dev",
+      "sha256": "1437bc7f6231ee22a6225880da6da780977f290b3a4318c15666660216377095",
+      "version": "2.11.0+dfsg-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfreetype6_2.11.0+dfsg-1_arm64.deb",
+      "package": "libfreetype6",
+      "sha256": "2c9f7603eaa53f09a92d7fdb215112f4463268a77eb88cd1f8e38377bb4b0fd9",
+      "version": "2.11.0+dfsg-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfreetype6-dev_2.11.0+dfsg-1_arm64.deb",
+      "package": "libfreetype6-dev",
+      "sha256": "7c18717c4048022348ea56488faba1fc586f2019dd40acd8427df98dcb175b76",
+      "version": "2.11.0+dfsg-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfribidi-dev_1.0.8-2ubuntu2_arm64.deb",
+      "package": "libfribidi-dev",
+      "sha256": "1eceedc92adbf73c8b48db4002b0257273c01e8259617e6d4be6c5fd0e218a90",
+      "version": "1.0.8-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfribidi0_1.0.8-2ubuntu2_arm64.deb",
+      "package": "libfribidi0",
+      "sha256": "981e13825a63da0e251ad9a0491af2512bca118ba1e8a5730137164e1d2a0028",
+      "version": "1.0.8-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgbm1_21.2.6-1_arm64.deb",
+      "package": "libgbm1",
+      "sha256": "bcd148a18485aeaf4da638cda47e053650b008a81fabd15330fb9ecf8309b86a",
+      "version": "21.2.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgcc-11-dev_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libgcc-11-dev",
+      "sha256": "56b9d298ca2408a24f739de23e9ff09081960fd5fa8d7ccf9d5e314fe416cbf3",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgcc-s1_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libgcc-s1",
+      "sha256": "41362f51fde3d35ca0195e96f0a6f3e2f4cde444f9470b79e2281e32de584cf3",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgcrypt20_1.9.4-3ubuntu2_arm64.deb",
+      "package": "libgcrypt20",
+      "sha256": "a8cb778b47b1833de36d128c6277ad6f440f8a1e49ce89241456bae4eb1704bf",
+      "version": "1.9.4-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdbm-compat4_1.22-1_arm64.deb",
+      "package": "libgdbm-compat4",
+      "sha256": "d2235f176769775cc7bcd9c132ccb0378082b059e9a00ab83285ea52d94a8b32",
+      "version": "1.22-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdbm6_1.22-1_arm64.deb",
+      "package": "libgdbm6",
+      "sha256": "757f5d51a89ff5014ea944dac10d6d3ba0c612854d6aaf1c343663e53704dc65",
+      "version": "1.22-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdiplus_6.0.4+dfsg-2_arm64.deb",
+      "package": "libgdiplus",
+      "sha256": "9faeb2ab89792f341a8998db11a50c1de6a77670c5089cf537160b06be6ffbe7",
+      "version": "6.0.4+dfsg-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk-pixbuf-2.0-0_2.42.6+dfsg-2ubuntu2_arm64.deb",
+      "package": "libgdk-pixbuf-2.0-0",
+      "sha256": "6f702623e133d186bc6f5c45de13a22610ed2795817192e1495dcb1de471a623",
+      "version": "2.42.6+dfsg-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk-pixbuf-2.0-dev_2.42.6+dfsg-2ubuntu2_arm64.deb",
+      "package": "libgdk-pixbuf-2.0-dev",
+      "sha256": "27eece3b245a2a63e63d2aa5055f52b5c548d5eeb614976183d8f7ea7a642b5f",
+      "version": "2.42.6+dfsg-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk-pixbuf-xlib-2.0-0_2.40.2-2build3_arm64.deb",
+      "package": "libgdk-pixbuf-xlib-2.0-0",
+      "sha256": "cb4d93e3b80dd57cea7a62e52d372f657d62bd7daafaab412dabdf1bd401793c",
+      "version": "2.40.2-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk-pixbuf2.0-0_2.40.2-2build3_arm64.deb",
+      "package": "libgdk-pixbuf2.0-0",
+      "sha256": "3be4adc1be117ffe648bf89bf44ab26ca054b269d1075d57a0e54cc948396244",
+      "version": "2.40.2-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk-pixbuf2.0-bin_2.42.6+dfsg-2ubuntu2_arm64.deb",
+      "package": "libgdk-pixbuf2.0-bin",
+      "sha256": "a3a05675a23aec3aa2bc192f481462d5a1227ac41d49961eb81c3317ad9a3b23",
+      "version": "2.42.6+dfsg-2ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "libgdk-pixbuf2.0-common_2.42.6+dfsg-2ubuntu2_all.deb",
+      "package": "libgdk-pixbuf2.0-common",
+      "sha256": "86c7df162bad499394524a55671a286da5c71ab2d7455cf8971b78f6fad1a209",
+      "version": "2.42.6+dfsg-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk3.0-cil_2.99.3-4_arm64.deb",
+      "package": "libgdk3.0-cil",
+      "sha256": "f68aa5e03c00755d8efe89f5eb555b214aec95ba6637e0e7627d05bfa7be7e29",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgdk3.0-cil-dev_2.99.3-4_arm64.deb",
+      "package": "libgdk3.0-cil-dev",
+      "sha256": "86b75b15e5329d682aa8bca06ccce43368a45f28848fd01910c39b6c92db38f2",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgif7_5.1.9-2build1_arm64.deb",
+      "package": "libgif7",
+      "sha256": "8766b7f579544b9c08f66dab5f333afe5e92baa972e83817ff4a3033e417e110",
+      "version": "5.1.9-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgio3.0-cil_2.99.3-4_arm64.deb",
+      "package": "libgio3.0-cil",
+      "sha256": "86cfa59ab170d47efaa2e93a82725d537a8ad4e3160fb66ee1d4284e3393f3ab",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgio3.0-cil-dev_2.99.3-4_arm64.deb",
+      "package": "libgio3.0-cil-dev",
+      "sha256": "b520a1bf62dcf6a607c1f8d2f21e3e40c80e21156418c5688ffaae4dd6657c8d",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgirepository-1.0-1_1.70.0-2ubuntu1_arm64.deb",
+      "package": "libgirepository-1.0-1",
+      "sha256": "77d2cbe591644d5e5521a2142f88272cf565d275c8c2589cafc33cb770addd48",
+      "version": "1.70.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgirepository1.0-dev_1.70.0-2ubuntu1_arm64.deb",
+      "package": "libgirepository1.0-dev",
+      "sha256": "7920855aa5cc53cc186364fbc6ac6e083256c2ae0134265936f68f6e1d3f0552",
+      "version": "1.70.0-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgl-dev_1.3.4-2_arm64.deb",
+      "package": "libgl-dev",
+      "sha256": "23a27630d82d7425f430bdcf2a3d016d1b190794849fdaebad0bd2004768c782",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgl1_1.3.4-2_arm64.deb",
+      "package": "libgl1",
+      "sha256": "4e48093a4bd1a2c8f15376426995f453637f630a1331e3acc189f0f269b5a9f0",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgl1-mesa-dri_21.2.6-1_arm64.deb",
+      "package": "libgl1-mesa-dri",
+      "sha256": "ea0d4a91b810794b5b5db811b996053dbaeaf222ff48ad5420a9b075637be664",
+      "version": "21.2.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglapi-mesa_21.2.6-1_arm64.deb",
+      "package": "libglapi-mesa",
+      "sha256": "d6e24c9a4f576bba5b106bddfb986e04e20448de3c71612fa5d0d1e0ddc9cf74",
+      "version": "21.2.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgles-dev_1.3.4-2_arm64.deb",
+      "package": "libgles-dev",
+      "sha256": "625b70377a33511ae48eb60ee6901e805be6b02ab855a981419e90fe02b48ca3",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgles1_1.3.4-2_arm64.deb",
+      "package": "libgles1",
+      "sha256": "57b03f4dd715e5e7c113749c7e402fd604d50fd2a4dce4efdd90f11261773706",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgles2_1.3.4-2_arm64.deb",
+      "package": "libgles2",
+      "sha256": "131666bb4e69ebc9d8942d533b4e4d24778f8dd849361033b452ff290b1ebd2c",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib2.0-0_2.70.2-1_arm64.deb",
+      "package": "libglib2.0-0",
+      "sha256": "d73024bac6bcfbed492a7e35dba720185bf71855f22376e6c362c9de3142b9d6",
+      "version": "2.70.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib2.0-bin_2.70.2-1_arm64.deb",
+      "package": "libglib2.0-bin",
+      "sha256": "f07987fd8dbc0126d6de91d76f9742efc4de72bfb173620dd17327e39b22b128",
+      "version": "2.70.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib2.0-cil_2.12.40-3_arm64.deb",
+      "package": "libglib2.0-cil",
+      "sha256": "3ba9f5d1492ea393960af0f8a3d3e66db18aaa8e8041c864ec8e6ad8eb16c4a0",
+      "version": "2.12.40-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib2.0-cil-dev_2.12.40-3_arm64.deb",
+      "package": "libglib2.0-cil-dev",
+      "sha256": "2d5bb0e78b1a86dafe67c56eec4858130f2e06e051f15c32e100bb78eadb5a2e",
+      "version": "2.12.40-3"
+    },
+    {
+      "arch": "all",
+      "filename": "libglib2.0-data_2.70.2-1_all.deb",
+      "package": "libglib2.0-data",
+      "sha256": "0683dd0526cec1a9c95cfb0e86dbe3b1e1360013c03b11853b9d642a5c5331de",
+      "version": "2.70.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib2.0-dev_2.70.2-1_arm64.deb",
+      "package": "libglib2.0-dev",
+      "sha256": "17cd651550055df57628c7359174980a860e6b3264b9adca667e8f0a383be6c9",
+      "version": "2.70.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib2.0-dev-bin_2.70.2-1_arm64.deb",
+      "package": "libglib2.0-dev-bin",
+      "sha256": "4cce5c3dcd1154fa45df3cb22b9c3283438adf14c864c7ae7f9fbcc6b6a224f2",
+      "version": "2.70.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib3.0-cil_2.99.3-4_arm64.deb",
+      "package": "libglib3.0-cil",
+      "sha256": "609ef107e00f3ba589e9708563caadbf546bfff6a2fb7370fe10392a51e5388a",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglib3.0-cil-dev_2.99.3-4_arm64.deb",
+      "package": "libglib3.0-cil-dev",
+      "sha256": "ce0d9ec913e7981d670e00fe522300629165762b68ef797f295dd2eb91ea10e5",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglvnd-core-dev_1.3.4-2_arm64.deb",
+      "package": "libglvnd-core-dev",
+      "sha256": "53372291bad83cc1d0f2c438e21e2f40ac40227cfd5221b94170183db9a667a8",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglvnd-dev_1.3.4-2_arm64.deb",
+      "package": "libglvnd-dev",
+      "sha256": "f1825bd05a0cf7d567fa0a89be234c929eafb63c16a68703a96e53790b920311",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglvnd0_1.3.4-2_arm64.deb",
+      "package": "libglvnd0",
+      "sha256": "a247588f5fbbcb1b4fab4ca88fa4aaef44dd5c7ab32398ca8df3decc4e7fd8c7",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglx-dev_1.3.4-2_arm64.deb",
+      "package": "libglx-dev",
+      "sha256": "6f67b9ae3c3605cb8c15eb83b9f0b6aaae4d0f2d8f961911feca670dfa77b7b3",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglx-mesa0_21.2.6-1_arm64.deb",
+      "package": "libglx-mesa0",
+      "sha256": "7b329b68f6743c7b2e7342165a464bc9c38d39cfd34ed837714d11f67ee3557f",
+      "version": "21.2.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libglx0_1.3.4-2_arm64.deb",
+      "package": "libglx0",
+      "sha256": "7f5d23b431d941917c674b676fed3fbc60e2bcda6f187ae25ed3cc12ab525be1",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgmp10_6.2.1+dfsg-1ubuntu3_arm64.deb",
+      "package": "libgmp10",
+      "sha256": "848b7beeae0bd156dd9a60c649d517ab3be10911807f8d02f51b93e3a7350410",
+      "version": "2:6.2.1+dfsg-1ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgnutls30_3.7.2-2ubuntu1_arm64.deb",
+      "package": "libgnutls30",
+      "sha256": "7250264c1405ca666490926db4d28611800d0ba810485165f3c6ee12956a309c",
+      "version": "3.7.2-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgomp1_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libgomp1",
+      "sha256": "d44ac5b995eeb319333623cb7f422ba3f714d5ff340e65409946ded22fb1d82d",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgpg-error0_1.42-3_arm64.deb",
+      "package": "libgpg-error0",
+      "sha256": "23b6b8d15541d66941cf0d9391b4859baca174982b22e8fa9c09985740f08e5d",
+      "version": "1.42-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgraphite2-3_1.3.14-1build1_arm64.deb",
+      "package": "libgraphite2-3",
+      "sha256": "0fcccd5c5c624803e7d6f0af56f5e4e461da24111810c31b15e09080cb23b9c9",
+      "version": "1.3.14-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgraphite2-dev_1.3.14-1build1_arm64.deb",
+      "package": "libgraphite2-dev",
+      "sha256": "7e638cb29c32d359cdcb5104615a18b218cb5bcbda22d27f18934d23f6359756",
+      "version": "1.3.14-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgssapi-krb5-2_1.19.2-0ubuntu1_arm64.deb",
+      "package": "libgssapi-krb5-2",
+      "sha256": "addf3fc85550112d55933b094f64d93fdbb15ce03377872eb2183a3ca29ff80a",
+      "version": "1.19.2-0ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk-3-0_3.24.30-3ubuntu1_arm64.deb",
+      "package": "libgtk-3-0",
+      "sha256": "0c54e8f9a912dcd5a98da28129e016378c031afd41787c5a250124c0bfbb54d5",
+      "version": "3.24.30-3ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "libgtk-3-common_3.24.30-3ubuntu1_all.deb",
+      "package": "libgtk-3-common",
+      "sha256": "6d2135f9e23807b6dce1a085f4fcef1decb84ac9bea1542e948a5b12660b5261",
+      "version": "3.24.30-3ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk-3-dev_3.24.30-3ubuntu1_arm64.deb",
+      "package": "libgtk-3-dev",
+      "sha256": "de22a9c68b2dea54301d5ceee761654ad72883ad3c2467a8cb7b96d2c059ad92",
+      "version": "3.24.30-3ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk2.0-0_2.24.33-2ubuntu1_arm64.deb",
+      "package": "libgtk2.0-0",
+      "sha256": "ae2cdc35bed927dce17e7846b9c11b3580487ad1f289755afe2e26b9bd524006",
+      "version": "2.24.33-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk2.0-cil_2.12.40-3_arm64.deb",
+      "package": "libgtk2.0-cil",
+      "sha256": "590e0ebf687b87584bdfba0bf9bb0132f26d768dff77fe87717152877c049d73",
+      "version": "2.12.40-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk2.0-cil-dev_2.12.40-3_arm64.deb",
+      "package": "libgtk2.0-cil-dev",
+      "sha256": "2f16cda1321781080b85695c53530ad61922afa28135a39bf8f71d97bdd94b93",
+      "version": "2.12.40-3"
+    },
+    {
+      "arch": "all",
+      "filename": "libgtk2.0-common_2.24.33-2ubuntu1_all.deb",
+      "package": "libgtk2.0-common",
+      "sha256": "5c3f741c3a76f19267e89b7ba96d937cf1f26ca81787fc65f583adc39766ccb8",
+      "version": "2.24.33-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk2.0-dev_2.24.33-2ubuntu1_arm64.deb",
+      "package": "libgtk2.0-dev",
+      "sha256": "b9726e69efffab3d55671bdfe9afc2c3b614e54dc570ef5957f4c53df6324829",
+      "version": "2.24.33-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk3.0-cil_2.99.3-4_arm64.deb",
+      "package": "libgtk3.0-cil",
+      "sha256": "e6a87d436810c144fed4c63b7ba74c104502ff99c53b47897a6c9cf94ea0be08",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libgtk3.0-cil-dev_2.99.3-4_arm64.deb",
+      "package": "libgtk3.0-cil-dev",
+      "sha256": "c75cdb76eeccf4e38740cf874f825ef37b2c31f7568a5964200d67e317752461",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libharfbuzz-dev_2.7.4-1ubuntu2_arm64.deb",
+      "package": "libharfbuzz-dev",
+      "sha256": "9ae7307ceacc4087db8e8815347e9b03fb642a74ea8768b9750848d5f15b3079",
+      "version": "2.7.4-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libharfbuzz-gobject0_2.7.4-1ubuntu2_arm64.deb",
+      "package": "libharfbuzz-gobject0",
+      "sha256": "bbe5beb6570b5a876f746b162869c7c4c94fc10e08060aeeff6bbf509dfb54d6",
+      "version": "2.7.4-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libharfbuzz-icu0_2.7.4-1ubuntu2_arm64.deb",
+      "package": "libharfbuzz-icu0",
+      "sha256": "736f821c452fbdfcb6a0be43849a32aaaee24e159367f0549ae4e4c3c422a529",
+      "version": "2.7.4-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libharfbuzz0b_2.7.4-1ubuntu2_arm64.deb",
+      "package": "libharfbuzz0b",
+      "sha256": "d2340e78428e3865387dd8fd08b2428c947dca4ede4864173b233420af0ee037",
+      "version": "2.7.4-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libhogweed6_3.7.3-1build1_arm64.deb",
+      "package": "libhogweed6",
+      "sha256": "a2b2f2c019defaa3f70ad001a6fcdc1f9b64269677d82bdbcc9888edb8ecfa2b",
+      "version": "3.7.3-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libhtml-parser-perl_3.76-1build1_arm64.deb",
+      "package": "libhtml-parser-perl",
+      "sha256": "8491720ae3867b5a5a61e0e91ff089f8012f345ee5dea882daf4e8188d115918",
+      "version": "3.76-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libhtml-tagset-perl_3.20-4_all.deb",
+      "package": "libhtml-tagset-perl",
+      "sha256": "6106f0f971a1d5a5d5612658430f1d129fbf29124253c05cfdb6ebafe4d0d30c",
+      "version": "3.20-4"
+    },
+    {
+      "arch": "all",
+      "filename": "libhtml-tree-perl_5.07-2_all.deb",
+      "package": "libhtml-tree-perl",
+      "sha256": "781e3060c72413f52c0017adf457eba1b0e1fd6a218fa39bb5a74de81d387856",
+      "version": "5.07-2"
+    },
+    {
+      "arch": "all",
+      "filename": "libhttp-cookies-perl_6.10-1_all.deb",
+      "package": "libhttp-cookies-perl",
+      "sha256": "a8aac151f90a58a1834b067f99b559afef01728cf77d598b41133ff91208c004",
+      "version": "6.10-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libhttp-date-perl_6.05-1_all.deb",
+      "package": "libhttp-date-perl",
+      "sha256": "fb22ed0f79e7328d39f4a80dc25ec4f273dacd43aa9ed86cbb6c5744b8a10b1d",
+      "version": "6.05-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libhttp-message-perl_6.35-1_all.deb",
+      "package": "libhttp-message-perl",
+      "sha256": "66b353b56a209917f9ca0981b67741819d1835da2f1af6d89a1f12510d511fb6",
+      "version": "6.35-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libhttp-negotiate-perl_6.01-1_all.deb",
+      "package": "libhttp-negotiate-perl",
+      "sha256": "22d49c9f416ca46b7e2800dfbeb1dd206319bfbf5bee8fcde8a9f6dde12ddfb8",
+      "version": "6.01-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libhwasan0_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libhwasan0",
+      "sha256": "40b5cdc74421b77711f8e2ffef75895cd4f910b1796b4c7d26c387d5ab144e75",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libice-dev_1.0.10-1build1_arm64.deb",
+      "package": "libice-dev",
+      "sha256": "b767f37497a82d9e8ab72d3c5a0b296dcd34680a56d574a70d8237b1187f3c0f",
+      "version": "2:1.0.10-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libice6_1.0.10-1build1_arm64.deb",
+      "package": "libice6",
+      "sha256": "a1f0bcbff25f353e93df8673ccb446a07897234ba36b81f6e34422db8f686053",
+      "version": "2:1.0.10-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libicu-dev_67.1-7ubuntu1_arm64.deb",
+      "package": "libicu-dev",
+      "sha256": "55af49459765e746218b04f53ba1973414a0247648d62763ab11cf9c3c38d460",
+      "version": "67.1-7ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libicu67_67.1-7ubuntu1_arm64.deb",
+      "package": "libicu67",
+      "sha256": "11b7bf05196b3aad717aa76cedb789387e65c714f17330020f1e7bd5d4a7f7b1",
+      "version": "67.1-7ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libidn2-0_2.3.2-2_arm64.deb",
+      "package": "libidn2-0",
+      "sha256": "9a0350b1156b8d97695c322c26fad8980bb47970be2834625971218df117bbb2",
+      "version": "2.3.2-2"
+    },
+    {
+      "arch": "all",
+      "filename": "libio-html-perl_1.004-2_all.deb",
+      "package": "libio-html-perl",
+      "sha256": "54f568c9bceea7841ddfc053b06b8b74c0be870620e7376e321ee8835d1907b1",
+      "version": "1.004-2"
+    },
+    {
+      "arch": "all",
+      "filename": "libio-socket-ssl-perl_2.072-1_all.deb",
+      "package": "libio-socket-ssl-perl",
+      "sha256": "4107b21b77d907955557d3d865b503322bcb21ab7f413d5e7a27db875994fc44",
+      "version": "2.072-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libip4tc2_1.8.7-1ubuntu4_arm64.deb",
+      "package": "libip4tc2",
+      "sha256": "bb0485e7325d08b02bc01b12d50787add8618facc05c06a319a70e46982095cb",
+      "version": "1.8.7-1ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libisl23_0.24-2_arm64.deb",
+      "package": "libisl23",
+      "sha256": "e49d6bda160225617373dedf25cb71e67c0beb7c46ad7b1a0f459807922ae5e3",
+      "version": "0.24-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libitm1_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libitm1",
+      "sha256": "939a78262d14074cdcf932979a2cb619fc948e88deb469457d2286361537362a",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjbig-dev_2.1-3.1build2_arm64.deb",
+      "package": "libjbig-dev",
+      "sha256": "15e163b9fcc397ae0ba415b4cd8bc84843f4b204ee8a4e7aa17f018f8cc12277",
+      "version": "2.1-3.1build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjbig0_2.1-3.1build2_arm64.deb",
+      "package": "libjbig0",
+      "sha256": "3ebb6f278005dea94d88abf6fdb90fb61caa93ea7aa65179ada9fe2de0b97849",
+      "version": "2.1-3.1build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjpeg-turbo8_2.1.1-0ubuntu1_arm64.deb",
+      "package": "libjpeg-turbo8",
+      "sha256": "42e84c63802dba04cbfe74781d925e8178f472a7dd05fa5e87d60fdbdccad72e",
+      "version": "2.1.1-0ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjpeg-turbo8-dev_2.1.1-0ubuntu1_arm64.deb",
+      "package": "libjpeg-turbo8-dev",
+      "sha256": "c81d62b4bcfc6f4b513e6b03c8014a1244157d801c8a21aeeaece9279fde2518",
+      "version": "2.1.1-0ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjpeg8_8c-2ubuntu8_arm64.deb",
+      "package": "libjpeg8",
+      "sha256": "89f4acf2407dc4f023b7b59c874557e4a94f67a9155ad5870b9ead1cb375cc13",
+      "version": "8c-2ubuntu8"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjpeg8-dev_8c-2ubuntu8_arm64.deb",
+      "package": "libjpeg8-dev",
+      "sha256": "5a4bb7233c262938c7659ea1522a5da7013b5b703d6e38ac8ae53d52fa95b023",
+      "version": "8c-2ubuntu8"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjson-c5_0.15-2build3_arm64.deb",
+      "package": "libjson-c5",
+      "sha256": "2bfb5cdaa925c86aadf5888a35fb847499a805b8f8088c1f3895abc2133410b8",
+      "version": "0.15-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libjsoncpp25_1.9.5-2_arm64.deb",
+      "package": "libjsoncpp25",
+      "sha256": "7360fd438ae577c23fa85d28e1d8d819ef61f1ae1f44c3f3df2b6f493f8e3483",
+      "version": "1.9.5-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libk5crypto3_1.19.2-0ubuntu1_arm64.deb",
+      "package": "libk5crypto3",
+      "sha256": "9dc62542f702d7feee5a8ac06188dc673cd484de5ceb7b035f9a346286589750",
+      "version": "1.19.2-0ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libkeyutils1_1.6.1-2ubuntu2_arm64.deb",
+      "package": "libkeyutils1",
+      "sha256": "c9eb9173c52eaba95a0f94d041e362eeba832b7c71ef11a88a981299a441a4b0",
+      "version": "1.6.1-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libkmod2_28-1ubuntu5_arm64.deb",
+      "package": "libkmod2",
+      "sha256": "0a0e629f9e0165353320170a4c7fce11419b30c6f305dc1507e85d1a6d1a6432",
+      "version": "28-1ubuntu5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libkrb5-3_1.19.2-0ubuntu1_arm64.deb",
+      "package": "libkrb5-3",
+      "sha256": "f61e2624906a1cd10f77132a5b8e6980746fa1511fc52d3e7c188940f65d7995",
+      "version": "1.19.2-0ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libkrb5support0_1.19.2-0ubuntu1_arm64.deb",
+      "package": "libkrb5support0",
+      "sha256": "5346d74fca4e9749bcd9b1c14933ee7c6b936bdba6feb2b34972801f1bc7add8",
+      "version": "1.19.2-0ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblcms2-2_2.12~rc1-2build1_arm64.deb",
+      "package": "liblcms2-2",
+      "sha256": "75e495f076b0b7193d48c6153be8100e6b32c7a35da7a31fe34c87c2affdbeb7",
+      "version": "2.12~rc1-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libldap-2.5-0_2.5.6+dfsg-1~exp1ubuntu1_arm64.deb",
+      "package": "libldap-2.5-0",
+      "sha256": "171f6184143090afe00ec3cd3fdba7de579e7fb32311b545467eddf2bd70a65d",
+      "version": "2.5.6+dfsg-1~exp1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libllvm12_12.0.1-17_arm64.deb",
+      "package": "libllvm12",
+      "sha256": "51e48c18ea53238f2f444f15d0ef2842f882029eb6549a5045502a8a55db215f",
+      "version": "1:12.0.1-17"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblockfile-bin_1.17-1build1_arm64.deb",
+      "package": "liblockfile-bin",
+      "sha256": "a53c71f08a9465bce508eafe0498bd24f76a5739fb7ffd6692f5b0484f04ba5b",
+      "version": "1.17-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblockfile1_1.17-1build1_arm64.deb",
+      "package": "liblockfile1",
+      "sha256": "cfba481d7ed5c8d984f126c09f884044d726b494d301b6331d4785d8e4aa8fc7",
+      "version": "1.17-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblsan0_11.2.0-12ubuntu1_arm64.deb",
+      "package": "liblsan0",
+      "sha256": "a32766e09f3fa81dd7e853fca059cd987aa4e5b5bf05fec50591fb2939bff927",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "liblwp-mediatypes-perl_6.04-1_all.deb",
+      "package": "liblwp-mediatypes-perl",
+      "sha256": "d8ecd489167dcab3aa6c5c2a24c09a3d3ce716c8c69620dc66427188007b532d",
+      "version": "6.04-1"
+    },
+    {
+      "arch": "all",
+      "filename": "liblwp-protocol-https-perl_6.10-1_all.deb",
+      "package": "liblwp-protocol-https-perl",
+      "sha256": "d34895d7acbda19923125197451e4b7dccef51efcb45b3924fd72e0cfa75b3ca",
+      "version": "6.10-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblz4-1_1.9.3-2build1_arm64.deb",
+      "package": "liblz4-1",
+      "sha256": "bde4ba39d3febadf0e39f41eeb3d9f1866d3e24cee9561bc43c9cee5f77021a0",
+      "version": "1.9.3-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblzma-dev_5.2.5-2build1_arm64.deb",
+      "package": "liblzma-dev",
+      "sha256": "c9edfd50a5a8b38d6b4f4d8536b9cb501ce4eb38a13df8c45bf2d8ffd9c59ba5",
+      "version": "5.2.5-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblzma5_5.2.5-2build1_arm64.deb",
+      "package": "liblzma5",
+      "sha256": "c8c3628fb32f4624588d6678e73d3f3cb307dc26b9113c7729a0909a6b72e44a",
+      "version": "5.2.5-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "liblzo2-2_2.10-2build2_arm64.deb",
+      "package": "liblzo2-2",
+      "sha256": "45442287fbc27e6885cdef0499a131c907e89cf2abed5102abe44396c255e46e",
+      "version": "2.10-2build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmagic-mgc_5.41-2_arm64.deb",
+      "package": "libmagic-mgc",
+      "sha256": "b7d82fc4afbcf8fc8561931045f8ca889722133cb22db0f63db3b35eb31908f3",
+      "version": "1:5.41-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmagic1_5.41-2_arm64.deb",
+      "package": "libmagic1",
+      "sha256": "c20e1a108e2fa58102f0d4aa9ef9c25aaca80a4cbd1e6d42daa5c4c85d2e09e1",
+      "version": "1:5.41-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmd0_1.0.4-1_arm64.deb",
+      "package": "libmd0",
+      "sha256": "4407091ce218144dcfc2a8f7ae9912bcb400bce635b23418390fb0c190dd9697",
+      "version": "1.0.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmono-2.0-dev_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "libmono-2.0-dev",
+      "sha256": "cca27e50f320c17b50e314bc378f386a90f8f52e59ce1388e3953ce93098e447",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-accessibility4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-accessibility4.0-cil",
+      "sha256": "fded9426c409b587323a3ea69c6290c3fe1faca54952c46ffaa225e7ada45dac",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-cairo4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-cairo4.0-cil",
+      "sha256": "963c08ecffadd0ffc987f4e2e00ac00f93a51393b357b30591868993d0f48254",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-cecil-private-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-cecil-private-cil",
+      "sha256": "259d6c45c088ada70788c22f4d27337f20d63cd97483c7f816c2ee2d6971a698",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-cil-dev_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-cil-dev",
+      "sha256": "aad8da44014b1df8e9783759c1e1c70c5a00595b27a4cdf6af45afbc884c633c",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-codecontracts4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-codecontracts4.0-cil",
+      "sha256": "596d6dc1e8be85788c5a0b77dd4cbd77cac1c153e6f870becd55835c9721b0d9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-compilerservices-symbolwriter4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-compilerservices-symbolwriter4.0-cil",
+      "sha256": "b14fd64eb630c5afcacc82cd0414d6fdfebe784ff2a20c89df677e6e0a457cfb",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-corlib4.5-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-corlib4.5-cil",
+      "sha256": "db5adc0dd6a40595fed67e1c692e53dc133d249b82c057a4823acdf3b93afc46",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-corlib4.5-dll_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-corlib4.5-dll",
+      "sha256": "ed2bd8d842944469aafa3a020e0433921ce09732c321756153d7016c2e7d5049",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-cscompmgd0.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-cscompmgd0.0-cil",
+      "sha256": "ae330537eb2f08f76285af0afa3d386083ec9df643cbfb6770101ef376fde251",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-csharp4.0c-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-csharp4.0c-cil",
+      "sha256": "8a9836d108b62c39e3e395358697708208eb3defe71859b62aa553c60bdca4a4",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-custommarshalers4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-custommarshalers4.0-cil",
+      "sha256": "25e4d2e5265f865c3643c8847a7c4da7c38b61ac4b56b92797823f1b90292c05",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-data-tds4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-data-tds4.0-cil",
+      "sha256": "0c25416ad21b81384344240795f0c33791f7dda3062d36656bd90eeb5b9ac6c1",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-db2-1.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-db2-1.0-cil",
+      "sha256": "88b5b79d5291f636bd1f3830b990d67416e319af010a8fac3fd63a88941c2785",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-debugger-soft4.0a-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-debugger-soft4.0a-cil",
+      "sha256": "d947f34d7fe7f89e9c93ae785852efdd3cf301ee322541416345dd2041f7db7f",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-http4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-http4.0-cil",
+      "sha256": "398f1e410f3fd8595c019c6aabe7cbe5fed985425d8bf5aac323f16c1af39c78",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n-cjk4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n-cjk4.0-cil",
+      "sha256": "c5e41e58ae7a4994e80ac98bde29754f3d401888616b4892ec7fbab871eb4c87",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n-mideast4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n-mideast4.0-cil",
+      "sha256": "03140f5ae11a8ce0f64cc1af93ee8f17484b1dfb854442112151ece7f2a9f28f",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n-other4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n-other4.0-cil",
+      "sha256": "8a1ae810282fd1fdc3766b116d559613bc513dc6af527f423e163d0a9253d711",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n-rare4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n-rare4.0-cil",
+      "sha256": "4fb8e3f494f3883acb8719631da4774653a28cd1b75d976671ed0857f58a6669",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n-west4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n-west4.0-cil",
+      "sha256": "1bb6ac0a5894a0e204430114bc2590105573dcb975554f4de575dd5324787b54",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n4.0-all_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n4.0-all",
+      "sha256": "0e1f60ab475ed002d89bee0ca3371ddc8233eb83a3afcc3128b90efb6d1426db",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-i18n4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-i18n4.0-cil",
+      "sha256": "3b51b47ddd7cd33243b078551cf94f72b9f21e4b4588ed2bfaab7b5c1c5a25f5",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-ldap4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-ldap4.0-cil",
+      "sha256": "28007b9c718768d3045ee4a31215f2801891da43a5035cd6bd19a5396ed9a536",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-management4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-management4.0-cil",
+      "sha256": "3eb2e0bf3a0ceba4bc6ded128c817bdb3f122d93b05d4d3f52c5a8d58859545a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-messaging-rabbitmq4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-messaging-rabbitmq4.0-cil",
+      "sha256": "7c60b9273e8919338fb365b01f404c35b1a879c650fd0a86c4123474c391531d",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-messaging4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-messaging4.0-cil",
+      "sha256": "7074a9b33b8f1f673dd0b073dddc489fda42b816ea9ea3c9de30182dc71719f4",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-build-engine4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-build-engine4.0-cil",
+      "sha256": "ae5e4fc4305009fffaf170876b0c965463428fba1a158e16ed0102545c137fc8",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-build-framework4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-build-framework4.0-cil",
+      "sha256": "1780e2391aea28abb0f1d0a74037a620992dfc61c537117ddaeb160724654ac3",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-build-tasks-v4.0-4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-build-tasks-v4.0-4.0-cil",
+      "sha256": "3af4f34ea31a31a1ec9f05f70c090ff3c65342411eade146ef2e15a62d0b70d2",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-build-utilities-v4.0-4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-build-utilities-v4.0-4.0-cil",
+      "sha256": "6861c45141da3a7eaca610d7a182b10fa2b78b8cd212d4a713010d7c5fb84750",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-build4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-build4.0-cil",
+      "sha256": "5fec05f6cb44a8281aa56f626390d28aa00cdee85ad2a911d23ebec7670c9e10",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-csharp4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-csharp4.0-cil",
+      "sha256": "d0771fd7fc17faa13f422d1323d22ac1d152ffefafb8e2bbc0e9a4eab21c0aa2",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-visualc10.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-visualc10.0-cil",
+      "sha256": "5d4bdb4ccd56fa20ca3d15657e98f471483742837bfb60c4d06db67dbcc83b3a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-microsoft-web-infrastructure1.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-microsoft-web-infrastructure1.0-cil",
+      "sha256": "7765b1acaa78e6bda3f7e7cf64a463a4b760cab0ef730648c28980876e56f350",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-oracle4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-oracle4.0-cil",
+      "sha256": "6b61d1fb4f1d006d67edd4c9f103ab28be3bbb0d254b77895cfcd21501392f68",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-parallel4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-parallel4.0-cil",
+      "sha256": "405023c66a9226568b9b2e35e367214d485603d1dc3f2581e5c60af5fcf5f759",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-peapi4.0a-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-peapi4.0a-cil",
+      "sha256": "227553b20e4cd51a1b2eef73c850a5235389adb203b3a64cd7a2fbbb4e812fc7",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-posix4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-posix4.0-cil",
+      "sha256": "666ecc6c8bb0a9bbae63c17831ff7066103f23d7d5b0391a5b135517d57c892a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-rabbitmq4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-rabbitmq4.0-cil",
+      "sha256": "c6a513eb542e279c5b4e5b0477c5c4c042d04c8da78f019f588a82cba72a64ca",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-relaxng4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-relaxng4.0-cil",
+      "sha256": "2322ab0e8d129a996e38812e7798c10b5595524f3fb31b48a5913efa88b51da8",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-security4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-security4.0-cil",
+      "sha256": "b80df97ab81f3efb5dd18de39e2f828b4b313faa617b5a73881faa33809a997e",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-sharpzip4.84-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-sharpzip4.84-cil",
+      "sha256": "48ea99193cfc7c5f0a789c7496a376453412a421cf9dbf98e1aa388029e253d4",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-simd4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-simd4.0-cil",
+      "sha256": "fa96ba47bb5efa090ddafbcfd394ea9b5c86d2ab2b4c2b9511265a23c088f3c5",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-smdiagnostics0.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-smdiagnostics0.0-cil",
+      "sha256": "25d0823f68d1b9ae008f3eaba466c33cb1906a6bbfa09d49668dabab5ede4c9a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-sqlite4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-sqlite4.0-cil",
+      "sha256": "0ff25f851a7099c2f52ab660589aeb33e33c9045779f9afa8c8125bddf6d10b3",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-componentmodel-composition4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-componentmodel-composition4.0-cil",
+      "sha256": "bbfa36560e46ba04b7954a5dafa1fbd9d58dccdef0f197c1f869d2fde4087fa2",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-componentmodel-dataannotations4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-componentmodel-dataannotations4.0-cil",
+      "sha256": "fcabc4f945d788e89aeac12df8d18a3ef7068668e55f30c64618ecac3a372647",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-configuration-install4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-configuration-install4.0-cil",
+      "sha256": "5748492b5cd402d32c531cad1e089c4225f5e19d6538f28cdec8782d580c9ee5",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-configuration4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-configuration4.0-cil",
+      "sha256": "717352dcdeb2b8dadf27eb677bfd884859dac2c2a3b7f58e736676d468862393",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-core4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-core4.0-cil",
+      "sha256": "5537ec9552a6d3975fa61d2abef28600f4d6bfe3b50c7c80fb01c41cccc02e30",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-data-datasetextensions4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-data-datasetextensions4.0-cil",
+      "sha256": "ce0d0da609b73743528ae9e40e1cd591c468eb27c70eb7ded0edb69a3534da36",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-data-entity4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-data-entity4.0-cil",
+      "sha256": "a0f7aa7062f9d529e2648b4016c7c888a94c913114ba53a3608d0df04e9388e0",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-data-linq4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-data-linq4.0-cil",
+      "sha256": "965c062567d5c4037ee18a3907b683b965444f6d4818d3daf11d12834f3588c4",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-data-services-client4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-data-services-client4.0-cil",
+      "sha256": "df51326485361c49e5b813bc314176820a8ff4b22d893ecdfbafbd33cc456265",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-data-services4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-data-services4.0-cil",
+      "sha256": "a037c9910e16146df878ca814c1a15fef56000b28a101c11bae5d6fa8ac0fec5",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-data4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-data4.0-cil",
+      "sha256": "479ea08d691e5e50f62ca87548027eb38e1506d2a9bf3893d2815be26a535b8d",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-deployment4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-deployment4.0-cil",
+      "sha256": "2200bd54c4ce76448219a990f0c8aafda54acdcbe877373029ab515b4e4198e1",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-design4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-design4.0-cil",
+      "sha256": "62ce5954c423c7a84d75c654a49e1be5c874206233e63e583fe2a017bb32d7ff",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-drawing-design4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-drawing-design4.0-cil",
+      "sha256": "8a4543194e358071686c53e15e76c0bb6306ec5382e7fbf35ff99978ae4a5b4a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-drawing4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-drawing4.0-cil",
+      "sha256": "a0f6abc21f3e024a8aa86f9a6e10fd9ed6f60f6b231aaf4661e0ab3b21ac6ffa",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-dynamic4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-dynamic4.0-cil",
+      "sha256": "a3fee8658749f201890fdda8d0f9b0492655f35473054383e4136e8580428e44",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-enterpriseservices4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-enterpriseservices4.0-cil",
+      "sha256": "1e401cbe278d2ccc86eb22dabb7d64b675868c4c6ccad8a19164e87808527ef8",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-identitymodel-selectors4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-identitymodel-selectors4.0-cil",
+      "sha256": "b3e63efb9bc21c4dc78a3155ae8863f7f481d8f75ab7fd33e01bd2aef0c1fb2c",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-identitymodel4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-identitymodel4.0-cil",
+      "sha256": "5d086c7686f127440467672dc8960cab75186cb4792faa7bd3aa05d2ec5d4daf",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-io-compression-filesystem4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-io-compression-filesystem4.0-cil",
+      "sha256": "584322ee43b4a00e922264621ee5deaa16de7dbbe38d35ba8e50cbc01f2689fd",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-io-compression4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-io-compression4.0-cil",
+      "sha256": "1d8aa6d64ca46274e75904f49cd822af0d5ee03125a1bf66a604ef68b87fedb9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-json-microsoft4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-json-microsoft4.0-cil",
+      "sha256": "3cec4a97b9c19904c4944348325eb021092edd1bf4665f67f57e789db9e4edc4",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-json4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-json4.0-cil",
+      "sha256": "75071e37738ceda33819ceae81ba319cd91f05305a5057fa28d780597497b661",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-ldap-protocols4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-ldap-protocols4.0-cil",
+      "sha256": "b76cd5cc46a409828209f54d4079739f4749cd3f6a9dc92a759374009631b3f1",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-ldap4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-ldap4.0-cil",
+      "sha256": "141c47e5954ad3f9ec1cdfbdb4d7aae97fb271b7b71e44fc9f752903fd645430",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-management4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-management4.0-cil",
+      "sha256": "e938461da91531b66943326488d95709236900f0ed8036aaa381dc5f44a3d815",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-messaging4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-messaging4.0-cil",
+      "sha256": "5616b55c5b5830a3841efce7832d6aac7b5c18f84978d0f38fc9a97db6fe8f43",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-net-http-formatting4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-net-http-formatting4.0-cil",
+      "sha256": "888dfbcbaa45a29ee196be94a60d0f34e3fdea4693173d72a84de3a1819b3952",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-net-http-webrequest4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-net-http-webrequest4.0-cil",
+      "sha256": "62cb1eda500c7fdb33e93fe71cb03bc17b370b2b2d4c38af7e01ad9d1d7c700d",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-net-http4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-net-http4.0-cil",
+      "sha256": "bdebf659484b2d1accff5a70cfb39ce91c52a364a9a82f4824239b3931166e72",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-net4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-net4.0-cil",
+      "sha256": "e7ae15f9ba5af9b618b07544cb505bf685271f23b976ed1a713bd5952a8c24df",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-numerics-vectors4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-numerics-vectors4.0-cil",
+      "sha256": "9396c9c8b51f7fe6538b0438bac62895b8edabc8af5ae641f0c474a8d1d9b386",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-numerics4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-numerics4.0-cil",
+      "sha256": "a0fcd7877586d103789bcae14352d7697cf94236d4566e3f66433ad724fc3623",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-core2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-core2.2-cil",
+      "sha256": "34493b8adf37698bcf70fa0d0e30558fc0b5efbb05932fbce0f74c50cb0e28f5",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-debugger2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-debugger2.2-cil",
+      "sha256": "bd713211c9f699414f76d89c9890b16f4967d7281fad42a985c0a213c389a4dd",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-experimental2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-experimental2.2-cil",
+      "sha256": "970ea8035e903201a32d0f3e33a9e014c711dba534ceebd97ae3f5de0cd1928c",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-interfaces2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-interfaces2.2-cil",
+      "sha256": "667b47cbcfe60af5c43b31743b040fbd2ac31a3619ead94bfe88ee66abd8e1c0",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-linq2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-linq2.2-cil",
+      "sha256": "37acb720765e3cc2c70d4331df1fc51099c1a6b394fa592def7cabfd4757f071",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-observable-aliases0.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-observable-aliases0.0-cil",
+      "sha256": "648563c5c65df0ebdfc8ced19dc71416f5e7bf7fb7802a7232855c5ed4a4cd8a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-platformservices2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-platformservices2.2-cil",
+      "sha256": "e425e9e4c069d13e4a89ca25adcd9e1525cee5ce63589758130c0b008bc4d767",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-providers2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-providers2.2-cil",
+      "sha256": "5ddd7ed912d2135e6b3422868f467bc74c30e8a29e95db33e9fe4dea37329695",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-runtime-remoting2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-runtime-remoting2.2-cil",
+      "sha256": "a43a1643302caf99253e2b93f9b59a08bd80149b9313ca59e0441c803e5d5a38",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-windows-forms2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-windows-forms2.2-cil",
+      "sha256": "53caa87fa27f7a1c66977040d943a93f80cfc2413fdbd453b0dcb0ac2333db6a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reactive-windows-threading2.2-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reactive-windows-threading2.2-cil",
+      "sha256": "af9c40bda6400e0da99881456ca6f18441352f2081ab686fdecb7bc387c5eb9c",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-reflection-context4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-reflection-context4.0-cil",
+      "sha256": "d331981a2c768e43e49a65f9ad6e38b3f7943b69de5da151ba4c5ac9573afd15",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-runtime-caching4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-runtime-caching4.0-cil",
+      "sha256": "1051ff92d5f36527eeb643ded819df8fadcb89c75e681e6cca70a9c41dd47099",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-runtime-durableinstancing4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-runtime-durableinstancing4.0-cil",
+      "sha256": "f3d64a93f0a8cd8ffa6ed782db5d1a784de5415da43ec1ebbaf393bb29442aee",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-runtime-serialization-formatters-soap4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-runtime-serialization-formatters-soap4.0-cil",
+      "sha256": "f378526f4826575a8e66b3f85b14ba2a90134e25e1010c6bc708c4e47a3087dd",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-runtime-serialization4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-runtime-serialization4.0-cil",
+      "sha256": "399a0e3717ed6457e686706bed85c4ae4f5a50bde2a7ad9c2d0af0db04055dbc",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-runtime4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-runtime4.0-cil",
+      "sha256": "637ab3aa036a3fc96b7357f836b680e0f9b947195896f9e0d294956f6876e848",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-security4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-security4.0-cil",
+      "sha256": "b6eaeed3aa9039aa5e98bd89ec00a79a2d51bda07bb65acf2e7a4537aaa621b9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-servicemodel-activation4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-servicemodel-activation4.0-cil",
+      "sha256": "183d0b05d3fd2e0dead38331cd28bc7754e1aeb279b747294565a32fdd37bd88",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-servicemodel-discovery4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-servicemodel-discovery4.0-cil",
+      "sha256": "5321ad2b77bb331a6cf45caf542ca3318cea9a6fc0e141c04bdaafd554eef003",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-servicemodel-internals0.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-servicemodel-internals0.0-cil",
+      "sha256": "caaa961ce35a877055519cd087c5e42a9de818de81c01e374f9f88324b87a920",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-servicemodel-routing4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-servicemodel-routing4.0-cil",
+      "sha256": "971696d827d5006321f2376ec0793680dace87c567520abf492a7476f461cc76",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-servicemodel-web4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-servicemodel-web4.0-cil",
+      "sha256": "03af749c28648abfe0df404f17d90636b4acd6e19fe19ce6b657d5b6a97586c9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-servicemodel4.0a-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-servicemodel4.0a-cil",
+      "sha256": "98f499cd3496be8d2f2b9509b1e36ea6b970c4353b87fc5248fdf036513abef5",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-serviceprocess4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-serviceprocess4.0-cil",
+      "sha256": "2c94a732dd9918c33f3b89fc96cf57a76ecb931b4bec8cabad35af97aa1b226e",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-threading-tasks-dataflow4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-threading-tasks-dataflow4.0-cil",
+      "sha256": "f1af0783cc8a2a292fc3b1c2ee10670552fff89513fc73c967b931b52433d484",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-transactions4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-transactions4.0-cil",
+      "sha256": "657b9067bf2c722fa007dc8f433c8094cfb93e804eb171f10c6ecb56afc7051b",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-abstractions4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-abstractions4.0-cil",
+      "sha256": "0c059581c33a270ce039a3d9435580cb5f9379460e9101dc4fdb4c25204b78f7",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-applicationservices4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-applicationservices4.0-cil",
+      "sha256": "4b37667ee2116360c3e60d58cdea8ecf8ad973598670fe016172b3df6b66271e",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-dynamicdata4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-dynamicdata4.0-cil",
+      "sha256": "9dcd013d5079130a086057c0949f90a819eee1b2ce39506df441fc1070818332",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-extensions-design4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-extensions-design4.0-cil",
+      "sha256": "c3091d27a8116dc7c7ea20d1a8198df0c83efb9a3ef85cd8b35c5f8aeecae669",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-extensions4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-extensions4.0-cil",
+      "sha256": "432ee91092bbb4aee023d67df130e90e9a8a007c07675fd1dd988cd514e61db0",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-http-selfhost4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-http-selfhost4.0-cil",
+      "sha256": "09d9ce2435ce7eb546d0021f9b5802dad28f716ab5f7cee38d84f8d8aa79f41e",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-http-webhost4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-http-webhost4.0-cil",
+      "sha256": "0d9048c650f9795b0d929737fbabf9e8742bc51f8db19fa7cc87279a51de28ab",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-http4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-http4.0-cil",
+      "sha256": "11f932473a46596c51d999582a2da0fa58a244218f2d09e600463bd0b369ae82",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-mobile4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-mobile4.0-cil",
+      "sha256": "918196c8bc0dfc26c3ef6f3cc7ed6e207a0262e83e986b23c816f5da3a71a901",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-mvc3.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-mvc3.0-cil",
+      "sha256": "2e2ca3cf16b204ce775743857e3a7c6adca3f5ba1eef16f934de352a958cc8a9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-razor2.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-razor2.0-cil",
+      "sha256": "0bd3bdf1545a9cdc1e239efdd9ea0e77dfcfb9628e7a6165c1f2d2072f9f9a6a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-regularexpressions4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-regularexpressions4.0-cil",
+      "sha256": "688ee84133601912a410aec184580a4f342e7a8900eb91dfe1209cf0086119f8",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-routing4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-routing4.0-cil",
+      "sha256": "6dafb7a8082f381a7ba6ec2d738f679e214a6b7b1cc103ce11a113115da35959",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-services4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-services4.0-cil",
+      "sha256": "0efda7f851277afda2a7020433fc38271eab04741f584c92c97f1e97d91b7008",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-webpages-deployment2.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-webpages-deployment2.0-cil",
+      "sha256": "be2d9cfbc7878dff617c9f4cb4b39e9a0f6f96d7b9d03bdf5530826f9ccc1581",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-webpages-razor2.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-webpages-razor2.0-cil",
+      "sha256": "c06b63fab838c772592a5673193849fc680ae62c35fac3994d57ae91c98f5eba",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web-webpages2.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web-webpages2.0-cil",
+      "sha256": "0a2db6b043da522633e930f10ec5b58494f9a23ac5ba8db81077ec8e01a75f21",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-web4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-web4.0-cil",
+      "sha256": "21b21e2254aa446eadb22f84c9ae6c5c7a5c1a07dca8ca433c04e75bfa6edebd",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-windows-forms-datavisualization4.0a-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-windows-forms-datavisualization4.0a-cil",
+      "sha256": "f3fd378aee647349f21b34c30c6193f1f75951da5616ee7a813022b59984e573",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-windows-forms4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-windows-forms4.0-cil",
+      "sha256": "97fa270966f38a5e941dfcc52fe203a2cd10b99fa1ccea4262374151cafe4eeb",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-windows4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-windows4.0-cil",
+      "sha256": "fcd4da46d008a4d4d0739f2b6566cba6a682d5a0f2adfa8a4f101f49e8b68b78",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-workflow-activities4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-workflow-activities4.0-cil",
+      "sha256": "1b19a05d1a077656b4ee3e461171b6d9683810646e99811e210482c7155c3c40",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-workflow-componentmodel4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-workflow-componentmodel4.0-cil",
+      "sha256": "e9e5992bd306168a755402fbbb8b21187cbb644cd1093d0ce69092dfd094d4eb",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-workflow-runtime4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-workflow-runtime4.0-cil",
+      "sha256": "3e9585f2fcc460e7a46a64921c7c707a7408a5f5d82977753d4a2fada8e2d744",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-xaml4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-xaml4.0-cil",
+      "sha256": "af1ca45381f4a0bb5eb52c88f01ce0430639415cb4d33fee729ba395c098e7d3",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-xml-linq4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-xml-linq4.0-cil",
+      "sha256": "4b70ef1837d6ff156c6f89f584c1d50942d3e75aed6f7b20831106fd7c1879a9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-xml-serialization4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-xml-serialization4.0-cil",
+      "sha256": "6b0610512565cb1e804de00f4e2ecf7a2bb6097ed4b2a40ba65fcd2c154a0582",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system-xml4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system-xml4.0-cil",
+      "sha256": "0b8bf8db51bbd880f43724894fce6ffe1644cca888d6ac1399ff329d78bf1ef2",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-system4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-system4.0-cil",
+      "sha256": "c7924c9cdade4f661fa8198ecc05d68686da217fe99c5010145e82ee3488c2fb",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-tasklets4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-tasklets4.0-cil",
+      "sha256": "059192b7d92c996c4dbc28eda042f4580922d947bc2a8061a2ea87a6742a5ab8",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-webbrowser4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-webbrowser4.0-cil",
+      "sha256": "9fea2db0fd2ab2bed25acf5256a281504f4389d5e2b9ea80831eab23eb844b35",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-webmatrix-data4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-webmatrix-data4.0-cil",
+      "sha256": "3cfaddbd5d3d1ae271639162f1b44f3fe66b7861cf12c5fee8db3ab0f76368a6",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-windowsbase4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-windowsbase4.0-cil",
+      "sha256": "3be79338fa87456c1af9635effb70c46ac6f94b16a63dd8ca5810d30a70b0773",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "libmono-xbuild-tasks4.0-cil_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "libmono-xbuild-tasks4.0-cil",
+      "sha256": "193d8d407d3fb8977566296d78526fc0b1264efc2dee236ae0675201db378672",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmonosgen-2.0-1_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "libmonosgen-2.0-1",
+      "sha256": "01c810e106ce5c1c17736c1cd6937f3b3f7ef3f11d1d2f08cd1d4c6514b32210",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmonosgen-2.0-dev_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "libmonosgen-2.0-dev",
+      "sha256": "8cd055e94d88aa9ca2fe2913fbcfc8b103763ea8b224be7cbe363a92042490ea",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmount-dev_2.37.2-4ubuntu1_arm64.deb",
+      "package": "libmount-dev",
+      "sha256": "142236a63ee24916dae806dd2fea8d3bee922ed53a00f0f5abb4b9f39de99bed",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmount1_2.37.2-4ubuntu1_arm64.deb",
+      "package": "libmount1",
+      "sha256": "0eba23335b90e056a63350830ce9aa331f43f6014b4a2f21933791b4d57b95f6",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmpc3_1.2.1-1_arm64.deb",
+      "package": "libmpc3",
+      "sha256": "466f61ae906685f5d9a9c1c466b0d2b25615e3a20a65c01ec886813dc5a63d35",
+      "version": "1.2.1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmpdec3_2.5.1-2build1_arm64.deb",
+      "package": "libmpdec3",
+      "sha256": "e56d38071cb369816ed2481a67857123e60f2d6d0e1f88a69461f68cf7085ebc",
+      "version": "2.5.1-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libmpfr6_4.1.0-3build2_arm64.deb",
+      "package": "libmpfr6",
+      "sha256": "24d7823e57a09078c03a2e4a514e5e7f85d188e7aec7eddbd2c32fd572acbbf5",
+      "version": "4.1.0-3build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libncurses6_6.3-1_arm64.deb",
+      "package": "libncurses6",
+      "sha256": "35feba6f13ad9ee3eea54b99c10a1245d17771f7c3cdcf7ab80900b0469305cc",
+      "version": "6.3-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libncursesw6_6.3-1_arm64.deb",
+      "package": "libncursesw6",
+      "sha256": "b6630206883e415174e983b4a543d5e18f4c6aaa560bd718a52ac86c8963676d",
+      "version": "6.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnet-http-perl_6.21-1_all.deb",
+      "package": "libnet-http-perl",
+      "sha256": "a686de470d139c09e082a4446fe69c3a4d7fb56a0cb51d31fe222d802830e870",
+      "version": "6.21-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libnet-ssleay-perl_1.91.01-1_arm64.deb",
+      "package": "libnet-ssleay-perl",
+      "sha256": "0da92998d68e90af53da492ee4ae1316428f7f559884b2cc1e59ca98d7e1d836",
+      "version": "1.91.01-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libnettle8_3.7.3-1build1_arm64.deb",
+      "package": "libnettle8",
+      "sha256": "7c9ab407f334d504f695189f2eebae06b237d68d1b55c5cde3b090788fd5a708",
+      "version": "3.7.3-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libnghttp2-14_1.43.0-1build2_arm64.deb",
+      "package": "libnghttp2-14",
+      "sha256": "91be5fc862f925060b18e84bd8bc20fa35876d93c6d8a25467d0acde0edc675c",
+      "version": "1.43.0-1build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libnpth0_1.6-3build1_arm64.deb",
+      "package": "libnpth0",
+      "sha256": "4ca2d1ea4c60a4459a734bba90389e2dd93103dbb0763e520c64c93d85eeeff2",
+      "version": "1.6-3build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libnsl-dev_1.3.0-2build1_arm64.deb",
+      "package": "libnsl-dev",
+      "sha256": "381ab96b4386a9d523392d7f4f41e67b051cde7d85c92c00a2fca6a0420895ce",
+      "version": "1.3.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libnsl2_1.3.0-2build1_arm64.deb",
+      "package": "libnsl2",
+      "sha256": "a3ef58019b1eca1557b794dc7532ba2188235f1a04255a0740055db982ba4091",
+      "version": "1.3.0-2build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-cil-dev_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-cil-dev",
+      "sha256": "e653a2bf018722f0a6d6f97ca149b8bc4b4aceb6effc6bc6d7213cbbc4394234",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-console-runner2.6.3-cil_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-console-runner2.6.3-cil",
+      "sha256": "48365f6a4dd489e91ea9c89285cd71973b0d62bc66e5916506c5eae58e426fe2",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-core-interfaces2.6.3-cil_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-core-interfaces2.6.3-cil",
+      "sha256": "b1579a402f836a48901ad0c42f37c88d798382c43d21ec67d53af5a80f7c8489",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-core2.6.3-cil_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-core2.6.3-cil",
+      "sha256": "685e5d671afc382dd22b7f510d5541e3a97fd8dd122ba440cb065b9cbdba2fa7",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-framework2.6.3-cil_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-framework2.6.3-cil",
+      "sha256": "bfe8316a7043c94e4c2575c39d72d88c67a327cba327ff00ff208f3b21e87866",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-mocks2.6.3-cil_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-mocks2.6.3-cil",
+      "sha256": "2e5bd2ed9275f4e5735e8a1f407c79dc79005a391971d2e0e95e71c0430e3d40",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libnunit-util2.6.3-cil_2.6.4+dfsg-1.1_all.deb",
+      "package": "libnunit-util2.6.3-cil",
+      "sha256": "6fe0594282954f46941cf7296a318b34916a82484313c0ea4eb93c7e4cdcf2e2",
+      "version": "2.6.4+dfsg-1.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libopengl-dev_1.3.4-2_arm64.deb",
+      "package": "libopengl-dev",
+      "sha256": "ebce53a18ded82323bf825a7991560cbc488d42be91c8b6e8984c89177c3d539",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libopengl0_1.3.4-2_arm64.deb",
+      "package": "libopengl0",
+      "sha256": "bc9d9d3c4f7590e56d5a97d4e5fc6d055d8c22b5b024d0bb0087d62f3923e4e8",
+      "version": "1.3.4-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libosp5_1.5.2-13ubuntu3_arm64.deb",
+      "package": "libosp5",
+      "sha256": "841a6e056017533cdef477ef8a82223a328d12c1af85871e826d7406a6408d74",
+      "version": "1.5.2-13ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libp11-kit0_0.24.0-6_arm64.deb",
+      "package": "libp11-kit0",
+      "sha256": "09aa1118d12d11a65d877083e493ecb9f70b53c794f782186666ff90083751e4",
+      "version": "0.24.0-6"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpam-modules_1.4.0-10ubuntu2_arm64.deb",
+      "package": "libpam-modules",
+      "sha256": "e2233615cc194e7596f4cfad0bd3c989ac3e05c00594b38549ab5ebe1a3376bd",
+      "version": "1.4.0-10ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpam-modules-bin_1.4.0-10ubuntu2_arm64.deb",
+      "package": "libpam-modules-bin",
+      "sha256": "e406f157b776a17dc740d050b0a32776fceba85bfd3a552d3e7990e9c92f71ec",
+      "version": "1.4.0-10ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "libpam-runtime_1.4.0-10ubuntu2_all.deb",
+      "package": "libpam-runtime",
+      "sha256": "1056c1338a951ea04a9567cd7f052dc89048507c43f9bfe196092e4294ed2a21",
+      "version": "1.4.0-10ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpam-systemd_249.5-2ubuntu2_arm64.deb",
+      "package": "libpam-systemd",
+      "sha256": "3811d3095572ed5326a455ded73af137419ed3f9fada2093ad8036876d50db0f",
+      "version": "249.5-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpam0g_1.4.0-10ubuntu2_arm64.deb",
+      "package": "libpam0g",
+      "sha256": "a6f60ba0712dfe553c5777f3bfd1970758649dc4ba8bea2d09e2b5c31435c26c",
+      "version": "1.4.0-10ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpango-1.0-0_1.48.10+ds1-1_arm64.deb",
+      "package": "libpango-1.0-0",
+      "sha256": "8590b22e5c6ac492d71809cc2bf4945f7ab1dada281b5443bc684ec677882dfc",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpango1.0-dev_1.48.10+ds1-1_arm64.deb",
+      "package": "libpango1.0-dev",
+      "sha256": "472c1f2a4c493ad65beb03ea7211957a42c2b43a245de0b2aca2faa48d0305d5",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpango3.0-cil_2.99.3-4_arm64.deb",
+      "package": "libpango3.0-cil",
+      "sha256": "9f5f2ec50cbb1c97ca82f4adaba96b4de875d09156c2cbf9eb9491f71d0c37eb",
+      "version": "2.99.3-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpangocairo-1.0-0_1.48.10+ds1-1_arm64.deb",
+      "package": "libpangocairo-1.0-0",
+      "sha256": "9e3231a263db56ef666af0894ce779f593574a74ce4afe493e5840d91949465e",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpangoft2-1.0-0_1.48.10+ds1-1_arm64.deb",
+      "package": "libpangoft2-1.0-0",
+      "sha256": "282d0c328555b96a92a746b720880d0d6bfb567e6a2b65ef36d089f76cc140b6",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpangoxft-1.0-0_1.48.10+ds1-1_arm64.deb",
+      "package": "libpangoxft-1.0-0",
+      "sha256": "a4f18045f3be7c835d59b75d8578047d292f7431284deb863d2b9507c8ffd0a3",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre16-3_8.39-13build4_arm64.deb",
+      "package": "libpcre16-3",
+      "sha256": "466fb9551708208efa085b94f46d83f240529162746a087d00eb16d3d4c14273",
+      "version": "2:8.39-13build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre2-16-0_10.39-3_arm64.deb",
+      "package": "libpcre2-16-0",
+      "sha256": "3d82672990ef34a6cb541433ab4a37a31d8e761234036fcb00de288a88037522",
+      "version": "10.39-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre2-32-0_10.39-3_arm64.deb",
+      "package": "libpcre2-32-0",
+      "sha256": "3e300f1d8a06bbcbfb97bb88ccb6ec27c92ff27c889fc37fcf9654c28a1a5271",
+      "version": "10.39-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre2-8-0_10.39-3_arm64.deb",
+      "package": "libpcre2-8-0",
+      "sha256": "a3f1929cc813d908b9252594f94d976ce50257e57a34c3e4428af4de6bdfaac9",
+      "version": "10.39-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre2-dev_10.39-3_arm64.deb",
+      "package": "libpcre2-dev",
+      "sha256": "9f49d35db1ccf97571f2ea3f4bdcde38c5e0b9b4aab31c4ac0f90bbfb8d4a922",
+      "version": "10.39-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre2-posix3_10.39-3_arm64.deb",
+      "package": "libpcre2-posix3",
+      "sha256": "40d0cdb35cf08dbe2b0731e499ababe8449098cd1fbba2bccad083e8e2614dba",
+      "version": "10.39-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre3_8.39-13build4_arm64.deb",
+      "package": "libpcre3",
+      "sha256": "0cc05e211a6efc928a3fa1ce8d12891a55cd41e3d2c2f484d3d63695bb3710a1",
+      "version": "2:8.39-13build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre3-dev_8.39-13build4_arm64.deb",
+      "package": "libpcre3-dev",
+      "sha256": "ec442df595d48cf8777382c978d033c919481f0164ee5a8bcd54707855982ae0",
+      "version": "2:8.39-13build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcre32-3_8.39-13build4_arm64.deb",
+      "package": "libpcre32-3",
+      "sha256": "1aa05a8e093d1d82121d007fe1a61a85092ef3283c4f8840bb764115fd432964",
+      "version": "2:8.39-13build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpcrecpp0v5_8.39-13build4_arm64.deb",
+      "package": "libpcrecpp0v5",
+      "sha256": "1e06a13ee03fdf9a56693726e305916850b3c523e48e32d238c328d593547bc1",
+      "version": "2:8.39-13build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libperl5.32_5.32.1-3ubuntu3_arm64.deb",
+      "package": "libperl5.32",
+      "sha256": "d18137f2cff95c58d5489c4b294236dfafe1b7f19d3647197821b31d2275aa45",
+      "version": "5.32.1-3ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpipeline1_1.5.4-1_arm64.deb",
+      "package": "libpipeline1",
+      "sha256": "5f0606c22ba5ea99489fbe966209d37375f8be537e5ca3dec78754e09b102ce2",
+      "version": "1.5.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpixman-1-0_0.40.0-1build3_arm64.deb",
+      "package": "libpixman-1-0",
+      "sha256": "f62beb517c73796a872c48dc69af70d157fd3825190e6763ddc2585318d6da13",
+      "version": "0.40.0-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpixman-1-dev_0.40.0-1build3_arm64.deb",
+      "package": "libpixman-1-dev",
+      "sha256": "5c9329a97d687b3b9415443e4ad19594e4dce1a1cc88f2e29abe863f0e64e52b",
+      "version": "0.40.0-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpng-dev_1.6.37-3build4_arm64.deb",
+      "package": "libpng-dev",
+      "sha256": "711e3d7f0b65c9afcc98e29b2bde9262998e2aae148f54e6fb74d6327f5ec53a",
+      "version": "1.6.37-3build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpng16-16_1.6.37-3build4_arm64.deb",
+      "package": "libpng16-16",
+      "sha256": "6136a7a1e00f6338aa3fb9ceaa1f8df35e8d5c13cbbf6f5f5e949d191d1927ae",
+      "version": "1.6.37-3build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libprocps8_3.3.17-5ubuntu3_arm64.deb",
+      "package": "libprocps8",
+      "sha256": "4404917ee73273602e72abcc4c66c8f998069184c815eadd02ed634c55b98156",
+      "version": "2:3.3.17-5ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpsl5_0.21.0-1.2build1_arm64.deb",
+      "package": "libpsl5",
+      "sha256": "fc7cfbb7712334429aebeafc8abcb5244f5f04c037e1cae440e394c141895993",
+      "version": "0.21.0-1.2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpthread-stubs0-dev_0.4-1build1_arm64.deb",
+      "package": "libpthread-stubs0-dev",
+      "sha256": "6e4ea75821ab4fdf9041e8149a3a5c7142323ed67b159008c659de77a7f5db9c",
+      "version": "0.4-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpython3-stdlib_3.9.7-4_arm64.deb",
+      "package": "libpython3-stdlib",
+      "sha256": "f7dbda6a60dae494adcb9a6d3a9ef7ff08cc4742a1e5dd212fdbf6c070093560",
+      "version": "3.9.7-4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpython3.9-minimal_3.9.9-1build1_arm64.deb",
+      "package": "libpython3.9-minimal",
+      "sha256": "867ae601089e6ac65fbb47f2426489b94b643f4bf4c87dc8f0b9857f7f32dfe2",
+      "version": "3.9.9-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libpython3.9-stdlib_3.9.9-1build1_arm64.deb",
+      "package": "libpython3.9-stdlib",
+      "sha256": "28b1490b3070d73ecc7e6aa5767084a6fa30a19f323b6d9a28cd2bf4f44354ad",
+      "version": "3.9.9-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libreadline8_8.1-2build1_arm64.deb",
+      "package": "libreadline8",
+      "sha256": "7099b9ea83dadd9fad3f5dfc0ef1819a0b29e1f9ed406a27733de4867adedcd5",
+      "version": "8.1-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "librhash0_1.4.2-1_arm64.deb",
+      "package": "librhash0",
+      "sha256": "602113d02953a4910b3276c9f8df7496423c52c75309d5ccef6dfb6bf234532c",
+      "version": "1.4.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "librtmp1_2.4+20151223.gitfa8646d.1-2build3_arm64.deb",
+      "package": "librtmp1",
+      "sha256": "2d08136fbc0a76cfa4a24c80daa95b0126f28749105fe8ad58c7d57f4441f82f",
+      "version": "2.4+20151223.gitfa8646d.1-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsasl2-2_2.1.27+dfsg2-2build1_arm64.deb",
+      "package": "libsasl2-2",
+      "sha256": "d05c74ba16d28bc134b2971f850b451b1079e21838e244060763c81a7acbe977",
+      "version": "2.1.27+dfsg2-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsasl2-modules-db_2.1.27+dfsg2-2build1_arm64.deb",
+      "package": "libsasl2-modules-db",
+      "sha256": "c6d7582cc9860976bf4066eb4c353a8a8085e87b9d9b8ccd0cc5a5d8bfed36af",
+      "version": "2.1.27+dfsg2-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libseccomp2_2.5.2-2ubuntu2_arm64.deb",
+      "package": "libseccomp2",
+      "sha256": "8c5d186a7551ce668713ed3e1f079561c917d638af3659fecad07876822b4322",
+      "version": "2.5.2-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libselinux1_3.3-1build1_arm64.deb",
+      "package": "libselinux1",
+      "sha256": "0c6164ad06082f857eec39107110adf7c08c95b025191cacacd76a8122aee088",
+      "version": "3.3-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libselinux1-dev_3.3-1build1_arm64.deb",
+      "package": "libselinux1-dev",
+      "sha256": "8935462355599a6c71c10c54e5e2c2ba56810dc1bb620780461822c8d38feb53",
+      "version": "3.3-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libsemanage-common_3.3-1build1_all.deb",
+      "package": "libsemanage-common",
+      "sha256": "e997b287abb586dae0fb06ac589939db7e8528a4b5d4dcd7230296e6045e17c0",
+      "version": "3.3-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsemanage2_3.3-1build1_arm64.deb",
+      "package": "libsemanage2",
+      "sha256": "4a7a92d40e384fe877fbb8e8ebba5ae8c1a67aeebd30bde695ebe96c4dcc412f",
+      "version": "3.3-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libsensors-config_3.6.0-7build1_all.deb",
+      "package": "libsensors-config",
+      "sha256": "890c88c34f6cab296795f836ef434298e1c96f140231dbf4ccdbe0767b634396",
+      "version": "1:3.6.0-7build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsensors5_3.6.0-7build1_arm64.deb",
+      "package": "libsensors5",
+      "sha256": "9642a91970742e63d1d5f8128f3c2c912b3bedb476ad2febec55079e9a496b53",
+      "version": "1:3.6.0-7build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsepol-dev_3.3-1_arm64.deb",
+      "package": "libsepol-dev",
+      "sha256": "df1da85a9f26469978b7a7f13e5cf2cf6757e669378a6e936c8dc8177992ecf7",
+      "version": "3.3-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsepol1_3.1-1ubuntu2_arm64.deb",
+      "package": "libsepol1",
+      "sha256": "9f19e1294a45418a503b032b529f3346ba76d9a14a1db474761825e6a953162e",
+      "version": "3.1-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsepol2_3.3-1_arm64.deb",
+      "package": "libsepol2",
+      "sha256": "ad1759dbdf61a84cd5b2552b2f0b522e5bd7a7dc80d4bd0939de4f1f9b2380f7",
+      "version": "3.3-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsigsegv2_2.13-1ubuntu2_arm64.deb",
+      "package": "libsigsegv2",
+      "sha256": "bbc31f8aacd0d482e58167e4ae443f3b607a26d41125048bb572e6a7d82ff9e4",
+      "version": "2.13-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsm-dev_1.2.3-1build1_arm64.deb",
+      "package": "libsm-dev",
+      "sha256": "fbc2d7990af84ef233aec72605ed5f80dfce3e8da571e39668b998c6af548ed3",
+      "version": "2:1.2.3-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsm6_1.2.3-1build1_arm64.deb",
+      "package": "libsm6",
+      "sha256": "b0aa9c008d1037af3c29864234c0c88a1b095b648edc3fad3e5d7e4a95258dc5",
+      "version": "2:1.2.3-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsmartcols1_2.37.2-4ubuntu1_arm64.deb",
+      "package": "libsmartcols1",
+      "sha256": "462a00166f5a10cce4e8ff7717a29180db28c5e42091873147dac7fff5c000cd",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsqlite3-0_3.36.0-2_arm64.deb",
+      "package": "libsqlite3-0",
+      "sha256": "300b9f13bdd54678d11b427e1672b7f5fd2475769d7cfbb023c78af0c76804a2",
+      "version": "3.36.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libss2_1.46.4-1ubuntu1_arm64.deb",
+      "package": "libss2",
+      "sha256": "eb3e4c491e283d9f59184733722efc49c6d00d4370fe7b9595ce8911de5ff47f",
+      "version": "1.46.4-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libssh-4_0.9.6-1build1_arm64.deb",
+      "package": "libssh-4",
+      "sha256": "505bb6c1380ba757a97c6ee0a44e6b285fcaceb78e877a044485ea30d6a15d75",
+      "version": "0.9.6-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libssl1.1_1.1.1l-1ubuntu1_arm64.deb",
+      "package": "libssl1.1",
+      "sha256": "5e7898504ff1b09dbbaa7a121a0a61ba6598a02b9554f4871004bd5e386bc966",
+      "version": "1.1.1l-1ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libssl3_3.0.0-1ubuntu2_arm64.deb",
+      "package": "libssl3",
+      "sha256": "84d9d39adca2fe2ccbf0d3c990f67a15928de3d8d44a811ea20b41c9cb91071f",
+      "version": "3.0.0-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libstdc++-11-dev_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libstdc++-11-dev",
+      "sha256": "d8fc8203746ca91c0bf4db0a330fe77c7aed6726f01355e3f52ff7f63a4b11ab",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libstdc++6_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libstdc++6",
+      "sha256": "dad5fcb225f3c7b1d3e34f498c87d00abf2e8130d0e5154a52631984ec96f5b8",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "libsub-override-perl_0.09-2_all.deb",
+      "package": "libsub-override-perl",
+      "sha256": "3d3cf778557b21d2f8d790887911b12e91b7c47ece7418ddc28b2201449df97b",
+      "version": "0.09-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libsystemd0_249.5-2ubuntu2_arm64.deb",
+      "package": "libsystemd0",
+      "sha256": "edcd3f35942dc26e1c5ea8945c558cf5cb7a9c965ac0f39ff2f5f486aabf6271",
+      "version": "249.5-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtasn1-6_4.18.0-4_arm64.deb",
+      "package": "libtasn1-6",
+      "sha256": "15d9991541ad16005dd698aeb6139eeee9c00220bc4d94efa84b69ec41f0e4fd",
+      "version": "4.18.0-4"
+    },
+    {
+      "arch": "all",
+      "filename": "libthai-data_0.1.28-4.1_all.deb",
+      "package": "libthai-data",
+      "sha256": "3a90ba632467c949c1ccdc147113096eb80d1c2163d43c5d390d4f1dc09f0d86",
+      "version": "0.1.28-4.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libthai-dev_0.1.28-4.1_arm64.deb",
+      "package": "libthai-dev",
+      "sha256": "3b187abe0f34146e5cd2469bea38cb69e71f43c82d183b293614838632eaa679",
+      "version": "0.1.28-4.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libthai0_0.1.28-4.1_arm64.deb",
+      "package": "libthai0",
+      "sha256": "57599c6efc41689fbd044876c797aebaac9091d83fd4a5d917ed146d51018ab4",
+      "version": "0.1.28-4.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtiff-dev_4.3.0-2_arm64.deb",
+      "package": "libtiff-dev",
+      "sha256": "091fc51777840bbaf8e192b1cc308da91884e8cc5e33495ec4520d3b3f33e62e",
+      "version": "4.3.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtiff5_4.3.0-2_arm64.deb",
+      "package": "libtiff5",
+      "sha256": "7bd05a156098bf4fd2c2501888f85f25c6d443171889efa08106e7fba7e0a0be",
+      "version": "4.3.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtiffxx5_4.3.0-2_arm64.deb",
+      "package": "libtiffxx5",
+      "sha256": "cee2be67f9bb3592347bf13ad26bfa4f89c2fd39eb73407304da61e6ca71a0b3",
+      "version": "4.3.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "libtimedate-perl_2.3300-2_all.deb",
+      "package": "libtimedate-perl",
+      "sha256": "71c8cf8da8e3f273070268f093cf7b418371be2c8a70566875d0fe6b5d119f89",
+      "version": "2.3300-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtinfo6_6.3-1_arm64.deb",
+      "package": "libtinfo6",
+      "sha256": "ec6c665ddff1a9cff132052e315995597791344d7f5a9ad8f2d93cc3481354b4",
+      "version": "6.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libtirpc-common_1.3.2-2_all.deb",
+      "package": "libtirpc-common",
+      "sha256": "bd3228850297d7498d82b72486edf17ca525f660892afa2ffed58ee19792a089",
+      "version": "1.3.2-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtirpc-dev_1.3.2-2_arm64.deb",
+      "package": "libtirpc-dev",
+      "sha256": "b4d1e9fbe72a8f12adb92aad43558df31ca8fa3915559b8eee5dc19f54ea2620",
+      "version": "1.3.2-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtirpc3_1.3.2-2_arm64.deb",
+      "package": "libtirpc3",
+      "sha256": "d0e657840f31c858fea7553b420936ba6f2c9f851e724a93a5b14e108138d895",
+      "version": "1.3.2-2"
+    },
+    {
+      "arch": "all",
+      "filename": "libtool_2.4.6-15build1_all.deb",
+      "package": "libtool",
+      "sha256": "736ea1f54f5a25b770f18135560c4d1c346c2943e0a431d1d3ee09ee1a9d60e9",
+      "version": "2.4.6-15build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libtry-tiny-perl_0.31-1_all.deb",
+      "package": "libtry-tiny-perl",
+      "sha256": "8360b678e5ff570a54f939f6b10ca4795ab97a1a03ce326d13ff1ddfbdf7eaaf",
+      "version": "0.31-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libtsan0_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libtsan0",
+      "sha256": "87247390d222973216317794bba273a7b5b3ad6289cffeea1153b83f5ed0abbb",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libubsan1_11.2.0-12ubuntu1_arm64.deb",
+      "package": "libubsan1",
+      "sha256": "82e58b3c9e5c613c6b2962fa0045d7b22520974d7bc7cb22c60ae2adfcad6438",
+      "version": "11.2.0-12ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libuchardet0_0.0.7-1build1_arm64.deb",
+      "package": "libuchardet0",
+      "sha256": "33f29df6463f22e4f2c2dc6445d5d3df04eb495aaca3b6c9953f50b9bc8e9fd5",
+      "version": "0.0.7-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libudev1_249.5-2ubuntu2_arm64.deb",
+      "package": "libudev1",
+      "sha256": "5930dc8184a78d1ed9b24e0168a5968744d109b60df5d3c813612e88e9ccb730",
+      "version": "249.5-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libunistring2_0.9.10-6_arm64.deb",
+      "package": "libunistring2",
+      "sha256": "7f738abff4bf792085725c97c7a1514c3472dac39d6d300c4c92c08a817bba2b",
+      "version": "0.9.10-6"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libunwind8_1.3.2-2build1_arm64.deb",
+      "package": "libunwind8",
+      "sha256": "feb0830ca2776c52028ce73666a41acb91f7dc99da8ea58a427f748e3e36e478",
+      "version": "1.3.2-2build1"
+    },
+    {
+      "arch": "all",
+      "filename": "liburi-perl_5.10-1_all.deb",
+      "package": "liburi-perl",
+      "sha256": "eeede96d11e592ba712e7335c95ad638519f644730a53be7abf774f124b1a4a9",
+      "version": "5.10-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libuuid1_2.37.2-4ubuntu1_arm64.deb",
+      "package": "libuuid1",
+      "sha256": "80e59a3ce653fe7ef634a434e413bd2751b345d3237dc661fe9e3bbdbe80289f",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libuv1_1.42.0-1_arm64.deb",
+      "package": "libuv1",
+      "sha256": "8fd008ed1bb29486cf722f49498913247a8576bf6ef60676f3a8debebab80f60",
+      "version": "1.42.0-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libvala-0.54-0_0.54.4-1_arm64.deb",
+      "package": "libvala-0.54-0",
+      "sha256": "ce8f957a070d0cd05db5ffe30b4a990e03700d27b64c2c51919a495ac1ce0bc4",
+      "version": "0.54.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libvalacodegen-0.54-0_0.54.4-1_arm64.deb",
+      "package": "libvalacodegen-0.54-0",
+      "sha256": "b65115f76adefe29a100babfda9d92a2e3aca9667386c8558fee13b19946ce8c",
+      "version": "0.54.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libvulkan1_1.2.189.0-2_arm64.deb",
+      "package": "libvulkan1",
+      "sha256": "b46e0b94817382842e2931f80ee771c57c025d82bd2427329bdcb0b2a7a1c7ec",
+      "version": "1.2.189.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwayland-bin_1.19.0-2build1_arm64.deb",
+      "package": "libwayland-bin",
+      "sha256": "27e304896308e0b5152269a6c9c5cb9c9552cf6f3a242b6be620ce1935cabce3",
+      "version": "1.19.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwayland-client0_1.19.0-2build1_arm64.deb",
+      "package": "libwayland-client0",
+      "sha256": "1b827f7e0b3d4519742d9622b8ded32e1616afd32e2ae9d0872c54282c6f6215",
+      "version": "1.19.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwayland-cursor0_1.19.0-2build1_arm64.deb",
+      "package": "libwayland-cursor0",
+      "sha256": "eb6deea611f9f9f1ab567d4557cff7fb2a014cda7fe5ee8f5499e7bf2b73fc8c",
+      "version": "1.19.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwayland-dev_1.19.0-2build1_arm64.deb",
+      "package": "libwayland-dev",
+      "sha256": "e78604b5cfd00b246ef9688b82f5f93f004a19fa1ea46c516ea7402eb9ce700f",
+      "version": "1.19.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwayland-egl1_1.19.0-2build1_arm64.deb",
+      "package": "libwayland-egl1",
+      "sha256": "a0e745dc94e8f62313745b257980a6c58ee30449124ad340db3fb90ce1608076",
+      "version": "1.19.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwayland-server0_1.19.0-2build1_arm64.deb",
+      "package": "libwayland-server0",
+      "sha256": "9e3080159667a2d62dc10db83f38955e83b48fb44f516c9941121a798b8cc36f",
+      "version": "1.19.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libwebp6_0.6.1-2.1build1_arm64.deb",
+      "package": "libwebp6",
+      "sha256": "c75de79fd52f87bc294d7ee22e5899bf51642ab83bb303b4ec71ac20aa26d2b1",
+      "version": "0.6.1-2.1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libwww-perl_6.59-1_all.deb",
+      "package": "libwww-perl",
+      "sha256": "bc26b94f58cc7e983bcb3bb37295e9029fc43bec7ed434159a49706dc153aa46",
+      "version": "6.59-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libwww-robotrules-perl_6.02-1_all.deb",
+      "package": "libwww-robotrules-perl",
+      "sha256": "8c77cc5cbef468c257c8e9c359bd9d715352f4a6bf1481c9470ccd20a010d987",
+      "version": "6.02-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libx11-6_1.7.2-2_arm64.deb",
+      "package": "libx11-6",
+      "sha256": "c4696350d101f48acc6109ff0dd99b8fa94f6706d0f6d85e13fdec4538fcf233",
+      "version": "2:1.7.2-2"
+    },
+    {
+      "arch": "all",
+      "filename": "libx11-data_1.7.2-2_all.deb",
+      "package": "libx11-data",
+      "sha256": "15a1775a27cba9c6bd25f3f548a29981611ed9853920075eba0acc5a2e253952",
+      "version": "2:1.7.2-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libx11-dev_1.7.2-2_arm64.deb",
+      "package": "libx11-dev",
+      "sha256": "251696c3c785c1ccbb163bce534294ff61ed4002e84485bec4153595e686a59e",
+      "version": "2:1.7.2-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libx11-xcb1_1.7.2-2_arm64.deb",
+      "package": "libx11-xcb1",
+      "sha256": "114cd2f4d3ac9651f614e770785aece6ea57efeb2c1f6b28f15b018678e10e43",
+      "version": "2:1.7.2-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxau-dev_1.0.9-1build4_arm64.deb",
+      "package": "libxau-dev",
+      "sha256": "e252941cf74add285e837c999eddb2de729e0957e0ab5d34561831a3a5ceaff5",
+      "version": "1:1.0.9-1build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxau6_1.0.9-1build4_arm64.deb",
+      "package": "libxau6",
+      "sha256": "8e5e7089371e1ca3436dfb671b83cc02d9a57da2bff7f8804d739ffb3f222d60",
+      "version": "1:1.0.9-1build4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxaw7_1.0.13-1.1build1_arm64.deb",
+      "package": "libxaw7",
+      "sha256": "f9e7166b57f23d47c807e9f778add5a7d8fe16470ba4df299c49a536cbd9ba9f",
+      "version": "2:1.0.13-1.1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-dri2-0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-dri2-0",
+      "sha256": "b431d8c5ecb7fcde66f4151959d848c6032059e65dbf6731866f041a6eaaf257",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-dri3-0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-dri3-0",
+      "sha256": "dfd8fc15ad145a67a54da7e45558223e8149124f270c35c959dc2ec3e01e8d47",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-glx0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-glx0",
+      "sha256": "ecf6197b31dcdf5c48e5ffdd1c76533fb37179750625fddaea56d2f11ab3a44d",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-present0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-present0",
+      "sha256": "1e55f45b2797239acdfb05f76cb43978393bd04948bcfeaa6945e2cdb730d9ce",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-render0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-render0",
+      "sha256": "8b00649dde5095db6c42368951b61a00f69a9de0b96fe0b9351cabca2fd6575e",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-render0-dev_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-render0-dev",
+      "sha256": "4fa9abe83d90433f63b6b1e56a5f6698672deceefc7b98bc965f7d0d45b2af31",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-shm0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-shm0",
+      "sha256": "ac72435609c497d037800ede7b60d8db788b0e84acf5cf6ea276459111b6344d",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-shm0-dev_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-shm0-dev",
+      "sha256": "4c5540d3281de507bd7540a1fb5e32977116dbfd89765b328981c3b9c8582171",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-sync1_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-sync1",
+      "sha256": "c6288f66c328be77edb9e43f10bb2893133cdf0e299df1b99fb3bed77c4d2df4",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb-xfixes0_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb-xfixes0",
+      "sha256": "c9913096a1d580c0ad6876661868827ea18478fbef01fcb049f14a392026acca",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb1_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb1",
+      "sha256": "6e7d39cb9344fec27ba9a1ea8ff83037e05475d18d22e76748b73f1089e5750a",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcb1-dev_1.14-3ubuntu2_arm64.deb",
+      "package": "libxcb1-dev",
+      "sha256": "d2d2a19af68fbb2bfe97ff6ea963e7a211354c5e147a01d5de916a9d9f762d6d",
+      "version": "1.14-3ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcomposite-dev_0.4.5-1build1_arm64.deb",
+      "package": "libxcomposite-dev",
+      "sha256": "6cb4de6f66425b18ea1973fc3c9d45e9f879500b879ba74d8c856159f573926b",
+      "version": "1:0.4.5-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcomposite1_0.4.5-1build1_arm64.deb",
+      "package": "libxcomposite1",
+      "sha256": "cbadd5746cab545b783c081c54e3bb5928917227d44f5ebce584a47817744265",
+      "version": "1:0.4.5-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcursor-dev_1.2.0-2build3_arm64.deb",
+      "package": "libxcursor-dev",
+      "sha256": "b7402735acbb8fcc5ae9a7eec8d58c2a3d31f917b00e97d5649b20960efb1fb1",
+      "version": "1:1.2.0-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxcursor1_1.2.0-2build3_arm64.deb",
+      "package": "libxcursor1",
+      "sha256": "f53b52bd20850f42ca9ee0cc45bedbbcb1229632ec2ea03f9a142cdc5635ba98",
+      "version": "1:1.2.0-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxdamage-dev_1.1.5-2build1_arm64.deb",
+      "package": "libxdamage-dev",
+      "sha256": "85a3e112e4e83a99f1fb709e675b89f121490836fcb648f299ee63065ee1b74d",
+      "version": "1:1.1.5-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxdamage1_1.1.5-2build1_arm64.deb",
+      "package": "libxdamage1",
+      "sha256": "23b689f3ec78b1f83b53b3c863ed11d40f89f6a55ad9beffb8403889062e185e",
+      "version": "1:1.1.5-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxdmcp-dev_1.1.3-0ubuntu4_arm64.deb",
+      "package": "libxdmcp-dev",
+      "sha256": "d18e504750d7da3b57fd89abfe937e0fa007b00cc9f506496ff6a268e4b89a62",
+      "version": "1:1.1.3-0ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxdmcp6_1.1.3-0ubuntu4_arm64.deb",
+      "package": "libxdmcp6",
+      "sha256": "04360518b539821d51d8a4c5f2a5e4c5580d1061e6f45c11b4f01b8b9b9cf456",
+      "version": "1:1.1.3-0ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxext-dev_1.3.4-1_arm64.deb",
+      "package": "libxext-dev",
+      "sha256": "d76c510de136b2ff95ad28b82a57c7864131ab922cc3635ba85cfee56e5960fe",
+      "version": "2:1.3.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxext6_1.3.4-1_arm64.deb",
+      "package": "libxext6",
+      "sha256": "64262c93cf5542cfa98e855f2ca740cbc770532e2e95400b0866c05dba915e52",
+      "version": "2:1.3.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxfixes-dev_5.0.3-2build2_arm64.deb",
+      "package": "libxfixes-dev",
+      "sha256": "6a2a744ee88506c0eb31f787489baf1d03e96a5d1c184fcb6bc9afdfad58b679",
+      "version": "1:5.0.3-2build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxfixes3_5.0.3-2build2_arm64.deb",
+      "package": "libxfixes3",
+      "sha256": "35b073effd45cb23a46829320d4bf8ba1f596e046a8496eef50cb04c8f9b08bf",
+      "version": "1:5.0.3-2build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxfont2_2.0.5-1_arm64.deb",
+      "package": "libxfont2",
+      "sha256": "95582d12bb97eef31dfec4f0277c964af605af95ad3d36829ddcbecc8764c9fe",
+      "version": "1:2.0.5-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxft-dev_2.3.3-0ubuntu4_arm64.deb",
+      "package": "libxft-dev",
+      "sha256": "72d75439fa97e32f3160b22de882eea06867b50b24a701d4ed109613da143c37",
+      "version": "2.3.3-0ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxft2_2.3.3-0ubuntu4_arm64.deb",
+      "package": "libxft2",
+      "sha256": "234907babde484d75f2863e7f6b26380bac15714a54fa758806f2e0a26a7bc9b",
+      "version": "2.3.3-0ubuntu4"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxi-dev_1.8-1_arm64.deb",
+      "package": "libxi-dev",
+      "sha256": "83b7982e4a44b2f0b0bb464cdb008d3d924df54b439f5a15e25191b0b0592922",
+      "version": "2:1.8-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxi6_1.8-1_arm64.deb",
+      "package": "libxi6",
+      "sha256": "c934793876f1eb13337e68756d6cd160d82ebbe1bba7b2880b54399b7759c902",
+      "version": "2:1.8-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxinerama-dev_1.1.4-2build3_arm64.deb",
+      "package": "libxinerama-dev",
+      "sha256": "5085fea8414ab1e58f0d2bfb279c1536cd708e9efbd79f3342b4a6fc018b4e71",
+      "version": "2:1.1.4-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxinerama1_1.1.4-2build3_arm64.deb",
+      "package": "libxinerama1",
+      "sha256": "f82eff01d6d5f7c162e6b5dbaf9f394e5130c8a5c144331f8414d00b0b94c4b5",
+      "version": "2:1.1.4-2build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxkbcommon-dev_1.3.1-1_arm64.deb",
+      "package": "libxkbcommon-dev",
+      "sha256": "2007c40353f3cec4092094e1ebc0d6e30db70d82dafbf1bdc2f1e4a2d41ff852",
+      "version": "1.3.1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxkbcommon0_1.3.1-1_arm64.deb",
+      "package": "libxkbcommon0",
+      "sha256": "6347ad25f75a78d1bc2ca2a1408577b505364f05a1d3b837f856a95690b14e17",
+      "version": "1.3.1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxkbfile1_1.1.0-1build2_arm64.deb",
+      "package": "libxkbfile1",
+      "sha256": "63a83c40a0d1145fac1041b0a5bea7ecef12560247e331a1802b8d4de5e85dbe",
+      "version": "1:1.1.0-1build2"
+    },
+    {
+      "arch": "all",
+      "filename": "libxml-dom-perl_1.46-1_all.deb",
+      "package": "libxml-dom-perl",
+      "sha256": "1b50aa815df36ea7c6b8226719a712b7153d2b1b87d978869b4c1fa435f22289",
+      "version": "1.46-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxml-libxml-perl_2.0134+dfsg-2build2_arm64.deb",
+      "package": "libxml-libxml-perl",
+      "sha256": "9969efd7da02cb7d63b67a019201cd7d7df53b5e623d3aa5f009d01f0e8e735c",
+      "version": "2.0134+dfsg-2build2"
+    },
+    {
+      "arch": "all",
+      "filename": "libxml-namespacesupport-perl_1.12-1.1_all.deb",
+      "package": "libxml-namespacesupport-perl",
+      "sha256": "7dbf9270fcceedc944b14fdc953773497e62fba803b0b54a88b2b0f7409f211c",
+      "version": "1.12-1.1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxml-parser-perl_2.46-3_arm64.deb",
+      "package": "libxml-parser-perl",
+      "sha256": "fdbabadb3b5921bd325e1973c857f8931c5fe0c0eb42d338f55162a015650cf3",
+      "version": "2.46-3"
+    },
+    {
+      "arch": "all",
+      "filename": "libxml-perl_0.08-3.1_all.deb",
+      "package": "libxml-perl",
+      "sha256": "6ecda60525eda288742b9996f9d82cb759c450902a77f745eec9fb145391b697",
+      "version": "0.08-3.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libxml-regexp-perl_0.04-1.1_all.deb",
+      "package": "libxml-regexp-perl",
+      "sha256": "0c9c80bc16a45650b2c49ec04af37e5558adc2d47ed86d5020242d4500daac9e",
+      "version": "0.04-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libxml-sax-base-perl_1.09-1.1_all.deb",
+      "package": "libxml-sax-base-perl",
+      "sha256": "54629664db5fc43640ef6e75aa57c22bc001163ad223a196813b9d8df25a7d9b",
+      "version": "1.09-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "libxml-sax-perl_1.02+dfsg-3_all.deb",
+      "package": "libxml-sax-perl",
+      "sha256": "c75639a373b5873248e03c53ae204e0832e5b9addc22b6484e3851141868af65",
+      "version": "1.02+dfsg-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxml2_2.9.12+dfsg-5_arm64.deb",
+      "package": "libxml2",
+      "sha256": "82a407b22fb3d4ca94bfa2fb9bd5e044187d3998e33f5f45eb69e48ba66ece6e",
+      "version": "2.9.12+dfsg-5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxml2-utils_2.9.12+dfsg-5_arm64.deb",
+      "package": "libxml2-utils",
+      "sha256": "df50e2d71d5de59576ba49f50c218dfd636c1033ac12a256432d5db7cbbfd440",
+      "version": "2.9.12+dfsg-5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxmu6_1.1.3-0ubuntu2_arm64.deb",
+      "package": "libxmu6",
+      "sha256": "4f8d51b6ede68a813e0a0be18e9d86c5327591239eac1394f668297168e6e5b8",
+      "version": "2:1.1.3-0ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxmuu1_1.1.3-0ubuntu2_arm64.deb",
+      "package": "libxmuu1",
+      "sha256": "c7c33712eb3ec311f675220bf19b18f85a75d99e4caa969d76414bfbcc447f2d",
+      "version": "2:1.1.3-0ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxpm4_3.5.12-1build1_arm64.deb",
+      "package": "libxpm4",
+      "sha256": "ed927653dd3c5bdb4bfa46e8b55b49b03f4c25f9ee4cc3ee3a79677601e47f94",
+      "version": "1:3.5.12-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxrandr-dev_1.5.2-1_arm64.deb",
+      "package": "libxrandr-dev",
+      "sha256": "07950fd9be39046100ec83b9a51a15f0febbec576ea9048562d05bcdad845b42",
+      "version": "2:1.5.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxrandr2_1.5.2-1_arm64.deb",
+      "package": "libxrandr2",
+      "sha256": "87a062b2b3b5c35fba0b7632e9e5e79010b545b73b6bb1bd49afccfd71f9a687",
+      "version": "2:1.5.2-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxrender-dev_0.9.10-1build3_arm64.deb",
+      "package": "libxrender-dev",
+      "sha256": "d9651db2b73597ea70597555ea5c13a625d84d8dfb21d05bb79f0cb15142d3ff",
+      "version": "1:0.9.10-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxrender1_0.9.10-1build3_arm64.deb",
+      "package": "libxrender1",
+      "sha256": "755b3a006a3fa5b85894ad74bbfccc56cf59b1e20fdc9b750168cd8436d7440a",
+      "version": "1:0.9.10-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxshmfence1_1.3-1build3_arm64.deb",
+      "package": "libxshmfence1",
+      "sha256": "02aa0e6b6a39f8691a1e1b00d2f1091e286cfceeb7c404305ed58236c5516570",
+      "version": "1.3-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxslt1.1_1.1.34-4build1_arm64.deb",
+      "package": "libxslt1.1",
+      "sha256": "5550d44899d38f723b56c0763a9810cb289984762f920d51b607355aa9633a6b",
+      "version": "1.1.34-4build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxt6_1.2.0-1build1_arm64.deb",
+      "package": "libxt6",
+      "sha256": "7929a22c12a5a3bf63d74f14a067ad6466105fd2073bd4dc41283aac5f1b9b9b",
+      "version": "1:1.2.0-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxtst-dev_1.2.3-1build3_arm64.deb",
+      "package": "libxtst-dev",
+      "sha256": "5ab740f6eae15d0bf8e6db5ae5fdfe81094e0d216517fd03783b671911dd8633",
+      "version": "2:1.2.3-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxtst6_1.2.3-1build3_arm64.deb",
+      "package": "libxtst6",
+      "sha256": "f4ceaf116a1911b00cfdecd361a871f0e1ffcf3109b92d17e19cc7a673ad2dc9",
+      "version": "2:1.2.3-1build3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxxf86vm1_1.1.4-1build2_arm64.deb",
+      "package": "libxxf86vm1",
+      "sha256": "bf35d106a6f12b60e753cffc1e3349f9b51925f54be1b0d2d32b8da5e4f7b438",
+      "version": "1:1.1.4-1build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libxxhash0_0.8.0-2build1_arm64.deb",
+      "package": "libxxhash0",
+      "sha256": "9235ec9c02800885f3efff38ee12dc2d0d5427f4baf8b6498a0afe51a45b382a",
+      "version": "0.8.0-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libzstd1_1.4.8+dfsg-3_arm64.deb",
+      "package": "libzstd1",
+      "sha256": "962195decab9d2813ac93200c9e39e60fd07b6c58906f2bcc687f03b78d4a694",
+      "version": "1.4.8+dfsg-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "linux-libc-dev_5.15.0-13.13_arm64.deb",
+      "package": "linux-libc-dev",
+      "sha256": "112528c298b6644776e0ffab6731b539b99a2e8dfbbc1241fbc5ba5d3396a21b",
+      "version": "5.15.0-13.13"
+    },
+    {
+      "arch": "arm64",
+      "filename": "lockfile-progs_0.1.19_arm64.deb",
+      "package": "lockfile-progs",
+      "sha256": "6d30267678e86fc448b7f0942f8cf303b26590a475c520a9cbdf6b2c1a01ff19",
+      "version": "0.1.19"
+    },
+    {
+      "arch": "arm64",
+      "filename": "login_4.8.1-2ubuntu1_arm64.deb",
+      "package": "login",
+      "sha256": "1b47f4535c1702ff9cfb14fac5256d4324087409b36a5487401f2b4608ff328b",
+      "version": "1:4.8.1-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "logsave_1.46.4-1ubuntu1_arm64.deb",
+      "package": "logsave",
+      "sha256": "6e172d4ee3092b952ed7344e04cc77b2752944b60c0f709727fb434614b7ae88",
+      "version": "1.46.4-1ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "lsb-base_11.1.0ubuntu3_all.deb",
+      "package": "lsb-base",
+      "sha256": "080da8bbd3dcc4463306aef33b85f4508eb4740c1394998cbbb86c7e2709f49d",
+      "version": "11.1.0ubuntu3"
+    },
+    {
+      "arch": "all",
+      "filename": "lto-disabled-list_17_all.deb",
+      "package": "lto-disabled-list",
+      "sha256": "8a320eac5abac0503b58752636cdedad5099efed171cb822b949036c3548a724",
+      "version": "17"
+    },
+    {
+      "arch": "arm64",
+      "filename": "m4_1.4.18-5ubuntu1_arm64.deb",
+      "package": "m4",
+      "sha256": "1604698936f95af10467b05cd2520617ab4a9143f8d9f5fad274ccf02087b8a9",
+      "version": "1.4.18-5ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "make_4.3-4ubuntu2_arm64.deb",
+      "package": "make",
+      "sha256": "3b439d1f4e3fc8f3b8d950a4bc319aac530d073b9d6166ae826487adba4a90f5",
+      "version": "4.3-4ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "man-db_2.9.4-2build1_arm64.deb",
+      "package": "man-db",
+      "sha256": "c3d166ee6040646e427892e757b2ef637db0352a922ebd0570b6ad98108a137c",
+      "version": "2.9.4-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "mawk_1.3.4.20200120-2build1_arm64.deb",
+      "package": "mawk",
+      "sha256": "815d0962b5503c09a07f35c38eca07fc98e49a74f9044929012545787b8d49b3",
+      "version": "1.3.4.20200120-2build1"
+    },
+    {
+      "arch": "all",
+      "filename": "media-types_4.0.0_all.deb",
+      "package": "media-types",
+      "sha256": "da739d8ad4956d247c963ffb51b30ebcd50f580beeaa6a45b73bffb99b99c5a6",
+      "version": "4.0.0"
+    },
+    {
+      "arch": "all",
+      "filename": "mono-4.0-gac_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "mono-4.0-gac",
+      "sha256": "a6c6d682557d63824d719e18064c6ed3d40037011d613ae1dc5a9043dc093d29",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "mono-devel_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "mono-devel",
+      "sha256": "ad5c236a3891863167bb7ef7acecde3c9b19ab4f537affd456942bde3148a2e9",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "mono-gac_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "mono-gac",
+      "sha256": "5dccd498ebcdea7ae46df73c43adf32bfda341728a57c2e39465cb977d7dd370",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "mono-mcs_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "mono-mcs",
+      "sha256": "c16a1645ac56833ab94f53e37fd535d9245c35c7e17ad01d80ccef6a6b7dc08e",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "mono-runtime_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "mono-runtime",
+      "sha256": "418ca93cdbe3f54bca96a9497cc77aa7c4700b89b002e714eb58ac85479a5e20",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "mono-runtime-common_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "mono-runtime-common",
+      "sha256": "829fc541f6b25d7e0da36c95a2202eea26df7e89f95e697ff206049ff23cd88e",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "mono-runtime-sgen_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "mono-runtime-sgen",
+      "sha256": "305b1bf8bba87d58cdcee919d45e193a303226a5e41fee84a0a83d692be6a451",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "mono-utils_6.8.0.105+dfsg-3.2_arm64.deb",
+      "package": "mono-utils",
+      "sha256": "d9fbfd9e54e24fec114d382d23088bd7697ae7abea8bd3520a54b10c34d0396a",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "all",
+      "filename": "mono-xbuild_6.8.0.105+dfsg-3.2_all.deb",
+      "package": "mono-xbuild",
+      "sha256": "533834f2e4aff4a968b3d55fdf742d669e25d48163f321694f173859629a9f22",
+      "version": "6.8.0.105+dfsg-3.2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "mount_2.37.2-4ubuntu1_arm64.deb",
+      "package": "mount",
+      "sha256": "385e25aebdcb12956ba3d562346df46c25072cf976200c6c603f6a6af5a73d83",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "ncurses-base_6.3-1_all.deb",
+      "package": "ncurses-base",
+      "sha256": "89bfa3f537cb5405c9e6eeb4e757487c3056d905162401c59bda96c5d39f08a5",
+      "version": "6.3-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "ncurses-bin_6.3-1_arm64.deb",
+      "package": "ncurses-bin",
+      "sha256": "4802191739015d11f606c372341ef373fabf21abac67bc3e088cc1b0f188bb98",
+      "version": "6.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "netbase_6.3_all.deb",
+      "package": "netbase",
+      "sha256": "480bbd894069e5da7a25f070ea0ebaded7f64bdd34a119558cc2fe7137762a79",
+      "version": "6.3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "opensp_1.5.2-13ubuntu3_arm64.deb",
+      "package": "opensp",
+      "sha256": "8bb724c570a7bd255d1604daebcc19440fb0c7e7762190dd4dc96b676b954460",
+      "version": "1.5.2-13ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "openssl_3.0.0-1ubuntu2_arm64.deb",
+      "package": "openssl",
+      "sha256": "42f4a45f77dd9fcdaba2da802be46dcc461cb5c7a522066b3ab06e61e1825683",
+      "version": "3.0.0-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "optipng_0.7.7-2_arm64.deb",
+      "package": "optipng",
+      "sha256": "8617ae2c7aad16264ffa1774e93c1053d77686440148c004492d9815835afb3f",
+      "version": "0.7.7-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "pango1.0-tools_1.48.10+ds1-1_arm64.deb",
+      "package": "pango1.0-tools",
+      "sha256": "e8bcbd1abe1e127f68e6f968e29aa4713f5571a9ca54305fd5f31e3e529b0047",
+      "version": "1.48.10+ds1-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "passwd_4.8.1-2ubuntu1_arm64.deb",
+      "package": "passwd",
+      "sha256": "ef92dc63f6cfdabd4b0cb945069ba788d59f0e635d3e576b4a21348713bb65db",
+      "version": "1:4.8.1-2ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "patch_2.7.6-7build1_arm64.deb",
+      "package": "patch",
+      "sha256": "5319e1ef1bcc13dd6d74ada8742cf28e0115273d16ef61c274424a537c4e9c4a",
+      "version": "2.7.6-7build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "perl_5.32.1-3ubuntu3_arm64.deb",
+      "package": "perl",
+      "sha256": "1b34fe1fd123f4e21b3ac8b3eb70d59215caebdb83a64906e882872334476b25",
+      "version": "5.32.1-3ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "perl-base_5.32.1-3ubuntu3_arm64.deb",
+      "package": "perl-base",
+      "sha256": "f338d647ad6b13b7fccb2e375083d29f08a71978c86ec189f8fd5634163a354a",
+      "version": "5.32.1-3ubuntu3"
+    },
+    {
+      "arch": "all",
+      "filename": "perl-modules-5.32_5.32.1-3ubuntu3_all.deb",
+      "package": "perl-modules-5.32",
+      "sha256": "6231dd01ad39308678a7fa77e0201bb9777d9ff92339972c4871ebcb382012e6",
+      "version": "5.32.1-3ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "perl-openssl-defaults_5build2_arm64.deb",
+      "package": "perl-openssl-defaults",
+      "sha256": "da42647f1f5e06cc5300720cc4e200449d5fcea933334e7c179246f06da78fb5",
+      "version": "5build2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "pinentry-curses_1.1.1-1build1_arm64.deb",
+      "package": "pinentry-curses",
+      "sha256": "cd7ff183a0b0a0e74e8a80844ca1e24cdad004101b672c75426d5c89f198955f",
+      "version": "1.1.1-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "pkg-config_0.29.2-1ubuntu2_arm64.deb",
+      "package": "pkg-config",
+      "sha256": "e231bbcb217ef77999ae9115232cb160bed1f3d31097282bf45cf2bdbc00180e",
+      "version": "0.29.2-1ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "pkgbinarymangler_149_all.deb",
+      "package": "pkgbinarymangler",
+      "sha256": "96e0e06abafe3edc94e74896ef49f0be3022aa7611e4661195cdefa0289260a9",
+      "version": "149"
+    },
+    {
+      "arch": "all",
+      "filename": "po-debconf_1.0.21+nmu1_all.deb",
+      "package": "po-debconf",
+      "sha256": "ddcc43ce1ca6436b7b7f4a8078aa019f9547539d346c8a0716e134ff37274edd",
+      "version": "1.0.21+nmu1"
+    },
+    {
+      "arch": "all",
+      "filename": "policyrcd-script-zg2_0.1-3_all.deb",
+      "package": "policyrcd-script-zg2",
+      "sha256": "0e3277585ab7163ddb98c96a8c560d041132ac1b45fe24324b536ab63c252e6e",
+      "version": "0.1-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "procps_3.3.17-5ubuntu3_arm64.deb",
+      "package": "procps",
+      "sha256": "a4fc834a2c9375f9d01c42e17799acb1608777011ec0646db266cd19521b7a56",
+      "version": "2:3.3.17-5ubuntu3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "python3_3.9.7-4_arm64.deb",
+      "package": "python3",
+      "sha256": "b96a0bfb0ca720d5754cd6ecb46d345d6fec40d2dba1ceb4d604f6806f227372",
+      "version": "3.9.7-4"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-distutils_3.9.9-3_all.deb",
+      "package": "python3-distutils",
+      "sha256": "77984a6b778a113dad7de15874a596bd5372584028aca59ae4e4a3ef4cf54b41",
+      "version": "3.9.9-3"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-importlib-metadata_4.6.4-1_all.deb",
+      "package": "python3-importlib-metadata",
+      "sha256": "36091862c20f959e68da02b0d923613fbd2af3eccc3165c2d3b52cb339440237",
+      "version": "4.6.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-lib2to3_3.9.9-3_all.deb",
+      "package": "python3-lib2to3",
+      "sha256": "419be808ad69888a31a79f373002843541f90199fcf5d9dc19e7c12b0891a69e",
+      "version": "3.9.9-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "python3-lxml_4.6.4-1_arm64.deb",
+      "package": "python3-lxml",
+      "sha256": "e31fedd1b82cc840685b066dc03eee647044b766a99f0dddfee85feb75be0868",
+      "version": "4.6.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-mako_1.1.3+ds1-2_all.deb",
+      "package": "python3-mako",
+      "sha256": "affcf0bc3c627bc18d9c787c235a9ab383d07a042ed249ceed50efbcc0333ba3",
+      "version": "1.1.3+ds1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-markdown_3.3.6-1_all.deb",
+      "package": "python3-markdown",
+      "sha256": "41d3b667779323c2e3c54d18a21d6e96d70d21cfabacd63756a5952d6cc0a8e5",
+      "version": "3.3.6-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "python3-markupsafe_2.0.1-2_arm64.deb",
+      "package": "python3-markupsafe",
+      "sha256": "8375abc3a6560c3a722245208a63b7b83b68bf24ae6e7e7e17ad7fdeec339876",
+      "version": "2.0.1-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "python3-minimal_3.9.7-4_arm64.deb",
+      "package": "python3-minimal",
+      "sha256": "efadaf1df8924238eafa0d9c6ea69fdd504c39cb678ce70b62802026c24932f0",
+      "version": "3.9.7-4"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-more-itertools_8.10.0-2_all.deb",
+      "package": "python3-more-itertools",
+      "sha256": "acf021afdac9553e0b1d45ea8d3012be3830cf80df7907d78d17e90dee904b3e",
+      "version": "8.10.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-pkg-resources_59.4.0-1_all.deb",
+      "package": "python3-pkg-resources",
+      "sha256": "663b213bd84f7d33a7ed6466d30510cfd2be13809b7d2f1a8984f620cf64c9d8",
+      "version": "59.4.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-pygments_2.10.0+dfsg-1_all.deb",
+      "package": "python3-pygments",
+      "sha256": "8c5ac81e319cb97c73c221a37af43b118cbc7e8bc5cb47ac0536e34bde1cbf56",
+      "version": "2.10.0+dfsg-1"
+    },
+    {
+      "arch": "all",
+      "filename": "python3-zipp_1.0.0-3_all.deb",
+      "package": "python3-zipp",
+      "sha256": "8bbcd653daa9b6dd2110fa5b6319928e12822eda7562fb3f4756a7fbabc66e94",
+      "version": "1.0.0-3"
+    },
+    {
+      "arch": "arm64",
+      "filename": "python3.9_3.9.9-1build1_arm64.deb",
+      "package": "python3.9",
+      "sha256": "23eeffc848832bbc63238c733bf9fde50234f30b1026d4899ec714a5e4561e3d",
+      "version": "3.9.9-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "python3.9-minimal_3.9.9-1build1_arm64.deb",
+      "package": "python3.9-minimal",
+      "sha256": "92f561df0bbc4b6081030e35cf617ff68a3fad2e0ca2fc993d93b3b995d74605",
+      "version": "3.9.9-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "readline-common_8.1-2build1_all.deb",
+      "package": "readline-common",
+      "sha256": "a8f855f182cf4b1a7346a0ec5d8f642363ba7cc19ecf18f7768350788a363e03",
+      "version": "8.1-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "rpcsvc-proto_1.4.2-0ubuntu5_arm64.deb",
+      "package": "rpcsvc-proto",
+      "sha256": "a57f0123cb419d7dd20c0ee895ce7d8d2221755f95c8d0d9611b00208dc55b8e",
+      "version": "1.4.2-0ubuntu5"
+    },
+    {
+      "arch": "arm64",
+      "filename": "sed_4.8-1ubuntu1_arm64.deb",
+      "package": "sed",
+      "sha256": "43badd85d2fc077abf6bc98e32b1f5af0e03af5ad48a17a95ea32b77bdfa5eb9",
+      "version": "4.8-1ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "sensible-utils_0.0.17_all.deb",
+      "package": "sensible-utils",
+      "sha256": "68fa82f5a319ffe48f51ea874117be3d6781c5f6b2ac4f172485fa690ebde4a3",
+      "version": "0.0.17"
+    },
+    {
+      "arch": "all",
+      "filename": "sgml-base_1.30_all.deb",
+      "package": "sgml-base",
+      "sha256": "2441992848986a4f19c8683971a40f12731e9e6e7ec58a67e911eacf7cd324c3",
+      "version": "1.30"
+    },
+    {
+      "arch": "all",
+      "filename": "sgml-data_2.0.11+nmu1_all.deb",
+      "package": "sgml-data",
+      "sha256": "5c5d65f537400e21bea98161a4f9b8158492c5ee211b6f3b2e70a3f1915370fc",
+      "version": "2.0.11+nmu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "shared-mime-info_2.1-1build1_arm64.deb",
+      "package": "shared-mime-info",
+      "sha256": "e7b3d28b97c627b754deb59b39835a0e5cbbf7601566df2e68aea005b159e17d",
+      "version": "2.1-1build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "systemd_249.5-2ubuntu2_arm64.deb",
+      "package": "systemd",
+      "sha256": "c1047179eafb0eb7733c9a6517a68cd50d6668bb2468c2e858116fdefb3546ef",
+      "version": "249.5-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "systemd-sysv_249.5-2ubuntu2_arm64.deb",
+      "package": "systemd-sysv",
+      "sha256": "d5a0cc87bf9a7b0fa346f5a9e3005967d4fa24201a73031639133f5168f2ea2d",
+      "version": "249.5-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "systemd-timesyncd_249.5-2ubuntu2_arm64.deb",
+      "package": "systemd-timesyncd",
+      "sha256": "61ed630e6e0913cee19f4eff7176a8722818cc2de4031b8d5b138e6b1e58f460",
+      "version": "249.5-2ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "sysvinit-utils_2.96-7ubuntu2_arm64.deb",
+      "package": "sysvinit-utils",
+      "sha256": "d91f588b5427105460be1205a7b1247a42fddc6264612ec69b958b051d94a153",
+      "version": "2.96-7ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "tar_1.34+dfsg-1build2_arm64.deb",
+      "package": "tar",
+      "sha256": "0376d49d7ced01f05655934b4d3cd0cb7bffa4c6042556e51948af12586e5c73",
+      "version": "1.34+dfsg-1build2"
+    },
+    {
+      "arch": "all",
+      "filename": "tzdata_2021e-1ubuntu1_all.deb",
+      "package": "tzdata",
+      "sha256": "acc4bbd9d9ad25c9cef9334d9ecefbfae690f80ee15bbea941076e01cb0026ac",
+      "version": "2021e-1ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "ubuntu-keyring_2021.03.26_all.deb",
+      "package": "ubuntu-keyring",
+      "sha256": "0d0e7ed6b112f5d03eabf3c7eb01ebdacf9c57714b279e90495cfc58c8c4520f",
+      "version": "2021.03.26"
+    },
+    {
+      "arch": "all",
+      "filename": "ubuntu-mono_20.10-0ubuntu1_all.deb",
+      "package": "ubuntu-mono",
+      "sha256": "5af36543c4297a6ef1f2d89282ddc3f906cf99783f380f70f8391c3a39ffd789",
+      "version": "20.10-0ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "ucf_3.0043_all.deb",
+      "package": "ucf",
+      "sha256": "a3fad168a58304fa4c9838158440660419a584855e2b2b881f980287c31a4819",
+      "version": "3.0043"
+    },
+    {
+      "arch": "all",
+      "filename": "usrmerge_25ubuntu2_all.deb",
+      "package": "usrmerge",
+      "sha256": "43bed2d23b2005c0690017d7bf8c332d0fd73fea18be245bd838a3fe104c93ad",
+      "version": "25ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "util-linux_2.37.2-4ubuntu1_arm64.deb",
+      "package": "util-linux",
+      "sha256": "22cdb75d61a812feb76c833a71ec1a4221859a9101aab68a451f8a8aa672c727",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "uuid-dev_2.37.2-4ubuntu1_arm64.deb",
+      "package": "uuid-dev",
+      "sha256": "8a6ec21c5524c5c02c1bb3d454d88673c81711a304d3f856b2899d5d01e917f9",
+      "version": "2.37.2-4ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "valac_0.54.4-1_arm64.deb",
+      "package": "valac",
+      "sha256": "b0dc3f5c97008860487ecd4983839e8c5d514586f1a8228a4cad00e6b5cf6dde",
+      "version": "0.54.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "valac-0.54-vapi_0.54.4-1_all.deb",
+      "package": "valac-0.54-vapi",
+      "sha256": "670aa28d7185c3e209d4d4588bb29cf79f1402b61897fa77590e235b5b268709",
+      "version": "0.54.4-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "valac-bin_0.54.4-1_arm64.deb",
+      "package": "valac-bin",
+      "sha256": "9e00e83b1036eb3e503f9e7e2d40e7f05fa5672581435b3c99def7f3167b920d",
+      "version": "0.54.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "wayland-protocols_1.24-1_all.deb",
+      "package": "wayland-protocols",
+      "sha256": "f048b52f34fe41135f39d639ed58f0c10979e32c04005bad0088c55e7d048a89",
+      "version": "1.24-1"
+    },
+    {
+      "arch": "all",
+      "filename": "x11-common_7.7+23ubuntu1_all.deb",
+      "package": "x11-common",
+      "sha256": "8c0fea9876b7db1ec57ce8e6d40140f63b5ac44f7ef1eeb80126cb9796432aa9",
+      "version": "1:7.7+23ubuntu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "x11-xkb-utils_7.7+5build3_arm64.deb",
+      "package": "x11-xkb-utils",
+      "sha256": "3663023bfcac9cdd19ad1afda9e312ebb210d3697ab90897df5129bd49b67cf7",
+      "version": "7.7+5build3"
+    },
+    {
+      "arch": "all",
+      "filename": "x11proto-dev_2021.5-1_all.deb",
+      "package": "x11proto-dev",
+      "sha256": "7cb2471a23ea50e197cec019d0596840b6ddd714e8deb75e427472e820e83548",
+      "version": "2021.5-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "xauth_1.1-1build1_arm64.deb",
+      "package": "xauth",
+      "sha256": "1a2bee252f9ac6af68f3df0a43cd81981b187e9b6baea20cce484ab317355045",
+      "version": "1:1.1-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "xkb-data_2.33-1_all.deb",
+      "package": "xkb-data",
+      "sha256": "26f74d6ac0caf3f7b2926d9c1fca85bc868531c8159f943fb78fbb4b6c5a8c80",
+      "version": "2.33-1"
+    },
+    {
+      "arch": "all",
+      "filename": "xml-core_0.18+nmu1_all.deb",
+      "package": "xml-core",
+      "sha256": "ca2d6758bdd3d9bb789b9be48838930bd6be130d524fac4133d8e9e60a39f4e8",
+      "version": "0.18+nmu1"
+    },
+    {
+      "arch": "all",
+      "filename": "xorg-sgml-doctools_1.11-1.1_all.deb",
+      "package": "xorg-sgml-doctools",
+      "sha256": "277f662c6d94606c22078f2af82ac1b6e01386d5a4dec6ca7487bca4c5b23c07",
+      "version": "1:1.11-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "xserver-common_1.20.13-1ubuntu2_all.deb",
+      "package": "xserver-common",
+      "sha256": "f6e993f96f22c4c9fb7732585423c71124a9a1b258b4f0130064538cf331f030",
+      "version": "2:1.20.13-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "xsltproc_1.1.34-4build1_arm64.deb",
+      "package": "xsltproc",
+      "sha256": "99f0361a0c073313215f90b32533df661b6b82d2deb6b9290b92b986ca23eb55",
+      "version": "1.1.34-4build1"
+    },
+    {
+      "arch": "all",
+      "filename": "xtrans-dev_1.4.0-1_all.deb",
+      "package": "xtrans-dev",
+      "sha256": "45277c51d5d83db351b61859314b59595c9626ac372fbb2fc0d5542e169d9086",
+      "version": "1.4.0-1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "xvfb_1.20.13-1ubuntu2_arm64.deb",
+      "package": "xvfb",
+      "sha256": "08fbbc64acfcaf5f15e470ee2b75e5fd859e5bde0e4e81004b3f6cac83653e05",
+      "version": "2:1.20.13-1ubuntu2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "xz-utils_5.2.5-2build1_arm64.deb",
+      "package": "xz-utils",
+      "sha256": "d1677d51d1c8a8bb9ecdafe866c0e66863c439eb737acf7bb03b1ad9b177256a",
+      "version": "5.2.5-2build1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "zlib1g_1.2.11.dfsg-2ubuntu7_arm64.deb",
+      "package": "zlib1g",
+      "sha256": "66bf7c988298e7026db20af4b8c435fa2989cf4979b346abd1b45d7cd4de3746",
+      "version": "1:1.2.11.dfsg-2ubuntu7"
+    },
+    {
+      "arch": "arm64",
+      "filename": "zlib1g-dev_1.2.11.dfsg-2ubuntu7_arm64.deb",
+      "package": "zlib1g-dev",
+      "sha256": "9d86c2c5fccd1387b7b5604c39eb355af9de38d98756379fcb1d800eba93535a",
+      "version": "1:1.2.11.dfsg-2ubuntu7"
+    },
+    {
+      "arch": "all",
+      "filename": "debootstrap_1.0.126+nmu1_all.deb",
+      "package": "debootstrap",
+      "role": "bootstrap_fallback",
+      "sha256": "cffb4a2fb8381a77200a6bfcf3fe5d550bff872daa945ca359b7ee5075418756",
+      "version": "1.0.126+nmu1"
+    },
+    {
+      "arch": "arm64",
+      "filename": "wget_1.21.2-2ubuntu1_arm64.deb",
+      "package": "wget",
+      "role": "bootstrap_fallback",
+      "sha256": "6ad0b5fc59de3f1da2dfe7180f81605a9ff74b0f6dc304abaebe3a9d495a1d9a",
+      "version": "1.21.2-2ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "lsb-release_12.0-2_all.deb",
+      "package": "lsb-release",
+      "role": "bootstrap_fallback",
+      "sha256": "0ae566092f2d6f3000ce25a7a68497a97b637abf8dc25cbdf961c8ee66e562a7",
+      "version": "12.0-2"
+    },
+    {
+      "arch": "arm64",
+      "filename": "libfontconfig-dev_2.13.1-4.2ubuntu4_arm64.deb",
+      "package": "libfontconfig-dev",
+      "role": "pool_fallback",
+      "sha256": "7ffeb125ed8f9b6be88edab285173ac7e2e53b54d26bb1d844e4196f24994064",
+      "version": "2.13.1-4.2ubuntu4"
+    }
+  ],
+  "dependency_count": 742,
+  "schema_version": "1.0",
+  "target_arch": "aarch64"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-hiprand-5c5025feac2e",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "hiprand_6.4.3-1~exp1.debian.tar.xz",
+      "bytes": 6104,
+      "sha256": "821ac6d2baf1aca5b46c5a1b0f97fc1e115f4c3e13a18ecca85c2ffd88dbf734"
+    },
+    {
+      "path": "hiprand_6.4.3-1~exp1.dsc",
+      "bytes": 2722,
+      "sha256": "f4158fe077b7b586ac1bb260b60a28186e17e9448ce6bd8f6c1e1c0882d831d0"
+    },
+    {
+      "path": "hiprand_6.4.3.orig.tar.gz",
+      "bytes": 127204,
+      "sha256": "15b67f1b0dcad6319d2fa54d3330a075e74d52a650b682f44afa086cb0f526f0"
+    }
+  ],
+  "aggregate_sha256": "d7cc671b17f43dce0818f4423de19c80edeb38484a1f6e4bed0f451ca3b72753"
+}

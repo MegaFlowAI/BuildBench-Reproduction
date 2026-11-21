@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-mantic-amd64-arm64-gloo-cuda-4c238c853c4d",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gloo-cuda_0.0~git20230117.1090929-2.debian.tar.xz",
+      "bytes": 5036,
+      "sha256": "a9d86c563c3a0efe5f567a4c96a7907f9a60ea78474b76a9645c86d0c9af704a"
+    },
+    {
+      "path": "gloo-cuda_0.0~git20230117.1090929-2.dsc",
+      "bytes": 2309,
+      "sha256": "dda34b55a155c05bad8b1996755fb80f0e8c2feaf6cb04c82c2664d133d23215"
+    },
+    {
+      "path": "gloo-cuda_0.0~git20230117.1090929.orig.tar.xz",
+      "bytes": 181624,
+      "sha256": "14a13dceaa15428df98d04294dff8c6b2cce7c02a852962bb2feb3b1f2674b02"
+    }
+  ],
+  "aggregate_sha256": "ffefe5aa1786b1c1a451518209612cc340a7e364c2e3fd752f90483df6f51d51"
+}

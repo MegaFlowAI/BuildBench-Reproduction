@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-arm64-amd64-mpi4py-5fd5bd9111dc",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "mpi4py_3.1.5-6.debian.tar.xz",
+      "bytes": 13356,
+      "sha256": "f95bf7f585c3dad8b3726aebe5a320b3c16d5befa3ec9e539cf1e706952b5ec2"
+    },
+    {
+      "path": "mpi4py_3.1.5-6.dsc",
+      "bytes": 2486,
+      "sha256": "d197fe479912e378e34c70a1d4e78752d9c0680ffb9e6e74867ea87904073a70"
+    },
+    {
+      "path": "mpi4py_3.1.5.orig.tar.gz",
+      "bytes": 371181,
+      "sha256": "29cc7ad701c190ef37622e4a2b2e2dab94fbc7777b1a15fa2029097c41b6edf0"
+    }
+  ],
+  "aggregate_sha256": "aa55fec4234889adfcb2fabf6b4c0347eaea124a8825a791d26f4e4ee9a493b9"
+}

@@ -1,0 +1,33 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-zvbi-45b23e3a5d27",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "zvbi_0.2.43-2ubuntu1_0.2.44-1.diff.gz",
+      "bytes": 13437,
+      "sha256": "a6e96980b6f5df448940f3e48d2d982f09a3a057a3668f5a1b18449a08e80f91"
+    },
+    {
+      "path": "zvbi_0.2.44-1.debian.tar.xz",
+      "bytes": 20308,
+      "sha256": "257b833e6f95655c43c12292d30ac0abd506bd297b979af42c1b807de9e3950f"
+    },
+    {
+      "path": "zvbi_0.2.44-1.dsc",
+      "bytes": 2392,
+      "sha256": "23dfe1aef47f7195869d605e5bd706abb1a48d8ae182dde442f826d40d83a017"
+    },
+    {
+      "path": "zvbi_0.2.44.orig.tar.gz",
+      "bytes": 942350,
+      "sha256": "bca620ab670328ad732d161e4ce8d9d9fc832533cb7440e98c50e112b805ac5e"
+    },
+    {
+      "path": "zvbi_0.2.44.orig.tar.gz.asc",
+      "bytes": 833,
+      "sha256": "9f6dc9a991d6b8b90913eb92aed52e40f3ef96f5272fa5380a141bb1cab0f29f"
+    }
+  ],
+  "aggregate_sha256": "c0b13ba375bc5973672145d487d8769155123b5a9c8f7f345c7a5716402a21b1"
+}

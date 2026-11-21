@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-mantic-amd64-arm64-libcrypt-xxhash-perl-101168be0c0f",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libcrypt-xxhash-perl_0.06-1_0.06-3.diff.gz",
+      "bytes": 2540,
+      "sha256": "3f1f812300497df0731aca7a55daa534a780208bd739c02b02f8e94e1ce6d49c"
+    },
+    {
+      "path": "libcrypt-xxhash-perl_0.06-3.debian.tar.xz",
+      "bytes": 3336,
+      "sha256": "acf81ac348236a9e0ab6600e9c448c3d2a6b925d34bdd1c54dcacbbeef902f9a"
+    },
+    {
+      "path": "libcrypt-xxhash-perl_0.06-3.dsc",
+      "bytes": 1729,
+      "sha256": "3524fe31014bb5812684025eb703a00f5e5ac84cf996119237cf1ad979f7a8b7"
+    },
+    {
+      "path": "libcrypt-xxhash-perl_0.06.orig.tar.gz",
+      "bytes": 138307,
+      "sha256": "bfd916365712456d6c60d76ef4a2a882615007eeda57ae9e0760ab395986a948"
+    }
+  ],
+  "aggregate_sha256": "78ee7ba48f217d794c225b056d5c98e8bf448dad04df52b7799331b880fb4bb9"
+}

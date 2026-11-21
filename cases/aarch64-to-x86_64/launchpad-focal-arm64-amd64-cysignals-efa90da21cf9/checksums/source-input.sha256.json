@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-cysignals-efa90da21cf9",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "cysignals_1.10.2+ds-3_1.10.2+ds-3build1.diff.gz",
+      "bytes": 319,
+      "sha256": "d0aa8b37c529e64f37362b89dabaf1be49f86f392b22b491993935cbe457dcd5"
+    },
+    {
+      "path": "cysignals_1.10.2+ds-3build1.debian.tar.xz",
+      "bytes": 12744,
+      "sha256": "c9ed92058ef02e18d30f23a14d878280aeed1e77b83e2e1732bde90c178a40f0"
+    },
+    {
+      "path": "cysignals_1.10.2+ds-3build1.dsc",
+      "bytes": 2703,
+      "sha256": "d0f3f55d23bdcdccba5a444ed1c7f0cb0904fc740a45214622fdbeff7a254b83"
+    },
+    {
+      "path": "cysignals_1.10.2+ds.orig.tar.xz",
+      "bytes": 49384,
+      "sha256": "03229e96a7fe4631ca730be6421fd0b1ca148c135d222ef800ad8cdce0a631e8"
+    }
+  ],
+  "aggregate_sha256": "b1be7893c4c28eb04aaada23f9261b5ecd3fd7434f1f57c78794dc3a84e34e96"
+}

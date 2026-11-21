@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-amd64-arm64-rust-trivialdb-c12a8d677890",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rust-trivialdb_0.1.4-1_0.1.5-1.diff.gz",
+      "bytes": 8530,
+      "sha256": "9c6094eb52f37e01aa95211ee88d7d0f0876b01946463f4084a48468576b1584"
+    },
+    {
+      "path": "rust-trivialdb_0.1.5-1.debian.tar.xz",
+      "bytes": 2284,
+      "sha256": "7fe359d25ef3a5ef0e5fbbe0a822f1f59dbe10cbedde8ec74155936633abda96"
+    },
+    {
+      "path": "rust-trivialdb_0.1.5-1.dsc",
+      "bytes": 2124,
+      "sha256": "3221dd17d90bf988f29876657f54a43ccb4f37ed5c59517ac76457b3cba31587"
+    },
+    {
+      "path": "rust-trivialdb_0.1.5.orig.tar.gz",
+      "bytes": 13743,
+      "sha256": "3d642d324c46c601ec93ab43ac2714c960334f27e56809018143a34eb8ed5751"
+    }
+  ],
+  "aggregate_sha256": "bc32922147aa166cfff26b9ca54dfee71f3429c228d1a31201b6f02a524d6334"
+}

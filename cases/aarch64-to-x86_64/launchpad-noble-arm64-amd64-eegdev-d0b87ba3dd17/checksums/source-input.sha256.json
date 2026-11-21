@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-eegdev-d0b87ba3dd17",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "eegdev_0.2-8.1.debian.tar.xz",
+      "bytes": 11228,
+      "sha256": "710024bf943dc16f12139924c558969e9ecd6250132a027f95efb057e74b4a55"
+    },
+    {
+      "path": "eegdev_0.2-8.1.dsc",
+      "bytes": 2197,
+      "sha256": "534a08801d8f76ee326397402996ef3a367993991778517375b7b54b95319b66"
+    },
+    {
+      "path": "eegdev_0.2-8_0.2-8.1.diff.gz",
+      "bytes": 1295,
+      "sha256": "b6b1187c050549a75e2ccd385abbd14ac6669680c8ef740b4d2620fda64257d3"
+    },
+    {
+      "path": "eegdev_0.2.orig.tar.bz2",
+      "bytes": 687600,
+      "sha256": "3ad091a9659974247850477b227da06ff77ba09a07047ecf3bc2fbff9ceed714"
+    }
+  ],
+  "aggregate_sha256": "3faae2c76c94abea25fe8503e37931cfc3dec8c25fc35caff8b473adc0e00ace"
+}

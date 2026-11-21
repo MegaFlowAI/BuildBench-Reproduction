@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-python-apt-f8750ff50ddf",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "python-apt_2.9.6build1_2.9.7.diff.gz",
+      "bytes": 11609,
+      "sha256": "5428d26a07c1ce25096b8a34f16540c036419e1d373109c7c28544ddcfbf64b1"
+    },
+    {
+      "path": "python-apt_2.9.7.dsc",
+      "bytes": 2436,
+      "sha256": "c6cb788eb96a66200e5cca6339749a1c143210a888df165a7a0acfdfdaefd25f"
+    },
+    {
+      "path": "python-apt_2.9.7.tar.xz",
+      "bytes": 348320,
+      "sha256": "fcaeafc712513a599714362513fe939f1e821baa2276425a537fd4d345c54e68"
+    }
+  ],
+  "aggregate_sha256": "d1052db48c213c8ee25f5d63d1d6a4589db748a6a0a030eecaaede88bd37134f"
+}

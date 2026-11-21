@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "aarch64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-resolute-proposed-arm64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-resolute-arm64",
+      "dependencies/ubuntu-resolute-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/sdpa_7.3.20-1.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-resolute-amd64-arm64-sdpa-be248a545b17",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

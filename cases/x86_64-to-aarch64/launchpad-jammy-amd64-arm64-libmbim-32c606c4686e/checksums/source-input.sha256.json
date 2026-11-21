@@ -1,0 +1,33 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-libmbim-32c606c4686e",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libmbim_1.24.8-1_1.26.0-1~build1.diff.gz",
+      "bytes": 161873,
+      "sha256": "694ded4b1932808688846fde727ebe07eda9f81f692d4dec8ac0be38dfee83b7"
+    },
+    {
+      "path": "libmbim_1.26.0-1~build1.debian.tar.xz",
+      "bytes": 10320,
+      "sha256": "027cea5c36a95c4da82c1985d81244f4d3b2de0adf9186ad648d659712fb7857"
+    },
+    {
+      "path": "libmbim_1.26.0-1~build1.dsc",
+      "bytes": 2260,
+      "sha256": "743c052a7e55ec522ad804c5411caba687d10b937f452a0cdabb74d1f8bbe671"
+    },
+    {
+      "path": "libmbim_1.26.0.orig.tar.xz",
+      "bytes": 554672,
+      "sha256": "1e1f0926b22c77210442129eca689722ecf324ab9c9abf421a5c989f46e813cf"
+    },
+    {
+      "path": "libmbim_1.26.0.orig.tar.xz.asc",
+      "bytes": 195,
+      "sha256": "a8fdfb24e402ff0ee18639f6aad4feebf608c48e61f67906d94701e9d4a77761"
+    }
+  ],
+  "aggregate_sha256": "f9ee5d21b3e8366c5bd0ef77670d2fe0b824b7d32493be525f541af81ea9689e"
+}

@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-libopaque-928b8559372e",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libopaque_1.0.0-1_1.0.1-1.diff.gz",
+      "bytes": 1397,
+      "sha256": "8a97aaa0e5f698cae0d2566d195b91af81f4335507717413bc9b70335010dd04"
+    },
+    {
+      "path": "libopaque_1.0.1-1.debian.tar.xz",
+      "bytes": 8340,
+      "sha256": "01b1d2b0e34ac1f4ea7c10261c6b9dd9aa4c3702374c25a98e90264344dcd7ba"
+    },
+    {
+      "path": "libopaque_1.0.1-1.dsc",
+      "bytes": 2168,
+      "sha256": "e8fc589b2d6af64035650116897468cbfac0fb6197bd188842802229864f934a"
+    },
+    {
+      "path": "libopaque_1.0.1.orig.tar.xz",
+      "bytes": 107920,
+      "sha256": "134485421edceb8f7fefa9cc176c83dca6307d5a270beae4b3f694f01f96aa98"
+    }
+  ],
+  "aggregate_sha256": "92216388e8d369a0302c25bceda021115afc26c8096ebbae8e6f85d7029f43be"
+}

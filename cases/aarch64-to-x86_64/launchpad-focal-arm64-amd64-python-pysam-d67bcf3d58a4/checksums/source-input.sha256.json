@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-python-pysam-d67bcf3d58a4",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "python-pysam_0.15.3+ds-1_0.15.3+ds-2.diff.gz",
+      "bytes": 721415,
+      "sha256": "dd5f0099b5ff413e05d5c80e44fecc22c2f3de65b6226c5176b102ac905e45e6"
+    },
+    {
+      "path": "python-pysam_0.15.3+ds-2.debian.tar.xz",
+      "bytes": 373252,
+      "sha256": "893bb5c3f3b10e389e605def891d334bc9f524ac08712336dbad82e593e5b5b0"
+    },
+    {
+      "path": "python-pysam_0.15.3+ds-2.dsc",
+      "bytes": 2536,
+      "sha256": "a35498edd8034775ef701224452a51864cc2a82a11d55da5637cb2da616b5bfb"
+    },
+    {
+      "path": "python-pysam_0.15.3+ds.orig.tar.xz",
+      "bytes": 1364456,
+      "sha256": "0968a90e5b1d5418d21f94cdb6f43cd9f496f04fdfeefc8bf5b50aae8e2b950d"
+    }
+  ],
+  "aggregate_sha256": "7765ded5801ddab1a9f76d8d83dea0a9eb6808414761d4faa17dbc5695ccf02a"
+}

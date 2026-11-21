@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-opentelemetry-cpp-f8f80a84f833",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "opentelemetry-cpp_1.17.0-2_1.17.0-3.diff.gz",
+      "bytes": 930,
+      "sha256": "a4346fe14aafa076a462a312addfd2db5dafd867e1bd9f256a123775c7fab88f"
+    },
+    {
+      "path": "opentelemetry-cpp_1.17.0-3.debian.tar.xz",
+      "bytes": 7040,
+      "sha256": "35e09c0a464483866e88348edefcf31439c2876411655b1c3c4b320fe42acb75"
+    },
+    {
+      "path": "opentelemetry-cpp_1.17.0-3.dsc",
+      "bytes": 1745,
+      "sha256": "e6f67d6f84037a4f15820ca0b84cbb7ebef7d084adde7b1d30cff406a559fcbc"
+    },
+    {
+      "path": "opentelemetry-cpp_1.17.0.orig.tar.gz",
+      "bytes": 923943,
+      "sha256": "13542725463f1ea106edaef078c2276065cf3da998cb1d3dcf92630daa3f64d4"
+    }
+  ],
+  "aggregate_sha256": "89b8843a38676950b2a68e16148925eab97c972c9ab7f0507699bbfa08f691cd"
+}

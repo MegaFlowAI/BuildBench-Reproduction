@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-resolute-arm64-amd64-gdb-mingw-w64-3586e57f81c1",
+  "package": {
+    "name": "gdb-mingw-w64",
+    "version": "13.1ubuntu2",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "resolute",
+    "source_arch": "aarch64",
+    "target_arch": "x86_64",
+    "direction": "aarch64-to-x86_64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "65ed47530de4d05d9e062d36a70d119edb66ec8a579ebc9cefbbc8a3be1b6302"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

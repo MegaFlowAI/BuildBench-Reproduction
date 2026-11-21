@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-questing-arm64-amd64-inetutils-4a8b233bde7d",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "inetutils_2.6-1ubuntu2.debian.tar.xz",
+      "bytes": 78528,
+      "sha256": "bad506ba07269816cdfb5842ab498db1303d93b7351090bb4424367dfccfda86"
+    },
+    {
+      "path": "inetutils_2.6-1ubuntu2.dsc",
+      "bytes": 3213,
+      "sha256": "467bfd0beec87a98d927758c413ff620501a0f0d46195d0366638314ca1bd9c7"
+    },
+    {
+      "path": "inetutils_2.6.orig.tar.xz",
+      "bytes": 1764528,
+      "sha256": "68bedbfeaf73f7d86be2a7d99bcfbd4093d829f52770893919ae174c0b2357ca"
+    },
+    {
+      "path": "inetutils_2.6.orig.tar.xz.asc",
+      "bytes": 1223,
+      "sha256": "2438861e2eccf5faf5dba7b83b6b9f6bc7ee83a812315edaa1479342a90adaa7"
+    }
+  ],
+  "aggregate_sha256": "7ea8f63c118eb39bf601652397f95fbe4ead45525ac9b42b02b970edeb6fcec7"
+}

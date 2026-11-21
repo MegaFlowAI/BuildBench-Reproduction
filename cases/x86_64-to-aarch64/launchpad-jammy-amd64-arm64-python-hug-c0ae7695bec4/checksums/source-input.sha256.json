@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "python-hug_2.6.0-2build2_2.6.0-2build4.diff.gz",
+      "bytes": 319,
+      "sha256": "2e27550450444ae07ea726154ad4b3c9ffbdae707406b4aec6fa7bdb2084f70d"
+    },
+    {
+      "path": "python-hug_2.6.0-2build4.debian.tar.xz",
+      "bytes": 3280,
+      "sha256": "bfe60ed9e0c821d5a7dc662c8c0a4e463003d922dc055195e9a9e81840ae2210"
+    },
+    {
+      "path": "python-hug_2.6.0-2build4.dsc",
+      "bytes": 2239,
+      "sha256": "87cfafc813557f8aa6f8d80aa8f6ca84668a8e2f6cac1db5428b8af5c15541e0"
+    },
+    {
+      "path": "python-hug_2.6.0.orig.tar.gz",
+      "bytes": 2280727,
+      "sha256": "c54b04ed5ce0e436ddf9e8e00f838b4ed740a914cf3af9bef055e11375fc1ebe"
+    }
+  ],
+  "aggregate_sha256": "a66ba117693ea12ecf37cc5c83b11da878a82023694000376cd16851b0de2123"
+}

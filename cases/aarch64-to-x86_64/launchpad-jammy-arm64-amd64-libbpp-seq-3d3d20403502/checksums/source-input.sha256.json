@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-libbpp-seq-3d3d20403502",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libbpp-seq_2.4.1-6.debian.tar.xz",
+      "bytes": 27796,
+      "sha256": "05b8225d573c2e583e171e56d6e9c17d4979da512ddd9fee4e9606f9c44e56ba"
+    },
+    {
+      "path": "libbpp-seq_2.4.1-6.dsc",
+      "bytes": 2125,
+      "sha256": "fab89ac6990acde1dbcc517d549091c2e0bdb868d0d2f294ab6a2c48faff4e8d"
+    },
+    {
+      "path": "libbpp-seq_2.4.1.orig.tar.gz",
+      "bytes": 322620,
+      "sha256": "dbfcb04803e4b7f08f9f159da8a947c91906c3ca8b20683ac193f6dc524d4655"
+    }
+  ],
+  "aggregate_sha256": "e1b4f9e561e352307c6603f42218d804b4965175615c2c5ef7f9b408448ccf2b"
+}

@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-bzrtp-6501f08c12b9",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "bzrtp_5.3.104-1ubuntu1_5.3.105-1.diff.gz",
+      "bytes": 1175,
+      "sha256": "3deba5787eb744f250e3da6e372e352f2c4a4c54b74e1c65a7068ed4d031abfd"
+    },
+    {
+      "path": "bzrtp_5.3.105-1.debian.tar.xz",
+      "bytes": 7092,
+      "sha256": "a95b4eb6c424001483c26224846d266f76c4685d86dfc918f056aa1113ff8bda"
+    },
+    {
+      "path": "bzrtp_5.3.105-1.dsc",
+      "bytes": 1629,
+      "sha256": "935066e0ae97d5e8629b901e9a43fcc4af73169c086de80b40fb597d6f86bfd7"
+    },
+    {
+      "path": "bzrtp_5.3.105.orig.tar.gz",
+      "bytes": 194905,
+      "sha256": "084a842fffecaf982285c242463c264f4579d071b5956ae24f8aabc5c05add9f"
+    }
+  ],
+  "aggregate_sha256": "dc4e94036252b0fb26baa3c57c2605b4e9a407c20e06b83a6439bc0f0b2d7f2f"
+}

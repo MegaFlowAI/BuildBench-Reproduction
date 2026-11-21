@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-libotr-7f09e7c32c80",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libotr_4.1.1-6.debian.tar.xz",
+      "bytes": 10340,
+      "sha256": "60af1ce547e0ad68f49c81e3fe2c2561db38672cdbefaa96126c62c8567c47d3"
+    },
+    {
+      "path": "libotr_4.1.1-6.dsc",
+      "bytes": 2479,
+      "sha256": "5e9fae30d0f5a0211bf53ae8aed8c6613e8721acba2abb5f6c214d801853f405"
+    },
+    {
+      "path": "libotr_4.1.1.orig.tar.gz",
+      "bytes": 655791,
+      "sha256": "8b3b182424251067a952fb4e6c7b95a21e644fbb27fbd5f8af2b2ed87ca419f5"
+    },
+    {
+      "path": "libotr_4.1.1.orig.tar.gz.asc",
+      "bytes": 811,
+      "sha256": "3a24fe5ef490292295a5be7484d1148a4dbcace3a703279c9ea8ff7947215e90"
+    }
+  ],
+  "aggregate_sha256": "5af71238c80f004274514bb28796fa70529a32a983d7c35d38eb6e377301b873"
+}

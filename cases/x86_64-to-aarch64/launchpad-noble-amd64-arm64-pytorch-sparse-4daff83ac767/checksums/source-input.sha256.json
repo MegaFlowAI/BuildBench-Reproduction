@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-pytorch-sparse-4daff83ac767",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "pytorch-sparse_0.6.18-1.debian.tar.xz",
+      "bytes": 2384,
+      "sha256": "f9ec3d1606810afa06ed68c6d9acf111a69089989732983bfc5b89bc0043b324"
+    },
+    {
+      "path": "pytorch-sparse_0.6.18-1.dsc",
+      "bytes": 2297,
+      "sha256": "36816c8506880e0daf00435c4244023aa7ee0623e1f06cd8dcb6b124ad78329e"
+    },
+    {
+      "path": "pytorch-sparse_0.6.18.orig.tar.gz",
+      "bytes": 63325,
+      "sha256": "a9e194cddc17481001ac4592a058450493ce13780e8ce3eb54d4f79706e69c91"
+    }
+  ],
+  "aggregate_sha256": "cfdc0ecc5bdf519c7c75137b3489d5cd4c4b9f5649a7e902e0d5a3c02fdb6f6a"
+}

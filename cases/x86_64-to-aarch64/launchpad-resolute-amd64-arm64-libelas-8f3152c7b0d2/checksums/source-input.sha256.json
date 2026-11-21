@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-libelas-8f3152c7b0d2",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libelas_20150630-1_20150630-1build1.diff.gz",
+      "bytes": 352,
+      "sha256": "8c7e5f3a5998ed826f25f96330cbe2c5c78a6f7d567a55e9a81b418a70a81119"
+    },
+    {
+      "path": "libelas_20150630-1build1.debian.tar.xz",
+      "bytes": 6312,
+      "sha256": "67cc5b6f4b267d5afeb6e69f71d6068710f793d02c6a109ee0076817ef95093a"
+    },
+    {
+      "path": "libelas_20150630-1build1.dsc",
+      "bytes": 2047,
+      "sha256": "ccdd6b599be0d63f6fa4c4395a48ee7583da7ac4008c44fc7e77eb4f61831130"
+    },
+    {
+      "path": "libelas_20150630.orig.tar.gz",
+      "bytes": 8555001,
+      "sha256": "c7cb4e10de04a4392031baf21a4f4b7b6615d47eedd4e7f9bb70468a31e0686e"
+    }
+  ],
+  "aggregate_sha256": "9b35645c5b1939f65b018d52f3262b622509ef3497ea461b07c12e888d68584e"
+}

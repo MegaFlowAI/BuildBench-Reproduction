@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-questing-arm64-amd64-jsonnet-81bc3ec2306c",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "jsonnet_0.20.0+ds-3.1.debian.tar.xz",
+      "bytes": 519792,
+      "sha256": "66adcf6ddde9a3015d9b8568485437f1071b44b8eaab0a564c1ef041e8073f38"
+    },
+    {
+      "path": "jsonnet_0.20.0+ds-3.1.dsc",
+      "bytes": 2447,
+      "sha256": "1f8828e00f6e6004310abef42add922fb2ac207586c5708d3ff5c93b01b291f3"
+    },
+    {
+      "path": "jsonnet_0.20.0+ds.orig.tar.xz",
+      "bytes": 1169196,
+      "sha256": "6b9880ca75cb74d2d209bb33e6b1b49aa8a89f926e28d26324ef6bccfebf2556"
+    }
+  ],
+  "aggregate_sha256": "2e941bc3f8dcf4f9dd5069096eac76d7481b52cc5a1b2a4cc305cb1ddec30619"
+}

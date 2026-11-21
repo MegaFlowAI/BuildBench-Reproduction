@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-groovy-arm64-amd64-alertmanager-irc-relay-6dae554a134b",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "alertmanager-irc-relay_0.1.0-1_0.1.0-2.diff.gz",
+      "bytes": 1159,
+      "sha256": "4d6ee420de4fbbc5401c0568e1d559007e46fe8db7d871d0fd8fe8fc159d5847"
+    },
+    {
+      "path": "alertmanager-irc-relay_0.1.0-2.debian.tar.xz",
+      "bytes": 3880,
+      "sha256": "c87b226664dcf130d0b3daa7535ed1c8e18b428108d89cea57a8bb9d9fac458a"
+    },
+    {
+      "path": "alertmanager-irc-relay_0.1.0-2.dsc",
+      "bytes": 2341,
+      "sha256": "114d035daefb33941ccbc1bc4f092a2735fd2f273d76a7680319d16d1f0c97aa"
+    },
+    {
+      "path": "alertmanager-irc-relay_0.1.0.orig.tar.xz",
+      "bytes": 25724,
+      "sha256": "bc7b09f23d7ea764e772d950f3c31d603ae94d58e9431266886aeb4c5a267cd0"
+    }
+  ],
+  "aggregate_sha256": "50fa6798d10e5864c49abfa911e7308b1ae7a58c4fd79522d2a0004b3d910b81"
+}

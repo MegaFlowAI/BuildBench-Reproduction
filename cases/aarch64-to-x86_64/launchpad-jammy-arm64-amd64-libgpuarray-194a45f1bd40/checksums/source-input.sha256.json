@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-libgpuarray-194a45f1bd40",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libgpuarray_0.7.6-5build4_0.7.6-6.diff.gz",
+      "bytes": 2628,
+      "sha256": "a14f19857d83794cfa5af70a33295cb2594362c7c2255020e4f8127c91f977b0"
+    },
+    {
+      "path": "libgpuarray_0.7.6-6.debian.tar.xz",
+      "bytes": 14432,
+      "sha256": "89e673d4307646c607e116f91a08aed7fc5262e37a55d446868d0cac44ee13fb"
+    },
+    {
+      "path": "libgpuarray_0.7.6-6.dsc",
+      "bytes": 2822,
+      "sha256": "c6617379cc1d2b6c5fcbd339445809fc90d78d77a2053312c0efc6f8a4d26a0e"
+    },
+    {
+      "path": "libgpuarray_0.7.6.orig.tar.gz",
+      "bytes": 293770,
+      "sha256": "ad1c00dd47c3d36ee1708e5167377edbfcdb7226e837ef9c68b841afbb4a4f6a"
+    }
+  ],
+  "aggregate_sha256": "188080167eb60f10bf9ef88d19aa6a2f162371570f42d4c733f53bf899258a70"
+}

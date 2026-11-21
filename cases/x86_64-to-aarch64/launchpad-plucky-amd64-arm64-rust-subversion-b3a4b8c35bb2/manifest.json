@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "aarch64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-plucky-proposed-arm64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-plucky-arm64",
+      "dependencies/ubuntu-plucky-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/rust-subversion_0.0.8-3.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-plucky-amd64-arm64-rust-subversion-b3a4b8c35bb2",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-arm64-amd64-dqlite-73a783215973",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "dqlite_1.16.5-1_1.16.7-1.diff.gz",
+      "bytes": 14008,
+      "sha256": "bb73d67ba85b249a4e72933744b9d4c22af4976248f505f03d83cfc6a5831f3b"
+    },
+    {
+      "path": "dqlite_1.16.7-1.debian.tar.xz",
+      "bytes": 6024,
+      "sha256": "716129545da9828f10a30306ee02ad0a08c2ccee878447c154d0b9ca08a3c509"
+    },
+    {
+      "path": "dqlite_1.16.7-1.dsc",
+      "bytes": 2076,
+      "sha256": "7eabf043888f12a09e3486ae793e92c593b704ae8dbc9243dee70028e73d5547"
+    },
+    {
+      "path": "dqlite_1.16.7.orig.tar.gz",
+      "bytes": 528714,
+      "sha256": "0dffa1995328a7dbbbe257390d132b8e1ad0fff2d140b3f6e5d3e68c0b833258"
+    }
+  ],
+  "aggregate_sha256": "87a49464f6255ee8a824a7f206df7c7c48da36c3f3a7c8fccd82a8e963735e10"
+}

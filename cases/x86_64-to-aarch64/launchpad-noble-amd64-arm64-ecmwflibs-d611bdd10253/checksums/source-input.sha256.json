@@ -1,0 +1,33 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-ecmwflibs-d611bdd10253",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "ecmwflibs_0.6.3-1build1.debian.tar.xz",
+      "bytes": 3436,
+      "sha256": "644db7ea653e2ea29740353784932ff28bb7774eb6c496b788fdc8ab871907f2"
+    },
+    {
+      "path": "ecmwflibs_0.6.3-1build1.dsc",
+      "bytes": 2130,
+      "sha256": "11b8e09ff097025f96209f0b0f1ac9c081fe4c37f4bdd60d16145209ba36843a"
+    },
+    {
+      "path": "ecmwflibs_0.6.3.orig.tar.xz",
+      "bytes": 26836,
+      "sha256": "2fef1d274ad0b81022296cd985f7285799bd372f8a1e11d589eb45a11344365a"
+    },
+    {
+      "path": "ecmwflibs_2:0.5.7-1_2:0.6.3-1build1.diff.gz",
+      "bytes": 9028,
+      "sha256": "6553cf957645cdf895bd3a586e12339159e4a88780387ae1e79eaa4627ac6e86"
+    },
+    {
+      "path": "ecmwflibs_2:0.6.3-1_2:0.6.3-1build1.diff.gz",
+      "bytes": 514,
+      "sha256": "f6f1c9d94d7d91be2c8686ebfa104d97c53f28aecf49b23b90221078bea55e22"
+    }
+  ],
+  "aggregate_sha256": "408a9f9500cf4b2cba6030f73c6a59928bf8037744c6901407c26d34047c7cf0"
+}

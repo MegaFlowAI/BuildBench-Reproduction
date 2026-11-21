@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-questing-arm64-amd64-libkcddb-c1c0a8830320",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libkcddb_25.04.0-0ubuntu1.debian.tar.xz",
+      "bytes": 20524,
+      "sha256": "c41d1cf8e6a78ce88c4671c8f738d2c959e59dff1b8badb352bfdf53c0e48c2c"
+    },
+    {
+      "path": "libkcddb_25.04.0-0ubuntu1.dsc",
+      "bytes": 2733,
+      "sha256": "fb8c654777f5163a30e43cb2bb4f9a84552d596c87d33626335e45fa4c442507"
+    },
+    {
+      "path": "libkcddb_25.04.0.orig.tar.xz",
+      "bytes": 450292,
+      "sha256": "0bec0c13d04d1082296245117c5b53f0dc0a3c6ca3c83b7168e0af53279da482"
+    }
+  ],
+  "aggregate_sha256": "851c8d7a8c9315f7cb23de814b9289f2e9ba9d40031844fa1c76f32a52a59be2"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-libbpp-popgen-cce52e93a824",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libbpp-popgen_2.4.1-5.debian.tar.xz",
+      "bytes": 18656,
+      "sha256": "31a1492ccdab316d1ff5193a52cdd9e3b26c1294a6641480ba83dfb07d0c8e0c"
+    },
+    {
+      "path": "libbpp-popgen_2.4.1-5.dsc",
+      "bytes": 2178,
+      "sha256": "70330627b951e0cab664e4f9219c0cd34beeadae1e8d639bc2e4113fc7bcc469"
+    },
+    {
+      "path": "libbpp-popgen_2.4.1.orig.tar.gz",
+      "bytes": 116874,
+      "sha256": "03b57d71a63c8fa7f11c085e531d0d691fc1d40d4ea541070dabde0ab3baf413"
+    }
+  ],
+  "aggregate_sha256": "d8e76207386f75c5665950099c018eabde540e5515baf474c00750692f995dca"
+}

@@ -1,0 +1,18 @@
+{
+  "additional_bootstrap_packages": {
+    "debootstrap": "1.0.126+nmu1",
+    "lsb-release": "12.0-2",
+    "usr-is-merged": "36ubuntu1",
+    "wget": "1.21.2-2ubuntu1"
+  },
+  "historical_alternatives": [],
+  "historical_version_differences": {
+    "libjpeg-dev": {
+      "historical": "8c-2ubuntu11",
+      "locked": null
+    }
+  },
+  "historical_versions_recorded": 494,
+  "provenance": "buildbench-200-exact-v1",
+  "reference_sha256": "04bca265356108b0f01ffe845db8e1f6526d7b558d2bd6f90db5fe0551a59a44"
+}

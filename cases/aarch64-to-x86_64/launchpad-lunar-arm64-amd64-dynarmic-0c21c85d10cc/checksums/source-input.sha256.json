@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-lunar-arm64-amd64-dynarmic-0c21c85d10cc",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "dynarmic_6.3.0+ds-2_6.3.1+ds-1.diff.gz",
+      "bytes": 2317,
+      "sha256": "a8e045c7bf3ac47ec64002415e0722bf9cd2d2af2d82de73166ce52162d4d2d2"
+    },
+    {
+      "path": "dynarmic_6.3.1+ds-1.debian.tar.xz",
+      "bytes": 5176,
+      "sha256": "712ac1bbdc066d35d597661720686f26823a10b5d13317fbece08dfd435cfc8c"
+    },
+    {
+      "path": "dynarmic_6.3.1+ds-1.dsc",
+      "bytes": 1815,
+      "sha256": "287263e2ed246234bf4312cd31109fc6e96a4f7b55b2d1ae87ff811e4b3d5bca"
+    },
+    {
+      "path": "dynarmic_6.3.1+ds.orig.tar.xz",
+      "bytes": 418588,
+      "sha256": "5a5aea5fddd91fbc4f56744e93045609d00ccfd98030d5dc8f75ecf73755352f"
+    }
+  ],
+  "aggregate_sha256": "a24323772ea1d51751cde9acd97cafbc18c047bd8d3b2bf2720f8362376f25f1"
+}

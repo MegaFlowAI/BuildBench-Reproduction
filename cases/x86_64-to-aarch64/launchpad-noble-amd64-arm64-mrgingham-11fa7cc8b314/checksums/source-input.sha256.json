@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-mrgingham-11fa7cc8b314",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "mrgingham_1.24-1build2_1.24-1build3.diff.gz",
+      "bytes": 326,
+      "sha256": "58d8650b6b91ba017f05640091ab9b31e586810aa6ed3bfadc6e38a6da8ba3ff"
+    },
+    {
+      "path": "mrgingham_1.24-1build3.debian.tar.xz",
+      "bytes": 4016,
+      "sha256": "c605763a21579f007b5480328ad93b7dbdf1e0528c960d3da7495753e64195fc"
+    },
+    {
+      "path": "mrgingham_1.24-1build3.dsc",
+      "bytes": 2433,
+      "sha256": "54a216ccc02c814da4b6c8f03a3e24ecd3dc59c9e92664303c41328a68153eda"
+    },
+    {
+      "path": "mrgingham_1.24.orig.tar.gz",
+      "bytes": 57465,
+      "sha256": "396af78e4bed889db67dcfa318b0fb5601a24c20c678527dae88edb443aaf715"
+    }
+  ],
+  "aggregate_sha256": "95b12bc3cd3b0e88b29f99b995ed40b9964b065120936320ce7259d53b91c682"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-libselinux-0960c210997c",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libselinux_3.9-3.debian.tar.xz",
+      "bytes": 37792,
+      "sha256": "9a9f12e171cdc34a7e92302933b01a7d1faf7e5d16d6634b5490e2d2bae254e1"
+    },
+    {
+      "path": "libselinux_3.9-3.dsc",
+      "bytes": 2658,
+      "sha256": "0a792b52d31f00f9f4da8bbeb2e723b566a67240f4d74861b18e13bdf7eb5d7d"
+    },
+    {
+      "path": "libselinux_3.9.orig.tar.gz",
+      "bytes": 205334,
+      "sha256": "e7ee2c01dba64a0c35c9d7c9c0e06209d8186b325b0638a0d83f915cc3c101e8"
+    }
+  ],
+  "aggregate_sha256": "28827079ef934aacac7320ffc3390247940a8e3f75cc74f514d2159fbf5adb6e"
+}

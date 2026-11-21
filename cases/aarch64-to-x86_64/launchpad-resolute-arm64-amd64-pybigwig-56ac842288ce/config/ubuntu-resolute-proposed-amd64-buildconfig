@@ -1,0 +1,26 @@
+# Generated for Build-Bench Docker materialization.
+# Source: Launchpad Ubuntu noble-proposed amd64 current dependency fallback for libioth 0.1.2-2.
+Repotype: debian
+type: dsc
+buildengine: debootstrap
+Order: base-passwd:base-files
+ExpandFlags: preinstallexpand
+Preinstall: apt build-essential base-passwd bash coreutils diffutils findutils grep gzip hostname init-system-helpers libc-bin libpam-runtime mount sed mawk dash perl util-linux libsemanage-common debootstrap lsb-release adduser usr-is-merged
+Preinstall: dpkg
+Preinstall: ncurses-base ncurses-bin
+Preinstall: libdb5.3t64 libgcc-s1
+Preinstall: libselinux1 libsemanage2 libsystemd0 libtinfo6 libudev1
+Preinstall: libp11-kit0
+VMinstall: binutils
+Required: dpkg-dev ncurses-base libtool debhelper
+Support: file gettext gettext-base m4 autoconf
+Support: automake autopoint dh-autoreconf dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl
+Support: libdpkg-perl libfile-stripnondeterminism-perl
+Prefer: mawk perl perl-base pkgconf
+Prefer: build-essential:make
+Required: grep init-system-helpers
+Macros:
+%ubuntu_version 2610
+%ubuntu_codename resolute
+%distribution Ubuntu
+Ignore: pkg-config

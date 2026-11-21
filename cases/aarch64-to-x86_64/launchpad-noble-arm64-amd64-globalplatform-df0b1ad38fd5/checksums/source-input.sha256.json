@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "globalplatform_2.3.1+dfsg-2_2.3.1+dfsg-3.diff.gz",
+      "bytes": 1580,
+      "sha256": "6b318dd41b6d1d91546ea21479797c508522244c5fc6c986659ce48ca381482a"
+    },
+    {
+      "path": "globalplatform_2.3.1+dfsg-3.debian.tar.xz",
+      "bytes": 7568,
+      "sha256": "0579dd2a3281b2cc2e2ee2a4cf035f6ebbfd2c4c796a6ced61d81180b0b78218"
+    },
+    {
+      "path": "globalplatform_2.3.1+dfsg-3.dsc",
+      "bytes": 1860,
+      "sha256": "1f6ecb0298a7fd70a180bc98dc23dff55143167592a8db7d53692862bec370d0"
+    },
+    {
+      "path": "globalplatform_2.3.1+dfsg.orig.tar.xz",
+      "bytes": 315024,
+      "sha256": "9f67a7f5d1d0c9e2c80a024c71e301d8ba4ad2e6110ec492305f87acada066ef"
+    }
+  ],
+  "aggregate_sha256": "ca65a0e12664c9e6e95b9b3c111d9bd6d66702479351a1c607ec8b90c94d058e"
+}

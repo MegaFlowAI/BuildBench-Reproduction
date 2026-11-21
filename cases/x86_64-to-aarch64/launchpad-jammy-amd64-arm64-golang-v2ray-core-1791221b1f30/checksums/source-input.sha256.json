@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-golang-v2ray-core-1791221b1f30",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "golang-v2ray-core_4.34.0-2_4.34.0-3.diff.gz",
+      "bytes": 3048,
+      "sha256": "d428b9c26fb552514595723342e12bf2e6ceb1512191a1136136fc6d6e32fd63"
+    },
+    {
+      "path": "golang-v2ray-core_4.34.0-3.debian.tar.xz",
+      "bytes": 17308,
+      "sha256": "2ced0a38ed92a854a83906cfda4ff1c68c178421f41167c784a157caf24fd1d1"
+    },
+    {
+      "path": "golang-v2ray-core_4.34.0-3.dsc",
+      "bytes": 2595,
+      "sha256": "33909130663abef0967dd4953fdc3f92d90edea6565581304d5097eb0f07c3ba"
+    },
+    {
+      "path": "golang-v2ray-core_4.34.0.orig.tar.gz",
+      "bytes": 2211084,
+      "sha256": "b250f569cb0369f394f63184e748f1df0c90500feb8a1bf2276257c4c8b81bee"
+    }
+  ],
+  "aggregate_sha256": "04a32145d196f11af0589632cc4099c31500821aafeb14bcb67a7755575b4c78"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-gcc-9-cross-d6df5b73fd91",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gcc-9-cross_17ubuntu1_18ubuntu1.diff.gz",
+      "bytes": 17974,
+      "sha256": "d05cc83be7c8e4b8d4222268661baa479091da0f3fb822896fcf0a2dcb5a718f"
+    },
+    {
+      "path": "gcc-9-cross_18ubuntu1.dsc",
+      "bytes": 35232,
+      "sha256": "228944073f2332dfde4c09747fa76f94d1e9946ffe3cb7898359c336e84de3c6"
+    },
+    {
+      "path": "gcc-9-cross_18ubuntu1.tar.xz",
+      "bytes": 41936,
+      "sha256": "20bd83699b110c726821e9ed95ab89e7d74865dd5b9a9fe2192943b415dd421f"
+    }
+  ],
+  "aggregate_sha256": "fd76c1bcdd687915d6adc868f98461163d7f0f5bcb8ac059353f42299db58dbd"
+}

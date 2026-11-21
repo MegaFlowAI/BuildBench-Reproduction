@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "dnscap_2.5.1-1.debian.tar.xz",
+      "bytes": 3780,
+      "sha256": "bd4c68ec0ce4659abbc0c77fb09927284b2605ce22d624d66ac808dfa55b7e3d"
+    },
+    {
+      "path": "dnscap_2.5.1-1.dsc",
+      "bytes": 1391,
+      "sha256": "8a7d1d9f233ab3d05adc0e90160359d572acb6965ef04ed953df54ecc74c7a30"
+    },
+    {
+      "path": "dnscap_2.5.1.orig.tar.xz",
+      "bytes": 273664,
+      "sha256": "d33033ef42c87ead742bef05123a9dd66ca0aab037cfa3d33784a192c2409347"
+    }
+  ],
+  "aggregate_sha256": "537f22f819fa021692868dfcaff5dc18b7f6c95c4633e556ea67f162c7b3ecab"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "buildbench.case.v0.1",
+  "case_id": "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b",
+  "package": {
+    "name": "qmidiarp",
+    "version": "0.7.2+ds-1",
+    "source_format": "debian-source-package"
+  },
+  "platform": {
+    "distribution": "ubuntu",
+    "series": "resolute",
+    "source_arch": "x86_64",
+    "target_arch": "aarch64",
+    "direction": "x86_64-to-aarch64"
+  },
+  "task": {
+    "type": "cross_arch_package_build_repair",
+    "goal": "Repair the package so it builds successfully on the target architecture.",
+    "initial_failure_evidence": "logs/target-failure.log"
+  },
+  "paths": {
+    "source_input": "source/input",
+    "target_failure_log": "logs/target-failure.log",
+    "source_input_checksums": "checksums/source-input.sha256.json"
+  },
+  "integrity": {
+    "source_input_aggregate_sha256": "d495022b6bc7611a68e84d898eb3e9aefc0f337a2c7e48bd0b6a66dcc8014d67"
+  },
+  "release": {
+    "dataset": "buildbench-development-cases-v0.1",
+    "version": "v0.1",
+    "generated_at_utc": "2026-09-07T01:22:06Z"
+  }
+}

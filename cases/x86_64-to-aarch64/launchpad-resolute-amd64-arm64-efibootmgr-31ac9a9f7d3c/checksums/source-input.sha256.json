@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-efibootmgr-31ac9a9f7d3c",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "efibootmgr_18-2ubuntu2.debian.tar.xz",
+      "bytes": 8140,
+      "sha256": "10bed13b175e212c7ab9f1e3b5202f5f6273b46243f532b2933fdd7f4eda0126"
+    },
+    {
+      "path": "efibootmgr_18-2ubuntu2.dsc",
+      "bytes": 2074,
+      "sha256": "bdd434a5c76491c99b79d04b4cb54f9cecbfc517941e1dc10f65ed75bac3ed6e"
+    },
+    {
+      "path": "efibootmgr_18.orig.tar.bz2",
+      "bytes": 40439,
+      "sha256": "2b195f912aa353f0d11f21f207684c91460fbc37f9a4f2673e63e5e32d108b10"
+    }
+  ],
+  "aggregate_sha256": "3db825404bbe434f211be935241bd00bbdd7a31ba1ca5e59ef829f633a0c8167"
+}

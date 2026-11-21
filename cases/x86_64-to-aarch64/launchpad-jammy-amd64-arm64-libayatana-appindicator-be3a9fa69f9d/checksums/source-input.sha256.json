@@ -1,0 +1,33 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-libayatana-appindicator-be3a9fa69f9d",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libayatana-appindicator_0.5.5-3build1_0.5.90-1.diff.gz",
+      "bytes": 157314,
+      "sha256": "b1bae82b87b3a8479087fb5742f9f98278f5464eb11f12516f8ef112c07e7b50"
+    },
+    {
+      "path": "libayatana-appindicator_0.5.90-1.debian.tar.xz",
+      "bytes": 17368,
+      "sha256": "7eac56fd5dfda0b4897f25b3c9703885d45deb2f94344078fdf928f967bf51b1"
+    },
+    {
+      "path": "libayatana-appindicator_0.5.90-1.dsc",
+      "bytes": 5092,
+      "sha256": "2207325f6bfa19f400a74a81d4191dc6ae0b833cec74f0d28bc05e9eee6306f9"
+    },
+    {
+      "path": "libayatana-appindicator_0.5.90.orig.tar.gz",
+      "bytes": 123642,
+      "sha256": "9a89fd20639814cddda937a299cc885907dd21cec9b73632d9324214c33e1d81"
+    },
+    {
+      "path": "libayatana-appindicator_0.5.90.orig.tar.gz.asc",
+      "bytes": 833,
+      "sha256": "8ed497c087cb464098aed010694030ab73f63c53c1d72600875daa5c7fc2f0c2"
+    }
+  ],
+  "aggregate_sha256": "5b66f0a211bdeeb6ad25d47c3813740e47692b54907b3158d3090b740b038c91"
+}

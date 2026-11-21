@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-amd64-arm64-castxml-63b80d08bc8a",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "castxml_0.6.6-1_0.6.8-1.diff.gz",
+      "bytes": 2122,
+      "sha256": "13431991f063b6ddf468ffc8bc74d6cbea0c0583a742cc0b880e4c0d57dcd928"
+    },
+    {
+      "path": "castxml_0.6.8-1.debian.tar.xz",
+      "bytes": 4704,
+      "sha256": "455f388058222cd2e94cbd93634368af67000594b7610d4610a9c44ce5c4cbbe"
+    },
+    {
+      "path": "castxml_0.6.8-1.dsc",
+      "bytes": 2245,
+      "sha256": "47a9110ed6fe93eb5aa0d87f49d00058c164b64d1b1bc9a1a3cc2a42b65b7d18"
+    },
+    {
+      "path": "castxml_0.6.8.orig.tar.xz",
+      "bytes": 83524,
+      "sha256": "44410aa55793b8c37b19694fcad28bf99b4a30b296938f82f6bd0c1480f4ab8e"
+    }
+  ],
+  "aggregate_sha256": "8595602625025fce449f3e9eb2639c289894aea6caf1bd544762e5852ccba8e5"
+}

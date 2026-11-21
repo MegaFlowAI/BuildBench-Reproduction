@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-amd64-arm64-ocaml-eb69da357af5",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "ocaml_5.2.0-1.debian.tar.xz",
+      "bytes": 41012,
+      "sha256": "160afc6671833922504e57644e38e0ac1dc589729bf648c1c302aea848a64d7d"
+    },
+    {
+      "path": "ocaml_5.2.0-1.dsc",
+      "bytes": 2465,
+      "sha256": "f874c2669ff6eb4657c0b95d08e2e76866c0d86acf9aeb78907e9326ebe1381b"
+    },
+    {
+      "path": "ocaml_5.2.0.orig.tar.xz",
+      "bytes": 4186136,
+      "sha256": "2f4bf479f51479f9bf8c7f1694a6ea7336bbf774f4ad6da6b59d1ad4939dd8a7"
+    }
+  ],
+  "aggregate_sha256": "668d72e2f872ae9bbe420289f16b0c8dd26c8e9004b3e2f3cc1d860ff6404721"
+}

@@ -1,0 +1,42 @@
+# Generated for Build-Bench Docker materialization.
+# Source: Launchpad Ubuntu noble-proposed arm64 current dependency fallback for libioth 0.1.2-2.
+Order: libssl3t64:libpython3.13-minimal
+Order: libpython3.13-minimal:python3.13-minimal
+Order: python3.13-minimal:python3.13
+Order: libpython3.13-stdlib:python3.13
+Order: python3.13-minimal:python3-minimal
+Order: python3.13:python3
+Order: libssl3t64:libpython3.11-minimal
+Order: libhogweed6t64:libgnutls30
+Order: libnettle8t64:libgnutls30
+Order: libnettle8t64:libhogweed6t64
+Order: libpython3.11-minimal:python3.11-minimal
+Order: python3.11-minimal:python3.11
+Order: libpython3.11-stdlib:python3.11
+Order: python3.11-minimal:python3-minimal
+Order: python3.11:python3
+Order: python3-minimal:python3
+Repotype: debian
+type: dsc
+buildengine: debootstrap
+Order: base-passwd:base-files
+ExpandFlags: preinstallexpand
+Preinstall: base-files bash diffutils libc-bin coreutils apt init-system-helpers perl libssl3t64 build-essential gzip dash base-passwd findutils grep hostname libpam-runtime mount sed mawk util-linux libpython3.13-minimal python3.13-minimal python3-minimal python3 usr-is-merged
+Preinstall: dpkg libc-bin libc6
+Preinstall: ncurses-base ncurses-bin
+Preinstall: xz-utils libapparmor1 libaudit1 libcap-ng0 libgcc-s1 liblzma5
+Preinstall: libselinux1 libsemanage2 libsystemd0 libtinfo6 libudev1
+Preinstall: libssl3t64
+VMinstall: binutils
+Required: fakeroot dpkg-dev ncurses-base libtool debhelper
+Required: libc6-dev
+Support: file gettext gettext-base m4 autoconf automake autopoint dh-autoreconf
+Support: dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl libdpkg-perl libfile-stripnondeterminism-perl
+Prefer: mawk libldap2-dev perl perl-base pkgconf
+Prefer: build-essential:make
+Required: grep init-system-helpers
+Macros:
+%ubuntu_version 2404
+%ubuntu_codename plucky
+%distribution Ubuntu
+Ignore: pkg-config

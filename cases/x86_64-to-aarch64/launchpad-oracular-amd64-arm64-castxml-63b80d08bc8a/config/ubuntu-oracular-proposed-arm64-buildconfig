@@ -1,0 +1,19 @@
+buildengine: debootstrap
+Order: base-passwd:base-files
+Preinstall: base-files base-passwd bash debianutils diffutils libc-bin mawk coreutils gzip sed dash util-linux apt build-essential findutils grep hostname init-system-helpers libpam-runtime mount perl usr-is-merged
+Preinstall: dpkg grep libc-bin libc6
+Preinstall: mawk ncurses-base ncurses-bin
+Preinstall: xz-utils libapparmor1 libaudit1 libcap-ng0 libdb5.3t64 libgcc-s1 liblzma5
+Preinstall: libselinux1 libsemanage2 libsystemd0 libtinfo6 libudev1 libzstd1
+Preinstall: libssl3t64
+VMinstall: binutils
+Required: fakeroot dpkg-dev ncurses-base libtool debhelper
+Required: libc6-dev
+Support: file gettext gettext-base m4 autoconf automake autopoint dh-autoreconf
+Support: dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl libdpkg-perl libfile-stripnondeterminism-perl
+Support: bash-completion
+Prefer: mawk perl perl-base
+Prefer: build-essential:make
+Required: grep init-system-helpers
+Preinstall: base-passwd bash debianutils diffutils libc-bin coreutils gzip sed dash apt build-essential findutils grep hostname init-system-helpers mount util-linux
+Ignore: libncurses5-dev

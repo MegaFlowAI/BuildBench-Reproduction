@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-libqalculate-150db9c6c990",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libqalculate_3.22.0-1ubuntu1_3.22.0-2.diff.gz",
+      "bytes": 846,
+      "sha256": "acb849e9a243241e346b18643de9cfd9a5c0bf4608eb8581d6f3abdc648d1911"
+    },
+    {
+      "path": "libqalculate_3.22.0-2.debian.tar.xz",
+      "bytes": 8604,
+      "sha256": "14de6bee5aac5142326cbc0a1d9d6f2849f2db9d5d7f4269be3b6bd14398153e"
+    },
+    {
+      "path": "libqalculate_3.22.0-2.dsc",
+      "bytes": 2498,
+      "sha256": "55f54c884b8efed067f5c0bc2182aa9b88cd8cfe91f30759a5ac690bd8ba6df9"
+    },
+    {
+      "path": "libqalculate_3.22.0.orig.tar.gz",
+      "bytes": 1661965,
+      "sha256": "2128645c52a65bc77567669e0c01c0c409318bb2efc3a5e287450df5125aa263"
+    }
+  ],
+  "aggregate_sha256": "c46937c3c2bb3604832d7ebf49af313f3d4e6e582c97d4044c6f7cb8eb2b6fa0"
+}

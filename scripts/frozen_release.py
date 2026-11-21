@@ -15,7 +15,7 @@ RELEASE = "https://github.com/MegaFlowAI/BuildBench-Reproduction/releases/downlo
 RUNNERS = {"amd64": "ubuntu-24.04", "arm64": "ubuntu-24.04-arm"}
 
 
-def published_cases():
+def frozen_cases():
     cases = {}
     for arch, (_, direction, _) in ARCHITECTURES.items():
         for path in sorted((ROOT / "cases" / direction).glob("*/asset.json")):
@@ -26,8 +26,21 @@ def published_cases():
     return cases
 
 
-def select(selection):
-    cases = published_cases()
+def select(selection, release_assets):
+    cases = frozen_cases()
+    if release_assets:
+        runtimes = json.loads((ROOT / "cases/runtimes.json").read_text())
+        pages = json.loads(release_assets.read_text())
+        uploaded = {asset["name"]: (asset["size"], asset["digest"])
+                    for page in pages for asset in page if asset["state"] == "uploaded"}
+
+        def is_published(record):
+            return uploaded.get(record["file"]) == (record["bytes"], "sha256:" + record["sha256"])
+
+        cases = {
+            case: (arch, path) for case, (arch, path) in cases.items()
+            if is_published(runtimes[arch]) and is_published(json.loads(path.read_text()))
+        }
     if selection == "all" or selection in RUNNERS:
         selected = [case for case, (arch, _) in cases.items()
                     if selection in {"all", arch}]
@@ -56,7 +69,7 @@ def download(record, work, file_name):
 
 
 def fetch(case, work):
-    arch, metadata = published_cases()[case]
+    arch, metadata = frozen_cases()[case]
     work = work.resolve()
     work.mkdir(parents=True, exist_ok=False)
     archive = download(json.loads(metadata.read_text()), work, case + ".tar.zst")
@@ -83,12 +96,13 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     matrix = commands.add_parser("matrix")
     matrix.add_argument("selection")
+    matrix.add_argument("--release-assets", type=Path)
     fetch_case = commands.add_parser("fetch")
     fetch_case.add_argument("case")
     fetch_case.add_argument("work", type=Path)
     args = parser.parse_args()
     if args.command == "matrix":
-        select(args.selection)
+        select(args.selection, args.release_assets)
     else:
         fetch(args.case, args.work)
 

@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-python-biopython-46662840e6ac",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "python-biopython_1.75+dfsg-2_1.75+dfsg-3.diff.gz",
+      "bytes": 439,
+      "sha256": "226c1b5d5b582d2b0e4a6d033d14cfcc0eaaf2629123b53a8d4de4f913997589"
+    },
+    {
+      "path": "python-biopython_1.75+dfsg-3.debian.tar.xz",
+      "bytes": 15828,
+      "sha256": "cd7892460fae785395f331bfa99f63ef44dde5652921619871bbcc2461ac5ba7"
+    },
+    {
+      "path": "python-biopython_1.75+dfsg-3.dsc",
+      "bytes": 2795,
+      "sha256": "de21a0216e24735086112ea9eace91bf59e263fef0a704e6f090ff0ea5a16462"
+    },
+    {
+      "path": "python-biopython_1.75+dfsg.orig.tar.xz",
+      "bytes": 9735540,
+      "sha256": "6029b38ec186b9b11447a001f068d6ee3e3fe9dbc2f7f08bb64d97e3ed6d4a80"
+    }
+  ],
+  "aggregate_sha256": "e0b1cf3d34026fde48adfa700012cd05a983f14fb88cb3b98c5a5f4fe1cf0087"
+}

@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-amd64-arm64-tinycbor-835bc0b749b6",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "tinycbor_0.6.0-1_0.6.0-2.diff.gz",
+      "bytes": 982,
+      "sha256": "6601e78a5c2820e5c54d80ac5d69c1f23a3c05f0ebc0a34d0a33fabb11eb7308"
+    },
+    {
+      "path": "tinycbor_0.6.0-2.debian.tar.xz",
+      "bytes": 4876,
+      "sha256": "383adf71880b0ddb0c967377a1d45d5223b0cfc4a2066e04a870f1ca612b0eb0"
+    },
+    {
+      "path": "tinycbor_0.6.0-2.dsc",
+      "bytes": 2087,
+      "sha256": "4c59cb567bc4b5026f72242aba79384f6bfe6b0f29400c9ce451a344fc82a53a"
+    },
+    {
+      "path": "tinycbor_0.6.0.orig.tar.gz",
+      "bytes": 97160,
+      "sha256": "512e2c9fce74f60ef9ed3af59161e905f9e19f30a52e433fc55f39f4c70d27e4"
+    }
+  ],
+  "aggregate_sha256": "f386cca72ae0d5fb4119c3639d9fd5709ff4ac8a2284f076fba207eb55fc2790"
+}

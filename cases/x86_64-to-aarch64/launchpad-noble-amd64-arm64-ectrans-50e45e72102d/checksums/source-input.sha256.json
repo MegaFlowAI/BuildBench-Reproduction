@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-ectrans-50e45e72102d",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "ectrans_1.3.0-1_1.3.0-1build1.diff.gz",
+      "bytes": 504,
+      "sha256": "68f074a709350108915206dbda82095f0e919a5e607c317006c8c6325e675510"
+    },
+    {
+      "path": "ectrans_1.3.0-1build1.debian.tar.xz",
+      "bytes": 4520,
+      "sha256": "4e08c7915e966d7a56933139e48872a71c2790fb957a121cff65289dbc0e258c"
+    },
+    {
+      "path": "ectrans_1.3.0-1build1.dsc",
+      "bytes": 2461,
+      "sha256": "da19af4536ea71202ff0f2a1790333a6e8a2bf210efd8b94ecb1f5e815cb58ef"
+    },
+    {
+      "path": "ectrans_1.3.0.orig.tar.xz",
+      "bytes": 229700,
+      "sha256": "fc80eb5f4dadfb3f40cd37a90a8856e956e06f3bf5681867f153e8512ca22d95"
+    }
+  ],
+  "aggregate_sha256": "0086908f0a510c7aeb5af3000a8b50fe7b86b51ab495babd0c466b16def124d4"
+}

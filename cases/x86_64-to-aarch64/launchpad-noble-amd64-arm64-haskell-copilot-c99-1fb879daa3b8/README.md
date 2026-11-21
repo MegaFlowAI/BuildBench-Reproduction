@@ -1,0 +1,12 @@
+# launchpad-noble-amd64-arm64-haskell-copilot-c99-1fb879daa3b8
+
+Package: `haskell-copilot-c99`
+
+Version: `3.17-1`
+
+Direction: `x86_64` to `aarch64`
+
+Use `source/input/` as the package source input and `logs/target-failure.log` as
+the initial target-architecture failure evidence. Metadata is stored in
+`case.json`; source input checksums are stored in
+`checksums/source-input.sha256.json`.

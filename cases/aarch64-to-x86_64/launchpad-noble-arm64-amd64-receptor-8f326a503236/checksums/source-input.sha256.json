@@ -1,0 +1,38 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-receptor-8f326a503236",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "receptor_1.4.3-2_1.4.3-3.diff.gz",
+      "bytes": 383,
+      "sha256": "56dbf46caa1ce7667375646e59d158a5ca4cb9a29bfd4fd9d0afe9a2cae066a9"
+    },
+    {
+      "path": "receptor_1.4.3-3.debian.tar.xz",
+      "bytes": 24832,
+      "sha256": "3be1ae271b9ded064e4523cbee0f03331e056171acdefc45592fae039779c4f8"
+    },
+    {
+      "path": "receptor_1.4.3-3.dsc",
+      "bytes": 3915,
+      "sha256": "0f1109bff603a95c982b82a415dce666d431858b1dd4077f761cd4fb294a8cc8"
+    },
+    {
+      "path": "receptor_1.4.3.orig-golang-github-jupp0r-go-priority-queue.tar.gz",
+      "bytes": 3606,
+      "sha256": "05a7cad9be1f344b7158cd7bdfa73c8c73d3feb8da551b644ff2fc548983d0a4"
+    },
+    {
+      "path": "receptor_1.4.3.orig-golang-github-prep-socketpair.tar.gz",
+      "bytes": 2661,
+      "sha256": "e1104733a326e1b7a724586342080e238438303d55125be52d4cfb5837bc345e"
+    },
+    {
+      "path": "receptor_1.4.3.orig.tar.gz",
+      "bytes": 361758,
+      "sha256": "9886eabf11b822833dc39bb8b61d33e277b446b7ba855db05ae169a6e2f8b3d2"
+    }
+  ],
+  "aggregate_sha256": "4ed5975b40923acdd0553460b2b7b22e2b2c114915e39c659a792c13a62df3c2"
+}

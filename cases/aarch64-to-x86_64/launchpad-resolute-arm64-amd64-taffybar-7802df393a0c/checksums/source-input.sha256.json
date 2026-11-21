@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-taffybar-7802df393a0c",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "taffybar_4.1.1-1ubuntu2_4.1.1-1ubuntu3.diff.gz",
+      "bytes": 464,
+      "sha256": "1c639ec55f7b2b57bcf729bd2bed3721dfa82e64c475f26c9de8b8e7fa775235"
+    },
+    {
+      "path": "taffybar_4.1.1-1ubuntu3.debian.tar.xz",
+      "bytes": 4852,
+      "sha256": "7873ccb60a533148415d17c2a28eddd1b2bdc8477b02eac6099e3719e7b65353"
+    },
+    {
+      "path": "taffybar_4.1.1-1ubuntu3.dsc",
+      "bytes": 6498,
+      "sha256": "430e89910b0d578f694c4526b07ed18f724c4f0c34729cc592e847e5458e76d8"
+    },
+    {
+      "path": "taffybar_4.1.1.orig.tar.gz",
+      "bytes": 130627,
+      "sha256": "b582f3c409914d538a4cbd62d089545e7adacfd2f91980b8005447b09f1470b9"
+    }
+  ],
+  "aggregate_sha256": "2c0626a7b0f5147206efdd3e3c7f5e0abb3a850fc568d36be9b6fe94a9226b5f"
+}

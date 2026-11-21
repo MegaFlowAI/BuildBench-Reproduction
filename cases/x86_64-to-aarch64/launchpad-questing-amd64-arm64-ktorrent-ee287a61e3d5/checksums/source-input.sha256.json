@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-questing-amd64-arm64-ktorrent-ee287a61e3d5",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "ktorrent_25.04.3-0ubuntu1_25.07.80-0ubuntu1.diff.gz",
+      "bytes": 144166,
+      "sha256": "136ab07d61d31ef3bf362c79b5fbb66bfdf87bff5e38b32e885bfb1a1bd6a730"
+    },
+    {
+      "path": "ktorrent_25.07.80-0ubuntu1.debian.tar.xz",
+      "bytes": 25264,
+      "sha256": "cf36137d517b33aa0eec843d9033637353165ceb1e3cf4c2faa7e1d4842dd828"
+    },
+    {
+      "path": "ktorrent_25.07.80-0ubuntu1.dsc",
+      "bytes": 3456,
+      "sha256": "074adc8c2116273d992b46784b78455a77d949dc63a632650db00aa9d5951928"
+    },
+    {
+      "path": "ktorrent_25.07.80.orig.tar.xz",
+      "bytes": 2236192,
+      "sha256": "8b8966356ca1841ba429fa34c927caf5e773f70ecc92380c5847cb350ddf0856"
+    }
+  ],
+  "aggregate_sha256": "f77240c19a3f5456c8f4e225ef9f287f4620e781b339377500caad854b93e8d9"
+}

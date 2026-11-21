@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-golang-github-containers-storage-be92af2ba501",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "golang-github-containers-storage_1.61.0+ds1-4.debian.tar.xz",
+      "bytes": 18276,
+      "sha256": "840e64882ffaa68f5969637e930a85c8d0ce2ecb5bf00db7b229af33d0fe9f48"
+    },
+    {
+      "path": "golang-github-containers-storage_1.61.0+ds1-4.dsc",
+      "bytes": 3916,
+      "sha256": "587a43a7aaeaf6914da0b53f8838f0cf3cb3d91689295905c668953e129231fe"
+    },
+    {
+      "path": "golang-github-containers-storage_1.61.0+ds1.orig.tar.xz",
+      "bytes": 408440,
+      "sha256": "de29d94a719a077e9937e423a01f1106b0195970f640ada8da94d58597059762"
+    }
+  ],
+  "aggregate_sha256": "154db811e819ec3ee5281b2513f4746962bfcaf2b0010505a2c8a331c729869a"
+}

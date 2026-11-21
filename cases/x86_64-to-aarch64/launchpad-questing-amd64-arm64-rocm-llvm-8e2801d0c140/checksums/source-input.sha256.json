@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-questing-amd64-arm64-rocm-llvm-8e2801d0c140",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rocm-llvm_6.4.3+dfsg-1~exp3.debian.tar.xz",
+      "bytes": 13068,
+      "sha256": "1eeb76f62972fcbb90895a62df57a014c9e40f43a67f2c9af2202f46ed1fb5f7"
+    },
+    {
+      "path": "rocm-llvm_6.4.3+dfsg-1~exp3.dsc",
+      "bytes": 2658,
+      "sha256": "4e69c38a6c8a2569c3f72b90bd359cca21f28a096e2a01e7fb463b36006040af"
+    },
+    {
+      "path": "rocm-llvm_6.4.3+dfsg.orig.tar.xz",
+      "bytes": 326616,
+      "sha256": "3660d6c0be0d1513376c067177c603425edfe899ae243f82022cd4a2b36065db"
+    }
+  ],
+  "aggregate_sha256": "7bb0614ea2f8f39497c81cdd6bc05016386b2d1d92c256798a5fa6c5928ccae5"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-gcc-riscv64-unknown-elf-d3908b11c2d9",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gcc-riscv64-unknown-elf_16_17.diff.gz",
+      "bytes": 1074,
+      "sha256": "f280caa3186bdd3847414ccfbb28c1895dbe11fe82ed5d70050c2f28ed22cbe5"
+    },
+    {
+      "path": "gcc-riscv64-unknown-elf_17.dsc",
+      "bytes": 1890,
+      "sha256": "b0935c19f865de548b5a2e94baad29045b0d2de18fa71ded068b42d5e2539ce0"
+    },
+    {
+      "path": "gcc-riscv64-unknown-elf_17.tar.xz",
+      "bytes": 7304,
+      "sha256": "ea071a5e3ffde8a4f62030c355211210c5e3098e246bab445cc8c88039341b37"
+    }
+  ],
+  "aggregate_sha256": "66772829973c96a6cfc5ba2c332b7ca98613d710040eb01e7a8e0a5454f4fed5"
+}

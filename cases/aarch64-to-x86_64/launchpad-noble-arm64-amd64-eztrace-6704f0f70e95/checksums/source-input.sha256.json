@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-eztrace-6704f0f70e95",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "eztrace_2.1-7ubuntu1_2.1-7ubuntu2.diff.gz",
+      "bytes": 599,
+      "sha256": "6b859a1dfca40cfec611bdbd828546af5c4453dacd57b60ab5e5b6c5b4913811"
+    },
+    {
+      "path": "eztrace_2.1-7ubuntu2.debian.tar.xz",
+      "bytes": 14416,
+      "sha256": "e54769ca59e8d6b97c52fb462ad7deade43b118ffae29384982829f87c3db5ff"
+    },
+    {
+      "path": "eztrace_2.1-7ubuntu2.dsc",
+      "bytes": 2729,
+      "sha256": "efbbbfdbd6ca4a9774a80070c2e7d6f3de5f1f6842cbad44a3ade43be1601c5b"
+    },
+    {
+      "path": "eztrace_2.1.orig.tar.gz",
+      "bytes": 512944,
+      "sha256": "b5a2966b4ec739ec17ce8f45d880974f87ae04f15fde1f16bde2762aef0b680b"
+    }
+  ],
+  "aggregate_sha256": "54f9cb4f64d8e645459759fcc25e44137e69c2624563e0b86d18516b96c06f47"
+}

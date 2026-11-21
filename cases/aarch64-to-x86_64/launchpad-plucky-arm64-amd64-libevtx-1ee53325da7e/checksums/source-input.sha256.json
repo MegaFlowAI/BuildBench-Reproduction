@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-libevtx-1ee53325da7e",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libevtx_20240504-1_20240504-1build1.diff.gz",
+      "bytes": 330,
+      "sha256": "c4156a15f32ab8a1612a6fd53e66745e8f292a76773302b42537709e81817a17"
+    },
+    {
+      "path": "libevtx_20240504-1build1.debian.tar.xz",
+      "bytes": 7100,
+      "sha256": "9ccb5d713bca5b3ad91c6a45d4c3f59b3c8ba2fb066b9420e64ab4032d1ad0ce"
+    },
+    {
+      "path": "libevtx_20240504-1build1.dsc",
+      "bytes": 2215,
+      "sha256": "138a18aaf9986bed543005d31b85ed97f6d3bfc9b625b48f5eeeefd3a7bbb4a5"
+    },
+    {
+      "path": "libevtx_20240504.orig.tar.gz",
+      "bytes": 2048418,
+      "sha256": "6a4ee9950e3c9bc24db5fcac6446a5fa8b7da24b398865db9624aebd9f2f905a"
+    }
+  ],
+  "aggregate_sha256": "47e93a7a9b967a8119f32d74146970cc98077aa5908361210e9ed730dd79174c"
+}

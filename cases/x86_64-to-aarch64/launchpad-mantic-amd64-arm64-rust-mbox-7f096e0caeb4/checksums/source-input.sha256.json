@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-mantic-amd64-arm64-rust-mbox-7f096e0caeb4",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rust-mbox_0.6.0-1.debian.tar.xz",
+      "bytes": 3020,
+      "sha256": "89a05befbac77b2957d6b8455e17f5ddf2df32a5f61c6bb5ca994fbbc5308c62"
+    },
+    {
+      "path": "rust-mbox_0.6.0-1.dsc",
+      "bytes": 2153,
+      "sha256": "338063cbaea3e58cd021829456681f6b037dc2af9d0eea53230d33d15e774bc8"
+    },
+    {
+      "path": "rust-mbox_0.6.0.orig.tar.gz",
+      "bytes": 13585,
+      "sha256": "0f88d5c34d63aad11aa4321ef55ccb064af58b3ad8091079ae22bf83e5eb75d6"
+    }
+  ],
+  "aggregate_sha256": "fe13767939288450f1ea772c510ea74b0c84ffe310ff31c1ceea3546f13cac3c"
+}

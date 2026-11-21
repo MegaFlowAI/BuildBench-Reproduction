@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-libmceliece-5020df9683fc",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libmceliece_0~20230612-1.debian.tar.xz",
+      "bytes": 5356,
+      "sha256": "6b8b950b883777daf9b90cc8bc87238b698c38630806f4263d6259f14ddc3866"
+    },
+    {
+      "path": "libmceliece_0~20230612-1.dsc",
+      "bytes": 1579,
+      "sha256": "455c609c32204e4b96c678d1eb16bf2361c657a63e2842ca3005d8f14c77fc11"
+    },
+    {
+      "path": "libmceliece_0~20230612.orig.tar.gz",
+      "bytes": 560158,
+      "sha256": "6603d08888b39b5abbe96d75ee9393920acc4e077461d4f6c6910b7df0574ff7"
+    }
+  ],
+  "aggregate_sha256": "2c1034dcad2fde20022cd204d320aea1d78042c399fbf8d88824c82ba5bdaebd"
+}

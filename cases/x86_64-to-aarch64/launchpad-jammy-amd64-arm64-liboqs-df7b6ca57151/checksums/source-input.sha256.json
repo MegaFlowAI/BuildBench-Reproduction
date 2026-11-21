@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-liboqs-df7b6ca57151",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "liboqs_0.7.0.15.g9be13d21+dfsg-1_0.7.0.27.gba5b61a7+dfsg-1.diff.gz",
+      "bytes": 226471,
+      "sha256": "5b27fb5ef57888c0675f5f86b2c30b72df6946d65df7ab1797677e30b9a05bdd"
+    },
+    {
+      "path": "liboqs_0.7.0.27.gba5b61a7+dfsg-1.debian.tar.xz",
+      "bytes": 6160,
+      "sha256": "f37a8c627a126967c5228afc3dae47e1d0facd295628da8d58bb2fea5fec2fc6"
+    },
+    {
+      "path": "liboqs_0.7.0.27.gba5b61a7+dfsg-1.dsc",
+      "bytes": 2149,
+      "sha256": "434aadaaffafdb2e8080ac6adfe2de17a9a9a8f801ad2d2e0dcfe9b653836c79"
+    },
+    {
+      "path": "liboqs_0.7.0.27.gba5b61a7+dfsg.orig.tar.xz",
+      "bytes": 3655824,
+      "sha256": "e71ddd495e67bb6ed3d725eb11e6f6dbbb14211bd9ed51bafcd7de1450b7c575"
+    }
+  ],
+  "aggregate_sha256": "51cdb9f1b0ba866fc6d2a61e36554557c52fab65cc7fec8b83c487c84a27711a"
+}

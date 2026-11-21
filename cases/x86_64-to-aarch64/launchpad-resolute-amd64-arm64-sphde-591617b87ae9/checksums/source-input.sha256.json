@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-sphde-591617b87ae9",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "sphde_1.4.0-5.1build1_1.4.0-5.1build2.diff.gz",
+      "bytes": 327,
+      "sha256": "6d0b0083174c93bca28eb7cc951cb9cade7703f08a14bddd227ac0b46159716c"
+    },
+    {
+      "path": "sphde_1.4.0-5.1build2.debian.tar.xz",
+      "bytes": 17216,
+      "sha256": "47349947ef2bf102c8f99177ad1753551a923d22afd3f95c12cd557702a56b28"
+    },
+    {
+      "path": "sphde_1.4.0-5.1build2.dsc",
+      "bytes": 2146,
+      "sha256": "c3dd52e54535cfbb7e04d8a0aebc013364f60a67071b9c44bc174cb8f8883fb7"
+    },
+    {
+      "path": "sphde_1.4.0.orig.tar.xz",
+      "bytes": 441436,
+      "sha256": "cf4e8e8e4e7d98a759b082e270f7f1b6fb156be5953f0ce019d23794fe8d6967"
+    }
+  ],
+  "aggregate_sha256": "503891a17d91c0a36596f2cec67ce0c989e540c39b489a2ee27d698d96cc0474"
+}

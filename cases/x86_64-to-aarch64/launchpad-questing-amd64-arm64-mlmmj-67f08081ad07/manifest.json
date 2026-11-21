@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "aarch64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-questing-proposed-arm64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-questing-arm64",
+      "dependencies/ubuntu-questing-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/mlmmj_1.5.0-1.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

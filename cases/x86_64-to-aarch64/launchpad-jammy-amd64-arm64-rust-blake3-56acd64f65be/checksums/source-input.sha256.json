@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-rust-blake3-56acd64f65be",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rust-blake3_0.3.7-1_1.2.0-1.diff.gz",
+      "bytes": 32019,
+      "sha256": "0ff8ed5b4109d9cd317436dbaae230c743de463e638e5ba2538a7beb180ef0c0"
+    },
+    {
+      "path": "rust-blake3_1.2.0-1.debian.tar.xz",
+      "bytes": 7828,
+      "sha256": "372971d34a245ca4536759b58e9d32ef0cbcf76462f80e50524cdba3ebc27257"
+    },
+    {
+      "path": "rust-blake3_1.2.0-1.dsc",
+      "bytes": 2506,
+      "sha256": "f3c93d0235918ce4e089a9d802b631491259615517208a2226f5ae10f6c0fb44"
+    },
+    {
+      "path": "rust-blake3_1.2.0.orig.tar.gz",
+      "bytes": 156645,
+      "sha256": "526c210b4520e416420759af363083471656e819a75e831b8d2c9d5a584f2413"
+    }
+  ],
+  "aggregate_sha256": "dab8fec4f4ce37124bc3100f687b4df948409af6e0b549f524b7dfb82bbcaf9f"
+}

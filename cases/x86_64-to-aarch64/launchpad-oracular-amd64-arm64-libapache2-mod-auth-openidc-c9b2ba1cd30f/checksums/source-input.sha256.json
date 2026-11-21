@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-amd64-arm64-libapache2-mod-auth-openidc-c9b2ba1cd30f",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libapache2-mod-auth-openidc_2.4.15.7-1.debian.tar.xz",
+      "bytes": 7588,
+      "sha256": "0eee50cf955f1c07c05071945c14a841df83f09b6beb49131b0ae2bfbac7865d"
+    },
+    {
+      "path": "libapache2-mod-auth-openidc_2.4.15.7-1.dsc",
+      "bytes": 2303,
+      "sha256": "eb67c0732a7d4f059da9234eb8460004852b069836c3b42a57b47de46f2ff344"
+    },
+    {
+      "path": "libapache2-mod-auth-openidc_2.4.15.7.orig.tar.gz",
+      "bytes": 317784,
+      "sha256": "672a7a483f28314372e33ad48a501c5cb8aac40c5a9c921ea962e7e2c11ab807"
+    }
+  ],
+  "aggregate_sha256": "072803f8d3a560e20ad211eb6f63b32ef9e7033e4303cd71c34bcb3cd1ae2fad"
+}

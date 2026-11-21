@@ -1,0 +1,3641 @@
+{
+  "case_id": "launchpad-resolute-arm64-amd64-golang-github-containers-storage-be92af2ba501",
+  "dependencies": [
+    {
+      "arch": "all",
+      "filename": "adduser_3.153ubuntu1_all.deb",
+      "package": "adduser",
+      "sha256": "78de3c5c3ec5657bcbdc10c2b2bcd9cedd78e6814182566f1522af422b26d3ce",
+      "version": "3.153ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "advancecomp_2.5-1build1_amd64.deb",
+      "package": "advancecomp",
+      "sha256": "a6046321fd3b13e8c5728665be7b8148bdd30ab2ff4c6e9ccc666eed0af7c889",
+      "version": "2.5-1build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "apt_3.1.12_amd64.deb",
+      "package": "apt",
+      "sha256": "15766c34d227e8cc087552bfdb6e9ed9cfb6f9edc5aab6ed444218b0bc7e7685",
+      "version": "3.1.12"
+    },
+    {
+      "arch": "all",
+      "filename": "autoconf_2.72-3.1ubuntu1_all.deb",
+      "package": "autoconf",
+      "sha256": "517eeb309d78352d89f109e0e486bc7f85f2bb9087fbcb8bdcdaf3a66ce81382",
+      "version": "2.72-3.1ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "automake_1.18.1-3_all.deb",
+      "package": "automake",
+      "sha256": "0c6a249892120518ab7bb0711396dc8cd26f15ed4118d0b222ba3cd7368eb248",
+      "version": "1:1.18.1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "autopoint_0.23.2-1_all.deb",
+      "package": "autopoint",
+      "sha256": "b3b91d457f0bf08b617b09e8d3cfeb619f753e5c1adce6b70654f90254e9236e",
+      "version": "0.23.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "autotools-dev_20240727.1_all.deb",
+      "package": "autotools-dev",
+      "sha256": "04696ddbca38d4b054e3ccbe07c70775fab52978ad6325afaa1fee3e009e78f1",
+      "version": "20240727.1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "base-files_14ubuntu4_amd64.deb",
+      "package": "base-files",
+      "sha256": "07bce78bdfb1dfc7ff271d0ee58c3085c469ae533ba33d337386eb7ed50d4aba",
+      "version": "14ubuntu4"
+    },
+    {
+      "arch": "amd64",
+      "filename": "base-passwd_3.6.8_amd64.deb",
+      "package": "base-passwd",
+      "sha256": "226c75127e46de2bbd8a329ac7e55781ede395ab8a9be0f269250b24c81b9c36",
+      "version": "3.6.8"
+    },
+    {
+      "arch": "amd64",
+      "filename": "bash_5.3-1ubuntu1_amd64.deb",
+      "package": "bash",
+      "sha256": "814d638fae9b819724fef11690938d360a45241a41c45909efbaad3c2b6c5478",
+      "version": "5.3-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "binutils_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "binutils",
+      "sha256": "747066f511a893744847449cc2754104d54ef76cab3bf4de9f1a7caa6fb8e73a",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "binutils-common_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "binutils-common",
+      "sha256": "80f6b1883e7ecd1ee07a734b2685095a64b2281ad6c309111ae5a3ce8cef1f88",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "binutils-x86-64-linux-gnu_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "binutils-x86-64-linux-gnu",
+      "sha256": "a24960ef2b3abfcec58c88ebf69e33762741dea8c0be8724d31a376ad48860f4",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "bsdextrautils_2.41.2-4ubuntu1_amd64.deb",
+      "package": "bsdextrautils",
+      "sha256": "523c1223dbbe19a3890cd917b4566f654e194f36d0408bdd25532ee019480828",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "bsdutils_2.41.2-4ubuntu1_amd64.deb",
+      "package": "bsdutils",
+      "sha256": "7f080c3da756009bd14df6445b3ba2730b4b2030a96b6be877ecd95389253c24",
+      "version": "1:2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "build-essential_12.12ubuntu2_amd64.deb",
+      "package": "build-essential",
+      "sha256": "e4896a79cf1d2b62c6d5be654e34a84678cc8cad344c6468419d53b614e1af2b",
+      "version": "12.12ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "bzip2_1.0.8-6build1_amd64.deb",
+      "package": "bzip2",
+      "sha256": "7ae96d4df32750f3821fbdf77e64066d6c850f0476924b42dd86ba03777836ca",
+      "version": "1.0.8-6build1"
+    },
+    {
+      "arch": "all",
+      "filename": "ca-certificates_20250419_all.deb",
+      "package": "ca-certificates",
+      "sha256": "cebfe02908357ba9957ee1951e3cc5fd15246f5f5d904b4dbf131f138fce3e4c",
+      "version": "20250419"
+    },
+    {
+      "arch": "all",
+      "filename": "coreutils_9.5-1ubuntu2+0.0.0~ubuntu24_all.deb",
+      "package": "coreutils",
+      "sha256": "be48c687f892c8a8552fda28390044cb74afca9d9bbda1d1edd557bf86a42eeb",
+      "version": "9.5-1ubuntu2+0.0.0~ubuntu24"
+    },
+    {
+      "arch": "all",
+      "filename": "coreutils-from-uutils_0.0.0~ubuntu24_all.deb",
+      "package": "coreutils-from-uutils",
+      "sha256": "98ecaa3d286f33259312bcba2490c012a74ce10d98de78c5f12b4669356063c6",
+      "version": "0.0.0~ubuntu24"
+    },
+    {
+      "arch": "amd64",
+      "filename": "cpp_15.2.0-4ubuntu1_amd64.deb",
+      "package": "cpp",
+      "sha256": "485cdc756e31b52bda01ab45329958abbe7c41e26acced9b9447c1891e5a2a92",
+      "version": "4:15.2.0-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "cpp-15_15.2.0-9ubuntu1_amd64.deb",
+      "package": "cpp-15",
+      "sha256": "4c7916b011f172d0f90545a65c5d4be3fd7b0c89d3363633fc4d0755eca74f67",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "cpp-15-x86-64-linux-gnu_15.2.0-9ubuntu1_amd64.deb",
+      "package": "cpp-15-x86-64-linux-gnu",
+      "sha256": "454b1385d9f12383d3970e9c33b287a46d1ac0668cf904b6c7405f2742f92c2f",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "cpp-x86-64-linux-gnu_15.2.0-4ubuntu1_amd64.deb",
+      "package": "cpp-x86-64-linux-gnu",
+      "sha256": "2144e201b0751817eda5e059c53343fdbdcfe1ce2cc4b45069f1ae405e80235e",
+      "version": "4:15.2.0-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "dash_0.5.12-12ubuntu2_amd64.deb",
+      "package": "dash",
+      "sha256": "08c51b234ad83c5d389316fad000a8c8f925903c3ee0e21b70b7b5f286ebab69",
+      "version": "0.5.12-12ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "dbus_1.16.2-2ubuntu2_amd64.deb",
+      "package": "dbus",
+      "sha256": "fa1fd1a9fe1444ab37bd721de534a94aed9c2ae2fdac10c3ff80b768998ef6af",
+      "version": "1.16.2-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "dbus-bin_1.16.2-2ubuntu2_amd64.deb",
+      "package": "dbus-bin",
+      "sha256": "6773a56718a8a8c4d9377338ee0940e4b539359e1b2c51b1bc3f555030d954db",
+      "version": "1.16.2-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "dbus-daemon_1.16.2-2ubuntu2_amd64.deb",
+      "package": "dbus-daemon",
+      "sha256": "ced064470fd36ddbc06633e025a1a4516b6821c9db96c515c2382bc7f283ce24",
+      "version": "1.16.2-2ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "dbus-session-bus-common_1.16.2-2ubuntu2_all.deb",
+      "package": "dbus-session-bus-common",
+      "sha256": "acf373bc3e43cf2b59ddd39855d737fa089832adf7fa0a87bc05370d7bc57706",
+      "version": "1.16.2-2ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "dbus-system-bus-common_1.16.2-2ubuntu2_all.deb",
+      "package": "dbus-system-bus-common",
+      "sha256": "84ed364c6acb3e5861827daa3ff65e1501bd86ca26dd4cf8e36a657a489b2cb4",
+      "version": "1.16.2-2ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "debconf_1.5.91_all.deb",
+      "package": "debconf",
+      "sha256": "8d5a58907bfda17bc360de3a48d656a86e805f61d56c5fa531cf12dc733e9784",
+      "version": "1.5.91"
+    },
+    {
+      "arch": "all",
+      "filename": "debhelper_13.24.2ubuntu1_all.deb",
+      "package": "debhelper",
+      "sha256": "e2f91d9878c9e1bb3fe7203762437066d84c1cd51917f3203ba8b8e21b3c0165",
+      "version": "13.24.2ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "debianutils_5.23.2_amd64.deb",
+      "package": "debianutils",
+      "sha256": "a46001d9a979327d807fa72604264628eea1d2c88c1442a36f764849e0601a60",
+      "version": "5.23.2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "debugedit_5.2-3_amd64.deb",
+      "package": "debugedit",
+      "sha256": "3449f5d5ca40af954aa52c31f57fe3e33eb89dc69981fa8886e990ed3676a31f",
+      "version": "1:5.2-3"
+    },
+    {
+      "arch": "all",
+      "filename": "dh-autoreconf_21_all.deb",
+      "package": "dh-autoreconf",
+      "sha256": "e74cee14bd4d271e1594baa9fed1959be667b6ffe5dab524ff402b0446304935",
+      "version": "21"
+    },
+    {
+      "arch": "all",
+      "filename": "dh-golang_1.63_all.deb",
+      "package": "dh-golang",
+      "sha256": "a3d04bd540713350381b664248606fb9a92b5d72f92132b96208bec6f6b08834",
+      "version": "1.63"
+    },
+    {
+      "arch": "all",
+      "filename": "dh-strip-nondeterminism_1.15.0-1_all.deb",
+      "package": "dh-strip-nondeterminism",
+      "sha256": "8c2cf1cc19804c1fe6ceb83a882f5cbc8d63f68b28770b683ab730fde39e2eec",
+      "version": "1.15.0-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "diffutils_3.12-1_amd64.deb",
+      "package": "diffutils",
+      "sha256": "1adaaf191b33e95bc172e0cae09e4a246e22fb7dcf46a34e3e9ae66f8efbe994",
+      "version": "1:3.12-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "dpkg_1.22.21ubuntu6_amd64.deb",
+      "package": "dpkg",
+      "sha256": "1b7ab7c0817bac4089551fd4a33cc0a983cd148feb62e315af860d445757572e",
+      "version": "1.22.21ubuntu6"
+    },
+    {
+      "arch": "all",
+      "filename": "dpkg-dev_1.22.21ubuntu6_all.deb",
+      "package": "dpkg-dev",
+      "sha256": "27055849921c517a51bbe1628676938af858972ff88a818108cfdeca0a678acb",
+      "version": "1.22.21ubuntu6"
+    },
+    {
+      "arch": "amd64",
+      "filename": "dwz_0.16-2_amd64.deb",
+      "package": "dwz",
+      "sha256": "a23350eff880da4ddfdac84ca438af782a8f3f8a5633421d5434053fba9e0d4c",
+      "version": "0.16-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "e2fsprogs_1.47.2-3ubuntu2_amd64.deb",
+      "package": "e2fsprogs",
+      "sha256": "97cd6120fedc55bcf13662f3d42663eed441405bd2b34405e7e6886503538110",
+      "version": "1.47.2-3ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "fakeroot_1.37.1.2-1_amd64.deb",
+      "package": "fakeroot",
+      "sha256": "5aac962729247e028e17ad97bada2ce842118d7878a3d95d9a2f302303898c7a",
+      "version": "1.37.1.2-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "ffjson_0.0~git20181028.e517b90-1.1_amd64.deb",
+      "package": "ffjson",
+      "sha256": "3164cbce04c24927d3f8c681816e318c8b11c6391df0e6ccad196f6278b58eda",
+      "version": "0.0~git20181028.e517b90-1.1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "file_5.46-5build1_amd64.deb",
+      "package": "file",
+      "sha256": "e546896062cc8e0a0d96f81970c3d1f3cb63ad5fe31ae6a764ff73f1900ad408",
+      "version": "1:5.46-5build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "findutils_4.10.0-3build1_amd64.deb",
+      "package": "findutils",
+      "sha256": "3a33a890caf607b12ac5147d5db1ef57ea68670ac1a23012685d3f04dffd9be2",
+      "version": "4.10.0-3build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "g++_15.2.0-4ubuntu1_amd64.deb",
+      "package": "g++",
+      "sha256": "c0755f730853d1da3324575022a02d8391bb96ef9ac345082b94346a26d1b23e",
+      "version": "4:15.2.0-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "g++-15_15.2.0-9ubuntu1_amd64.deb",
+      "package": "g++-15",
+      "sha256": "9bbc23d5e97f5caf6c9045ede3ff06a92ddc747897d870d73bd7eaecb7d4e586",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "g++-15-x86-64-linux-gnu_15.2.0-9ubuntu1_amd64.deb",
+      "package": "g++-15-x86-64-linux-gnu",
+      "sha256": "79d24a8b9e28c8f24f945aba9adfe8f6722487d23e7444d9bf47e3d09bbf55b7",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "g++-x86-64-linux-gnu_15.2.0-4ubuntu1_amd64.deb",
+      "package": "g++-x86-64-linux-gnu",
+      "sha256": "220fafc076838a8affee831077a1a7e5c42681aeb9dc2aead255b254df4570a0",
+      "version": "4:15.2.0-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gcc_15.2.0-4ubuntu1_amd64.deb",
+      "package": "gcc",
+      "sha256": "bbccf553bb3f0806e3f80e9e135c3ddba9d4c7b282239b55dff8878f9423bf8e",
+      "version": "4:15.2.0-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gcc-15_15.2.0-9ubuntu1_amd64.deb",
+      "package": "gcc-15",
+      "sha256": "861d3e306bcf686653f91718cae21976c36f6657d440327204271df52f18624b",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gcc-15-base_15.2.0-9ubuntu1_amd64.deb",
+      "package": "gcc-15-base",
+      "sha256": "d7c2cedfaf7ca67c77b79f06dd591eec0e8e692909fb87ea998d9a36942b62bb",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gcc-15-x86-64-linux-gnu_15.2.0-9ubuntu1_amd64.deb",
+      "package": "gcc-15-x86-64-linux-gnu",
+      "sha256": "d11ab70ff8563ad44f240b38b90d99e2762801daef189417bdea284cac4332d7",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gcc-x86-64-linux-gnu_15.2.0-4ubuntu1_amd64.deb",
+      "package": "gcc-x86-64-linux-gnu",
+      "sha256": "d7c96184d9ecc8e0e35d431b7a0ffd87b3329c154546de66e50ec78fe759d555",
+      "version": "4:15.2.0-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gettext_0.23.2-1_amd64.deb",
+      "package": "gettext",
+      "sha256": "6fb2dd68379bf9578af5ead58203ab322e3b1cf3a6f9562a1e4d12c18e923bfc",
+      "version": "0.23.2-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gettext-base_0.23.2-1_amd64.deb",
+      "package": "gettext-base",
+      "sha256": "5a1a4cd407a868e766626f551646b00880fc1534db5e6d47208310a17252f306",
+      "version": "0.23.2-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gnu-coreutils_9.7-3ubuntu1_amd64.deb",
+      "package": "gnu-coreutils",
+      "sha256": "35cc6ff3508a86a936a9415d0a16140336267ae01ee8dc3eb54ed4cb57900801",
+      "version": "9.7-3ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "go-md2man_2.0.7-1_amd64.deb",
+      "package": "go-md2man",
+      "sha256": "82436efdceb70b94bb0b9d85ef7c94f268552762a0a7b3d7610f10df4d792b34",
+      "version": "2.0.7-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "golang-1.25-go_1.25.0-0ubuntu1_amd64.deb",
+      "package": "golang-1.25-go",
+      "sha256": "bd16d8e927b12860d7bd25763dc6f273f0a300f5ab7e6d63de5ddfed3624f892",
+      "version": "1.25.0-0ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-1.25-src_1.25.0-0ubuntu1_all.deb",
+      "package": "golang-1.25-src",
+      "sha256": "61a311cfe008901c92a3698792d884d9cb6cfbc872462470867daa9b7eb4cbe4",
+      "version": "1.25.0-0ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "golang-any_1.25~1_amd64.deb",
+      "package": "golang-any",
+      "sha256": "31edafe921b4309a3e888ef87e9425e5a5c7bd58dd51ee3557d852b7510b29ff",
+      "version": "2:1.25~1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-dbus-dev_5.1.0-1_all.deb",
+      "package": "golang-dbus-dev",
+      "sha256": "d008e57407ac1260e04dd76a575b95956bc7a09ed5d921d3fd798ce28a7e5b43",
+      "version": "5.1.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-alecthomas-units-dev_0.0~git20240927.0f3dac3-1_all.deb",
+      "package": "golang-github-alecthomas-units-dev",
+      "sha256": "be61d6e7f5e788804c3d5b020052bd5ca8d62a6c8ca6d5e1cbcc0cf750de90da",
+      "version": "0.0~git20240927.0f3dac3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-alexflint-go-filemutex-dev_1.2.0-1_all.deb",
+      "package": "golang-github-alexflint-go-filemutex-dev",
+      "sha256": "1ad00a6394907db1227341f16e8dc66534c02c21bd77d7d3f834e733f7160941",
+      "version": "1.2.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-antlr-antlr4-dev_4.11.1+ds-2_all.deb",
+      "package": "golang-github-antlr-antlr4-dev",
+      "sha256": "a90d4d87fc61b2d3e2b9982d5db109f7a1b2582c9419d238fae6f4965a5a1932",
+      "version": "4.11.1+ds-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-appc-cni-dev_1.1.2-1_all.deb",
+      "package": "golang-github-appc-cni-dev",
+      "sha256": "fda055978082d11ee3490b5210ff1936a87d96f4bfa7e0c49c7b71e8e4210450",
+      "version": "1.1.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-armon-go-socks5-dev_0.0~git20160902.e753329-1.1build1_all.deb",
+      "package": "golang-github-armon-go-socks5-dev",
+      "sha256": "f7ef025ece64f423c9a898a1b9f3429639dc2600b321b79750f7f0a4c90c2832",
+      "version": "0.0~git20160902.e753329-1.1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-aws-aws-sdk-go-v2-dev_1.30.3-1_all.deb",
+      "package": "golang-github-aws-aws-sdk-go-v2-dev",
+      "sha256": "db92697390742c9a26ad9eb7b42a89c0ad1dc23af1a02a7226aaa6b0ed81d185",
+      "version": "1.30.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-aws-smithy-go-dev_1.20.3-1_all.deb",
+      "package": "golang-github-aws-smithy-go-dev",
+      "sha256": "f4b4c02e384592f1d298c312e7cfb657e8a340a12701658a6dbbd1cf97e4b67b",
+      "version": "1.20.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-benbjohnson-clock-dev_1.3.0-1build1_all.deb",
+      "package": "golang-github-benbjohnson-clock-dev",
+      "sha256": "77557c45aec1441fc354d6ef3c6ed7420ed7e6d29dce48863e9525adc72e0b5b",
+      "version": "1.3.0-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-beorn7-perks-dev_1.0.1-3_all.deb",
+      "package": "golang-github-beorn7-perks-dev",
+      "sha256": "326e08c530483c670b5d8cc3ba33259dcd70216b503b62e306fa2cd7c11e6820",
+      "version": "1.0.1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-blang-semver-dev_4.0.0-1build1_all.deb",
+      "package": "golang-github-blang-semver-dev",
+      "sha256": "ef413189a9742b7de4ca179c9a14a8aceacc9846e20cb78b4f308f98395037fb",
+      "version": "4.0.0-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-bradfitz-gomemcache-dev_0.0~git20230611.acc6962-1_all.deb",
+      "package": "golang-github-bradfitz-gomemcache-dev",
+      "sha256": "7805cdf2aaa41a0fd1928b85fedf2dccfd301d2ed486c85b310d65068ae5e16e",
+      "version": "0.0~git20230611.acc6962-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-burntsushi-toml-dev_1.5.0-1_all.deb",
+      "package": "golang-github-burntsushi-toml-dev",
+      "sha256": "8231c673bf00a03c16ccd2e40ec5b877b628d693c38de1c1a23983ca95344e9e",
+      "version": "1.5.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-cenkalti-backoff-dev_4.3.0-1_all.deb",
+      "package": "golang-github-cenkalti-backoff-dev",
+      "sha256": "258bdeaa13176375e4f1233b9560d5be11088e0b5705183e8e4fe3171feeb799",
+      "version": "4.3.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-cespare-xxhash-dev_2.3.0-1_all.deb",
+      "package": "golang-github-cespare-xxhash-dev",
+      "sha256": "7b927ab8f0d8b5065b85f5d4c8883ab435e1e78853ab6aa40e57c4c398210ce7",
+      "version": "2.3.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-checkpoint-restore-go-criu-dev_7.2.0+ds1-4syncable2_all.deb",
+      "package": "golang-github-checkpoint-restore-go-criu-dev",
+      "sha256": "c31c7e4a6e58ec13d166d5cafdeedc8f250759cce9b760a25589eab0d37e8306",
+      "version": "7.2.0+ds1-4syncable2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-chzyer-logex-dev_1.2.1-1_all.deb",
+      "package": "golang-github-chzyer-logex-dev",
+      "sha256": "b6fb8e64491468bc4dfe37f6799f90f35d590ae6ec66b4b2e5248718a38108fd",
+      "version": "1.2.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-chzyer-readline-dev_1.5.1-1_all.deb",
+      "package": "golang-github-chzyer-readline-dev",
+      "sha256": "e046e9459f493f8dff41ca98d668bb7630e021c2683c48fae27e5199e6160f52",
+      "version": "1.5.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-chzyer-test-dev_1.0.0-1_all.deb",
+      "package": "golang-github-chzyer-test-dev",
+      "sha256": "27cce3d6db8a623135ffe840b63a887331181007a535b1f65fff3655ea45658f",
+      "version": "1.0.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-cilium-ebpf-dev_0.17.3+ds1-4_all.deb",
+      "package": "golang-github-cilium-ebpf-dev",
+      "sha256": "e75f7287ef43e7d4217259e36a9c669e541165f4e8e6f679922527f02a6ef72a",
+      "version": "0.17.3+ds1-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-btrfs-dev_2.0.0-2_all.deb",
+      "package": "golang-github-containerd-btrfs-dev",
+      "sha256": "68aff5aeb439d527256366b72d0a1cb88864875c8bae978722965bf2385bb178",
+      "version": "2.0.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-cgroups-dev_3.0.5-3_all.deb",
+      "package": "golang-github-containerd-cgroups-dev",
+      "sha256": "ab8acd3d633c352bf8204087d5c69211c30706e121d095ea5235db1a5cb1a45d",
+      "version": "3.0.5-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-console-dev_1.0.5-1_all.deb",
+      "package": "golang-github-containerd-console-dev",
+      "sha256": "122d69d4d3f0a12324c75e4d599cd9e7753f92b33c226fdb6d3eea464b308cc8",
+      "version": "1.0.5-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-containerd-api-dev_1.7.24~ds1-10ubuntu1_all.deb",
+      "package": "golang-github-containerd-containerd-api-dev",
+      "sha256": "376f9c99b331490b07ffcb7658148342ab8a0023881b841c6160d34bedbe0cf5",
+      "version": "1.7.24~ds1-10ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-containerd-dev_1.7.24~ds1-10ubuntu1_all.deb",
+      "package": "golang-github-containerd-containerd-dev",
+      "sha256": "db48169aebb30e2deaf75255a1dc20456a780b31d9dccdaace02c3a29f7a0bd5",
+      "version": "1.7.24~ds1-10ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-continuity-dev_0.4.5~ds1-1_all.deb",
+      "package": "golang-github-containerd-continuity-dev",
+      "sha256": "b759e47d0e32e06b9f0c192cf8e4bf477312d9819d3db106ec73c942fa8fbc1b",
+      "version": "0.4.5~ds1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-errdefs-dev_0.3.0-3_all.deb",
+      "package": "golang-github-containerd-errdefs-dev",
+      "sha256": "db439357dd20ef94c2d47a5bd88572c60bb8ff760f102926737d328ea1c03d1a",
+      "version": "0.3.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-fifo-dev_1.1.0-1_all.deb",
+      "package": "golang-github-containerd-fifo-dev",
+      "sha256": "d11828722c5b9fb4df931ecf44aca6fa02f707edea220b5e3a2b728bb9328e9a",
+      "version": "1.1.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-go-cni-dev_1.1.9-2_all.deb",
+      "package": "golang-github-containerd-go-cni-dev",
+      "sha256": "4e2e2da78aa0dde2b6062674fe88361bd17b8b0284b2b2f546ee405db39a4332",
+      "version": "1.1.9-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-go-runc-dev_1.1.0-2_all.deb",
+      "package": "golang-github-containerd-go-runc-dev",
+      "sha256": "c1cbf86aded65908a2119cf942a2895245a56e2d514547ce24d3f806e1be2dcc",
+      "version": "1.1.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-imgcrypt-dev_1.1.11-4_all.deb",
+      "package": "golang-github-containerd-imgcrypt-dev",
+      "sha256": "bae8301e661ccca3423d51ce4b568f67db8ccdbdc49337c784ed8444f0ac0594",
+      "version": "1.1.11-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-log-dev_0.1.0-2_all.deb",
+      "package": "golang-github-containerd-log-dev",
+      "sha256": "afb7e5a09a684e34870a913186a3116c754819cc28f406be121a3368dd65a6b2",
+      "version": "0.1.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-nri-dev_0.8.0-1_all.deb",
+      "package": "golang-github-containerd-nri-dev",
+      "sha256": "fe2f83aac0b63e3ea365d29c014fe0b232aedbb5407182439c5c43680b405591",
+      "version": "0.8.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-platforms-dev_0.2.1-2_all.deb",
+      "package": "golang-github-containerd-platforms-dev",
+      "sha256": "32e30147beb9fc83a80b9d658b26f58ec476eef06dff9f9e878049b749ad99bf",
+      "version": "0.2.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-stargz-snapshotter-dev_0.14.3-4_all.deb",
+      "package": "golang-github-containerd-stargz-snapshotter-dev",
+      "sha256": "0840f3ac2c7090ef3fc95a4e68acfda774fdd1f1c6b3319ae05a8f5844bf92b3",
+      "version": "0.14.3-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-ttrpc-dev_1.2.7-1_all.deb",
+      "package": "golang-github-containerd-ttrpc-dev",
+      "sha256": "9ae548fa51b3ae0c0f6173fcd31cd06461687d4440f54a3046e503845bbd9d88",
+      "version": "1.2.7-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containerd-typeurl-dev_2.2.3-1_all.deb",
+      "package": "golang-github-containerd-typeurl-dev",
+      "sha256": "848ecb5bab646f0ed577332492297a62e118f6d62022bcf758ad3e6cfcc16d29",
+      "version": "2.2.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containernetworking-plugins-dev_1.1.1+ds1-3build1_all.deb",
+      "package": "golang-github-containernetworking-plugins-dev",
+      "sha256": "de2feb4987a8801ed6ecfea22062d8d54dce9a78656100008a55aa807ce9ed87",
+      "version": "1.1.1+ds1-3build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-containers-ocicrypt-dev_1.1.10-3_all.deb",
+      "package": "golang-github-containers-ocicrypt-dev",
+      "sha256": "8a7428cdd1ac60b221d87e485a451a8ff5619f1e2d1063e93ae9b1e52b388416",
+      "version": "1.1.10-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-coreos-bbolt-dev_1.4.2-1_all.deb",
+      "package": "golang-github-coreos-bbolt-dev",
+      "sha256": "2be86c7a0a405f3df3183dd325eebca2eb54925507d261b952c6811d7b3062f3",
+      "version": "1.4.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-coreos-go-iptables-dev_0.6.0-1build1_all.deb",
+      "package": "golang-github-coreos-go-iptables-dev",
+      "sha256": "a93cc8ca16a2ec981b266958965c9f04895b49f989ef1b42f7c1deb8ae12928b",
+      "version": "0.6.0-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-coreos-go-systemd-dev_22.6.0-1_all.deb",
+      "package": "golang-github-coreos-go-systemd-dev",
+      "sha256": "7b6f5c2ed2624a0e24b034280899353b67c6ea58efd4c301204de822bd01600e",
+      "version": "22.6.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-cpuguy83-go-md2man-v2-dev_2.0.7-1_all.deb",
+      "package": "golang-github-cpuguy83-go-md2man-v2-dev",
+      "sha256": "ef35c9e91a32da29b9c31f3d3fa1ba35f1873cd8c97adea4e47bd94ce441debf",
+      "version": "2.0.7-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-creack-pty-dev_1.1.21-1_all.deb",
+      "package": "golang-github-creack-pty-dev",
+      "sha256": "b20d8fdded9ebf992a4434b1daccabd28bc79c25bfc80b8102aca6e19e243103",
+      "version": "1.1.21-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-cyphar-filepath-securejoin-dev_0.5.1-3_all.deb",
+      "package": "golang-github-cyphar-filepath-securejoin-dev",
+      "sha256": "a716b7b9396de51c24aaea42056629146e541c43c8b0d52c579973fee8b48404",
+      "version": "0.5.1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-davecgh-go-spew-dev_1.1.1-3_all.deb",
+      "package": "golang-github-davecgh-go-spew-dev",
+      "sha256": "654bd60912ebeeffd99b4abb6f805660888c344eea41cce6c6345e40394726fc",
+      "version": "1.1.1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-distribution-reference-dev_0.6.0-4_all.deb",
+      "package": "golang-github-distribution-reference-dev",
+      "sha256": "4cb6107f5a4184a686127717489011c543e97e3a71b0b3d80aee68a54011ecd4",
+      "version": "0.6.0-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-docker-go-events-dev_0.0~git20190806.e31b211-4_all.deb",
+      "package": "golang-github-docker-go-events-dev",
+      "sha256": "977ee1d74abec9457f5a461ec99d77d5454ffa3bcea8aded057e69fc416a75e6",
+      "version": "0.0~git20190806.e31b211-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-docker-go-metrics-dev_0.0.1-2_all.deb",
+      "package": "golang-github-docker-go-metrics-dev",
+      "sha256": "76b14099eaf68ea691da9090d12a088d3174a6e121d1e0a720327ec39de14a4e",
+      "version": "0.0.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-docker-go-units-dev_0.4.0-4_all.deb",
+      "package": "golang-github-docker-go-units-dev",
+      "sha256": "dbd1ed09957c991aa2c8db6a520f53d23702dc0d5e40cfabd5416db8f3fc991c",
+      "version": "0.4.0-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-docker-spdystream-dev_0.5.0-1_all.deb",
+      "package": "golang-github-docker-spdystream-dev",
+      "sha256": "b6c514c06f4884ec35aca125ee6ffd8a88fc6cf579549db7761e0cd2aa4065ef",
+      "version": "0.5.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-emicklei-go-restful-dev_3.10.2-1_all.deb",
+      "package": "golang-github-emicklei-go-restful-dev",
+      "sha256": "145818250c4758bc80af085d0a86f3f8fd0f241489d1fc56aaf708f960351c6d",
+      "version": "3.10.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-etcd-io-gofail-dev_0.1.0-1_all.deb",
+      "package": "golang-github-etcd-io-gofail-dev",
+      "sha256": "e663043a7c97579a9600d9cb6d4eb106d02aaf3fc1041c901e276d6d61476d19",
+      "version": "0.1.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-evanphx-json-patch-dev_5.7.0-1_all.deb",
+      "package": "golang-github-evanphx-json-patch-dev",
+      "sha256": "8e13db475d7b43a121be36b08d5815d0b657bc53525f61bb8df8e06737259494",
+      "version": "5.7.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-fatih-color-dev_1.17.0-1_all.deb",
+      "package": "golang-github-fatih-color-dev",
+      "sha256": "497843d28b55654421fc8da77ded2237d2e9970e3cc06abfd71361ea3a82ee01",
+      "version": "1.17.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-felixge-httpsnoop-dev_1.0.3-3_all.deb",
+      "package": "golang-github-felixge-httpsnoop-dev",
+      "sha256": "ada1a919fa3b16906363fd0ad45a9ae725a48c2e5c3de6e34a3ae8e3da70fb37",
+      "version": "1.0.3-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-fsnotify-fsnotify-dev_1.9.0-1_all.deb",
+      "package": "golang-github-fsnotify-fsnotify-dev",
+      "sha256": "0cd592a38ae163c5f4d8fe5387119b72a1770334a7864ee5c67d9526bfb3e335",
+      "version": "1.9.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-fullsailor-pkcs7-dev_0.0~git20210826.33d0574-3_all.deb",
+      "package": "golang-github-fullsailor-pkcs7-dev",
+      "sha256": "3535c4105aaa293a6515e72c9ccbf675f2f2d6363717042227862b3d9bee3e63",
+      "version": "0.0~git20210826.33d0574-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-fxamacker-cbor-dev_2.9.0-1_all.deb",
+      "package": "golang-github-fxamacker-cbor-dev",
+      "sha256": "96f4a7652c530531435ec3042d5c6baae38ef68f23c05ba9ca8ac7f497263fe7",
+      "version": "2.9.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-garyburd-redigo-dev_0.0~git20220831.5b01704-1_all.deb",
+      "package": "golang-github-garyburd-redigo-dev",
+      "sha256": "940f3ac4231982b789bb7b6bc576d0a3a2ec4f0919375c10671c8acd9356b064",
+      "version": "0.0~git20220831.5b01704-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-getkin-kin-openapi-dev_0.124.0-1_all.deb",
+      "package": "golang-github-getkin-kin-openapi-dev",
+      "sha256": "a2938d429608f0b6151e2a76a06ec52455ed8369c0ce8cefbe41ed0af154b70d",
+      "version": "0.124.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-jose-go-jose-dev_4.0.5-1_all.deb",
+      "package": "golang-github-go-jose-go-jose-dev",
+      "sha256": "6c2fe28eba88ec0c3604120feddec1a89e8e7d400a0c092754dfcec2976ef714",
+      "version": "4.0.5-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-kit-log-dev_0.2.1-1_all.deb",
+      "package": "golang-github-go-kit-log-dev",
+      "sha256": "6c8bce3a642a7973f864571d13fa7591c98aa45230febd31c1a90d873ccad30d",
+      "version": "0.2.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-logfmt-logfmt-dev_0.5.0-2_all.deb",
+      "package": "golang-github-go-logfmt-logfmt-dev",
+      "sha256": "aaa2ad7ff126d74ec36df7ae90ca66cb1010d580a430e5083ae0602539497be7",
+      "version": "0.5.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-logr-logr-dev_1.4.3-1_all.deb",
+      "package": "golang-github-go-logr-logr-dev",
+      "sha256": "8123147e4fe8286fec7775f5ed3267ba1e207d7b480bf9828121ccb45deb483c",
+      "version": "1.4.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-logr-stdr-dev_1.2.2-4_all.deb",
+      "package": "golang-github-go-logr-stdr-dev",
+      "sha256": "00495893b1ec13f36ad8a597a25ee12f06e4091f1bdde46d8ee2695efd88a1ae",
+      "version": "1.2.2-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-logr-zapr-dev_1.3.0-2_all.deb",
+      "package": "golang-github-go-logr-zapr-dev",
+      "sha256": "57a190a22eee7adaa12d3e673d67226205c1bf5315e526f336c2dca33570dbe4",
+      "version": "1.3.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-openapi-jsonpointer-dev_0.21.1-2_all.deb",
+      "package": "golang-github-go-openapi-jsonpointer-dev",
+      "sha256": "f2a165b56598a626777b7f3089a25c68de9e1080c033ac5dd02ba5250ca12ab8",
+      "version": "1:0.21.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-openapi-jsonreference-dev_0.21.0-1_all.deb",
+      "package": "golang-github-go-openapi-jsonreference-dev",
+      "sha256": "cd35eb638b50109fa16b4fd40d00a3d206f441020352a9cd4bbd3f10cf88dcf6",
+      "version": "1:0.21.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-openapi-swag-dev_0.25.1-1_all.deb",
+      "package": "golang-github-go-openapi-swag-dev",
+      "sha256": "dcd3d845f43bce0077e582c67603ccd0eb9deb7f1ff164886a251277ae7952b5",
+      "version": "1:0.25.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-quicktest-qt-dev_1.101.0-2_all.deb",
+      "package": "golang-github-go-quicktest-qt-dev",
+      "sha256": "44f46a26665877ffaa0cf0acc75ad8e57962b35773b129a010642dcf28cc48e1",
+      "version": "1.101.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-task-slim-sprig-dev_3.0.0-2_all.deb",
+      "package": "golang-github-go-task-slim-sprig-dev",
+      "sha256": "91b47e39275cf0889d2710b352ab5d57d70130b6e808c615387e498c378f5416",
+      "version": "3.0.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-go-viper-mapstructure-dev_2.4.0-1_all.deb",
+      "package": "golang-github-go-viper-mapstructure-dev",
+      "sha256": "a7ba1e063d9bdcddc923f5cf86449892adf1688991d906b5c0575c4d212dc237",
+      "version": "2.4.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-gogo-protobuf-dev_1.3.2-3build1_all.deb",
+      "package": "golang-github-gogo-protobuf-dev",
+      "sha256": "a46cbfc6cec3d6ce0fc30ddf8339c96dc4af5fdd2d30c473cecf0abb5cc58d01",
+      "version": "1.3.2-3build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-golang-groupcache-dev_0.0~git20210331.41bb18b-2_all.deb",
+      "package": "golang-github-golang-groupcache-dev",
+      "sha256": "0800e42c908b07134986ff355145719e6eb604a98710007dfbdc35dbeabbeead",
+      "version": "0.0~git20210331.41bb18b-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-golang-mock-dev_1.6.0-2build1_all.deb",
+      "package": "golang-github-golang-mock-dev",
+      "sha256": "251fc46898a26d9b7dd24ac8d9f4a6fbc4bc00f297db3fdca97bb8264a236c8a",
+      "version": "1.6.0-2build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-golang-protobuf-1-5-dev_1.5.4-2_all.deb",
+      "package": "golang-github-golang-protobuf-1-5-dev",
+      "sha256": "72234de90dd00dbb381c03f6391d0f0eb6e7f073d2f2b5bd0e77a6a9b7079f09",
+      "version": "1.5.4-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-golang-snappy-dev_1.0.0-1_all.deb",
+      "package": "golang-github-golang-snappy-dev",
+      "sha256": "af9daa3b12bf29343063a1661f5dc5a7d07b751ea2b16874e463e01da7018a25",
+      "version": "1.0.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-btree-dev_1.0.1-1_all.deb",
+      "package": "golang-github-google-btree-dev",
+      "sha256": "dbc5abae384fc3647b21c5b9c4a5387a4387b8a7392480f0038c7dbfe10e47bc",
+      "version": "1.0.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-cel-go-dev_0.18.2+ds-7_all.deb",
+      "package": "golang-github-google-cel-go-dev",
+      "sha256": "fd5924cdb23a42c3b5b72e2e1bc7800cc4b6293c4a8ee61f59490733a90fa3df",
+      "version": "0.18.2+ds-7"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-gnostic-models-dev_0.6.8-4_all.deb",
+      "package": "golang-github-google-gnostic-models-dev",
+      "sha256": "2938330fdfe556e8f9e1592c021689e751aa992838fa2d3295226b4f5c843fd8",
+      "version": "0.6.8-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-go-cmp-dev_0.7.0-1_all.deb",
+      "package": "golang-github-google-go-cmp-dev",
+      "sha256": "85d5d01cef4a9bc2aa39aff518f6b9a38692aa41ddef6b647343f9b1cd4ac27a",
+      "version": "0.7.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-go-intervals-dev_0.0.2-3_all.deb",
+      "package": "golang-github-google-go-intervals-dev",
+      "sha256": "212a19704ce2f0cf38a13c431a77a92b643b5b314df83a414155af0db862360b",
+      "version": "0.0.2-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-gofuzz-dev_1.2.0-1_all.deb",
+      "package": "golang-github-google-gofuzz-dev",
+      "sha256": "957bf857b7909e72356e85d5fac481eed45e72457999a876c6aa8e03fdeac069",
+      "version": "1.2.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-martian-dev_3.3.2-3_all.deb",
+      "package": "golang-github-google-martian-dev",
+      "sha256": "f6de772837ab6d1d9398ef863c0e3c199400ad887cf2eb5885b5832551fbe61d",
+      "version": "3.3.2-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-pprof-dev_0.0~git20211008.947d60d-1_all.deb",
+      "package": "golang-github-google-pprof-dev",
+      "sha256": "d50e267f33cc93d9450ead7905c39ac6800c40a4f0babf6e26c824de0dac558a",
+      "version": "0.0~git20211008.947d60d-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-google-uuid-dev_1.6.0-1_all.deb",
+      "package": "golang-github-google-uuid-dev",
+      "sha256": "13781305bfa43d62e413f293d94ca7cc05f0ae7c2d807c44e41744434be024b9",
+      "version": "1.6.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-googleapis-gax-go-dev_2.14.1-1_all.deb",
+      "package": "golang-github-googleapis-gax-go-dev",
+      "sha256": "b51a8d1c9122a3f6441dcac79bc5ae24bbd7afaa7c41a8ab8d226e793ed6a2f8",
+      "version": "2.14.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-gorilla-mux-dev_1.8.1-1_all.deb",
+      "package": "golang-github-gorilla-mux-dev",
+      "sha256": "e1d639cb74ded01a9b59cbf42f0abe93d78fc2590015b5db5890fece74316cf6",
+      "version": "1.8.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-gorilla-websocket-dev_1.5.3-1_all.deb",
+      "package": "golang-github-gorilla-websocket-dev",
+      "sha256": "e7dfa8da792751a27280926588cb37c2c633ec1a6e8edb9d1c6f1a5595f16859",
+      "version": "1.5.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-gotestyourself-gotest.tools-dev_3.5.1-1_all.deb",
+      "package": "golang-github-gotestyourself-gotest.tools-dev",
+      "sha256": "323764ec372b7d162749b4f7efd0954aaa6c39186f972460540c3f3ebce2304e",
+      "version": "3.5.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-gregjones-httpcache-dev_0.0~git20180305.9cad4c3-1.1_all.deb",
+      "package": "golang-github-gregjones-httpcache-dev",
+      "sha256": "ac6281acbf626564c5f4801fd53104b577ddb41fbc2a94674719c4fb2cb7becb",
+      "version": "0.0~git20180305.9cad4c3-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-grpc-ecosystem-go-grpc-prometheus-dev_1.2.0+git20191002.6af20e3-5_all.deb",
+      "package": "golang-github-grpc-ecosystem-go-grpc-prometheus-dev",
+      "sha256": "53cb62c932b9df8103072c95da9401d3b718c8f77c593943dc39379b33385f3c",
+      "version": "1.2.0+git20191002.6af20e3-5"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-grpc-ecosystem-grpc-gateway-dev_2.20.0-2_all.deb",
+      "package": "golang-github-grpc-ecosystem-grpc-gateway-dev",
+      "sha256": "3ae6f3d6eb71edb8c32965011009e248e5fc26d057728385beb8192dce99744c",
+      "version": "2.20.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hanwen-go-fuse-dev_2.8.0-1_all.deb",
+      "package": "golang-github-hanwen-go-fuse-dev",
+      "sha256": "c3af901f7a5068f13a7e1b19b4745cb9a2567ee83b8026323f45c66c7f664fa0",
+      "version": "2.8.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hashicorp-errwrap-dev_1.1.0-1_all.deb",
+      "package": "golang-github-hashicorp-errwrap-dev",
+      "sha256": "3f0b989036ca0664755e76c165095404b024c1deb2593a831b335e287c69ecd7",
+      "version": "1.1.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hashicorp-go-cleanhttp-dev_0.5.2-1_all.deb",
+      "package": "golang-github-hashicorp-go-cleanhttp-dev",
+      "sha256": "5bd6a6d6e62dedfff59f5970c6ac9f646ebb9a99d33a3e853f25534d51179846",
+      "version": "0.5.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hashicorp-go-hclog-dev_0.11.0-1build1_all.deb",
+      "package": "golang-github-hashicorp-go-hclog-dev",
+      "sha256": "e80468657972d057f8929824bc79c6210ce2dc6e695a31be99e77e4ec3ec22b2",
+      "version": "0.11.0-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hashicorp-go-multierror-dev_1.1.1-2_all.deb",
+      "package": "golang-github-hashicorp-go-multierror-dev",
+      "sha256": "6c0d5dac304fac54aefc2dbe10dda8d4bc0b5912b81a9ccd05857116bd8d02f7",
+      "version": "1.1.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hashicorp-go-retryablehttp-dev_0.7.1-1_all.deb",
+      "package": "golang-github-hashicorp-go-retryablehttp-dev",
+      "sha256": "baee4a4eac3636ad63083cf3679e896c2fafb862fbe8b4d59557dddbbc078172",
+      "version": "0.7.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-hashicorp-hcl-dev_1.0.0-1.1_all.deb",
+      "package": "golang-github-hashicorp-hcl-dev",
+      "sha256": "fe3587a4e1f150c70b8145a65056b65465e5eec3de09c7dde7980450ef5752db",
+      "version": "1.0.0-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-huandu-xstrings-dev_1.3.3-1_all.deb",
+      "package": "golang-github-huandu-xstrings-dev",
+      "sha256": "2dbe4fa5894c27a58029ad9566e05d986497e206f1ec0598f8a1c58e6e700e34",
+      "version": "1.3.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-ianlancetaylor-demangle-dev_0.0~git20200824.28f6c0f-2_all.deb",
+      "package": "golang-github-ianlancetaylor-demangle-dev",
+      "sha256": "ec9df7dc825ccadd3ef09c70b8345358ce6715824fdc06e0ad430ef0d8aceacf",
+      "version": "0.0~git20200824.28f6c0f-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-imdario-mergo-dev_1.0.1-2_all.deb",
+      "package": "golang-github-imdario-mergo-dev",
+      "sha256": "9b87b4e9bf38ee006bcee6650c39d820fbb08b2e7060301b112bf1061663ffd9",
+      "version": "1.0.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-intel-goresctrl-dev_0.3.0-2_all.deb",
+      "package": "golang-github-intel-goresctrl-dev",
+      "sha256": "4a2b152223d5a21ac6a9e8c132eef20d5a86f302fef63c5ce6a9959398fa2b0c",
+      "version": "0.3.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-invopop-yaml-dev_0.2.0-2_all.deb",
+      "package": "golang-github-invopop-yaml-dev",
+      "sha256": "16241efbc1ec7d439658b9da85ca68bf6eba3ab7a74055c858718aa0533978de",
+      "version": "0.2.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-jmespath-go-jmespath-dev_0.4.0-2_all.deb",
+      "package": "golang-github-jmespath-go-jmespath-dev",
+      "sha256": "47236d18c6d1bebb2c742222db8dd19fb578121b576d632c606f415fae90550e",
+      "version": "0.4.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-josharian-intern-dev_1.0.0-3_all.deb",
+      "package": "golang-github-josharian-intern-dev",
+      "sha256": "146f2af9fb6dce54a8194cf68e5d79cb8c90207a91e62cfd7d16ab1432d5d199",
+      "version": "1.0.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-jpillora-backoff-dev_1.0.0-1.1_all.deb",
+      "package": "golang-github-jpillora-backoff-dev",
+      "sha256": "58c27072f16bcf187bc302e2ba75e8020166a6959c6e59be8283e942425e5572",
+      "version": "1.0.0-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-jsimonetti-rtnetlink-dev_2.0.5-2_all.deb",
+      "package": "golang-github-jsimonetti-rtnetlink-dev",
+      "sha256": "e209ea188497d455d220503fb406f31b225643abaebbffd869f69b439d432575",
+      "version": "2.0.5-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-json-iterator-go-dev_1.1.12-2_all.deb",
+      "package": "golang-github-json-iterator-go-dev",
+      "sha256": "010721afbe011c2dfa3d774dce642e1f01e7b77c8f672acd95f0bc56a60cbb1e",
+      "version": "1.1.12-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-julienschmidt-httprouter-dev_1.3.0-2_all.deb",
+      "package": "golang-github-julienschmidt-httprouter-dev",
+      "sha256": "e3c3a1e5ab65ecd65e532ece1a3485eb2e9c8119fd1de80eb3a603137d6c1f32",
+      "version": "1.3.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-klauspost-compress-dev_1.18.1+ds1-1_all.deb",
+      "package": "golang-github-klauspost-compress-dev",
+      "sha256": "fbbcf6dbb2aeb6845e38270c13e8c9b6532fa05fe49b4db61ff1dc47e6808995",
+      "version": "1.18.1+ds1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-klauspost-cpuid-dev_2.3.0-1_all.deb",
+      "package": "golang-github-klauspost-cpuid-dev",
+      "sha256": "7e7f031e4e2c57ba2ec3379ea95a2e7156264195521a4cad743e736b5d2b741d",
+      "version": "2.3.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-klauspost-pgzip-dev_1.2.6-1_all.deb",
+      "package": "golang-github-klauspost-pgzip-dev",
+      "sha256": "4e8945f6a76d71e8e4a88c997099527c6562c6232c68a7fab9b6a12629e24963",
+      "version": "1.2.6-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-kr-fs-dev_0.1.0-2_all.deb",
+      "package": "golang-github-kr-fs-dev",
+      "sha256": "5ab1204fc0bddbe3284272ed208e9dcbd147b7e85660105c9d2e7c2618e561ff",
+      "version": "0.1.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-kr-pretty-dev_0.3.1-1_all.deb",
+      "package": "golang-github-kr-pretty-dev",
+      "sha256": "ef4945368f9fbf60729fdf5efae9c3c7c4fd0c2e05ee9608e55b23ffbe97dbb2",
+      "version": "0.3.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-kr-text-dev_0.2.0-2_all.deb",
+      "package": "golang-github-kr-text-dev",
+      "sha256": "81562e1d7c6cdc89f839621b222360e2bd47470939f1e89d65ec38d6b8e919e5",
+      "version": "0.2.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-kubernetes-cri-api-dev_0.32.3-1_all.deb",
+      "package": "golang-github-kubernetes-cri-api-dev",
+      "sha256": "a0fdfd8e89794495d4c6b8e709abca8273d02f43e10e353d9d246fc8a7dfbad8",
+      "version": "0.32.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-kubernetes-gengo-dev_0.0~git20250207.1244d31-1_all.deb",
+      "package": "golang-github-kubernetes-gengo-dev",
+      "sha256": "0da61089a471677529fd70eacda214d8fc52be0ad956b79f2bddde77be2e1056",
+      "version": "0.0~git20250207.1244d31-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-kylelemons-godebug-dev_1.1.0-2_all.deb",
+      "package": "golang-github-kylelemons-godebug-dev",
+      "sha256": "0c144a30d09fba3ce81ab33a218ef2724194ab22c2ddb29d2ca59796d5949bff",
+      "version": "1.1.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-magiconair-properties-dev_1.8.7-1_all.deb",
+      "package": "golang-github-magiconair-properties-dev",
+      "sha256": "2f8825f6c38782823bc10a1d21b575aecc1f48805c79583e124232b16e8e777a",
+      "version": "1.8.7-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mailru-easyjson-dev_0.9.1-1_all.deb",
+      "package": "golang-github-mailru-easyjson-dev",
+      "sha256": "bc48f91191e069e1a4d4420154dc5d056496d605994702db56ebdaaff5dcb919",
+      "version": "0.9.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-masterminds-goutils-dev_1.1.1-4_all.deb",
+      "package": "golang-github-masterminds-goutils-dev",
+      "sha256": "d39ab132c4c43791ee92807f01b09f8076fbeef989970de764e0ac0432fd5e5f",
+      "version": "1.1.1-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-masterminds-semver-dev_3.4.0-1_all.deb",
+      "package": "golang-github-masterminds-semver-dev",
+      "sha256": "43f79da81907181842be37142c3b17ebcfdcb6ba2b51ff76e32f26d8de5b9a5e",
+      "version": "3.4.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mattn-go-colorable-dev_0.1.13-1_all.deb",
+      "package": "golang-github-mattn-go-colorable-dev",
+      "sha256": "d3e208c8bef673f5441ccf40b5dfa24bb425834d76cb13a0de5557da6297b95f",
+      "version": "0.1.13-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mattn-go-isatty-dev_0.0.20-1_all.deb",
+      "package": "golang-github-mattn-go-isatty-dev",
+      "sha256": "809d63ee5f24f6a10b6c504e10a4cadf19f1ef11d3ac342aab7f95219e7551c9",
+      "version": "0.0.20-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mattn-go-shellwords-dev_1.0.12-1_all.deb",
+      "package": "golang-github-mattn-go-shellwords-dev",
+      "sha256": "938bcc517d26b588e29d41a3d72086438f13d2bfd3eec4f8e0a733c5583c3a44",
+      "version": "1.0.12-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mdlayher-netlink-dev_1.8.0-2_all.deb",
+      "package": "golang-github-mdlayher-netlink-dev",
+      "sha256": "9fcbf7fafac2ecd007fee07ece39cae5ec8f5ba98fc9dea66b1e4707bcd6202d",
+      "version": "1.8.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mdlayher-socket-dev_0.5.1-1_all.deb",
+      "package": "golang-github-mdlayher-socket-dev",
+      "sha256": "1125cca5d22c7e5e793ec57d258287cdd36c79efde9d0d94bb8f7ac4fa10bb61",
+      "version": "0.5.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-miekg-pkcs11-dev_1.0.3+dfsg1-3_all.deb",
+      "package": "golang-github-miekg-pkcs11-dev",
+      "sha256": "ce16278ea2a1e8bb68c5f72621bfcf21103fbad0c9ab4654c768e35cfee7bed9",
+      "version": "1.0.3+dfsg1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-minio-sha256-simd-dev_1.0.1-1_all.deb",
+      "package": "golang-github-minio-sha256-simd-dev",
+      "sha256": "57200f6b00adaaaf2bfaf58040aa871c206856a74f4dd3846cf50a7253ec5d63",
+      "version": "1.0.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mitchellh-mapstructure-dev_1.5.0+git20231216.8508981-1_all.deb",
+      "package": "golang-github-mitchellh-mapstructure-dev",
+      "sha256": "2fb2466ee4cfbbd249eb84064613c5b8f3f83954bbe6a6b57ca8b99b190a20de",
+      "version": "1.5.0+git20231216.8508981-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-moby-locker-dev_1.0.1-3_all.deb",
+      "package": "golang-github-moby-locker-dev",
+      "sha256": "9f025b7bfef0324445f91ac68ad85c438fdaff06ecfedec12e63d9900486c766",
+      "version": "1.0.1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-moby-sys-dev_0.0~git20250819.9dc3a90-1_all.deb",
+      "package": "golang-github-moby-sys-dev",
+      "sha256": "e01d616daabd479a939b98f5cc205733c22ebfea15ff9a69789133867f20c659",
+      "version": "0.0~git20250819.9dc3a90-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-moby-term-dev_0.0~git20230502.9c3c875-1_all.deb",
+      "package": "golang-github-moby-term-dev",
+      "sha256": "7af05f523c9025d5f4be297474442169fe400038804d19d5db18635b691d4c25",
+      "version": "0.0~git20230502.9c3c875-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-modern-go-concurrent-dev_1.0.3-1.1_all.deb",
+      "package": "golang-github-modern-go-concurrent-dev",
+      "sha256": "d0a97f5e11d3956af9c653afe22bc050e519bbe107969abe7296217774212cf1",
+      "version": "1.0.3-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-modern-go-reflect2-dev_1.0.2-2_all.deb",
+      "package": "golang-github-modern-go-reflect2-dev",
+      "sha256": "daca616c5f915e9a7a7a220ca930205fd3f7340c37d341f2d25ed968d89fe0db",
+      "version": "1.0.2-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mohae-deepcopy-dev_0.0~git20170929.c48cc78-4_all.deb",
+      "package": "golang-github-mohae-deepcopy-dev",
+      "sha256": "883b5ba546d65e120a78686127dca9a832336b77b70de6fb98e03802fe21f62f",
+      "version": "0.0~git20170929.c48cc78-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mrunalp-fileutils-dev_0.5.1-1_all.deb",
+      "package": "golang-github-mrunalp-fileutils-dev",
+      "sha256": "7494230816f951fc5bdae85cd1f4c6e2aadc7e9864b4354e0d9466a3b4751e1a",
+      "version": "0.5.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-munnerz-goautoneg-dev_0.0~git20191010.a7dc8b6-2_all.deb",
+      "package": "golang-github-munnerz-goautoneg-dev",
+      "sha256": "e012f7a1053e55c1a44832af23b5471216dbf9209f969e0448970bafd80add37",
+      "version": "0.0~git20191010.a7dc8b6-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mwitkow-go-conntrack-dev_0.0~git20190716.2f06839-4_all.deb",
+      "package": "golang-github-mwitkow-go-conntrack-dev",
+      "sha256": "4521aff984d2dc01359fd8fea7cfa321d41737736b4932f3e100188e71d3872a",
+      "version": "0.0~git20190716.2f06839-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-mxk-go-flowrate-dev_0.0~git20140419.0.cca7078-2_all.deb",
+      "package": "golang-github-mxk-go-flowrate-dev",
+      "sha256": "528c850a82b33ce2dc87b043b92c298a2305e8ec8e32babc09ed1baecd9013c4",
+      "version": "0.0~git20140419.0.cca7078-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-nxadm-tail-dev_1.4.11+ds1-1_all.deb",
+      "package": "golang-github-nxadm-tail-dev",
+      "sha256": "ae9524be1a3100c78ec5b137ddb4c1929f2dff9e67a18d4d0e60ada2146529ce",
+      "version": "1.4.11+ds1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-nytimes-gziphandler-dev_1.1.1-1build1_all.deb",
+      "package": "golang-github-nytimes-gziphandler-dev",
+      "sha256": "3ff02cec126690b03022f7679d42ecdca8eb284134b1f618b7bd96c5588c9b61",
+      "version": "1.1.1-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-onsi-ginkgo-dev_1.16.5-5_all.deb",
+      "package": "golang-github-onsi-ginkgo-dev",
+      "sha256": "83567c3cbc9b3b917b611349b15f1ed0612f8c4379f5ac64922c789057c9e87b",
+      "version": "1.16.5-5"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-onsi-ginkgo-v2-dev_2.27.2-1_all.deb",
+      "package": "golang-github-onsi-ginkgo-v2-dev",
+      "sha256": "60eb2101bc3b2e85a026c080965ac240c8ba255833e27f5fce8cc8686d0dc516",
+      "version": "2.27.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-cgroups-dev_0.0.5-2_all.deb",
+      "package": "golang-github-opencontainers-cgroups-dev",
+      "sha256": "9b644d841940a677afc4a3c0c607bb492992a281d24107605cac7d98e5016eb9",
+      "version": "0.0.5-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-go-digest-dev_1.0.0-2_all.deb",
+      "package": "golang-github-opencontainers-go-digest-dev",
+      "sha256": "1832be3f8e8076c8fc3083ad2478525198f376f2d0c914de19af6a51cebc1629",
+      "version": "1.0.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-image-spec-dev_1.1.1-1_all.deb",
+      "package": "golang-github-opencontainers-image-spec-dev",
+      "sha256": "c9bd4916689d06b0d1c12673b7b30845705c4603327791ecef1bad9766ca833e",
+      "version": "1.1.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-runc-dev_1.3.3+ds1-2ubuntu1_all.deb",
+      "package": "golang-github-opencontainers-runc-dev",
+      "sha256": "f627500c2209882ffb5edcf7946af96a1c7744ab25057a0cacf2339d5c3e6426",
+      "version": "1.3.3+ds1-2ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-runtime-tools-dev_0.9.0.109.ge931285-1_all.deb",
+      "package": "golang-github-opencontainers-runtime-tools-dev",
+      "sha256": "8772239c2f73bf41329a9b26739e725aa5f6c350435063efc5722076437adb43",
+      "version": "0.9.0.109.ge931285-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-selinux-dev_1.11.1-1_all.deb",
+      "package": "golang-github-opencontainers-selinux-dev",
+      "sha256": "a9e433fd34f131275bd4bb4bb560d0baf8e775df81aace4dac5c07cadefe7c62",
+      "version": "1.11.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-opencontainers-specs-dev_1.2.1-1_all.deb",
+      "package": "golang-github-opencontainers-specs-dev",
+      "sha256": "8b476112426453ff53553b26b6c704c439ef2ceaee1f783e619cf8a88a0a1d31",
+      "version": "1.2.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-pelletier-go-toml-dev_1.9.5-1build1_all.deb",
+      "package": "golang-github-pelletier-go-toml-dev",
+      "sha256": "3a6f141fe90c4bd5b244554d5b9eb87ce49fedfedab66551ebf1bc0b2a80252b",
+      "version": "1.9.5-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-pelletier-go-toml.v2-dev_2.2.4-1_all.deb",
+      "package": "golang-github-pelletier-go-toml.v2-dev",
+      "sha256": "44b7f7b6938f037e84b9ca5816d8addd04f022d4ec9d7996bbf068d7cdc65686",
+      "version": "2.2.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-perimeterx-marshmallow-dev_1.1.5-1_all.deb",
+      "package": "golang-github-perimeterx-marshmallow-dev",
+      "sha256": "4708acfe3f35262587c8fc27f72594d46e972259a23c019c7e0f7413ac566431",
+      "version": "1.1.5-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-peterbourgon-diskv-dev_3.0.0-2_all.deb",
+      "package": "golang-github-peterbourgon-diskv-dev",
+      "sha256": "960e54143100956bbee80ce854637479d5e4fd55dfba89ab5f90bfe9bec994e8",
+      "version": "3.0.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-pkg-errors-dev_0.9.1-3_all.deb",
+      "package": "golang-github-pkg-errors-dev",
+      "sha256": "e17dc6254206fa88c12eae3f0dbe4f64cfcac03ae1b93013aec187969c172656",
+      "version": "0.9.1-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-pkg-sftp-dev_1.13.9-1_all.deb",
+      "package": "golang-github-pkg-sftp-dev",
+      "sha256": "2bcf3a731324bed9069d0f85423a10d60293fc0e2c75066a183e48a840df686d",
+      "version": "1.13.9-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-pmezard-go-difflib-dev_1.0.0-3_all.deb",
+      "package": "golang-github-pmezard-go-difflib-dev",
+      "sha256": "7d511d1b59943caf71bbcf65b76cee152c8d715bb747b4a02d3b742881933135",
+      "version": "1.0.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-pquerna-ffjson-dev_0.0~git20181028.e517b90-1.1_all.deb",
+      "package": "golang-github-pquerna-ffjson-dev",
+      "sha256": "20a5342cd159956ceec0ed094132a1a6f9cc374f2502aa9162334832fedbd762",
+      "version": "0.0~git20181028.e517b90-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-prometheus-client-golang-dev_1.21.1-1_all.deb",
+      "package": "golang-github-prometheus-client-golang-dev",
+      "sha256": "162daad52a471461c1a67628669c26aa4d57a66f5585a47e421a18d45caa6e14",
+      "version": "1.21.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-prometheus-client-model-dev_0.6.2-1_all.deb",
+      "package": "golang-github-prometheus-client-model-dev",
+      "sha256": "d81031e14167990fb74a1097497347aac7fa9a3d038caa9aaebef3073a3a7e7b",
+      "version": "0.6.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-prometheus-common-dev_0.65.0-1_all.deb",
+      "package": "golang-github-prometheus-common-dev",
+      "sha256": "61761a03f82408d82d842be8c69b9d4a7509046bd8405afb5d8b77eac712cdcd",
+      "version": "0.65.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-prometheus-procfs-dev_0.17.0-1_all.deb",
+      "package": "golang-github-prometheus-procfs-dev",
+      "sha256": "332d58133c6879750dd376e05aab923e1493fa32e5de8f14aabcdcf4547164d1",
+      "version": "0.17.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-prometheus-sigv4-dev_0.2.1-1_all.deb",
+      "package": "golang-github-prometheus-sigv4-dev",
+      "sha256": "94742080c529df549c64d5cb7fd6575abc7ac29166cbb52e71579e1e2a7a48c5",
+      "version": "0.2.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-rogpeppe-fastuuid-dev_1.2.0-1_all.deb",
+      "package": "golang-github-rogpeppe-fastuuid-dev",
+      "sha256": "10a816e2690d39f39fc8456e139f996f0863e47515779acda53fcedf07118486",
+      "version": "1.2.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-rogpeppe-go-internal-dev_1.14.1-1_all.deb",
+      "package": "golang-github-rogpeppe-go-internal-dev",
+      "sha256": "3b50af7c032d02759c7d488e78072b089a2d76d1c7ec3a165359d368a428bb14",
+      "version": "1.14.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-rs-xid-dev_1.6.0-1_all.deb",
+      "package": "golang-github-rs-xid-dev",
+      "sha256": "78d750f8847de9b01e3a38fa99c5d106431787b7daf3be24f38889b6b53996b6",
+      "version": "1.6.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-russross-blackfriday-v2-dev_2.1.0-1build1_all.deb",
+      "package": "golang-github-russross-blackfriday-v2-dev",
+      "sha256": "f4ebac170afc9a43563a055ce5ddf76e139342be5c269e9be3b52de2be31fa98",
+      "version": "2.1.0-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-safchain-ethtool-dev_0.7.0-1_all.deb",
+      "package": "golang-github-safchain-ethtool-dev",
+      "sha256": "825212cf154299c99147c2e2c38d4a28fe432ff99a7371d54602b8c5927d2eb5",
+      "version": "0.7.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-sagikazarmark-locafero-dev_0.12.0-1_all.deb",
+      "package": "golang-github-sagikazarmark-locafero-dev",
+      "sha256": "c3a1637ab29abce84702a7e74b3d59329a03495d5fc325845044491d30701dd0",
+      "version": "0.12.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-santhosh-tekuri-jsonschema-dev_5.3.1-2_all.deb",
+      "package": "golang-github-santhosh-tekuri-jsonschema-dev",
+      "sha256": "3e495c5d375dfe40320c750b1cf812c93c7429f90d6fd351bacfafb813bdd72e",
+      "version": "5.3.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-seccomp-libseccomp-golang-dev_0.10.0-4_all.deb",
+      "package": "golang-github-seccomp-libseccomp-golang-dev",
+      "sha256": "7c4437fb5e60a62d1811a92d46954bf536e20d509b7dc571d13bdc45f639bcbc",
+      "version": "0.10.0-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-shurcool-sanitized-anchor-name-dev_1.0.0-3_all.deb",
+      "package": "golang-github-shurcool-sanitized-anchor-name-dev",
+      "sha256": "37d5cc0912d82ee629adddce7f75351322722654edb112edd43845dcb40f8119",
+      "version": "1.0.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-sirupsen-logrus-dev_1.9.3-1_all.deb",
+      "package": "golang-github-sirupsen-logrus-dev",
+      "sha256": "6959fc4edd216b2a63372b057511e405b870b18703c248b1df7099c99d1c9bc9",
+      "version": "1.9.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-spf13-afero-dev_1.15.0-1_all.deb",
+      "package": "golang-github-spf13-afero-dev",
+      "sha256": "be42ea16301cdb934bdfe13482d8a31e55e0980829ab4d920516b84e46f22329",
+      "version": "1.15.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-spf13-cast-dev_1.10.0-2_all.deb",
+      "package": "golang-github-spf13-cast-dev",
+      "sha256": "5d499c0b09f08081a18ae74b49f311eae2ab73eb67d007d729de9f2c4050288f",
+      "version": "1.10.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-spf13-cobra-dev_1.10.1-1_all.deb",
+      "package": "golang-github-spf13-cobra-dev",
+      "sha256": "754839a48ebab98e5831b7031832aa23e1da1a16707e3a7ad81c0363425aaaaa",
+      "version": "1.10.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-spf13-jwalterweatherman-dev_1.1.0+really1.1.0-2_all.deb",
+      "package": "golang-github-spf13-jwalterweatherman-dev",
+      "sha256": "d01ef7542f67f31dd8f04e79a232f4c2908b1abb30da91d815c82b0ed9ea7102",
+      "version": "1.1.0+really1.1.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-spf13-pflag-dev_1.0.10-1_all.deb",
+      "package": "golang-github-spf13-pflag-dev",
+      "sha256": "f25ec1611cf3110ab876d1c083a48a8a1969387593f9d46127c9d3233af5c8e5",
+      "version": "1.0.10-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-spf13-viper-dev_1.21.0-2_all.deb",
+      "package": "golang-github-spf13-viper-dev",
+      "sha256": "e43f39e169fbcf8904938131963b1307dbac7f6d7d25a283599bda802e534bce",
+      "version": "1.21.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-stefanberger-go-pkcs11uri-dev_0.0~git20201008.78d3cae-2_all.deb",
+      "package": "golang-github-stefanberger-go-pkcs11uri-dev",
+      "sha256": "fe0729f60244f3e3f73f7400a97bbbac38812d6cdd6c7a34fc535b6fd7de5f3b",
+      "version": "0.0~git20201008.78d3cae-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-stoewer-go-strcase-dev_1.2.0-4_all.deb",
+      "package": "golang-github-stoewer-go-strcase-dev",
+      "sha256": "c0f015635ab6ad6b29d795be2b0cc7b59afb1c0e5adff58e4da6666852833829",
+      "version": "1.2.0-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-stretchr-objx-dev_0.5.2-1_all.deb",
+      "package": "golang-github-stretchr-objx-dev",
+      "sha256": "1e16d7debe4634f0e1bc22fd9d18139b409951a86a2cb3ec63bc1ec7cee60230",
+      "version": "0.5.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-stretchr-testify-dev_1.10.0-1_all.deb",
+      "package": "golang-github-stretchr-testify-dev",
+      "sha256": "f7d797ae2491c9a2d66ea396e669a3871dfa6b5580787e4a3f3c23f04674af68",
+      "version": "1.10.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-subosito-gotenv-dev_1.3.0-1_all.deb",
+      "package": "golang-github-subosito-gotenv-dev",
+      "sha256": "be8a2ab9757962de88b598bbf215e2bd9953d8c4d44257abed8db03a7f3c2158",
+      "version": "1.3.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-syndtr-goleveldb-dev_0.0~git20200815.5c35d60-2_all.deb",
+      "package": "golang-github-syndtr-goleveldb-dev",
+      "sha256": "5f91c7610beb231ac6c8f090a516c9773f45e42c8407baa8dde2bf28d8884658",
+      "version": "0.0~git20200815.5c35d60-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-tchap-go-patricia-dev_2.3.2-1_all.deb",
+      "package": "golang-github-tchap-go-patricia-dev",
+      "sha256": "502b1ebaacc1a5a0a38785e946d8dbdf01d9f59269bfb04e359a2fe45ac17485",
+      "version": "2.3.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-ugorji-go-codec-dev_1.2.8-1build1_all.deb",
+      "package": "golang-github-ugorji-go-codec-dev",
+      "sha256": "67ab8b1686be1ab64ad5649227cbfc0f76ffd00ccbed62a6c04b8a7281bacbb0",
+      "version": "1.2.8-1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-ulikunitz-xz-dev_0.5.15-1_all.deb",
+      "package": "golang-github-ulikunitz-xz-dev",
+      "sha256": "44b744b2466828de4d68115bf61d997821ebebe5d65020907269056c995df1d2",
+      "version": "0.5.15-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-urfave-cli-dev_1.22.14-1_all.deb",
+      "package": "golang-github-urfave-cli-dev",
+      "sha256": "94a3dd930a6c160f517006aa2a5cd63c5ccd52c844d0789e208470e33b5d0bf1",
+      "version": "1.22.14-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-vbatts-tar-split-dev_0.11.6-1_all.deb",
+      "package": "golang-github-vbatts-tar-split-dev",
+      "sha256": "7378bfd46c30045078a4159f4733a361c04db386e105c63d0c80dcb67db6be92",
+      "version": "0.11.6-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-vishvananda-netlink-dev_1.3.1-1_all.deb",
+      "package": "golang-github-vishvananda-netlink-dev",
+      "sha256": "8837a968364f6314e8d416c2dbf34a799024d1560a085abca57af2b8ca2a0ec2",
+      "version": "1.3.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-vishvananda-netns-dev_0.0.5-1_all.deb",
+      "package": "golang-github-vishvananda-netns-dev",
+      "sha256": "b066732c3fa42c87a11484d40aef14f2c6adc9d84551adeba4b2db826c748cca",
+      "version": "0.0.5-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-x448-float16-dev_0.8.4-3_all.deb",
+      "package": "golang-github-x448-float16-dev",
+      "sha256": "b6a47626f80ee76756cfb46094ece6cdd3013ac5e144d615b944aaa3ec4811a1",
+      "version": "0.8.4-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-xeipuuv-gojsonpointer-dev_0.0~git20190905.02993c4-3_all.deb",
+      "package": "golang-github-xeipuuv-gojsonpointer-dev",
+      "sha256": "b1229946b7682db5606a46162f4ea9fe0c7f01f06f983d52b7b00dac2f10294b",
+      "version": "0.0~git20190905.02993c4-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-xeipuuv-gojsonreference-dev_0.0~git20180127.bd5ef7b-3_all.deb",
+      "package": "golang-github-xeipuuv-gojsonreference-dev",
+      "sha256": "3d629798d1341a499b71ed94b2447f8848808e559616daa5a22b10e499a8701b",
+      "version": "0.0~git20180127.bd5ef7b-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-xeipuuv-gojsonschema-dev_1.2.0-3_all.deb",
+      "package": "golang-github-xeipuuv-gojsonschema-dev",
+      "sha256": "e6c38de6abe2151125de20247ba70ff0bfdd45f933410535b87474e24eca55ef",
+      "version": "1.2.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-github-yuin-goldmark-dev_1.7.13-1_all.deb",
+      "package": "golang-github-yuin-goldmark-dev",
+      "sha256": "68cd109ad11500b7c93146e2e669fd2386ba6ab482941b2ad4f766b40c3a0680",
+      "version": "1.7.13-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-glog-dev_1.2.4-1_all.deb",
+      "package": "golang-glog-dev",
+      "sha256": "a2dd86e4449a5f4d9f680fc01838217fe41167a3282c595365546a0d37549dab",
+      "version": "1.2.4-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "golang-go_1.25~1_amd64.deb",
+      "package": "golang-go",
+      "sha256": "311db7bf8da9bff0cff8affc458959df8846a738b3abe91e43a0b94ce6bcc114",
+      "version": "2:1.25~1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-go-zfs-dev_3.0.0-1_all.deb",
+      "package": "golang-go-zfs-dev",
+      "sha256": "c26621270e38799664b68fbee8c72bb52bb3fc47c082414bb44619993226f9db",
+      "version": "3.0.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-go.opencensus-dev_0.24.0-2_all.deb",
+      "package": "golang-go.opencensus-dev",
+      "sha256": "01aa72215360036c1e0ccdc5894b419612e76eb6be4f59e41724cb81a92fda40",
+      "version": "0.24.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-go.uber-atomic-dev_1.11.0-1_all.deb",
+      "package": "golang-go.uber-atomic-dev",
+      "sha256": "fbfe3475d7942f5e434199aa4d6057eb5e68f7a5adef8149052d1595b1b1a534",
+      "version": "1.11.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-go.uber-multierr-dev_1.6.0-1_all.deb",
+      "package": "golang-go.uber-multierr-dev",
+      "sha256": "e4f47e4974dacafa05bea4dabf68bb64d400101b1728c942364e784f373bbe46",
+      "version": "1.6.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-go.uber-zap-dev_1.27.0-1_all.deb",
+      "package": "golang-go.uber-zap-dev",
+      "sha256": "ad3c889305a2f0fe76804e08157a5aca34c5f06bcbc7ec5ffd30aad8a64957cf",
+      "version": "1.27.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gocapability-dev_0.0+git20200815.42c35b4-2_all.deb",
+      "package": "golang-gocapability-dev",
+      "sha256": "9c567aa18e49f932b5cf0885a9a396f9d4837231490d395fe55859a24d08abed",
+      "version": "0.0+git20200815.42c35b4-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-crypto-dev_0.25.0-1_all.deb",
+      "package": "golang-golang-x-crypto-dev",
+      "sha256": "d3742b1734229531e1a720b9acc840fe9581a6b041fe655f95e87082a92a0509",
+      "version": "1:0.25.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-exp-dev_0.0~git20250911.df92998-1_all.deb",
+      "package": "golang-golang-x-exp-dev",
+      "sha256": "33a3a08c50c038ff1805aac87c2bad97c6f91cadfb95403b9560cca7df5fcde6",
+      "version": "0.0~git20250911.df92998-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-mod-dev_0.30.0-1_all.deb",
+      "package": "golang-golang-x-mod-dev",
+      "sha256": "e458304c692dd6a981997b163f3a64f418aa6fb7863ae5df4f45487261daca48",
+      "version": "0.30.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-net-dev_0.27.0-2_all.deb",
+      "package": "golang-golang-x-net-dev",
+      "sha256": "9f8f4761bb407ccb6eee1710b9cd2cc5a50d260b2a48982f26e123dc724eeb5d",
+      "version": "1:0.27.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-oauth2-dev_0.27.0-1_all.deb",
+      "package": "golang-golang-x-oauth2-dev",
+      "sha256": "6608c6e1bc3248bfc85ce99e3e4c51dbc8ce4b986819229290decf9c96f93d59",
+      "version": "0.27.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-oauth2-google-dev_0.27.0-1_all.deb",
+      "package": "golang-golang-x-oauth2-google-dev",
+      "sha256": "5f19c3482d952789262184500bcdccde82435dc67a39d53d7e0967e2a22b10e4",
+      "version": "0.27.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-sync-dev_0.7.0-1_all.deb",
+      "package": "golang-golang-x-sync-dev",
+      "sha256": "3b8a8a1201c7416429029b8b56dee8d6b66fd97b689c76493d64232f38f0bfc3",
+      "version": "0.7.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-sys-dev_0.38.0-1_all.deb",
+      "package": "golang-golang-x-sys-dev",
+      "sha256": "da6fd9ab05f5100d63f29079285f44498663d9cedb51b754f1b8254ad2ece7ac",
+      "version": "0.38.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-term-dev_0.37.0-1_all.deb",
+      "package": "golang-golang-x-term-dev",
+      "sha256": "8f90058ff783124d1acad2341a20f8258c58de17cdc93c62b2af2d647539e3d5",
+      "version": "0.37.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-text-dev_0.31.0-1_all.deb",
+      "package": "golang-golang-x-text-dev",
+      "sha256": "e83924c18a5c511a20fd0e81d3a1da10de57af777f3d59731bc382cf9d4fcf85",
+      "version": "0.31.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-time-dev_0.14.0-1_all.deb",
+      "package": "golang-golang-x-time-dev",
+      "sha256": "d40869e3e3c74ef210167838e3b39434e23bd89f29f401843cece0aa7435104e",
+      "version": "0.14.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-golang-x-tools-dev_0.25.1+ds-0ubuntu1_all.deb",
+      "package": "golang-golang-x-tools-dev",
+      "sha256": "9b61d91f45fbe0c4fa52f33fc52940e9560583a8802fbe4661d37016b6401e36",
+      "version": "1:0.25.1+ds-0ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gomega-dev_1.36.2-1_all.deb",
+      "package": "golang-gomega-dev",
+      "sha256": "77fe68490412f9c0a93783136c6b02ec6d19ac001f656c4d1fbe6b4d8b7e2bfc",
+      "version": "1.36.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-google-api-dev_0.61.0-6_all.deb",
+      "package": "golang-google-api-dev",
+      "sha256": "00d1288d5170c31c9b8e4ed97f0c94f77c9f4b465ffda08231ab0e25becc3f23",
+      "version": "0.61.0-6"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-google-cloud-compute-metadata-dev_0.56.0-6_all.deb",
+      "package": "golang-google-cloud-compute-metadata-dev",
+      "sha256": "584c4511233dfeca0bdbcfc5f5f070e3782f447d975a76261010832e5400f53a",
+      "version": "0.56.0-6"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-google-cloud-dev_0.56.0-6_all.deb",
+      "package": "golang-google-cloud-dev",
+      "sha256": "432b43504ff7dcb74e9630aae6e3c515dfed439ec2ed46744671272ab39c3bbc",
+      "version": "0.56.0-6"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-google-genproto-dev_0.0~git20210726.e7812ac-4_all.deb",
+      "package": "golang-google-genproto-dev",
+      "sha256": "9a78120020a86dddf65478b987416427909676e8d06375122db4afceb815087b",
+      "version": "0.0~git20210726.e7812ac-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-google-grpc-dev_1.66.3-2_all.deb",
+      "package": "golang-google-grpc-dev",
+      "sha256": "3326a8db17ea9f4bd060a9a2b275033fc5532285357ecb17a104c483b1608b3d",
+      "version": "1.66.3-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-google-protobuf-dev_1.36.7-1_all.deb",
+      "package": "golang-google-protobuf-dev",
+      "sha256": "00c305c3996cd39b789775b2f444759e8c2879b25789195caa0ae7229b8f548a",
+      "version": "1.36.7-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-alecthomas-kingpin.v2-dev_2.2.6-4_all.deb",
+      "package": "golang-gopkg-alecthomas-kingpin.v2-dev",
+      "sha256": "be0f16f78b28b2a1ad548dab76fd2b97799750a7e6821e4a87213392d8d790d9",
+      "version": "2.2.6-4"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-check.v1-dev_0.0+git20200902.038fdea-2_all.deb",
+      "package": "golang-gopkg-check.v1-dev",
+      "sha256": "a3ebbd28016d183c491de25d82343b6f08310bfaee52468f01a0e3c0a0d81253",
+      "version": "0.0+git20200902.038fdea-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-inf.v0-dev_0.9.1-2_all.deb",
+      "package": "golang-gopkg-inf.v0-dev",
+      "sha256": "23e66b90f640abc93d91bbcc42e861b2510abceeb563d6442273916f57cb85be",
+      "version": "0.9.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-ini.v1-dev_1.67.0-1_all.deb",
+      "package": "golang-gopkg-ini.v1-dev",
+      "sha256": "9b687b4762a6f92a6be40b45e78bf00a41444b9759bd3f3b16c93e6a4ee3c04f",
+      "version": "1.67.0-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-tomb.v1-dev_0.0~git20141024.0.dd63297-8_all.deb",
+      "package": "golang-gopkg-tomb.v1-dev",
+      "sha256": "45688007d9983587bd70f598a875026e4d2a2369f8c11defb1f6d58d81906c57",
+      "version": "0.0~git20141024.0.dd63297-8"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-yaml.v2-dev_2.4.3-1_all.deb",
+      "package": "golang-gopkg-yaml.v2-dev",
+      "sha256": "949465c8bf6ebc9e0072b5a48ec1721ce586c0d7af8969915390b128501b763c",
+      "version": "2.4.3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-gopkg-yaml.v3-dev_3.0.4-1_all.deb",
+      "package": "golang-gopkg-yaml.v3-dev",
+      "sha256": "55f3c5de4597674f2410297e615b1064d2002a2c6b9ffc95c277a155f6ffaf87",
+      "version": "3.0.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-api-dev_0.33.4-1_all.deb",
+      "package": "golang-k8s-api-dev",
+      "sha256": "9bd6c1dc4c0983932470de4fb150479a26d3f3c573977f873b647621a8a6f10d",
+      "version": "0.33.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-apimachinery-dev_0.33.4-1_all.deb",
+      "package": "golang-k8s-apimachinery-dev",
+      "sha256": "9a2451a2e3066cbad8639ec9c80c18d77dd294e00344b43fe8e27c15469dd182",
+      "version": "0.33.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-apiserver-dev_0.33.4-1_all.deb",
+      "package": "golang-k8s-apiserver-dev",
+      "sha256": "b63145d877bbcb109771c0034892c70511b095a3fcbcf8ac109e6fc9c9f4113e",
+      "version": "0.33.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-client-go-dev_0.33.4-1_all.deb",
+      "package": "golang-k8s-client-go-dev",
+      "sha256": "13ea66edb5b126ddd6c61046ece10636de7b334e8bf62b0d24d2ae871164be2d",
+      "version": "0.33.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-component-base-dev_0.33.4-1_all.deb",
+      "package": "golang-k8s-component-base-dev",
+      "sha256": "00e93533bbce54e18d2541383c39193fec74a6c68e5439bf3c30036fadd4096b",
+      "version": "0.33.4-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-klog-dev_2.130.1-1_all.deb",
+      "package": "golang-k8s-klog-dev",
+      "sha256": "bef246f899fa7d6329f83a1305491ae6a8312e32681279efdccb4c67922caa22",
+      "version": "2.130.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-kube-openapi-dev_0.0~git20241212.2c72e55-2_all.deb",
+      "package": "golang-k8s-kube-openapi-dev",
+      "sha256": "c246cc1fea25febaf7eaec7a4139361e1c78a812d6d12b89e4e020ee4d46b0a6",
+      "version": "0.0~git20241212.2c72e55-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-sigs-json-dev_0.0~git20241014.cfa47c3-1_all.deb",
+      "package": "golang-k8s-sigs-json-dev",
+      "sha256": "ea838090b6119f84ebbb915ae3944c406e05870a12ff8f7616a44e33c97becff",
+      "version": "0.0~git20241014.cfa47c3-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-sigs-randfill-dev_1.0.0-2_all.deb",
+      "package": "golang-k8s-sigs-randfill-dev",
+      "sha256": "646d8d92da1bf9aee1bdbc63d7679316816ad2a6e54bb3d2f8e6540a7b9ba918",
+      "version": "1.0.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-sigs-structured-merge-diff-dev_4.6.0-3_all.deb",
+      "package": "golang-k8s-sigs-structured-merge-diff-dev",
+      "sha256": "d7d573939b7611aa72c28c45aa43f5cf599b3756532204a2045c54f5492505c3",
+      "version": "4.6.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-sigs-yaml-dev_1.4.0-2_all.deb",
+      "package": "golang-k8s-sigs-yaml-dev",
+      "sha256": "f3f7744643ae01f36b5915be2be41d9532c4ae0b8c69ac5ed507c34e664a11e0",
+      "version": "1.4.0-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-k8s-utils-dev_0.0~git20251002.bc988d5-1_all.deb",
+      "package": "golang-k8s-utils-dev",
+      "sha256": "963f9a1e5b12313d67738bd03cfade8ec310e24317c7c58765d541fab04440b8",
+      "version": "0.0~git20251002.bc988d5-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-opentelemetry-contrib-dev_0.56.0-5_all.deb",
+      "package": "golang-opentelemetry-contrib-dev",
+      "sha256": "c2183721f3503f29a0bb26ebf875a94a5e8a1645e0a07d57e4bcc1f1e636d787",
+      "version": "0.56.0-5"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-opentelemetry-otel-dev_1.31.0-5_all.deb",
+      "package": "golang-opentelemetry-otel-dev",
+      "sha256": "ea902ecb7925fe5604186193b242f074b22772160b62fa5842c46c7643284fd1",
+      "version": "1.31.0-5"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-opentelemetry-proto-dev_1.3.1-2_all.deb",
+      "package": "golang-opentelemetry-proto-dev",
+      "sha256": "723941d57859c5899b4c5d26de8dbfb7c936202f90c062b7292d0bb3eae8b364",
+      "version": "1.3.1-2"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-rsc-binaryregexp-dev_0.2.0-3_all.deb",
+      "package": "golang-rsc-binaryregexp-dev",
+      "sha256": "37ef3b5e5c215df40e5256605e96a735639e4c050003feddbda257b33f86bf22",
+      "version": "0.2.0-3"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-src_1.25~1_all.deb",
+      "package": "golang-src",
+      "sha256": "8d774a471cb005c83dafe4fde6dd9635d0b481c94bace42fb85c1da93d09731f",
+      "version": "2:1.25~1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-tags.cncf-container-device-interface-dev_1.0.1-1_all.deb",
+      "package": "golang-tags.cncf-container-device-interface-dev",
+      "sha256": "374501e24d2600db7178dac5bc98c70c18745e1af651743f5c4bd143a526a6ee",
+      "version": "1.0.1-1"
+    },
+    {
+      "arch": "all",
+      "filename": "golang-uber-goleak-dev_1.3.0-1_all.deb",
+      "package": "golang-uber-goleak-dev",
+      "sha256": "1fcb8d2b06beea974797d5d14b6d75527f02dfc1ee14c80fd8b4f22cce0f21a2",
+      "version": "1.3.0-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gpg_2.4.8-4ubuntu1_amd64.deb",
+      "package": "gpg",
+      "sha256": "e56b46f21ebf768ee922ff4a7a39fdc21fb79af0206eb265cf532771cc039771",
+      "version": "2.4.8-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gpg-agent_2.4.8-4ubuntu1_amd64.deb",
+      "package": "gpg-agent",
+      "sha256": "d382f3db8c6e8762a7b003c061bd7272027f0c4ce92564827c9b9ae4e8326984",
+      "version": "2.4.8-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gpgconf_2.4.8-4ubuntu1_amd64.deb",
+      "package": "gpgconf",
+      "sha256": "138115f54eceae4095ba005f7a477146c16255be6c69b11de883dd9d9e09784e",
+      "version": "2.4.8-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gpgv_2.4.8-4ubuntu1_amd64.deb",
+      "package": "gpgv",
+      "sha256": "cdd81b793d370d2bd4ea7a958425186a285fb6eed491dd475b46972847ccbd6d",
+      "version": "2.4.8-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "grep_3.12-1_amd64.deb",
+      "package": "grep",
+      "sha256": "fc23170281e0455ab02ab8b0041eac4b3f46a3ae9df165c117999260ccbc093a",
+      "version": "3.12-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "groff-base_1.23.0-9_amd64.deb",
+      "package": "groff-base",
+      "sha256": "9a626c2f1e62322834c3f2593cef11558b25391dd1eb5dcb07a3bd965cdd4799",
+      "version": "1.23.0-9"
+    },
+    {
+      "arch": "amd64",
+      "filename": "gzip_1.13-1ubuntu4_amd64.deb",
+      "package": "gzip",
+      "sha256": "5ad33064665977c3aefd430d55fc9886ce159323c0c5b1508932584d855b7353",
+      "version": "1.13-1ubuntu4"
+    },
+    {
+      "arch": "amd64",
+      "filename": "hostname_3.25_amd64.deb",
+      "package": "hostname",
+      "sha256": "41e8679f87db3937458d27e3d1c892e59e440ad636eb2298cf322f8be6f3e3e3",
+      "version": "3.25"
+    },
+    {
+      "arch": "amd64",
+      "filename": "init_1.69_amd64.deb",
+      "package": "init",
+      "sha256": "1d211de281c83b85b3eb9e206d16d6c042afca54ae3037e0cef484b2f5cb5dc1",
+      "version": "1.69"
+    },
+    {
+      "arch": "all",
+      "filename": "init-system-helpers_1.69_all.deb",
+      "package": "init-system-helpers",
+      "sha256": "49c68d09ceaaf5198966cf1e077ae9bf23d345189cb90e564bcd6594fd83a9fd",
+      "version": "1.69"
+    },
+    {
+      "arch": "all",
+      "filename": "intltool-debian_0.35.0+20060710.6_all.deb",
+      "package": "intltool-debian",
+      "sha256": "fc67e87881e2772eb132c40dff81346d1cfcaac904ce876723d937fa0c865732",
+      "version": "0.35.0+20060710.6"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libacl1_2.3.2-2_amd64.deb",
+      "package": "libacl1",
+      "sha256": "77f8d49c031182bbd6c4fe4ec9ad49edb5d4607f2dac795fc6932dce0e8f541e",
+      "version": "2.3.2-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libapparmor1_5.0.0~alpha1-0ubuntu9_amd64.deb",
+      "package": "libapparmor1",
+      "sha256": "42a07efcbc078b2bd94c007e49ed8f111cd6f9a836b74203cd79bfdbb214c983",
+      "version": "5.0.0~alpha1-0ubuntu9"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libapt-pkg7.0_3.1.12_amd64.deb",
+      "package": "libapt-pkg7.0",
+      "sha256": "65cdad9d707b58c1e1a276dd0dd07c4b268cc98f7cfb8e0e32c7129d20744acf",
+      "version": "3.1.12"
+    },
+    {
+      "arch": "all",
+      "filename": "libarchive-zip-perl_1.68-1_all.deb",
+      "package": "libarchive-zip-perl",
+      "sha256": "44273c5a4315f3ef76c43d6cf15ff40f4075a787d8d6005d81275c2dc88035e2",
+      "version": "1.68-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libasan8_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libasan8",
+      "sha256": "66c71e51026cde69a63b9a8accfd9dc0f0e5bc3d3c6febe8babf4cfa2249ad35",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libassuan9_3.0.2-2_amd64.deb",
+      "package": "libassuan9",
+      "sha256": "acfa524ca0e7cd2c6f38ea97e93a206e81e611429cb96ff8a2449d8d01bdab11",
+      "version": "3.0.2-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libatomic1_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libatomic1",
+      "sha256": "0f458e4a4c6457b35b456436914fa31d22cf0622a24c4be119baef352a32e85d",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libattr1_2.5.2-3build1_amd64.deb",
+      "package": "libattr1",
+      "sha256": "7738dfaa4fefac3985f3c3eada5d5601a7bcf759c405434897e912c767d6f19f",
+      "version": "1:2.5.2-3build1"
+    },
+    {
+      "arch": "all",
+      "filename": "libaudit-common_4.1.2-1_all.deb",
+      "package": "libaudit-common",
+      "sha256": "18770ccef068eb4bc66912398ed99648ec09f9c41d6b17be3662ac05bc0c0a87",
+      "version": "1:4.1.2-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libaudit1_4.1.2-1_amd64.deb",
+      "package": "libaudit1",
+      "sha256": "5f84a846b7e0843083674d031c71585bb67282b8ac8f2d51d4b33a117fd0c84d",
+      "version": "1:4.1.2-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libbinutils_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "libbinutils",
+      "sha256": "52459b2333ee2478eb862c6a31af2b34ccbdf87836f7ff7b6ca09b90a8bef5dd",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libblkid1_2.41.2-4ubuntu1_amd64.deb",
+      "package": "libblkid1",
+      "sha256": "e71f570148cb13d2a132e8b97ba8d64497ec990208f8b373ae81bd153513499e",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libbsd0_0.12.2-2build1_amd64.deb",
+      "package": "libbsd0",
+      "sha256": "b0cf00fca9a1fd4220535c36b936a2dea4d9b66dabee630b39c5c0098d7b7d67",
+      "version": "0.12.2-2build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libbtrfs-dev_6.17.1-1_amd64.deb",
+      "package": "libbtrfs-dev",
+      "sha256": "47b6becca7f2c33879c0d201b4c89dc8ec2ef008ecf7f5484b0a46a3ceacd9ed",
+      "version": "6.17.1-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libbtrfs0t64_6.17.1-1_amd64.deb",
+      "package": "libbtrfs0t64",
+      "sha256": "0278790eac058392d824b1f0f887386bec9358d080b39af1ba53880b22159ee1",
+      "version": "6.17.1-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libbz2-1.0_1.0.8-6build1_amd64.deb",
+      "package": "libbz2-1.0",
+      "sha256": "2eca5aa3957c1901829080d54021ad3b886a013a439219c31b86310216807ece",
+      "version": "1.0.8-6build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libc-bin_2.42-2ubuntu2_amd64.deb",
+      "package": "libc-bin",
+      "sha256": "699b87afbc3d59d4985f5e10beb0f6134af00594ff7d293c324662fb1141c069",
+      "version": "2.42-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libc-dev-bin_2.42-2ubuntu2_amd64.deb",
+      "package": "libc-dev-bin",
+      "sha256": "f7023a9e887d56c3e53a81437324fca4e4f2bda025c676dea228cdb527939640",
+      "version": "2.42-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libc-gconv-modules-extra_2.42-2ubuntu2_amd64.deb",
+      "package": "libc-gconv-modules-extra",
+      "sha256": "d991971482742ca0940ad3cbec828208a475f68c853e9521e11ecd2aa5aa4b4b",
+      "version": "2.42-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libc6_2.42-2ubuntu2_amd64.deb",
+      "package": "libc6",
+      "sha256": "65362561f84db621994e483bc052053875fa5ca0a93f0c7d646000e67b8bf966",
+      "version": "2.42-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libc6-dev_2.42-2ubuntu2_amd64.deb",
+      "package": "libc6-dev",
+      "sha256": "bc2d9b90a54f7bc79d5de6917bfa1cc68227ed7cd62832c37853d4c599194d75",
+      "version": "2.42-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcap-dev_2.75-10ubuntu1_amd64.deb",
+      "package": "libcap-dev",
+      "sha256": "27a15ee9c188a4126826c1ac9f7cc45374f7af76eea45487c09d32acbc0157db",
+      "version": "1:2.75-10ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcap-ng0_0.8.5-4build3_amd64.deb",
+      "package": "libcap-ng0",
+      "sha256": "ad4cd354dd93f81b51679a260d73caaccbb254538693706d04fd838de814895b",
+      "version": "0.8.5-4build3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcap2_2.75-10ubuntu1_amd64.deb",
+      "package": "libcap2",
+      "sha256": "e19cffb5a3fa905039697bb29fbb66e1cc8800403468e8692ebc1646d205291a",
+      "version": "1:2.75-10ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcc1-0_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libcc1-0",
+      "sha256": "f1d0911085fb53d1464e3b6d70cf856016cafe9ca1d3a850fc6cb1487fee4694",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcom-err2_1.47.2-3ubuntu2_amd64.deb",
+      "package": "libcom-err2",
+      "sha256": "c8e602fdb8c7a1e5aaf3f105d801eb1dc741dc440f583b86a3103bf7bdfc2882",
+      "version": "1.47.2-3ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcrypt-dev_4.5.1-1_amd64.deb",
+      "package": "libcrypt-dev",
+      "sha256": "a5d86db4dde3de557a419aa3199e916de30b356717c4c1e8974270fda615c051",
+      "version": "1:4.5.1-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libcrypt1_4.5.1-1_amd64.deb",
+      "package": "libcrypt1",
+      "sha256": "57ab343c3dd28ce7101dc4e23de4e9d5bd3e58c6cb0ecd5ba0c42a877fc8868a",
+      "version": "1:4.5.1-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libctf-nobfd0_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "libctf-nobfd0",
+      "sha256": "a7f2e6f7f09f19d509c6d6595c1c09852efdf2532dc30ae069a74eef4fdcbc29",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libctf0_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "libctf0",
+      "sha256": "183e2bfae43b9df3651cf9c89e7cb7de1435c4c2e6198dd066507ceefe71f736",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdb5.3t64_5.3.28+dfsg2-10ubuntu1_amd64.deb",
+      "package": "libdb5.3t64",
+      "sha256": "823df284bbc343ae6e22d69dc14a39c31b6c81fc2bccdd9ed720b88af92fcfa4",
+      "version": "5.3.28+dfsg2-10ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdbus-1-3_1.16.2-2ubuntu2_amd64.deb",
+      "package": "libdbus-1-3",
+      "sha256": "423f735e4f38855faabaedc4a3c1f0c3507c6ece0d9400e5e81ecf533717b43e",
+      "version": "1.16.2-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdebconfclient0_0.280ubuntu1_amd64.deb",
+      "package": "libdebconfclient0",
+      "sha256": "21f699abaaa7624b0206573f69bf4f7a902d92863f2c9dfba497662c5713456b",
+      "version": "0.280ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "libdebhelper-perl_13.24.2ubuntu1_all.deb",
+      "package": "libdebhelper-perl",
+      "sha256": "0443c0642fac01f922bb5479e421552b8ab415cd2a37872a67a47bc42e6261ef",
+      "version": "13.24.2ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdevmapper-dev_1.02.205-2ubuntu2_amd64.deb",
+      "package": "libdevmapper-dev",
+      "sha256": "4273a47c6c6165c5d3844ecee73e5a77d93300e1461e0231c6172958d14c90d3",
+      "version": "2:1.02.205-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdevmapper-event1.02.1_1.02.205-2ubuntu2_amd64.deb",
+      "package": "libdevmapper-event1.02.1",
+      "sha256": "25793f2be1912d159d087a2f8d2ad4581d70272304787da56e16767a1f2d69f1",
+      "version": "2:1.02.205-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdevmapper1.02.1_1.02.205-2ubuntu2_amd64.deb",
+      "package": "libdevmapper1.02.1",
+      "sha256": "87e96f981c800ec24ee414ee6122e6a771589c8c8491fc72be49c55520174593",
+      "version": "2:1.02.205-2ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "libdpkg-perl_1.22.21ubuntu6_all.deb",
+      "package": "libdpkg-perl",
+      "sha256": "0185e5d9312da12c63604e8dc5cd4ac8772d661cffa63235efb808f28ac3209b",
+      "version": "1.22.21ubuntu6"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libdw1t64_0.194-1_amd64.deb",
+      "package": "libdw1t64",
+      "sha256": "233d6f87667e694c450878ff067d9e1fabcaae9579f2538204444eb266ec7d45",
+      "version": "0.194-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libelf1t64_0.194-1_amd64.deb",
+      "package": "libelf1t64",
+      "sha256": "aeb620b235b5aa17eef368b403da72b340b4226c1f6cdd408df5abd87c7b0e3b",
+      "version": "0.194-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libexpat1_2.7.3-1_amd64.deb",
+      "package": "libexpat1",
+      "sha256": "8bce00bea01abb43fc2c9322ae40e2a685c6afcef7af965a1c3612bbebe88975",
+      "version": "2.7.3-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libext2fs2t64_1.47.2-3ubuntu2_amd64.deb",
+      "package": "libext2fs2t64",
+      "sha256": "08ee739aaf98f55166bff9d05dac55414be00d890c267c39be7b42bfcb70c600",
+      "version": "1.47.2-3ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libfakeroot_1.37.1.2-1_amd64.deb",
+      "package": "libfakeroot",
+      "sha256": "1349c676683af44d9d455913d9bc7c2a11af168e4edebc9d9b51ffcac39b2d76",
+      "version": "1.37.1.2-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libfile-stripnondeterminism-perl_1.15.0-1_all.deb",
+      "package": "libfile-stripnondeterminism-perl",
+      "sha256": "31cd90e963d181d6d95f806b6b0b496e8acf8f1f5a09dfce11faf0dcb55fb7af",
+      "version": "1.15.0-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgcc-15-dev_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libgcc-15-dev",
+      "sha256": "8c25bb87f423aa448c1ce79b73825d3d54464716c9cec6346d9785c6ff657352",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgcc-s1_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libgcc-s1",
+      "sha256": "58d8d0cbb793bd649e237a4523fdc6a6767c99d15b180817d2a52425e87e850d",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgcrypt20_1.11.2-3_amd64.deb",
+      "package": "libgcrypt20",
+      "sha256": "0424e9bb8baeffe91d2e4cc0ea18b93fbf7a3819e0b233f37e0675c46471f292",
+      "version": "1.11.2-3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgdbm-compat4t64_1.26-1_amd64.deb",
+      "package": "libgdbm-compat4t64",
+      "sha256": "c8cc70ce3f189ac3d4c40711f464020d4065ee8190b78a3d5009a0d2e313a8f9",
+      "version": "1.26-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgdbm6t64_1.26-1_amd64.deb",
+      "package": "libgdbm6t64",
+      "sha256": "2aa9af229f6837c12e29224139a92315735212ada09a221575c2f77015a291db",
+      "version": "1.26-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgmp10_6.3.0+dfsg-5ubuntu1_amd64.deb",
+      "package": "libgmp10",
+      "sha256": "e2ada598e3d8fbf80e74f530fd2c41ef48cc7f735a95bbce0a064219a60c09e5",
+      "version": "2:6.3.0+dfsg-5ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgomp1_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libgomp1",
+      "sha256": "183be7db9a34589387edfe304e9d0c623ddd97679e97786f7845a302a7d48dfe",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgpg-error0_1.56-2_amd64.deb",
+      "package": "libgpg-error0",
+      "sha256": "651c8ae090f311911d68816fa548880e9bbc0a9858fa02fb8cf47f2e3a1f1e95",
+      "version": "1.56-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgprofng0_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "libgprofng0",
+      "sha256": "bc6c88dbaabea700badb069d744e746f2ca78f9547ffee20756b2e4ddb276e75",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libhwasan0_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libhwasan0",
+      "sha256": "97e5e582b42afb15bc9531349c02d7148fe56c30171ce03ee8ae39870fc3183a",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libisl23_0.27-1_amd64.deb",
+      "package": "libisl23",
+      "sha256": "bfef9e3c33a616669825dd9e42f7e01435326a8f6b88853bb7c0e1fcabc8ca76",
+      "version": "0.27-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libitm1_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libitm1",
+      "sha256": "3aea80b7013dbcbfd574993eea7fbdd658596905a344c8eb50b3d624ade400b8",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libjansson4_2.14-2build3_amd64.deb",
+      "package": "libjansson4",
+      "sha256": "9995550a22c9de2b6a6a6587e86d70f7f303ba2017cdbc4855ab7c7f3aba4535",
+      "version": "2.14-2build3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libkmod2_34.2-2ubuntu1_amd64.deb",
+      "package": "libkmod2",
+      "sha256": "c188150d0ccb0252ede08772c71a809658e008cb56492145f211633cfc0be15a",
+      "version": "34.2-2ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libksba8_1.6.7-2_amd64.deb",
+      "package": "libksba8",
+      "sha256": "379c3e34901874a77127de2de5b5705b1997de574140170b40b8fd75cf27eeff",
+      "version": "1.6.7-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "liblastlog2-2_2.41.2-4ubuntu1_amd64.deb",
+      "package": "liblastlog2-2",
+      "sha256": "59d2bdac9b9ccdbfb06afa0545633877059812da5aae188653cbb66c140e5221",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "liblockfile-bin_1.17-2build1_amd64.deb",
+      "package": "liblockfile-bin",
+      "sha256": "70344fa13662a8aabf65ae4739469c73cd0f7024bb69aa70684a2b3e67f5881e",
+      "version": "1.17-2build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "liblockfile1_1.17-2build1_amd64.deb",
+      "package": "liblockfile1",
+      "sha256": "7392a327a5006f4d7a9bf0ef529853a83ff65cd48e088dfcb660c261f68f3ea2",
+      "version": "1.17-2build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "liblsan0_15.2.0-9ubuntu1_amd64.deb",
+      "package": "liblsan0",
+      "sha256": "766a05a44feee7e09138bfcf905a19fdc3f70d0dccef480915690018d9dc64f6",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libltdl-dev_2.5.4-7_amd64.deb",
+      "package": "libltdl-dev",
+      "sha256": "42e67d21acc64522e203791ae00f361ead392db4cc7b5f547349745f5495d951",
+      "version": "2.5.4-7"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libltdl7_2.5.4-7_amd64.deb",
+      "package": "libltdl7",
+      "sha256": "9d45c6a2f1533f6fb9b7921e43ec2f8a5c603fe6b8b2e86d13749c51deb33494",
+      "version": "2.5.4-7"
+    },
+    {
+      "arch": "amd64",
+      "filename": "liblz4-1_1.10.0-6_amd64.deb",
+      "package": "liblz4-1",
+      "sha256": "0fd3e69349ea528247316df1f428a6e848944777579f9608e9cd541479977977",
+      "version": "1.10.0-6"
+    },
+    {
+      "arch": "amd64",
+      "filename": "liblzma5_5.8.1-2_amd64.deb",
+      "package": "liblzma5",
+      "sha256": "5fea411c1ff34ab703143b784035cad220912d4b8b1951e5636ab336a40edc32",
+      "version": "5.8.1-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libmagic-mgc_5.46-5build1_amd64.deb",
+      "package": "libmagic-mgc",
+      "sha256": "7366b1d67b0b792f931d50ba10c7ec2f4ccbe479ed267c27358ee90dc9631dc8",
+      "version": "1:5.46-5build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libmagic1t64_5.46-5build1_amd64.deb",
+      "package": "libmagic1t64",
+      "sha256": "50cac88b387f380eafa27bec39f2f8358c569c256154419eb0a31d02d9f3da1c",
+      "version": "1:5.46-5build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libmd0_1.1.0-2build3_amd64.deb",
+      "package": "libmd0",
+      "sha256": "ff989178c3dc95a434238bd6dfc903ba57962d7571cfd72ebea00396c6ed202d",
+      "version": "1.1.0-2build3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libmount1_2.41.2-4ubuntu1_amd64.deb",
+      "package": "libmount1",
+      "sha256": "a01c83fd26190eba178a5e1becfa18185f46e6df16adc624aeb5729444ac8c20",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libmpc3_1.3.1-2_amd64.deb",
+      "package": "libmpc3",
+      "sha256": "bd79f3a68ce2557241740eba840d2a4f61803c63f4c15ec2d108f6d24481b204",
+      "version": "1.3.1-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libmpfr6_4.2.2-2_amd64.deb",
+      "package": "libmpfr6",
+      "sha256": "99e6c27c012b7b410d38731d6265319528d753fff3c4266d84f7a37f6a505f38",
+      "version": "4.2.2-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libncursesw6_6.5+20251123-1_amd64.deb",
+      "package": "libncursesw6",
+      "sha256": "7e1e95b01c0525578b92b7fdd7b9e9e7cb11e4d05184cde65b12393a98a5518c",
+      "version": "6.5+20251123-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libnpth0t64_1.8-3_amd64.deb",
+      "package": "libnpth0t64",
+      "sha256": "ddd0fcdcce18ff1aa176059e733be446ea6ad1691f62a0fbc12b00a78d3b8fb7",
+      "version": "1.8-3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libnspr4_4.36-1ubuntu2_amd64.deb",
+      "package": "libnspr4",
+      "sha256": "f25a55293716be700ffa2da29756753a5d00698e2c09027e85cb2b3a7f90083b",
+      "version": "2:4.36-1ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libnspr4-dev_4.36-1ubuntu2_amd64.deb",
+      "package": "libnspr4-dev",
+      "sha256": "393fed2268d5920c2348caa6d50ab52bd5f7995e8df2f39dd31a7e19b4c40489",
+      "version": "2:4.36-1ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libnss3_3.117-1_amd64.deb",
+      "package": "libnss3",
+      "sha256": "84a45682ef2e2cb9db7bfceee6e11c12238485ec8acdbbcec0b5ae5907544ce4",
+      "version": "2:3.117-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libnss3-dev_3.117-1_amd64.deb",
+      "package": "libnss3-dev",
+      "sha256": "8e74f9a1cc4e3239be485aed4cd1f0f8559b04a03146146549fac816a7351a24",
+      "version": "2:3.117-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpam-modules_1.7.0-5ubuntu2_amd64.deb",
+      "package": "libpam-modules",
+      "sha256": "b66f6802facbe3a9eac20da69770d63815ff1e7fe27d2456d6af0424b612dfec",
+      "version": "1.7.0-5ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpam-modules-bin_1.7.0-5ubuntu2_amd64.deb",
+      "package": "libpam-modules-bin",
+      "sha256": "5e388343f47b69bbbc30afe90c1c8e7df24286a80636b62b23e7b48d13a6552c",
+      "version": "1.7.0-5ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "libpam-runtime_1.7.0-5ubuntu2_all.deb",
+      "package": "libpam-runtime",
+      "sha256": "9719c80da63dcd03bcf608c9104103dd5a27a73490293ab4ceb19e9990a2f056",
+      "version": "1.7.0-5ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpam0g_1.7.0-5ubuntu2_amd64.deb",
+      "package": "libpam0g",
+      "sha256": "50c92418dc28a5f9f7d448236dc30e52bc55988e5de6043ed59dddd7e5d9a62d",
+      "version": "1.7.0-5ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpcre2-16-0_10.46-1_amd64.deb",
+      "package": "libpcre2-16-0",
+      "sha256": "5accb7c1b6e81b3247dafef911157ae72f991a2a6ec947921004e291e2308218",
+      "version": "10.46-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpcre2-32-0_10.46-1_amd64.deb",
+      "package": "libpcre2-32-0",
+      "sha256": "91df4688e9d022063248960f49ba8a250f9ca2f555c9cd0b9196d5726f3fa4ac",
+      "version": "10.46-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpcre2-8-0_10.46-1_amd64.deb",
+      "package": "libpcre2-8-0",
+      "sha256": "5486870ccd3285970e15e9d6a6c68da1eabe438515790430f0a75dcc218a6c5b",
+      "version": "10.46-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpcre2-dev_10.46-1_amd64.deb",
+      "package": "libpcre2-dev",
+      "sha256": "e182de8e01309c48baad03d897a5dc892b166f36c8f386cc6aaa00bd8f5add2d",
+      "version": "10.46-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpcre2-posix3_10.46-1_amd64.deb",
+      "package": "libpcre2-posix3",
+      "sha256": "2f63fded9bee0c9226827c84dc127515881d78583ec5573407b8f34f0b0b7b22",
+      "version": "10.46-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libperl5.40_5.40.1-6build1_amd64.deb",
+      "package": "libperl5.40",
+      "sha256": "98ab042ce1109b6f8a02225a129cccb62c7f6a4818fc32a2720404a0b5c3f823",
+      "version": "5.40.1-6build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpipeline1_1.5.8-2_amd64.deb",
+      "package": "libpipeline1",
+      "sha256": "e1502fe2af97a4e832fe076bef1e60851ec48da841e3e580674293552630df35",
+      "version": "1.5.8-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpkgconf3_1.8.1-4build1_amd64.deb",
+      "package": "libpkgconf3",
+      "sha256": "5247af4918440a37ec85c184e60e4604c8636761e2d16cd2dcba22adfdf69acc",
+      "version": "1.8.1-4build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpng16-16t64_1.6.51-1_amd64.deb",
+      "package": "libpng16-16t64",
+      "sha256": "a15f4a62ff12d4fa9d190860dc07472ab92ad4802bc1b23ced6ec39bbf61927f",
+      "version": "1.6.51-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libproc2-0_4.0.4-8ubuntu3_amd64.deb",
+      "package": "libproc2-0",
+      "sha256": "56eb466afb2baf37e4f21bd14c3257fc1aa449e50afdd53c89e011c86e4d1548",
+      "version": "2:4.0.4-8ubuntu3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libprotobuf-dev_3.21.12-14build1_amd64.deb",
+      "package": "libprotobuf-dev",
+      "sha256": "f40647d3c4be9859d9fa37f9813ea65bb5138f451e0201397547a8d2ba176b29",
+      "version": "3.21.12-14build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libprotobuf-lite32t64_3.21.12-14build1_amd64.deb",
+      "package": "libprotobuf-lite32t64",
+      "sha256": "919edeb583aaece3763d50d7355535dadb1eea47721478dc3819863ab7ba5bc6",
+      "version": "3.21.12-14build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libprotobuf32t64_3.21.12-14build1_amd64.deb",
+      "package": "libprotobuf32t64",
+      "sha256": "abcd8adac52a737b32e394a9530bf3f395d291ac4a3fe831ab5e72732515fd2f",
+      "version": "3.21.12-14build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libquadmath0_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libquadmath0",
+      "sha256": "165402a558604748bd501afde35990874a7eacea75315eeecb6eba19afb232e3",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libreadline8t64_8.3-3_amd64.deb",
+      "package": "libreadline8t64",
+      "sha256": "e2747db0d33a535a6f4092eb1b0356ade3f1afaf091170e750e60aec709f1735",
+      "version": "8.3-3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libseccomp-dev_2.6.0-2ubuntu3_amd64.deb",
+      "package": "libseccomp-dev",
+      "sha256": "9317f02921ce51124ecedbc408cd376983f39623dd265d42b95e79b7d96ea21d",
+      "version": "2.6.0-2ubuntu3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libseccomp2_2.6.0-2ubuntu3_amd64.deb",
+      "package": "libseccomp2",
+      "sha256": "bb5e25dd22f271064674cb209ccaa0d8805eccc019156404ca6a0d722dc07e0e",
+      "version": "2.6.0-2ubuntu3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libselinux-dev_3.9-4_amd64.deb",
+      "package": "libselinux-dev",
+      "sha256": "80ce88ae9dacadc1fc592439f8ceb55f4d47e7f7dd21252d1fa0ec709f877d5c",
+      "version": "3.9-4"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libselinux1_3.9-4_amd64.deb",
+      "package": "libselinux1",
+      "sha256": "ed768e0b175cdc72dd13c199b0e6997cdc88010d918f759bc6b8bb1e649ad43f",
+      "version": "3.9-4"
+    },
+    {
+      "arch": "all",
+      "filename": "libsemanage-common_3.9-1_all.deb",
+      "package": "libsemanage-common",
+      "sha256": "7c11b40d5685a810bccfe525290ca16029c012dc55d49acc49767b011914c1f3",
+      "version": "3.9-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsemanage2_3.9-1_amd64.deb",
+      "package": "libsemanage2",
+      "sha256": "f6c079d125905a8ee2a06f699b09996d9bce3548d70cfe7c12e119615ce71441",
+      "version": "3.9-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsepol-dev_3.9-2_amd64.deb",
+      "package": "libsepol-dev",
+      "sha256": "b0dd63141194c49e026036a06f21a7e05f2e5080e3909e4043a29e8662c4d4c9",
+      "version": "3.9-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsepol2_3.9-2_amd64.deb",
+      "package": "libsepol2",
+      "sha256": "fbad1d0e81e2b18602bce921697fa14c6dc54c09e790f917e1d512f1fb4c320d",
+      "version": "3.9-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsframe2_2.45.50.20251125-1ubuntu1_amd64.deb",
+      "package": "libsframe2",
+      "sha256": "7d6a622a5fced3ffecfcf2838f84e6387bf007a8a2bb8d8f736c02aa3d86cb80",
+      "version": "2.45.50.20251125-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsmartcols1_2.41.2-4ubuntu1_amd64.deb",
+      "package": "libsmartcols1",
+      "sha256": "32915a7f26ae939558c46256b830adc8e4f1ed55ced9b2fafe13805bd5200514",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsqlite3-0_3.46.1-8_amd64.deb",
+      "package": "libsqlite3-0",
+      "sha256": "d53713d24b7aedeb9fca53c30571bac34820d5b5d0bee255ab236d2e0652befd",
+      "version": "3.46.1-8"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libss2_1.47.2-3ubuntu2_amd64.deb",
+      "package": "libss2",
+      "sha256": "3112a7540643cf93c745376c3d635fb8373069b700dee0f59d76a8bebe1903d5",
+      "version": "1.47.2-3ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libssl3t64_3.5.3-1ubuntu2_amd64.deb",
+      "package": "libssl3t64",
+      "sha256": "3d890ea579487a558e5fc077076f2eebdbdaf417238f82b21ae722348d367cf9",
+      "version": "3.5.3-1ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libstdc++-15-dev_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libstdc++-15-dev",
+      "sha256": "1b9aa6ce6589c8829371c4086fdbe12b6c3aefaf3197b195764174f3b769d6f1",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libstdc++6_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libstdc++6",
+      "sha256": "1d1024157c18bd85ce5ad5517af545249cad38249d0bf6e84a2853db2d79db0e",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsystemd-dev_259~rc1-1ubuntu1_amd64.deb",
+      "package": "libsystemd-dev",
+      "sha256": "db638d7e9204e67c0730979d2edf8b356a817526f793945cc48f7a80f313ac29",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsystemd-shared_259~rc1-1ubuntu1_amd64.deb",
+      "package": "libsystemd-shared",
+      "sha256": "407e264bf3938af302cd2fe33c7036974dfc5e3b6adcf2c90f65fab4ab72ba92",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libsystemd0_259~rc1-1ubuntu1_amd64.deb",
+      "package": "libsystemd0",
+      "sha256": "7d26609ebd86ec4d0995098babe0a2c4c0dc4fa4ff2e0842dcbba1a09abdeeac",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libtinfo6_6.5+20251123-1_amd64.deb",
+      "package": "libtinfo6",
+      "sha256": "5b770034b1eed30dfeca9a2e94ee50fa117abe7c81eb81d1855070759269dbaa",
+      "version": "6.5+20251123-1"
+    },
+    {
+      "arch": "all",
+      "filename": "libtool_2.5.4-7_all.deb",
+      "package": "libtool",
+      "sha256": "de1c04c1cec9aad61f73315d2cc3a544736c61db5ad3663717f14b3c5bfac3c8",
+      "version": "2.5.4-7"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libtsan2_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libtsan2",
+      "sha256": "f5b07c52cb23f67a63954009ba643c1bcdfc35cc717d39905e07b62b73864d73",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libubsan1_15.2.0-9ubuntu1_amd64.deb",
+      "package": "libubsan1",
+      "sha256": "b4dcfcd0aaa14be57fcf8bb536bd036673e58bc8b8cd8fd36e9f81217f1c5c15",
+      "version": "15.2.0-9ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libuchardet0_0.0.8-2_amd64.deb",
+      "package": "libuchardet0",
+      "sha256": "7ba592f208d28eecffb33494b636fb75fbe7917dc193f4190ad2a6d1c56450a4",
+      "version": "0.0.8-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libudev-dev_259~rc1-1ubuntu1_amd64.deb",
+      "package": "libudev-dev",
+      "sha256": "de12ff67595fc022b6ff6a46bc392325e9abe3d367b6e87781c95308eb368743",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libudev1_259~rc1-1ubuntu1_amd64.deb",
+      "package": "libudev1",
+      "sha256": "e4ac4c61203731b48057555754b8d0ccc1d12f0b0a9f4a64e241e17c59f6b22e",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libunistring5_1.3-2_amd64.deb",
+      "package": "libunistring5",
+      "sha256": "3cc52a88bb6313c5c084c07007ecba3286fd061d7d4bc6f7479a8bedf3d70fba",
+      "version": "1.3-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libuuid1_2.41.2-4ubuntu1_amd64.deb",
+      "package": "libuuid1",
+      "sha256": "8f2c8f3c7ef5aeb7efc40c851132ed151b31763f98960ff9ef70566175f1632e",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libxml2-16_2.15.1+dfsg-2_amd64.deb",
+      "package": "libxml2-16",
+      "sha256": "21f319112c9f328ebfab08310dc21eda5d3bb8f6eb14946e67b7fcb29fe8f6bc",
+      "version": "2.15.1+dfsg-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libxxhash0_0.8.3-2_amd64.deb",
+      "package": "libxxhash0",
+      "sha256": "6d8286d995aeef1ffc85790ff7d8bef957a214d94bc1277d716b6b2f5b8cbe51",
+      "version": "0.8.3-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libzstd1_1.5.7+dfsg-2_amd64.deb",
+      "package": "libzstd1",
+      "sha256": "dfcd8e4117d4e78956c357f76108d7b03cb784e3d23cc94a22399f12655989fd",
+      "version": "1.5.7+dfsg-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "linux-libc-dev_6.17.0-6.6_amd64.deb",
+      "package": "linux-libc-dev",
+      "sha256": "1955bcf4257dff29676ebdeac51bdc8977fbd4e8d19fa4e75247a35227909b72",
+      "version": "6.17.0-6.6"
+    },
+    {
+      "arch": "amd64",
+      "filename": "lockfile-progs_0.2.0_amd64.deb",
+      "package": "lockfile-progs",
+      "sha256": "63a7a143ba56b2a3266c53a97c2c116c81d06357d03f51219383e6f9b4e76303",
+      "version": "0.2.0"
+    },
+    {
+      "arch": "amd64",
+      "filename": "login_4.16.0-2+really2.41.2-4ubuntu1_amd64.deb",
+      "package": "login",
+      "sha256": "6ffb6bfc64ba05cc12d1df3975f04b5ef1e9d3dbf143cd86222ec7e1c225ce28",
+      "version": "1:4.16.0-2+really2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "login.defs_4.17.4-2ubuntu2_all.deb",
+      "package": "login.defs",
+      "sha256": "6448d4fe20b68b23bc9f59a01452ce4499d72edba9bc5ead7c69f8b00110cff5",
+      "version": "1:4.17.4-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "logsave_1.47.2-3ubuntu2_amd64.deb",
+      "package": "logsave",
+      "sha256": "25808957df8f7f9404964ca3c00979dfc304f0f7df6b06d36170e3e9e72272b0",
+      "version": "1.47.2-3ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "lto-disabled-list_72_all.deb",
+      "package": "lto-disabled-list",
+      "sha256": "d86670d2fcf093924cec3dd972efe17a9fedda889ec0fdb242bb7398082efc35",
+      "version": "72"
+    },
+    {
+      "arch": "amd64",
+      "filename": "m4_1.4.20-2_amd64.deb",
+      "package": "m4",
+      "sha256": "67a4e562a73e985bb4f1540d859a99f27e90442df54ef35757b8202258ee9fbd",
+      "version": "1.4.20-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "make_4.4.1-3_amd64.deb",
+      "package": "make",
+      "sha256": "a86f39d57a32b7c919c0ad721fc2f17ab533a42fda348c8d81a4eea1577a014f",
+      "version": "4.4.1-3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "man-db_2.13.1-1_amd64.deb",
+      "package": "man-db",
+      "sha256": "6a23d99aa93d77b1b045e6a30c424891ce4008596f76a767df17edab8d3c646d",
+      "version": "2.13.1-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "mawk_1.3.4.20250131-1_amd64.deb",
+      "package": "mawk",
+      "sha256": "8ccec85e069f802a586a8a4c388764571950d823596624585f0cc69510abf690",
+      "version": "1.3.4.20250131-1"
+    },
+    {
+      "arch": "all",
+      "filename": "media-types_14.0.0_all.deb",
+      "package": "media-types",
+      "sha256": "182e547847e8beb5ba51d74d5e2254f5a3ab8dec540febd4601dbcd6f4fa74c0",
+      "version": "14.0.0"
+    },
+    {
+      "arch": "amd64",
+      "filename": "mount_2.41.2-4ubuntu1_amd64.deb",
+      "package": "mount",
+      "sha256": "bfa51ce4dfa2bbeb932b717a4609b07ccf74a68281021286949e1c091ecc4979",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "ncurses-base_6.5+20251123-1_all.deb",
+      "package": "ncurses-base",
+      "sha256": "3ab835b3b1357690a797d53aa83c5cfdc0b62326b0b68cfd2845375272457801",
+      "version": "6.5+20251123-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "ncurses-bin_6.5+20251123-1_amd64.deb",
+      "package": "ncurses-bin",
+      "sha256": "64dd4c9a7f6d24f0e9acec7b102a8e14efd5dba0a67865f9fde0ee05c5e7a028",
+      "version": "6.5+20251123-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "openssl_3.5.3-1ubuntu2_amd64.deb",
+      "package": "openssl",
+      "sha256": "31e9264e72978ef0358307efb9183c59daf36667e6f6b097a562a82161d2003d",
+      "version": "3.5.3-1ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "openssl-provider-legacy_3.5.3-1ubuntu2_amd64.deb",
+      "package": "openssl-provider-legacy",
+      "sha256": "9b68f289f66250183ead38eb474e89e322c85ed6baf68e87394eb565fd3cc296",
+      "version": "3.5.3-1ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "optipng_7.9.1+ds-2_amd64.deb",
+      "package": "optipng",
+      "sha256": "bfd3431c5dd925e8b3a887776e6e980f4cbd08419e865c1b5205fdba4b66e58f",
+      "version": "7.9.1+ds-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "passwd_4.17.4-2ubuntu2_amd64.deb",
+      "package": "passwd",
+      "sha256": "ad06647d80fc3f1e5199a25307412ced9998062ffd553e01f33ed4078eba0889",
+      "version": "1:4.17.4-2ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "patch_2.8-2_amd64.deb",
+      "package": "patch",
+      "sha256": "653748a7092e5bc2fadc84be5de4a7e1a6c9d654e68a9ac76b489f76e6b51beb",
+      "version": "2.8-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "perl_5.40.1-6build1_amd64.deb",
+      "package": "perl",
+      "sha256": "13abdf54aaf2fcd64785e9345de579a1d1f91255c7f2bf7b07451505995980cd",
+      "version": "5.40.1-6build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "perl-base_5.40.1-6build1_amd64.deb",
+      "package": "perl-base",
+      "sha256": "b41ed6c326d4168c7099d753e840de80a384be92e39d083904a0f07647625a2d",
+      "version": "5.40.1-6build1"
+    },
+    {
+      "arch": "all",
+      "filename": "perl-modules-5.40_5.40.1-6build1_all.deb",
+      "package": "perl-modules-5.40",
+      "sha256": "bbb8b3dbcadc9c150d479462c2436d311d1faf761100aa4e2adb603b46818a94",
+      "version": "5.40.1-6build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "pinentry-curses_1.3.2-3ubuntu1_amd64.deb",
+      "package": "pinentry-curses",
+      "sha256": "6dd3b4bc962c55593b447e05cf1bb20deba09cf2c9acff43d4c164ea26ce138e",
+      "version": "1.3.2-3ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "pkgbinarymangler_156_all.deb",
+      "package": "pkgbinarymangler",
+      "sha256": "a1bbb24eb21c9334cb401d32d910d0dd4c4b906aba81df514286c755c8fb9ba0",
+      "version": "156"
+    },
+    {
+      "arch": "amd64",
+      "filename": "pkgconf_1.8.1-4build1_amd64.deb",
+      "package": "pkgconf",
+      "sha256": "19a79de07ee00da77875a370708f86d41759ae048f2a17d2ec91f80df1b6376b",
+      "version": "1.8.1-4build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "pkgconf-bin_1.8.1-4build1_amd64.deb",
+      "package": "pkgconf-bin",
+      "sha256": "214103a29d6996f149c5ce29df0b0f9df7085b48ccee1153da351cb6e7594273",
+      "version": "1.8.1-4build1"
+    },
+    {
+      "arch": "all",
+      "filename": "po-debconf_1.0.21+nmu1_all.deb",
+      "package": "po-debconf",
+      "sha256": "ddcc43ce1ca6436b7b7f4a8078aa019f9547539d346c8a0716e134ff37274edd",
+      "version": "1.0.21+nmu1"
+    },
+    {
+      "arch": "all",
+      "filename": "policyrcd-script-zg2_0.2-1_all.deb",
+      "package": "policyrcd-script-zg2",
+      "sha256": "ec64fe45820e7ca90831f6dc85c9aea380e0d10598548b36572c61888d521271",
+      "version": "0.2-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "procps_4.0.4-8ubuntu3_amd64.deb",
+      "package": "procps",
+      "sha256": "f088dfbdcdb949934171cf6857d2ba1e073510ce359fc7ef60af0d04d21d9c70",
+      "version": "2:4.0.4-8ubuntu3"
+    },
+    {
+      "arch": "all",
+      "filename": "readline-common_8.3-3_all.deb",
+      "package": "readline-common",
+      "sha256": "d476f62b1fd34de06ec2e45ed25041b9c361cddaa15c0033599a1aebc591fb12",
+      "version": "8.3-3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "rpcsvc-proto_1.4.3-1_amd64.deb",
+      "package": "rpcsvc-proto",
+      "sha256": "7e6f466a9b4144c6c1bc8fae37e6375071c774701b5b10d772c9d24b2b02bb07",
+      "version": "1.4.3-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "rust-coreutils_0.3.0-0ubuntu2_amd64.deb",
+      "package": "rust-coreutils",
+      "sha256": "89165d9fdf73580d809e30a42b6886e70da208d74e01ce41ffe4342e2aa98fcc",
+      "version": "0.3.0-0ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "sed_4.9-2build2_amd64.deb",
+      "package": "sed",
+      "sha256": "ca581e6cee8e22a32b88539d8dfc90533274fd80a99b8ebb5dc8b2b2e7f93dd5",
+      "version": "4.9-2build2"
+    },
+    {
+      "arch": "all",
+      "filename": "sensible-utils_0.0.26_all.deb",
+      "package": "sensible-utils",
+      "sha256": "cecab507fbe91cde3ed2ee0dc5c9b7ad5e5a12d73101a2c0cbe3269996378645",
+      "version": "0.0.26"
+    },
+    {
+      "arch": "amd64",
+      "filename": "systemd_259~rc1-1ubuntu1_amd64.deb",
+      "package": "systemd",
+      "sha256": "12139403ad66cd520db8d715b708e732eba534783e3f3d208728bc7b1ba29828",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "systemd-resolved_259~rc1-1ubuntu1_amd64.deb",
+      "package": "systemd-resolved",
+      "sha256": "f3a88a098c17b473b10507a2d40955848740de6f64a4ec23279872450e64b500",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "systemd-sysv_259~rc1-1ubuntu1_amd64.deb",
+      "package": "systemd-sysv",
+      "sha256": "6ab3364f26679114465f6d960cd35a0bbf2ea547ca0408240a34bb855cc24e11",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "sysvinit-utils_3.14-4ubuntu1_amd64.deb",
+      "package": "sysvinit-utils",
+      "sha256": "3c62dcbc9c6feb11291c2245645bb13d1cd30e341288b17e3fd09ccefa39ed65",
+      "version": "3.14-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "tar_1.35+dfsg-3.1build1_amd64.deb",
+      "package": "tar",
+      "sha256": "6f8ffd06673b253675aee3c111bcde2467809c5edf714ec53cfd45cce9090342",
+      "version": "1.35+dfsg-3.1build1"
+    },
+    {
+      "arch": "all",
+      "filename": "tzdata_2025b-5ubuntu1_all.deb",
+      "package": "tzdata",
+      "sha256": "37e7a47ae8bf48eccf5ac2c991c248b09d34a9f1ce4600260899592f78c7e773",
+      "version": "2025b-5ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "tzdata-legacy_2025b-5ubuntu1_all.deb",
+      "package": "tzdata-legacy",
+      "sha256": "111b8d92f88b63bc4d6374964f7e745993fafd3aee6d6dac85dafd8ecbe9142d",
+      "version": "2025b-5ubuntu1"
+    },
+    {
+      "arch": "all",
+      "filename": "ubuntu-keyring_2023.11.28.1_all.deb",
+      "package": "ubuntu-keyring",
+      "sha256": "36de43b15853ccae0028e9a767613770c704833f82586f28eb262f0311adb8a8",
+      "version": "2023.11.28.1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "udev_259~rc1-1ubuntu1_amd64.deb",
+      "package": "udev",
+      "sha256": "bc4c89552cc123510f0ef9ef3cad8e2ac43c37a25418a3c222f3869c46cb44cc",
+      "version": "259~rc1-1ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "util-linux_2.41.2-4ubuntu1_amd64.deb",
+      "package": "util-linux",
+      "sha256": "9bc4a166c7f3f10044ee5ad18b393becd33a3b174e863b4eca44cb5dfd9fbee9",
+      "version": "2.41.2-4ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "xz-utils_5.8.1-2_amd64.deb",
+      "package": "xz-utils",
+      "sha256": "8058946bf1e43c42515fbef555524e760db82d0b7220ae8b5957c631f28fa3b2",
+      "version": "5.8.1-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "zlib1g_1.3.dfsg+really1.3.1-1ubuntu2_amd64.deb",
+      "package": "zlib1g",
+      "sha256": "f8100c77fdf80754b2e0fa46366fae640ed933458be85cc633dc3cf1fa30176b",
+      "version": "1:1.3.dfsg+really1.3.1-1ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "zlib1g-dev_1.3.dfsg+really1.3.1-1ubuntu2_amd64.deb",
+      "package": "zlib1g-dev",
+      "sha256": "086dfbd4e1ba238316e4ba58fd18e866fcceaa21fcf0c7a218906e37aff1661d",
+      "version": "1:1.3.dfsg+really1.3.1-1ubuntu2"
+    },
+    {
+      "arch": "all",
+      "filename": "debootstrap_1.0.142ubuntu2_all.deb",
+      "package": "debootstrap",
+      "role": "bootstrap_fallback",
+      "sha256": "c50a050dca3f47950a091d4f823b4a9d01b403879b32e5fb1cb8eeb993c4c01b",
+      "version": "1.0.142ubuntu2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "wget_1.25.0-2ubuntu4.3_amd64.deb",
+      "package": "wget",
+      "role": "bootstrap_fallback",
+      "sha256": "77028a0b3d92bfdfa64c3446f124302535748486e67d4a365adec61210cbee3a",
+      "version": "1.25.0-2ubuntu4.3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "distro-info_1.15_amd64.deb",
+      "package": "distro-info",
+      "role": "bootstrap_fallback",
+      "sha256": "9d65499fef4fa9b558ea25a5cfa232d1b96c2c1b52a62919c403e8f7e78700e5",
+      "version": "1.15"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libgnutls30t64_3.8.10-3ubuntu1_amd64.deb",
+      "package": "libgnutls30t64",
+      "role": "bootstrap_fallback",
+      "sha256": "4ad3da37e8ac291fa3370d182da822fcf0c8e3e5f907d80b9d5eae0a00c744bb",
+      "version": "3.8.10-3ubuntu1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libidn2-0_2.2.0-2_amd64.deb",
+      "package": "libidn2-0",
+      "role": "bootstrap_fallback",
+      "sha256": "698abe11d444c7e87c656c2083373d1e0fae04b3a64be0371adb2bb180092537",
+      "version": "2.2.0-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libnettle8t64_3.10-1_amd64.deb",
+      "package": "libnettle8t64",
+      "role": "bootstrap_fallback",
+      "sha256": "d86468a163e2792111d1550f8b5268e98bfb3aac8c5cac1ac838a17dfb0aadd6",
+      "version": "3.10-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libpsl5t64_0.21.2-1.1_amd64.deb",
+      "package": "libpsl5t64",
+      "role": "bootstrap_fallback",
+      "sha256": "99efbfa11474fc7ca97b0083937c32323473c2e73d3aa567fb47e3fe9efd9e27",
+      "version": "0.21.2-1.1"
+    },
+    {
+      "arch": "all",
+      "filename": "distro-info-data_0.72-0ubuntu0.26.04.1_all.deb",
+      "package": "distro-info-data",
+      "role": "bootstrap_fallback",
+      "sha256": "7dc20e15aa612cbc8cde8b9f07612e462232b57dd81bfdc134d2062f8d7bd90f",
+      "version": "0.72-0ubuntu0.26.04.1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libhogweed6t64_3.10-1_amd64.deb",
+      "package": "libhogweed6t64",
+      "role": "bootstrap_fallback",
+      "sha256": "69c77010697337baa9f1cb68310e8d6ba5494b89e85ef727cfed52dde46318ee",
+      "version": "3.10-1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libp11-kit0_0.23.18.1-2_amd64.deb",
+      "package": "libp11-kit0",
+      "role": "bootstrap_fallback",
+      "sha256": "aa58aac1e76e8ca9cf0521aa0bb4480fd3522f8c7634f609f81fe2d84b3b51e0",
+      "version": "0.23.18.1-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libtasn1-6_4.14-3_amd64.deb",
+      "package": "libtasn1-6",
+      "role": "bootstrap_fallback",
+      "sha256": "28c359fcf09a363569b799f0555d9187c4b22faa5c5e9e1b046ebcf4c90efa51",
+      "version": "4.14-3"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libunistring2_0.9.10-2_amd64.deb",
+      "package": "libunistring2",
+      "role": "bootstrap_fallback",
+      "sha256": "4ccfbc1e3a1cbc42616bd4fd407e01eb1434996c8500ac2fbccb7a2e1bcb166a",
+      "version": "0.9.10-2"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libffi6_3.2.1-9_amd64.deb",
+      "package": "libffi6",
+      "role": "bootstrap_fallback",
+      "sha256": "9f409446469198b272fc5acd5440a7733ececb1dddd91f22ed34a563aa4f737b",
+      "version": "3.2.1-9"
+    },
+    {
+      "arch": "all",
+      "filename": "lsb-release_12.1-2build1_all.deb",
+      "package": "lsb-release",
+      "role": "bootstrap_fallback",
+      "sha256": "992cd1c4d62332bc2000d87438a479578af71e719df6430079734791060583aa",
+      "version": "12.1-2build1"
+    },
+    {
+      "arch": "all",
+      "filename": "usr-is-merged_36ubuntu1_all.deb",
+      "package": "usr-is-merged",
+      "sha256": "f4676284a1ea9a51501faef966e3d76b6dab4785549410b11c349a553d8180a8",
+      "version": "36ubuntu1"
+    }
+  ],
+  "dependency_count": 517,
+  "schema_version": "1.0",
+  "target_arch": "x86_64"
+}

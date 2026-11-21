@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-mantic-arm64-amd64-liboqs-afb1a3ad816c",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "liboqs_0.8.0-1.debian.tar.xz",
+      "bytes": 6536,
+      "sha256": "109895625b39e0bb168a3729bd68bfaf22a893ab4781230c6fd73cab9969459c"
+    },
+    {
+      "path": "liboqs_0.8.0-1.dsc",
+      "bytes": 2061,
+      "sha256": "f2b7d442b0f110f6cdee0973656a639646eed3821caa17636ef15c7746a32f24"
+    },
+    {
+      "path": "liboqs_0.8.0.orig.tar.gz",
+      "bytes": 2986821,
+      "sha256": "542e2d6cd4d3013bc4f97843cb1e9521b1b8d8ea72a55c9f5f040857486b0157"
+    },
+    {
+      "path": "liboqs_0.8.0~rc1-1_0.8.0-1.diff.gz",
+      "bytes": 3139,
+      "sha256": "791849bd77d6b72982655d71d083680b42913f9a9baa5ff9807d9a954a891ecc"
+    }
+  ],
+  "aggregate_sha256": "71d0c45a86e731bd180ab3bfeeda4ffb2c711b9776b3d55941557425f9cf5433"
+}

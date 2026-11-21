@@ -1,0 +1,18 @@
+{
+  "additional_bootstrap_packages": {
+    "debootstrap": "1.0.126+nmu1",
+    "libpsl5": "0.21.0-1.2build1",
+    "lsb-release": "12.0-2",
+    "wget": "1.21.2-2ubuntu1"
+  },
+  "historical_alternatives": [],
+  "historical_version_differences": {
+    "libjpeg-dev": {
+      "historical": "8c-2ubuntu8",
+      "locked": null
+    }
+  },
+  "historical_versions_recorded": 461,
+  "provenance": "buildbench-200-exact-v1",
+  "reference_sha256": "a3641fd8ee7f62494d2c91d7e997b8f2148cc3ae729d693be01a8763d5d70712"
+}

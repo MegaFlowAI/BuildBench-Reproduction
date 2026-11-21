@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-libsieve-3aad69166304",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libsieve_2.2.6-7.debian.tar.xz",
+      "bytes": 6676,
+      "sha256": "72c6a0cdb50dc4cbdd85256aebaf065e17a328cd819bd9c0aca4ef77c0b14223"
+    },
+    {
+      "path": "libsieve_2.2.6-7.dsc",
+      "bytes": 1888,
+      "sha256": "ec6c11eee9345a282ab2848483d8b1753434a14a6e3c4ab6c38808e066e624a2"
+    },
+    {
+      "path": "libsieve_2.2.6.orig.tar.gz",
+      "bytes": 564722,
+      "sha256": "dce45d73fba98afbffc6fbb6743b3f727cd41d5d3b09ac398a0cb90b21e7f0f0"
+    }
+  ],
+  "aggregate_sha256": "a16bc754c0d3a6277b93e74e5f8bbaa19859f38b9d23f5486f0a0450e3bc4271"
+}

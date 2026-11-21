@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-amd64-arm64-rust-generator-c5207d2ba61d",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rust-generator_0.6.20-2_0.6.20-3.diff.gz",
+      "bytes": 1332,
+      "sha256": "0b54973751ee791ccaa95b800de35679232f1e3b00a3402ae9261a3cd84775ca"
+    },
+    {
+      "path": "rust-generator_0.6.20-3.debian.tar.xz",
+      "bytes": 3120,
+      "sha256": "8077181901b93696a26e788cea5def0f719c393aaa3101ebfcbb61d8bbe771d6"
+    },
+    {
+      "path": "rust-generator_0.6.20-3.dsc",
+      "bytes": 2507,
+      "sha256": "fc6fcc6d943bdc342aee97fa157ed94e9a2da36a803602873a81f53ef7cfa477"
+    },
+    {
+      "path": "rust-generator_0.6.20.orig.tar.gz",
+      "bytes": 26788,
+      "sha256": "caaa160efb38ce00acbe4450d41a103fb3d2acdb17ff09a7cf38f3ac26af0738"
+    }
+  ],
+  "aggregate_sha256": "089f9baa9d7887040a08475423fa35d07925563fcaf6be6df9ef549f70542f6e"
+}

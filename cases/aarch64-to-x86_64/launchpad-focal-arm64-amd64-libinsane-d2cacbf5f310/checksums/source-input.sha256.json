@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-libinsane-d2cacbf5f310",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libinsane_1.0.1-1.debian.tar.xz",
+      "bytes": 4628,
+      "sha256": "5e955948cd4bc9f5e171cf5d36769d1a9b3772cbe4b410053a891f5d1bbd853f"
+    },
+    {
+      "path": "libinsane_1.0.1-1.dsc",
+      "bytes": 2289,
+      "sha256": "3a0462d55578e74031f101967ba576f4868330b9aa669967ef2b415769f07711"
+    },
+    {
+      "path": "libinsane_1.0.1.orig.tar.gz",
+      "bytes": 706575,
+      "sha256": "2e067661594a175a385f2b11b4230b8833d5ad376c50cb32a7b60243b585ca69"
+    }
+  ],
+  "aggregate_sha256": "fae31f592e4e7635e900ac32935eab1609f4fa8170ff9843451c14e636513943"
+}

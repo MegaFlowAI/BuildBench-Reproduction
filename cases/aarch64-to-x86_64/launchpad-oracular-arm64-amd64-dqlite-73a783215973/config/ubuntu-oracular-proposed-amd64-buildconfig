@@ -1,0 +1,29 @@
+# Generated for Build-Bench Docker materialization.
+# Source: Launchpad Ubuntu noble-proposed amd64 current dependency fallback for libioth 0.1.2-2.
+Repotype: debian
+type: dsc
+buildengine: debootstrap
+Order: base-passwd:base-files
+ExpandFlags: preinstallexpand
+Preinstall: base-files base-passwd bash bsdutils coreutils debianutils diffutils libc-bin mawk apt util-linux build-essential findutils grep gzip hostname init-system-helpers libpam-runtime mount sed dash perl usr-is-merged
+Preinstall: dpkg grep init-system-helpers libc-bin libc6
+Preinstall: login mawk ncurses-base ncurses-bin sysvinit-utils tar util-linux
+Preinstall: perl-base xz-utils libapparmor1 libaudit1 libcap-ng0 libdb5.3t64 libdebconfclient0 libgcc-s1 libgpg-error0 liblzma5
+Preinstall: libmount1 libpam0g libpcre2-8-0
+Preinstall: libselinux1 libsemanage2 libsepol2 libsmartcols1 libsystemd0 libtinfo6 libudev1 libuuid1 libzstd1 zlib1g
+Preinstall: libssl3t64 libp11-kit0
+VMinstall: binutils libblkid1 libuuid1 mount libmount1 libsmartcols1
+Required: mount fakeroot dpkg-dev ncurses-base libtool debhelper
+Required: gcc g++ libc6-dev
+Support: file gettext gettext-base perl procps ubuntu-keyring m4 autoconf
+Support: automake autopoint dh-autoreconf dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl
+Support: libdpkg-perl libfile-stripnondeterminism-perl readline-common bash-completion
+Support: perl-modules-5.36
+Prefer: mawk perl perl-base pkgconf
+Prefer: build-essential:make
+Required: grep init-system-helpers
+Macros:
+%ubuntu_version 2404
+%ubuntu_codename noble
+%distribution Ubuntu
+Ignore: pkg-config

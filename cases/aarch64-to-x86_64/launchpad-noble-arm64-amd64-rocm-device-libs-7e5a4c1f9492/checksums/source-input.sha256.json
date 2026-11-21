@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-rocm-device-libs-7e5a4c1f9492",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rocm-device-libs_6.0+git20231212.5a852ed-1.debian.tar.xz",
+      "bytes": 3428,
+      "sha256": "438a000b900db3ec78bab2895994de24e8fb309cc224202574235cddda8d4fc2"
+    },
+    {
+      "path": "rocm-device-libs_6.0+git20231212.5a852ed-1.dsc",
+      "bytes": 2509,
+      "sha256": "aaeb8960edbb4a7bcd9779a95c0719cd31fc595ff64db14656a3fcd54379ab38"
+    },
+    {
+      "path": "rocm-device-libs_6.0+git20231212.5a852ed.orig.tar.xz",
+      "bytes": 188448,
+      "sha256": "03840fc3a615a56908d07df3f0d5ae6c09d63e0834b85703a959c159338de18f"
+    }
+  ],
+  "aggregate_sha256": "856c68cc64d57796c9bb2ab8141a27cb5412ace35dc42582811254922119c455"
+}

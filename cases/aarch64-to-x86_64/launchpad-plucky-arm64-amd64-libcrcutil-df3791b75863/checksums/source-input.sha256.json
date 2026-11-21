@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-libcrcutil-df3791b75863",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libcrcutil_1.0-5.3build1_1.0-5.4.diff.gz",
+      "bytes": 878,
+      "sha256": "dbaaf79e75bb4cbef67a5f7d76088a0a69d1f109a70677200cb3b8351afeed6d"
+    },
+    {
+      "path": "libcrcutil_1.0-5.4.debian.tar.xz",
+      "bytes": 8176,
+      "sha256": "6db0ec44118b0ad093a0566a2facedbc87a2a951c28df864c65618e27004e452"
+    },
+    {
+      "path": "libcrcutil_1.0-5.4.dsc",
+      "bytes": 2437,
+      "sha256": "f316bef93a6501ab08965537ddddfac3655e8954bfd6a653a5736f50268323cb"
+    },
+    {
+      "path": "libcrcutil_1.0.orig.tar.gz",
+      "bytes": 1979749,
+      "sha256": "87f0448c235d195c8df2a834ec7c24613f62878500468ff3aeb2dab2b10ffcf1"
+    }
+  ],
+  "aggregate_sha256": "7bd3f87d5e864e7c2498333f57dc3219f5eee3bd32faf89d2a4240fe585b7abc"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-focal-arm64-amd64-grub2-signed-cfe07d1b84a1",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "grub2-signed_1.167.1.dsc",
+      "bytes": 1939,
+      "sha256": "334d36c772693629644b22275a8c4e5946fc4cbbdbb1596b39df2920749f4d8b"
+    },
+    {
+      "path": "grub2-signed_1.167.1.tar.xz",
+      "bytes": 8780,
+      "sha256": "512073300d82bc6df7f09c63aaee6ef03b92dc6c95679a208973e75049767d0b"
+    },
+    {
+      "path": "grub2-signed_1.167_1.167.1.diff.gz",
+      "bytes": 632,
+      "sha256": "5cecd7c9b3462e8cb85287a548b9224a75f97d87e0c73cc8321be2162ed9de4b"
+    }
+  ],
+  "aggregate_sha256": "ad9361d388d40256616147bf9474c5b078191928349b96c72ed552eff4d4afec"
+}

@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-mantic-arm64-amd64-fenics-dolfinx-d7bc0ff9f8a5",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "fenics-dolfinx_0.6.0-5.debian.tar.xz",
+      "bytes": 45280,
+      "sha256": "f6f5f196fc8657c5ea1054dac3c2a85e69b3fbcfc3d4d20c6e0e127641fe31a6"
+    },
+    {
+      "path": "fenics-dolfinx_0.6.0-5.dsc",
+      "bytes": 3843,
+      "sha256": "eaff5ee15c7d9570868b2239ec7acdc8f662841ece27fb5d129abf7e99f3a76e"
+    },
+    {
+      "path": "fenics-dolfinx_0.6.0.orig.tar.gz",
+      "bytes": 684211,
+      "sha256": "eb8ac2bb2f032b0d393977993e1ab6b4101a84d54023a67206e3eac1a8d79b80"
+    },
+    {
+      "path": "fenics-dolfinx_1:0.6.0-4_1:0.6.0-5.diff.gz",
+      "bytes": 1296,
+      "sha256": "7f6e32529305ac8252455f6afe3b1c584ecee96fd697b465d9fefba815eefb93"
+    }
+  ],
+  "aggregate_sha256": "93fa35dfe6a1e6443856209bd53080e1598975775092b584a7224897ce36122a"
+}

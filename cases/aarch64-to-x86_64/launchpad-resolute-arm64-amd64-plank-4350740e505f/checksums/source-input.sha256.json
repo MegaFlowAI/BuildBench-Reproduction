@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-plank-4350740e505f",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "plank_0.11.89-6ubuntu2.debian.tar.xz",
+      "bytes": 7708,
+      "sha256": "e67e43179b4029deeec1e02fcbbe00586c894392fee8c3ff280b2c9cdf80aab3"
+    },
+    {
+      "path": "plank_0.11.89-6ubuntu2.dsc",
+      "bytes": 2571,
+      "sha256": "d8afb6c795f065ba5bbf92d9254e657046569ed90ad60d69b79562ff24f88340"
+    },
+    {
+      "path": "plank_0.11.89.orig.tar.xz",
+      "bytes": 593940,
+      "sha256": "a662a46eaeffbd40661d1f36abd2589f7a98baef4b918876b872047b7ca59d9d"
+    }
+  ],
+  "aggregate_sha256": "f9ed2ac82042c9f392fbb638abbc1bb59f675e95d9e3fb575107855bc8bbe0bd"
+}

@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-arm64-amd64-gnome-shell-c7d8316b3552",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "gnome-shell_47~rc-3ubuntu2.debian.tar.xz",
+      "bytes": 156212,
+      "sha256": "e80acd7ab8d8a7bd6730b440d17de36f38454feb6e2b36516af3e0fe5d171cb9"
+    },
+    {
+      "path": "gnome-shell_47~rc-3ubuntu2.dsc",
+      "bytes": 4044,
+      "sha256": "7c558bfdeb9dbd86c7551b67b68acbb3c99e0fbc2b38a0bea320c20addc50f47"
+    },
+    {
+      "path": "gnome-shell_47~rc.orig.tar.xz",
+      "bytes": 2137468,
+      "sha256": "bfeff82dcf208c021ba02387c3e0a69bfe47ae80083b8ae23aa01cd415e99004"
+    }
+  ],
+  "aggregate_sha256": "345dfff1d58cfbb8d028371e0d99848fbd2772484876e78318e7cb8259e8477b"
+}

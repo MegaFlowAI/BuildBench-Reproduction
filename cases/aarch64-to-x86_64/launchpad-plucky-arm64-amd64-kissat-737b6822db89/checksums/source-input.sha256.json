@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-kissat-737b6822db89",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "kissat_4.0.1-3_4.0.2-1.diff.gz",
+      "bytes": 4680,
+      "sha256": "9210792bb97cf03d04e872e247623784f341cc19c3cb4d06ba6eda6db2022e5a"
+    },
+    {
+      "path": "kissat_4.0.2-1.debian.tar.xz",
+      "bytes": 4540,
+      "sha256": "cde8b56254707714d03413f6dcd5b4f64afaf519287a5db5b9b55571800c66ec"
+    },
+    {
+      "path": "kissat_4.0.2-1.dsc",
+      "bytes": 1971,
+      "sha256": "e5b56c6c8e4de0a4540ad78956313f290740b353d3c235653dd13fe09674047b"
+    },
+    {
+      "path": "kissat_4.0.2.orig.tar.gz",
+      "bytes": 531941,
+      "sha256": "a8e58a70ebac09ccc0ba1465a69cfb9b31e562167d42df7535270d2733c386d7"
+    }
+  ],
+  "aggregate_sha256": "d9ebd136b31734a24886de746e1a52f70dcd247a743ede5f7561b6d2e218d0a3"
+}

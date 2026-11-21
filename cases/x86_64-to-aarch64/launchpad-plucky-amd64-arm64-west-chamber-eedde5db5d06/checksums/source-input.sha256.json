@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-amd64-arm64-west-chamber-eedde5db5d06",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "west-chamber_20100405+svn20111107.r124-14.2.debian.tar.xz",
+      "bytes": 8432,
+      "sha256": "6c475ef04fb00ca1212059b56adfe48e5c5791d389d724bdb82704cf90c72f83"
+    },
+    {
+      "path": "west-chamber_20100405+svn20111107.r124-14.2.dsc",
+      "bytes": 2380,
+      "sha256": "c9403cabdbd5fe46ed9da6060e52da25981189b95d77a85368e17e6cc5be3891"
+    },
+    {
+      "path": "west-chamber_20100405+svn20111107.r124.orig.tar.bz2",
+      "bytes": 42501,
+      "sha256": "9f663099b0a3b4552256919855d19eec8fe8373eb8f8b9a4113edcdce5bd44a1"
+    }
+  ],
+  "aggregate_sha256": "aca6a2b7a06d9a75b37cb0da14caa205de893dc2b913cbdbadba17fbbaf32b03"
+}

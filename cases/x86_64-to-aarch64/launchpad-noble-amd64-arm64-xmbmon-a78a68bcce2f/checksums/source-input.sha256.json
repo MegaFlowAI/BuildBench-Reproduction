@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-xmbmon-a78a68bcce2f",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "xmbmon_2.05-9build2_2.05-9build3.diff.gz",
+      "bytes": 299,
+      "sha256": "7ca482c201f369719ea56d59566a9708bae923e3849f2071ae08bd066b1495c6"
+    },
+    {
+      "path": "xmbmon_2.05-9build3.debian.tar.xz",
+      "bytes": 12160,
+      "sha256": "cb0a5488440601b92de5564c287d821d66ba3d2a9031a8cd803d53670dcdf31e"
+    },
+    {
+      "path": "xmbmon_2.05-9build3.dsc",
+      "bytes": 1933,
+      "sha256": "d49986b115b2cea766a022a4c40c8297beab829e2565dee9f957ad0032e47818"
+    },
+    {
+      "path": "xmbmon_2.05.orig.tar.gz",
+      "bytes": 143004,
+      "sha256": "36d00816cda354636fd9896c6bcfdfded0a3c10a77f6bfffb82004c46e5536ab"
+    }
+  ],
+  "aggregate_sha256": "37ec7a6d0a917f8ab3bb4165a076ce50e0a1b4183e7915b15eec4a8f562a6df6"
+}

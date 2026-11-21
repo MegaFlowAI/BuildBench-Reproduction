@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-hirsute-arm64-amd64-golang-v2ray-core-3202fdcc8203",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "golang-v2ray-core_4.33.0-2_4.33.0-3.diff.gz",
+      "bytes": 2402,
+      "sha256": "11f5b7599a20778a8c79617abbe7ec070a68a6b1de5a7eb455d6d64c3a087708"
+    },
+    {
+      "path": "golang-v2ray-core_4.33.0-3.debian.tar.xz",
+      "bytes": 16972,
+      "sha256": "9608917f3b9f2212d6e315766f4023bebc11d48cb9f71d0e63b2fdba4f15aa4b"
+    },
+    {
+      "path": "golang-v2ray-core_4.33.0-3.dsc",
+      "bytes": 2595,
+      "sha256": "47a4e3405967fff05215deca3695e2b30a151050f7e63a6add5e819177585779"
+    },
+    {
+      "path": "golang-v2ray-core_4.33.0.orig.tar.gz",
+      "bytes": 2159937,
+      "sha256": "ce456df0a798e1ed76ec014cb619e89c508bfb812c689260067575ee94e18c76"
+    }
+  ],
+  "aggregate_sha256": "84920fce8b25dd9d6c052f88532209327116cafca2baa018e90d838b860277e9"
+}

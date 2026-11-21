@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-tasmanian-5672de5a510b",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "tasmanian_8.2-2.debian.tar.xz",
+      "bytes": 6152,
+      "sha256": "7bbe1af9db410e2410f2680a1fcd59fa0ade9296a5bd7c67027420579158d1d4"
+    },
+    {
+      "path": "tasmanian_8.2-2.dsc",
+      "bytes": 2569,
+      "sha256": "a6dc392a8670e31cf0e7adc64627a34ce8cb32aca27944cad2030daf6279a0d1"
+    },
+    {
+      "path": "tasmanian_8.2.orig.tar.gz",
+      "bytes": 680212,
+      "sha256": "ae2a3ad91c9e7aab1672ab98871fb7fb1600170ddbc09ad69d479755369fb7fc"
+    }
+  ],
+  "aggregate_sha256": "77968b9690ae0fbdbf63c5c8d1235e7bbdbc4ef514af7f97b887aad544afaac5"
+}

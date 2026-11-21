@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "x86_64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-hirsute-proposed-amd64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-hirsute-amd64",
+      "dependencies/ubuntu-hirsute-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/golang-v2ray-core_4.33.0-3.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-hirsute-arm64-amd64-golang-v2ray-core-3202fdcc8203",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

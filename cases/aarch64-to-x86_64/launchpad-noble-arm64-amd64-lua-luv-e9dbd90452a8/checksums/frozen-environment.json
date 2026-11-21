@@ -1,0 +1,31 @@
+{
+  "additional_bootstrap_packages": {
+    "debootstrap": "1.0.134ubuntu1",
+    "distro-info": "1.7build1",
+    "distro-info-data": "0.60",
+    "libpsl5t64": "0.21.2-1.1build1",
+    "libssl3t64": "3.0.13-0ubuntu3",
+    "lsb-release": "12.0-2",
+    "usr-is-merged": "36ubuntu1",
+    "wget": "1.21.4-1ubuntu4"
+  },
+  "historical_alternatives": [
+    {
+      "arch": "amd64",
+      "filename": "libssl3_3.0.10-1ubuntu4_amd64.deb",
+      "package": "libssl3",
+      "path": "dependencies/historical-alternatives/amd64/libssl3_3.0.10-1ubuntu4_amd64.deb",
+      "sha256": "8228c52b80fc7c39619b4d2246a0fd9beb838272c848fc9718062af7102324a6",
+      "version": "3.0.10-1ubuntu4"
+    }
+  ],
+  "historical_version_differences": {
+    "libssl3": {
+      "historical": "3.0.10-1ubuntu4",
+      "locked": null
+    }
+  },
+  "historical_versions_recorded": 266,
+  "provenance": "buildbench-200-exact-v1",
+  "reference_sha256": "2770a18f31603520f2078cfe57e4b847056945e37889948942dc3afa9c55feb9"
+}

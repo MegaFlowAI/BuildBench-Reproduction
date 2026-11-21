@@ -1,0 +1,34 @@
+# Generated for Build-Bench Docker materialization.
+# Source: Launchpad Ubuntu noble-proposed arm64 current dependency fallback for libioth 0.1.2-2.
+Order: libssl3t64:libpython3.11-minimal
+Order: libhogweed6t64:libgnutls30t64
+Order: libnettle8t64:libgnutls30t64
+Order: libnettle8t64:libhogweed6t64
+Order: libpython3.11-minimal:python3.11-minimal
+Order: python3.11-minimal:python3.11
+Order: libpython3.11-stdlib:python3.11
+Order: python3.11-minimal:python3-minimal
+Order: python3.11:python3
+Order: python3-minimal:python3
+Repotype: debian
+type: dsc
+buildengine: debootstrap
+Order: base-passwd:base-files
+ExpandFlags: preinstallexpand
+Preinstall: base-files mawk util-linux apt mount build-essential hostname base-passwd bash coreutils diffutils findutils grep gzip init-system-helpers libc-bin libpam-runtime sed dash perl libsemanage-common debootstrap lsb-release adduser usr-is-merged
+Preinstall: dpkg
+Preinstall: mawk ncurses-base ncurses-bin
+Preinstall: xz-utils libdb5.3t64 libgcc-s1 liblzma5
+Preinstall: libselinux1 libsemanage2 libsystemd0 libtinfo6 libudev1
+VMinstall: binutils
+Required: dpkg-dev ncurses-base libtool debhelper
+Support: file gettext gettext-base m4 autoconf automake autopoint dh-autoreconf
+Support: dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl libdpkg-perl libfile-stripnondeterminism-perl
+Prefer: mawk perl perl-base
+Prefer: build-essential:make
+Required: grep init-system-helpers
+Macros:
+%ubuntu_version 2610
+%ubuntu_codename resolute
+%distribution Ubuntu
+Ignore: libncurses5-dev

@@ -1,0 +1,43 @@
+{
+  "additional_bootstrap_packages": {
+    "debootstrap": "1.0.134ubuntu1",
+    "distro-info": "1.7build1",
+    "distro-info-data": "0.60",
+    "libpsl5t64": "0.21.2-1.1build1",
+    "libssl3t64": "3.0.13-0ubuntu3",
+    "lsb-release": "12.0-2",
+    "usr-is-merged": "36ubuntu1",
+    "wget": "1.21.4-1ubuntu4"
+  },
+  "historical_alternatives": [
+    {
+      "arch": "amd64",
+      "filename": "libpsl5_0.21.2-1build1_amd64.deb",
+      "package": "libpsl5",
+      "path": "dependencies/historical-alternatives/amd64/libpsl5_0.21.2-1build1_amd64.deb",
+      "sha256": "d72e57989d99982c7983b773c347ce40f6594647f05a96d713b7708ae82502dd",
+      "version": "0.21.2-1build1"
+    },
+    {
+      "arch": "amd64",
+      "filename": "libssl3_3.0.10-1ubuntu3_amd64.deb",
+      "package": "libssl3",
+      "path": "dependencies/historical-alternatives/amd64/libssl3_3.0.10-1ubuntu3_amd64.deb",
+      "sha256": "d3a751305cd04f1c9784305cbfafb8ca91895ff72fdc824043bcfc5881fb4a32",
+      "version": "3.0.10-1ubuntu3"
+    }
+  ],
+  "historical_version_differences": {
+    "libpsl5": {
+      "historical": "0.21.2-1build1",
+      "locked": null
+    },
+    "libssl3": {
+      "historical": "3.0.10-1ubuntu3",
+      "locked": null
+    }
+  },
+  "historical_versions_recorded": 281,
+  "provenance": "buildbench-200-exact-v1",
+  "reference_sha256": "02b5ff4aaac23b9d63fa5caa6fa748c017d1876846869881bc71ab83b4c30e5a"
+}

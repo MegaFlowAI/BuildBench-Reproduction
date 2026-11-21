@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-oracular-amd64-arm64-buteo-sync-plugins-b5560c677bdb",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "buteo-sync-plugins_0.8.35-1_0.8.35-2.diff.gz",
+      "bytes": 331,
+      "sha256": "0bc94290967a37280b90ea2c6072ff750180fec81eec90f827a53c006b25fc71"
+    },
+    {
+      "path": "buteo-sync-plugins_0.8.35-2.debian.tar.xz",
+      "bytes": 5880,
+      "sha256": "263811c9564cd50a7bde2e9c3ce409ad288948893c31796f66c1194740723cf1"
+    },
+    {
+      "path": "buteo-sync-plugins_0.8.35-2.dsc",
+      "bytes": 2666,
+      "sha256": "bd842cb76fcfd992e2d7088b64b639a5682c56c39fa45ed2dea3da818dc79d56"
+    },
+    {
+      "path": "buteo-sync-plugins_0.8.35.orig.tar.gz",
+      "bytes": 119312,
+      "sha256": "bbc2deef67064a0d43ca93444a8068781376c7bb1a2dc0778267e701a9b07721"
+    }
+  ],
+  "aggregate_sha256": "71c4c833adbc6b60fbaae1ac969c25c895bd9430b8683470a823ee27a1ce65ad"
+}

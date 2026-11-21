@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-xsimd-d8f9ebb3c889",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "xsimd_14.0.0-2ubuntu1.debian.tar.xz",
+      "bytes": 7528,
+      "sha256": "60f766ff22790c399741247c61503e8bfb5520fdf75bd1ce25717ce5b41aa057"
+    },
+    {
+      "path": "xsimd_14.0.0-2ubuntu1.dsc",
+      "bytes": 2317,
+      "sha256": "9b4c9ffaea4708a2b56cdb305fe96b37622042b1771a1834a38d4a0fe25f08da"
+    },
+    {
+      "path": "xsimd_14.0.0.orig.tar.gz",
+      "bytes": 306182,
+      "sha256": "17de0236954955c10c09d6938d4c5f3a3b92d31be5dadd1d5d09fc1b15490dce"
+    }
+  ],
+  "aggregate_sha256": "e72cb329bf50c0afe4ae1fbd7ea58f7bbfaeb56f996ab64626ea60f082d9172a"
+}

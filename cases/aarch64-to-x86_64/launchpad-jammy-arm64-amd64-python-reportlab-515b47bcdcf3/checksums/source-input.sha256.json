@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-python-reportlab-515b47bcdcf3",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "python-reportlab_3.6.5-1_3.6.6-1.diff.gz",
+      "bytes": 8931,
+      "sha256": "5e79df606b907d7ae5625a2527acebb3393e1b13f34c82ef16cb51626165226a"
+    },
+    {
+      "path": "python-reportlab_3.6.6-1.debian.tar.xz",
+      "bytes": 13152,
+      "sha256": "2db4f89b952e804800e4dce210d4760797dab8aebbc1787dcb0d78376304a6a0"
+    },
+    {
+      "path": "python-reportlab_3.6.6-1.dsc",
+      "bytes": 2160,
+      "sha256": "412efdd25f95b2d0e2f54935e1238595cd0f4643849679b9134cde7cb8765748"
+    },
+    {
+      "path": "python-reportlab_3.6.6.orig.tar.gz",
+      "bytes": 4509457,
+      "sha256": "dd1cdb62dc123f5859ca514eb639f70660bdc818c95fb0ee2370a175a0e20ce4"
+    }
+  ],
+  "aggregate_sha256": "5c8e589279f7c4048f2e5382a991daeece585838ee86b299ea281a655fd88919"
+}

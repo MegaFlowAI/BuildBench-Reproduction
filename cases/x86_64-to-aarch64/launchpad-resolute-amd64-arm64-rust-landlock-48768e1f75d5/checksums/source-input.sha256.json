@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-rust-landlock-48768e1f75d5",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rust-landlock_0.4.3-1.debian.tar.xz",
+      "bytes": 5348,
+      "sha256": "92e1e09e9cd580f38732ee76db7e72862decd9913eedba4a4b8f8ebd1a652723"
+    },
+    {
+      "path": "rust-landlock_0.4.3-1.dsc",
+      "bytes": 1866,
+      "sha256": "39c03edae449677526b139a1a5887ad87f1b7704e72aa34b2a7c0bfa8870adce"
+    },
+    {
+      "path": "rust-landlock_0.4.3.orig.tar.gz",
+      "bytes": 45960,
+      "sha256": "affe8b77dce5b172f8e290bd801b12832a77cd1942d1ea98259916e89d5829d6"
+    }
+  ],
+  "aggregate_sha256": "18a007b431079a8738a173e36b8fcfb484d75e701a6836e72c18a5bae320d9de"
+}

@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "aarch64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-oracular-proposed-arm64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-oracular-arm64",
+      "dependencies/ubuntu-oracular-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/python-msgspec_0.18.6+1-1.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-oracular-amd64-arm64-python-msgspec-6f918d331f35",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

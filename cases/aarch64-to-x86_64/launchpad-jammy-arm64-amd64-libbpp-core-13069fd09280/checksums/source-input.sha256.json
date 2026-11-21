@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-libbpp-core-13069fd09280",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libbpp-core_2.4.1-6.debian.tar.xz",
+      "bytes": 32856,
+      "sha256": "dd38be550f3949bd338d1857bf48531faac6d43b520a7db1c3c6241bc938398d"
+    },
+    {
+      "path": "libbpp-core_2.4.1-6.dsc",
+      "bytes": 2119,
+      "sha256": "da821a02d131172c57a9831333a07bcffa1ad3636b4cf8ed65857d22dc979926"
+    },
+    {
+      "path": "libbpp-core_2.4.1.orig.tar.gz",
+      "bytes": 361311,
+      "sha256": "1150b8ced22cff23dd4770d7c23fad11239070b44007740e77407f0d746c0af6"
+    }
+  ],
+  "aggregate_sha256": "440b65893280775367fc69ad6b8d9a9f97ee1ce2ed26662280acf74228972224"
+}

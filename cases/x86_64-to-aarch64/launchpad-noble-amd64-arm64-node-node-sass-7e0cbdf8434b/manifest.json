@@ -1,0 +1,38 @@
+{
+  "build": {
+    "architecture": "aarch64",
+    "backend": "deb-obs-build",
+    "buildconfig": "config/ubuntu-noble-proposed-arm64-buildconfig",
+    "dependency_dirs": [
+      "dependencies/ubuntu-noble-arm64",
+      "dependencies/ubuntu-noble-all"
+    ],
+    "dependency_lock": "config/dependency-lock.json",
+    "jobs": 2,
+    "recipe": "source/input/node-node-sass_7.0.3+git20221109.ee13eb9+dfsg-2ubuntu1.dsc",
+    "timeout_seconds": 14400,
+    "vm_type": "docker:privileged"
+  },
+  "case_id": "launchpad-noble-amd64-arm64-node-node-sass-7e0cbdf8434b",
+  "expected_artifacts": {
+    "binary": [
+      "*_*.deb"
+    ],
+    "source": [
+      "*.dsc"
+    ]
+  },
+  "package_type": "deb",
+  "patch_policy": {
+    "allowed_paths": [
+      "source/input/**"
+    ],
+    "forbidden_paths": [
+      "manifest.json",
+      "config/**",
+      "dependencies/**"
+    ]
+  },
+  "schema_version": "1.0",
+  "security_mode": "privileged"
+}

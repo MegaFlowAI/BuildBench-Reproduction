@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-jellyfish-8dcccdb01571",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "jellyfish_2.3.1-2.debian.tar.xz",
+      "bytes": 13924,
+      "sha256": "1b431f9062e9379aa0fac783c008ae5328ba499b0fe82573f59082a023c7d144"
+    },
+    {
+      "path": "jellyfish_2.3.1-2.dsc",
+      "bytes": 3282,
+      "sha256": "69d4d93573d2cea40bbd53d04dd337a49b0e423cfa971c4acb07bb4a76eec07c"
+    },
+    {
+      "path": "jellyfish_2.3.1.orig.tar.gz",
+      "bytes": 681990,
+      "sha256": "540d09457fb4e14b98c7f1428cf885c333e2d6ef4f6a3735aa06be13eb523d69"
+    }
+  ],
+  "aggregate_sha256": "2b6b1de5a354a7c4cb3d3b685ba5ddfab51e7ae03d115d24e1109d63c49b167d"
+}

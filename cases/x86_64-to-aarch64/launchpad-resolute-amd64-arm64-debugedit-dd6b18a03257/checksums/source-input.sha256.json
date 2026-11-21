@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-debugedit-dd6b18a03257",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "debugedit_5.3-1.debian.tar.xz",
+      "bytes": 3064,
+      "sha256": "29c8f2d49176dffd182de87f5799874b3be0779d6a797a4dff453e7f09375454"
+    },
+    {
+      "path": "debugedit_5.3-1.dsc",
+      "bytes": 1989,
+      "sha256": "b5be633320e6899e8aa5babb83b6c25ed841885dd1512ec8f4056bc394584cee"
+    },
+    {
+      "path": "debugedit_5.3.orig.tar.xz",
+      "bytes": 206124,
+      "sha256": "3b8c6396fe235e0270c9b9c0d244cfd0e86c284fc27e820acc58360e7cfa08c2"
+    }
+  ],
+  "aggregate_sha256": "5891ba814f0aeac12a1dba0695f3da30b882d307508576fae0f3e72be3d9030e"
+}

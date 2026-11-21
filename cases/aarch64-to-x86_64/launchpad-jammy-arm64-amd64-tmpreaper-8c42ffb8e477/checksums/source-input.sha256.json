@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-tmpreaper-8c42ffb8e477",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "tmpreaper_1.6.15_1.6.16.diff.gz",
+      "bytes": 836,
+      "sha256": "790fcdf12557716ac3ca19eafe22759300a57ab26c8c96dd835bc55b148ee788"
+    },
+    {
+      "path": "tmpreaper_1.6.16.dsc",
+      "bytes": 1437,
+      "sha256": "b32cb2a2ae97204f054af1e76c9b9f92c785883b2538000a81a6f9d23127baf4"
+    },
+    {
+      "path": "tmpreaper_1.6.16.tar.gz",
+      "bytes": 158816,
+      "sha256": "e543acdd55bb50102c42015e6d399e8abb36ad818cbd3ca6cb1c905b5781e202"
+    }
+  ],
+  "aggregate_sha256": "8e90f18e1728d925efb7934f16218c2d821690ddd118b6673525123c4f64f819"
+}

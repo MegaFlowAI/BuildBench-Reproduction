@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-amd64-arm64-rust-debian-changelog-d083d1c8308c",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "rust-debian-changelog_0.1.1-1_0.1.10-1.diff.gz",
+      "bytes": 20288,
+      "sha256": "60b282736a4a7e3e495b650dc2429c13b5422fed558e6b9fcbdc0a3b26730f0c"
+    },
+    {
+      "path": "rust-debian-changelog_0.1.10-1.debian.tar.xz",
+      "bytes": 2460,
+      "sha256": "7692cf7414f7aaeab404ac779bd08238bd941b3f0a6a6e0d341ffa45082b5966"
+    },
+    {
+      "path": "rust-debian-changelog_0.1.10-1.dsc",
+      "bytes": 2254,
+      "sha256": "9dd3841bb3424738c7a3c00434aa02d4534eb30068977a50cf89272958bc88a0"
+    },
+    {
+      "path": "rust-debian-changelog_0.1.10.orig.tar.gz",
+      "bytes": 30118,
+      "sha256": "cf0fbdc5e8c585c4c35454d1fad4a1cf1f5cbae4c55071f4ae80fbb65662ac0b"
+    }
+  ],
+  "aggregate_sha256": "c02215536e3e63495553c1a5de10556dcd1b7edf14c36d9892b0af08c3153f8f"
+}

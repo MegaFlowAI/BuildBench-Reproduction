@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-jammy-arm64-amd64-pyml-d615cc69fb95",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "pyml_20211015-1_20211015-1build1.diff.gz",
+      "bytes": 319,
+      "sha256": "8de020efaffc02e1450c66b3d4d1510ddc4d119dda235c3e0b39cf2fff1e21d3"
+    },
+    {
+      "path": "pyml_20211015-1build1.debian.tar.xz",
+      "bytes": 3920,
+      "sha256": "f223afba4fba315ad3a0aaace8b0798a21ec3ea193a8472a04587e08e6148b3c"
+    },
+    {
+      "path": "pyml_20211015-1build1.dsc",
+      "bytes": 2180,
+      "sha256": "ed22dc53a564bc23adf07b2c409bba71b001f07bf138d3ed726bc61066efc796"
+    },
+    {
+      "path": "pyml_20211015.orig.tar.gz",
+      "bytes": 82742,
+      "sha256": "4ef930b3ff8c7c4115b87eabd194795fa1da3aedbebbdcddf82af84eadbb94ab"
+    }
+  ],
+  "aggregate_sha256": "745ad37dfc371573c972296615534290fb6b3527b5e7a14ea9b4c9d11561f3bb"
+}

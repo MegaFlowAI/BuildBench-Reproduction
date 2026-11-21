@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-amd64-arm64-simavr-a0f28da42cb8",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "simavr_1.6+dfsg-3build2_1.6+dfsg-3build3.diff.gz",
+      "bytes": 329,
+      "sha256": "4712a2f3e95aa30ab0e48384badd874e53b9ae1b90c48a08299f3d62b9732bd4"
+    },
+    {
+      "path": "simavr_1.6+dfsg-3build3.debian.tar.xz",
+      "bytes": 15252,
+      "sha256": "7f0ef046576bcd7f7961affdd288a0b9aa524335716ca8153a7463199e5df04c"
+    },
+    {
+      "path": "simavr_1.6+dfsg-3build3.dsc",
+      "bytes": 2267,
+      "sha256": "01eca4cfb006e592af334b5f206ae3f8b6e7e60f4d44be1a164c34005ef46644"
+    },
+    {
+      "path": "simavr_1.6+dfsg.orig.tar.xz",
+      "bytes": 664196,
+      "sha256": "794a599eced5dd678d088ca3f5f340d557b68af122d4a9777c87573729bda618"
+    }
+  ],
+  "aggregate_sha256": "67c6dda645395fba6e411585239f8825c04c783a032032663623716385ab94ea"
+}

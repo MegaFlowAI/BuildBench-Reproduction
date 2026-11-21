@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-resolute-arm64-amd64-sbsigntool-8ed9cb6df61e",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "sbsigntool_0.9.4-3.1ubuntu8.debian.tar.xz",
+      "bytes": 17696,
+      "sha256": "d7989526e28149f73717843258515eb6d8b9a1559a081601945e5af135a951e1"
+    },
+    {
+      "path": "sbsigntool_0.9.4-3.1ubuntu8.dsc",
+      "bytes": 2106,
+      "sha256": "01da3e08c8dad30f07c3e0eb554a5e336295c453f7855270af10a3bc48a5bc43"
+    },
+    {
+      "path": "sbsigntool_0.9.4.orig.tar.xz",
+      "bytes": 112496,
+      "sha256": "016d7db322492b09f2f8a3bc02aa2b643db3ca0f31f9efa630c3e8ddef9484e8"
+    }
+  ],
+  "aggregate_sha256": "dd61e686901eaad081a7cadc1e20d7d71a4a92ac0e7b1490a61ddab122c78fb3"
+}

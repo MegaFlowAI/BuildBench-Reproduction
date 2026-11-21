@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-plucky-arm64-amd64-libksysguard-7d890eac087e",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "libksysguard_4:6.2.5-0ubuntu1_4:6.2.5-0ubuntu2.diff.gz",
+      "bytes": 1320,
+      "sha256": "9f41115affb10d611d3c294fde6db312633f81cb56612a3a5dacee0a0f6eb9cb"
+    },
+    {
+      "path": "libksysguard_6.2.5-0ubuntu2.debian.tar.xz",
+      "bytes": 28476,
+      "sha256": "b8af0dde1b8ac51a777a37c9606bcda226df7c01343aeaebc5cad868997dc1eb"
+    },
+    {
+      "path": "libksysguard_6.2.5-0ubuntu2.dsc",
+      "bytes": 4360,
+      "sha256": "dbea9d836fba4d2aef27ba548ec05cea32bea3e8dc84c2af5fe16e7b7df16d29"
+    },
+    {
+      "path": "libksysguard_6.2.5.orig.tar.xz",
+      "bytes": 316092,
+      "sha256": "9694f3d6b5078b4d82eb8e6ed34eb20e2d109ed7c2234c59a640bc32f31c76ab"
+    }
+  ],
+  "aggregate_sha256": "83d160373717d720000cc3279e92227f648fbaaa565cd4a2f9f7eb4b3d04efc4"
+}

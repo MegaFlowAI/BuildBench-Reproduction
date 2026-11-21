@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "case_id": "launchpad-noble-arm64-amd64-msolve-931635f4ebc2",
+  "source_input_dir": "source/input",
+  "files": [
+    {
+      "path": "msolve_0.6.1-2_0.6.2-1.diff.gz",
+      "bytes": 28270,
+      "sha256": "0a287a9795f89221795c37ff2143a6bebecd19c9ab6aac8434a7923eafbd271e"
+    },
+    {
+      "path": "msolve_0.6.2-1.debian.tar.xz",
+      "bytes": 4248,
+      "sha256": "6b63a3453f3bcb1507c9d77b49d6b19b3c7747f022383765f268bb00caba1161"
+    },
+    {
+      "path": "msolve_0.6.2-1.dsc",
+      "bytes": 2142,
+      "sha256": "8f6d293aee5b3e39f939267939bf749ee26129679f71747a5ac2d3810c5bcb9d"
+    },
+    {
+      "path": "msolve_0.6.2.orig.tar.gz",
+      "bytes": 984146,
+      "sha256": "27a79f2dbdd4736ed0f04ea71c972e3f1732aa397284c9d5eca24f061a663fa0"
+    }
+  ],
+  "aggregate_sha256": "d9da90570e12ba19c52f95a8e7903ae9aaf7550d2579eb9130604e9dfd385fb9"
+}

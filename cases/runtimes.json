@@ -1,0 +1,14 @@
+{
+  "amd64": {
+    "file": "runtime-amd64-shim.tar",
+    "bytes": 190982144,
+    "sha256": "1ebcf40061311e9b45cfd93ad11f9fb6a56b6ba6374ea431f44488918c0d908d",
+    "image": "buildbench-validator-runtime:local-dev-amd64-shim"
+  },
+  "arm64": {
+    "file": "runtime-arm64.tar",
+    "bytes": 188529664,
+    "sha256": "c80bb624f42a96ab5682e6ed3e113013c3e1d36857f817288a5455808fba9cd0",
+    "image": "buildbench-validator-runtime:local-development-v1"
+  }
+}
