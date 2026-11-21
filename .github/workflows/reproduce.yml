@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       selection:
-        description: "Case ID, comma-separated IDs, pilot, pending, arm64, amd64, or all"
+        description: "Case ID, comma-separated IDs, pilot, pending, unverified, arm64, amd64, or all"
         default: pending
         required: true
       patch_pr:

@@ -2,9 +2,13 @@
 
 这个公开仓库提供 BuildBench Development Cases v0.1 的构建实验。目录包含 ARM64 和 x86_64 各 100 例。每例记录目标架构、Ubuntu 发行版、历史依赖版本、快照时间、构建模式和并行度。[官方数据发布页](https://matrix.cstcloud.cn/build-bench/data-downloads.html)
 
+## 公开复现进度
+
+[逐例台账](docs/public-baselines.csv)记录 200 个用例和已匹配用例的公开作业链接。`diagnostic_match` 表示该次作业通过诊断比对，`diagnostic_match_rejudged` 表示用更新的判定器复核旧作业的原始日志后通过。`control_signature_match` 是使用预先定义诊断的两个补丁对照。`test_summary_match` 核对测试结果、失败用例及构建退出。`pending` 表示还没有足够的公开 runner 匹配证据。台账记录已观察到的匹配，复跑的稳定性需要继续验证。
+
 ## 运行原始构建
 
-在 **Actions → BuildBench original and patched builds → Run workflow** 输入一个 case ID。还可选择 `pending`（交接时等待复现的 10 例）、`pilot`（另加两个对照）、`arm64`、`amd64` 或 `all`。
+在 **Actions → BuildBench original and patched builds → Run workflow** 输入一个 case ID。还可选择 `pending`（交接时等待复现的 10 例）、`pilot`（另加两个对照）、`arm64`、`amd64` 、`unverified`（逐例台账中尚未核验）或 `all`。
 
 Runner 按固定 SHA256 校验并提取官方源码归档，依照 `cases.json` 从 Ubuntu Snapshot 和 Launchpad 恢复历史包。Ubuntu Snapshot 提供校验值时验证包 SHA256。所有恢复出的包都检查 Debian 元数据并保存下载来源和 SHA256。容器安装完依赖后，逐项检查实际安装版本。
 

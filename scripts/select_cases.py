@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """根据用例目录为原生 runner 生成 Actions 矩阵。"""
+import csv
 import json
 import sys
 from pathlib import Path
@@ -13,6 +14,9 @@ selection = sys.argv[1]
 variants = len(sys.argv) > 2 and sys.argv[2] == "true"
 if selection == "pending":
     selected = [case for case, data in CASES.items() if data["handover_status"] == "pending"]
+elif selection == "unverified":
+    with Path("docs/public-baselines.csv").open(newline="", encoding="utf-8") as ledger:
+        selected = [row["case"] for row in csv.DictReader(ledger) if row["tier"] == "pending"]
 elif selection == "pilot":
     selected = [case for case, data in CASES.items() if case in CONTROLS or data["handover_status"] == "pending"]
 elif selection in ("all", "arm64", "amd64"):
