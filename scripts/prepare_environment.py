@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """恢复指定构建环境并输出依赖来源和校验记录。"""
+import collections
 import concurrent.futures
 import json
 import shutil
@@ -33,20 +34,36 @@ def read_control(path):
     return result
 
 
+def dependency_name(term):
+    return term.strip().split(" ", 1)[0].split(":", 1)[0]
+
+
 def bootstrap(pool, archive, architecture):
     packages = {}
-    for package in pool.glob("*.deb"):
+    providers = collections.defaultdict(list)
+    for package in sorted(pool.glob("*.deb")):
         control = read_control(package)
-        packages[control["Package"]] = (package, control)
+        name = control["Package"]
+        packages[name] = (package, control)
+        for term in control.get("Provides", "").split(","):
+            if virtual := dependency_name(term):
+                providers[virtual].append(name)
     selected = SEEDS & packages.keys()
     queue = list(selected)
     while queue:
         _, control = packages[queue.pop()]
         dependencies = ",".join(control.get(key, "") for key in ("Depends", "Pre-Depends"))
         for group in dependencies.split(","):
-            alternatives = [term.strip().split(" ", 1)[0].split(":", 1)[0] for term in group.split("|")]
-            chosen = next((name for name in alternatives if name in packages), None)
-            if chosen and chosen not in selected:
+            for term in group.split("|"):
+                alternative = dependency_name(term)
+                candidates = [alternative] if alternative in packages else providers.get(alternative, [])
+                if candidates:
+                    selected_provider = next((name for name in candidates if name in selected), candidates[0])
+                    break
+            else:
+                continue
+            chosen = selected_provider
+            if chosen not in selected:
                 selected.add(chosen)
                 queue.append(chosen)
     with tempfile.TemporaryDirectory() as directory:

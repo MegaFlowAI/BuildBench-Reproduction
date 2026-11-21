@@ -16,10 +16,13 @@ FAILURE = re.compile(
     r"^[\w.]*(?:Error|Exception):\s+|\(NoMethodError\)$|: cxref: syntax error$|"
     r"^(?:mv: cannot stat|rmdir: failed to remove|chmod: cannot access) .*: No such file or directory$|"
     r"^/usr/share/cargo/bin/dh-cargo-built-using: abort: |"
-    r"^E: pybuild .*: configure: plugin pyproject failed with: ",
+    r"^E: pybuild .*: configure: plugin pyproject failed with: |"
+    r"^objcopy: .*: file format not recognized$|^Compiled library .* makes inconsistent assumptions over library ",
     re.I,
 )
 WRAPPER = re.compile(r"^(?:dpkg-buildpackage:|dh_.*returned exit code|make(?:\[\d+\])?:)")
+CMAKE_ERROR = re.compile(r"^CMake Error(?: at |:)")
+MAKE_FAILURE = re.compile(r"^make(?:\[\d+\])?: .*?(?:Illegal instruction \(core dumped\)|: No such file or directory)$")
 CONTROL = {
     "launchpad-questing-amd64-arm64-golf-baef926efdc3": (
         "-fcf-protection=full", "not supported for this target",
@@ -53,17 +56,38 @@ def normalize(line):
 
 def fingerprints(path, start):
     found = collections.Counter()
-    active = False
+    active = start is None
+    cmake = []
+    cmake_size = 0
     with Path(path).open("rb") as handle:
         for chunk in iter(lambda: handle.readline(262144), b""):
-            line = chunk.decode("utf-8", "replace").strip()
-            if start is not None and line.startswith(start):
+            raw = chunk.decode("utf-8", "replace")
+            line = raw.strip()
+            if not active and line.startswith(start):
                 active = True
-            if start is not None and not active:
+            if not active:
                 continue
-            if len(line) > 2500 or not FAILURE.search(line) or WRAPPER.search(line):
+            if cmake:
+                if not line or raw.startswith("  "):
+                    if line and cmake_size + len(line) <= 8192:
+                        cmake.append(line)
+                        cmake_size += len(line)
+                    continue
+                if len(cmake) > 1:
+                    found[normalize(" ".join(cmake))] += 1
+                cmake = []
+            if CMAKE_ERROR.match(line):
+                if line.startswith("CMake Error:") and line != "CMake Error:":
+                    found[normalize(line)] += 1
+                else:
+                    cmake = [line]
+                    cmake_size = len(line)
                 continue
-            found[normalize(line)] += 1
+            if len(line) <= 2500 and (
+                    MAKE_FAILURE.fullmatch(line) or (FAILURE.search(line) and not WRAPPER.search(line))):
+                found[normalize(line)] += 1
+    if len(cmake) > 1:
+        found[normalize(" ".join(cmake))] += 1
     return found
 
 
