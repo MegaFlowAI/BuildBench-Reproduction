@@ -13,6 +13,13 @@ from frozen_release import ROOT, RUNNERS, download, fetch_bundle
 from prepare_frozen_runtime import build_flags
 
 
+HOST_IMAGES = {
+    "18.04": "ubuntu:18.04@sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98",
+    "20.04": "ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214",
+    "24.04": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+}
+
+
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -21,8 +28,9 @@ def settings(case):
     catalog = read_json(ROOT / "cases.json")[case]
     host = read_json(ROOT / "cases/historical-hosts.json")[case]
     versions = host["toolchain"]
-    if versions["sbuild"] != "0.79.0-1ubuntu1" or not versions["launchpad-buildd"].startswith("236~"):
-        raise ValueError("This replay host supports the Launchpad 236 toolchain")
+    builder = read_json(ROOT / "cases/launchpad-builders.json").get(versions["launchpad-buildd"])
+    if not builder or builder["ubuntu_release"] not in HOST_IMAGES:
+        raise ValueError("No verified source revision and host image for this Launchpad builder")
     chroot = read_json(ROOT / "cases/launchpad-chroots.json")[host["chroot_sha1"]]
     return {
         "architecture": catalog["architecture"],
@@ -34,6 +42,9 @@ def settings(case):
         "hostname": host["kernel"].split()[1],
         "chroot_sha1": host["chroot_sha1"],
         "chroot": chroot,
+        "builder": builder,
+        "host_image": HOST_IMAGES[builder["ubuntu_release"]],
+        "historical_host_toolchain": versions,
     }
 
 
