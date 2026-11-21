@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """按官方日志记录的静默时限监控原始构建。"""
 import json
+import mmap
 import re
 import subprocess
 import sys
@@ -12,8 +13,18 @@ TIMEOUT = re.compile(r"^E: Build killed with signal TERM after (\d+) minutes of 
 
 def historical_limit(reference):
     with Path(reference).open("rb") as handle:
-        for data in iter(lambda: handle.readline(262144), b""):
-            if match := TIMEOUT.match(data.decode("utf-8", "replace")):
+        if handle.seek(0, 2) == 0:
+            return None
+        with mmap.mmap(handle.fileno(), 0, access=mmap.ACCESS_READ) as log:
+            stamp = b"E: Build killed with signal TERM after "
+            if log[:len(stamp)] == stamp:
+                offset = 0
+            else:
+                offset = log.find(b"\n" + stamp) + 1
+                if offset == 0:
+                    return None
+            log.seek(offset)
+            if match := TIMEOUT.match(log.readline().decode("utf-8", "replace")):
                 return int(match[1]) * 60
     return None
 

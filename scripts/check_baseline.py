@@ -36,7 +36,10 @@ CONTROL = {
 }
 AVO = "launchpad-groovy-arm64-amd64-golang-github-mmcloughlin-avo-472bebf32a26"
 AVO_STACK = re.compile(r"(?P<site>(?:dot|geohash)\.s:\d+) (?P<offset>\+0x[0-9a-f]+) fp=")
+NGINX = "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2"
+NGINX_CONTROL = re.compile(r"^(dpkg-deb: error: parsing file 'debian/nginx-core/DEBIAN/control') near line \d+( package 'nginx-core':)$")
 CASE_DIAGNOSTICS = {
+    NGINX: re.compile(r"^'Depends' field, reference to 'libnginx-mod-http-geoip2':"),
     AVO: re.compile(r"^SIGILL: illegal instruction$|^FAIL\s+github.com/mmcloughlin/avo/examples/(?:dot|geohash)\s+"),
     "launchpad-plucky-amd64-arm64-efitools-faf68620bf82": re.compile(
         r"^Invalid DOS header magic$|^make\[1\]: \*\*\* \[Make.rules:\d+: HelloWorld-signed.efi\] Error 1$"
@@ -47,6 +50,14 @@ CASE_DIAGNOSTICS = {
     "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6": re.compile(
         r"^See plugins/[^/ ]+/test-suite.log for debugging\.$|^ln: .+|"
         r"^dh_auto_test: error: .+ returned exit code \d+$"
+    ),
+}
+TERMINAL_DIAGNOSTICS = {
+    "launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203": re.compile(
+        r"^find docs/reference/html -name '\*\.md5' -print0 \| xargs -0 rm -v$|"
+        r"^rm: missing operand$|"
+        r"^make: \*\*\* \[debian/rules:24: build/libgnomecanvasmm-2.6-doc\] Error 123$|"
+        r"^dpkg-buildpackage: error: debian/rules build subprocess returned exit status 2$"
     ),
 }
 LIBYUV = "launchpad-oracular-amd64-arm64-libyuv-91738d032815"
@@ -104,7 +115,9 @@ def fingerprints(path, start, *, case_id=None):
                 continue
             if len(line) > 2500:
                 continue
-            if case_id == AVO and (stack := AVO_STACK.search(line)):
+            if case_id == NGINX and (control := NGINX_CONTROL.fullmatch(line)):
+                found[f"{control[1]}{control[2]}"] += 1
+            elif case_id == AVO and (stack := AVO_STACK.search(line)):
                 found[f"{stack['site']} {stack['offset']}"] += 1
             elif case_id == AVO and line.startswith("FAIL\tgithub.com/mmcloughlin/avo/examples/"):
                 found[" ".join(line.split()[:2])] += 1
@@ -117,6 +130,15 @@ def fingerprints(path, start, *, case_id=None):
     if len(cmake) > 1:
         found[normalize(" ".join(cmake))] += 1
     return found
+
+
+def terminal_signature(path, pattern):
+    with Path(path).open("rb") as log:
+        return [
+            normalize(line)
+            for data in iter(lambda: log.readline(262144), b"")
+            if pattern.fullmatch(line := data.decode("utf-8", "replace").strip())
+        ]
 
 
 def projected_test_result(path, case_id):
@@ -134,6 +156,12 @@ def projected_test_result(path, case_id):
 
     result = {}
     with Path(path).open("rb") as handle:
+        # GoogleTest 的最终摘要紧邻构建退出。只读取末尾，避免扫描数 GB 的逐像素输出。
+        end = handle.seek(0, 2)
+        start = max(0, end - 4 * 1024 * 1024)
+        handle.seek(start)
+        if start:
+            handle.readline()
         for data in iter(lambda: handle.readline(262144), b""):
             if len(data) > 1024:
                 continue
@@ -214,6 +242,15 @@ def compare(case_id, reference, replay, status, idle):
         return "baseline_success", {"exit": code}
     if limit is not None:
         return "expected_idle_timeout", {"exit": code, "historical_limit_seconds": limit}
+    if case_id in TERMINAL_DIAGNOSTICS:
+        pattern = TERMINAL_DIAGNOSTICS[case_id]
+        historical_result = terminal_signature(reference, pattern)
+        actual_result = terminal_signature(replay, pattern)
+        result = {"exit": code, "kind": "terminal_failure", "historical": historical_result, "actual": actual_result}
+        if len(historical_result) == 4 and historical_result == actual_result and code == 2:
+            return "matched", result
+        return "terminal_diagnostic_mismatch", result
+
     if case_id in (LIBYUV, LIBMAUS2):
         historical_result = projected_test_result(reference, case_id)
         actual_result = projected_test_result(replay, case_id)
