@@ -39,14 +39,15 @@ jobs:
     timeout-minutes: 355
     env:
       CASE_ID: ${{ matrix.case }}
-      BUNDLE: ${{ runner.temp }}/buildbench-frozen-bundle
-      WORK: ${{ runner.temp }}/buildbench-frozen-result
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Verify Release assets and load frozen runtime
-        run: python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
+        run: |
+          bundle="$RUNNER_TEMP/buildbench-frozen-bundle"
+          printf 'BUNDLE=%s\nWORK=%s\n' "$bundle" "$RUNNER_TEMP/buildbench-frozen-result" >> "$GITHUB_ENV"
+          python3 scripts/frozen_release.py fetch "$CASE_ID" "$bundle"
       - name: Run frozen original build and compare the raw log
         run: |
           mkdir -p "$WORK"
