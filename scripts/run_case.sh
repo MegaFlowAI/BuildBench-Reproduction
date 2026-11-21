@@ -32,11 +32,12 @@ options=$(jq -r '"parallel=" + (.jobs|tostring) + " " + (.options|join(" "))' "$
 env_nofile=$(jq -r '.env.nofile // empty' "$work/config.json")
 env_cpus=$(jq -r '.env.cpus // empty' "$work/config.json")
 env_cpuset=$(jq -r '.env.cpuset // empty' "$work/config.json")
+env_mask_cache=$(jq -r '.env.mask_cpu_cache // false' "$work/config.json")
 env_user=$(jq -r '.env.user // empty' "$work/config.json")
 env_attempts=$(jq -r '.env.attempts // 1' "$work/config.json")
 env_timeout=$(jq -r '.env.timeout // empty' "$work/config.json")
 mapfile -t env_vars < <(jq -r '(.env.vars // {}) | to_entries[] | "\(.key)=\(.value)"' "$work/config.json")
-echo "case env: nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} attempts=$env_attempts vars=${env_vars[*]:-none}"
+echo "case env: nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} mask_cpu_cache=$env_mask_cache attempts=$env_attempts vars=${env_vars[*]:-none}"
 
 stage=source_fetch_failed
 python3 scripts/fetch_case.py "$case_id" "$arch" "$work/official"
@@ -74,6 +75,9 @@ run_build() {
     if [[ -n "$env_nofile" ]]; then limits+=(--ulimit "nofile=$env_nofile:$env_nofile"); fi
     if [[ -n "$env_cpus" ]]; then limits+=(--cpus "$env_cpus"); fi
     if [[ -n "$env_cpuset" ]]; then limits+=(--cpuset-cpus "$env_cpuset"); fi
+    if [[ "$env_mask_cache" == true ]]; then
+        limits+=(--tmpfs /sys/devices/system/cpu/cpu0/cache:ro,nosuid,nodev,noexec)
+    fi
     local userns=buildd
     if [[ -n "$env_user" ]]; then userns="$env_user"; fi
     local -a command=(

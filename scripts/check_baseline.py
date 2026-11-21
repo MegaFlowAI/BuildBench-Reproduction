@@ -23,6 +23,12 @@ CONTROL = {
         "undefined reference", "__wrap_RAND_bytes",
     ),
 }
+LIBYUV = "launchpad-oracular-amd64-arm64-libyuv-91738d032815"
+LIBMAUS2 = "launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2"
+AUTOMAKE_SUMMARY = re.compile(r"^# (?:TOTAL|PASS|SKIP|XFAIL|FAIL|XPASS|ERROR):\s+[0-9]+$")
+TEST_STAGE = re.compile(r"^dpkg-buildpackage: error: debian/rules binary-arch subprocess returned exit status 2$")
+GTEST_FINISH = re.compile(r"^\[==========\] (\d+) tests from (\d+) test suites ran\.")
+ANSI_COLOR = re.compile(r"\x1b\[[0-9;]*m")
 STARTED = b"BUILD_BENCH_BUILD_STARTED"
 EXIT = b"BUILD_BENCH_BUILD_EXIT="
 
@@ -53,6 +59,48 @@ def fingerprints(path, start):
                 continue
             found[normalize(line)] += 1
     return found
+
+
+def projected_test_result(path, case_id):
+    if case_id == LIBMAUS2:
+        summary = collections.Counter()
+        with Path(path).open("rb") as handle:
+            for data in iter(lambda: handle.readline(262144), b""):
+                line = data.decode("utf-8", "replace").strip()
+                if (AUTOMAKE_SUMMARY.fullmatch(line) or TEST_STAGE.fullmatch(line) or
+                        (line.startswith("FAIL ") and " (exit status: " in line)):
+                    summary[normalize(line)] += 1
+                if "AutoArray<" in line and " failed to allocate " in line:
+                    summary[normalize(line[line.index("AutoArray<"):])] += 1
+        return dict(summary) if len(summary) >= 12 else None
+
+    result = {}
+    with Path(path).open("rb") as handle:
+        for data in iter(lambda: handle.readline(262144), b""):
+            if len(data) > 1024:
+                continue
+            line = ANSI_COLOR.sub("", data.decode("utf-8", "replace")).strip()
+            if match := GTEST_FINISH.match(line):
+                result = {"total": int(match[1]), "suites": int(match[2]), "failed_tests": []}
+            elif not result:
+                continue
+            elif match := re.fullmatch(r"\[  PASSED  \] (\d+) tests?\.", line):
+                result["passed"] = int(match[1])
+            elif match := re.fullmatch(r"\[  FAILED  \] (\d+) tests?, listed below:", line):
+                result["failed"] = int(match[1])
+            elif match := re.fullmatch(r"\[  FAILED  \] (\S+)", line):
+                result["failed_tests"].append(match[1])
+            elif match := re.fullmatch(r"YOU HAVE (\d+) DISABLED TESTS", line):
+                result["disabled"] = int(match[1])
+            elif re.fullmatch(r"make\[1\]: \*\*\* \[debian/rules:\d+: execute_after_dh_auto_test\] Error 1", line):
+                result["test_target"] = True
+            elif TEST_STAGE.fullmatch(line):
+                result["build_failed"] = True
+    required = {"total", "passed", "failed", "disabled", "test_target", "build_failed"}
+    if required <= result.keys() and result["passed"] + result["failed"] == result["total"]:
+        if len(result["failed_tests"]) == result["failed"]:
+            return result
+    return None
 
 
 def build_events(log):
@@ -108,6 +156,14 @@ def compare(case_id, reference, replay, status, idle):
         return "baseline_success", {"exit": code}
     if limit is not None:
         return "expected_idle_timeout", {"exit": code, "historical_limit_seconds": limit}
+    if case_id in (LIBYUV, LIBMAUS2):
+        historical_result = projected_test_result(reference, case_id)
+        actual_result = projected_test_result(replay, case_id)
+        result = {"exit": code, "kind": "test_summary", "historical": historical_result, "actual": actual_result}
+        if code == 2 and historical_result and historical_result == actual_result:
+            return "matched", result
+        return "test_summary_mismatch", result
+
     historical = fingerprints(reference, "dpkg-buildpackage:")
     if not historical:
         historical = fingerprints(reference, None)

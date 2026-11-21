@@ -12,6 +12,7 @@ for row in csv.DictReader(ledger.open()):
     parallel, mode = 4, '-b'
     distribution = None
     options = []
+    saw_build_options = False
     with filename.open('rb') as handle:
         while line := handle.readline(262144):
             if line.startswith(b'Distribution:') and distribution is None:
@@ -27,7 +28,9 @@ for row in csv.DictReader(ledger.open()):
                         break
                     except ValueError:
                         pass
-            elif line.startswith(b'DEB_BUILD_OPTIONS='):
+            elif line.startswith(b'DEB_BUILD_OPTIONS=') and not saw_build_options:
+                # 只取入口环境，包内 make 打印的变量赋值属于后续子命令。
+                saw_build_options = True
                 opts = line.decode().split('=',1)[1].strip().strip("'").split()
                 for opt in opts:
                     if opt.startswith('parallel='):
