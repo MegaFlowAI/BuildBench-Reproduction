@@ -1,0 +1,2880 @@
+{
+  "launchpad-focal-arm64-amd64-cysignals-efa90da21cf9": {
+    "build_url": "https://launchpad.net/ubuntu/+source/cysignals/1.10.2+ds-3build1/+build/18725888",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lgw01-amd64-048 4.4.0-173-generic #203-Ubuntu SMP Wed Jan 15 02:55:01 UTC 2020 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.7",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "186",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "186",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-gcc-9-cross-d6df5b73fd91": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gcc-9-cross/18ubuntu1/+build/18188949",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lcy01-amd64-018 4.4.0-169-generic #198-Ubuntu SMP Tue Nov 12 10:38:00 UTC 2019 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.6",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "183",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "183",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-grub2-signed-cfe07d1b84a1": {
+    "build_url": "https://launchpad.net/ubuntu/+source/grub2-signed/1.167.1/+build/21573992",
+    "chroot_sha1": "7f6882774d93a6ce12d34cd2f4e4b83a707bcc6e",
+    "kernel": "Linux lgw01-amd64-022 4.15.0-143-generic #147-Ubuntu SMP Wed Apr 14 16:10:11 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.8",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "195~480~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "195~480~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libgnomecanvasmm2.6/2.26.0-3build1/+build/18887954",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lgw01-amd64-044 4.4.0-176-generic #206-Ubuntu SMP Fri Feb 28 05:02:04 UTC 2020 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.7",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "186",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "186",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-libinsane-d2cacbf5f310": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libinsane/1.0.1-1/+build/18089161",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lgw01-amd64-008 4.4.0-166-generic #195-Ubuntu SMP Tue Oct 1 09:35:25 UTC 2019 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.6",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "180",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "180",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-pyfftw-f9b533c96808": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pyfftw/0.11.1-3ubuntu1/+build/18141629",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lgw01-amd64-020 4.4.0-169-generic #198-Ubuntu SMP Tue Nov 12 10:38:00 UTC 2019 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.6",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "180",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "180",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-python-biopython-46662840e6ac": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-biopython/1.75+dfsg-3/+build/18262809",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lcy01-amd64-004 4.4.0-170-generic #199-Ubuntu SMP Thu Nov 14 01:45:04 UTC 2019 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.7",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "183",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "183",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-focal-arm64-amd64-python-pysam-d67bcf3d58a4": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-pysam/0.15.3+ds-2/+build/18516879",
+    "chroot_sha1": "e96c25c651525abc9f0cabeb95ea71010abf4ecb",
+    "kernel": "Linux lgw01-amd64-026 4.4.0-170-generic #199-Ubuntu SMP Thu Nov 14 01:45:04 UTC 2019 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.7",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "183",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "183",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-groovy-arm64-amd64-alertmanager-irc-relay-6dae554a134b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/alertmanager-irc-relay/0.1.0-2/+build/19750842",
+    "chroot_sha1": "20f824f72d640d2ced4a53a84e89958befe66512",
+    "kernel": "Linux lgw01-amd64-020 4.4.0-186-generic #216-Ubuntu SMP Wed Jul 1 05:34:05 UTC 2020 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "189",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "189",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-groovy-arm64-amd64-golang-github-mmcloughlin-avo-472bebf32a26": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golang-github-mmcloughlin-avo/0.0~git20200523.4439b6b-5/+build/19648434",
+    "chroot_sha1": "7f6882774d93a6ce12d34cd2f4e4b83a707bcc6e",
+    "kernel": "Linux lcy01-amd64-018 4.4.0-186-generic #216-Ubuntu SMP Wed Jul 1 05:34:05 UTC 2020 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0-2ubuntu3.1",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu14.10.1",
+      "dpkg-dev": "1.18.4ubuntu1.6",
+      "git": "1:2.7.4-0ubuntu1.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu16.04.1",
+      "launchpad-buildd": "189",
+      "python-debian": "0.1.27ubuntu2",
+      "python-lpbuildd": "189",
+      "sbuild": "0.67.0-2ubuntu7.1"
+    }
+  },
+  "launchpad-hirsute-arm64-amd64-golang-v2ray-core-3202fdcc8203": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golang-v2ray-core/4.33.0-3/+build/20720281",
+    "chroot_sha1": "720a8366e1260e086c1691fe6381a3f2b1c21d81",
+    "kernel": "Linux lgw01-amd64-013 4.15.0-128-generic #131-Ubuntu SMP Wed Dec 9 06:57:35 UTC 2020 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.7",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "193~468~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "193~468~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-hirsute-arm64-amd64-python-pyaudio-7eb839e5dc46": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-pyaudio/0.2.11-1.1build2/+build/20180357",
+    "chroot_sha1": "720a8366e1260e086c1691fe6381a3f2b1c21d81",
+    "kernel": "Linux lgw01-amd64-050 4.15.0-118-generic #119-Ubuntu SMP Tue Sep 8 12:30:01 UTC 2020 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.7",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "193~468~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "193~468~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-golang-v2ray-core-1791221b1f30": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golang-v2ray-core/4.34.0-3/+build/23070386",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-049 4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:08:37 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "206~519~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "206~519~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-libayatana-appindicator-be3a9fa69f9d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libayatana-appindicator/0.5.90-1/+build/22628883",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-058 4.15.0-163-generic #171-Ubuntu SMP Fri Nov 5 11:55:52 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "205~511~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "205~511~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-libcvd-a731cdae1c71": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libcvd/0.0~git20220106103934.34d8e26+ds1-1/+build/23158830",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-023 4.15.0-167-generic #175-Ubuntu SMP Wed Jan 5 01:58:16 UTC 2022 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "207~522~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "207~522~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-libmbim-32c606c4686e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libmbim/1.26.0-1~build1/+build/22441397",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-015 4.15.0-162-generic #170-Ubuntu SMP Mon Oct 18 11:28:54 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "204~508~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "204~508~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-liboqs-df7b6ca57151": {
+    "build_url": "https://launchpad.net/ubuntu/+source/liboqs/0.7.0.27.gba5b61a7+dfsg-1/+build/22421179",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-037 4.15.0-163-generic #171-Ubuntu SMP Fri Nov 5 11:55:52 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "204~508~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "204~508~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-libqalculate-150db9c6c990": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libqalculate/3.22.0-2/+build/23076534",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-059 4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:08:37 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "206~519~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "206~519~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-mathcomp-bigenough-5d617a6a7d50": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mathcomp-bigenough/1.0.1-1/+build/23160543",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-079 5.4.0-104-generic #118-Ubuntu SMP Wed Mar 2 19:03:41 UTC 2022 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.2",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "209~536~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "209~536~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-mathcomp-finmap-b4e23c43c92e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mathcomp-finmap/1.5.1-1/+build/23160549",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-077 5.4.0-104-generic #118-Ubuntu SMP Wed Mar 2 19:03:41 UTC 2022 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.2",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "209~536~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "209~536~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-node-re2-836a739b9d33": {
+    "build_url": "https://launchpad.net/ubuntu/+source/node-re2/1.16.0+~cs2.12.8-1/+build/22440603",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-071 4.15.0-162-generic #170-Ubuntu SMP Mon Oct 18 11:28:54 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "204~508~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "204~508~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-hug/2.6.0-2build4/+build/22286016",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-072 5.4.0-104-generic #118-Ubuntu SMP Wed Mar 2 19:03:41 UTC 2022 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.2",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "209~536~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "209~536~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-r-cran-randomfieldsutils-ff260e110374": {
+    "build_url": "https://launchpad.net/ubuntu/+source/r-cran-randomfieldsutils/1.0.11-3/+build/22470646",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-009 4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:08:37 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "206~519~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "206~519~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-rust-blake3-56acd64f65be": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-blake3/1.2.0-1/+build/22971177",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-006 4.15.0-163-generic #171-Ubuntu SMP Fri Nov 5 11:55:52 UTC 2021 aarch64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "205~511~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "205~511~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-amd64-arm64-rust-generator-c5207d2ba61d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-generator/0.6.20-3/+build/22465464",
+    "chroot_sha1": "d7d0133902b8cc1df688a841d4b96e994eeac2e0",
+    "kernel": "Linux bos02-arm64-041 5.4.0-105-generic #119-Ubuntu SMP Mon Mar 7 18:50:13 UTC 2022 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.2",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "210~545~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "210~545~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-gdb-mingw-w64-e3599e72fa05": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gdb-mingw-w64/11build1/+build/23056856",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lcy02-amd64-003 4.15.0-167-generic #175-Ubuntu SMP Wed Jan 5 01:56:07 UTC 2022 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "207~522~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "207~522~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-libbpp-core-13069fd09280": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libbpp-core/2.4.1-6/+build/22297251",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lgw01-amd64-012 4.15.0-161-generic #169-Ubuntu SMP Fri Oct 15 13:41:54 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "203~505~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "203~505~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-libbpp-popgen-cce52e93a824": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libbpp-popgen/2.4.1-5/+build/22297269",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lcy01-amd64-028 4.15.0-161-generic #169-Ubuntu SMP Fri Oct 15 13:41:54 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "203~505~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "203~505~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-libbpp-raa-dbef5d241db0": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libbpp-raa/2.4.1-5/+build/22297281",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lcy01-amd64-016 4.15.0-161-generic #169-Ubuntu SMP Fri Oct 15 13:41:54 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "203~505~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "203~505~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-libbpp-seq-3d3d20403502": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libbpp-seq/2.4.1-6/+build/22297287",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lgw01-amd64-058 4.15.0-161-generic #169-Ubuntu SMP Fri Oct 15 13:41:54 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "203~505~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "203~505~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-libgpuarray-194a45f1bd40": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libgpuarray/0.7.6-6/+build/22297891",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lcy01-amd64-017 4.15.0-161-generic #169-Ubuntu SMP Fri Oct 15 13:41:54 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "203~505~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "203~505~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-pyml-d615cc69fb95": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pyml/20211015-1build1/+build/23092177",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lgw01-amd64-052 4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:07:44 UTC 2021 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "206~519~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "206~519~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-python-reportlab-515b47bcdcf3": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-reportlab/3.6.6-1/+build/23180499",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux lcy02-amd64-047 4.15.0-167-generic #175-Ubuntu SMP Wed Jan 5 01:56:07 UTC 2022 x86_64",
+    "toolchain": {
+      "bzr": "2.7.0+bzr6622-10",
+      "bzr-builder": "0.7.3+bzr174~ppa13~ubuntu16.04.1",
+      "dpkg-dev": "1.19.0.5ubuntu2.3",
+      "git": "1:2.17.1-1ubuntu0.9",
+      "git-build-recipe": "0.3.6~git201906051340.ff11471~ubuntu18.04.1",
+      "launchpad-buildd": "208~526~ubuntu18.04.1",
+      "python-debian": "0.1.32",
+      "python3-debian": "0.1.32",
+      "python3-lpbuildd": "208~526~ubuntu18.04.1",
+      "sbuild": "0.75.0-1ubuntu1"
+    }
+  },
+  "launchpad-jammy-arm64-amd64-tmpreaper-8c42ffb8e477": {
+    "build_url": "https://launchpad.net/ubuntu/+source/tmpreaper/1.6.16/+build/23069661",
+    "chroot_sha1": "b0c128df17a460089eca69348f06144377489985",
+    "kernel": "Linux ubuntu 5.4.0-107-generic #121-Ubuntu SMP Thu Mar 24 16:04:27 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.3",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "212~550~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "212~550~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-golang-github-evanw-esbuild-65a347bd1290": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golang-github-evanw-esbuild/0.14.25-1/+build/23588303",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-120 5.4.0-110-generic #124-Ubuntu SMP Thu Apr 14 19:46:19 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "212~550~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "212~550~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-golang-mvdan-sh-8cac33b424a0": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golang-mvdan-sh/3.4.3+ds2-1/+build/23594297",
+    "chroot_sha1": "4bae5e21afd462667e3742a3b80ddb4ff02f2b5f",
+    "kernel": "Linux lcy02-amd64-002 5.4.0-109-generic #123-Ubuntu SMP Fri Apr 8 09:10:54 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "212~550~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "212~550~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-config-value/0.8.2.1-1/+build/23854002",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-050 5.4.0-124-generic #140-Ubuntu SMP Thu Aug 4 02:23:37 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.5",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "219~583~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "219~583~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-haskell-ghc-lib-parser-94ab3d843965": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-ghc-lib-parser/9.0.2.20211226-1/+build/23853236",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-042 5.4.0-124-generic #140-Ubuntu SMP Thu Aug 4 02:23:37 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.5",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "219~583~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "219~583~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-haskell-language-c99-26e249005402": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-language-c99/0.1.3-1/+build/24232038",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-014 5.4.0-122-generic #138-Ubuntu SMP Wed Jun 22 15:00:31 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.5",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "217~578~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "217~578~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-haskell-lift-type-cf0a729ae586": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-lift-type/0.1.0.1-1/+build/24232050",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-110 5.4.0-122-generic #138-Ubuntu SMP Wed Jun 22 15:00:31 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.5",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "217~578~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "217~578~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-haskell-tree-monad-31d2c10ec77f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-tree-monad/0.3.1-2/+build/24132812",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-081 5.4.0-121-generic #137-Ubuntu SMP Wed Jun 15 13:33:07 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "215~563~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "215~563~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-haskell-type-level-numbers-81caa24125db": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-type-level-numbers/0.1.1.1-7/+build/24125387",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-039 5.4.0-121-generic #137-Ubuntu SMP Wed Jun 15 13:33:07 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "215~563~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "215~563~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-ldap-haskell-66f3a6c075d5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ldap-haskell/0.6.11-5/+build/24135984",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-087 5.4.0-121-generic #137-Ubuntu SMP Wed Jun 15 13:33:07 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "215~563~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "215~563~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-libengine-gost-openssl-e12421181e3b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libengine-gost-openssl/3.0.1-2/+build/24127842",
+    "chroot_sha1": "93056656ffca866e6c2a454f453b424a388b800f",
+    "kernel": "Linux lcy02-amd64-117 5.4.0-128-generic #144-Ubuntu SMP Tue Sep 20 11:00:04 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.5",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "223~593~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "223~593~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-mathcomp-algebra-tactics-542a1b7361e2": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mathcomp-algebra-tactics/1.0.0-2/+build/23775926",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-045 5.4.0-110-generic #124-Ubuntu SMP Thu Apr 14 19:46:19 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "212~550~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "212~550~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-mathcomp-finmap-06543f59cc91": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mathcomp-finmap/1.5.1-8/+build/24143519",
+    "chroot_sha1": "4d18961cd05542d5def75b14497015b674c37821",
+    "kernel": "Linux lcy02-amd64-116 5.4.0-121-generic #137-Ubuntu SMP Wed Jun 15 13:33:07 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.4",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "215~563~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "215~563~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-kinetic-arm64-amd64-qt6ct-4367dd6148aa": {
+    "build_url": "https://launchpad.net/ubuntu/+source/qt6ct/0.5-4build1/+build/24297241",
+    "chroot_sha1": "93056656ffca866e6c2a454f453b424a388b800f",
+    "kernel": "Linux lcy02-amd64-009 5.4.0-128-generic #144-Ubuntu SMP Tue Sep 20 11:00:04 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.5",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "223~593~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "223~593~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-lunar-arm64-amd64-dynarmic-0c21c85d10cc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/dynarmic/6.3.1+ds-1/+build/24865551",
+    "chroot_sha1": "b509365b3a13e4aa6176e31a361b75cab8d51910",
+    "kernel": "Linux lcy02-amd64-091 5.4.0-132-generic #148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.6",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "223~593~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "223~593~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-gloo-cuda-4c238c853c4d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gloo-cuda/0.0~git20230117.1090929-2/+build/26704412",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos01-arm64-028 5.4.0-162-generic #179-Ubuntu SMP Mon Aug 14 08:52:58 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-haskell-tldr-e08dd2db85e1": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-tldr/0.9.2-3/+build/26317774",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-056 5.4.0-152-generic #169-Ubuntu SMP Tue Jun 6 22:25:45 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "233~634~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "233~634~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-lib2geom-a9e4a4a637b3": {
+    "build_url": "https://launchpad.net/ubuntu/+source/lib2geom/1.3-1/+build/26682985",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos01-arm64-033 5.4.0-156-generic #173-Ubuntu SMP Tue Jul 11 07:25:14 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-libcrypt-xxhash-perl-101168be0c0f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libcrypt-xxhash-perl/0.06-3/+build/26485872",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-003 5.4.0-155-generic #172-Ubuntu SMP Fri Jul 7 16:13:58 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-libjodycode-10d297329e6a": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libjodycode/2.0.1-2/+build/26310909",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-016 5.4.0-150-generic #167-Ubuntu SMP Mon May 15 17:36:35 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "233~634~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "233~634~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-python-reportlab-719ab3a7184a": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-reportlab/4.0.4-5/+build/26378298",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-050 5.4.0-153-generic #170-Ubuntu SMP Fri Jun 16 13:46:00 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-r-cran-digest-7a42effc961f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/r-cran-digest/0.6.32-1/+build/26345739",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-056 5.4.0-153-generic #170-Ubuntu SMP Fri Jun 16 13:46:00 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-rust-lcms2-b1d776075162": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-lcms2/5.6.0-1/+build/26677840",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-042 5.4.0-156-generic #173-Ubuntu SMP Tue Jul 11 07:25:14 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-amd64-arm64-rust-mbox-7f096e0caeb4": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-mbox/0.6.0-1/+build/26502408",
+    "chroot_sha1": "f16216f5497f1f0724e8a3a0f3bd4b5063e2189b",
+    "kernel": "Linux bos02-arm64-021 5.4.0-156-generic #173-Ubuntu SMP Tue Jul 11 07:25:14 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-arm64-amd64-fenics-dolfinx-d7bc0ff9f8a5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/fenics-dolfinx/1:0.6.0-5/+build/26441339",
+    "chroot_sha1": "1fc1752c0976ad9eb0e621fd063fde252dab04e3",
+    "kernel": "Linux lcy02-amd64-066 5.4.0-153-generic #170-Ubuntu SMP Fri Jun 16 13:43:31 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-arm64-amd64-liboqs-afb1a3ad816c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/liboqs/0.8.0-1/+build/26313506",
+    "chroot_sha1": "1fc1752c0976ad9eb0e621fd063fde252dab04e3",
+    "kernel": "Linux lcy02-amd64-018 5.4.0-162-generic #179-Ubuntu SMP Mon Aug 14 08:51:31 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-mantic-arm64-amd64-spirv-llvm-translator-15-3b9504cc9bc6": {
+    "build_url": "https://launchpad.net/ubuntu/+source/spirv-llvm-translator-15/15.0.0-1ubuntu3/+build/26341721",
+    "chroot_sha1": "1fc1752c0976ad9eb0e621fd063fde252dab04e3",
+    "kernel": "Linux lcy02-amd64-021 5.4.0-153-generic #170-Ubuntu SMP Fri Jun 16 13:43:31 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "234~642~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "234~642~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-accounts-qml-module-1a7044e4191b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/accounts-qml-module/0.7+git20231028.05e79eb-1ubuntu1/+build/27847483",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos01-arm64-039 5.4.0-172-generic #190-Ubuntu SMP Fri Feb 2 23:29:27 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-ecmwflibs-d611bdd10253": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ecmwflibs/2:0.6.3-1build1/+build/28003071",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-024 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-ectrans-50e45e72102d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ectrans/1.3.0-1build1/+build/27988266",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos01-arm64-013 5.4.0-173-generic #191-Ubuntu SMP Fri Feb 2 13:54:37 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-haskell-copilot-c99-1fb879daa3b8": {
+    "build_url": "https://launchpad.net/ubuntu/+source/haskell-copilot-c99/3.17-1/+build/26994937",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos01-arm64-005 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:42:23 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-libmceliece-5020df9683fc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libmceliece/0~20230612-1/+build/27591940",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-031 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:53:38 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-mrgingham-11fa7cc8b314": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mrgingham/1.24-1build3/+build/27993226",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-033 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-node-node-sass-7e0cbdf8434b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/node-node-sass/7.0.3+git20221109.ee13eb9+dfsg-2ubuntu1/+build/27958397",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos01-arm64-009 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-obs-time-source-04ee01f2e706": {
+    "build_url": "https://launchpad.net/ubuntu/+source/obs-time-source/0.2-1/+build/26985918",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-045 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:42:23 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-ocaml-sedlex-8b683e125b12": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ocaml-sedlex/3.2-1build1/+build/26958585",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-013 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:42:23 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-opentracker-7ffe12a43a08": {
+    "build_url": "https://launchpad.net/ubuntu/+source/opentracker/0.0~git20210823.110868e-7/+build/27008691",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-015 5.4.0-167-generic #184-Ubuntu SMP Tue Oct 31 09:24:51 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-python-jellyfish-ae2ffe394736": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-jellyfish/0.10.0-2/+build/27059837",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-002 5.4.0-167-generic #184-Ubuntu SMP Tue Oct 31 09:24:51 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-pytorch-scatter-3844a7fee461": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pytorch-scatter/2.1.1-1/+build/26927524",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-071 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:42:23 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-pytorch-sparse-4daff83ac767": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pytorch-sparse/0.6.18-1/+build/26927530",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-072 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:53:38 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-rust-apr-22b7493e158e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-apr/0.1.9-1/+build/26973184",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-040 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-rust-criterion-cycles-per-byte-82e423f30956": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-criterion-cycles-per-byte/0.5.0-1/+build/26928113",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos01-arm64-036 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-rust-debian-changelog-d083d1c8308c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-debian-changelog/0.1.10-1/+build/26946235",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-067 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:42:23 UTC 2023 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-wlrctl-5183d65fdbbc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/wlrctl/0.2.2-1/+build/27616262",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-032 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-amd64-arm64-xmbmon-a78a68bcce2f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/xmbmon/2.05-9build3/+build/28015824",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-016 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:20 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-cowsql-cfbcbf2fa889": {
+    "build_url": "https://launchpad.net/ubuntu/+source/cowsql/1.15.4-1ubuntu1/+build/27961571",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux bos03-amd64-035 5.4.0-173-generic #191-Ubuntu SMP Fri Feb 2 13:55:07 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-eegdev-d0b87ba3dd17": {
+    "build_url": "https://launchpad.net/ubuntu/+source/eegdev/0.2-8.1/+build/27847699",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-098 5.4.0-173-generic #191-Ubuntu SMP Fri Feb 2 13:55:07 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-eztrace-6704f0f70e95": {
+    "build_url": "https://launchpad.net/ubuntu/+source/eztrace/2.1-7ubuntu2/+build/27948239",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-034 5.4.0-173-generic #191-Ubuntu SMP Fri Feb 2 13:55:07 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-fmtlib-a8fe150dcb9e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/fmtlib/9.1.0+ds1-2build1/+build/28121955",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-084 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:39 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/globalplatform/2.3.1+dfsg-3/+build/27000464",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-052 5.4.0-173-generic #191-Ubuntu SMP Fri Feb 2 13:55:07 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-glyr-62a9f2a4c575": {
+    "build_url": "https://launchpad.net/ubuntu/+source/glyr/1.0.10-2build2/+build/27953034",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-094 5.4.0-173-generic #191-Ubuntu SMP Fri Feb 2 13:55:07 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-jellyfish-8dcccdb01571": {
+    "build_url": "https://launchpad.net/ubuntu/+source/jellyfish/2.3.1-2/+build/27602004",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-013 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:52:28 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-libbpp-qt-32eb71858f9f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libbpp-qt/2.4.1-9.1/+build/27855380",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-105 5.4.0-176-generic #196-Ubuntu SMP Fri Mar 22 16:46:39 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-lua-luv-e9dbd90452a8": {
+    "build_url": "https://launchpad.net/ubuntu/+source/lua-luv/1.48.0-2-1/+build/27867888",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-075 5.4.0-172-generic #190-Ubuntu SMP Fri Feb 2 23:24:22 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-msolve-931635f4ebc2": {
+    "build_url": "https://launchpad.net/ubuntu/+source/msolve/0.6.2-1/+build/27191833",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-081 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:52:28 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-pynfft-ab05746a7dae": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pynfft/1.3.2-7build2/+build/26951235",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux bos03-amd64-051 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:52:28 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-python-igraph-28f74e97d082": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-igraph/0.11.2+ds-4/+build/26921402",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux bos03-amd64-010 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:41:22 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-python-intbitset-0ede6db7f446": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-intbitset/2.3.0-3.2build3/+build/27661591",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-027 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:52:28 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-receptor-8f326a503236": {
+    "build_url": "https://launchpad.net/ubuntu/+source/receptor/1.4.3-3/+build/27617791",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-066 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:52:28 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-rocm-device-libs-7e5a4c1f9492": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rocm-device-libs/6.0+git20231212.5a852ed-1/+build/27811789",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-114 5.4.0-172-generic #190-Ubuntu SMP Fri Feb 2 23:24:22 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "236~650~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "236~650~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-urwid-51226e8a6f4a": {
+    "build_url": "https://launchpad.net/ubuntu/+source/urwid/2.1.2-4.1/+build/27601791",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-030 5.4.0-169-generic #187-Ubuntu SMP Thu Nov 23 14:52:28 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-noble-arm64-amd64-zim-tools-435516320f16": {
+    "build_url": "https://launchpad.net/ubuntu/+source/zim-tools/3.2.0-1build1/+build/26934545",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-107 5.4.0-164-generic #181-Ubuntu SMP Fri Sep 1 13:41:22 UTC 2023 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "235~645~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "235~645~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-blastem-55dae0e29a61": {
+    "build_url": "https://launchpad.net/ubuntu/+source/blastem/0.6.3.4-2/+build/28430487",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-115 5.4.0-192-generic #212-Ubuntu SMP Fri Jul 5 09:50:13 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-buteo-sync-plugins-b5560c677bdb": {
+    "build_url": "https://launchpad.net/ubuntu/+source/buteo-sync-plugins/0.8.35-2/+build/28651802",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-028 5.4.0-189-generic #209-Ubuntu SMP Fri Jun 7 14:05:34 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "239~665~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "239~665~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-castxml-63b80d08bc8a": {
+    "build_url": "https://launchpad.net/ubuntu/+source/castxml/0.6.8-1/+build/28768603",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-018 5.4.0-192-generic #212-Ubuntu SMP Fri Jul 5 09:50:13 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-libapache2-mod-auth-openidc-c9b2ba1cd30f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libapache2-mod-auth-openidc/2.4.15.7-1/+build/28284339",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos02-arm64-067 5.4.0-182-generic #202-Ubuntu SMP Fri Apr 26 16:08:13 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libmaus2/2.0.813+ds-3/+build/28284997",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-098 5.4.0-192-generic #212-Ubuntu SMP Fri Jul 5 09:50:13 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-libyuv-91738d032815": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libyuv/0.0.1888.20240607-1/+build/28564839",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-014 5.4.0-187-generic #207-Ubuntu SMP Mon Jun 10 08:18:12 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "239~665~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "239~665~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-lua-struct-2548b9062e0d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/lua-struct/0.3-1/+build/28290395",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-064 5.4.0-192-generic #212-Ubuntu SMP Fri Jul 5 09:50:13 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-lxqt-qtplugin-de887d7c53b9": {
+    "build_url": "https://launchpad.net/ubuntu/+source/lxqt-qtplugin/2.0.0-0ubuntu1/+build/28872592",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-050 5.4.0-193-generic #213-Ubuntu SMP Fri Aug 2 20:21:01 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "241~676~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "241~676~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-ocaml-eb69da357af5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ocaml/5.2.0-1/+build/28723974",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-098 5.4.0-190-generic #210-Ubuntu SMP Fri Jul 5 17:03:02 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-python-msgspec-6f918d331f35": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-msgspec/0.18.6+1-1/+build/28724029",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-072 5.4.0-190-generic #210-Ubuntu SMP Fri Jul 5 17:03:02 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-qtcontacts-sqlite-40ab5e5a848d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/qtcontacts-sqlite/0.3.5-1/+build/28439996",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos01-arm64-030 5.4.0-181-generic #201-Ubuntu SMP Thu Mar 28 15:39:18 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-amd64-arm64-rust-trivialdb-c12a8d677890": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-trivialdb/0.1.5-1/+build/28694282",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-009 5.4.0-192-generic #212-Ubuntu SMP Fri Jul 5 09:50:13 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-cxref-472d3a12cb84": {
+    "build_url": "https://launchpad.net/ubuntu/+source/cxref/1.6e-7/+build/28425362",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-010 5.4.0-177-generic #197-Ubuntu SMP Thu Mar 28 22:45:47 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-dqlite-73a783215973": {
+    "build_url": "https://launchpad.net/ubuntu/+source/dqlite/1.16.7-1/+build/28703971",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-100 5.4.0-190-generic #210-Ubuntu SMP Fri Jul 5 17:03:38 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-gnome-shell-c7d8316b3552": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gnome-shell/47~rc-3ubuntu2/+build/29093833",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-026 5.4.0-195-generic #215-Ubuntu SMP Fri Aug 2 18:28:05 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "242~684~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "242~684~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-mpi4py-5fd5bd9111dc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mpi4py/3.1.5-6/+build/28428393",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-103 5.4.0-177-generic #197-Ubuntu SMP Thu Mar 28 22:45:47 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2": {
+    "build_url": "https://launchpad.net/ubuntu/+source/nginx/1.26.0-1ubuntu1/+build/28509148",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-072 5.4.0-182-generic #202-Ubuntu SMP Fri Apr 26 12:29:36 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.12",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-ocaml-0add7438dc87": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ocaml/5.2.0-1/+build/28723973",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-050 5.4.0-190-generic #210-Ubuntu SMP Fri Jul 5 17:03:38 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "240~671~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "240~671~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-python-pyppmd-2779251761a8": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-pyppmd/1.1.0+ds-2/+build/28290707",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-071 5.4.0-177-generic #197-Ubuntu SMP Thu Mar 28 22:45:47 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-qtorganizer-eds-3a12a7097a09": {
+    "build_url": "https://launchpad.net/ubuntu/+source/qtorganizer-eds/0.2.0-1/+build/28650598",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-077 5.4.0-187-generic #207-Ubuntu SMP Mon Jun 10 08:16:10 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.13",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "239~665~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "239~665~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-oracular-arm64-amd64-qtpim-opensource-src-2b5c2f205d2b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/qtpim-opensource-src/5.0~git20201102.f9a8f0fc+dfsg1-4/+build/28430567",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-120 5.4.0-177-generic #197-Ubuntu SMP Thu Mar 28 22:45:47 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.19.7ubuntu3.2",
+      "git": "1:2.25.1-1ubuntu3.11",
+      "git-build-recipe": "0.3.6",
+      "launchpad-buildd": "237~660~ubuntu20.04.1",
+      "python3-debian": "0.1.36ubuntu1.1",
+      "python3-lpbuildd": "237~660~ubuntu20.04.1",
+      "sbuild": "0.79.0-1ubuntu1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-efitools-faf68620bf82": {
+    "build_url": "https://launchpad.net/ubuntu/+source/efitools/1.9.2-3.4/+build/30420467",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-120 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:20:18 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "253~733~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "253~733~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gcc-15-cross/5ubuntu1/+build/30602765",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-069 6.8.0-56-generic #58-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb 14 15:19:53 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-harec-2765b2c0fbdc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/harec/0.24.2-1/+build/30249786",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-116 6.8.0-53-generic #55-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 15:02:14 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "249~721~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "249~721~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-libcrypt-xxhash-perl-9fa2d60e7af5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libcrypt-xxhash-perl/0.07-1build4/+build/29179075",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-077 6.8.0-57-generic #59-Ubuntu SMP PREEMPT_DYNAMIC Sat Mar 15 17:00:30 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-libgovirt-627f7c04c776": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libgovirt/0.3.9-3/+build/29214575",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-089 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:32:09 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-libpdl-ccs-perl-2958f3c6131b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libpdl-ccs-perl/1.24.0-1/+build/29931668",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-050 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:32:09 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-libunwind-f18b55e03a91": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libunwind/1.8.1-0.1/+build/30119512",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-011 6.8.0-57-generic #59-Ubuntu SMP PREEMPT_DYNAMIC Sat Mar 15 17:00:30 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-ogamesim-7d713bfb6335": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ogamesim/20130107-4/+build/30296576",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-089 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:20:18 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-pam-tmpdir-4c7f2d6dc2cc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pam-tmpdir/0.10/+build/29351897",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-028 6.8.0-49-generic #49-Ubuntu SMP PREEMPT_DYNAMIC Sun Nov  3 21:21:58 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "247~714~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "247~714~ubuntu24.04.1",
+      "sbuild": "0.85.7"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-plasma-activities-stats-896eda62b113": {
+    "build_url": "https://launchpad.net/ubuntu/+source/plasma-activities-stats/6.2.5-0ubuntu1/+build/29899803",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-033 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:32:09 UTC 2024 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-rust-subversion-b3a4b8c35bb2": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-subversion/0.0.8-3/+build/30172253",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-007 6.8.0-57-generic #59-Ubuntu SMP PREEMPT_DYNAMIC Sat Mar 15 17:00:30 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-tinycbor-835bc0b749b6": {
+    "build_url": "https://launchpad.net/ubuntu/+source/tinycbor/0.6.0-2/+build/30270036",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-065 6.8.0-57-generic #59-Ubuntu SMP PREEMPT_DYNAMIC Sat Mar 15 17:00:30 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-amd64-arm64-west-chamber-eedde5db5d06": {
+    "build_url": "https://launchpad.net/ubuntu/+source/west-chamber/20100405+svn20111107.r124-14.2/+build/30381483",
+    "chroot_sha1": "0aaa0d191106d33e51979a9c6a062e50b7f5b3b2",
+    "kernel": "Linux bos03-arm64-002 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:20:18 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "252~729~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "252~729~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-bzrtp-6501f08c12b9": {
+    "build_url": "https://launchpad.net/ubuntu/+source/bzrtp/5.3.105-1/+build/30388824",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-104 6.8.0-54-generic #56-Ubuntu SMP PREEMPT_DYNAMIC Sat Feb  8 00:37:57 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "252~729~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "252~729~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-gcc-riscv64-unknown-elf-d3908b11c2d9": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gcc-riscv64-unknown-elf/17/+build/29971723",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-018 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-geis-fd1a3919010f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/geis/2.2.17+16.04.20160126-0ubuntu11/+build/29929015",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-019 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-kissat-737b6822db89": {
+    "build_url": "https://launchpad.net/ubuntu/+source/kissat/4.0.2-1/+build/30149150",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-082 6.8.0-57-generic #59-Ubuntu SMP PREEMPT_DYNAMIC Sat Mar 15 17:40:59 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-libcrcutil-df3791b75863": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libcrcutil/1.0-5.4/+build/29964162",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-030 6.8.0-59-generic #61-Ubuntu SMP PREEMPT_DYNAMIC Fri Apr 11 23:16:11 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-libevtx-1ee53325da7e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libevtx/20240504-1build1/+build/29929296",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-105 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-libkdegames-afa6b8f7c784": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libkdegames/4:24.12.3-1ubuntu1/+build/30413412",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-052 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "252~729~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "252~729~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-libksysguard-7d890eac087e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libksysguard/4:6.2.5-0ubuntu2/+build/29901496",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-110 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-libopaque-928b8559372e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libopaque/1.0.1-1/+build/30409177",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-118 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-libotr-7f09e7c32c80": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libotr/4.1.1-6/+build/30406731",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-106 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-opentelemetry-cpp-f8f80a84f833": {
+    "build_url": "https://launchpad.net/ubuntu/+source/opentelemetry-cpp/1.17.0-3/+build/29244337",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-098 6.8.0-49-generic #49-Ubuntu SMP PREEMPT_DYNAMIC Mon Nov  4 02:06:24 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "247~714~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "247~714~ubuntu24.04.1",
+      "sbuild": "0.85.7"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-oxigraph-d2a66910f101": {
+    "build_url": "https://launchpad.net/ubuntu/+source/oxigraph/0.4.5-1build1/+build/29930265",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-016 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "248~718~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "248~718~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-python-apt-f8750ff50ddf": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-apt/2.9.7/+build/30149226",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-109 6.8.0-51-generic #52-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec  5 13:09:44 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "249~721~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "249~721~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-python-msgspec-d5389be6261a": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-msgspec/0.18.6+1-7/+build/29270056",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-108 6.8.0-48-generic #48-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep 27 14:04:52 UTC 2024 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.1",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "247~714~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "247~714~ubuntu24.04.1",
+      "sbuild": "0.85.7"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-reglookup-c48554f63bd8": {
+    "build_url": "https://launchpad.net/ubuntu/+source/reglookup/1.0.1+svn296-1/+build/29220507",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-008 6.8.0-59-generic #61-Ubuntu SMP PREEMPT_DYNAMIC Fri Apr 11 23:16:11 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-trinity-496f1178f9ee": {
+    "build_url": "https://launchpad.net/ubuntu/+source/trinity/1.9+git20241022.ba2360ed84a8-1/+build/29223915",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-041 6.8.0-59-generic #61-Ubuntu SMP PREEMPT_DYNAMIC Fri Apr 11 23:16:11 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-plucky-arm64-amd64-zvbi-45b23e3a5d27": {
+    "build_url": "https://launchpad.net/ubuntu/+source/zvbi/0.2.44-1/+build/30415031",
+    "chroot_sha1": "1fe94ca8758119221c8de2550665a1bb335bd6a9",
+    "kernel": "Linux lcy02-amd64-035 6.8.0-55-generic #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "252~729~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "252~729~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-questing-amd64-arm64-golf-baef926efdc3": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golf/601.4.32-1/+build/30916421",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-059 6.8.0-60-generic #63-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 15 18:51:58 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "255~738~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "255~738~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-amd64-arm64-grantlee5-0bce498ad116": {
+    "build_url": "https://launchpad.net/ubuntu/+source/grantlee5/5.3.1-4build1/+build/31067008",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-061 6.8.0-71-generic #71-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 16:44:45 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-amd64-arm64-kdsoap-95149c86d1d7": {
+    "build_url": "https://launchpad.net/ubuntu/+source/kdsoap/2.2.0+dfsg-3ubuntu2/+build/31066932",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-106 6.8.0-71-generic #71-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 16:44:45 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-amd64-arm64-kf6-frameworkintegration-6954dad015fc": {
+    "build_url": "https://launchpad.net/ubuntu/+source/kf6-frameworkintegration/6.16.0-0ubuntu2/+build/31042704",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-050 6.8.0-71-generic #71-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 16:44:45 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-amd64-arm64-ktorrent-ee287a61e3d5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ktorrent/25.07.80-0ubuntu1/+build/31003795",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-069 6.8.0-63-generic #66-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 13 20:09:49 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07": {
+    "build_url": "https://launchpad.net/ubuntu/+source/mlmmj/1.5.0-1/+build/30672925",
+    "chroot_sha1": "3ca87727ec191acb443b73f0ecefb98a9089cae3",
+    "kernel": "Linux bos03-arm64-103 6.8.0-60-generic #63-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 15 18:51:58 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "255~738~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "255~738~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-questing-amd64-arm64-rocm-llvm-8e2801d0c140": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rocm-llvm/6.4.3+dfsg-1~exp3/+build/31323105",
+    "chroot_sha1": "3be416ee838c33eb1dcf74ab1ba394c15504e292",
+    "kernel": "Linux bos03-arm64-106 6.8.0-84-generic #84-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  5 13:42:30 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "258~757~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "258~757~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-amd64-arm64-xmbmon-ad2ecb4e1183": {
+    "build_url": "https://launchpad.net/ubuntu/+source/xmbmon/2.05-11/+build/31110163",
+    "chroot_sha1": "3be416ee838c33eb1dcf74ab1ba394c15504e292",
+    "kernel": "Linux bos03-arm64-032 6.8.0-71-generic #71-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 16:44:45 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-arm64-amd64-inetutils-4a8b233bde7d": {
+    "build_url": "https://launchpad.net/ubuntu/+source/inetutils/2:2.6-1ubuntu2/+build/31132087",
+    "chroot_sha1": "4a6de228f9ea7c2899b0f58b9653d8999d395b5a",
+    "kernel": "Linux lcy02-amd64-093 6.8.0-71-generic #71-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 16:52:38 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "257~746~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "257~746~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-arm64-amd64-jsonnet-81bc3ec2306c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/jsonnet/0.20.0+ds-3.1/+build/30989124",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-114 6.8.0-63-generic #66-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 13 20:25:30 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-arm64-amd64-ktorrent-2fd1a05c0635": {
+    "build_url": "https://launchpad.net/ubuntu/+source/ktorrent/25.07.80-0ubuntu1/+build/31003794",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-112 6.8.0-63-generic #66-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 13 20:25:30 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "256~740~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "256~740~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-questing-arm64-amd64-libkcddb-c1c0a8830320": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libkcddb/4:25.04.0-0ubuntu1/+build/30664509",
+    "chroot_sha1": "1eccb0bddc167bde59778deb25cf71fc252556b3",
+    "kernel": "Linux lcy02-amd64-080 6.8.0-58-generic #60-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 14 18:29:48 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.1",
+      "git": "1:2.43.0-1ubuntu7.2",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "254~735~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "254~735~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.1"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-asmixer-f901ce1ff1a4": {
+    "build_url": "https://launchpad.net/ubuntu/+source/asmixer/0.5-19/+build/31555699",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-081 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 00:59:18 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-debugedit-dd6b18a03257": {
+    "build_url": "https://launchpad.net/ubuntu/+source/debugedit/1:5.3-1/+build/32370797",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-038 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-drawterm-dc4b454175ea": {
+    "build_url": "https://launchpad.net/ubuntu/+source/drawterm/20240821-0.1/+build/32132249",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-101 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-efibootmgr-31ac9a9f7d3c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/efibootmgr/18-2ubuntu2/+build/31498777",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-108 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 00:59:18 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~770~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~770~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-gcc-mingw-w64-b0ed8efd1dee": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gcc-mingw-w64/28.3/+build/32198704",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-090 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-gir2pas-069f38ecdb7b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gir2pas/0.1.0-3/+build/32357133",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-090 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-gtk3bindings-fa3384ba04fa": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gtk3bindings/0.1.0-3/+build/32335343",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-105 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-gvars3-656b963bbbff": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gvars3/0.0~git20220105194034.62f5a78-4.1build3/+build/31573076",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-101 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-hippomocks-f6b540954c90": {
+    "build_url": "https://launchpad.net/ubuntu/+source/hippomocks/5.0-2build1/+build/31573284",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-115 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-html-xml-utils-fe68b3f14b84": {
+    "build_url": "https://launchpad.net/ubuntu/+source/html-xml-utils/7.7-1.2/+build/32101860",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-036 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 13:53:54 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-lib1305-25c2912a1564": {
+    "build_url": "https://launchpad.net/ubuntu/+source/lib1305/0~20250415-3ubuntu1/+build/31598048",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-110 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-libelas-8f3152c7b0d2": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libelas/20150630-1build1/+build/31571545",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-099 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-libsieve-3aad69166304": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libsieve/2.2.6-7/+build/31541187",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-034 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 00:59:18 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-lua-struct-ea961448ac64": {
+    "build_url": "https://launchpad.net/ubuntu/+source/lua-struct/0.3-2/+build/31376420",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-118 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/qmidiarp/0.7.2+ds-1/+build/32089135",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-083 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 13:53:54 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rapmap-7cdd6f2b0223": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rapmap/0.15.0+dfsg-5/+build/31428567",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-048 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rust-framework-lib-bfc5c15730b4": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-framework-lib/0.6.1-1/+build/32708843",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-019 6.8.0-106-generic #106-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar  6 07:44:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rust-hamming-rs-d570e1d85c81": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-hamming-rs/0.2.23-1/+build/31438235",
+    "chroot_sha1": "0b835dee87320958c942437b3bc9a80a069568ec",
+    "kernel": "Linux bos03-arm64-117 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:16:38 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~770~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~770~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rust-hexyl-0956671a0751": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-hexyl/0.16.0-3/+build/32154138",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-075 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 13:53:54 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~781~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~781~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rust-landlock-48768e1f75d5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-landlock/0.4.3-1/+build/31438340",
+    "chroot_sha1": "0b835dee87320958c942437b3bc9a80a069568ec",
+    "kernel": "Linux bos03-arm64-056 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:16:38 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~770~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~770~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rust-mach-o-sys-143eb83d8722": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rust-mach-o-sys/0.1.1-3build1/+build/31546760",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-004 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-rxtx-20f5fb7e3e1c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/rxtx/2.2.0+dfsg-2ubuntu3/+build/32126814",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-034 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-sdpa-be248a545b17": {
+    "build_url": "https://launchpad.net/ubuntu/+source/sdpa/7.3.20-1/+build/32102125",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-012 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 13:53:54 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-simavr-a0f28da42cb8": {
+    "build_url": "https://launchpad.net/ubuntu/+source/simavr/1.6+dfsg-3build3/+build/32127196",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-081 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-sphde-591617b87ae9": {
+    "build_url": "https://launchpad.net/ubuntu/+source/sphde/1.4.0-5.1build2/+build/32127418",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-073 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  6 20:07:40 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-tasmanian-5672de5a510b": {
+    "build_url": "https://launchpad.net/ubuntu/+source/tasmanian/8.2-2/+build/32146161",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-027 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 13:53:54 UTC 2025 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~781~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~781~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-amd64-arm64-xsimd-d8f9ebb3c889": {
+    "build_url": "https://launchpad.net/ubuntu/+source/xsimd/14.0.0-2ubuntu1/+build/32268772",
+    "chroot_sha1": "c1bc441a25a33325723bdca86c08aca485c49ca6",
+    "kernel": "Linux bos03-arm64-070 6.8.0-100-generic #100-Ubuntu SMP PREEMPT_DYNAMIC Tue Jan 13 16:39:21 UTC 2026 aarch64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6": {
+    "build_url": "https://launchpad.net/ubuntu/+source/dnscap/2.5.1-1/+build/32194866",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-039 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 14:14:30 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-gdb-mingw-w64-3586e57f81c1": {
+    "build_url": "https://launchpad.net/ubuntu/+source/gdb-mingw-w64/13.1ubuntu2/+build/32186121",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-111 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Mon Feb  9 10:15:05 UTC 2026 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-golang-github-containers-storage-be92af2ba501": {
+    "build_url": "https://launchpad.net/ubuntu/+source/golang-github-containers-storage/1.61.0+ds1-4/+build/31539881",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-082 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 01:02:46 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-hiprand-5c5025feac2e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/hiprand/6.4.3-1~exp1/+build/32221500",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-089 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 14:14:30 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-libleidenalg-b7e7ea2e32e7": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libleidenalg/0.12.0-1/+build/31420594",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-090 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 01:02:46 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-libselinux-0960c210997c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libselinux/3.9-3/+build/31514855",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-081 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 01:02:46 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~770~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~770~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-libzmf-238041c6f9fb": {
+    "build_url": "https://launchpad.net/ubuntu/+source/libzmf/0.0.2-2build1/+build/31550517",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-061 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 01:02:46 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-plank-4350740e505f": {
+    "build_url": "https://launchpad.net/ubuntu/+source/plank/0.11.89-6ubuntu2/+build/32264232",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-069 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Mon Feb  9 10:15:05 UTC 2026 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-pybigwig-56ac842288ce": {
+    "build_url": "https://launchpad.net/ubuntu/+source/pybigwig/0.3.23+dfsg-1build6/+build/31541676",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-082 6.8.0-88-generic #89-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 01:02:46 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-python-cython-blis-fedd35dc0412": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-cython-blis/1.0.0-2build1/+build/31387641",
+    "chroot_sha1": "4ba4f6eb9afa30dc733c9be87c00db804e182ed5",
+    "kernel": "Linux lcy02-amd64-054 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~770~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~770~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-python-ptrace-537f421ab7ca": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-ptrace/0.9.9-0.2build1/+build/31378123",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-016 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 14:14:30 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~778~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~778~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-python-pyinstrument-b6735db865a5": {
+    "build_url": "https://launchpad.net/ubuntu/+source/python-pyinstrument/5.1.1+ds-1/+build/31493741",
+    "chroot_sha1": "4ba4f6eb9afa30dc733c9be87c00db804e182ed5",
+    "kernel": "Linux lcy02-amd64-072 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~770~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~770~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-reglookup-4c55bf6d09d3": {
+    "build_url": "https://launchpad.net/ubuntu/+source/reglookup/1.0.1+svn296-2/+build/31428773",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-115 6.8.0-101-generic #101-Ubuntu SMP PREEMPT_DYNAMIC Mon Feb  9 10:15:05 UTC 2026 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-sbsigntool-8ed9cb6df61e": {
+    "build_url": "https://launchpad.net/ubuntu/+source/sbsigntool/0.9.4-3.1ubuntu8/+build/31545143",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-114 6.8.0-100-generic #100-Ubuntu SMP PREEMPT_DYNAMIC Tue Jan 13 16:40:06 UTC 2026 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "260~782~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "260~782~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  },
+  "launchpad-resolute-arm64-amd64-taffybar-7802df393a0c": {
+    "build_url": "https://launchpad.net/ubuntu/+source/taffybar/4.1.1-1ubuntu3/+build/32376612",
+    "chroot_sha1": "3c3837878f5a0ca9e60b40771fb82f36a8576f86",
+    "kernel": "Linux lcy02-amd64-063 6.8.0-107-generic #107-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 13 19:51:50 UTC 2026 x86_64",
+    "toolchain": {
+      "dpkg-dev": "1.22.6ubuntu6.5",
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-build-recipe": "0.3.7",
+      "launchpad-buildd": "261~786~ubuntu24.04.1",
+      "python3-debian": "0.1.49ubuntu2",
+      "python3-lpbuildd": "261~786~ubuntu24.04.1",
+      "sbuild": "0.85.10ubuntu0.2"
+    }
+  }
+}
