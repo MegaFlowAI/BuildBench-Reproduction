@@ -3,16 +3,34 @@ set -eu
 export DEBIAN_FRONTEND=noninteractive LC_ALL=C.UTF-8
 mkdir -p /var/lib/dpkg/info /var/lib/dpkg/updates /var/lib/dpkg/alternatives /var/log
 touch /var/lib/dpkg/status
-if ! dpkg --force-depends --force-confnew --install /tmp/pool/*.deb >/tmp/install.log 2>&1; then
-    dpkg --configure -a >>/tmp/install.log 2>&1 || true
-    if ! dpkg --force-depends --force-confnew --install /tmp/pool/*.deb >>/tmp/install.log 2>&1; then
-        tail -100 /tmp/install.log
-        exit 1
-    fi
+
+# 1) unpack everything first (no maintainer scripts run)
+if ! dpkg --force-depends --force-confnew --unpack /tmp/pool/*.deb >/tmp/install.log 2>&1; then
+    echo "=== dpkg --unpack tail ==="
+    tail -60 /tmp/install.log
+    exit 1
 fi
-dpkg --configure -a
-dpkg --audit >/tmp/audit
-test ! -s /tmp/audit || { cat /tmp/audit; exit 1; }
+
+# 2) neutralise maintainer scripts that cannot run in a bare container root.
+#    usrmerge's postinst tries to migrate /bin -> /usr/bin; our bootstrap root is
+#    already merged-usr, so mark it done instead of letting the migration fail.
+for script in usrmerge.postinst usr-is-merged.postinst; do
+    path="/var/lib/dpkg/info/$script"
+    if [ -e "$path" ]; then
+        printf '#!/bin/sh\nexit 0\n' > "$path"
+        chmod 0755 "$path"
+        echo "neutralised $script"
+    fi
+done
+
+# 3) configure everything
+if ! dpkg --force-depends --force-confnew --configure -a >/tmp/configure.log 2>&1; then
+    echo "=== dpkg --configure -a failed (tail) ==="
+    tail -80 /tmp/configure.log
+    exit 1
+fi
+dpkg --audit >/tmp/audit || true
+test ! -s /tmp/audit || { echo '=== dpkg --audit ==='; cat /tmp/audit; exit 1; }
 dpkg-query -W -f='${Package}\t${Version}\n' >/tmp/actual.tsv
 awk -F '\t' '
 FNR == NR { expected[$1] = $2; next }
