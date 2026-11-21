@@ -17,11 +17,14 @@ FAILURE = re.compile(
     r"^(?:mv: cannot stat|rmdir: failed to remove|chmod: cannot access) .*: No such file or directory$|"
     r"^/usr/share/cargo/bin/dh-cargo-built-using: abort: |"
     r"^E: pybuild .*: configure: plugin pyproject failed with: |"
-    r"^objcopy: .*: file format not recognized$|^Compiled library .* makes inconsistent assumptions over library ",
+    r"^objcopy: .*: file format not recognized$|^Compiled library .* makes inconsistent assumptions over library |"
+    r"^/bin/sh: \d+: (?:cannot create .*: Directory nonexistent|cd: can.t cd to \S+)$|"
+    r"^tar: .*: Cannot open: No such file or directory$|"
+    r"^not ok \d+ - (?!.*#\s*TODO\b).+|^#\s+(?:got|expected):",
     re.I,
 )
 WRAPPER = re.compile(r"^(?:dpkg-buildpackage:|dh_.*returned exit code|make(?:\[\d+\])?:)")
-CMAKE_ERROR = re.compile(r"^CMake Error(?: at |:)")
+CMAKE_ERROR = re.compile(r"^CMake Error(?: (?:at|in) |:)")
 MAKE_FAILURE = re.compile(r"^make(?:\[\d+\])?: .*?(?:Illegal instruction \(core dumped\)|: No such file or directory)$")
 CONTROL = {
     "launchpad-questing-amd64-arm64-golf-baef926efdc3": (
@@ -29,6 +32,18 @@ CONTROL = {
     ),
     "launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5": (
         "undefined reference", "__wrap_RAND_bytes",
+    ),
+}
+CASE_DIAGNOSTICS = {
+    "launchpad-plucky-amd64-arm64-efitools-faf68620bf82": re.compile(
+        r"^Invalid DOS header magic$|^make\[1\]: \*\*\* \[Make.rules:\d+: HelloWorld-signed.efi\] Error 1$"
+    ),
+    "launchpad-jammy-arm64-amd64-pyml-d615cc69fb95": re.compile(
+        r"^Test '.*' \.\.\.(?: passed)?$|^make\[1\]: \*\*\* \[debian/rules:\d+: override_dh_auto_test\] Error 1$"
+    ),
+    "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6": re.compile(
+        r"^See plugins/[^/ ]+/test-suite.log for debugging\.$|^ln: .+|"
+        r"^dh_auto_test: error: .+ returned exit code \d+$"
     ),
 }
 LIBYUV = "launchpad-oracular-amd64-arm64-libyuv-91738d032815"
@@ -54,8 +69,9 @@ def normalize(line):
     return " ".join(line.split())
 
 
-def fingerprints(path, start):
+def fingerprints(path, start, *, case_id=None):
     found = collections.Counter()
+    case_diagnostics = CASE_DIAGNOSTICS.get(case_id)
     active = start is None
     cmake = []
     cmake_size = 0
@@ -83,8 +99,13 @@ def fingerprints(path, start):
                     cmake = [line]
                     cmake_size = len(line)
                 continue
-            if len(line) <= 2500 and (
-                    MAKE_FAILURE.fullmatch(line) or (FAILURE.search(line) and not WRAPPER.search(line))):
+            if len(line) > 2500:
+                continue
+            if case_diagnostics and case_diagnostics.search(line):
+                found[normalize(line)] += 1
+            elif case_id == "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6" and AUTOMAKE_SUMMARY.fullmatch(line):
+                continue
+            elif MAKE_FAILURE.fullmatch(line) or (FAILURE.search(line) and not WRAPPER.search(line)):
                 found[normalize(line)] += 1
     if len(cmake) > 1:
         found[normalize(" ".join(cmake))] += 1
@@ -194,13 +215,13 @@ def compare(case_id, reference, replay, status, idle):
             return "matched", result
         return "test_summary_mismatch", result
 
-    historical = fingerprints(reference, "dpkg-buildpackage:")
+    historical = fingerprints(reference, "dpkg-buildpackage:", case_id=case_id)
     if not historical:
-        historical = fingerprints(reference, None)
+        historical = fingerprints(reference, None, case_id=case_id)
         mode = "whole-log"
     else:
         mode = "section"
-    actual = fingerprints(replay, "BUILD_BENCH_BUILD_STARTED")
+    actual = fingerprints(replay, "BUILD_BENCH_BUILD_STARTED", case_id=case_id)
     if case_id in CONTROL:
         mode = "control"
         required = CONTROL[case_id]
