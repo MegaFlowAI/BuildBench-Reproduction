@@ -8,3 +8,7 @@
 在 **Actions → BuildBench frozen baselines** 输入一个已发布的 case ID、逗号分隔的列表、`arm64`、`amd64` 或 `all`。作业摘要显示判定，附件保留真实构建日志、退出码和阶段事件。
 
 活动依赖池沿用服务器冻结清单。额外找到的历史版本放在归档中的 `dependencies/historical-alternatives/`，供后续显式选择。每例的 `checksums/frozen-environment.json` 记录历史包版本与活动依赖池的差异。
+
+[补回的历史依赖](../cases/recovered-packages.json)列出 Release 中额外发布的 ARM64 `libjpeg-dev` 历史包、原始下载地址、SHA256 和所涉及的 9 个用例。现有归档和回放仍使用各自锁定的依赖。补回版本对历史失败的影响需要单独构建验证。
+
+官方 200 份日志都记录了构建阶段失败，并引用了 22 个不同的 Launchpad chroot SHA-1。当前仓库的运行时来自已保存的 OBS Validator 镜像。逐字节比对会保留 Launchpad 日志中的构建机、时间和调度器输出，供核验这些环境差异。
