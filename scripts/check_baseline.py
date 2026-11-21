@@ -33,6 +33,7 @@ def fingerprints(path, start):
                 active = True
             if not active or len(line) > 2500 or not FAILURE.search(line) or WRAPPER.search(line):
                 continue
+            line = line.translate(str.maketrans({chr(8216): chr(39), chr(8217): chr(39), chr(96): chr(39)}))
             line = line.replace("/work/source", "<source>").replace("/<<PKGBUILDDIR>>", "<source>")
             line = re.sub(r"/tmp/[^ /'\x22]+", "/tmp/<temp>", line)
             line = re.sub(r"\b0x[0-9a-f]+\b", "<address>", line)

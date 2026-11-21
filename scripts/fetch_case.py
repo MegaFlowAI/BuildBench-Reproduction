@@ -15,7 +15,7 @@ case_id, arch, target = sys.argv[1:]
 target = Path(target)
 target.mkdir(parents=True, exist_ok=True)
 archive = target / ARCHIVE
-subprocess.run(["curl", "-fSL", "--retry", "3", "--max-time", "600",
+subprocess.run(["curl", "-fsSL", "--retry", "3", "--max-time", "600",
                 f"{RELEASE}/{ARCHIVE}", "-o", archive], check=True)
 with archive.open("rb") as handle:
     if hashlib.file_digest(handle, "sha256").hexdigest() != SHA256:
