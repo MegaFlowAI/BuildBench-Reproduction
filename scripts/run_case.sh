@@ -6,6 +6,16 @@ work=$2
 patch_file=${3:-}
 mkdir -p "$work/evidence"
 
+stage=runner_setup
+record_incomplete_stage() {
+    local code=$?
+    if [[ "$code" -ne 0 && ! -f "$work/evidence/baseline-result.json" ]]; then
+        jq -n --arg case "$case_id" --arg stage "$stage" --argjson code "$code" \
+            '{case:$case, status:$stage, exit:$code}' > "$work/evidence/baseline-result.json"
+    fi
+}
+trap record_incomplete_stage EXIT
+
 python3 - "$case_id" "$work/config.json" <<'PY'
 import json
 import sys
@@ -24,12 +34,19 @@ env_cpus=$(jq -r '.env.cpus // empty' "$work/config.json")
 env_cpuset=$(jq -r '.env.cpuset // empty' "$work/config.json")
 env_user=$(jq -r '.env.user // empty' "$work/config.json")
 env_attempts=$(jq -r '.env.attempts // 1' "$work/config.json")
-env_timeout=$(jq -r '.env.timeout // 7200' "$work/config.json")
+env_timeout=$(jq -r '.env.timeout // empty' "$work/config.json")
 mapfile -t env_vars < <(jq -r '(.env.vars // {}) | to_entries[] | "\(.key)=\(.value)"' "$work/config.json")
 echo "case env: nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} attempts=$env_attempts vars=${env_vars[*]:-none}"
 
+stage=source_fetch_failed
 python3 scripts/fetch_case.py "$case_id" "$arch" "$work/official"
+reference="$work/official/logs/target-failure.log"
+if [[ -z "$env_timeout" ]]; then
+    env_timeout=$(python3 scripts/run_baseline.py --default-timeout "$reference")
+fi
+stage=dependency_resolution_failed
 python3 scripts/prepare_environment.py "$work/config.json" "$work/environment" "$work/evidence/dependencies.json"
+stage=environment_install_failed
 docker build --network none -f "$work/environment/environment.Dockerfile" \
     --tag "buildbench-case:$case_id" "$work/environment" > "$work/evidence/environment.log" 2>&1 || {
     tail -200 "$work/evidence/environment.log"
@@ -61,14 +78,14 @@ run_build() {
     if [[ -n "$env_user" ]]; then userns="$env_user"; fi
     local -a command=(
         timeout --signal=KILL "$env_timeout"
-        docker run --rm --name "$container" --network none --cap-drop ALL --security-opt no-new-privileges
+        docker run --rm --init --name "$container" --network none --cap-drop ALL --security-opt no-new-privileges
         --user "$userns" "${limits[@]}" "${extra_env[@]}"
         --mount "type=bind,src=$work/official/source/input,dst=/input,readonly"
         --mount "type=bind,src=$work/$label,dst=/work" "${mounts[@]}"
         "buildbench-case:$case_id" /bin/sh /usr/local/bin/build-case "$mode" "$options"
     )
     if [[ "$label" == baseline* ]]; then
-        python3 scripts/run_baseline.py "$work/official/logs/target-failure.log" \
+        python3 scripts/run_baseline.py "$reference" \
             "$work/evidence/$label.log" "$work/evidence/$label-idle-timeout.json" "$container" "${command[@]}" || code=$?
     else
         "${command[@]}" > "$work/evidence/$label.log" 2>&1 || code=$?
@@ -79,6 +96,7 @@ run_build() {
     return "$code"
 }
 
+stage=baseline_incomplete
 attempt=1
 while :; do
     label="baseline"
@@ -88,11 +106,10 @@ while :; do
     rc=$?
     set -e
     idle="$work/evidence/$label-idle-timeout.json"
-    if [[ -s "$idle" ]]; then
-        cp "$idle" "$work/evidence/idle-timeout.json"
-    fi
-    if python3 scripts/check_baseline.py "$case_id" "$work/official/logs/target-failure.log" \
-        "$work/evidence/$label.log" "$rc" >&2; then
+    verdict="$work/evidence/$label-verdict.json"
+    if python3 scripts/check_baseline.py "$case_id" "$reference" \
+        "$work/evidence/$label.log" "$rc" "$idle" "$verdict" >&2; then
+        cp "$verdict" "$work/evidence/baseline-result.json"
         echo "Baseline matched on attempt $attempt"
         if [[ "$label" != "baseline" ]]; then
             cp "$work/evidence/$label.log" "$work/evidence/baseline.log"
@@ -100,6 +117,7 @@ while :; do
         fi
         break
     fi
+    cp "$verdict" "$work/evidence/baseline-result.json"
     attempt=$((attempt + 1))
     if [[ "$attempt" -gt "$env_attempts" ]]; then
         echo "Baseline did not match after $env_attempts attempts"

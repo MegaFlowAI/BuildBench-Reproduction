@@ -19,6 +19,11 @@ def historical_limit(reference):
 
 
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "--default-timeout":
+        limit = historical_limit(sys.argv[2])
+        print(7200 if limit is None else max(7200, limit + 7200))
+        return 0
+
     reference, logfile, evidence, container, *command = sys.argv[1:]
     limit = historical_limit(reference)
     with Path(logfile).open("wb") as destination:
@@ -37,7 +42,12 @@ def main():
                 with Path(logfile).open("rb") as log:
                     if not any(line.startswith(b"BUILD_BENCH_BUILD_STARTED") for line in log):
                         continue
-                subprocess.run(["docker", "stop", "--time", "10", container], check=True)
+                try:
+                    subprocess.run(["docker", "stop", "--signal", "TERM", "--time", "10", container], check=True)
+                except subprocess.CalledProcessError:
+                    if process.poll() is None:
+                        raise
+                    return process.returncode
                 code = process.wait()
                 Path(evidence).write_text(json.dumps({
                     "seconds_without_output": round(now - last_write, 3),

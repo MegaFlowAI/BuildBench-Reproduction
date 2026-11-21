@@ -23,7 +23,8 @@ CONTROL = {
         "undefined reference", "__wrap_RAND_bytes",
     ),
 }
-PID = re.compile(r"(?<=[: ])\d{2,}(?= (?:Segmentation fault|Terminated|Killed|Aborted))")
+STARTED = b"BUILD_BENCH_BUILD_STARTED"
+EXIT = b"BUILD_BENCH_BUILD_EXIT="
 
 
 def normalize(line):
@@ -54,16 +55,36 @@ def fingerprints(path, start):
     return found
 
 
-def main():
-    case_id, reference, replay, status = sys.argv[1:]
-    if status == "0":
-        raise SystemExit("Baseline built successfully. Patch validation is gated.")
-    idle = Path(replay).with_name("idle-timeout.json")
+def build_events(log):
+    started = 0
+    exits = []
+    with Path(log).open("rb") as handle:
+        for chunk in iter(lambda: handle.readline(262144), b""):
+            line = chunk.rstrip(b"\r\n")
+            if line == STARTED:
+                started += 1
+            elif line.startswith(EXIT):
+                exits.append(line[len(EXIT):])
+    return started, exits
+
+
+def compare(case_id, reference, replay, status, idle):
+    try:
+        code = int(status)
+    except ValueError:
+        return "invalid_status", {"exit": status}
+    started, exits = build_events(replay)
+    if started != 1:
+        return "build_start_unconfirmed", {"exit": code, "start_markers": started}
+
+    limit = historical_limit(reference)
     if idle.is_file():
         evidence = json.loads(idle.read_text())
-        limit = historical_limit(reference)
-        if limit != evidence["historical_limit_seconds"] or evidence["seconds_without_output"] < limit:
-            raise SystemExit("Historical idle threshold did not match")
+        if (limit is None or limit != evidence["historical_limit_seconds"] or
+                evidence["seconds_without_output"] < limit or evidence["container_exit"] != code or
+                code != 143 or exits):
+            return "idle_termination_unconfirmed", {"exit": code, "idle": evidence}
+
         def last_lines(path):
             tail = collections.deque(maxlen=3)
             with Path(path).open("rb") as handle:
@@ -72,17 +93,21 @@ def main():
                     if TIMEOUT.match(line):
                         break
                     if line:
-                        tail.append(" ".join(line.split()))
+                        tail.append(normalize(line))
             return tail
 
-        if last_lines(reference) != last_lines(replay):
-            raise SystemExit("Last three lines before silence did not match")
-        print(f"Baseline matched historical failure after {limit} seconds of inactivity")
-        return
-    with Path(replay).open("rb") as handle:
-        marker = f"BUILD_BENCH_BUILD_EXIT={status}".encode()
-        if not any(line.strip() == marker for line in iter(lambda: handle.readline(262144), b"")):
-            raise SystemExit("No original package exit evidence. Patch validation is gated.")
+        historical_tail = list(last_lines(reference))
+        actual_tail = list(last_lines(replay))
+        if len(historical_tail) != 3 or historical_tail != actual_tail:
+            return "idle_tail_mismatch", {"historical_tail": historical_tail, "actual_tail": actual_tail}
+        return "matched", {"kind": "idle_timeout", "exit": code, "idle": evidence, "tail": actual_tail}
+
+    if exits != [str(code).encode()] or not 0 <= code <= 255:
+        return "package_exit_unconfirmed", {"exit": code}
+    if code == 0:
+        return "baseline_success", {"exit": code}
+    if limit is not None:
+        return "expected_idle_timeout", {"exit": code, "historical_limit_seconds": limit}
     historical = fingerprints(reference, "dpkg-buildpackage:")
     if not historical:
         historical = fingerprints(reference, None)
@@ -91,21 +116,32 @@ def main():
         mode = "section"
     actual = fingerprints(replay, "BUILD_BENCH_BUILD_STARTED")
     if case_id in CONTROL:
+        mode = "control"
         required = CONTROL[case_id]
         historical = collections.Counter({k: v for k, v in historical.items() if all(s in k for s in required)})
         actual = collections.Counter({k: v for k, v in actual.items() if all(s in k for s in required)})
-    if historical and historical == actual:
-        print(f"Baseline diagnostic match ({mode}): {sum(historical.values())} lines")
-        return
+    result = {"exit": code, "kind": mode, "diagnostic_count": sum(historical.values())}
     if not historical:
-        if not actual:
-            raise SystemExit("No failure diagnostics extracted from either log. Patch validation is gated.")
-        print("Historical diagnostics not extractable; falling back to exit+diagnostic gate")
-        print(f"Replay diagnostics: {sum(actual.values())} lines")
-        return
-    print("Missing diagnostics:", historical - actual)
-    print("Additional diagnostics:", actual - historical)
-    raise SystemExit("Baseline failure did not match the reference. Patch validation is gated.")
+        result["actual_count"] = sum(actual.values())
+        return "historical_diagnostics_missing", result
+    if historical == actual:
+        return "matched", result
+    result["missing"] = dict(historical - actual)
+    result["additional"] = dict(actual - historical)
+    return "diagnostic_mismatch", result
+
+
+def main():
+    case_id, reference, replay, code, idle, verdict_file = sys.argv[1:]
+    status, details = compare(case_id, reference, replay, code, Path(idle))
+    verdict = {"case": case_id, "status": status, **details}
+    Path(verdict_file).write_text(json.dumps(verdict, indent=2) + "\n", encoding="utf-8")
+    print(f"Baseline verdict: {status} ({details.get('kind', 'build')})")
+    for key in ("missing", "additional"):
+        if details.get(key):
+            lines = list(details[key].items())
+            print(f"{key} diagnostics ({len(lines)} unique): {lines[:12]}")
+    return 0 if status == "matched" else 1
 
 
 if __name__ == "__main__":

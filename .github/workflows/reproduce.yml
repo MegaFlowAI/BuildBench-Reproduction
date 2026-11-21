@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       selection:
-        description: "Case ID, pilot, pending, arm64, amd64, or all"
+        description: "Case ID, comma-separated IDs, pilot, pending, arm64, amd64, or all"
         default: pending
         required: true
       patch_pr:
@@ -30,7 +30,8 @@ jobs:
           set -euo pipefail
           matrix=$(python3 scripts/select_cases.py "$SELECTION")
           if [[ -n "$PATCH_PR" ]]; then
-            [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ && "$SELECTION" == launchpad-* ]]
+            [[ "$GITHUB_REF" == refs/heads/main && "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
+            jq -e --arg case "$SELECTION" '.include | length == 1 and .[0].case == $case' <<< "$matrix"
           fi
           printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
   build:
@@ -48,6 +49,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
       - name: Run the original build and optionally validate a patch
         env:
           WORK: ${{ runner.temp }}/buildbench-work
@@ -57,11 +59,16 @@ jobs:
           mkdir -p "$WORK/evidence"
           if [[ -n "$PATCH_PR" ]]; then
             [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
-            git fetch --no-tags --depth=1 origin "refs/pull/$PATCH_PR/head"
+            git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
             sha=$(git rev-parse FETCH_HEAD)
             patch_path="submissions/$CASE_ID/change.patch"
+            changed=$(git diff --no-renames --name-only "HEAD...$sha")
+            if [[ "$changed" != "$patch_path" ]]; then
+              echo "The PR must change only $patch_path"
+              exit 1
+            fi
             patch="$WORK/change.patch"
-            test "$(git cat-file -t "$sha:$patch_path")" = blob
+            test "$(git ls-tree "$sha" -- "$patch_path" | cut -d ' ' -f 1)" = 100644
             git show "$sha:$patch_path" > "$patch"
             test -s "$patch"
             test "$(wc -c < "$patch")" -le 1048576
