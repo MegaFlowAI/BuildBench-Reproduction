@@ -49,6 +49,16 @@ env_timeout=$(jq -r '.env.timeout // empty' "$work/config.json")
 mapfile -t env_vars < <(jq -r '(.env.vars // {}) | to_entries[] | "\(.key)=\(.value)"' "$work/config.json")
 echo "case env: variant=${variant:-default} memory=${env_memory:-default} nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} mask_cpu_cache=$env_mask_cache attempts=$env_attempts vars=${env_vars[*]:-none}"
 
+run_with_log() {
+    local logfile=$1
+    shift
+    if [[ "${BUILDBENCH_LIVE_LOGS:-0}" == 1 ]]; then
+        "$@" 2>&1 | tee "$logfile"
+    else
+        "$@" > "$logfile" 2>&1
+    fi
+}
+
 reference="$work/official/logs/target-failure.log"
 if [[ "${BUILDBENCH_ENVIRONMENT_PREPARED:-0}" != 1 ]]; then
     stage=source_fetch_failed
@@ -61,9 +71,10 @@ if [[ "${BUILDBENCH_ENVIRONMENT_PREPARED:-0}" != 1 ]]; then
         "$work/config.json" "$work/environment" "$work/evidence/dependencies.json"
     stage=environment_install_failed
     echo "Installing historical dependencies"
-    docker build --network none -f "$work/environment/environment.Dockerfile" \
-        --tag "buildbench-case:$case_id" "$work/environment" > "$work/evidence/environment.log" 2>&1 || {
-        tail -200 "$work/evidence/environment.log"
+    run_with_log "$work/evidence/environment.log" docker build --progress=plain --network none \
+        -f "$work/environment/environment.Dockerfile" --tag "buildbench-case:$case_id" \
+        "$work/environment" || {
+        if [[ "${BUILDBENCH_LIVE_LOGS:-0}" != 1 ]]; then tail -200 "$work/evidence/environment.log"; fi
         exit 1
     }
     if [[ "$urwid_test_order" == true ]]; then
@@ -133,7 +144,7 @@ run_build() {
         python3 scripts/run_baseline.py "$reference" \
             "$work/evidence/$label.log" "$work/evidence/$label-idle-timeout.json" "$container" "${command[@]}" || code=$?
     else
-        "${command[@]}" > "$work/evidence/$label.log" 2>&1 || code=$?
+        run_with_log "$work/evidence/$label.log" "${command[@]}" || code=$?
     fi
     printf '%s\n' "$code" > "$work/evidence/$label.exit"
     docker rm --force "$container" >/dev/null 2>&1 || true

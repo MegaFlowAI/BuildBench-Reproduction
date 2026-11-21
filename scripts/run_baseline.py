@@ -2,11 +2,14 @@
 """按官方日志记录的静默时限监控原始构建。"""
 import json
 import mmap
+import os
 import re
 import subprocess
 import sys
 import time
+from contextlib import contextmanager
 from pathlib import Path
+from threading import Event, Thread
 
 TIMEOUT = re.compile(r"^E: Build killed with signal TERM after (\d+) minutes of inactivity")
 
@@ -29,6 +32,38 @@ def historical_limit(reference):
     return None
 
 
+@contextmanager
+def mirror_log(path):
+    if os.environ.get("BUILDBENCH_LIVE_LOGS") != "1":
+        yield
+        return
+
+    finished = Event()
+
+    def follow():
+        with Path(path).open("rb", buffering=0) as log:
+            while True:
+                chunk = log.read(65536)
+                if chunk:
+                    sys.stdout.buffer.write(chunk)
+                    sys.stdout.buffer.flush()
+                elif finished.wait(0.25):
+                    # 最后一次读取覆盖进程退出和 EOF 之间写入的内容。
+                    chunk = log.read(65536)
+                    if not chunk:
+                        return
+                    sys.stdout.buffer.write(chunk)
+                    sys.stdout.buffer.flush()
+
+    thread = Thread(target=follow, daemon=True)
+    thread.start()
+    try:
+        yield
+    finally:
+        finished.set()
+        thread.join()
+
+
 def main():
     if len(sys.argv) == 3 and sys.argv[1] == "--default-timeout":
         limit = historical_limit(sys.argv[2])
@@ -37,7 +72,7 @@ def main():
 
     reference, logfile, evidence, container, *command = sys.argv[1:]
     limit = historical_limit(reference)
-    with Path(logfile).open("wb") as destination:
+    with Path(logfile).open("wb") as destination, mirror_log(logfile):
         process = subprocess.Popen(command, stdout=destination, stderr=subprocess.STDOUT)
         if limit is None:
             return process.wait()

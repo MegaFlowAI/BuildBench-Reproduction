@@ -18,6 +18,20 @@ Runner 按固定 SHA256 校验并提取官方源码归档，依照 `cases.json` 
 
 可对 `cases.json` 中已有 `variants` 的用例启用工作流的 `variants` 选项。每组条件运行相同的官方源码和版本冻结依赖，单独记录结果。Docker 的 CPU、内存和文件描述符限额在构建容器内生效。实验变体只运行原始构建，补丁验证使用经复验的默认条件。
 
+## 查看完整日志
+
+打开一次 Actions 运行的 Summary，在底部 Artifacts 下载 `evidence-<case-id>`。条件变体的附件名还带变体后缀。目前附件保留 7 天。
+
+- `baseline.log` 保存原始构建，`baseline-attempt-*.log` 保存重试输出。
+- `patched.log` 保存补丁验证。基线比对通过后才会执行补丁构建。
+- `environment.log` 保存冻结依赖镜像的构建输出，`baseline-result.json` 记录判定结果。
+
+手动运行工作流时勾选 `live_logs`，展开对应构建任务的步骤即可看到实时编译和测试输出。实时日志可能受 GitHub 的显示限制，完整文本可在任务结束后下载。
+
+```bash
+gh run download RUN_ID -R MegaFlowAI/BuildBench-Reproduction -n 'evidence-CASE_ID' -D evidence
+```
+
 ## 提交补丁
 
 1. 以 PR 提交 `submissions/<case-id>/change.patch`。此文件是相对于解包后的项目源码根目录的统一 diff，使用 `a/`、`b/` 路径前缀。PR 只允许改动所选用例的补丁文本。

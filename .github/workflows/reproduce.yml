@@ -15,6 +15,10 @@ on:
         description: "Run the selected cases' recorded environment variants"
         type: boolean
         default: false
+      live_logs:
+        description: "Show live compiler and test output in addition to artifacts"
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -51,6 +55,7 @@ jobs:
     env:
       CASE_ID: ${{ matrix.case }}
       VARIANT: ${{ matrix.variant }}
+      BUILDBENCH_LIVE_LOGS: ${{ inputs.live_logs && '1' || '0' }}
       PATCH_PR: ${{ inputs.patch_pr }}
     steps:
       - uses: actions/checkout@v4
@@ -61,7 +66,14 @@ jobs:
         env:
           WORK: ${{ runner.temp }}/buildbench-work
           BUILDBENCH_PREPARE_ONLY: "1"
-        run: bash scripts/run_case.sh "$CASE_ID" "$WORK" "" "$VARIANT"
+        run: |
+          set -euo pipefail
+          if [[ "$BUILDBENCH_LIVE_LOGS" == 1 ]]; then
+            token=$(cat /proc/sys/kernel/random/uuid)
+            printf '::stop-commands::%s\n' "$token"
+            trap 'printf "::%s::\n" "$token"' EXIT
+          fi
+          bash scripts/run_case.sh "$CASE_ID" "$WORK" "" "$VARIANT"
       - name: Run the original build and optionally validate a patch
         env:
           WORK: ${{ runner.temp }}/buildbench-work
@@ -87,6 +99,11 @@ jobs:
             test "$(wc -c < "$patch")" -le 1048576
             printf '%s\n' "$sha" > "$WORK/evidence/patch-commit.txt"
             sha256sum "$patch" > "$WORK/evidence/patch-sha256.txt"
+          fi
+          if [[ "$BUILDBENCH_LIVE_LOGS" == 1 ]]; then
+            token=$(cat /proc/sys/kernel/random/uuid)
+            printf '::stop-commands::%s\n' "$token"
+            trap 'printf "::%s::\n" "$token"' EXIT
           fi
           bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch" "$VARIANT"
       - uses: actions/upload-artifact@v4
