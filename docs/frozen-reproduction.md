@@ -16,3 +16,36 @@
 官方 200 份日志都记录了构建阶段失败，并引用了 22 个不同的 Launchpad chroot SHA-1。[历史构建机清单](../cases/historical-hosts.json)记录每例的原始构建链接、内核、chroot 和宿主侧工具版本。当前仓库的运行时来自已保存的 OBS Validator 镜像。逐字节比对会保留 Launchpad 日志中的构建机、时间和调度器输出，供核验这些环境差异。
 
 [原始 chroot 清单](../cases/launchpad-chroots.json)登记了 7 个通过历史 SHA-1 校验的 Launchpad 镜像，覆盖 100 例。[构建器源码清单](../cases/launchpad-builders.json)按官方工具包修订号定位了 191 例的上游提交。两个清单相交的 98 例可用 **BuildBench Launchpad builder replay** 验证。作业再次验证下载的 SHA-256 和日志记录的 SHA-1，安装所记录版本的 sbuild，以离线包索引提供冻结依赖。容器模式使用当前 GitHub Runner 的宿主内核，原始日志仍按整份字节比较。
+## Git 树和 Release 资产
+
+Git 树中的 `cases/<方向>/<case-id>` 保留可审查的元数据，包括 `case.json`、`README.md`、`manifest.json`、`config/`、`checksums/` 和归档的 `asset.json`。源码和依赖文件不通过 Git blob 分发。
+
+每个用例的完整 Release 资产使用相同的 case ID 命名。解包后的结构是：
+
+`@text
+<case-id>/
+├── case.json
+├── README.md
+├── manifest.json
+├── checksums/
+│   ├── source-input.sha256.json
+│   └── frozen-environment.json
+├── config/
+│   ├── *-buildconfig
+│   └── dependency-lock.json
+├── logs/target-failure.log
+├── source/input/                 # 官方 .dsc、debian.tar、orig.tar 和补丁输入
+└── dependencies/                 # dependency-lock.json 列出的实际 .deb
+    ├── ubuntu-<series>-<arch>/
+    └── ubuntu-<series>-all/
+`@
+
+`frozen-environment.json` 是来源摘要，不替代实际依赖。每个锁定包的文件名、版本、架构和 SHA256 在 `dependency-lock.json` 中，包本体在同一 Release 资产的 `dependencies/` 中。workflow 会先核验归档 SHA256，再逐个核验源码和包的 SHA256。
+
+完整资产下载示例：
+
+`@bash
+gh release download frozen-cases-v1 \
+  -R MegaFlowAI/BuildBench-Reproduction \
+  -p 'launchpad-noble-amd64-arm64-ectrans-50e45e72102d.tar.zst'
+`@
