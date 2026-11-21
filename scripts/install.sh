@@ -1,53 +1,56 @@
 #!/bin/sh
 set -eu
 export DEBIAN_FRONTEND=noninteractive LC_ALL=C.UTF-8
-mkdir -p /var/lib/dpkg/info /var/lib/dpkg/updates /var/lib/dpkg/alternatives /var/log
+mkdir -p /var/lib/dpkg/info /var/lib/dpkg/updates /var/lib/dpkg/alternatives /var/log /tmp/repack
 touch /var/lib/dpkg/status
 
-# 1) unpack packages one by one; if a maintainer preinst cannot run in the bare
-#    container root, neutralise that script and retry. Container builds do not
-#    need maintainer migrations (usrmerge, pam, ldconfig is run later).
-failed_pkgs=""
+# container builds do not need maintainer migrations; strip scripts that cannot run
+# in a bare root by repacking the .deb without them.
+strip_and_unpack() {
+    deb=$1
+    pkg=$(dpkg-deb -f "$deb" Package)
+    work=$(mktemp -d /tmp/repack/XXXXXX)
+    if ! dpkg-deb -R "$deb" "$work/root" >>/tmp/install.log 2>&1; then
+        echo "=== dpkg-deb -R failed for $deb ==="
+        return 1
+    fi
+    rm -f "$work/root/DEBIAN/preinst" "$work/root/DEBIAN/postinst" \
+          "$work/root/DEBIAN/prerm" "$work/root/DEBIAN/postrm"
+    chmod -R u+rwX "$work/root"
+    if ! dpkg-deb -b "$work/root" "$work/patched.deb" >>/tmp/install.log 2>&1; then
+        echo "=== dpkg-deb -b failed for $pkg ==="
+        return 1
+    fi
+    echo "repacked $pkg without maintainer scripts" >>/tmp/install.log
+    dpkg --force-depends --force-confnew --unpack "$work/patched.deb" >>/tmp/install.log 2>&1
+}
+
 for deb in $(ls /tmp/pool/*.deb | sort); do
     if dpkg --force-depends --force-confnew --unpack "$deb" >>/tmp/install.log 2>&1; then
         continue
     fi
     pkg=$(dpkg-deb -f "$deb" Package)
-    mkdir -p "/var/lib/dpkg/info"
-    printf '#!/bin/sh\nexit 0\n' > "/var/lib/dpkg/info/$pkg.preinst"
-    chmod 0755 "/var/lib/dpkg/info/$pkg.preinst"
-    echo "neutralised $pkg.preinst" >>/tmp/install.log
-    dpkg --force-depends --force-confnew --unpack "$deb" >>/tmp/install.log 2>&1 || {
+    echo "unpack failed for $deb, retrying without maintainer scripts"
+    if ! strip_and_unpack "$deb"; then
         echo "=== unpack failed for $deb ==="
-        grep -i "error\|warning" /tmp/install.log | tail -20
-        failed_pkgs="$failed_pkgs $pkg"
-    }
-done
-if [ -n "$failed_pkgs" ]; then
-    echo "=== unpack failures:$failed_pkgs ==="
-    exit 1
-fi
-
-# 2) neutralise postinst scripts that cannot run in a bare container root
-for script in usrmerge.postinst usr-is-merged.postinst; do
-    path="/var/lib/dpkg/info/$script"
-    if [ -e "$path" ]; then
-        printf '#!/bin/sh\nexit 0\n' > "$path"
-        chmod 0755 "$path"
-        echo "neutralised $script"
+        grep -i "error" /tmp/install.log | tail -20 || true
+        exit 1
     fi
 done
 
-# 3) configure everything (retry once with neutralised postinst on failure)
 if ! dpkg --force-depends --force-confnew --configure -a >/tmp/configure.log 2>&1; then
     echo "=== dpkg --configure -a failed; neutralising failing postinst ==="
     grep -i "error" /tmp/configure.log | tail -10 || true
-    awk '/^Setting up /{print $3}' /tmp/configure.log | tail -5 | while read -r pkg; do
+    awk '/^Setting up /{print $3}' /tmp/configure.log | tail -10 | while read -r pkg; do
         pkg=${pkg%%:*}
         [ -n "$pkg" ] || continue
-        printf '#!/bin/sh\nexit 0\n' > "/var/lib/dpkg/info/$pkg.postinst"
-        chmod 0755 "/var/lib/dpkg/info/$pkg.postinst"
-        echo "neutralised $pkg.postinst" >>/tmp/configure.log
+        file="/var/lib/dpkg/info/$pkg.postinst"
+        if [ -e "$file" ] && [ ! -e "$file.neutralised" ]; then
+            printf '#!/bin/sh\nexit 0\n' > "$file"
+            chmod 0755 "$file"
+            touch "$file.neutralised"
+            echo "neutralised $pkg.postinst" >>/tmp/configure.log
+        fi
     done
     if ! dpkg --force-depends --force-confnew --configure -a >>/tmp/configure.log 2>&1; then
         echo "=== dpkg --configure -a failed (tail) ==="
