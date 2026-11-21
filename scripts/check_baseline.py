@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """对比原始构建的失败诊断，缺少明确证据时拒绝进入补丁阶段。"""
 import collections
+import json
 import re
 import sys
 from pathlib import Path
+
+from run_baseline import TIMEOUT, historical_limit
 
 # 匹配失败阶段和明确诊断。编译命令、时间和最终 make 包装层单独保留在完整日志中。
 FAILURE = re.compile(
@@ -46,6 +49,27 @@ def main():
     case_id, reference, replay, status = sys.argv[1:]
     if status == "0":
         raise SystemExit("Baseline built successfully. Patch validation is gated.")
+    idle = Path(replay).with_name("idle-timeout.json")
+    if idle.is_file():
+        evidence = json.loads(idle.read_text())
+        limit = historical_limit(reference)
+        if limit != evidence["historical_limit_seconds"] or evidence["seconds_without_output"] < limit:
+            raise SystemExit("Historical idle threshold did not match")
+        def last_lines(path):
+            tail = collections.deque(maxlen=3)
+            with Path(path).open("rb") as handle:
+                for chunk in iter(lambda: handle.readline(262144), b""):
+                    line = chunk.decode("utf-8", "replace").strip()
+                    if TIMEOUT.match(line):
+                        break
+                    if line:
+                        tail.append(" ".join(line.split()))
+            return tail
+
+        if last_lines(reference) != last_lines(replay):
+            raise SystemExit("Last three lines before silence did not match")
+        print(f"Baseline matched historical failure after {limit} seconds of inactivity")
+        return
     with Path(replay).open("rb") as handle:
         marker = f"BUILD_BENCH_BUILD_EXIT={status}".encode()
         if not any(line.strip() == marker for line in iter(lambda: handle.readline(262144), b"")):

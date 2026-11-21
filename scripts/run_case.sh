@@ -38,11 +38,18 @@ run_build() {
     if [[ -n "$patch" ]]; then
         mounts+=(--mount "type=bind,src=$patch,dst=/input-patch/change.patch,readonly")
     fi
-    docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
-        --user buildd --mount "type=bind,src=$work/official/source/input,dst=/input,readonly" \
-        --mount "type=bind,src=$work/$label,dst=/work" "${mounts[@]}" \
-        "buildbench-case:$case_id" /bin/sh /usr/local/bin/build-case "$mode" "$options" \
-        > "$work/evidence/$label.log" 2>&1 || code=$?
+    local container="buildbench-$label-$case_id"
+    local -a command=(
+        docker run --rm --name "$container" --network none --cap-drop ALL --security-opt no-new-privileges
+        --user buildd --mount "type=bind,src=$work/official/source/input,dst=/input,readonly"
+        --mount "type=bind,src=$work/$label,dst=/work" "${mounts[@]}"
+        "buildbench-case:$case_id" /bin/sh /usr/local/bin/build-case "$mode" "$options"
+    )
+    if [[ "$label" == baseline ]]; then
+        python3 scripts/run_baseline.py "$work/official/logs/target-failure.log"             "$work/evidence/$label.log" "$work/evidence/idle-timeout.json" "$container" "${command[@]}" || code=$?
+    else
+        "${command[@]}" > "$work/evidence/$label.log" 2>&1 || code=$?
+    fi
     printf '%s\n' "$code" > "$work/evidence/$label.exit"
     printf '%s exit code: %s\n' "$label" "$code"
 }
