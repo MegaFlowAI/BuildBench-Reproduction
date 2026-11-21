@@ -59,7 +59,15 @@ python3 scripts/check_baseline.py "$case_id" "$work/official/logs/target-failure
     "$work/evidence/baseline.log" "$(cat "$work/evidence/baseline.exit")"
 if [[ -n "$patch_file" ]]; then
     run_build patched "$patch_file"
+    test "$(cat "$work/evidence/patched.exit")" -eq 0
     grep -qx 'BUILD_BENCH_BUILD_EXIT=0' "$work/evidence/patched.log"
-    find "$work/patched" -maxdepth 1 -type f -name '*.deb' -printf '%f\n' > "$work/evidence/binary-packages.txt"
+    find "$work/patched" -maxdepth 1 -type f -name '*.deb' -print0 |
+        while IFS= read -r -d '' binary; do
+            package_arch=$(dpkg-deb -f "$binary" Architecture)
+            if [[ "$package_arch" != "$arch" && "$package_arch" != all ]]; then
+                exit 1
+            fi
+            basename "$binary"
+        done > "$work/evidence/binary-packages.txt"
     test -s "$work/evidence/binary-packages.txt"
 fi
