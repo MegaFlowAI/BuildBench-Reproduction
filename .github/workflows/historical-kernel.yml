@@ -1,0 +1,56 @@
+name: Boot historical Launchpad kernels
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  boot:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+            case: launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+            case: launchpad-noble-amd64-arm64-ectrans-50e45e72102d
+    env:
+      ARCH: ${{ matrix.arch }}
+      CASE_ID: ${{ matrix.case }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Boot and verify the exact historical kernel
+        run: bash scripts/boot_historical_kernel.sh "$ARCH" "$CASE_ID" "$RUNNER_TEMP/kernel-evidence"
+      - name: Publish the verified kernel package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd "$RUNNER_TEMP/kernel-evidence"
+          asset=$(jq -r .file kernel-package.json)
+          release_id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/frozen-cases-v1" --jq '.id')
+          release_api="repos/$GITHUB_REPOSITORY/releases/$release_id/assets?per_page=100"
+          find_asset() {
+            gh api --paginate "$release_api" --jq ".[] | select(.name == \"$asset\")"
+          }
+          existing=$(find_asset)
+          if [[ -z "$existing" ]]; then
+            gh release upload frozen-cases-v1 "$asset" --repo "$GITHUB_REPOSITORY"
+            existing=$(find_asset)
+          fi
+          jq -e --arg sha "sha256:$(jq -r .sha256 kernel-package.json)" \
+            '.state == "uploaded" and .digest == $sha' <<< "$existing"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kernel-evidence-${{ matrix.arch }}
+          path: |
+            ${{ runner.temp }}/kernel-evidence/boot.log
+            ${{ runner.temp }}/kernel-evidence/kernel-package.json
