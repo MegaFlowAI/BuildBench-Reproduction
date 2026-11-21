@@ -2,7 +2,7 @@ case,arch,verified_job_url,tier
 launchpad-focal-arm64-amd64-cysignals-efa90da21cf9,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707313394,diagnostic_match_rejudged
 launchpad-focal-arm64-amd64-gcc-9-cross-d6df5b73fd91,amd64,,pending
 launchpad-focal-arm64-amd64-grub2-signed-cfe07d1b84a1,amd64,,pending
-launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203,amd64,,pending
+launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44866205303/job/136730961991,diagnostic_match_rejudged
 launchpad-focal-arm64-amd64-libinsane-d2cacbf5f310,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44868950949/job/136738950034,diagnostic_match
 launchpad-focal-arm64-amd64-pyfftw-f9b533c96808,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44868950949/job/136738950329,diagnostic_match
 launchpad-focal-arm64-amd64-python-biopython-46662840e6ac,amd64,,pending
@@ -15,7 +15,7 @@ launchpad-jammy-amd64-arm64-golang-v2ray-core-1791221b1f30,arm64,https://github.
 launchpad-jammy-amd64-arm64-libayatana-appindicator-be3a9fa69f9d,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941724,diagnostic_match
 launchpad-jammy-amd64-arm64-libcvd-a731cdae1c71,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941653,diagnostic_match
 launchpad-jammy-amd64-arm64-libmbim-32c606c4686e,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941684,diagnostic_match
-launchpad-jammy-amd64-arm64-liboqs-df7b6ca57151,arm64,,pending
+launchpad-jammy-amd64-arm64-liboqs-df7b6ca57151,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941693,diagnostic_match_rejudged
 launchpad-jammy-amd64-arm64-libqalculate-150db9c6c990,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941656,diagnostic_match
 launchpad-jammy-amd64-arm64-mathcomp-bigenough-5d617a6a7d50,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941683,diagnostic_match_rejudged
 launchpad-jammy-amd64-arm64-mathcomp-finmap-b4e23c43c92e,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721941704,diagnostic_match_rejudged
@@ -98,7 +98,7 @@ launchpad-oracular-amd64-arm64-blastem-55dae0e29a61,arm64,https://github.com/Meg
 launchpad-oracular-amd64-arm64-buteo-sync-plugins-b5560c677bdb,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721945081,diagnostic_match
 launchpad-oracular-amd64-arm64-castxml-63b80d08bc8a,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721945175,diagnostic_match
 launchpad-oracular-amd64-arm64-libapache2-mod-auth-openidc-c9b2ba1cd30f,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721945182,diagnostic_match
-launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2,arm64,,pending
+launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44871848058/job/136747933171,test_summary_match
 launchpad-oracular-amd64-arm64-libyuv-91738d032815,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44871848058/job/136747933153,test_summary_match
 launchpad-oracular-amd64-arm64-lua-struct-2548b9062e0d,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721945440,diagnostic_match
 launchpad-oracular-amd64-arm64-lxqt-qtplugin-de887d7c53b9,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721945356,diagnostic_match_rejudged
@@ -110,13 +110,13 @@ launchpad-oracular-arm64-amd64-cxref-472d3a12cb84,amd64,https://github.com/MegaF
 launchpad-oracular-arm64-amd64-dqlite-73a783215973,amd64,,pending
 launchpad-oracular-arm64-amd64-gnome-shell-c7d8316b3552,amd64,,pending
 launchpad-oracular-arm64-amd64-mpi4py-5fd5bd9111dc,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707318853,diagnostic_match
-launchpad-oracular-arm64-amd64-nginx-6e36942eabb2,amd64,,pending
+launchpad-oracular-arm64-amd64-nginx-6e36942eabb2,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44869540169/job/136740811410,diagnostic_match_rejudged
 launchpad-oracular-arm64-amd64-ocaml-0add7438dc87,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707318874,diagnostic_match
 launchpad-oracular-arm64-amd64-python-pyppmd-2779251761a8,amd64,,pending
 launchpad-oracular-arm64-amd64-qtorganizer-eds-3a12a7097a09,amd64,,pending
 launchpad-oracular-arm64-amd64-qtpim-opensource-src-2b5c2f205d2b,amd64,,pending
 launchpad-plucky-amd64-arm64-efitools-faf68620bf82,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721946590,diagnostic_match_rejudged
-launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8,arm64,,pending
+launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721946592,diagnostic_match_rejudged
 launchpad-plucky-amd64-arm64-harec-2765b2c0fbdc,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721946647,diagnostic_match
 launchpad-plucky-amd64-arm64-libcrypt-xxhash-perl-9fa2d60e7af5,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721946896,diagnostic_match
 launchpad-plucky-amd64-arm64-libgovirt-627f7c04c776,arm64,,pending
@@ -126,7 +126,7 @@ launchpad-plucky-amd64-arm64-ogamesim-7d713bfb6335,arm64,https://github.com/Mega
 launchpad-plucky-amd64-arm64-pam-tmpdir-4c7f2d6dc2cc,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721947744,diagnostic_match
 launchpad-plucky-amd64-arm64-plasma-activities-stats-896eda62b113,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721947800,diagnostic_match
 launchpad-plucky-amd64-arm64-rust-subversion-b3a4b8c35bb2,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721947889,diagnostic_match
-launchpad-plucky-amd64-arm64-tinycbor-835bc0b749b6,arm64,,pending
+launchpad-plucky-amd64-arm64-tinycbor-835bc0b749b6,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721948139,diagnostic_match_rejudged
 launchpad-plucky-amd64-arm64-west-chamber-eedde5db5d06,arm64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44863494167/job/136721947979,diagnostic_match_rejudged
 launchpad-plucky-arm64-amd64-bzrtp-6501f08c12b9,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707319981,diagnostic_match
 launchpad-plucky-arm64-amd64-gcc-riscv64-unknown-elf-d3908b11c2d9,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707320104,diagnostic_match
@@ -193,7 +193,7 @@ launchpad-resolute-arm64-amd64-libselinux-0960c210997c,amd64,,pending
 launchpad-resolute-arm64-amd64-libzmf-238041c6f9fb,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707322858,diagnostic_match
 launchpad-resolute-arm64-amd64-plank-4350740e505f,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707323416,diagnostic_match
 launchpad-resolute-arm64-amd64-pybigwig-56ac842288ce,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707323648,diagnostic_match
-launchpad-resolute-arm64-amd64-python-cython-blis-fedd35dc0412,amd64,,pending
+launchpad-resolute-arm64-amd64-python-cython-blis-fedd35dc0412,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707323874,diagnostic_match_rejudged
 launchpad-resolute-arm64-amd64-python-ptrace-537f421ab7ca,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707323956,diagnostic_match
 launchpad-resolute-arm64-amd64-python-pyinstrument-b6735db865a5,amd64,,pending
 launchpad-resolute-arm64-amd64-reglookup-4c55bf6d09d3,amd64,https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44858834517/job/136707324055,diagnostic_match
