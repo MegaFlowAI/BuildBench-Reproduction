@@ -27,3 +27,11 @@ Workflow 由维护者发起。构建时把 PR 内容作为补丁输入，容器�
 基线匹配证据目前使用关键诊断集合，两个试点对照使用指定的编译或链接诊断。不可从公开归档恢复的历史依赖、依赖配置失败、构建成功的基线以及不同错误均会阻止补丁验证。
 
 公开仓库的标准托管 ARM64 和 x86_64 runner 无应计构建分钟数。GitHub 托管 job 仍有单次运行时间、并发和存储限制。[GitHub Actions 计费](https://docs.github.com/en/actions/concepts/billing-and-usage) · [系统限制](https://docs.github.com/en/actions/reference/limits)
+
+## 已验证的试点
+
+- ARM64 的 `golf` 命中历史 `-fcf-protection=full` 错误，原始构建退出 2。补丁限制该选项的使用架构，构建退出 0 并生成 `golf_601.4.32-1_arm64.deb`。[补丁 PR](https://github.com/MegaFlowAI/BuildBench-Reproduction/pull/1) · [验证作业](https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44855366948)
+- x86_64 的 `globalplatform` 原始构建退出 2，匹配了三条 `__wrap_RAND_bytes` 链接错误。[试点作业](https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44854932430/job/136694832335)
+- 交接时待复现的 10 例也已在公开 runner 调度。CI 保留原样构建成功、诊断差异及环境失败的结果，由各用例的日志指出实际停留阶段。[优先批次](https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/44854932430)
+
+补丁验证沿用比赛将修改应用到干净源码并检查构建产物的思路。比赛的正式提交是可运行的修复 Agent，当前仓库的输入是单例补丁。[比赛规则](https://matrix.cstcloud.cn/build-bench/rules.html)
