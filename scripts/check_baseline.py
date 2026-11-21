@@ -40,6 +40,11 @@ AVO_STACK = re.compile(r"(?P<site>(?:dot|geohash)\.s:\d+) (?P<offset>\+0x[0-9a-f
 NGINX = "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2"
 NGINX_CONTROL = re.compile(r"^(dpkg-deb: error: parsing file 'debian/nginx-core/DEBIAN/control') near line \d+( package 'nginx-core':)$")
 CASE_DIAGNOSTICS = {
+    "launchpad-jammy-arm64-amd64-tmpreaper-8c42ffb8e477": re.compile(
+        r"^You forgot to fix the VERSION in configure\.ac!$|"
+        r"^make: \*\*\* \[debian/rules:\d+: build-stamp\] Error 1$|"
+        r"^dpkg-buildpackage: error: debian/rules build subprocess returned exit status 2$"
+    ),
     "launchpad-kinetic-arm64-amd64-golang-mvdan-sh-8cac33b424a0": re.compile(
         r"^src/github\.com/rogpeppe/go-internal/testscript/exe\.go:\d+:\d+:"
         r" not enough arguments in call to testing\.MainStart$|"

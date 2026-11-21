@@ -115,9 +115,9 @@ jobs:
             printf '### %s\n\n' "$CASE_ID"
             if [[ -n "$VARIANT" ]]; then printf 'Environment variant: %s\n\n' "$VARIANT"; fi
             if [[ -s "$EVIDENCE/baseline.exit" ]]; then
-              printf -- '- Original package exit: **%s**\n' "$(cat "$EVIDENCE/baseline.exit")"
+              printf -- '- Baseline command exit: **%s**\n' "$(cat "$EVIDENCE/baseline.exit")"
             else
-              printf -- '- Original package exit: **unavailable**\n'
+              printf -- '- Baseline command exit: **unavailable**\n'
             fi
             if [[ -s "$EVIDENCE/baseline-result.json" ]]; then
               verdict=$(jq -r '.status' "$EVIDENCE/baseline-result.json")
