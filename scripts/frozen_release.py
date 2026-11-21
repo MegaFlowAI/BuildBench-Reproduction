@@ -111,13 +111,11 @@ def apply_repairs(case, case_root, work):
     (work / "dependency-repairs.json").write_text(json.dumps(list(applied.values()), indent=2) + "\n")
 
 
-def fetch(case, work):
+def fetch_bundle(case, work):
     arch, metadata = frozen_cases()[case]
     work = work.resolve()
     work.mkdir(parents=True, exist_ok=False)
     archive = download(json.loads(metadata.read_text()), work, case + ".tar.zst")
-    runtime = json.loads((ROOT / "cases/runtimes.json").read_text())[arch]
-    image_archive = download(runtime, work, runtime["file"])
     subprocess.run(["tar", "--zstd", "-xf", archive, "-C", work], check=True)
     case_root = work / case
     for path in metadata.parent.rglob("*"):
@@ -126,6 +124,13 @@ def fetch(case, work):
             if sha256(path) != sha256(packaged):
                 raise ValueError(f"Release metadata differs from Git: {path.name}")
     apply_repairs(case, case_root, work)
+    return arch, case_root
+
+
+def fetch(case, work):
+    arch, _ = fetch_bundle(case, work)
+    runtime = json.loads((ROOT / "cases/runtimes.json").read_text())[arch]
+    image_archive = download(runtime, work, runtime["file"])
     subprocess.run(["docker", "load", "--input", image_archive], check=True)
     actual = subprocess.check_output([
         "docker", "image", "inspect", "--format", "{{.Architecture}}", runtime["image"],

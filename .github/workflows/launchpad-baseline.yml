@@ -1,0 +1,70 @@
+name: BuildBench Launchpad builder replay
+run-name: Launchpad builder ${{ inputs.case }}
+on:
+  workflow_dispatch:
+    inputs:
+      case:
+        description: "Case with the recovered chroot and Launchpad 236 toolchain"
+        required: true
+permissions:
+  contents: read
+jobs:
+  select:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    outputs:
+      runner: ${{ steps.select.outputs.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - id: select
+        env:
+          CASE_ID: ${{ inputs.case }}
+        run: |
+          runner=$(python3 scripts/launchpad_baseline.py runner "$CASE_ID")
+          printf 'runner=%s\n' "$runner" >>"$GITHUB_OUTPUT"
+  replay:
+    needs: select
+    runs-on: ${{ needs.select.outputs.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ inputs.case }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify frozen inputs and historical chroot
+        run: python3 scripts/launchpad_baseline.py prepare "$CASE_ID" "$RUNNER_TEMP/launchpad-input"
+      - name: Install the historical sbuild tool and Launchpad wrapper
+        run: |
+          host="$RUNNER_TEMP/launchpad-host"
+          mkdir "$host"
+          git clone --quiet --depth 1 --branch 236 https://git.launchpad.net/launchpad-buildd "$host/upstream"
+          test "$(git -C "$host/upstream" rev-parse HEAD)" = 955119cb2ce86b93e1b73d877463a6a44e2941e5
+          cp scripts/run_launchpad_host.sh "$host/"
+          docker build -f scripts/launchpad-host.Dockerfile -t buildbench-launchpad-236 "$host"
+      - name: Run Launchpad sbuild and compare its raw output
+        run: |
+          input="$RUNNER_TEMP/launchpad-input"
+          case_root="$input/$CASE_ID"
+          evidence="$RUNNER_TEMP/launchpad-evidence"
+          mkdir "$evidence"
+          settings="$input/launchpad-settings.json"
+          cp "$settings" "$evidence/"
+          mapfile -t args < <(jq -r '.build_id,.architecture,.distribution,.jobs,.mode,.recipe,.maintainer' "$settings")
+          host=$(jq -r .hostname "$settings")
+          chroot=$(jq -r .chroot.file "$settings")
+          code=0
+          docker run --rm --privileged --network none --hostname "$host" \
+            --mount "type=bind,src=$case_root/source/input,dst=/input/source,readonly" \
+            --mount "type=bind,src=$case_root/dependencies,dst=/input/dependencies,readonly" \
+            --mount "type=bind,src=$input/$chroot,dst=/input/chroot,readonly" \
+            buildbench-launchpad-236 "${args[@]}" >"$evidence/build.log" 2>&1 || code=$?
+          printf '%s\n' "$code" >"$evidence/sbuild.exit"
+          python3 scripts/launchpad_baseline.py compare "$case_root" "$evidence/build.log" "$code" "$evidence/exact-result.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: launchpad-evidence-${{ inputs.case }}
+          path: ${{ runner.temp }}/launchpad-evidence/
