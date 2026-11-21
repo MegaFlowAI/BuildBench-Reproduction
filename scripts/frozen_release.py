@@ -26,21 +26,25 @@ def frozen_cases():
     return cases
 
 
+def available_cases(cases, assets):
+    runtimes = json.loads((ROOT / "cases/runtimes.json").read_text())
+    uploaded = {asset["name"]: (asset["size"], asset["digest"])
+                for asset in assets if asset["state"] == "uploaded"}
+
+    def is_published(record):
+        return uploaded.get(record["file"]) == (record["bytes"], "sha256:" + record["sha256"])
+
+    return {
+        case: (arch, path) for case, (arch, path) in cases.items()
+        if is_published(runtimes[arch]) and is_published(json.loads(path.read_text()))
+    }
+
+
 def select(selection, release_assets):
     cases = frozen_cases()
     if release_assets:
-        runtimes = json.loads((ROOT / "cases/runtimes.json").read_text())
         pages = json.loads(release_assets.read_text())
-        uploaded = {asset["name"]: (asset["size"], asset["digest"])
-                    for page in pages for asset in page if asset["state"] == "uploaded"}
-
-        def is_published(record):
-            return uploaded.get(record["file"]) == (record["bytes"], "sha256:" + record["sha256"])
-
-        cases = {
-            case: (arch, path) for case, (arch, path) in cases.items()
-            if is_published(runtimes[arch]) and is_published(json.loads(path.read_text()))
-        }
+        cases = available_cases(cases, (asset for page in pages for asset in page))
     if selection == "all" or selection in RUNNERS:
         selected = [case for case, (arch, _) in cases.items()
                     if selection in {"all", arch}]
