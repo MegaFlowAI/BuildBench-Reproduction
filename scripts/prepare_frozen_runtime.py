@@ -11,7 +11,7 @@ from pathlib import Path
 MLMMJ = "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07"
 BUILD_COMMAND = re.compile(
     rb"Command: dpkg-buildpackage (?P<sanitize>--sanitize-env )?-us -uc "
-    rb"-m(?P<maintainer>Launchpad Build Daemon <buildd@[a-z0-9-]+\.buildd>) "
+    rb"-m(?P<maintainer>Launchpad Build Daemon <buildd@[a-z0-9-]+(?:\.buildd)?>) "
     rb"(?P<mode>-[Bb]) -rfakeroot"
 )
 
@@ -25,13 +25,20 @@ def write_json(path, value):
 
 
 def build_flags(reference, mode):
+    if mode not in {"-B", "-b"}:
+        raise ValueError("Invalid historical binary build mode")
     with reference.open("rb") as log:
-        command = next((line.strip() for line in log if line.startswith(b"Command: dpkg-buildpackage ")), b"")
-    match = BUILD_COMMAND.fullmatch(command)
-    if not match or match["mode"].decode("ascii") != mode:
-        raise ValueError("Historical dpkg-buildpackage command differs from the recorded form")
-    sanitize = ["--sanitize-env"] if match["sanitize"] else []
-    return [*sanitize, "-us", "-uc", "-m" + match["maintainer"].decode("ascii"), mode, "-rfakeroot"]
+        for line in log:
+            if line.startswith(b"Command: dpkg-buildpackage "):
+                match = BUILD_COMMAND.fullmatch(line.strip())
+                if not match or match["mode"].decode("ascii") != mode:
+                    raise ValueError("Historical dpkg-buildpackage command differs from the recorded form")
+                sanitize = ["--sanitize-env"] if match["sanitize"] else []
+                return [*sanitize, "-us", "-uc", "-m" + match["maintainer"].decode("ascii"),
+                        mode, "-rfakeroot"], "recorded_command"
+            if line.startswith(b"dpkg-buildpackage: info: source package "):
+                break
+    return ["-us", "-uc", mode, "-rfakeroot"], "catalog_build_mode"
 
 
 def select_historical_versions(runtime, lock_path, build, versions):
@@ -63,7 +70,7 @@ def prepare(case_dir, runtime, settings):
     jobs = historical["jobs"]
     if type(jobs) is not int or jobs < 1:
         raise ValueError("Invalid historical build parallelism")
-    flags = build_flags(case_dir / "logs/target-failure.log", historical["mode"])
+    flags, command_source = build_flags(case_dir / "logs/target-failure.log", historical["mode"])
     command = shlex.join(["dpkg-buildpackage", *flags])
     bootstrap = []
     if case_id == MLMMJ:
@@ -77,9 +84,10 @@ def prepare(case_dir, runtime, settings):
     config_text = config.read_text(encoding="utf-8").rstrip()
     if re.search(r"^Substitute:\s+dsc:build_cmd\s", config_text, re.M):
         raise ValueError("Frozen config declares its own package build command")
+    overrides = ["Substitute: dsc:build_cmd " + command]
     if bootstrap:
-        config_text += "\nPreinstall: " + " ".join(bootstrap)
-    config.write_text(config_text + "\nSubstitute: dsc:build_cmd " + command + "\n", encoding="utf-8")
+        overrides.append("Preinstall: " + " ".join(bootstrap))
+    config.write_text("\n".join([*overrides, config_text, ""]), encoding="utf-8")
     discarded = select_historical_versions(
         runtime, runtime / build["dependency_lock"], build, historical["packages"],
     )
@@ -87,6 +95,7 @@ def prepare(case_dir, runtime, settings):
         "frozen_jobs": build["jobs"],
         "historical_jobs": jobs,
         "build_mode": historical["mode"],
+        "build_command_source": command_source,
         "dpkg_buildpackage_arguments": flags,
         "bootstrap_preinstall": bootstrap,
         "omitted_nonhistorical_duplicates": discarded,
