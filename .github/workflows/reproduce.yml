@@ -1,4 +1,4 @@
-name: BuildBench original and patched builds
+﻿name: BuildBench original and patched builds
 run-name: BuildBench ${{ inputs.selection }}
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
     needs: select
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 12
       matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 355
@@ -75,3 +75,4 @@ jobs:
           name: evidence-${{ matrix.case }}
           path: ${{ runner.temp }}/buildbench-work/evidence/
           retention-days: 7
+
