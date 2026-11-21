@@ -40,6 +40,22 @@ AVO_STACK = re.compile(r"(?P<site>(?:dot|geohash)\.s:\d+) (?P<offset>\+0x[0-9a-f
 NGINX = "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2"
 NGINX_CONTROL = re.compile(r"^(dpkg-deb: error: parsing file 'debian/nginx-core/DEBIAN/control') near line \d+( package 'nginx-core':)$")
 CASE_DIAGNOSTICS = {
+    "launchpad-kinetic-arm64-amd64-golang-mvdan-sh-8cac33b424a0": re.compile(
+        r"^src/github\.com/rogpeppe/go-internal/testscript/exe\.go:\d+:\d+:"
+        r" not enough arguments in call to testing\.MainStart$|"
+        r"^(?:have|want) \((?:nopTestDeps|testing\.testDeps),.*\)$|"
+        r"^FAIL\s+mvdan\.cc/sh/v3/cmd/shfmt \[build failed\]$"
+    ),
+    "launchpad-kinetic-arm64-amd64-libengine-gost-openssl-e12421181e3b": re.compile(
+        r"^\d+% tests passed, \d+ tests failed out of \d+$|"
+        r"^\d+ - \S+ \((?:SEGFAULT|Failed|Timeout|Subprocess aborted)\)$|"
+        r"^make\[\d+\]: \*\*\* \[Makefile:\d+: test\] Error 8$"
+    ),
+    "launchpad-plucky-arm64-amd64-libotr-7f09e7c32c80": re.compile(
+        r"^\S+\s+\(Wstat: \d+ .*Tests: \d+ Failed: \d+\)$|"
+        r"^Non-zero wait status: \d+$|^Parse errors: Bad plan\..+$|"
+        r"^Result: FAIL$|^make\[\d+\]: \*\*\* \[Makefile:\d+: check-am\] Error 1$"
+    ),
     "launchpad-plucky-amd64-arm64-libgovirt-627f7c04c776": re.compile(
         r"^not ok /govirt/[^ ]+ - libgovirt-FATAL-WARNING: .+"
     ),

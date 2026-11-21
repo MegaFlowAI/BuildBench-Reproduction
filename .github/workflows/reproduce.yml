@@ -106,6 +106,30 @@ jobs:
             trap 'printf "::%s::\n" "$token"' EXIT
           fi
           bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch" "$VARIANT"
+      - name: Summarize the build and historical comparison
+        if: always()
+        env:
+          EVIDENCE: ${{ runner.temp }}/buildbench-work/evidence
+        run: |
+          {
+            printf '### %s\n\n' "$CASE_ID"
+            if [[ -n "$VARIANT" ]]; then printf 'Environment variant: %s\n\n' "$VARIANT"; fi
+            if [[ -s "$EVIDENCE/baseline.exit" ]]; then
+              printf -- '- Original package exit: **%s**\n' "$(cat "$EVIDENCE/baseline.exit")"
+            else
+              printf -- '- Original package exit: **unavailable**\n'
+            fi
+            if [[ -s "$EVIDENCE/baseline-result.json" ]]; then
+              verdict=$(jq -r '.status' "$EVIDENCE/baseline-result.json")
+              printf -- '- Historical failure comparison: **%s**\n' "$verdict"
+            else
+              printf -- '- Historical failure comparison: **no verdict**\n'
+            fi
+            if [[ -s "$EVIDENCE/patched.exit" ]]; then
+              printf -- '- Patched package exit: **%s**\n' "$(cat "$EVIDENCE/patched.exit")"
+            fi
+            printf '\nDownload the full logs from the run artifacts.\n'
+          } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
