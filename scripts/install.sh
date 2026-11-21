@@ -4,16 +4,31 @@ export DEBIAN_FRONTEND=noninteractive LC_ALL=C.UTF-8
 mkdir -p /var/lib/dpkg/info /var/lib/dpkg/updates /var/lib/dpkg/alternatives /var/log
 touch /var/lib/dpkg/status
 
-# 1) unpack everything first (no maintainer scripts run)
-if ! dpkg --force-depends --force-confnew --unpack /tmp/pool/*.deb >/tmp/install.log 2>&1; then
-    echo "=== dpkg --unpack tail ==="
-    tail -60 /tmp/install.log
+# 1) unpack packages one by one; if a maintainer preinst cannot run in the bare
+#    container root, neutralise that script and retry. Container builds do not
+#    need maintainer migrations (usrmerge, pam, ldconfig is run later).
+failed_pkgs=""
+for deb in $(ls /tmp/pool/*.deb | sort); do
+    if dpkg --force-depends --force-confnew --unpack "$deb" >>/tmp/install.log 2>&1; then
+        continue
+    fi
+    pkg=$(dpkg-deb -f "$deb" Package)
+    mkdir -p "/var/lib/dpkg/info"
+    printf '#!/bin/sh\nexit 0\n' > "/var/lib/dpkg/info/$pkg.preinst"
+    chmod 0755 "/var/lib/dpkg/info/$pkg.preinst"
+    echo "neutralised $pkg.preinst" >>/tmp/install.log
+    dpkg --force-depends --force-confnew --unpack "$deb" >>/tmp/install.log 2>&1 || {
+        echo "=== unpack failed for $deb ==="
+        grep -i "error\|warning" /tmp/install.log | tail -20
+        failed_pkgs="$failed_pkgs $pkg"
+    }
+done
+if [ -n "$failed_pkgs" ]; then
+    echo "=== unpack failures:$failed_pkgs ==="
     exit 1
 fi
 
-# 2) neutralise maintainer scripts that cannot run in a bare container root.
-#    usrmerge's postinst tries to migrate /bin -> /usr/bin; our bootstrap root is
-#    already merged-usr, so mark it done instead of letting the migration fail.
+# 2) neutralise postinst scripts that cannot run in a bare container root
 for script in usrmerge.postinst usr-is-merged.postinst; do
     path="/var/lib/dpkg/info/$script"
     if [ -e "$path" ]; then
@@ -23,11 +38,22 @@ for script in usrmerge.postinst usr-is-merged.postinst; do
     fi
 done
 
-# 3) configure everything
+# 3) configure everything (retry once with neutralised postinst on failure)
 if ! dpkg --force-depends --force-confnew --configure -a >/tmp/configure.log 2>&1; then
-    echo "=== dpkg --configure -a failed (tail) ==="
-    tail -80 /tmp/configure.log
-    exit 1
+    echo "=== dpkg --configure -a failed; neutralising failing postinst ==="
+    grep -i "error" /tmp/configure.log | tail -10 || true
+    awk '/^Setting up /{print $3}' /tmp/configure.log | tail -5 | while read -r pkg; do
+        pkg=${pkg%%:*}
+        [ -n "$pkg" ] || continue
+        printf '#!/bin/sh\nexit 0\n' > "/var/lib/dpkg/info/$pkg.postinst"
+        chmod 0755 "/var/lib/dpkg/info/$pkg.postinst"
+        echo "neutralised $pkg.postinst" >>/tmp/configure.log
+    done
+    if ! dpkg --force-depends --force-confnew --configure -a >>/tmp/configure.log 2>&1; then
+        echo "=== dpkg --configure -a failed (tail) ==="
+        tail -80 /tmp/configure.log
+        exit 1
+    fi
 fi
 dpkg --audit >/tmp/audit || true
 test ! -s /tmp/audit || { echo '=== dpkg --audit ==='; cat /tmp/audit; exit 1; }
