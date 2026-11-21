@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 MLMMJ = "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07"
+HTML_XML_UTILS = "launchpad-resolute-amd64-arm64-html-xml-utils-fe68b3f14b84"
 BUILD_COMMAND = re.compile(
     rb"Command: dpkg-buildpackage (?P<sanitize>--sanitize-env )?-us -uc "
     rb"-m(?P<maintainer>Launchpad Build Daemon <buildd@[a-z0-9-]+(?:\.buildd)?>) "
@@ -73,17 +74,27 @@ def prepare(case_dir, runtime, settings):
     flags, command_source = build_flags(case_dir / "logs/target-failure.log", historical["mode"])
     command = shlex.join(["dpkg-buildpackage", *flags])
     bootstrap = []
+    build_engine = None
     if case_id == MLMMJ:
         bootstrap = ["libmd0", "libbsd0", "libpcre2-8-0"]
+        build_engine = "none"
         command = (
             "chown --reference=/usr/src/packages/BUILD /usr/src/packages && "
             "runuser --user=abuild -- env HOME=/sbuild-nonexistent LANG=C.UTF-8 "
             "LC_ALL=C.UTF-8 V=1 TERM=unknown " + command
         )
+    elif case_id == HTML_XML_UTILS:
+        bootstrap = ["coreutils-from-uutils", "rust-coreutils"]
+        build_engine = "none"
     config = runtime / build["buildconfig"]
     config_text = config.read_text(encoding="utf-8").rstrip()
     if re.search(r"^Substitute:\s+dsc:build_cmd\s", config_text, re.M):
         raise ValueError("Frozen config declares its own package build command")
+    if build_engine:
+        config_text, count = re.subn(r"^buildengine: debootstrap$", "buildengine: " + build_engine,
+                                     config_text, flags=re.M)
+        if count != 1:
+            raise ValueError("Expected one recorded debootstrap engine")
     overrides = ["Substitute: dsc:build_cmd " + command]
     if bootstrap:
         overrides.append("Preinstall: " + " ".join(bootstrap))
@@ -99,6 +110,7 @@ def prepare(case_dir, runtime, settings):
         "build_command_source": command_source,
         "dpkg_buildpackage_arguments": flags,
         "bootstrap_preinstall": bootstrap,
+        "build_engine_override": build_engine,
         "omitted_nonhistorical_duplicates": discarded,
     })
     build["jobs"] = jobs
