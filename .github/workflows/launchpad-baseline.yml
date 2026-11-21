@@ -6,6 +6,10 @@ on:
       case:
         description: "Case with a recovered chroot and recorded Launchpad builder source"
         required: true
+      historical_kernel:
+        description: "Use an isolated VM with the recovered original kernel"
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -30,12 +34,18 @@ jobs:
     timeout-minutes: 355
     env:
       CASE_ID: ${{ inputs.case }}
+      HISTORICAL_KERNEL: ${{ inputs.historical_kernel }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Verify frozen inputs and historical chroot
-        run: python3 scripts/launchpad_baseline.py prepare "$CASE_ID" "$RUNNER_TEMP/launchpad-input"
+        run: |
+          options=()
+          if [[ "$HISTORICAL_KERNEL" == true ]]; then
+            options+=(--historical-kernel)
+          fi
+          python3 scripts/launchpad_baseline.py prepare "$CASE_ID" "$RUNNER_TEMP/launchpad-input" "${options[@]}"
       - name: Install the historical sbuild tool and Launchpad wrapper
         run: |
           set -euo pipefail
@@ -70,18 +80,23 @@ jobs:
           mkdir "$evidence"
           settings="$input/launchpad-settings.json"
           cp "$settings" "$evidence/"
-          mapfile -t args < <(jq -r '.build_id,.architecture,.distribution,.jobs,.mode,.recipe,.maintainer' "$settings")
-          host=$(jq -r .hostname "$settings")
-          chroot=$(jq -r .chroot.file "$settings")
-          code=0
-          docker run --rm --privileged --network none --hostname "$host" \
-            --add-host "$host:127.0.0.1" --add-host "$host.buildd:127.0.0.1" \
-            --mount "type=bind,src=$case_root/source/input,dst=/input/source,readonly" \
-            --mount "type=bind,src=$case_root/dependencies,dst=/input/dependencies,readonly" \
-            --mount "type=bind,src=$input/$chroot,dst=/input/chroot,readonly" \
-            --mount "type=bind,src=$input/launchpad-pins,dst=/input/apt-pins,readonly" \
-            buildbench-launchpad-host "${args[@]}" >"$evidence/build.log" 2>&1 || code=$?
-          printf '%s\n' "$code" >"$evidence/sbuild.exit"
+          if [[ "$HISTORICAL_KERNEL" == true ]]; then
+            bash scripts/run_launchpad_vm.sh "$input" "$case_root" "$evidence"
+            code=$(cat "$evidence/sbuild.exit")
+          else
+            mapfile -t args < <(jq -r '.build_id,.architecture,.distribution,.jobs,.mode,.recipe,.maintainer' "$settings")
+            host=$(jq -r .hostname "$settings")
+            chroot=$(jq -r .chroot.file "$settings")
+            code=0
+            docker run --rm --privileged --network none --hostname "$host" \
+              --add-host "$host:127.0.0.1" --add-host "$host.buildd:127.0.0.1" \
+              --mount "type=bind,src=$case_root/source/input,dst=/input/source,readonly" \
+              --mount "type=bind,src=$case_root/dependencies,dst=/input/dependencies,readonly" \
+              --mount "type=bind,src=$input/$chroot,dst=/input/chroot,readonly" \
+              --mount "type=bind,src=$input/launchpad-pins,dst=/input/apt-pins,readonly" \
+              buildbench-launchpad-host "${args[@]}" >"$evidence/build.log" 2>&1 || code=$?
+            printf '%s\n' "$code" >"$evidence/sbuild.exit"
+          fi
           python3 scripts/launchpad_baseline.py compare "$case_root" "$evidence/build.log" "$code" "$evidence/exact-result.json"
       - uses: actions/upload-artifact@v4
         if: always()

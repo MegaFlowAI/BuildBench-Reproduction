@@ -66,7 +66,7 @@ def select(selection, release_assets):
 
 
 def download(record, work, file_name):
-    if record["file"] != file_name or not re.fullmatch(r"[a-z0-9][a-z0-9.-]+", file_name):
+    if record["file"] != file_name or not re.fullmatch(r"[a-z0-9][a-z0-9._+-]+", file_name):
         raise ValueError("Invalid asset name")
     destination = work / file_name
     subprocess.run([

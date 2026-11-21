@@ -40,6 +40,7 @@ def settings(case):
         "runner": RUNNERS[catalog["architecture"]],
         "build_id": "PACKAGEBUILD-" + host["build_url"].rsplit("/", 1)[-1],
         "hostname": host["kernel"].split()[1],
+        "historical_kernel": host["kernel"],
         "chroot_sha1": host["chroot_sha1"],
         "chroot": chroot,
         "builder": builder,
@@ -48,7 +49,7 @@ def settings(case):
     }
 
 
-def prepare(case, work):
+def prepare(case, work, historical_kernel=False):
     data = settings(case)
     architecture, case_root = fetch_bundle(case, work)
     if architecture != data["architecture"]:
@@ -66,6 +67,11 @@ def prepare(case, work):
     reference = case_root / "logs/target-failure.log"
     flags, _ = build_flags(reference, data["mode"])
     data["maintainer"] = next((arg[2:] for arg in flags if arg.startswith("-m")), "")
+    if historical_kernel:
+        release = data["historical_kernel"].split()[2]
+        kernels = read_json(ROOT / "cases/launchpad-kernels.json")
+        data["kernel_package"] = kernels[release][architecture]
+        download(data["kernel_package"], work, data["kernel_package"]["file"])
     (work / "launchpad-settings.json").write_text(json.dumps(data, indent=2) + "\n")
     packages = read_json(ROOT / "cases.json")[case]["packages"]
     with (work / "launchpad-pins").open("w", encoding="utf-8") as pins:
@@ -127,6 +133,7 @@ def main():
         action.add_argument("case")
         if command == "prepare":
             action.add_argument("work", type=Path)
+            action.add_argument("--historical-kernel", action="store_true")
     verdict = subs.add_parser("compare")
     verdict.add_argument("case_root", type=Path)
     verdict.add_argument("log", type=Path)
@@ -136,7 +143,7 @@ def main():
     if args.command == "runner":
         print(settings(args.case)["runner"])
     elif args.command == "prepare":
-        prepare(args.case, args.work)
+        prepare(args.case, args.work, args.historical_kernel)
     else:
         return compare(args.case_root, args.log, args.exit_code, args.output)
     return 0
