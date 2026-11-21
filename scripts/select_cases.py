@@ -19,6 +19,10 @@ elif selection in ("all", "arm64", "amd64"):
 elif selection in CASES:
     selected = [selection]
 else:
-    raise SystemExit(f"Unknown case selection: {selection!r}")
+    requested = [item.strip() for item in selection.replace("\n", ",").split(",") if item.strip()]
+    unknown = [item for item in requested if item not in CASES]
+    if unknown:
+        raise SystemExit(f"Unknown case ids: {unknown}")
+    selected = requested
 runners = {"arm64": "ubuntu-24.04-arm", "amd64": "ubuntu-24.04"}
 print(json.dumps({"include": [{"case": case, "runner": runners[CASES[case]["architecture"]]} for case in selected]}))
