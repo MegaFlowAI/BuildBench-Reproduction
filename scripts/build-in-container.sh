@@ -3,7 +3,8 @@ set -eu
 mode=$1
 options=$2
 export DEB_BUILD_OPTIONS="$options"
-export LC_ALL=C.UTF-8 LANG=C.UTF-8 TERM=dumb HOME=/tmp
+export LC_ALL=C.UTF-8 LANG=C.UTF-8
+export TERM="${BUILDBENCH_BUILD_TERM:-dumb}" HOME="${BUILDBENCH_BUILD_HOME:-/tmp}"
 cd /work
 cp /input/* .
 dpkg-source --no-check -x ./*.dsc source

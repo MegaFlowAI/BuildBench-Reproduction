@@ -10,6 +10,7 @@ CONTROLS = {
     "launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5",
 }
 selection = sys.argv[1]
+variants = len(sys.argv) > 2 and sys.argv[2] == "true"
 if selection == "pending":
     selected = [case for case, data in CASES.items() if data["handover_status"] == "pending"]
 elif selection == "pilot":
@@ -25,4 +26,14 @@ else:
         raise SystemExit(f"Unknown case ids: {unknown}")
     selected = requested
 runners = {"arm64": "ubuntu-24.04-arm", "amd64": "ubuntu-24.04"}
-print(json.dumps({"include": [{"case": case, "runner": runners[CASES[case]["architecture"]]} for case in selected]}))
+matrix = []
+for case in dict.fromkeys(selected):
+    data = CASES[case]
+    profiles = data.get("variants", {}) if variants else ("",)
+    for profile in profiles:
+        matrix.append({"case": case, "runner": runners[data["architecture"]], "variant": profile})
+if not matrix:
+    raise SystemExit("No configured case variants for this selection" if variants else "No cases selected")
+if len(matrix) > 256:
+    raise SystemExit("Matrix exceeds the GitHub Actions limit of 256 jobs")
+print(json.dumps({"include": matrix}))

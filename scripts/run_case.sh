@@ -4,6 +4,7 @@ set -euo pipefail
 case_id=$1
 work=$2
 patch_file=${3:-}
+variant=${4:-}
 mkdir -p "$work/evidence"
 
 stage=runner_setup
@@ -16,11 +17,17 @@ record_incomplete_stage() {
 }
 trap record_incomplete_stage EXIT
 
-python3 - "$case_id" "$work/config.json" <<'PY'
+python3 - "$case_id" "$work/config.json" "$variant" <<'PY'
 import json
 import sys
 from pathlib import Path
 case = json.loads(Path("cases.json").read_text())[sys.argv[1]]
+variant = sys.argv[3]
+if variant:
+    condition = case["variants"][variant]
+    base_env = case.get("env", {})
+    case["env"] = {**base_env, **condition}
+    case["env"]["vars"] = {**base_env.get("vars", {}), **condition.get("vars", {})}
 Path(sys.argv[2]).write_text(json.dumps(case))
 actual = {"aarch64": "arm64", "x86_64": "amd64"}[__import__("platform").machine()]
 if actual != case["architecture"]:
@@ -32,12 +39,13 @@ options=$(jq -r '"parallel=" + (.jobs|tostring) + " " + (.options|join(" "))' "$
 env_nofile=$(jq -r '.env.nofile // empty' "$work/config.json")
 env_cpus=$(jq -r '.env.cpus // empty' "$work/config.json")
 env_cpuset=$(jq -r '.env.cpuset // empty' "$work/config.json")
+env_memory=$(jq -r '.env.memory // empty' "$work/config.json")
 env_mask_cache=$(jq -r '.env.mask_cpu_cache // false' "$work/config.json")
 env_user=$(jq -r '.env.user // empty' "$work/config.json")
 env_attempts=$(jq -r '.env.attempts // 1' "$work/config.json")
 env_timeout=$(jq -r '.env.timeout // empty' "$work/config.json")
 mapfile -t env_vars < <(jq -r '(.env.vars // {}) | to_entries[] | "\(.key)=\(.value)"' "$work/config.json")
-echo "case env: nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} mask_cpu_cache=$env_mask_cache attempts=$env_attempts vars=${env_vars[*]:-none}"
+echo "case env: variant=${variant:-default} memory=${env_memory:-default} nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} mask_cpu_cache=$env_mask_cache attempts=$env_attempts vars=${env_vars[*]:-none}"
 
 stage=source_fetch_failed
 python3 scripts/fetch_case.py "$case_id" "$arch" "$work/official"
@@ -75,6 +83,7 @@ run_build() {
     if [[ -n "$env_nofile" ]]; then limits+=(--ulimit "nofile=$env_nofile:$env_nofile"); fi
     if [[ -n "$env_cpus" ]]; then limits+=(--cpus "$env_cpus"); fi
     if [[ -n "$env_cpuset" ]]; then limits+=(--cpuset-cpus "$env_cpuset"); fi
+    if [[ -n "$env_memory" ]]; then limits+=(--memory "$env_memory"); fi
     if [[ "$env_mask_cache" == true ]]; then
         limits+=(--tmpfs /sys/devices/system/cpu/cpu0/cache:ro,nosuid,nodev,noexec)
     fi

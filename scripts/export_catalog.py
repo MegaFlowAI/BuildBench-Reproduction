@@ -4,6 +4,8 @@ import sys
 from pathlib import Path
 
 ledger = Path(sys.argv[1])
+old_catalog_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("cases.json")
+old_catalog = json.loads(old_catalog_path.read_text()) if old_catalog_path.is_file() else {}
 catalog = {}
 for row in csv.DictReader(ledger.open()):
     case_id = row['case_id']
@@ -69,5 +71,9 @@ for row in csv.DictReader(ledger.open()):
         'handover_status': row['state'],
         'packages': versions or {},
     }
+    for key in ("env", "variants"):
+        old_case = old_catalog.get(case_id, {})
+        if key in old_case:
+            catalog[case_id][key] = old_case[key]
 assert len(catalog)==200
 print(json.dumps(catalog, sort_keys=True, indent=2))

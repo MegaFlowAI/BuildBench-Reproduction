@@ -11,6 +11,10 @@ on:
         description: "Optional public pull request number; requires a single case ID"
         type: string
         required: false
+      variants:
+        description: "Run the selected cases' recorded environment variants"
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -25,16 +29,18 @@ jobs:
       - id: cases
         env:
           SELECTION: ${{ inputs.selection }}
+          VARIANTS: ${{ inputs.variants }}
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
-          matrix=$(python3 scripts/select_cases.py "$SELECTION")
+          matrix=$(python3 scripts/select_cases.py "$SELECTION" "$VARIANTS")
           if [[ -n "$PATCH_PR" ]]; then
-            [[ "$GITHUB_REF" == refs/heads/main && "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
+            [[ "$VARIANTS" == false && "$GITHUB_REF" == refs/heads/main && "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
             jq -e --arg case "$SELECTION" '.include | length == 1 and .[0].case == $case' <<< "$matrix"
           fi
           printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
   build:
+    name: build (${{ matrix.case }}, ${{ matrix.runner }}${{ matrix.variant != '' && format(', {0}', matrix.variant) || '' }})
     needs: select
     strategy:
       fail-fast: false
@@ -44,6 +50,7 @@ jobs:
     timeout-minutes: 355
     env:
       CASE_ID: ${{ matrix.case }}
+      VARIANT: ${{ matrix.variant }}
       PATCH_PR: ${{ inputs.patch_pr }}
     steps:
       - uses: actions/checkout@v4
@@ -75,11 +82,11 @@ jobs:
             printf '%s\n' "$sha" > "$WORK/evidence/patch-commit.txt"
             sha256sum "$patch" > "$WORK/evidence/patch-sha256.txt"
           fi
-          bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch"
+          bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch" "$VARIANT"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: evidence-${{ matrix.case }}
+          name: evidence-${{ matrix.case }}${{ matrix.variant != '' && format('-{0}', matrix.variant) || '' }}
           path: ${{ runner.temp }}/buildbench-work/evidence/
           retention-days: 7
 
