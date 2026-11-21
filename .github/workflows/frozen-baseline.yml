@@ -1,0 +1,72 @@
+name: BuildBench frozen baselines
+run-name: Frozen baseline ${{ inputs.selection }}
+on:
+  workflow_dispatch:
+    inputs:
+      selection:
+        description: "Published case ID, comma-separated IDs, arm64, amd64, or all"
+        required: true
+        default: all
+permissions:
+  contents: read
+jobs:
+  select:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.cases.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - id: cases
+        env:
+          SELECTION: ${{ inputs.selection }}
+        run: |
+          matrix=$(python3 scripts/frozen_release.py matrix "$SELECTION")
+          printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
+  replay:
+    name: replay (${{ matrix.case }})
+    needs: select
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ matrix.case }}
+      BUNDLE: ${{ runner.temp }}/buildbench-frozen-bundle
+      WORK: ${{ runner.temp }}/buildbench-frozen-result
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify Release assets and load frozen runtime
+        run: python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
+      - name: Run frozen original build and compare the raw log
+        run: |
+          mkdir -p "$WORK"
+          bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")"
+      - name: Record the reproduction result
+        if: always()
+        run: |
+          if [[ -s "$WORK/exact-result.json" ]]; then
+            {
+              printf '### %s\n\n' "$CASE_ID"
+              printf 'Raw log verdict: **%s**\n\n' "$(jq -r .status "$WORK/exact-result.json")"
+              printf 'First different byte: **%s**\n\n' "$(jq -r .first_difference_byte "$WORK/exact-result.json")"
+              printf 'See the linked run artifact for the raw build log and events.\n'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: frozen-evidence-${{ matrix.case }}
+          path: |
+            ${{ runner.temp }}/buildbench-frozen-result/*.json
+            ${{ runner.temp }}/buildbench-frozen-result/*.log
+            ${{ runner.temp }}/buildbench-frozen-result/*.exit
+            ${{ runner.temp }}/buildbench-frozen-result/result-*/build-output/build.log
+            ${{ runner.temp }}/buildbench-frozen-result/result-*/build-output/build-*.json*
+          retention-days: 7
