@@ -40,6 +40,7 @@ env_nofile=$(jq -r '.env.nofile // empty' "$work/config.json")
 env_cpus=$(jq -r '.env.cpus // empty' "$work/config.json")
 env_cpuset=$(jq -r '.env.cpuset // empty' "$work/config.json")
 go_test_runtime=$(jq -r '.env.go_test_runtime // empty' "$work/config.json")
+urwid_test_order=$(jq -r '.env.urwid_test_order // false' "$work/config.json")
 env_memory=$(jq -r '.env.memory // empty' "$work/config.json")
 env_mask_cache=$(jq -r '.env.mask_cpu_cache // false' "$work/config.json")
 env_user=$(jq -r '.env.user // empty' "$work/config.json")
@@ -65,6 +66,12 @@ if [[ "${BUILDBENCH_ENVIRONMENT_PREPARED:-0}" != 1 ]]; then
         tail -200 "$work/evidence/environment.log"
         exit 1
     }
+    if [[ "$urwid_test_order" == true ]]; then
+        stage=test_runtime_setup_failed
+        mkdir -p "$work/test-order"
+        cp scripts/urwid_test_order.py "$work/test-order/sitecustomize.py"
+        sha256sum "$work/test-order/sitecustomize.py" > "$work/evidence/test-order-sha256.txt"
+    fi
     if [[ "$go_test_runtime" == qemu10-no-fma-bmi2 ]]; then
         stage=test_runtime_setup_failed
         test "$arch" = amd64
@@ -85,6 +92,10 @@ run_build() {
     local code=0
     local -a mounts=()
     local -a extra_env=()
+    if [[ "$urwid_test_order" == true ]]; then
+        mounts+=(--mount "type=bind,src=$work/test-order,dst=/buildbench-test-order,readonly")
+        extra_env+=(--env "PYTHONPATH=/buildbench-test-order")
+    fi
     if [[ "$go_test_runtime" == qemu10-no-fma-bmi2 ]]; then
         mounts+=(--mount "type=bind,src=$work/go-test-runtime,dst=/buildbench-runtime,readonly")
         extra_env+=(--env "GOFLAGS=-exec=/buildbench-runtime/go-test")
