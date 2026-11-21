@@ -40,6 +40,20 @@ AVO_STACK = re.compile(r"(?P<site>(?:dot|geohash)\.s:\d+) (?P<offset>\+0x[0-9a-f
 NGINX = "launchpad-oracular-arm64-amd64-nginx-6e36942eabb2"
 NGINX_CONTROL = re.compile(r"^(dpkg-deb: error: parsing file 'debian/nginx-core/DEBIAN/control') near line \d+( package 'nginx-core':)$")
 CASE_DIAGNOSTICS = {
+    "launchpad-groovy-arm64-amd64-alertmanager-irc-relay-6dae554a134b": re.compile(
+        r"^github\.com/google/alertmanager-irc-relay\.TestSendAlertDisconnected\("
+    ),
+    "launchpad-noble-arm64-amd64-lua-luv-e9dbd90452a8": re.compile(
+        r"^ok 98 thread - getaffinity, setaffinity$|"
+        r"^make\[\d+\]: \*\*\* \[/usr/share/dh-lua/make/dh-lua.Makefile.single:\d+: "
+        r"test-app-dynamic-real\] Error 139$"
+    ),
+    "launchpad-oracular-arm64-amd64-qtorganizer-eds-3a12a7097a09": re.compile(
+        r"^(?:\d+: )?recurrence-test\s*:\s*(?:FAIL!\s*:|Actual\s+\(|Expected\s+\(|Loc: \[)"
+    ),
+    "launchpad-resolute-arm64-amd64-python-pyinstrument-b6735db865a5": re.compile(
+        r"^FAILED test/test_stack_sampler\.py::\S+ - .+$"
+    ),
     "launchpad-jammy-arm64-amd64-tmpreaper-8c42ffb8e477": re.compile(
         r"^You forgot to fix the VERSION in configure\.ac!$|"
         r"^make: \*\*\* \[debian/rules:\d+: build-stamp\] Error 1$|"
