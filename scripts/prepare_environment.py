@@ -2,6 +2,7 @@
 """恢复指定构建环境并输出依赖来源和校验记录。"""
 import collections
 import concurrent.futures
+import filecmp
 import json
 import shutil
 import subprocess
@@ -38,6 +39,27 @@ def dependency_name(term):
     return term.strip().split(" ", 1)[0].split(":", 1)[0]
 
 
+def merge_usr_directory(source, destination):
+    for entry in sorted(source.iterdir()):
+        target = destination / entry.name
+        if not target.exists() and not target.is_symlink():
+            entry.rename(target)
+        elif entry.is_symlink() and target.is_symlink() and entry.readlink() == target.readlink():
+            entry.unlink()
+        elif not entry.is_symlink() and not target.is_symlink():
+            if entry.is_dir() and target.is_dir():
+                merge_usr_directory(entry, target)
+            elif entry.is_file() and target.is_file() and entry.stat().st_mode == target.stat().st_mode:
+                if not filecmp.cmp(entry, target, shallow=False):
+                    raise ValueError(f"Conflicting usrmerge bootstrap files: {entry}, {target}")
+                entry.unlink()
+            else:
+                raise ValueError(f"Conflicting usrmerge bootstrap paths: {entry}, {target}")
+        else:
+            raise ValueError(f"Conflicting usrmerge bootstrap paths: {entry}, {target}")
+    source.rmdir()
+
+
 def bootstrap(pool, archive, architecture):
     packages = {}
     providers = collections.defaultdict(list)
@@ -70,15 +92,24 @@ def bootstrap(pool, archive, architecture):
         root = Path(directory)
         for relative in ("usr/bin", "usr/sbin", "usr/lib", "usr/lib64", "etc", "tmp", "dev", "proc", "sys", "run"):
             (root / relative).mkdir(parents=True, exist_ok=True)
-        merged = ("usr-is-merged" in packages or architecture == "arm64" or
+        merged = ({"usr-is-merged", "usrmerge"} & packages.keys() or architecture == "arm64" or
                   int(packages["libc6"][1]["Version"].split(".")[1].split("-")[0]) >= 39)
-        for name in ("bin", "sbin", "lib", "lib64"):
-            if merged:
-                (root / name).symlink_to("usr/" + name)
-            else:
-                (root / name).mkdir()
+        usr_directories = ("bin", "sbin", "lib", "lib64")
+        for name in usr_directories:
+            (root / name).mkdir()
         for name in sorted(selected):
             subprocess.run(["dpkg-deb", "-x", packages[name][0], root], check=True)
+        if merged:
+            # 旧包的 tar 包含真实 /bin 等目录，先解包，再处理 usrmerge 链接。
+            for name in usr_directories:
+                old_path = root / name
+                if old_path.is_symlink():
+                    if old_path.readlink() not in (Path("usr") / name, Path("/usr") / name):
+                        raise ValueError(f"Unexpected bootstrap link: {old_path} -> {old_path.readlink()}")
+                    old_path.unlink()
+                else:
+                    merge_usr_directory(old_path, root / "usr" / name)
+                old_path.symlink_to("usr/" + name)
         for name in ("passwd", "group"):
             master = root / "usr/share/base-passwd" / f"{name}.master"
             shutil.copyfile(master, root / "etc" / name)

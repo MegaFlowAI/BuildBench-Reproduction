@@ -57,9 +57,15 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
+      - name: Prepare frozen build environment
+        env:
+          WORK: ${{ runner.temp }}/buildbench-work
+          BUILDBENCH_PREPARE_ONLY: "1"
+        run: bash scripts/run_case.sh "$CASE_ID" "$WORK" "" "$VARIANT"
       - name: Run the original build and optionally validate a patch
         env:
           WORK: ${{ runner.temp }}/buildbench-work
+          BUILDBENCH_ENVIRONMENT_PREPARED: "1"
         run: |
           set -euo pipefail
           patch=
