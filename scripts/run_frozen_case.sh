@@ -19,8 +19,13 @@ done
 python3 scripts/prepare_frozen_runtime.py "$case_dir" "$runtime_case" "$workspace/runtime-settings.json"
 reference="$case_dir/logs/target-failure.log"
 
+limits=()
+cpus=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["reproduction_conditions"].get("cpus", ""))' "$workspace/runtime-settings.json")
+if [[ -n "$cpus" ]]; then
+    limits=(--cpus "$cpus")
+fi
 code=0
-docker run --rm --network none --privileged \
+docker run --rm --network none --privileged "${limits[@]}" \
     -e HOME=/tmp -e TMPDIR=/tmp \
     -e BUILD_CASE_ISOLATED_WORKER=1 -e BUILD_CASE_VM_TYPE=chroot \
     --mount "type=bind,src=$runtime_case,dst=$runtime_case,readonly" \

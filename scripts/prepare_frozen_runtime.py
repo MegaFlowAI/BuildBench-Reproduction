@@ -10,6 +10,9 @@ from pathlib import Path
 
 MLMMJ = "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07"
 HTML_XML_UTILS = "launchpad-resolute-amd64-arm64-html-xml-utils-fe68b3f14b84"
+COWSQL = "launchpad-noble-arm64-amd64-cowsql-cfbcbf2fa889"
+DNSCAP = "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6"
+LIBMAUS2 = "launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2"
 BUILD_COMMAND = re.compile(
     rb"Command: dpkg-buildpackage (?P<sanitize>--sanitize-env )?-us -uc "
     rb"-m(?P<maintainer>Launchpad Build Daemon <buildd@[a-z0-9-]+(?:\.buildd)?>) "
@@ -63,6 +66,30 @@ def select_historical_versions(runtime, lock_path, build, versions):
     return sorted(set(discarded))
 
 
+def cowsql_command(runtime, command):
+    helper = runtime / "input/buildbench-runtime"
+    with helper.open("x", encoding="utf-8") as script:
+        script.write(
+            "#!/bin/sh\nset -eu\n"
+            "mkdir -p /var/lib/sbuild\n"
+            "cat >/var/lib/sbuild/apt.conf <<'EOF'\n"
+            'APT::Install-Recommends "false";\n'
+            'APT::AutoRemove::SuggestsImportant "false";\n'
+            'APT::AutoRemove::RecommendsImportant "false";\n'
+            'Acquire::Languages "none";\n'
+            'APT::Keep-Downloaded-Packages "false";\n'
+            "EOF\n"
+            "chown abuild /usr/src/packages\n"
+            "exec su -s /bin/sh abuild -c " + shlex.quote(
+                "ulimit -n 112 && cd /usr/src/packages/BUILD && "
+                "env HOME=/sbuild-nonexistent LC_ALL=C.UTF-8 LANG=C.UTF-8 "
+                "V=1 TERM=unknown APT_CONFIG=/var/lib/sbuild/apt.conf " + command
+            ) + "\n"
+        )
+    helper.chmod(0o755)
+    return "/usr/src/packages/SOURCES/buildbench-runtime"
+
+
 def prepare(case_dir, runtime, settings):
     manifest = read_json(case_dir / "manifest.json")
     case_id = manifest["case_id"]
@@ -75,6 +102,7 @@ def prepare(case_dir, runtime, settings):
     command = shlex.join(["dpkg-buildpackage", *flags])
     bootstrap = []
     build_engine = None
+    conditions = {}
     if case_id == MLMMJ:
         bootstrap = ["libmd0", "libbsd0", "libpcre2-8-0"]
         build_engine = "none"
@@ -86,6 +114,17 @@ def prepare(case_dir, runtime, settings):
     elif case_id == HTML_XML_UTILS:
         bootstrap = ["coreutils-from-uutils", "rust-coreutils"]
         build_engine = "none"
+    elif case_id == COWSQL:
+        command = cowsql_command(runtime, command)
+        conditions = {"build_user": "abuild", "nofile": 112}
+    elif case_id == DNSCAP:
+        conditions = {"cpus": 3}
+    elif case_id == LIBMAUS2:
+        command = (
+            "mount -t tmpfs -o ro,nosuid,nodev,noexec historical-cache-mask "
+            "/sys/devices/system/cpu/cpu0/cache && " + command
+        )
+        conditions = {"mask_cpu_cache": True}
     config = runtime / build["buildconfig"]
     config_text = config.read_text(encoding="utf-8").rstrip()
     if re.search(r"^Substitute:\s+dsc:build_cmd\s", config_text, re.M):
@@ -111,6 +150,7 @@ def prepare(case_dir, runtime, settings):
         "dpkg_buildpackage_arguments": flags,
         "bootstrap_preinstall": bootstrap,
         "build_engine_override": build_engine,
+        "reproduction_conditions": conditions,
         "omitted_nonhistorical_duplicates": discarded,
     })
     build["jobs"] = jobs
