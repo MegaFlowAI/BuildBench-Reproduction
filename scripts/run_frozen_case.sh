@@ -11,31 +11,12 @@ output="$result_root/build-output"
 test ! -e "$output"
 runtime_case=$(mktemp -d "$workspace/input-XXXXXXXX")
 cp -al "$case_dir/source/input" "$runtime_case/input"
-cp -al "$case_dir/config" "$runtime_case/config"
+cp -a "$case_dir/config" "$runtime_case/config"
 mkdir "$runtime_case/dependencies"
 for dependency_dir in "$case_dir"/dependencies/ubuntu-*; do
     cp -al "$dependency_dir" "$runtime_case/dependencies/"
 done
-python3 - "$case_dir/manifest.json" "$runtime_case/manifest.json" "$workspace/runtime-settings.json" <<'PY'
-import json
-import sys
-from pathlib import Path
-
-source, target, settings = map(Path, sys.argv[1:])
-data = json.loads(source.read_text(encoding="utf-8"))
-historical = json.loads(Path("cases.json").read_text(encoding="utf-8"))[data["case_id"]]
-jobs = historical["jobs"]
-if type(jobs) is not int or jobs < 1:
-    raise ValueError("Invalid historical build parallelism")
-settings.write_text(json.dumps({
-    "frozen_jobs": data["build"]["jobs"],
-    "historical_jobs": jobs,
-}, indent=2) + "\n", encoding="utf-8")
-data["build"]["jobs"] = jobs
-data["build"]["recipe"] = "input/" + Path(data["build"]["recipe"]).name
-data["patch_policy"]["allowed_paths"] = ["input/**"]
-target.write_text(json.dumps(data), encoding="utf-8")
-PY
+python3 scripts/prepare_frozen_runtime.py "$case_dir" "$runtime_case" "$workspace/runtime-settings.json"
 reference="$case_dir/logs/target-failure.log"
 
 code=0
