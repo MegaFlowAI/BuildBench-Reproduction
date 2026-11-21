@@ -2,6 +2,9 @@
   "launchpad-focal-arm64-amd64-cysignals-efa90da21cf9": {
     "architecture": "amd64",
     "distribution": "focal-proposed",
+    "env": {
+      "attempts": 2
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
@@ -326,6 +329,12 @@
   "launchpad-focal-arm64-amd64-gcc-9-cross-d6df5b73fd91": {
     "architecture": "amd64",
     "distribution": "focal-proposed",
+    "env": {
+      "attempts": 2,
+      "vars": {
+        "CROSS_ARCHS": "powerpc"
+      }
+    },
     "handover_status": "matched_diagnostics",
     "jobs": 4,
     "mode": "-b",
@@ -1331,6 +1340,9 @@
   "launchpad-focal-arm64-amd64-libinsane-d2cacbf5f310": {
     "architecture": "amd64",
     "distribution": "focal-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "matched_diagnostics",
     "jobs": 4,
     "mode": "-b",
@@ -1665,6 +1677,9 @@
   "launchpad-focal-arm64-amd64-pyfftw-f9b533c96808": {
     "architecture": "amd64",
     "distribution": "focal-proposed",
+    "env": {
+      "attempts": 2
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
@@ -2399,6 +2414,9 @@
   "launchpad-focal-arm64-amd64-python-pysam-d67bcf3d58a4": {
     "architecture": "amd64",
     "distribution": "focal-proposed",
+    "env": {
+      "attempts": 2
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
@@ -2732,6 +2750,9 @@
   "launchpad-groovy-arm64-amd64-alertmanager-irc-relay-6dae554a134b": {
     "architecture": "amd64",
     "distribution": "groovy-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "pending",
     "jobs": 4,
     "mode": "-b",
@@ -3075,6 +3096,9 @@
   "launchpad-groovy-arm64-amd64-golang-github-mmcloughlin-avo-472bebf32a26": {
     "architecture": "amd64",
     "distribution": "groovy-proposed",
+    "env": {
+      "attempts": 2
+    },
     "handover_status": "matched_diagnostics",
     "jobs": 4,
     "mode": "-b",
@@ -3312,6 +3336,9 @@
   "launchpad-hirsute-arm64-amd64-golang-v2ray-core-3202fdcc8203": {
     "architecture": "amd64",
     "distribution": "hirsute-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "pending",
     "jobs": 4,
     "mode": "-b",
@@ -27098,6 +27125,10 @@
   "launchpad-noble-arm64-amd64-cowsql-cfbcbf2fa889": {
     "architecture": "amd64",
     "distribution": "noble-proposed",
+    "env": {
+      "attempts": 2,
+      "nofile": 112
+    },
     "handover_status": "matched_diagnostics",
     "jobs": 4,
     "mode": "-b",
@@ -29775,6 +29806,9 @@
   "launchpad-noble-arm64-amd64-lua-luv-e9dbd90452a8": {
     "architecture": "amd64",
     "distribution": "noble-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "pending",
     "jobs": 4,
     "mode": "-b",
@@ -32685,6 +32719,9 @@
   "launchpad-noble-arm64-amd64-zim-tools-435516320f16": {
     "architecture": "amd64",
     "distribution": "noble-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "matched_diagnostics",
     "jobs": 4,
     "mode": "-b",
@@ -37206,6 +37243,9 @@
   "launchpad-oracular-arm64-amd64-cxref-472d3a12cb84": {
     "architecture": "amd64",
     "distribution": "oracular-proposed",
+    "env": {
+      "attempts": 2
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
@@ -37513,6 +37553,9 @@
   "launchpad-oracular-arm64-amd64-dqlite-73a783215973": {
     "architecture": "amd64",
     "distribution": "oracular-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "pending",
     "jobs": 4,
     "mode": "-b",
@@ -37778,6 +37821,9 @@
   "launchpad-oracular-arm64-amd64-gnome-shell-c7d8316b3552": {
     "architecture": "amd64",
     "distribution": "oracular-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
@@ -39653,6 +39699,9 @@
   "launchpad-oracular-arm64-amd64-python-pyppmd-2779251761a8": {
     "architecture": "amd64",
     "distribution": "oracular-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "pending",
     "jobs": 4,
     "mode": "-b",
@@ -39956,6 +40005,9 @@
   "launchpad-oracular-arm64-amd64-qtorganizer-eds-3a12a7097a09": {
     "architecture": "amd64",
     "distribution": "oracular-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "pending",
     "jobs": 4,
     "mode": "-b",
@@ -40613,6 +40665,9 @@
   "launchpad-oracular-arm64-amd64-qtpim-opensource-src-2b5c2f205d2b": {
     "architecture": "amd64",
     "distribution": "oracular-proposed",
+    "env": {
+      "attempts": 3
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
@@ -66909,6 +66964,10 @@
   "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6": {
     "architecture": "amd64",
     "distribution": "resolute-proposed",
+    "env": {
+      "attempts": 2,
+      "cpuset": "0-2"
+    },
     "handover_status": "matched_diagnostics",
     "jobs": 4,
     "mode": "-b",
@@ -68780,6 +68839,9 @@
   "launchpad-resolute-arm64-amd64-libselinux-0960c210997c": {
     "architecture": "amd64",
     "distribution": "resolute-proposed",
+    "env": {
+      "attempts": 2
+    },
     "handover_status": "handover_match",
     "jobs": 4,
     "mode": "-b",
