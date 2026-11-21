@@ -68,13 +68,20 @@ def compare(case_root, log, exit_code, output):
     reference_hash = sha256(reference)
     if reference_hash != historical["reference_sha256"]:
         raise ValueError("Reference log checksum mismatch")
+    failures = []
+    installed = None
     with log.open("rb") as raw:
-        failures = [match[1].decode("ascii") for line in raw
-                    if (match := re.fullmatch(rb"Fail-Stage:[ \t]+([a-zA-Z0-9_-]+)[ \t]*\r?\n", line))]
+        for line in raw:
+            if line.startswith(b"Package versions: "):
+                installed = dict(word.split("_", 1) for word in line.decode().split()[2:]
+                                 if not word.startswith("sbuild-build-depends-"))
+            if match := re.fullmatch(rb"Fail-Stage:[ \t]+([a-zA-Z0-9_-]+)[ \t]*\r?\n", line):
+                failures.append(match[1].decode("ascii"))
     difference = first_difference(reference, log)
     package_failed = exit_code != 0 and "build" in failures
+    case_id = read_json(case_root / "case.json")["case_id"]
     verdict = {
-        "case_id": read_json(case_root / "case.json")["case_id"],
+        "case_id": case_id,
         "status": ("exact" if difference is None else "byte_mismatch") if package_failed
                   else ("build_succeeded" if exit_code == 0 else "build_infrastructure_failed"),
         "sbuild_exit": exit_code,
@@ -85,8 +92,19 @@ def compare(case_root, log, exit_code, output):
         "reference_sha256": reference_hash,
         "replay_sha256": sha256(log),
     }
+    if installed is not None:
+        expected = read_json(ROOT / "cases.json")[case_id]["packages"]
+        version_differences = {
+            name: {"historical": expected.get(name), "installed": installed.get(name)}
+            for name in sorted(expected.keys() | installed.keys())
+            if expected.get(name) != installed.get(name)
+        }
+        verdict["historical_package_count"] = len(expected)
+        verdict["installed_package_count"] = len(installed)
+        verdict["versions_matched"] = sum(installed.get(name) == version for name, version in expected.items())
+        verdict["version_differences"] = version_differences
     output.write_text(json.dumps(verdict, indent=2) + "\n")
-    print(json.dumps(verdict))
+    print(json.dumps({key: value for key, value in verdict.items() if key != "version_differences"}))
     return 0 if verdict["status"] == "exact" else 1
 
 
