@@ -14,3 +14,5 @@
 [受损依赖修复清单](../cases/integrity-repairs.json)记录冻结池里被截断的 21 个包及对应的同版本原始下载。Actions 校验归档和旧文件的 SHA256 后，在临时构建目录换成已校验的完整包，再更新该次构建的依赖锁。实际应用的修复会写入作业附件的 `dependency-repairs.json`。
 
 官方 200 份日志都记录了构建阶段失败，并引用了 22 个不同的 Launchpad chroot SHA-1。[历史构建机清单](../cases/historical-hosts.json)记录每例的原始构建链接、内核、chroot 和宿主侧工具版本。当前仓库的运行时来自已保存的 OBS Validator 镜像。逐字节比对会保留 Launchpad 日志中的构建机、时间和调度器输出，供核验这些环境差异。
+
+[原始 chroot 清单](../cases/launchpad-chroots.json)登记了 7 个通过历史 SHA-1 校验的 Launchpad 镜像，覆盖 100 例。**BuildBench Launchpad builder replay** 目前可对采用 Launchpad 构建器 236 和 sbuild `0.79.0-1ubuntu1` 的用例试跑。作业再次验证下载的 SHA-256 和日志记录的 SHA-1，使用历史构建器源码中的命令，并以离线包索引提供冻结依赖。宿主内核来自当前 GitHub Runner，原始日志仍按整份字节比较。

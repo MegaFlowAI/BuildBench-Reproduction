@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import time
+from http.client import HTTPException
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -20,12 +21,13 @@ CASE_ID = re.compile(r"launchpad-[a-z0-9-]+")
 
 def runs(token):
     page = 1
+    page_size = 40
     while True:
         entries = request(
-            f"{WORKFLOW}/runs?event=workflow_dispatch&per_page=100&page={page}", token,
+            f"{WORKFLOW}/runs?event=workflow_dispatch&per_page={page_size}&page={page}", token,
         )["workflow_runs"]
         yield from entries
-        if len(entries) < 100:
+        if len(entries) < page_size:
             return
         page += 1
 
@@ -88,7 +90,7 @@ def main():
                 dispatched.update(ready)
             if inventory.keys() <= attempted or args.once:
                 return 0
-        except (HTTPError, URLError, TimeoutError) as error:
+        except (HTTPError, URLError, TimeoutError, HTTPException, json.JSONDecodeError) as error:
             print(json.dumps({"status": "dispatch_retry", "reason": str(error)}), flush=True)
             if args.once:
                 return 1

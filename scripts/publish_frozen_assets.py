@@ -8,6 +8,7 @@ import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
+from http.client import HTTPException
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -102,14 +103,14 @@ def main():
             try:
                 result = publish(path, record, current, release_id, token)
                 break
-            except (HTTPError, URLError, TimeoutError) as error:
+            except (HTTPError, URLError, TimeoutError, HTTPException, json.JSONDecodeError) as error:
                 if attempt == 2:
                     result = {"file": name, "status": "upload_failed", "reason": str(error)}
                     break
                 time.sleep(3 * (attempt + 1))
                 try:
                     current = listed_assets(release_id, token).get(name)
-                except (URLError, TimeoutError):
+                except (URLError, TimeoutError, HTTPException, json.JSONDecodeError):
                     current = None
             except (ValueError, OSError) as error:
                 result = {"file": name, "status": "upload_failed", "reason": str(error)}
