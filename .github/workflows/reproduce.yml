@@ -1,4 +1,4 @@
-﻿name: BuildBench original and patched builds
+name: BuildBench original and patched builds
 run-name: BuildBench ${{ inputs.selection }}
 on:
   workflow_dispatch:
