@@ -4,6 +4,7 @@ import hashlib
 import lzma
 import subprocess
 import tempfile
+from pathlib import Path
 
 SNAPSHOT = "https://snapshot.ubuntu.com/ubuntu"
 LAUNCHPAD = "https://launchpad.net/ubuntu/+archive/primary/+files"
@@ -56,7 +57,10 @@ def acquire(name, version, record, root, destination, architecture):
             if not fetch(url, path, max_time=420 if name.startswith("nvidia-cuda-") else 80):
                 continue
             with path.open("rb") as handle:
-                digest = hashlib.file_digest(handle, "sha256").hexdigest()
+                checksum = hashlib.sha256()
+                for block in iter(lambda: handle.read(1048576), b""):
+                    checksum.update(block)
+            digest = checksum.hexdigest()
             if record and digest != record["SHA256"]:
                 continue
             metadata = subprocess.run(
