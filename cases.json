@@ -55401,6 +55401,17 @@
           "BUILDBENCH_BUILD_TERM": "unknown"
         },
         "attempts": 3
+      },
+      "sbuild-affinity": {
+        "vars": {
+          "USER": "buildd",
+          "LOGNAME": "buildd",
+          "V": "1",
+          "BUILDBENCH_BUILD_HOME": "/sbuild-nonexistent",
+          "BUILDBENCH_BUILD_TERM": "unknown"
+        },
+        "attempts": 2,
+        "cpuset": "0-1"
       }
     }
   },
@@ -61092,6 +61103,27 @@
       "single-cpu": {
         "cpus": 1,
         "attempts": 10,
+        "timeout": 1800
+      },
+      "shuffle-42": {
+        "vars": {
+          "MAKEFLAGS": "--shuffle=42"
+        },
+        "attempts": 3,
+        "timeout": 1800
+      },
+      "shuffle-101": {
+        "vars": {
+          "MAKEFLAGS": "--shuffle=101"
+        },
+        "attempts": 3,
+        "timeout": 1800
+      },
+      "shuffle-20261121": {
+        "vars": {
+          "MAKEFLAGS": "--shuffle=20261121"
+        },
+        "attempts": 3,
         "timeout": 1800
       }
     }
