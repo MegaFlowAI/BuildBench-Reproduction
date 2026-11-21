@@ -74,7 +74,7 @@ def prepare(case_dir, runtime, settings):
     command = shlex.join(["dpkg-buildpackage", *flags])
     bootstrap = []
     if case_id == MLMMJ:
-        bootstrap = ["libmd0", "libbsd0"]
+        bootstrap = ["libmd0", "libbsd0", "libpcre2-8-0"]
         command = (
             "chown --reference=/usr/src/packages/BUILD /usr/src/packages && "
             "runuser --user=abuild -- env HOME=/sbuild-nonexistent LANG=C.UTF-8 "
@@ -87,6 +87,7 @@ def prepare(case_dir, runtime, settings):
     overrides = ["Substitute: dsc:build_cmd " + command]
     if bootstrap:
         overrides.append("Preinstall: " + " ".join(bootstrap))
+        overrides.append("ExpandFlags: preinstallexpand")
     config.write_text("\n".join([*overrides, config_text, ""]), encoding="utf-8")
     discarded = select_historical_versions(
         runtime, runtime / build["dependency_lock"], build, historical["packages"],

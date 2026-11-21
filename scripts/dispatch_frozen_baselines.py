@@ -2,6 +2,7 @@
 """Schedule each uploaded frozen baseline, with a bound on active matrix jobs."""
 
 import argparse
+import base64
 import json
 import re
 import sys
@@ -77,7 +78,9 @@ def main():
                 if run["status"] != "completed":
                     active.update(seen)
             assets = listed_assets(release_id, token)
-            available = available_cases(inventory, assets.values())
+            source = request(f"{API}/contents/cases/integrity-repairs.json?ref=main", token)
+            repairs = json.loads(base64.b64decode(source["content"]))
+            available = available_cases(inventory, assets.values(), repairs)
             limit = max(0, min(args.batch_size, args.max_active - len(active)))
             ready = sorted(available.keys() - attempted)[:limit]
             if ready:

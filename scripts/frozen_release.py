@@ -4,6 +4,7 @@
 import argparse
 import json
 import re
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -26,7 +27,7 @@ def frozen_cases():
     return cases
 
 
-def available_cases(cases, assets):
+def available_cases(cases, assets, repairs):
     runtimes = json.loads((ROOT / "cases/runtimes.json").read_text())
     uploaded = {asset["name"]: (asset["size"], asset["digest"])
                 for asset in assets if asset["state"] == "uploaded"}
@@ -34,9 +35,15 @@ def available_cases(cases, assets):
     def is_published(record):
         return uploaded.get(record["file"]) == (record["bytes"], "sha256:" + record["sha256"])
 
+    blocked = {
+        case for repair in repairs
+        if "asset" not in repair or not is_published(repair["asset"])
+        for case in repair["cases"]
+    }
     return {
         case: (arch, path) for case, (arch, path) in cases.items()
-        if is_published(runtimes[arch]) and is_published(json.loads(path.read_text()))
+        if case not in blocked and is_published(runtimes[arch])
+        and is_published(json.loads(path.read_text()))
     }
 
 
@@ -44,7 +51,8 @@ def select(selection, release_assets):
     cases = frozen_cases()
     if release_assets:
         pages = json.loads(release_assets.read_text())
-        cases = available_cases(cases, (asset for page in pages for asset in page))
+        repairs = json.loads((ROOT / "cases/integrity-repairs.json").read_text())
+        cases = available_cases(cases, (asset for page in pages for asset in page), repairs)
     if selection == "all" or selection in RUNNERS:
         selected = [case for case, (arch, _) in cases.items()
                     if selection in {"all", arch}]
@@ -72,6 +80,37 @@ def download(record, work, file_name):
     return destination
 
 
+def apply_repairs(case, case_root, work):
+    repairs = json.loads((ROOT / "cases/integrity-repairs.json").read_text())
+    applied = {repair["file"]: repair for repair in repairs if case in repair["cases"]}
+    if not applied:
+        return
+    manifest = json.loads((case_root / "manifest.json").read_text())
+    build = manifest["build"]
+    lock_path = case_root / build["dependency_lock"]
+    lock = json.loads(lock_path.read_text())
+    entries = {entry["filename"]: entry for entry in lock["dependencies"]}
+    directories = {name.rsplit("-", 1)[1]: case_root / name for name in build["dependency_dirs"]}
+    for name, repair in applied.items():
+        entry = entries[name]
+        target = directories[entry["arch"]] / name
+        if sha256(target) != repair["archived_sha256"] or entry["sha256"] != repair["archived_sha256"]:
+            raise ValueError(f"Unexpected original dependency bytes: {name}")
+        asset = repair["asset"]
+        downloaded = download(asset, work, "recovered-" + asset["sha256"] + ".deb")
+        actual = subprocess.check_output([
+            "dpkg-deb", "-f", downloaded, "Package", "Version", "Architecture",
+        ], text=True)
+        expected = dict(zip(("Package", "Version", "Architecture"),
+                            (entry["package"], entry["version"], entry["arch"])))
+        if dict(line.split(": ", 1) for line in actual.splitlines()) != expected:
+            raise ValueError(f"Recovered package identity changed: {name}")
+        shutil.copyfile(downloaded, target)
+        entry["sha256"] = asset["sha256"]
+    lock_path.write_text(json.dumps(lock, indent=2, sort_keys=True) + "\n")
+    (work / "dependency-repairs.json").write_text(json.dumps(list(applied.values()), indent=2) + "\n")
+
+
 def fetch(case, work):
     arch, metadata = frozen_cases()[case]
     work = work.resolve()
@@ -86,6 +125,7 @@ def fetch(case, work):
             packaged = case_root / path.relative_to(metadata.parent)
             if sha256(path) != sha256(packaged):
                 raise ValueError(f"Release metadata differs from Git: {path.name}")
+    apply_repairs(case, case_root, work)
     subprocess.run(["docker", "load", "--input", image_archive], check=True)
     actual = subprocess.check_output([
         "docker", "image", "inspect", "--format", "{{.Architecture}}", runtime["image"],
