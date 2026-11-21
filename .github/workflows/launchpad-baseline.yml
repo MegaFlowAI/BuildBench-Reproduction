@@ -57,6 +57,7 @@ jobs:
           chroot=$(jq -r .chroot.file "$settings")
           code=0
           docker run --rm --privileged --network none --hostname "$host" \
+            --add-host "$host:127.0.0.1" --add-host "$host.buildd:127.0.0.1" \
             --mount "type=bind,src=$case_root/source/input,dst=/input/source,readonly" \
             --mount "type=bind,src=$case_root/dependencies,dst=/input/dependencies,readonly" \
             --mount "type=bind,src=$input/$chroot,dst=/input/chroot,readonly" \
