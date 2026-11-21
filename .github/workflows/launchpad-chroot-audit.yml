@@ -1,0 +1,67 @@
+name: Locate historical Launchpad chroots
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  select:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.cases.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - id: cases
+        run: |
+          matrix=$(python3 scripts/probe_launchpad_chroots.py matrix)
+          printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
+  inspect:
+    needs: select
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    env:
+      SERIES: ${{ matrix.series }}
+      ARCH: ${{ matrix.arch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compare public chroots with the original recorded SHA-1
+        run: python3 scripts/probe_launchpad_chroots.py inspect "$SERIES" "$ARCH" "$RUNNER_TEMP/chroot-audit"
+      - name: Publish exact historical chroots
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd "$RUNNER_TEMP/chroot-audit"
+          shopt -s nullglob
+          for archive in launchpad-chroot-*.tar; do
+            sha=$(sha256sum "$archive" | cut -d ' ' -f 1)
+            release_id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/frozen-cases-v1" --jq '.id')
+            release_api="repos/$GITHUB_REPOSITORY/releases/$release_id/assets?per_page=100"
+            get_asset() {
+              gh api --paginate "$release_api" --jq ".[] | select(.name == \"$archive\")"
+            }
+            asset=$(get_asset)
+            if [[ -z "$asset" ]]; then
+              if ! gh release upload frozen-cases-v1 "$archive" --repo "$GITHUB_REPOSITORY"; then
+                # A parallel job may have published the same original chroot.
+                asset=$(get_asset)
+                test -n "$asset"
+              fi
+              asset=$(get_asset)
+            fi
+            jq -e --arg sha "sha256:$sha" \
+              '.state == "uploaded" and .digest == $sha' <<< "$asset"
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chroot-evidence-${{ matrix.series }}-${{ matrix.arch }}
+          path: ${{ runner.temp }}/chroot-audit/chroot-evidence.json

@@ -62,6 +62,7 @@ jobs:
             {
               printf '### %s\n\n' "$CASE_ID"
               printf 'Raw log verdict: **%s**\n\n' "$(jq -r .status "$WORK/exact-result.json")"
+              printf 'Package build exit: **%s**\n\n' "$(jq -r .build_exit_code "$WORK/exact-result.json")"
               printf 'First different byte: **%s**\n\n' "$(jq -r .first_difference_byte "$WORK/exact-result.json")"
               printf 'See the linked run artifact for the raw build log and events.\n'
             } >> "$GITHUB_STEP_SUMMARY"
@@ -77,3 +78,10 @@ jobs:
             ${{ runner.temp }}/buildbench-frozen-result/result-*/build-output/build.log
             ${{ runner.temp }}/buildbench-frozen-result/result-*/build-output/build-*.json*
           retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: frozen-verdict-${{ matrix.case }}
+          path: ${{ runner.temp }}/buildbench-frozen-result/exact-result.json
+          if-no-files-found: ignore
+          retention-days: 30

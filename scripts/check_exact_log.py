@@ -54,16 +54,26 @@ def main():
         if result["case_id"] != verdict["case_id"]:
             raise SystemExit("Build result case identity mismatch")
         difference = first_difference(args.reference, raw_log)
+        failed_stages = [e["stage"] for e in events if e.get("state") == "failed" and "stage" in e]
         package_failed = (
             args.validator_exit != 0 and result["status"] == "failed"
             and result["build_exit_code"] not in (None, 0)
-            and any(e.get("stage") == "package_build" and e.get("state") == "failed" for e in events)
+            and "package_build" in failed_stages
         )
+        status = "build_failure_unverified"
+        if package_failed:
+            status = "exact" if difference is None else "byte_mismatch"
+        elif args.validator_exit == 0 and result["build_exit_code"] == 0:
+            status = "build_succeeded"
+        elif "timeout" in failed_stages:
+            status = "build_timeout"
+        elif failed_stages:
+            status = "build_infrastructure_failed"
         verdict.update(
-            status="exact" if package_failed and difference is None else
-                   "byte_mismatch" if package_failed else "build_failure_unverified",
+            status=status,
             package_failed=package_failed,
             build_exit_code=result["build_exit_code"],
+            failed_stages=failed_stages,
             replay_sha256=sha256(raw_log),
             replay_bytes=raw_log.stat().st_size,
             first_difference_byte=None if difference is None else difference + 1,
