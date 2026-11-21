@@ -53,11 +53,11 @@ run_build() {
     fi
     local container="buildbench-$label-$case_id"
     local -a limits=()
-    [[ -n "$env_nofile" ]] && limits+=(--ulimit "nofile=$env_nofile:$env_nofile")
-    [[ -n "$env_cpus" ]] && limits+=(--cpus "$env_cpus")
-    [[ -n "$env_cpuset" ]] && limits+=(--cpuset-cpus "$env_cpuset")
+    if [[ -n "$env_nofile" ]]; then limits+=(--ulimit "nofile=$env_nofile:$env_nofile"); fi
+    if [[ -n "$env_cpus" ]]; then limits+=(--cpus "$env_cpus"); fi
+    if [[ -n "$env_cpuset" ]]; then limits+=(--cpuset-cpus "$env_cpuset"); fi
     local userns=buildd
-    [[ -n "$env_user" ]] && userns="$env_user"
+    if [[ -n "$env_user" ]]; then userns="$env_user"; fi
     local -a command=(
         docker run --rm --name "$container" --network none --cap-drop ALL --security-opt no-new-privileges
         --user "$userns" "${limits[@]}" "${extra_env[@]}"
