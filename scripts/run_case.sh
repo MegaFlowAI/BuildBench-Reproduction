@@ -24,6 +24,7 @@ env_cpus=$(jq -r '.env.cpus // empty' "$work/config.json")
 env_cpuset=$(jq -r '.env.cpuset // empty' "$work/config.json")
 env_user=$(jq -r '.env.user // empty' "$work/config.json")
 env_attempts=$(jq -r '.env.attempts // 1' "$work/config.json")
+env_timeout=$(jq -r '.env.timeout // 7200' "$work/config.json")
 mapfile -t env_vars < <(jq -r '(.env.vars // {}) | to_entries[] | "\(.key)=\(.value)"' "$work/config.json")
 echo "case env: nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} attempts=$env_attempts vars=${env_vars[*]:-none}"
 
@@ -59,6 +60,7 @@ run_build() {
     local userns=buildd
     if [[ -n "$env_user" ]]; then userns="$env_user"; fi
     local -a command=(
+        timeout --signal=KILL "$env_timeout"
         docker run --rm --name "$container" --network none --cap-drop ALL --security-opt no-new-privileges
         --user "$userns" "${limits[@]}" "${extra_env[@]}"
         --mount "type=bind,src=$work/official/source/input,dst=/input,readonly"
@@ -72,6 +74,7 @@ run_build() {
         "${command[@]}" > "$work/evidence/$label.log" 2>&1 || code=$?
     fi
     printf '%s\n' "$code" > "$work/evidence/$label.exit"
+    docker rm --force "$container" >/dev/null 2>&1 || true
     printf '%s exit code: %s\n' "$label" "$code"
     return "$code"
 }
