@@ -1,0 +1,77 @@
+name: BuildBench original and patched builds
+run-name: BuildBench ${{ inputs.selection }}
+on:
+  workflow_dispatch:
+    inputs:
+      selection:
+        description: "Case ID, pilot, pending, arm64, amd64, or all"
+        default: pending
+        required: true
+      patch_pr:
+        description: "Optional public pull request number; requires a single case ID"
+        type: string
+        required: false
+permissions:
+  contents: read
+jobs:
+  select:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.cases.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - id: cases
+        env:
+          SELECTION: ${{ inputs.selection }}
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          matrix=$(python3 scripts/select_cases.py "$SELECTION")
+          if [[ -n "$PATCH_PR" ]]; then
+            [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ && "$SELECTION" == launchpad-* ]]
+          fi
+          printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
+  build:
+    needs: select
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ matrix.case }}
+      PATCH_PR: ${{ inputs.patch_pr }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run the original build and optionally validate a patch
+        env:
+          WORK: ${{ runner.temp }}/buildbench-work
+        run: |
+          set -euo pipefail
+          patch=
+          mkdir -p "$WORK/evidence"
+          if [[ -n "$PATCH_PR" ]]; then
+            [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
+            git fetch --no-tags --depth=1 origin "refs/pull/$PATCH_PR/head"
+            sha=$(git rev-parse FETCH_HEAD)
+            patch_path="submissions/$CASE_ID/change.patch"
+            patch="$WORK/change.patch"
+            test "$(git cat-file -t "$sha:$patch_path")" = blob
+            git show "$sha:$patch_path" > "$patch"
+            test -s "$patch"
+            test "$(wc -c < "$patch")" -le 1048576
+            printf '%s\n' "$sha" > "$WORK/evidence/patch-commit.txt"
+            sha256sum "$patch" > "$WORK/evidence/patch-sha256.txt"
+          fi
+          bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.case }}
+          path: ${{ runner.temp }}/buildbench-work/evidence/
+          retention-days: 7
