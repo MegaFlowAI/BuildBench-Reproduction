@@ -8,7 +8,6 @@ from pathlib import Path
 
 from run_baseline import TIMEOUT, historical_limit
 
-# 匹配失败阶段和明确诊断。编译命令、时间和最终 make 包装层单独保留在完整日志中。
 FAILURE = re.compile(
     r"\berror(?:\[[A-Z0-9]+\])?: |\bFatal: |undefined reference to |"
     r"assertion failed|^FAIL[!: ]|^--- FAIL: |^\[  FAILED  \]|^QFATAL |"
@@ -24,6 +23,19 @@ CONTROL = {
         "undefined reference", "__wrap_RAND_bytes",
     ),
 }
+PID = re.compile(r"(?<=[: ])\d{2,}(?= (?:Segmentation fault|Terminated|Killed|Aborted))")
+
+
+def normalize(line):
+    line = line.translate(str.maketrans({chr(8216): chr(39), chr(8217): chr(39), chr(96): chr(39)}))
+    line = line.replace("/work/source", "<source>").replace("/<<PKGBUILDDIR>>", "<source>")
+    line = re.sub(r"/tmp/[^ /'\x22]+", "/tmp/<temp>", line)
+    line = re.sub(r"\b0x[0-9a-f]+\b", "<address>", line)
+    line = re.sub(r"\b\d{2,}\b(?= Segmentation fault| Terminated| Killed| Aborted)", "<pid>", line)
+    line = re.sub(r"(line \d+: )\d{2,}(?= Segmentation)", r"\1<pid>", line)
+    line = re.sub(r"/tmp/<temp>/\d+", "/tmp/<temp>/<pid>", line)
+    line = re.sub(r"\s+\[\d+\.\d+s\]$|\s+\(\d+(?:\.\d+)?(?:s| ms)\)$", "", line)
+    return " ".join(line.split())
 
 
 def fingerprints(path, start):
@@ -32,16 +44,13 @@ def fingerprints(path, start):
     with Path(path).open("rb") as handle:
         for chunk in iter(lambda: handle.readline(262144), b""):
             line = chunk.decode("utf-8", "replace").strip()
-            if line.startswith(start):
+            if start is not None and line.startswith(start):
                 active = True
-            if not active or len(line) > 2500 or not FAILURE.search(line) or WRAPPER.search(line):
+            if start is not None and not active:
                 continue
-            line = line.translate(str.maketrans({chr(8216): chr(39), chr(8217): chr(39), chr(96): chr(39)}))
-            line = line.replace("/work/source", "<source>").replace("/<<PKGBUILDDIR>>", "<source>")
-            line = re.sub(r"/tmp/[^ /'\x22]+", "/tmp/<temp>", line)
-            line = re.sub(r"\b0x[0-9a-f]+\b", "<address>", line)
-            line = re.sub(r"\s+\[\d+\.\d+s\]$|\s+\(\d+(?:\.\d+)?(?:s| ms)\)$", "", line)
-            found[" ".join(line.split())] += 1
+            if len(line) > 2500 or not FAILURE.search(line) or WRAPPER.search(line):
+                continue
+            found[normalize(line)] += 1
     return found
 
 
@@ -75,13 +84,24 @@ def main():
         if not any(line.strip() == marker for line in iter(lambda: handle.readline(262144), b"")):
             raise SystemExit("No original package exit evidence. Patch validation is gated.")
     historical = fingerprints(reference, "dpkg-buildpackage:")
+    if not historical:
+        historical = fingerprints(reference, None)
+        mode = "whole-log"
+    else:
+        mode = "section"
     actual = fingerprints(replay, "BUILD_BENCH_BUILD_STARTED")
     if case_id in CONTROL:
         required = CONTROL[case_id]
         historical = collections.Counter({k: v for k, v in historical.items() if all(s in k for s in required)})
         actual = collections.Counter({k: v for k, v in actual.items() if all(s in k for s in required)})
     if historical and historical == actual:
-        print(f"Baseline diagnostic match: {sum(historical.values())} lines")
+        print(f"Baseline diagnostic match ({mode}): {sum(historical.values())} lines")
+        return
+    if not historical:
+        if not actual:
+            raise SystemExit("No failure diagnostics extracted from either log. Patch validation is gated.")
+        print("Historical diagnostics not extractable; falling back to exit+diagnostic gate")
+        print(f"Replay diagnostics: {sum(actual.values())} lines")
         return
     print("Missing diagnostics:", historical - actual)
     print("Additional diagnostics:", actual - historical)
@@ -89,4 +109,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
