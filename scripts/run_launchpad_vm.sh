@@ -36,7 +36,7 @@ sudo cp -a "$case_root/source/input" "$root/input/source"
 sudo cp -a "$case_root/dependencies" "$root/input/dependencies"
 sudo cp "$input/$(jq -er .chroot.file "$settings")" "$root/input/chroot"
 sudo cp "$input/launchpad-pins" "$root/input/apt-pins"
-sudo cp "$(command -v busybox)" "$root/bin/boot-busybox"
+sudo cp "$(command -v busybox)" "$root/bin/busybox"
 
 mapfile -t args < <(jq -r '.build_id,.architecture,.distribution,.jobs,.mode,.recipe,.maintainer' "$settings")
 {
