@@ -37,14 +37,12 @@
 
 ## 查看日志
 
-打开一次 Actions 运行的 Summary，在底部 Artifacts 下载 `evidence-<case-id>`：
+在 Actions 运行的底部 Artifacts 下载 `build-log-<case-id>`，里面只有完整构建日志：
 
-- `result-baseline-*/build-output/build.log`：完整原始构建日志（含 chroot 准备、依赖安装、构建等阶段，通常数百到数千行）；
-- `baseline-verdict.json`：与官方失败日志的比对结果（行数、行数比例、诊断覆盖、阶段齐备情况）；
-- `validator-baseline.log`：validator 控制台输出；
-- 如果跑了补丁验证，还有 `result-patched-*/build-output/build.log` 和 `patched-result.json`。
+- `build.log`：原始构建的完整多阶段日志（chroot 准备、依赖安装、构建等阶段）；
+- 如果跑了补丁验证，还有 `patched-build.log`。
 
-附件保留 7 天。也可以直接展开 job 的构建步骤查看实时输出。
+附件保留 7 天。比对结果不再上传，需要时在本地对日志跑 `scripts/compare_failure_log.py`。
 
 ## 提交补丁
 

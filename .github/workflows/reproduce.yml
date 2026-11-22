@@ -74,40 +74,23 @@ jobs:
             test "$(wc -c < "$patch")" -le 1048576
           fi
           bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
-      - name: 汇总
+      - name: 收集 build.log
         if: always()
         env:
           WORK: ${{ runner.temp }}/buildbench-work
         run: |
           set -euo pipefail
-          {
-            printf '### %s\n\n' "$CASE_ID"
-            if [[ -s "$WORK/baseline-verdict.json" ]]; then
-              printf -- '- 基线判定：**%s**\n' "$(jq -r '.status' "$WORK/baseline-verdict.json")"
-              printf -- '- 日志行数：重放 %s 行 / 官方 %s 行（比例 %s）\n' \
-                "$(jq -r '.replay_lines' "$WORK/baseline-verdict.json")" \
-                "$(jq -r '.reference_lines' "$WORK/baseline-verdict.json")" \
-                "$(jq -r '.line_ratio' "$WORK/baseline-verdict.json")"
-              printf -- '- 官方失败诊断覆盖：缺失 %s 条，重放多出 %s 条\n' \
-                "$(jq -r '[.missing_diagnostics[]] | add // 0' "$WORK/baseline-verdict.json")" \
-                "$(jq -r '.extra_diagnostics' "$WORK/baseline-verdict.json")"
-            fi
-            if [[ -s "$WORK/patched-result.json" ]]; then
-              printf -- '- 打补丁后：**成功**，产物 %s 个\n' "$(jq -r '.artifacts | length' "$WORK/patched-result.json")"
-            fi
-            printf '\n完整基线/补丁日志见本 job 的 artifact（evidence-%s）。\n' "$CASE_ID"
-          } >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p "$WORK/logs"
+          if compgen -G "$WORK/result-baseline-*/build-output/build.log" > /dev/null; then
+            cp "$WORK"/result-baseline-*/build-output/build.log "$WORK/logs/build.log"
+          fi
+          if compgen -G "$WORK/result-patched-*/build-output/build.log" > /dev/null; then
+            cp "$WORK"/result-patched-*/build-output/build.log "$WORK/logs/patched-build.log"
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: evidence-${{ matrix.case }}
-          path: |
-            ${{ runner.temp }}/buildbench-work/*.log
-            ${{ runner.temp }}/buildbench-work/*.json
-            ${{ runner.temp }}/buildbench-work/*.exit
-            ${{ runner.temp }}/buildbench-work/*.txt
-            ${{ runner.temp }}/buildbench-work/result-baseline-*/build-output/build.log
-            ${{ runner.temp }}/buildbench-work/result-baseline-*/build-output/build-*.json*
-            ${{ runner.temp }}/buildbench-work/result-patched-*/build-output/build.log
-            ${{ runner.temp }}/buildbench-work/result-patched-*/build-output/build-*.json*
+          name: build-log-${{ matrix.case }}
+          path: ${{ runner.temp }}/buildbench-work/logs/
+          if-no-files-found: warn
           retention-days: 7
