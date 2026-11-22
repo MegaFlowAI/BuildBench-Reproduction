@@ -148,6 +148,8 @@ def prepare(case_dir, runtime, settings):
         "pkgconf": "pkg-config",
     }
     lock_packages = {item["package"] for item in read_json(runtime / build["dependency_lock"])["dependencies"]}
+    if "libmd0" in lock_packages and "libmd0" not in bootstrap:
+        bootstrap.append("libmd0")
     preferred = []
     for line in config_text.splitlines():
         if line.startswith("Ignore:"):
