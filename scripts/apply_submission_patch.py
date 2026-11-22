@@ -73,7 +73,36 @@ def main() -> int:
     try:
         run(["dpkg-source", "-x", str(dsc), str(work / "src")], cwd=work)
         source_dir = work / "src"
+        pristine = work / "pristine"
+        copy_tree(source_dir, pristine)
         how = apply_patch(source_dir, patch_file, work)
+        # 把本地改动整理成 quilt 补丁（3.0 (quilt) 不允许源码树里有未登记的修改）
+        diff = subprocess.run(
+            ["diff", "-ruN", "--exclude=.git", str(pristine), str(source_dir)],
+            text=True, capture_output=True)
+        if diff.returncode not in (0, 1) or not diff.stdout.strip():
+            raise SystemExit("补丁没有产生任何源码改动")
+        body = diff.stdout.replace(str(pristine) + "/", "").replace(str(source_dir) + "/", "")
+        lines = []
+        for line in body.splitlines():
+            if line.startswith("--- "):
+                lines.append("--- a/" + line[4:])
+            elif line.startswith("+++ "):
+                lines.append("+++ b/" + line[4:])
+            else:
+                lines.append(line)
+        quilt = "\n".join(lines) + "\n"
+        patches = source_dir / "debian" / "patches"
+        patches.mkdir(parents=True, exist_ok=True)
+        (patches / "buildbench-submission.patch").write_text(quilt, encoding="utf-8")
+        series = patches / "series"
+        entries = series.read_text(encoding="utf-8").splitlines() if series.is_file() else []
+        if "buildbench-submission.patch" not in entries:
+            entries.append("buildbench-submission.patch")
+        series.write_text("\n".join(entry for entry in entries if entry.strip()) + "\n", encoding="utf-8")
+        # 把源码树恢复成未修改状态，让 dpkg-source 认为只有 quilt 补丁变化
+        shutil.rmtree(source_dir)
+        copy_tree(pristine, source_dir)
         # 重新打包：把 orig tar 放到工作目录供 dpkg-source -b 使用
         for orig in input_dir.glob("*.orig.tar.*"):
             shutil.copyfile(orig, work / orig.name)
