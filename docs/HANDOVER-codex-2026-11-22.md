@@ -69,13 +69,13 @@ scripts/
 1. **不要引入第二个构建 workflow**，也不要退回“轻量容器 + 直接 dpkg-buildpackage”的旧路径（日志会只剩 100 多行）。
 2. **判定标准不要放宽**：必须 `package_failed=true`、官方诊断全覆盖、关键阶段齐全、行数 ≥15%。放宽等于自欺。
 3. **不要改 `logs/target-failure.log`**（参考日志只读），也不要伪造/补齐日志行。
-4. **release 资产 `frozen-cases-v1` 只读**：除 `recover-frozen-debs` / `launchpad-chroot-audit` 这类维护工具外，不要改/删资产；新增资产也要校验 SHA256。
+4. **release 资产 `frozen-cases-v1` 只读**：不要改/删已有资产；新增资产也要先校验 SHA256 再上传。
 5. **补丁必须走 `submissions/<case-id>/change.patch`**，且 PR 只改这个文件、≤1MB。补丁要应用到**解包后的源码**，再整理成 `debian/patches/*.patch` 写入 `series`，然后 `dpkg-source -b` 重打包（3.0 quilt 不允许源码树有未登记修改）。不要直接用 validator 的 `--patch`（它的 patch_policy 只允许 `source/input/**`，正常源码补丁会被拒）。
 6. **补丁成功判定**：`build-result.json` 的 `status == "succeeded"`（注意不是 `completed`）、`build_exit_code == 0`、artifacts 里有目标架构或 `all` 的 `.deb`。
 7. **cases.json 只能按 key 局部更新**，整条替换会丢 `packages` 等字段（踩过）。
 8. **workflow 文件必须 LF、无 BOM**（PowerShell 直接写会带 CRLF/BOM，用 python 写）。
 9. **gh CLI 不可用**（本机 token 缺 `read:org`）：用 REST API + `Authorization: Bearer`，token 用完删除（`C:\Users\liu_z\.dsh\tmp\ghtok.txt` 是临时文件）。
-10. **不要用 Launchpad PPA 跑构建**：EOL series 不接受上传，且当前归档 ≠ 历史快照。Launchpad 只作日志/chroot/元数据来源。
+10. **不要用 Launchpad 跑构建**：EOL series 不接受 PPA 上传，当前归档也 ≠ 历史快照。Launchpad 只作参考日志/元数据来源；原 chroot/内核回放工具已删除。
 11. 单 job 355 分钟上限、public repo 并发 20；大资产（56GB 总量）下载慢，别在同一次 run 里重复拉。
 12. 不要在 sweep 正在跑时改 main 上的 workflow/脚本（矩阵和代码可能不一致），改完先单例验证再批量。
 
