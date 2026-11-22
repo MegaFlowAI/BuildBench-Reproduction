@@ -92,6 +92,9 @@ def main() -> int:
             else:
                 lines.append(line)
         quilt = "\n".join(lines) + "\n"
+        # 把源码树恢复成未修改状态，让 dpkg-source 认为只有 quilt 补丁变化
+        shutil.rmtree(source_dir)
+        copy_tree(pristine, source_dir)
         patches = source_dir / "debian" / "patches"
         patches.mkdir(parents=True, exist_ok=True)
         (patches / "buildbench-submission.patch").write_text(quilt, encoding="utf-8")
@@ -100,9 +103,6 @@ def main() -> int:
         if "buildbench-submission.patch" not in entries:
             entries.append("buildbench-submission.patch")
         series.write_text("\n".join(entry for entry in entries if entry.strip()) + "\n", encoding="utf-8")
-        # 把源码树恢复成未修改状态，让 dpkg-source 认为只有 quilt 补丁变化
-        shutil.rmtree(source_dir)
-        copy_tree(pristine, source_dir)
         # 重新打包：把 orig tar 放到工作目录供 dpkg-source -b 使用
         for orig in input_dir.glob("*.orig.tar.*"):
             shutil.copyfile(orig, work / orig.name)
