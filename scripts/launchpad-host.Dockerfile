@@ -12,4 +12,5 @@ COPY upstream/lpbuildd/__init__.py upstream/lpbuildd/check_implicit_pointer_func
 RUN /usr/share/launchpad-buildd/bin/check-implicit-pointer-functions --inline </dev/null
 COPY upstream/sbuildrc /etc/buildbench/sbuildrc
 COPY run_launchpad_host.sh /usr/local/bin/run-launchpad-host
+RUN chmod 0755 /usr/local/bin/run-launchpad-host
 ENTRYPOINT ["bash", "/usr/local/bin/run-launchpad-host"]
