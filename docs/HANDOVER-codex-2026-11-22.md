@@ -14,8 +14,11 @@
 ```
 cases.json                          200 例 catalog；每个 case 的 env 条件也在这里
 cases/<方向>/<case>/                每个 case 的元数据：case.json、manifest.json、
-                                    config/（buildconfig + dependency-lock.json）、checksums/
+                                    config/（buildconfig + dependency-lock.json）、checksums/；
+                                    以及与官方开发集一致的 source/input/（官方源码包）
 docs/public-baselines.csv           逐例公开验证台账（tier 字段）
+cases/source-epoch-files.tar.gz     5 个文件名带 `:` 的官方源码文件（Windows 不能 checkout，
+                                    清单在 cases/source-epoch-files.json）
 scripts/
   select_cases.py                   逗号分隔 case ID → Actions matrix
   frozen_release.py                 fetch：从 Release frozen-cases-v1 下资产 + 运行时镜像

@@ -13,7 +13,11 @@
 
 ## Git 树和 Release 资产
 
-Git 树中的 `cases/<方向>/<case-id>` 保留可审查的元数据，包括 `case.json`、`README.md`、`manifest.json`、`config/`、`checksums/` 和归档的 `asset.json`。源码和依赖文件不通过 Git blob 分发。
+Git 树中的 `cases/<方向>/<case-id>` 与官方开发集保持一致：`case.json`、`README.md`、`checksums/`、`logs/`（官方参考日志，见下）和 `source/input/`（官方源码包）都在仓库里，另外还有本项目补充的 `manifest.json`、`config/` 和 `asset.json`。
+
+例外：源码包里有 5 个文件名包含 `:`（Debian epoch，例如 `fenics-dolfinx_1:0.6.0-4_1:0.6.0-5.diff.gz`），Windows 文件系统不允许这种文件名，直接放 Git 会让 Windows 上无法 clone。因此这 5 个文件打包在 `cases/source-epoch-files.tar.gz`，清单和 SHA256 见 `cases/source-epoch-files.json`（Linux/Actions 上解包后与官方开发集完全一致）。
+
+依赖 `.deb` 池太大（约 56GB），仍放在 Release 资产里；每个 case 的参考日志本来就在 Release 资产中，Git 里不重复存放（少数日志超过 GitHub 单文件 100MB 限制，例如 libyuv 的 2.3GB 日志）。
 
 每个用例的完整 Release 资产使用相同的 case ID 命名。解包后的结构是：
 
@@ -35,7 +39,7 @@ Git 树中的 `cases/<方向>/<case-id>` 保留可审查的元数据，包括 `c
     └── ubuntu-<series>-all/
 ```
 
-`frozen-environment.json` 是来源摘要，不替代实际依赖。每个锁定包的文件名、版本、架构和 SHA256 在 `dependency-lock.json` 中，包本体在同一 Release 资产的 `dependencies/` 中。工作流会先核验归档 SHA256，再逐个核验源码和包的 SHA256。
+`frozen-environment.json` 是来源摘要，不替代实际依赖。`source/input/` 在 Git 树和 Release 资产中都存在（同一份官方源码，工作流会核对两边 SHA256）。每个锁定包的文件名、版本、架构和 SHA256 在 `dependency-lock.json` 中，包本体在同一 Release 资产的 `dependencies/` 中。工作流会先核验归档 SHA256，再逐个核验源码和包的 SHA256。
 
 完整资产下载示例：
 
