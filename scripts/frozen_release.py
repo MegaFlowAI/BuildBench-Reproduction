@@ -114,11 +114,24 @@ def apply_repairs(case, case_root, work):
         actual = subprocess.check_output([
             "dpkg-deb", "-f", downloaded, "Package", "Version", "Architecture",
         ], text=True)
+        replacement = repair.get("replacement")
         expected = dict(zip(("Package", "Version", "Architecture"),
                             (entry["package"], entry["version"], entry["arch"])))
+        if replacement:
+            expected = dict(zip(("Package", "Version", "Architecture"),
+                                (replacement["package"], replacement["version"],
+                                 replacement["arch"])))
         if dict(line.split(": ", 1) for line in actual.splitlines()) != expected:
             raise ValueError(f"Recovered package identity changed: {name}")
-        shutil.copyfile(downloaded, target)
+        if replacement:
+            replacement_path = directories[replacement["arch"]] / replacement["filename"]
+            target.unlink()
+            shutil.copyfile(downloaded, replacement_path)
+            entry["filename"] = replacement["filename"]
+            entry["version"] = replacement["version"]
+            entry["arch"] = replacement["arch"]
+        else:
+            shutil.copyfile(downloaded, target)
         entry["sha256"] = asset["sha256"]
     lock_path.write_text(json.dumps(lock, indent=2, sort_keys=True) + "\n")
     (work / "dependency-repairs.json").write_text(json.dumps(list(applied.values()), indent=2) + "\n")

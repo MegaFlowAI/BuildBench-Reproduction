@@ -1,5 +1,29 @@
 [
   {
+    "file": "libpsl5_0.21.2-1_amd64.deb",
+    "pool": "pool_x86",
+    "cases": [
+      "launchpad-focal-arm64-amd64-cysignals-efa90da21cf9",
+      "launchpad-focal-arm64-amd64-libgnomecanvasmm2-6-4f638ef38203",
+      "launchpad-focal-arm64-amd64-pyfftw-f9b533c96808",
+      "launchpad-hirsute-arm64-amd64-python-pyaudio-7eb839e5dc46"
+    ],
+    "why": "bootstrap fallback libpsl5 requires libc6 >= 2.33, unavailable in historical Focal/Hirsute locks",
+    "archived_sha256": "affc50e912b17e88b6a002c0140a25b495b7adff881b6845462067eb8dae4035",
+    "asset": {
+      "file": "recovered-650850916833e7776a127a907ea7203f7822b6a11379ddb1f8ce88f0855b5a3c.deb",
+      "sha256": "650850916833e7776a127a907ea7203f7822b6a11379ddb1f8ce88f0855b5a3c",
+      "bytes": 51516
+    },
+    "origin": "https://archive.ubuntu.com/ubuntu/pool/main/libp/libpsl/libpsl5_0.21.0-1ubuntu1_amd64.deb",
+    "replacement": {
+      "package": "libpsl5",
+      "version": "0.21.0-1ubuntu1",
+      "arch": "amd64",
+      "filename": "libpsl5_0.21.0-1ubuntu1_amd64.deb"
+    }
+  },
+  {
     "file": "apt_2.7.12+nmu1_arm64.deb",
     "pool": "pool_arm",
     "cases": [
