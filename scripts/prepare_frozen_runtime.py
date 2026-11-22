@@ -102,7 +102,7 @@ def prepare(case_dir, runtime, settings):
     command = shlex.join(["dpkg-buildpackage", *flags])
     bootstrap = []
     build_engine = None
-    conditions = {}
+    conditions = dict(historical.get("env") or {})
     if case_id == MLMMJ:
         bootstrap = ["libmd0", "libbsd0", "libpcre2-8-0"]
         build_engine = "none"
@@ -116,15 +116,15 @@ def prepare(case_dir, runtime, settings):
         build_engine = "none"
     elif case_id == COWSQL:
         command = cowsql_command(runtime, command)
-        conditions = {"build_user": "abuild", "nofile": 112}
+        conditions.update({"build_user": "abuild", "nofile": 112})
     elif case_id == DNSCAP:
-        conditions = {"cpus": 3}
+        conditions.update({"cpus": 3})
     elif case_id == LIBMAUS2:
         command = (
             "mount -t tmpfs -o ro,nosuid,nodev,noexec historical-cache-mask "
             "/sys/devices/system/cpu/cpu0/cache && " + command
         )
-        conditions = {"mask_cpu_cache": True}
+        conditions.update({"mask_cpu_cache": True})
     config = runtime / build["buildconfig"]
     config_text = config.read_text(encoding="utf-8").rstrip()
     if re.search(r"^Substitute:\s+dsc:build_cmd\s", config_text, re.M):

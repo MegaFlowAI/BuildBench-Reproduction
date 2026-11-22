@@ -26,20 +26,44 @@ run_validator() {
     done
     python3 scripts/prepare_frozen_runtime.py "$root" "$runtime_case" "$workspace/runtime-settings.json"
 
-    local -a limits=()
-    local cpus
-    cpus=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["reproduction_conditions"].get("cpus", ""))' "$workspace/runtime-settings.json")
+    local -a docker_args=()
+    local -a timeout_args=()
+    local cpus cpuset nofile memory timeout_seconds
+    cpus=$(jq -r '.reproduction_conditions.cpus // empty' "$workspace/runtime-settings.json")
+    cpuset=$(jq -r '.reproduction_conditions.cpuset // .reproduction_conditions.cpuset_cpus // empty' "$workspace/runtime-settings.json")
+    nofile=$(jq -r '.reproduction_conditions.nofile // empty' "$workspace/runtime-settings.json")
+    memory=$(jq -r '.reproduction_conditions.memory // empty' "$workspace/runtime-settings.json")
+    timeout_seconds=$(jq -r '.reproduction_conditions.timeout // empty' "$workspace/runtime-settings.json")
     if [[ -n "$cpus" ]]; then
-        limits=(--cpus "$cpus")
+        docker_args+=(--cpus "$cpus")
+    fi
+    if [[ -n "$cpuset" ]]; then
+        docker_args+=(--cpuset-cpus "$cpuset")
+    fi
+    if [[ -n "$nofile" ]]; then
+        docker_args+=(--ulimit "nofile=${nofile}:${nofile}")
+    fi
+    if [[ -n "$memory" ]]; then
+        docker_args+=(--memory "$memory")
+    fi
+    mapfile -t vars < <(jq -r '.reproduction_conditions.vars // {} | to_entries[] | ["-e", (.key + "=" + (.value | tostring))] | .[]' "$workspace/runtime-settings.json")
+    if (( ${#vars[@]} )); then
+        docker_args+=("${vars[@]}")
+    fi
+    if [[ -n "$timeout_seconds" ]]; then
+        timeout_args=(timeout --signal=TERM --kill-after=30 "${timeout_seconds}s")
     fi
     local code=0
-    docker run --rm --network none --privileged "${limits[@]}" \
+    set +e
+    "${timeout_args[@]}" docker run --rm --network none --privileged "${docker_args[@]}" \
         -e HOME=/tmp -e TMPDIR=/tmp \
         -e BUILD_CASE_ISOLATED_WORKER=1 -e BUILD_CASE_VM_TYPE=chroot \
         --mount "type=bind,src=$runtime_case,dst=$runtime_case,readonly" \
         --mount "type=bind,src=$result_root,dst=$result_root" \
         "$runtime_image" --input "$runtime_case" --output "$output" \
-        > "$workspace/validator-$label.log" 2>&1 || code=$?
+        2>&1 | tee "$workspace/validator-$label.log" >&2
+    code=${PIPESTATUS[0]}
+    set -e
     printf '%s\n' "$code" > "$workspace/validator-$label.exit"
     printf '%s\n' "$result_root" > "$workspace/result-root-$label.txt"
     if [[ -d "$output" ]]; then
@@ -50,9 +74,33 @@ run_validator() {
     printf '%s\n' "$output"
 }
 
-baseline_output=$(run_validator "$case_dir" baseline)
-python3 scripts/compare_failure_log.py "$case_dir" "$reference" "$baseline_output" \
-    "$(cat "$workspace/validator-baseline.exit")" "$workspace/baseline-verdict.json"
+attempts=1
+baseline_output=$(run_validator "$case_dir" baseline-1)
+attempts=$(jq -r '.reproduction_conditions.attempts // 1' "$workspace/runtime-settings.json")
+[[ "$attempts" =~ ^[1-9][0-9]*$ ]]
+matched=false
+last_verdict="$workspace/baseline-verdict-1.json"
+if python3 scripts/compare_failure_log.py "$case_dir" "$reference" "$baseline_output" \
+    "$(cat "$workspace/validator-baseline-1.exit")" "$last_verdict"; then
+    matched=true
+    cp "$last_verdict" "$workspace/baseline-verdict.json"
+fi
+if [[ "$matched" != true && "$attempts" -gt 1 ]]; then
+    for attempt in $(seq 2 "$attempts"); do
+        baseline_output=$(run_validator "$case_dir" "baseline-$attempt")
+        last_verdict="$workspace/baseline-verdict-$attempt.json"
+        if python3 scripts/compare_failure_log.py "$case_dir" "$reference" "$baseline_output" \
+            "$(cat "$workspace/validator-baseline-$attempt.exit")" "$last_verdict"; then
+            matched=true
+            cp "$last_verdict" "$workspace/baseline-verdict.json"
+            break
+        fi
+    done
+fi
+if [[ "$matched" != true ]]; then
+    cp "$last_verdict" "$workspace/baseline-verdict.json"
+    exit 1
+fi
 
 if [[ -n "$patch_file" ]]; then
     patched_case="$workspace/patched-case"
