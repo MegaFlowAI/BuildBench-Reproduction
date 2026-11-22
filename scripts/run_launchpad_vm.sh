@@ -86,7 +86,7 @@ fi
 # insufficient for the larger frozen cases even though the host has space.
 "${qemu[@]}" -accel tcg -m 8192 -smp "$jobs" -nic none -display none -monitor none \
     -serial stdio -no-reboot -kernel "$image" -initrd "$work/initramfs.gz" \
-    -append "console=$console rdinit=/init quiet loglevel=2 panic=-1" >"$evidence/vm-console.log" 2>&1
+    -append "console=$console rdinit=/init quiet loglevel=2 panic=-1" 2>&1 | tee "$evidence/vm-console.log"
 
 tr -d '\r' <"$evidence/vm-console.log" >"$work/console.txt"
 grep -Fx "BUILDBENCH_KERNEL=$expected" "$work/console.txt"

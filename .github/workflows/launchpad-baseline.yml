@@ -88,13 +88,16 @@ jobs:
             host=$(jq -r .hostname "$settings")
             chroot=$(jq -r .chroot.file "$settings")
             code=0
+            set +e
             docker run --rm --privileged --network none --hostname "$host" \
               --add-host "$host:127.0.0.1" --add-host "$host.buildd:127.0.0.1" \
               --mount "type=bind,src=$case_root/source/input,dst=/input/source,readonly" \
               --mount "type=bind,src=$case_root/dependencies,dst=/input/dependencies,readonly" \
               --mount "type=bind,src=$input/$chroot,dst=/input/chroot,readonly" \
               --mount "type=bind,src=$input/launchpad-pins,dst=/input/apt-pins,readonly" \
-              buildbench-launchpad-host "${args[@]}" >"$evidence/build.log" 2>&1 || code=$?
+              buildbench-launchpad-host "${args[@]}" 2>&1 | tee "$evidence/build.log"
+            code=${PIPESTATUS[0]}
+            set -e
             printf '%s\n' "$code" >"$evidence/sbuild.exit"
           fi
           python3 scripts/launchpad_baseline.py compare "$case_root" "$evidence/build.log" "$code" "$evidence/exact-result.json"
