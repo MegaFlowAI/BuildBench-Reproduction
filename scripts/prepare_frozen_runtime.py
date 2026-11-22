@@ -149,7 +149,11 @@ def prepare(case_dir, runtime, settings):
                 if candidate in lock_packages and candidate not in preferred:
                     preferred.append(candidate)
     if preferred:
-        config_text += "\nPrefer: " + " ".join(preferred)
+        preference = "Prefer: " + " ".join(preferred)
+        if "\nMacros:" in config_text:
+            config_text = config_text.replace("\nMacros:", "\n" + preference + "\nMacros:", 1)
+        else:
+            config_text += "\n" + preference
     overrides = ["Substitute: dsc:build_cmd " + command]
     if bootstrap:
         overrides.append("Preinstall: " + " ".join(bootstrap))
