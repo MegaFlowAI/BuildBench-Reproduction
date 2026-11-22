@@ -139,6 +139,10 @@ def prepare(case_dir, runtime, settings):
         "libncurses5-dev": "libncurses-dev",
         "libfontconfig-dev": "libfontconfig1-dev",
         "libfontconfig1-dev": "libfontconfig-dev",
+        "libldap-dev": "libldap2-dev",
+        "libldap2-dev": "libldap-dev",
+        "pkg-config": "pkgconf",
+        "pkgconf": "pkg-config",
     }
     lock_packages = {item["package"] for item in read_json(runtime / build["dependency_lock"])["dependencies"]}
     preferred = []
