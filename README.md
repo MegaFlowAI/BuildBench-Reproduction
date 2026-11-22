@@ -37,10 +37,10 @@
 
 ## 查看日志
 
-在 Actions 运行的底部 Artifacts 下载 `build-log-<case-id>`，里面只有完整构建日志：
+在 Actions 运行的底部 Artifacts 下载 `build-log-<case-id>`，里面只有一个 `build.log`：
 
-- `build.log`：原始构建的完整多阶段日志（chroot 准备、依赖安装、构建等阶段）；
-- 如果跑了补丁验证，还有 `patched-build.log`。
+- 普通运行：原始构建的完整日志（预期失败）；
+- 补丁模式：补丁应用后的构建日志（预期成功）。
 
 附件保留 7 天。比对结果不再上传，需要时在本地对日志跑 `scripts/compare_failure_log.py`。
 
