@@ -10,15 +10,15 @@
 
 ## 运行原始构建
 
-在 **Actions → BuildBench original and patched builds → Run workflow** 输入一个 case ID。还可选择 `pending`（交接时等待复现的 10 例）、`pilot`（另加两个对照）、`arm64`、`amd64` 、`unverified`（逐例台账中尚未核验）或 `all`。
+在 **Actions → BuildBench 原始构建与补丁验证 → Run workflow** 填写 `selection`（必填）：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。单个示例：`launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e`。
 
 Runner 按固定 SHA256 校验并提取官方源码归档，依照 `cases.json` 从 Ubuntu Snapshot 和 Launchpad 恢复历史包。Ubuntu Snapshot 提供校验值时验证包 SHA256。所有恢复出的包都检查 Debian 元数据并保存下载来源和 SHA256。容器安装完依赖后，逐项检查实际安装版本。
 
 每次执行都会保留重新生成的完整 `baseline.log`、真实退出码、`baseline-result.json` 和可用的依赖来源证据。基线通过要求原始包进入构建、真实退出失败，并达到自动诊断匹配条件。全日志中的时间戳、系统信息和非诊断行仍可与官方日志存在差异。对于待复现用例，自动比对未通过的结果仍需逐例审核。历史日志明确记录静默超时时，构建会按对应阈值监控，并与终止前的历史日志尾部比较。目录中的历史状态来自此前的交接台账。
 
-## 验证环境条件
+## 环境条件
 
-可对 `cases.json` 中已有 `variants` 的用例启用工作流的 `variants` 选项。每组条件运行相同的官方源码和版本冻结依赖，单独记录结果。Docker 的 CPU、内存和文件描述符限额在构建容器内生效。实验变体只运行原始构建，补丁验证使用经复验的默认条件。
+历史依赖版本、以及按用例记录的环境条件（CPU 核数/绑定、nofile、内存、测试顺序等）都保存在 `cases.json` 的 `env` 字段中，运行时自动应用，不需要手动开关。
 
 ## 理解 Actions 的状态
 
@@ -39,7 +39,7 @@ Runner 按固定 SHA256 校验并提取官方源码归档，依照 `cases.json` 
 - `patched.log` 保存补丁验证。基线比对通过后才会执行补丁构建。
 - `environment.log` 保存冻结依赖镜像的构建输出，`baseline-result.json` 记录判定结果。
 
-手动运行工作流时勾选 `live_logs`，展开对应构建任务的步骤即可看到实时编译和测试输出。实时日志可能受 GitHub 的显示限制，完整文本可在任务结束后下载。
+构建过程默认实时输出编译和测试日志，展开对应构建任务的步骤即可查看。实时日志可能受 GitHub 的显示限制，完整文本可在任务结束后从 artifact 下载。
 
 ```bash
 gh run download RUN_ID -R MegaFlowAI/BuildBench-Reproduction -n 'evidence-CASE_ID' -D evidence
@@ -47,21 +47,60 @@ gh run download RUN_ID -R MegaFlowAI/BuildBench-Reproduction -n 'evidence-CASE_I
 
 ## 提交补丁
 
-1. 以 PR 提交 `submissions/<case-id>/change.patch`。此文件是相对于解包后的项目源码根目录的统一 diff，使用 `a/`、`b/` 路径前缀。PR 只允许改动所选用例的补丁文本。
-2. 在默认分支上手动运行 workflow，填写该 case ID 和 PR 编号。也可以用 GitHub CLI。
+### 1. 创建补丁文件
+
+从 `main` 拉一个新分支（例如 `patch/<case-id>`），在仓库中添加：
+
+```
+submissions/<case-id>/change.patch
+```
+
+要求：
+
+- 是针对**解包后的项目源码根目录**的统一 diff（`git diff` / `diff -u` 均可）；
+- 路径使用 `a/`、`b/` 前缀（即 `git diff` 默认格式，`git apply -p1` 能直接应用）；
+- 补丁只允许修改源码，不要包含提交产物（除非修复确实需要）；
+- 单文件大小不超过 1 MB。
+
+示例（以 haskell-config-value 为例）：
+
+```bash
+git checkout -b patch/launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e
+mkdir -p submissions/launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e
+# 在解包好的源码里改完后生成 diff，写入上面目录
+git diff > submissions/launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e/change.patch
+git add submissions/
+git commit -m "patch: fix launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e"
+git push origin patch/launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e
+```
+
+### 2. 发起 PR
+
+向 `main` 发起 Pull Request，记下 PR 编号（PR 地址 `/pull/12` 中的 `12`）。PR 只应改动该 case 的 `change.patch`。
+
+### 3. 在 Actions 里验证
+
+到 **Actions → BuildBench 原始构建与补丁验证 → Run workflow**：
+
+- `selection` 填该 case ID（只填一个）；
+- `patch_pr` 填 PR 编号（只填数字）。
+
+也可以用 GitHub CLI：
 
 ```bash
 gh workflow run reproduce.yml -R MegaFlowAI/BuildBench-Reproduction --ref main \
-  -f selection=<case-id> -f patch_pr=<PR编号>
+  -f selection=launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e -f patch_pr=12
 ```
 
-3. Actions 读取该 PR 的补丁文本，记录 PR 提交 SHA 和补丁 SHA256。基线通过后，使用同一个容器镜像和全新的源码目录应用补丁。补丁通过要求原始包构建命令退出 0 并产出至少一个属于目标架构或 `all` 的有效 `.deb`。日志见 `patched.log`，产物文件名见 `binary-packages.txt`。
+### 4. 判定规则
 
-Workflow 由维护者发起。构建时把 PR 内容作为补丁输入，容器禁用网络，以非特权用户运行。每次构建使用独立工作目录。公开 PR、构建日志和日志附件可被第三方读取，未公开的比赛提交请保留在私有工作区。
+- 基线（未打补丁）：必须复现历史失败，并且自动诊断比对通过（`baseline-result.json` 的 status 为匹配）；否则直接判失败，不进入补丁阶段。
+- 打补丁后：原始包构建退出码必须是 0，并产出至少一个属于目标架构或 `all` 的有效 `.deb`；产物文件名记录在 `binary-packages.txt`。
+- 完整日志与证据见该 job 的 artifact（`evidence-<case-id>`）。
 
-基线匹配证据目前使用关键诊断集合，两个试点对照使用指定的编译或链接诊断。不可从公开归档恢复的历史依赖、依赖配置失败、构建成功的基线、不同错误或无法提取历史诊断，均会阻止补丁验证。
+### 5. 安全与限制
 
-公开仓库的标准托管 ARM64 和 x86_64 runner 无应计构建分钟数。GitHub 托管 job 仍有单次运行时间、并发和存储限制。[GitHub Actions 计费](https://docs.github.com/en/actions/concepts/billing-and-usage) · [系统限制](https://docs.github.com/en/actions/reference/limits)
+Workflow 由维护者发起；构建时把 PR 内容只作为补丁输入，容器禁用网络，以非特权用户运行；每次构建使用独立工作目录。公开 PR、构建日志和附件可被第三方读取。
 
 ## 已验证的试点
 

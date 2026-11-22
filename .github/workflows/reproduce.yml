@@ -4,16 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       selection:
-        description: >-
-          必填：一个或多个 case ID，用英文逗号分隔（逗号前后不要加空格）。
-          单个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e
-          多个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e,launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5
+        description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。单个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e"
         required: true
       patch_pr:
-        description: >-
-          可选：公开 PR 编号（只填数字，例如 12），要求上面的 selection 只填一个 case ID。
-          创建方式：从 main 拉分支 → 添加 submissions/<case-id>/change.patch（统一 diff，a/ b/ 前缀，相对解包后源码根目录，不超过 1 MB）→ 向 main 发起 PR，PR 地址 /pull/12 中的 12 就是这里要填的编号。
-          示例：selection=launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e，patch_pr=12
+        description: "可选：公开 PR 编号（只填数字，例如 12），要求上面的 selection 只填一个 case ID。"
         type: string
         required: false
 permissions:
