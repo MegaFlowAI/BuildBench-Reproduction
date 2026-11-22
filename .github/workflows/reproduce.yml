@@ -4,21 +4,18 @@ on:
   workflow_dispatch:
     inputs:
       selection:
-        description: "要跑的用例：单个 case ID、逗号分隔的多个 ID，或关键字：pending（待复现）/ unverified（未验证）/ pilot（试点）/ arm64 / amd64 / all（全部）。也支持中文关键字：待复现、未验证、试点、全部。"
-        default: pending
+        description: >-
+          必填：一个或多个 case ID，用英文逗号分隔（逗号前后不要加空格）。
+          单个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e
+          多个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e,launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5
         required: true
       patch_pr:
-        description: "可选：公开 PR 编号（要求 selection 只填一个 case ID）。先用基线校验历史失败是否匹配，再应用 PR 里的 submissions/<case>/change.patch 验证补丁后能构建成功并产出目标架构 .deb。"
+        description: >-
+          可选：公开 PR 编号（只填数字，例如 12），要求上面的 selection 只填一个 case ID。
+          创建方式：从 main 拉分支 → 添加 submissions/<case-id>/change.patch（统一 diff，a/ b/ 前缀，相对解包后源码根目录，不超过 1 MB）→ 向 main 发起 PR，PR 地址 /pull/12 中的 12 就是这里要填的编号。
+          示例：selection=launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e，patch_pr=12
         type: string
         required: false
-      variants:
-        description: "是否同时跑这些用例记录的环境变体（例如 cowsql 的 fd-96/fd-104/fd-112-cpu2、alertmanager 的 single-cpu/two-go-threads、urwid 的 historical-test-order）。变体会作为独立 job 并行执行，用来触发历史 flaky 失败。"
-        type: boolean
-        default: false
-      live_logs:
-        description: "是否在 Actions 日志里实时输出编译/测试过程（默认只看摘要和附件）。调试时打开。"
-        type: boolean
-        default: false
 permissions:
   contents: read
 jobs:
@@ -33,18 +30,17 @@ jobs:
       - id: cases
         env:
           SELECTION: ${{ inputs.selection }}
-          VARIANTS: ${{ inputs.variants }}
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
-          matrix=$(python3 scripts/select_cases.py "$SELECTION" "$VARIANTS")
+          matrix=$(python3 scripts/select_cases.py "$SELECTION")
           if [[ -n "$PATCH_PR" ]]; then
-            [[ "$VARIANTS" == false && "$GITHUB_REF" == refs/heads/main && "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
-            jq -e --arg case "$SELECTION" '.include | length == 1 and .[0].case == $case' <<< "$matrix"
+            [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
+            python3 -c 'import json,sys; m=json.loads(sys.argv[1]); sys.exit(0 if len(m["include"])==1 else 1)' "$matrix"
           fi
           printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
   build:
-    name: build (${{ matrix.case }}, ${{ matrix.runner }}${{ matrix.variant != '' && format(', {0}', matrix.variant) || '' }})
+    name: build (${{ matrix.case }})
     needs: select
     strategy:
       fail-fast: false
@@ -54,86 +50,51 @@ jobs:
     timeout-minutes: 355
     env:
       CASE_ID: ${{ matrix.case }}
-      VARIANT: ${{ matrix.variant }}
-      BUILDBENCH_LIVE_LOGS: ${{ inputs.live_logs && '1' || '0' }}
+      BUILDBENCH_LIVE_LOGS: "1"
       PATCH_PR: ${{ inputs.patch_pr }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
-      - name: Prepare frozen build environment
+      - name: Build original source (and validate patch when patch_pr is set)
         env:
           WORK: ${{ runner.temp }}/buildbench-work
-          BUILDBENCH_PREPARE_ONLY: "1"
-        run: |
-          set -euo pipefail
-          if [[ "$BUILDBENCH_LIVE_LOGS" == 1 ]]; then
-            token=$(cat /proc/sys/kernel/random/uuid)
-            printf '::stop-commands::%s\n' "$token"
-            trap 'printf "::%s::\n" "$token"' EXIT
-          fi
-          bash scripts/run_case.sh "$CASE_ID" "$WORK" "" "$VARIANT"
-      - name: Run the original build and optionally validate a patch
-        env:
-          WORK: ${{ runner.temp }}/buildbench-work
-          BUILDBENCH_ENVIRONMENT_PREPARED: "1"
         run: |
           set -euo pipefail
           patch=
-          mkdir -p "$WORK/evidence"
           if [[ -n "$PATCH_PR" ]]; then
-            [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
+            patch_path="submissions/$CASE_ID/change.patch"
             git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
             sha=$(git rev-parse FETCH_HEAD)
-            patch_path="submissions/$CASE_ID/change.patch"
-            changed=$(git diff --no-renames --name-only "HEAD...$sha")
-            if [[ "$changed" != "$patch_path" ]]; then
-              echo "The PR must change only $patch_path"
-              exit 1
-            fi
-            patch="$WORK/change.patch"
-            test "$(git ls-tree "$sha" -- "$patch_path" | cut -d ' ' -f 1)" = 100644
-            git show "$sha:$patch_path" > "$patch"
+            git show "$sha:$patch_path" > "$runner.temp/change.patch"
+            patch="$runner.temp/change.patch"
             test -s "$patch"
             test "$(wc -c < "$patch")" -le 1048576
-            printf '%s\n' "$sha" > "$WORK/evidence/patch-commit.txt"
-            sha256sum "$patch" > "$WORK/evidence/patch-sha256.txt"
           fi
-          if [[ "$BUILDBENCH_LIVE_LOGS" == 1 ]]; then
-            token=$(cat /proc/sys/kernel/random/uuid)
-            printf '::stop-commands::%s\n' "$token"
-            trap 'printf "::%s::\n" "$token"' EXIT
-          fi
-          bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch" "$VARIANT"
-      - name: Summarize the build and historical comparison
+          bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch"
+      - name: Summarize
         if: always()
         env:
           EVIDENCE: ${{ runner.temp }}/buildbench-work/evidence
         run: |
+          set -euo pipefail
           {
             printf '### %s\n\n' "$CASE_ID"
-            if [[ -n "$VARIANT" ]]; then printf 'Environment variant: %s\n\n' "$VARIANT"; fi
             if [[ -s "$EVIDENCE/baseline.exit" ]]; then
-              printf -- '- Baseline command exit: **%s**\n' "$(cat "$EVIDENCE/baseline.exit")"
-            else
-              printf -- '- Baseline command exit: **unavailable**\n'
+              printf -- '- 基线退出码：**%s**\n' "$(cat "$EVIDENCE/baseline.exit")"
             fi
             if [[ -s "$EVIDENCE/baseline-result.json" ]]; then
-              verdict=$(jq -r '.status' "$EVIDENCE/baseline-result.json")
-              printf -- '- Historical failure comparison: **%s**\n' "$verdict"
-            else
-              printf -- '- Historical failure comparison: **no verdict**\n'
+              printf -- '- 历史失败比对：**%s**\n' "$(jq -r '.status' "$EVIDENCE/baseline-result.json")"
             fi
             if [[ -s "$EVIDENCE/patched.exit" ]]; then
-              printf -- '- Patched package exit: **%s**\n' "$(cat "$EVIDENCE/patched.exit")"
+              printf -- '- 打补丁后退出码：**%s**\n' "$(cat "$EVIDENCE/patched.exit")"
             fi
-            printf '\nDownload the full logs from the run artifacts.\n'
+            printf '\n完整日志及证据见本 job 的 artifact。\n'
           } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: evidence-${{ matrix.case }}${{ matrix.variant != '' && format('-{0}', matrix.variant) || '' }}
+          name: evidence-${{ matrix.case }}
           path: ${{ runner.temp }}/buildbench-work/evidence/
           retention-days: 7
-

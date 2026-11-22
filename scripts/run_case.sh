@@ -4,7 +4,8 @@ set -euo pipefail
 case_id=$1
 work=$2
 patch_file=${3:-}
-variant=${4:-}
+BUILDBENCH_LIVE_LOGS=${BUILDBENCH_LIVE_LOGS:-1}
+export BUILDBENCH_LIVE_LOGS
 mkdir -p "$work/evidence"
 
 stage=runner_setup
@@ -17,17 +18,11 @@ record_incomplete_stage() {
 }
 trap record_incomplete_stage EXIT
 
-python3 - "$case_id" "$work/config.json" "$variant" <<'PY'
+python3 - "$case_id" "$work/config.json" <<'PY'
 import json
 import sys
 from pathlib import Path
 case = json.loads(Path("cases.json").read_text())[sys.argv[1]]
-variant = sys.argv[3]
-if variant:
-    condition = case["variants"][variant]
-    base_env = case.get("env", {})
-    case["env"] = {**base_env, **condition}
-    case["env"]["vars"] = {**base_env.get("vars", {}), **condition.get("vars", {})}
 Path(sys.argv[2]).write_text(json.dumps(case))
 actual = {"aarch64": "arm64", "x86_64": "amd64"}[__import__("platform").machine()]
 if actual != case["architecture"]:
@@ -47,7 +42,7 @@ env_user=$(jq -r '.env.user // empty' "$work/config.json")
 env_attempts=$(jq -r '.env.attempts // 1' "$work/config.json")
 env_timeout=$(jq -r '.env.timeout // empty' "$work/config.json")
 mapfile -t env_vars < <(jq -r '(.env.vars // {}) | to_entries[] | "\(.key)=\(.value)"' "$work/config.json")
-echo "case env: variant=${variant:-default} memory=${env_memory:-default} nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} mask_cpu_cache=$env_mask_cache attempts=$env_attempts vars=${env_vars[*]:-none}"
+echo "case env: memory=${env_memory:-default} nofile=${env_nofile:-default} cpus=${env_cpus:-default} cpuset=${env_cpuset:-default} user=${env_user:-buildd} mask_cpu_cache=$env_mask_cache attempts=$env_attempts vars=${env_vars[*]:-none}"
 
 run_with_log() {
     local logfile=$1
