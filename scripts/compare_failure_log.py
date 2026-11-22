@@ -23,6 +23,8 @@ STAGES = {
     "build_failed": re.compile(r"dpkg-buildpackage: error:|failed \"build "),
 }
 TIMING = re.compile(r"^\[\s*\d+s\]\s?")
+# obs-build 的并行构建会把进度行插到其他行中间；单独成行后再比对。
+INTERLEAVED_PROGRESS = re.compile(r"\[\s*\d+%\]")
 
 
 def clean_lines(path: Path) -> list[str]:
@@ -31,9 +33,31 @@ def clean_lines(path: Path) -> list[str]:
         for chunk in iter(lambda: handle.readline(262144), b""):
             line = chunk.decode("utf-8", "replace")
             line = TIMING.sub("", line).strip()
-            if line:
+            if not line:
+                continue
+            match = INTERLEAVED_PROGRESS.search(line)
+            if match and match.start() > 0:
+                prefix = line[: match.start()].strip()
+                suffix = line[match.start():].strip()
+                if prefix:
+                    lines.append(prefix)
+                if suffix:
+                    lines.append(suffix)
+            else:
                 lines.append(line)
-    return lines
+    repaired = []
+    for line in lines:
+        if line.startswith(":"):
+            for index in range(len(repaired) - 1, max(-1, len(repaired) - 4), -1):
+                candidate = repaired[index]
+                if "(.text+" in candidate and "undefined reference" not in candidate:
+                    repaired[index] = candidate.rstrip() + line
+                    break
+            else:
+                repaired.append(line)
+        else:
+            repaired.append(line)
+    return repaired
 
 
 def main() -> int:
