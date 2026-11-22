@@ -11,6 +11,13 @@ CONTROLS = {
     "launchpad-noble-arm64-amd64-globalplatform-df0b1ad38fd5",
 }
 selection = sys.argv[1]
+ALIASES = {
+    "全量": "all", "全部": "all", "所有": "all",
+    "待复现": "pending", "未验证": "unverified", "试点": "pilot",
+    "ARM64": "arm64", "arm": "arm64", "aarch64": "arm64",
+    "X86": "amd64", "x86_64": "amd64", "x64": "amd64", "amd": "amd64",
+}
+selection = ALIASES.get(selection.strip(), selection)
 variants = len(sys.argv) > 2 and sys.argv[2] == "true"
 if selection == "pending":
     selected = [case for case, data in CASES.items() if data["handover_status"] == "pending"]

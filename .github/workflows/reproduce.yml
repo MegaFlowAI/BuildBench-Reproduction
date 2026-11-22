@@ -1,22 +1,22 @@
-name: BuildBench original and patched builds
-run-name: BuildBench ${{ inputs.selection }}
+name: BuildBench 原始构建与补丁验证
+run-name: BuildBench 复现 / ${{ inputs.selection }}
 on:
   workflow_dispatch:
     inputs:
       selection:
-        description: "Case ID, comma-separated IDs, pilot, pending, unverified, arm64, amd64, or all"
+        description: "要跑的用例：单个 case ID、逗号分隔的多个 ID，或关键字：pending（待复现）/ unverified（未验证）/ pilot（试点）/ arm64 / amd64 / all（全部）。也支持中文关键字：待复现、未验证、试点、全部。"
         default: pending
         required: true
       patch_pr:
-        description: "Optional public pull request number; requires a single case ID"
+        description: "可选：公开 PR 编号（要求 selection 只填一个 case ID）。先用基线校验历史失败是否匹配，再应用 PR 里的 submissions/<case>/change.patch 验证补丁后能构建成功并产出目标架构 .deb。"
         type: string
         required: false
       variants:
-        description: "Run the selected cases' recorded environment variants"
+        description: "是否同时跑这些用例记录的环境变体（例如 cowsql 的 fd-96/fd-104/fd-112-cpu2、alertmanager 的 single-cpu/two-go-threads、urwid 的 historical-test-order）。变体会作为独立 job 并行执行，用来触发历史 flaky 失败。"
         type: boolean
         default: false
       live_logs:
-        description: "Show live compiler and test output in addition to artifacts"
+        description: "是否在 Actions 日志里实时输出编译/测试过程（默认只看摘要和附件）。调试时打开。"
         type: boolean
         default: false
 permissions:
