@@ -66,29 +66,6 @@ def select_historical_versions(runtime, lock_path, build, versions):
     return sorted(set(discarded))
 
 
-def remove_ignored_packages(runtime, lock_path, build, config_text):
-    ignored = set()
-    for line in config_text.splitlines():
-        if line.startswith("Ignore:"):
-            ignored.update(line.split()[1:])
-    if not ignored:
-        return []
-    lock = read_json(lock_path)
-    directories = {name.rsplit("-", 1)[1]: runtime / name for name in build["dependency_dirs"]}
-    kept = []
-    removed = []
-    for item in lock["dependencies"]:
-        if item["package"] in ignored:
-            (directories[item["arch"]] / item["filename"]).unlink(missing_ok=True)
-            removed.append(item["filename"])
-        else:
-            kept.append(item)
-    lock["dependencies"] = kept
-    lock["dependency_count"] = len(kept)
-    write_json(lock_path, lock)
-    return sorted(set(removed))
-
-
 def cowsql_command(runtime, command):
     helper = runtime / "input/buildbench-runtime"
     with helper.open("x", encoding="utf-8") as script:
@@ -157,6 +134,22 @@ def prepare(case_dir, runtime, settings):
                                      config_text, flags=re.M)
         if count != 1:
             raise ValueError("Expected one recorded debootstrap engine")
+    preference_map = {
+        "libncurses-dev": "libncurses5-dev",
+        "libncurses5-dev": "libncurses-dev",
+        "libfontconfig-dev": "libfontconfig1-dev",
+        "libfontconfig1-dev": "libfontconfig-dev",
+    }
+    lock_packages = {item["package"] for item in read_json(runtime / build["dependency_lock"])["dependencies"]}
+    preferred = []
+    for line in config_text.splitlines():
+        if line.startswith("Ignore:"):
+            for ignored in line.split()[1:]:
+                candidate = preference_map.get(ignored)
+                if candidate in lock_packages and candidate not in preferred:
+                    preferred.append(candidate)
+    if preferred:
+        config_text += "\nPrefer: " + " ".join(preferred)
     overrides = ["Substitute: dsc:build_cmd " + command]
     if bootstrap:
         overrides.append("Preinstall: " + " ".join(bootstrap))
@@ -164,9 +157,6 @@ def prepare(case_dir, runtime, settings):
     config.write_text("\n".join([*overrides, config_text, ""]), encoding="utf-8")
     discarded = select_historical_versions(
         runtime, runtime / build["dependency_lock"], build, historical["packages"],
-    )
-    ignored = remove_ignored_packages(
-        runtime, runtime / build["dependency_lock"], build, config_text,
     )
     write_json(settings, {
         "frozen_jobs": build["jobs"],
@@ -178,7 +168,6 @@ def prepare(case_dir, runtime, settings):
         "build_engine_override": build_engine,
         "reproduction_conditions": conditions,
         "omitted_nonhistorical_duplicates": discarded,
-        "omitted_ignored_packages": ignored,
     })
     build["jobs"] = jobs
     build["recipe"] = "input/" + Path(build["recipe"]).name
