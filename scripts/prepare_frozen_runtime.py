@@ -13,6 +13,7 @@ HTML_XML_UTILS = "launchpad-resolute-amd64-arm64-html-xml-utils-fe68b3f14b84"
 COWSQL = "launchpad-noble-arm64-amd64-cowsql-cfbcbf2fa889"
 DNSCAP = "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6"
 LIBMAUS2 = "launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2"
+LIBAPACHE2 = "launchpad-oracular-amd64-arm64-libapache2-mod-auth-openidc-c9b2ba1cd30f"
 BUILD_COMMAND = re.compile(
     rb"Command: dpkg-buildpackage (?P<sanitize>--sanitize-env )?-us -uc "
     rb"-m(?P<maintainer>Launchpad Build Daemon <buildd@[a-z0-9-]+(?:\.buildd)?>) "
@@ -111,6 +112,8 @@ def prepare(case_dir, runtime, settings):
             "runuser --user=abuild -- env HOME=/sbuild-nonexistent LANG=C.UTF-8 "
             "LC_ALL=C.UTF-8 V=1 TERM=unknown " + command
         )
+    elif case_id == LIBAPACHE2:
+        bootstrap = ["libmd0"]
     elif case_id == HTML_XML_UTILS:
         bootstrap = ["coreutils-from-uutils", "rust-coreutils"]
         build_engine = "none"
