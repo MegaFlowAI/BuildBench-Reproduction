@@ -8,17 +8,21 @@
 
 逐字节验收使用 [冻结用例工作流](docs/frozen-reproduction.md)。每例的清单、配置和校验值位于 [cases](cases)，源码、历史日志和依赖按用例发布到 [GitHub Release](https://github.com/MegaFlowAI/BuildBench-Reproduction/releases/tag/frozen-cases-v1)。
 
-## 运行原始构建
+## 运行原始构建与补丁验证
 
-在 **Actions → BuildBench 原始构建与补丁验证 → Run workflow** 填写 `selection`（必填）：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。单个示例：`launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e`。
+在 **Actions → 原始构建与补丁验证 → Run workflow** 填写 `selection`（必填）：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。单个示例：`launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e`。
 
-Runner 按固定 SHA256 校验并提取官方源码归档，依照 `cases.json` 从 Ubuntu Snapshot 和 Launchpad 恢复历史包。Ubuntu Snapshot 提供校验值时验证包 SHA256。所有恢复出的包都检查 Debian 元数据并保存下载来源和 SHA256。容器安装完依赖后，逐项检查实际安装版本。
+每个 job 会：
 
-每次执行都会保留重新生成的完整 `baseline.log`、真实退出码、`baseline-result.json` 和可用的依赖来源证据。基线通过要求原始包进入构建、真实退出失败，并达到自动诊断匹配条件。全日志中的时间戳、系统信息和非诊断行仍可与官方日志存在差异。对于待复现用例，自动比对未通过的结果仍需逐例审核。历史日志明确记录静默超时时，构建会按对应阈值监控，并与终止前的历史日志尾部比较。目录中的历史状态来自此前的交接台账。
+1. 从 `frozen-cases-v1` Release 下载该 case 的冻结环境（官方源码、官方失败日志、历史依赖 `.deb`），并按大小与 SHA256 校验；
+2. 加载目标架构对应的官方 validator 运行时镜像；
+3. 用官方 validator（obs-build + chroot）完整重放原始构建，产出与官方同类的多阶段日志 `build.log`（包含 chroot 准备、依赖安装、`dpkg-buildpackage` 构建等阶段）；
+4. 与官方 `target-failure.log` 比对：必须真正进入包构建并失败、官方日志里的失败诊断全部出现、关键阶段齐全、日志行数达到官方日志的至少 15%；
+5. 如果填了 `patch_pr`，基线通过后再把 PR 中的 `change.patch` 应用到干净源码重新构建，要求构建成功并产出目标架构的 `.deb`。
 
 ## 环境条件
 
-历史依赖版本、以及按用例记录的环境条件（CPU 核数/绑定、nofile、内存、测试顺序等）都保存在 `cases.json` 的 `env` 字段中，运行时自动应用，不需要手动开关。
+冻结用例自带 `runtime-settings.json`（CPU 等复现条件）和按官方失败日志锁定的历史依赖版本；运行时自动应用，不需要手动开关。依赖安装前会逐项校验锁文件与实际 `.deb` 的数量、架构和 SHA256。
 
 ## 理解 Actions 的状态
 
@@ -31,19 +35,16 @@ Runner 按固定 SHA256 校验并提取官方源码归档，依照 `cases.json` 
 
 提交补丁时，绿色还要求补丁版退出 0 并生成目标架构的软件包。原始包退出码在 `baseline.exit`，比对结论在 `baseline-result.json`。静默超时用例还会保存实际静默时长和终止信号。
 
-## 查看完整日志
+## 查看日志
 
-打开一次 Actions 运行的 Summary，在底部 Artifacts 下载 `evidence-<case-id>`。条件变体的附件名还带变体后缀。目前附件保留 7 天。
+打开一次 Actions 运行的 Summary，在底部 Artifacts 下载 `evidence-<case-id>`：
 
-- `baseline.log` 保存原始构建，`baseline-attempt-*.log` 保存重试输出。
-- `patched.log` 保存补丁验证。基线比对通过后才会执行补丁构建。
-- `environment.log` 保存冻结依赖镜像的构建输出，`baseline-result.json` 记录判定结果。
+- `result-baseline-*/build-output/build.log`：完整原始构建日志（含 chroot 准备、依赖安装、构建等阶段，通常数百到数千行）；
+- `baseline-verdict.json`：与官方失败日志的比对结果（行数、行数比例、诊断覆盖、阶段齐备情况）；
+- `validator-baseline.log`：validator 控制台输出；
+- 如果跑了补丁验证，还有 `result-patched-*/build-output/build.log` 和 `patched-result.json`。
 
-构建过程默认实时输出编译和测试日志，展开对应构建任务的步骤即可查看。实时日志可能受 GitHub 的显示限制，完整文本可在任务结束后从 artifact 下载。
-
-```bash
-gh run download RUN_ID -R MegaFlowAI/BuildBench-Reproduction -n 'evidence-CASE_ID' -D evidence
-```
+附件保留 7 天。也可以直接展开 job 的构建步骤查看实时输出。
 
 ## 提交补丁
 
@@ -94,8 +95,8 @@ gh workflow run reproduce.yml -R MegaFlowAI/BuildBench-Reproduction --ref main \
 
 ### 4. 判定规则
 
-- 基线（未打补丁）：必须复现历史失败，并且自动诊断比对通过（`baseline-result.json` 的 status 为匹配）；否则直接判失败，不进入补丁阶段。
-- 打补丁后：原始包构建退出码必须是 0，并产出至少一个属于目标架构或 `all` 的有效 `.deb`；产物文件名记录在 `binary-packages.txt`。
+- 基线（未打补丁）：必须进入包构建并失败，官方失败诊断全部出现、关键阶段齐全（见 `baseline-verdict.json`）；否则直接判失败，不进入补丁阶段。
+- 打补丁后：validator 退出码 0、`build-result.json` 的 status 为 `completed`，且 `artifacts` 非空（目标架构或 `all` 的 `.deb`）；摘要见 `patched-result.json`。
 - 完整日志与证据见该 job 的 artifact（`evidence-<case-id>`）。
 
 ### 5. 安全与限制

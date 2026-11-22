@@ -44,16 +44,23 @@ jobs:
     timeout-minutes: 355
     env:
       CASE_ID: ${{ matrix.case }}
-      BUILDBENCH_LIVE_LOGS: "1"
       PATCH_PR: ${{ inputs.patch_pr }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
-      - name: Build original source (and validate patch when patch_pr is set)
+      - name: 准备冻结环境（Release 资产 + 运行时镜像）
         env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
+        run: |
+          set -euo pipefail
+          python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
+      - name: 原始构建（完整日志）与可选补丁验证
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
           WORK: ${{ runner.temp }}/buildbench-work
+          PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
           patch=
@@ -61,34 +68,46 @@ jobs:
             patch_path="submissions/$CASE_ID/change.patch"
             git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
             sha=$(git rev-parse FETCH_HEAD)
-            git show "$sha:$patch_path" > "$runner.temp/change.patch"
-            patch="$runner.temp/change.patch"
+            git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+            patch="$RUNNER_TEMP/change.patch"
             test -s "$patch"
             test "$(wc -c < "$patch")" -le 1048576
           fi
-          bash scripts/run_case.sh "$CASE_ID" "$WORK" "$patch"
-      - name: Summarize
+          bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
+      - name: 汇总
         if: always()
         env:
-          EVIDENCE: ${{ runner.temp }}/buildbench-work/evidence
+          WORK: ${{ runner.temp }}/buildbench-work
         run: |
           set -euo pipefail
           {
             printf '### %s\n\n' "$CASE_ID"
-            if [[ -s "$EVIDENCE/baseline.exit" ]]; then
-              printf -- '- 基线退出码：**%s**\n' "$(cat "$EVIDENCE/baseline.exit")"
+            if [[ -s "$WORK/baseline-verdict.json" ]]; then
+              printf -- '- 基线判定：**%s**\n' "$(jq -r '.status' "$WORK/baseline-verdict.json")"
+              printf -- '- 日志行数：重放 %s 行 / 官方 %s 行（比例 %s）\n' \
+                "$(jq -r '.replay_lines' "$WORK/baseline-verdict.json")" \
+                "$(jq -r '.reference_lines' "$WORK/baseline-verdict.json")" \
+                "$(jq -r '.line_ratio' "$WORK/baseline-verdict.json")"
+              printf -- '- 官方失败诊断覆盖：缺失 %s 条，重放多出 %s 条\n' \
+                "$(jq -r '[.missing_diagnostics[]] | add // 0' "$WORK/baseline-verdict.json")" \
+                "$(jq -r '.extra_diagnostics' "$WORK/baseline-verdict.json")"
             fi
-            if [[ -s "$EVIDENCE/baseline-result.json" ]]; then
-              printf -- '- 历史失败比对：**%s**\n' "$(jq -r '.status' "$EVIDENCE/baseline-result.json")"
+            if [[ -s "$WORK/patched-result.json" ]]; then
+              printf -- '- 打补丁后：**成功**，产物 %s 个\n' "$(jq -r '.artifacts | length' "$WORK/patched-result.json")"
             fi
-            if [[ -s "$EVIDENCE/patched.exit" ]]; then
-              printf -- '- 打补丁后退出码：**%s**\n' "$(cat "$EVIDENCE/patched.exit")"
-            fi
-            printf '\n完整日志及证据见本 job 的 artifact。\n'
+            printf '\n完整基线/补丁日志见本 job 的 artifact（evidence-%s）。\n' "$CASE_ID"
           } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: evidence-${{ matrix.case }}
-          path: ${{ runner.temp }}/buildbench-work/evidence/
+          path: |
+            ${{ runner.temp }}/buildbench-work/*.log
+            ${{ runner.temp }}/buildbench-work/*.json
+            ${{ runner.temp }}/buildbench-work/*.exit
+            ${{ runner.temp }}/buildbench-work/*.txt
+            ${{ runner.temp }}/buildbench-work/result-baseline-*/build-output/build.log
+            ${{ runner.temp }}/buildbench-work/result-baseline-*/build-output/build-*.json*
+            ${{ runner.temp }}/buildbench-work/result-patched-*/build-output/build.log
+            ${{ runner.temp }}/buildbench-work/result-patched-*/build-output/build-*.json*
           retention-days: 7
