@@ -69,7 +69,7 @@ echo BUILDBENCH_RAW_LOG_BEGIN
 gzip -nc /run/build.log | base64
 echo BUILDBENCH_RAW_LOG_END
 sync
-/bin/boot-busybox poweroff -f
+/bin/busybox poweroff -f
 EOF
 } | sudo tee "$root/init" >/dev/null
 sudo chmod 0755 "$root/init"
@@ -81,7 +81,10 @@ if [[ $(od -An -tx1 -N2 "$image" | tr -d ' \n') == 1f8b ]]; then
     gzip -dc "$image" >"$work/Image"
     image="$work/Image"
 fi
-"${qemu[@]}" -accel tcg -m 4096 -smp "$jobs" -nic none -display none -monitor none \
+# The unpacked builder image, historical chroot, dependency pool, and apt's
+# temporary unpack area coexist in the initramfs-backed guest.  Four GiB is
+# insufficient for the larger frozen cases even though the host has space.
+"${qemu[@]}" -accel tcg -m 8192 -smp "$jobs" -nic none -display none -monitor none \
     -serial stdio -no-reboot -kernel "$image" -initrd "$work/initramfs.gz" \
     -append "console=$console rdinit=/init quiet loglevel=2 panic=-1" >"$evidence/vm-console.log" 2>&1
 

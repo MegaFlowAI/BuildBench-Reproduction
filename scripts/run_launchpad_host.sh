@@ -54,6 +54,11 @@ guest_apt() {
         env LANG=C DEBIAN_FRONTEND=noninteractive TTY=unknown /usr/bin/apt-get "$@"
 }
 guest_apt -uy update
+# The original chroot can carry stale package indexes and archives.  Remove
+# them after updating so the historical upgrade has room for dpkg's unpack
+# copies of the frozen dependency set. Keep the freshly downloaded package
+# indexes because the historical upgrade needs them.
+rm -rf "$guest/var/cache/apt/archives/"*.deb
 guest_apt -o DPkg::Options::=--force-confold -uy --purge dist-upgrade
 
 args=(-c "chroot:build-$build_id" "--arch=$arch" "--dist=$suite" --nolog "--jobs=$jobs")
