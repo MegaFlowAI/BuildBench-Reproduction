@@ -132,3 +132,16 @@ target.write_text(json.dumps({"status": "success", "artifacts": artifacts,
 print("patched build succeeded with", len(valid), "binary packages")
 PY
 fi
+
+# job 状态与软件构建结果保持一致：
+# - 有补丁：基线匹配后，补丁构建成功才退出 0；
+# - 无补丁（复现）：基线匹配只说明复现成功，job 状态按原始构建的退出码返回（历史失败 => 红）。
+if [[ -z "$patch_file" ]]; then
+    baseline_build_exit=$(jq -r '.build_exit_code // empty' "$baseline_output/build-result.json" 2>/dev/null || true)
+    if [[ -z "$baseline_build_exit" || "$baseline_build_exit" == "null" ]]; then
+        echo "baseline matched but build exit code is unavailable; treating as failure"
+        exit 1
+    fi
+    echo "baseline matched (historical failure reproduced); job status follows build result: exit ${baseline_build_exit}"
+    exit "$baseline_build_exit"
+fi

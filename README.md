@@ -91,7 +91,13 @@ gh workflow run reproduce.yml -R MegaFlowAI/BuildBench-Reproduction --ref main \
   -f selection=launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e -f patch_pr=12
 ```
 
-### 4. 判定规则
+### 4. 判定规则与 job 状态
+
+- **job 状态跟软件构建结果一致**：原始构建失败（这批历史失败 case 的正常结局）就是红色；只有「打了补丁且补丁构建成功」才是绿色。
+- 复现是否匹配历史失败不再体现在 job 状态里，需要时在本地对下载的 `build.log` 跑 `scripts/compare_failure_log.py` 判断。
+- Artifact 只上传 `build.log`（补丁模式另加 `patched-build.log`），不再上传比对 JSON 等中间产物。
+
+### 4.1 判定规则
 
 - 基线（未打补丁）：必须进入包构建并失败，官方失败诊断全部出现、关键阶段齐全（见 `baseline-verdict.json`）；否则直接判失败，不进入补丁阶段。
 - 打补丁后：validator 退出码 0、`build-result.json` 的 status 为 `completed`，且 `artifacts` 非空（目标架构或 `all` 的 `.deb`）；摘要见 `patched-result.json`。
