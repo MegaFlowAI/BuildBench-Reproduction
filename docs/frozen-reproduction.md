@@ -19,7 +19,7 @@ Git 树中的 `cases/<方向>/<case-id>` 与官方开发集保持一致：`case.
 
 参考日志原文件共 2.66GB（其中 libyuv 单个 2.3GB），超过 GitHub 单文件 100MB 限制，因此统一 gzip 后入库（合计约 79MB，最大单文件 55.6MB < 100MB）；解压后与官方开发集逐字节一致。Release 资产里仍保留未压缩的参考日志副本（供工作流直接读取），Git 版本用于阅读/本地比对。
 
-例外：源码包里有 5 个文件名包含 `:`（Debian epoch，例如 `fenics-dolfinx_1:0.6.0-4_1:0.6.0-5.diff.gz`），Windows 文件系统不允许这种文件名，直接放 Git 会让 Windows 上无法 clone。因此这 5 个文件打包在 `cases/source-epoch-files.tar.gz`，清单和 SHA256 见 `cases/source-epoch-files.json`（Linux/Actions 上解包后与官方开发集完全一致）。
+例外：源码包里有 5 个文件名包含 `:`（Debian epoch，例如 `fenics-dolfinx_1:0.6.0-4_1:0.6.0-5.diff.gz`），Windows 文件系统不允许这种文件名，直接放 Git 会让 Windows 上无法 clone；这 5 个文件不单独入库，而是打包在 `cases/source-epoch-files.tar.gz`，清单和 SHA256 见 `cases/source-epoch-files.json`（Linux/Actions 上解包后与官方开发集完全一致）。
 
 依赖 `.deb` 池太大（约 56GB），仍放在 Release 资产里；每个 case 的参考日志本来就在 Release 资产中，Git 里不重复存放（少数日志超过 GitHub 单文件 100MB 限制，例如 libyuv 的 2.3GB 日志）。
 

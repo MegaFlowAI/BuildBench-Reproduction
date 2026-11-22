@@ -83,14 +83,12 @@ jobs:
           set -euo pipefail
           mkdir -p "$WORK/logs"
           if [[ -n "$PATCH_PR" ]]; then
-            # 补丁模式只保留补丁后的构建日志（构建成功的那份）
-            if compgen -G "$WORK/result-patched-*/build-output/build.log" > /dev/null; then
-              cp "$WORK"/result-patched-*/build-output/build.log "$WORK/logs/build.log"
-            fi
+            latest=$(ls -t "$WORK"/result-patched-*/build-output/build.log 2>/dev/null | head -1 || true)
           else
-            if compgen -G "$WORK/result-baseline-*/build-output/build.log" > /dev/null; then
-              cp "$WORK"/result-baseline-*/build-output/build.log "$WORK/logs/build.log"
-            fi
+            latest=$(ls -t "$WORK"/result-baseline-*/build-output/build.log 2>/dev/null | head -1 || true)
+          fi
+          if [[ -n "$latest" ]]; then
+            cp "$latest" "$WORK/logs/build.log"
           fi
       - uses: actions/upload-artifact@v4
         if: always()
