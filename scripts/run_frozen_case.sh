@@ -59,23 +59,28 @@ if [[ -n "$patch_file" ]]; then
     python3 scripts/apply_submission_patch.py "$case_dir" "$patch_file" "$patched_case"
     patched_output=$(run_validator "$patched_case" patched)
     test "$(cat "$workspace/validator-patched.exit")" -eq 0
-    python3 - "$patched_output" "$workspace/patched-result.json" <<'PY'
+    python3 - "$patched_output" "$workspace/patched-result.json" "$patched_case/case.json" <<'PY'
 import json
 import sys
 from pathlib import Path
 
 output = Path(sys.argv[1])
 target = Path(sys.argv[2])
+case = json.loads(Path(sys.argv[3]).read_text())
 result_file = output / "build-result.json"
 if not result_file.is_file():
     raise SystemExit("patched build produced no build-result.json")
 result = json.loads(result_file.read_text())
-if result.get("status") != "completed" or result.get("build_exit_code") != 0:
+if result.get("status") not in ("succeeded", "completed") or result.get("build_exit_code") != 0:
     raise SystemExit(f"patched build did not succeed: {result.get('status')} exit={result.get('build_exit_code')}")
 artifacts = result.get("artifacts") or []
-if not artifacts:
-    raise SystemExit("patched build produced no artifacts")
-target.write_text(json.dumps({"status": "success", "artifacts": artifacts}, indent=2) + "\n")
-print("patched build succeeded with", len(artifacts), "artifacts")
+binary = [item for item in artifacts if item.get("kind") == "binary"]
+arch = {"x86_64": "amd64", "aarch64": "arm64"}[case["platform"]["target_arch"]]
+valid = [item for item in binary if f"_{arch}." in item["path"] or "_all." in item["path"]]
+if not valid:
+    raise SystemExit(f"patched build produced no {arch} binary packages: {binary}")
+target.write_text(json.dumps({"status": "success", "artifacts": artifacts,
+                              "binary_packages": [item["path"] for item in valid]}, indent=2) + "\n")
+print("patched build succeeded with", len(valid), "binary packages")
 PY
 fi
