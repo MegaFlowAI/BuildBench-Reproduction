@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import subprocess
+import time
 from pathlib import Path
 
 from export_frozen_case import ARCHITECTURES, sha256
@@ -70,15 +71,21 @@ def download(record, work, file_name):
         raise ValueError("Invalid asset name")
     destination = work / file_name
     url = record.get("origin", f"{RELEASE}/{file_name}")
-    subprocess.run([
-        "curl", "--fail", "--location", "--silent", "--show-error",
-        "--retry", "4", "--retry-all-errors", "--output", destination,
-        url,
-    ], check=True)
-    if destination.stat().st_size != record["bytes"] or sha256(destination) != record["sha256"]:
-        raise ValueError(f"Release asset checksum mismatch: {file_name}")
-    print(f"Verified {file_name}", flush=True)
-    return destination
+    temporary = work / (file_name + ".partial")
+    for attempt in range(5):
+        temporary.unlink(missing_ok=True)
+        subprocess.run([
+            "curl", "--fail", "--location", "--silent", "--show-error",
+            "--retry", "4", "--retry-all-errors", "--connect-timeout", "30",
+            "--max-time", "1800", "--output", temporary, url,
+        ], check=True)
+        if temporary.stat().st_size == record["bytes"] and sha256(temporary) == record["sha256"]:
+            temporary.replace(destination)
+            print(f"Verified {file_name}", flush=True)
+            return destination
+        if attempt < 4:
+            time.sleep(2 * (attempt + 1))
+    raise ValueError(f"Asset checksum mismatch after retries: {file_name}")
 
 
 def apply_repairs(case, case_root, work):
