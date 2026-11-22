@@ -3,7 +3,9 @@
 1. 从官方开发集取每例的 `case.json`、`README.md`、`source/input`、`checksums` 和参考日志（`logs/target-failure.log`）；对照源文件哈希，再从服务器冻结池补齐 `config`、`manifest.json` 和逐包 SHA256。
 2. 每例打包上传到同一个 GitHub Release（`frozen-cases-v1`），仓库保存可读元数据和资产的大小、SHA256、运行时版本。
 3. 构建使用已校验的冻结材料和匹配架构的运行时：ARM64 目标用比赛官方 arm64 validator 镜像，x86_64 目标用官方 amd64 镜像加本地补丁的 shim。参考日志只由工作流读取，构建进程只收到源码、配置和冻结依赖。
-4. 验收标准不是逐字节一致：重放必须真的进入包构建并失败；官方 `target-failure.log` 里的失败诊断必须全部出现；关键阶段（构建根准备、依赖安装、源码解包、构建开始、构建失败）必须齐全；重放日志行数至少达到官方日志的 15%。判定结果写在 `baseline-verdict.json`。
+4. 验收标准不是逐字节一致：重放必须真的进入包构建并失败；官方 `target-failure.log` 里的失败诊断必须全部出现；关键阶段（构建根准备、依赖安装、源码解包、构建开始、构建失败）必须齐全；重放日志行数至少达到官方日志的 15%。
+
+**job 状态跟软件构建结果一致**：这批 case 的历史结局就是构建失败，所以无补丁跑原始构建时 job 是红色（预期）；只有「补丁构建成功」才是绿色。复现是否匹配不在 CI 里判定，下载 artifact 里的 `build.log` 后在本地跑 `scripts/compare_failure_log.py`。
 
 日常入口只有 **Actions → 原始构建与补丁验证**：`selection` 填一个或多个 case ID（英文逗号分隔），可选 `patch_pr` 填公开 PR 编号。补丁创建与提交流程见仓库 README。
 

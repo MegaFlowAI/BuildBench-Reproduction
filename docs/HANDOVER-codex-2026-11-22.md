@@ -77,6 +77,7 @@ scripts/
 6. **补丁成功判定**：`build-result.json` 的 `status == "succeeded"`（注意不是 `completed`）、`build_exit_code == 0`、artifacts 里有目标架构或 `all` 的 `.deb`。
 7. **cases.json 只能按 key 局部更新**，整条替换会丢 `packages` 等字段（踩过）。
 8. **workflow 文件必须 LF、无 BOM**（PowerShell 直接写会带 CRLF/BOM，用 python 写）。
+9. **job 状态 = 构建结果**：无补丁跑历史失败 case 时 job 必须是红色（构建失败是预期），只有补丁构建成功才绿；复现是否匹配不再由 CI 判断，需本地用 `scripts/compare_failure_log.py` 比对下载的 `build.log`。Artifact 只上传 `build.log`（补丁时加 `patched-build.log`），不要重新加回比对 JSON/汇总。
 9. **gh CLI 不可用**（本机 token 缺 `read:org`）：用 REST API + `Authorization: Bearer`，token 用完删除（`C:\Users\liu_z\.dsh\tmp\ghtok.txt` 是临时文件）。
 10. **不要用 Launchpad 跑构建**：EOL series 不接受 PPA 上传，当前归档也 ≠ 历史快照。Launchpad 只作参考日志/元数据来源；原 chroot/内核回放工具已删除。
 11. 单 job 355 分钟上限、public repo 并发 20；大资产（56GB 总量）下载慢，别在同一次 run 里重复拉。
