@@ -83,6 +83,11 @@ def download(record, work, file_name):
             temporary.replace(destination)
             print(f"Verified {file_name}", flush=True)
             return destination
+        print(
+            f"Checksum retry for {file_name}: got {temporary.stat().st_size} bytes "
+            f"{sha256(temporary)} expected {record['bytes']} bytes {record['sha256']}",
+            flush=True,
+        )
         if attempt < 4:
             time.sleep(2 * (attempt + 1))
     raise ValueError(f"Asset checksum mismatch after retries: {file_name}")
