@@ -61,7 +61,10 @@ def main() -> int:
     ref_lines = clean_lines(reference)
     replay_lines = clean_lines(replay_log)
     ref_diag = fingerprints(reference, None, case_id=case_id)
-    replay_diag = fingerprints(replay_log, None, case_id=case_id)
+    # obs-build 会给每行加 [ 123s] 前缀；先剥掉再提取诊断，避免同一行被判成不同指纹。
+    replay_cleaned = output / "build.log.normalized"
+    replay_cleaned.write_text("\n".join(replay_lines) + "\n", encoding="utf-8")
+    replay_diag = fingerprints(replay_cleaned, None, case_id=case_id)
     missing = ref_diag - replay_diag
     extra = replay_diag - ref_diag
     stages = {name: bool(pattern.search("\n".join(replay_lines))) for name, pattern in STAGES.items()}
