@@ -1,5 +1,5 @@
-name: BuildBench 原始构建与补丁验证
-run-name: BuildBench 复现 / ${{ inputs.selection }}
+name: 原始构建与补丁验证
+run-name: 原始构建与补丁验证 / ${{ inputs.selection }}
 on:
   workflow_dispatch:
     inputs:
