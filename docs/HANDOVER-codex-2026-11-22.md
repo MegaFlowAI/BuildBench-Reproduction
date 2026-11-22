@@ -14,6 +14,7 @@
 ```
 cases.json                          200 例 catalog；每个 case 的 env 条件也在这里
 cases/<方向>/<case>/                每个 case 的元数据：case.json、manifest.json、
+                                     logs/target-failure.log.gz（官方参考日志，gzip 入库）、
                                     config/（buildconfig + dependency-lock.json）、checksums/；
                                     以及与官方开发集一致的 source/input/（官方源码包）
 docs/public-baselines.csv           逐例公开验证台账（tier 字段）
