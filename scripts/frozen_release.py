@@ -69,10 +69,11 @@ def download(record, work, file_name):
     if record["file"] != file_name or not re.fullmatch(r"[a-z0-9][a-z0-9._+-]+", file_name):
         raise ValueError("Invalid asset name")
     destination = work / file_name
+    url = record.get("origin", f"{RELEASE}/{file_name}")
     subprocess.run([
         "curl", "--fail", "--location", "--silent", "--show-error",
         "--retry", "4", "--retry-all-errors", "--output", destination,
-        f"{RELEASE}/{file_name}",
+        url,
     ], check=True)
     if destination.stat().st_size != record["bytes"] or sha256(destination) != record["sha256"]:
         raise ValueError(f"Release asset checksum mismatch: {file_name}")
