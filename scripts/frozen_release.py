@@ -137,6 +137,31 @@ def apply_repairs(case, case_root, work):
     (work / "dependency-repairs.json").write_text(json.dumps(list(applied.values()), indent=2) + "\n")
 
 
+def verify_metadata_file(path, case_root, root):
+    """Verify a Git metadata file against the packaged case.
+
+    Git 里可能比 Release 资产多出一些文件（例如压缩后的参考日志
+    logs/target-failure.log.gz），这类文件不参与逐字节比较；如果 Git
+    里是 .gz 而资产里是对应的未压缩文件，则解压后比较。
+    """
+    packaged = case_root / path.relative_to(root)
+    if packaged.is_file():
+        if sha256(path) == sha256(packaged):
+            return
+        raise ValueError(f"Release metadata differs from Git: {path.name}")
+    if path.suffix == ".gz":
+        plain = packaged.with_suffix("")
+        if plain.is_file():
+            import gzip
+            with gzip.open(path, "rb") as stream:
+                digest = hashlib.sha256(stream.read()).hexdigest()
+            if digest == sha256(plain):
+                return
+            raise ValueError(f"Compressed reference log differs from Release: {path.name}")
+    # Git-only file (not present in the Release case asset): nothing to compare.
+    return
+
+
 def fetch_bundle(case, work):
     arch, metadata = frozen_cases()[case]
     work = work.resolve()
@@ -146,9 +171,7 @@ def fetch_bundle(case, work):
     case_root = work / case
     for path in metadata.parent.rglob("*"):
         if path.is_file() and path != metadata:
-            packaged = case_root / path.relative_to(metadata.parent)
-            if sha256(path) != sha256(packaged):
-                raise ValueError(f"Release metadata differs from Git: {path.name}")
+            verify_metadata_file(path, case_root, metadata.parent)
     apply_repairs(case, case_root, work)
     return arch, case_root
 
