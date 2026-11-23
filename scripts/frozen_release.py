@@ -2,6 +2,8 @@
 """Select published case bundles and verify Release downloads before loading them."""
 
 import argparse
+import hashlib
+import gzip
 import json
 import re
 import shutil
