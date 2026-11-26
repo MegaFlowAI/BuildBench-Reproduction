@@ -157,6 +157,10 @@ def fingerprints(path, start, *, case_id=None):
         for chunk in iter(lambda: handle.readline(262144), b""):
             raw = chunk.decode("utf-8", "replace")
             line = raw.strip()
+            # GCC source excerpts may contain strings such as 'RXTX Error:'.
+            # Those are program text, not compiler diagnostics (keep file:line errors).
+            if re.match(r"^\d+\s*\|", line):
+                continue
             if not active and line.startswith(start):
                 active = True
             if not active:

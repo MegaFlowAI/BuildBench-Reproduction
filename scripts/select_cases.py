@@ -4,11 +4,13 @@ import json
 import sys
 from pathlib import Path
 
-CASES = json.loads(Path("cases.json").read_text())
+from pilot import ROOT, pilots
+
+CASES = json.loads((ROOT / "cases.json").read_text(encoding="utf-8"))
 RUNNERS = {"arm64": "ubuntu-24.04-arm", "amd64": "ubuntu-24.04"}
 
-selection = sys.argv[1].strip()
-ids = [item.strip() for item in selection.split(",") if item.strip()]
+selection = sys.argv[1].strip() if len(sys.argv) > 1 else ""
+ids = list(pilots()) if selection in {"pilot", "isa-10"} else [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:
     raise SystemExit("selection 不能为空：请填一个或多个 case ID，用英文逗号分隔")
 unknown = [item for item in ids if item not in CASES]

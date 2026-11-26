@@ -160,8 +160,39 @@ def verify_metadata_file(path, case_root, root):
             if digest == sha256(plain):
                 return
             raise ValueError(f"Compressed reference log differs from Release: {path.name}")
-    # Git-only file (not present in the Release case asset): nothing to compare.
-    return
+    raise ValueError(f"Release metadata/source file missing: {path.relative_to(root)}")
+
+
+def recover_missing_packages(case, case_root, work):
+    """Restore recorded historical packages absent from the original frozen pool."""
+    records = json.loads((ROOT / "cases/recovered-packages.json").read_text(encoding="utf-8"))
+    build = json.loads((case_root / "manifest.json").read_text())["build"]
+    lock_path = case_root / build["dependency_lock"]
+    lock = json.loads(lock_path.read_text())
+    applied = []
+    for record in records:
+        if case not in record["cases"]:
+            continue
+        if any(item["package"] == record["package"] and item["version"] == record["version"]
+               and item["arch"] == record["architecture"] for item in lock["dependencies"]):
+            continue
+        # Public Release mirror holds the exact recorded Launchpad bytes.
+        asset = {key: record[key] for key in ("file", "bytes", "sha256")}
+        downloaded = download(asset, work, record["file"])
+        fields = subprocess.check_output(["dpkg-deb", "-f", downloaded, "Package", "Version", "Architecture"], text=True)
+        expected = {"Package": record["package"], "Version": record["version"], "Architecture": record["architecture"]}
+        if dict(line.split(": ", 1) for line in fields.splitlines()) != expected:
+            raise ValueError("Recovered historical package identity mismatch")
+        directory = next(case_root / name for name in build["dependency_dirs"]
+                         if name.endswith("-" + record["architecture"]))
+        shutil.copyfile(downloaded, directory / record["file"])
+        lock["dependencies"].append({"package": record["package"], "version": record["version"],
+                                     "arch": record["architecture"], "filename": record["file"],
+                                     "sha256": record["sha256"]})
+        applied.append(record)
+    lock["dependency_count"] = len(lock["dependencies"])
+    lock_path.write_text(json.dumps(lock, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (work / "dependency-recoveries.json").write_text(json.dumps(applied, indent=2) + "\n", encoding="utf-8")
 
 
 def fetch_bundle(case, work):
@@ -175,6 +206,7 @@ def fetch_bundle(case, work):
         if path.is_file() and path != metadata:
             verify_metadata_file(path, case_root, metadata.parent)
     apply_repairs(case, case_root, work)
+    recover_missing_packages(case, case_root, work)
     return arch, case_root
 
 

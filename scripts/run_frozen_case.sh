@@ -2,6 +2,7 @@
 set -euo pipefail
 
 case_dir=$(realpath "$1")
+mkdir -p "$2"
 workspace=$(realpath "$2")
 runtime_image=$3
 patch_file=${4:-}
@@ -25,6 +26,10 @@ run_validator() {
         cp -al "$dependency_dir" "$runtime_case/dependencies/"
     done
     python3 scripts/prepare_frozen_runtime.py "$root" "$runtime_case" "$workspace/runtime-settings.json"
+    cp "$workspace/runtime-settings.json" "$workspace/runtime-settings-$label.json"
+    cp "$runtime_case/manifest.json" "$workspace/effective-manifest-$label.json"
+    cp "$runtime_case/config/dependency-lock.json" "$workspace/effective-lock-$label.json"
+    cp "$runtime_case"/config/*buildconfig "$workspace/effective-buildconfig-$label.txt"
 
     local -a docker_args=()
     local -a timeout_args=()
@@ -54,8 +59,10 @@ run_validator() {
         timeout_args=(timeout --signal=TERM --kill-after=30 "${timeout_seconds}s")
     fi
     local code=0
+    local container_name="buildbench-$(basename "$result_root")"
+    local started=$SECONDS
     set +e
-    "${timeout_args[@]}" docker run --rm --network none --privileged "${docker_args[@]}" \
+    "${timeout_args[@]}" docker run --name "$container_name" --rm --network none --privileged "${docker_args[@]}" \
         -e HOME=/tmp -e TMPDIR=/tmp \
         -e BUILD_CASE_ISOLATED_WORKER=1 -e BUILD_CASE_VM_TYPE=chroot \
         --mount "type=bind,src=$runtime_case,dst=$runtime_case,readonly" \
@@ -64,6 +71,8 @@ run_validator() {
         2>&1 | tee "$workspace/validator-$label.log" >&2
     code=${PIPESTATUS[0]}
     set -e
+    docker rm -f "$container_name" >/dev/null 2>&1 || true
+    printf '{"elapsed_seconds":%s,"validator_exit":%s}\n' "$((SECONDS-started))" "$code" > "$workspace/timing-$label.json"
     printf '%s\n' "$code" > "$workspace/validator-$label.exit"
     printf '%s\n' "$result_root" > "$workspace/result-root-$label.txt"
     if [[ -d "$output" ]]; then
@@ -119,7 +128,7 @@ result_file = output / "build-result.json"
 if not result_file.is_file():
     raise SystemExit("patched build produced no build-result.json")
 result = json.loads(result_file.read_text())
-if result.get("status") not in ("succeeded", "completed") or result.get("build_exit_code") != 0:
+if result.get("status") != "succeeded" or result.get("build_exit_code") != 0:
     raise SystemExit(f"patched build did not succeed: {result.get('status')} exit={result.get('build_exit_code')}")
 artifacts = result.get("artifacts") or []
 binary = [item for item in artifacts if item.get("kind") == "binary"]

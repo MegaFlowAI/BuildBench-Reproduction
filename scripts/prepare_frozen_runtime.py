@@ -6,6 +6,7 @@ import re
 import shlex
 import sys
 from pathlib import Path
+from pilot import pilots
 
 
 MLMMJ = "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07"
@@ -148,6 +149,20 @@ def prepare(case_dir, runtime, settings):
         "pkgconf": "pkg-config",
     }
     lock_packages = {item["package"] for item in read_json(runtime / build["dependency_lock"])["dependencies"]}
+    # Ubuntu's transition package contains links to rust-coreutils, not /bin/true.
+    # Old debootstrap only extracts its fixed required list and omits that provider.
+    # Keep OBS and the same historical packages; use OBS's native chroot bootstrap
+    # for these audited pilots, as already done for html-xml-utils.
+    bootstrap_reason = None
+    if case_id in pilots() and {"coreutils-from-uutils", "rust-coreutils"} <= lock_packages:
+        for package in ("coreutils-from-uutils", "rust-coreutils"):
+            if package not in bootstrap:
+                bootstrap.append(package)
+        config_text, count = re.subn(r"^buildengine: debootstrap$", "buildengine: none", config_text, flags=re.M)
+        if count != 1:
+            raise ValueError("Expected debootstrap engine before uutils bootstrap repair")
+        build_engine = "none"
+        bootstrap_reason = "historical coreutils transition needs its rust-coreutils provider before chroot execution"
     if "libmd0" in lock_packages and "libmd0" not in bootstrap:
         bootstrap.append("libmd0")
     preferred = []
@@ -179,6 +194,7 @@ def prepare(case_dir, runtime, settings):
         "dpkg_buildpackage_arguments": flags,
         "bootstrap_preinstall": bootstrap,
         "build_engine_override": build_engine,
+        "bootstrap_reason": bootstrap_reason,
         "reproduction_conditions": conditions,
         "omitted_nonhistorical_duplicates": discarded,
     })

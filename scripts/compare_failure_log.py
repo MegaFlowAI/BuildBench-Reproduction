@@ -8,12 +8,14 @@
   - 重放日志必须包含关键构建阶段，且行数达到官方日志的至少 15%（防止只跑了半截）。
 """
 import json
+import hashlib
 import re
 import sys
 from collections import Counter
 from pathlib import Path
 
-from check_baseline import FAILURE, fingerprints
+from check_baseline import fingerprints
+from pilot import pilots, reference_bytes, root_matches
 
 STAGES = {
     "chroot_or_root": re.compile(r"Using BUILD_ROOT|init_buildsystem|creating repository for debootstrap"),
@@ -29,7 +31,9 @@ INTERLEAVED_PROGRESS = re.compile(r"\[\s*\d+%\]")
 
 def clean_lines(path: Path) -> list[str]:
     lines = []
-    with path.open("rb") as handle:
+    import gzip
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rb") as handle:
         for chunk in iter(lambda: handle.readline(262144), b""):
             line = chunk.decode("utf-8", "replace")
             line = TIMING.sub("", line).strip()
@@ -69,35 +73,56 @@ def main() -> int:
     result_file = output / "build-result.json"
     replay_log = output / "build.log"
     verdict = {
-        "case_id": json.loads((case_dir / "case.json").read_text())["case_id"],
+        "case_id": json.loads((case_dir / "case.json").read_text(encoding="utf-8"))["case_id"],
         "validator_exit": int(validator_exit),
         "status": "build_evidence_missing",
     }
     reasons = []
     if not (result_file.is_file() and replay_log.is_file()):
         verdict["reasons"] = ["build-result.json or build.log missing"]
-        verdict_path.write_text(json.dumps(verdict, indent=2) + "\n")
+        verdict["category"] = "infrastructure"
+        verdict_path.write_text(json.dumps(verdict, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(verdict, indent=2, ensure_ascii=False))
         return 1
 
-    result = json.loads(result_file.read_text())
-    case_id = json.loads((case_dir / "case.json").read_text())["case_id"]
+    result = json.loads(result_file.read_text(encoding="utf-8"))
+    case = json.loads((case_dir / "case.json").read_text(encoding="utf-8"))
+    case_id = case["case_id"]
     ref_lines = clean_lines(reference)
     replay_lines = clean_lines(replay_log)
-    ref_diag = fingerprints(reference, None, case_id=case_id)
+    # Both inputs use identical normalization, including compressed Git references.
+    reference_cleaned = output / "reference.log.normalized"
+    reference_cleaned.write_text("\n".join(ref_lines) + "\n", encoding="utf-8")
+    ref_diag = fingerprints(reference_cleaned, None, case_id=case_id)
     # obs-build 会给每行加 [ 123s] 前缀；先剥掉再提取诊断，避免同一行被判成不同指纹。
     replay_cleaned = output / "build.log.normalized"
     replay_cleaned.write_text("\n".join(replay_lines) + "\n", encoding="utf-8")
     replay_diag = fingerprints(replay_cleaned, None, case_id=case_id)
     missing = ref_diag - replay_diag
     extra = replay_diag - ref_diag
-    stages = {name: bool(pattern.search("\n".join(replay_lines))) for name, pattern in STAGES.items()}
+    replay_text = "\n".join(replay_lines)
+    stages = {name: bool(pattern.search(replay_text)) for name, pattern in STAGES.items()}
+    # OBS also prints '----- building' before chroot setup; that is not package execution.
+    stages["build_started"] = "dpkg-buildpackage: info: source package " in replay_text
     ratio = (len(replay_lines) / len(ref_lines)) if ref_lines else 0
     failed_stages = result.get("failed_stages") or []
     package_failed = (
         result.get("status") == "failed"
-        and result.get("build_exit_code") not in (None, 0)
+        and type(result.get("build_exit_code")) is int and result["build_exit_code"] != 0
+        and stages["build_started"] and stages["build_failed"]
+        and not result.get("timed_out", False)
     )
+    stage_events = []
+    for line in replay_lines:
+        if '[build-case] [event] ' in line:
+            try:
+                event = json.loads(line.split('[build-case] [event] ', 1)[1])
+                if event.get("event") == "stage" and event.get("state") == "failed":
+                    stage_events.append(event["stage"])
+            except (ValueError, KeyError):
+                pass
+    if stage_events and stage_events[-1] != "package_build":
+        package_failed = False
     verdict.update({
         "reference_lines": len(ref_lines),
         "replay_lines": len(replay_lines),
@@ -109,12 +134,17 @@ def main() -> int:
         "stages": stages,
         "package_failed": package_failed,
         "build_exit_code": result.get("build_exit_code"),
-        "failed_stages": failed_stages,
-        "replay_sha256": None,
+        "failed_stages": stage_events or failed_stages,
+        "replay_sha256": hashlib.sha256(replay_log.read_bytes()).hexdigest(),
+        "reference_sha256": hashlib.sha256(reference_bytes(reference)).hexdigest(),
     })
 
     if not package_failed:
         reasons.append("重放没有在包构建阶段失败（基线不会失败）")
+    if not ref_diag:
+        reasons.append("官方诊断为空，不能以空集合匹配判定复现成功")
+    if int(validator_exit) in (0, 124, 137, 143) or result.get("timed_out"):
+        reasons.append("validator 成功或被超时/信号终止，不是完整的预期失败")
     if missing:
         reasons.append(f"官方日志里有 {sum(missing.values())} 条失败诊断在重放中缺失")
     if not all(stages.values()):
@@ -122,9 +152,29 @@ def main() -> int:
         reasons.append("重放日志缺少阶段: " + ", ".join(missing_stages))
     if ratio < 0.15:
         reasons.append(f"重放日志只有官方日志的 {ratio:.0%} 行，疑似未完整执行")
+    spec = pilots().get(case_id)
+    if spec:
+        matches = root_matches(replay_lines, spec["root_patterns"])
+        verdict["root_cause"] = spec["root_cause"]
+        verdict["root_signature_matches"] = matches
+        if not all(matches):
+            reasons.append("缺少试点的架构根因诊断")
+        unexpected = {key: value for key, value in replay_diag.items() if key not in ref_diag}
+        verdict["unexpected_diagnostics"] = unexpected
+        if unexpected:
+            reasons.append("出现官方日志以外的失败诊断，需要排查环境干扰")
+        expected = case["platform"]["target_arch"]
+        deb_arch = {"aarch64": "arm64", "x86_64": "amd64"}[expected]
+        if result.get("target_arch") != expected or f"dpkg-buildpackage: info: host architecture {deb_arch}" not in replay_text:
+            reasons.append("构建结果或实际包构建架构与目标不符")
     verdict["status"] = "matched" if not reasons else "mismatch"
+    verdict["category"] = ("isa_failure_reproduced" if spec else "historical_failure_reproduced") if not reasons else (
+        "infrastructure" if not stages["build_started"] or result.get("status") in {"unresolvable", "infrastructure_error"}
+        else "timeout" if result.get("timed_out") or int(validator_exit) in (124, 137, 143)
+        else "unexpected_success" if result.get("build_exit_code") == 0
+        else "diagnostic_mismatch")
     verdict["reasons"] = reasons
-    verdict_path.write_text(json.dumps(verdict, indent=2, ensure_ascii=False) + "\n")
+    verdict_path.write_text(json.dumps(verdict, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(verdict, indent=2, ensure_ascii=False))
     return 0 if not reasons else 1
 

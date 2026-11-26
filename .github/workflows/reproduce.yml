@@ -1,11 +1,15 @@
 name: 原始构建与补丁验证
-run-name: 原始构建与补丁验证 / ${{ inputs.selection }}
+run-name: 原始构建与补丁验证 / ${{ inputs.selection || 'pilot' }}
 on:
+  push:
+    branches: [codex/isa-pilot-20261126]
+    paths: ['.github/workflows/reproduce.yml', 'scripts/**', 'pilots/**', 'tests/**']
   workflow_dispatch:
     inputs:
       selection:
-        description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。单个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e"
+        description: "填 pilot 运行 10 个架构迁移试点，或填写用英文逗号分隔的 case ID。"
         required: true
+        default: pilot
       patch_pr:
         description: "可选：公开 PR 编号（只填数字，例如 12），要求上面的 selection 只填一个 case ID。"
         type: string
@@ -23,10 +27,11 @@ jobs:
           persist-credentials: false
       - id: cases
         env:
-          SELECTION: ${{ inputs.selection }}
+          SELECTION: ${{ inputs.selection || 'pilot' }}
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
+          python3 -m unittest discover -s tests -v
           matrix=$(python3 scripts/select_cases.py "$SELECTION")
           if [[ -n "$PATCH_PR" ]]; then
             [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
@@ -45,17 +50,22 @@ jobs:
     env:
       CASE_ID: ${{ matrix.case }}
       PATCH_PR: ${{ inputs.patch_pr }}
+      BUNDLE: ${{ runner.temp }}/buildbench-bundle
+      WORK: ${{ runner.temp }}/buildbench-work
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
+      - name: 记录机器环境并校验官方试点输入
+        run: python3 scripts/collect_evidence.py start "$CASE_ID" "$WORK" "$BUNDLE"
       - name: 准备冻结环境（Release 资产 + 运行时镜像）
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
         run: |
           set -euo pipefail
-          python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
+          python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE" 2>&1 | tee "$WORK/validator-prepare.log"
+          docker image inspect "$(cat "$BUNDLE/runtime-image.txt")" > "$WORK/runtime-image.json"
       - name: 原始构建（完整日志）与可选补丁验证
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
@@ -74,6 +84,16 @@ jobs:
             test "$(wc -c < "$patch")" -le 1048576
           fi
           bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
+      - name: 保存判定、原始日志、环境和耗时证据
+        if: always()
+        run: python3 scripts/collect_evidence.py collect "$CASE_ID" "$WORK" "$BUNDLE"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.case }}
+          path: ${{ runner.temp }}/buildbench-work/evidence/
+          if-no-files-found: error
+          retention-days: 30
       - name: 收集 build.log
         if: always()
         env:
@@ -97,3 +117,31 @@ jobs:
           path: ${{ runner.temp }}/buildbench-work/logs/
           if-no-files-found: warn
           retention-days: 7
+  report:
+    name: 试点复现汇总
+    if: always() && needs.select.result == 'success'
+    needs: [select, build]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: evidence-*
+          path: evidence
+      - name: 汇总全部任务（缺少证据不能算通过）
+        env:
+          MATRIX: ${{ needs.select.outputs.matrix }}
+        run: |
+          set +e
+          python3 scripts/summarize_pilot.py evidence results "$MATRIX"
+          code=$?
+          cat results/results.md >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproduction-summary
+          path: results/
+          retention-days: 30

@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "name": "isa-10",
+  "direction": "x86_64-to-aarch64",
+  "note": "Static source and official-log evidence; runtime status must come from a new workflow run.",
+  "cases": [
+    {
+      "case_id": "launchpad-questing-amd64-arm64-golf-baef926efdc3",
+      "package": "golf",
+      "suite": "questing",
+      "root_cause": "x86-only-compiler-option",
+      "root_patterns": [
+        "^cc1: error: .*?-fcf-protection=full.*? is not supported for this target"
+      ],
+      "source_checks": [
+        {
+          "archive": "golf_601.4.32.orig.tar.gz",
+          "member": "golf-601.4.32-1/Makefile",
+          "pattern": "fcf-protection"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-jammy-amd64-arm64-rust-generator-c5207d2ba61d",
+      "package": "rust-generator",
+      "suite": "jammy",
+      "root_cause": "unsupported-aarch64-backend",
+      "root_patterns": [
+        "panicked at 'Unsupported architecture: aarch64-unknown-linux-gnu', build.rs:30:13"
+      ],
+      "source_checks": [
+        {
+          "archive": "rust-generator_0.6.20.orig.tar.gz",
+          "member": "generator-0.6.20/build.rs",
+          "pattern": "Unsupported architecture"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-mantic-amd64-arm64-libcrypt-xxhash-perl-101168be0c0f",
+      "package": "libcrypt-xxhash-perl",
+      "suite": "mantic",
+      "root_cause": "x86-dispatch-and-sse-header",
+      "root_patterns": [
+        "^./ext/xxHash/xxh_x86dispatch.c:56:4: error: #error \"Dispatching is currently only supported on x86 and x86_64.\"",
+        "^./ext/xxHash/xxh_x86dispatch.c:179:12: fatal error: emmintrin.h: No such file or directory"
+      ],
+      "source_checks": [
+        {
+          "archive": "libcrypt-xxhash-perl_0.06.orig.tar.gz",
+          "member": "Crypt-xxHash-0.06/ext/xxHash/xxh_x86dispatch.c",
+          "pattern": "Dispatching is currently only supported|include <emmintrin"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-mantic-amd64-arm64-r-cran-digest-7a42effc961f",
+      "package": "r-cran-digest",
+      "suite": "mantic",
+      "root_cause": "hardcoded-sse-prefetch",
+      "root_patterns": [
+        "^crc32c/crc32c_prefetch.h:18:10: fatal error: xmmintrin.h: No such file or directory"
+      ],
+      "source_checks": [
+        {
+          "archive": "r-cran-digest_0.6.32.orig.tar.gz",
+          "member": "digest/src/crc32c/crc32c_config.h",
+          "pattern": "#define HAVE_MM_PREFETCH 1"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-noble-amd64-arm64-rust-criterion-cycles-per-byte-82e423f30956",
+      "package": "rust-criterion-cycles-per-byte",
+      "suite": "noble",
+      "root_cause": "x86-only-cycle-counter",
+      "root_patterns": [
+        "^error: criterion-cycles-per-byte currently relies on x86 or x86_64."
+      ],
+      "source_checks": [
+        {
+          "archive": "rust-criterion-cycles-per-byte_0.5.0.orig.tar.gz",
+          "member": "criterion-cycles-per-byte-0.5.0/src/lib.rs",
+          "pattern": "currently relies on x86"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-noble-amd64-arm64-xmbmon-a78a68bcce2f",
+      "package": "xmbmon",
+      "suite": "noble",
+      "root_cause": "x86-port-io-header",
+      "root_patterns": [
+        "^io_cpu.h:5:10: fatal error: sys/io.h: No such file or directory"
+      ],
+      "source_checks": [
+        {
+          "archive": "xmbmon_2.05.orig.tar.gz",
+          "member": "xmbmon-2.05/io_cpu.h",
+          "pattern": "#include <sys/io.h>"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-plucky-amd64-arm64-harec-2765b2c0fbdc",
+      "package": "harec",
+      "suite": "plucky",
+      "root_cause": "x86-assembly-on-aarch64",
+      "root_patterns": [
+        "^rt/\\+linux/syscall\\+x86_64.s:.*Error: unknown mnemonic .*movq"
+      ],
+      "source_checks": [
+        {
+          "archive": "harec_0.24.2.orig.tar.gz",
+          "member": "harec-0.24.2/configs/linux.mk",
+          "pattern": "ARCH = x86_64"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b",
+      "package": "qmidiarp",
+      "suite": "resolute",
+      "root_cause": "sse-compiler-flags",
+      "root_patterns": [
+        "^gcc: error: unrecognized command-line option .-msse.",
+        "^gcc: error: unrecognized command-line option .-msse2.",
+        "^gcc: error: unrecognized command-line option .-mfpmath=sse."
+      ],
+      "source_checks": [
+        {
+          "archive": "qmidiarp_0.7.2+ds.orig.tar.xz",
+          "member": "qmidiarp-0.7.2/configure.ac",
+          "pattern": "\\-msse -msse2 -mfpmath=sse"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-resolute-amd64-arm64-rust-hamming-rs-d570e1d85c81",
+      "package": "rust-hamming-rs",
+      "suite": "resolute",
+      "root_cause": "unguarded-avx2-intrinsics",
+      "root_patterns": [
+        "^error\\[E0432\\]: unresolved import .std::arch::x86_64.",
+        "^error: the feature named .avx2. is not valid for this target"
+      ],
+      "source_checks": [
+        {
+          "archive": "rust-hamming-rs_0.2.23.orig.tar.gz",
+          "member": "hamming_rs-0.2.23/src/lib_avx2.rs",
+          "pattern": "std::arch::x86_64|target_feature"
+        }
+      ]
+    },
+    {
+      "case_id": "launchpad-resolute-amd64-arm64-rxtx-20f5fb7e3e1c",
+      "package": "rxtx",
+      "suite": "resolute",
+      "root_cause": "x86-port-io-functions",
+      "root_patterns": [
+        "^.*src/RawImp.c:131:12: error: implicit declaration of function .ioperm.",
+        "^.*src/RawImp.c:171:23: error: implicit declaration of function .inb.",
+        "^.*src/RawImp.c:185:9: error: implicit declaration of function .outb."
+      ],
+      "source_checks": [
+        {
+          "archive": "rxtx_2.2.0+dfsg.orig.tar.xz",
+          "member": "rxtx-2.2.0/src/RawImp.c",
+          "pattern": "ioperm\\(| inb\\(|outb\\("
+        }
+      ]
+    }
+  ]
+}

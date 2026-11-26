@@ -1,5 +1,7 @@
 # 冻结用例发布与验收
 
+> 2026-11-26：当前试点增加完整证据附件和自动判定，运行方式与状态以 [10 项试点说明](isa-pilot.md) 为准。下文保留冻结资产的背景记录。
+
 1. 从官方开发集取每例的 `case.json`、`README.md`、`source/input`、`checksums` 和参考日志（`logs/target-failure.log`）；对照源文件哈希，再从服务器冻结池补齐 `config`、`manifest.json` 和逐包 SHA256。
 2. 每例打包上传到同一个 GitHub Release（`frozen-cases-v1`），仓库保存可读元数据和资产的大小、SHA256、运行时版本。
 3. 构建使用已校验的冻结材料和匹配架构的运行时：ARM64 目标用比赛官方 arm64 validator 镜像，x86_64 目标用官方 amd64 镜像加本地补丁的 shim。参考日志只由工作流读取，构建进程只收到源码、配置和冻结依赖。
