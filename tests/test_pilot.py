@@ -95,6 +95,42 @@ class VerdictTests(unittest.TestCase):
 
 
 class InputTests(unittest.TestCase):
+    def test_fontconfig_bootstrap_preserves_dependency_bytes(self):
+        cid = "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b"
+        original = pilot.case_path(cid)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            case, runtime = root / "case", root / "runtime"
+            (case / "logs").mkdir(parents=True)
+            (runtime / "input").mkdir(parents=True)
+            (case / "logs/target-failure.log").write_bytes(pilot.reference_bytes(original / "logs/target-failure.log.gz"))
+            shutil.copyfile(original / "manifest.json", case / "manifest.json")
+            shutil.copytree(original / "config", runtime / "config")
+            settings = root / "settings.json"
+            prepare_frozen_runtime.prepare(case, runtime, settings)
+            self.assertIn("libharfbuzz0b", pilot.read_json(settings)["bootstrap_preinstall"])
+            self.assertEqual(pilot.read_json(runtime / "config/dependency-lock.json"), pilot.read_json(original / "config/dependency-lock.json"))
+
+    def test_recovered_jpeg_package_resolves_provider_ambiguity(self):
+        cid = "launchpad-mantic-amd64-arm64-r-cran-digest-7a42effc961f"
+        original = pilot.case_path(cid)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            case, runtime = root / "case", root / "runtime"
+            (case / "logs").mkdir(parents=True)
+            (runtime / "input").mkdir(parents=True)
+            (case / "logs/target-failure.log").write_bytes(pilot.reference_bytes(original / "logs/target-failure.log.gz"))
+            shutil.copyfile(original / "manifest.json", case / "manifest.json")
+            shutil.copytree(original / "config", runtime / "config")
+            lock_path = runtime / "config/dependency-lock.json"
+            lock = pilot.read_json(lock_path)
+            lock["dependencies"].append({"package": "libjpeg-dev", "version": "8c-2ubuntu11", "arch": "arm64", "filename": "libjpeg-dev.deb", "sha256": "unit-fixture"})
+            lock_path.write_text(json.dumps(lock))
+            prepare_frozen_runtime.prepare(case, runtime, root / "settings.json")
+            config = next((runtime / "config").glob("*buildconfig")).read_text()
+            self.assertRegex(config, r"Prefer: libjpeg-dev(?:\s|$)")
+            self.assertTrue(any(i["package"] == "libjpeg-turbo8-dev" for i in pilot.read_json(lock_path)["dependencies"]))
+
     def test_ten_official_sources_and_root_signatures(self):
         self.assertEqual(len(pilot.pilots()), 10)
         for cid in pilot.pilots():

@@ -44,6 +44,8 @@
 | `dpkg` 启动缺 `libmd.so.0` | 保留并核查已有的 `libmd0` 预安装逻辑 |
 | `pkg-config` 与 `pkgconf` 提供者冲突 | 保留按冻结 Ignore/Prefer 配置消歧的逻辑 |
 | `r-cran-digest` 历史 `libjpeg-dev` 未进入冻结池 | 从已有 Release 恢复相同版本，核对 SHA256 与包身份，加入临时依赖锁 |
+| 恢复 JPEG 元包后，OBS 看到两个 `libjpeg-dev` 提供者 | 显式 Prefer 历史 `libjpeg-dev`，保留它依赖的 `libjpeg-turbo8-dev` |
+| `qmidiarp` 的 `fc-cache` 缺 `libharfbuzz.so.0` | 循环依赖安装顺序使字体缓存生成早于 HarfBuzz 安装；预安装原版本 `libharfbuzz0b`，不修改字体包或跳过 postinst |
 | `systemd`、`rust-coreutils`、LLVM/JDK 等冻结 `.deb` 截断 | 沿用已有同版本修复清单，记录修复结果 |
 | uutils 过渡时期的 `coreutils` 仅含链接，旧 debootstrap 未抽取实际提供者，缺 `rm` / `/bin/true` | 对试点中包含该组合的任务，使用 OBS 自身的 chroot 引导，并显式预安装历史 `coreutils-from-uutils` / `rust-coreutils`；记录 engine 变更 |
 | 日志路径、OBS 时间前缀不同；源码字符串被误判为诊断 | 对双方做同样归一化，排除 GCC `行号 | 源码` 摘录，保留真正文件位置和错误文本 |

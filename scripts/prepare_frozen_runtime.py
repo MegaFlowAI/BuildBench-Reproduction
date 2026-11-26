@@ -4,11 +4,7 @@
 import json
 import re
 import shlex
-import hashlib
-import shutil
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 from pilot import pilots
 
@@ -100,33 +96,6 @@ def prepare(case_dir, runtime, settings):
     manifest = read_json(case_dir / "manifest.json")
     case_id = manifest["case_id"]
     build = manifest["build"]
-    # A diagnostic-only maintainer-script trap preserves fontconfig's actual
-    # failure and prints its otherwise discarded chroot log. No payload changes.
-    diagnostic_adjustments = []
-    if case_id == "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b":
-        lock_path = runtime / build["dependency_lock"]
-        lock = read_json(lock_path)
-        for entry in lock["dependencies"]:
-            if entry["package"] != "fontconfig":
-                continue
-            directory = next(runtime / name for name in build["dependency_dirs"] if name.endswith("-" + entry["arch"]))
-            target = directory / entry["filename"]
-            with tempfile.TemporaryDirectory(dir=runtime) as tmp:
-                extracted = Path(tmp) / "package"
-                subprocess.run(["dpkg-deb", "-R", str(target), str(extracted)], check=True, capture_output=True)
-                script = extracted / "DEBIAN/postinst"
-                original = script.read_text(encoding="utf-8")
-                trap = "trap 'code=$?; if [ \"$code\" -ne 0 ]; then cat /var/log/fontconfig.log >&2 || :; fi; exit \"$code\"' 0\n"
-                script.write_text(original.replace("set -e\n", "set -e\n" + trap, 1), encoding="utf-8")
-                rebuilt = Path(tmp) / "fontconfig.deb"
-                subprocess.run(["dpkg-deb", "--build", str(extracted), str(rebuilt)], check=True, capture_output=True)
-                new_sha = hashlib.sha256(rebuilt.read_bytes()).hexdigest()
-                diagnostic_adjustments.append({"package": "fontconfig", "original_sha256": entry["sha256"],
-                                               "runtime_sha256": new_sha, "reason": "print fontconfig log on failure; preserve exit status"})
-                target.unlink()  # Break cp -al link; never modify the frozen package.
-                shutil.copyfile(rebuilt, target)
-                entry["sha256"] = new_sha
-        write_json(lock_path, lock)
     historical = read_json(Path("cases.json"))[case_id]
     jobs = historical["jobs"]
     if type(jobs) is not int or jobs < 1:
@@ -194,6 +163,13 @@ def prepare(case_dir, runtime, settings):
             raise ValueError("Expected debootstrap engine before uutils bootstrap repair")
         build_engine = "none"
         bootstrap_reason = "historical coreutils transition needs its rust-coreutils provider before chroot execution"
+    if case_id == "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b":
+        # Fontconfig's fc-cache loads HarfBuzz through FreeType before OBS's
+        # cyclic dependency ordering has installed it. Pre-extract the exact
+        # historical library; retain fontconfig's original postinst and result.
+        if "libharfbuzz0b" not in lock_packages:
+            raise ValueError("Missing historical HarfBuzz for fontconfig bootstrap")
+        bootstrap.append("libharfbuzz0b")
     if "libmd0" in lock_packages and "libmd0" not in bootstrap:
         bootstrap.append("libmd0")
     preferred = []
@@ -230,7 +206,6 @@ def prepare(case_dir, runtime, settings):
         "bootstrap_preinstall": bootstrap,
         "build_engine_override": build_engine,
         "bootstrap_reason": bootstrap_reason,
-        "diagnostic_adjustments": diagnostic_adjustments,
         "reproduction_conditions": conditions,
         "omitted_nonhistorical_duplicates": discarded,
     })
