@@ -4,6 +4,8 @@
 
 ## 当前 10 项试点
 
+2026-11-26 实跑完成 **10/10**，并已下载日志在本地再次核对。最终整轮约 **3 分 22 秒**，详见 [实测报告](docs/isa-pilot-results.md) 与 [Actions 运行](https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212)。
+
 详见 [试点说明](docs/isa-pilot.md) 和 [固定任务与根因清单](pilots/isa-10.json)。这轮选取 10 个有明确源码证据的 x86 → ARM 错误，覆盖六个 Ubuntu suite。环境修复保留项目本来的架构错误，避免依赖安装失败冒充复现成功。
 
 在 **Actions → 原始构建与补丁验证** 选择试点分支，填写：

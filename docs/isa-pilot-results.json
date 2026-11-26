@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "measured_on": "2026-11-26",
+  "scope": "10 x86_64-to-aarch64 cases across six Ubuntu suites",
+  "matched": 10,
+  "total": 10,
+  "run_id": 45841541212,
+  "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+  "build_commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+  "run_started_at_utc": "2026-11-26T14:41:26Z",
+  "run_completed_updated_at_utc": "2026-11-26T14:44:48Z",
+  "run_elapsed_seconds": 202.0,
+  "per_case_seconds_min": 57.98,
+  "per_case_seconds_median": 75.55,
+  "per_case_seconds_max": 153.46,
+  "unit_tests_passed": 14,
+  "local_log_rechecks_passed": 10,
+  "rounds": [
+    {
+      "run_id": 45839801607,
+      "matched": 8,
+      "total": 10
+    },
+    {
+      "run_id": 45840959896,
+      "matched": 9,
+      "total": 10
+    },
+    {
+      "run_id": 45841541212,
+      "matched": 10,
+      "total": 10
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "launchpad-questing-amd64-arm64-golf-baef926efdc3",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 57.98,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 45,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "069ccbde9437c4256b4f747df9a6a4b8fabb8ed03847ebe5ec5d26ad6a9bb6c4",
+      "replay_sha256": "b6251d356e770aa14d773f41c7681479cbef8d0dbbe17a4017b7602d245c587f",
+      "local_recheck": "matched",
+      "package": "golf",
+      "suite": "questing",
+      "root_cause": "x86-only-compiler-option",
+      "job_id": 139984329192,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329192",
+      "artifact_id": 15127847668,
+      "artifact_sha256": "sha256:746af40be19935775fd43ca5c5ef08b4f187b7c0bdbb13f0fdbd4fe2fd03c1e5",
+      "artifact_expires_at": "2026-12-26T14:42:48Z",
+      "root_signature_matches": [
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-questing-amd64-arm64-golf-baef926efdc3"
+    },
+    {
+      "case_id": "launchpad-jammy-amd64-arm64-rust-generator-c5207d2ba61d",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 66.69,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 54,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "c41aad9d0f0e88b92c3c3fdf776a8d66d250d8eb89943eddd14b80b7a4077d30",
+      "replay_sha256": "4d4faabed3ba5b5ad3b9be8ab0aa823516d51146a9109afd3ff31601cdbf26f0",
+      "local_recheck": "matched",
+      "package": "rust-generator",
+      "suite": "jammy",
+      "root_cause": "unsupported-aarch64-backend",
+      "job_id": 139984329352,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329352",
+      "artifact_id": 15128765939,
+      "artifact_sha256": "sha256:e8a84ca6af5b37b33b2a7c4ec71e13ae368ea729e83efd90d4b24c1cbc5a8544",
+      "artifact_expires_at": "2026-12-26T14:42:57Z",
+      "root_signature_matches": [
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 4,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-jammy-amd64-arm64-rust-generator-c5207d2ba61d"
+    },
+    {
+      "case_id": "launchpad-mantic-amd64-arm64-libcrypt-xxhash-perl-101168be0c0f",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 69.59,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 57,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "8cdb0380478eb9dd595a02e6c3e63fae0dd48acf46c78969f30cc099a231a2a7",
+      "replay_sha256": "c16f81d9cd4ed2d2b1a820f2e907952f0d5325927c9c49a2bb1faeac26285d2d",
+      "local_recheck": "matched",
+      "package": "libcrypt-xxhash-perl",
+      "suite": "mantic",
+      "root_cause": "x86-dispatch-and-sse-header",
+      "job_id": 139984329139,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329139",
+      "artifact_id": 15127602858,
+      "artifact_sha256": "sha256:77bc1854622cc93833afd1c12963fbac61f6a3efe1de67f64b1386347bb4c641",
+      "artifact_expires_at": "2026-12-26T14:42:59Z",
+      "root_signature_matches": [
+        true,
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 4,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-mantic-amd64-arm64-libcrypt-xxhash-perl-101168be0c0f"
+    },
+    {
+      "case_id": "launchpad-mantic-amd64-arm64-r-cran-digest-7a42effc961f",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 80.07,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 66,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "046784be0eaa169a4b7573a73c708684975717ffe7bcefb3fe2be8497e7e21c9",
+      "replay_sha256": "366ad07dfc40a903c196b417c2f680e92d38956fb59a435ddf3b98ee3fa0a775",
+      "local_recheck": "matched",
+      "package": "r-cran-digest",
+      "suite": "mantic",
+      "root_cause": "hardcoded-sse-prefetch",
+      "job_id": 139984329355,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329355",
+      "artifact_id": 15129790569,
+      "artifact_sha256": "sha256:07553f092bc3ff894c69c6bfa87bf61dd80173af53bda24660e62226fe5e556b",
+      "artifact_expires_at": "2026-12-26T14:43:10Z",
+      "root_signature_matches": [
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-mantic-amd64-arm64-r-cran-digest-7a42effc961f"
+    },
+    {
+      "case_id": "launchpad-noble-amd64-arm64-rust-criterion-cycles-per-byte-82e423f30956",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 113.31,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 99,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "5d60c3d1d5bb6cdda7ec914916d640b34b233e82cf21ffa85424e7bda4a91324",
+      "replay_sha256": "58ec92d4f1026c593ed56f20cd987a147d367cffae4b092364c2f248e3ad2dce",
+      "local_recheck": "matched",
+      "package": "rust-criterion-cycles-per-byte",
+      "suite": "noble",
+      "root_cause": "x86-only-cycle-counter",
+      "job_id": 139984329160,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329160",
+      "artifact_id": 15129595585,
+      "artifact_sha256": "sha256:033000182e69d36c21356fbed918f5dc1dd31ada0ffb8e7b430d45ef63049bbd",
+      "artifact_expires_at": "2026-12-26T14:43:43Z",
+      "root_signature_matches": [
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-noble-amd64-arm64-rust-criterion-cycles-per-byte-82e423f30956"
+    },
+    {
+      "case_id": "launchpad-noble-amd64-arm64-xmbmon-a78a68bcce2f",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 79.6,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 64,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "251d01afab72b001f67ecf2e16997882889d261daf86a492473729cd1e2c6798",
+      "replay_sha256": "4aa61777656babd3739e7b27142491f9623564445f9eb3e4f237490d03baf24d",
+      "local_recheck": "matched",
+      "package": "xmbmon",
+      "suite": "noble",
+      "root_cause": "x86-port-io-header",
+      "job_id": 139984329233,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329233",
+      "artifact_id": 15128192256,
+      "artifact_sha256": "sha256:ea788663ccf8b4337877d04432f9f374084b2a4b4e51666f9ec46312274d0a68",
+      "artifact_expires_at": "2026-12-26T14:43:10Z",
+      "root_signature_matches": [
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 4,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-noble-amd64-arm64-xmbmon-a78a68bcce2f"
+    },
+    {
+      "case_id": "launchpad-plucky-amd64-arm64-harec-2765b2c0fbdc",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 65.51,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 51,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "93280597ef497954d84e52dae8316444f70335772421d492e9475e6460f6fe16",
+      "replay_sha256": "df59f0485dfe3e3de456e5635fe0becd8d9465709fef0e779c365b0d260db35a",
+      "local_recheck": "matched",
+      "package": "harec",
+      "suite": "plucky",
+      "root_cause": "x86-assembly-on-aarch64",
+      "job_id": 139984329243,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329243",
+      "artifact_id": 15129050872,
+      "artifact_sha256": "sha256:70c73fbbcd322c214efd82062adb95e58a1fb0e723886bedff44db632a6766ca",
+      "artifact_expires_at": "2026-12-26T14:42:55Z",
+      "root_signature_matches": [
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-plucky-amd64-arm64-harec-2765b2c0fbdc"
+    },
+    {
+      "case_id": "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 153.46,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 138,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "eb9a461d8bd31f4a79e4e097f3f6705a6536c2c00b50dda08ce8ece81f82d154",
+      "replay_sha256": "eb68a2e35bc7d6eec0473ab149cb819e649a3b7c47b8cdc2d2b8e894b35943b6",
+      "local_recheck": "matched",
+      "package": "qmidiarp",
+      "suite": "resolute",
+      "root_cause": "sse-compiler-flags",
+      "job_id": 139984329263,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329263",
+      "artifact_id": 15128232376,
+      "artifact_sha256": "sha256:574de4cb301ece9a89c8dd470a3bb446abb52fa0dae4975ffd710943be7b9423",
+      "artifact_expires_at": "2026-12-26T14:44:23Z",
+      "root_signature_matches": [
+        true,
+        true,
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b"
+    },
+    {
+      "case_id": "launchpad-resolute-amd64-arm64-rust-hamming-rs-d570e1d85c81",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 71.5,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 57,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "5db907c52e2bda878817b4a7bb693ceea5e9f98161cf86d2391f2e769e10b2bd",
+      "replay_sha256": "7f428867f6fb2938d03ad9f19c5cb45269f685fc07ddbb9d325366bd416138cd",
+      "local_recheck": "matched",
+      "package": "rust-hamming-rs",
+      "suite": "resolute",
+      "root_cause": "unguarded-avx2-intrinsics",
+      "job_id": 139984329153,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329153",
+      "artifact_id": 15129295678,
+      "artifact_sha256": "sha256:3bdb2e960f9b9961bf9513f4535ff762f1be7c0026cdf62091d87c629c887378",
+      "artifact_expires_at": "2026-12-26T14:43:02Z",
+      "root_signature_matches": [
+        true,
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-resolute-amd64-arm64-rust-hamming-rs-d570e1d85c81"
+    },
+    {
+      "case_id": "launchpad-resolute-amd64-arm64-rxtx-20f5fb7e3e1c",
+      "category": "isa_failure_reproduced",
+      "status": "matched",
+      "reasons": [],
+      "wall_seconds": 107.47,
+      "timings": {
+        "timing-baseline-1": {
+          "elapsed_seconds": 90,
+          "validator_exit": 1
+        }
+      },
+      "run_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212",
+      "commit": "3590f725b410786e59681ea1e330e0a94e57c8eb",
+      "build_exit_code": 1,
+      "reference_sha256": "dcf6ee31c286dd14feb1d19d02c5afdcac9de493899b9c20d3ba89c40a714c07",
+      "replay_sha256": "a6eec41e0a643c8138484ef0096e672d644a65380577064cd7af923fbedd4450",
+      "local_recheck": "matched",
+      "package": "rxtx",
+      "suite": "resolute",
+      "root_cause": "x86-port-io-functions",
+      "job_id": 139984329303,
+      "job_url": "https://github.com/MegaFlowAI/BuildBench-Reproduction/actions/runs/45841541212/job/139984329303",
+      "artifact_id": 15129590606,
+      "artifact_sha256": "sha256:415bce16174d907bb9af5b56d40a8c606f85028e3ee0df20e40b40a9cc18b5af",
+      "artifact_expires_at": "2026-12-26T14:43:37Z",
+      "root_signature_matches": [
+        true,
+        true,
+        true
+      ],
+      "missing_diagnostics": {},
+      "unexpected_diagnostics": {},
+      "source_files_verified": 3,
+      "local_evidence_directory": "results/run-45841541212/evidence-launchpad-resolute-amd64-arm64-rxtx-20f5fb7e3e1c"
+    }
+  ]
+}
