@@ -50,18 +50,20 @@ jobs:
     env:
       CASE_ID: ${{ matrix.case }}
       PATCH_PR: ${{ inputs.patch_pr }}
-      BUNDLE: ${{ runner.temp }}/buildbench-bundle
-      WORK: ${{ runner.temp }}/buildbench-work
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
       - name: 记录机器环境并校验官方试点输入
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
+          WORK: ${{ runner.temp }}/buildbench-work
         run: python3 scripts/collect_evidence.py start "$CASE_ID" "$WORK" "$BUNDLE"
       - name: 准备冻结环境（Release 资产 + 运行时镜像）
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
+          WORK: ${{ runner.temp }}/buildbench-work
         run: |
           set -euo pipefail
           python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE" 2>&1 | tee "$WORK/validator-prepare.log"
@@ -86,6 +88,9 @@ jobs:
           bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
       - name: 保存判定、原始日志、环境和耗时证据
         if: always()
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
+          WORK: ${{ runner.temp }}/buildbench-work
         run: python3 scripts/collect_evidence.py collect "$CASE_ID" "$WORK" "$BUNDLE"
       - uses: actions/upload-artifact@v4
         if: always()
