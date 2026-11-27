@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.cases.outputs.matrix }}
+      source_matrix: ${{ steps.cases.outputs.source_matrix }}
+      has_source: ${{ steps.cases.outputs.has_source }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,33 +34,31 @@ jobs:
             [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
             python3 -c 'import json,sys; m=json.loads(sys.argv[1]); sys.exit(0 if len(m["include"])==1 else 1)' "$matrix"
           fi
-          target=$(jq -c '[.include[] | . + {mode:"target"}]' <<<"$matrix")
-          if [[ -n "$PATCH_PR" ]]; then
-            source=$(jq -c '[.source_include[] | . + {mode:"source"}]' <<<"$matrix")
-          else
-            source='[]'
-          fi
-          merged=$(jq -c -n --argjson a "$target" --argjson b "$source" '$a + $b')
-          printf 'matrix=%s\n' "$merged" >> "$GITHUB_OUTPUT"
+          printf 'matrix=%s\n' "$(jq -c '{include:.include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
+          printf 'source_matrix=%s\n' "$(jq -c '{include:.source_include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
+          printf 'has_source=%s\n' "$(jq -r .has_source <<<"$matrix")" >> "$GITHUB_OUTPUT"
       - name: 运行参数概览
         env:
           SELECTION: ${{ inputs.selection }}
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
-          matrix='${{ steps.cases.outputs.matrix }}'
+          target_matrix='${{ steps.cases.outputs.matrix }}'
+          source_matrix='${{ steps.cases.outputs.source_matrix }}'
           {
             echo "## 运行参数"
             echo ""
             echo "- **selection**：\`$SELECTION\`"
             echo "- **patch_pr**：\`${PATCH_PR:-（未填写）}\`"
-            echo "- **矩阵**：\`$matrix\`"
+            echo "- **target 矩阵**：\`$target_matrix\`"
+            echo "- **source 矩阵**：\`$source_matrix\`"
           } >> "$GITHUB_STEP_SUMMARY"
           echo "selection=$SELECTION"
           echo "patch_pr=${PATCH_PR:-none}"
-          echo "matrix=$matrix"
-  build:
-    name: ${{ matrix.mode }}-arch [${{ matrix.runner }}] (${{ matrix.case }})
+          echo "target_matrix=$target_matrix"
+          echo "source_matrix=$source_matrix"
+  target-arch:
+    name: target-arch [${{ matrix.runner }}] (${{ matrix.case }})
     needs: select
     strategy:
       fail-fast: false
@@ -68,13 +68,11 @@ jobs:
     env:
       CASE_ID: ${{ matrix.case }}
       PATCH_PR: ${{ inputs.patch_pr }}
-      MODE: ${{ matrix.mode }}
     steps:
       - name: 运行环境与参数
         run: |
           set -euo pipefail
           echo "case=$CASE_ID"
-          echo "mode=$MODE"
           echo "patch_pr=${PATCH_PR:-none}"
           echo "runner=${{ matrix.runner }}"
           echo "arch=$(uname -m)"
@@ -82,26 +80,20 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: 准备冻结环境（target：Release 资产 + 运行时镜像）
-        if: matrix.mode == 'target'
+      - name: 准备冻结环境（Release 资产 + 运行时镜像）
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
         run: |
           set -euo pipefail
           python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
-      - name: 准备源码包（source：只要源码 bundle）
-        if: matrix.mode == 'source'
+      - name: 目标架构构建（可选补丁）
         env:
-          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
-        run: |
-          set -euo pipefail
-          python3 scripts/frozen_release.py fetch-bundle "$CASE_ID" "$BUNDLE"
-      - name: 构建（可选补丁）
-        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
           WORK: ${{ runner.temp }}/buildbench-work
+          PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
-          echo "case=$CASE_ID mode=$MODE patch_pr=${PATCH_PR:-none} runner=${{ matrix.runner }}"
+          echo "case=$CASE_ID patch_pr=${PATCH_PR:-none} runner=${{ matrix.runner }}"
           patch=
           if [[ -n "$PATCH_PR" ]]; then
             patch_path="submissions/$CASE_ID/change.patch"
@@ -111,14 +103,9 @@ jobs:
             patch="$RUNNER_TEMP/change.patch"
             test -s "$patch"
           fi
-          if [[ "$MODE" == "target" ]]; then
-            bash scripts/run_frozen_case.sh "$RUNNER_TEMP/buildbench-bundle/$CASE_ID" "$WORK" \
-              "$(cat "$RUNNER_TEMP/buildbench-bundle/runtime-image.txt")" "$patch"
-          else
-            bash scripts/run_source_arch.sh "$CASE_ID" "$RUNNER_TEMP/buildbench-source-bundle/$CASE_ID" "$patch"
-          fi
-      - name: 收集 target build.log
-        if: always() && matrix.mode == 'target'
+          bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
+      - name: 收集 build.log
+        if: always()
         env:
           WORK: ${{ runner.temp }}/buildbench-work
           PATCH_PR: ${{ inputs.patch_pr }}
@@ -133,13 +120,56 @@ jobs:
           test -n "$latest"
           cp "$latest" "$WORK/logs/build.log"
       - uses: actions/upload-artifact@v4
-        if: always() && matrix.mode == 'target'
+        if: always()
         with:
           name: build-log-${{ matrix.case }}
           path: ${{ runner.temp }}/buildbench-work/logs/
           retention-days: 7
+  source-arch:
+    name: source-arch [${{ matrix.runner }}] (${{ matrix.case }})
+    needs: select
+    if: ${{ inputs.patch_pr != '' && needs.select.outputs.has_source == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.source_matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ matrix.case }}
+      PATCH_PR: ${{ inputs.patch_pr }}
+    steps:
+      - name: 运行环境与参数
+        run: |
+          set -euo pipefail
+          echo "case=$CASE_ID"
+          echo "patch_pr=${PATCH_PR:-none}"
+          echo "runner=${{ matrix.runner }}"
+          echo "arch=$(uname -m)"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: 准备源码包
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
+        run: |
+          set -euo pipefail
+          python3 scripts/frozen_release.py fetch-bundle "$CASE_ID" "$BUNDLE"
+      - name: 源架构构建
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          echo "case=$CASE_ID patch_pr=${PATCH_PR:-none} runner=${{ matrix.runner }}"
+          git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
+          sha=$(git rev-parse FETCH_HEAD)
+          patch_path="submissions/$CASE_ID/change.patch"
+          git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+          test -s "$RUNNER_TEMP/change.patch"
+          bash scripts/run_source_arch.sh "$CASE_ID" "$BUNDLE/$CASE_ID" "$RUNNER_TEMP/change.patch"
       - uses: actions/upload-artifact@v4
-        if: always() && matrix.mode == 'source'
+        if: always()
         with:
           name: source-arch-${{ matrix.case }}
           path: |
