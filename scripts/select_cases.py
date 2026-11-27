@@ -14,10 +14,23 @@ if not ids:
 unknown = [item for item in ids if item not in CASES]
 if unknown:
     raise SystemExit(f"未知 case ID: {unknown}")
+unique_ids = list(dict.fromkeys(ids))
 matrix = [
     {"case": case, "runner": RUNNERS[CASES[case]["architecture"]]}
-    for case in dict.fromkeys(ids)
+    for case in unique_ids
 ]
-if len(matrix) > 256:
+source_matrix = []
+for case in unique_ids:
+    for direction in ("aarch64-to-x86_64", "x86_64-to-aarch64"):
+        metadata = Path("cases") / direction / case / "case.json"
+        if metadata.is_file():
+            record = json.loads(metadata.read_text())
+            source_arch = {"aarch64": "arm64", "x86_64": "amd64"}[record["platform"]["source_arch"]]
+            target_arch = {"aarch64": "arm64", "x86_64": "amd64"}[record["platform"]["target_arch"]]
+            if source_arch != target_arch:
+                source_matrix.append({"case": case, "runner": RUNNERS[source_arch]})
+            break
+if len(matrix) + len(source_matrix) > 256:
     raise SystemExit("矩阵超过 GitHub Actions 256 个 job 的上限")
-print(json.dumps({"include": matrix}))
+print(json.dumps({"include": matrix, "source_include": source_matrix,
+                  "has_source": bool(source_matrix)}))

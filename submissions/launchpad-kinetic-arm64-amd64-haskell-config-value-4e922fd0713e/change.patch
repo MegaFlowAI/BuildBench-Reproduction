@@ -1,0 +1,12 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,9 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# Ubuntu kinetic's haskell-devscripts lacks the -Bsymbolic-functions strip
++# added in 0.16.27ubuntu1; GHC dyn objects then fail with R_X86_64_PC32.
++export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
