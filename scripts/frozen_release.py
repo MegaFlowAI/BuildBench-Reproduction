@@ -153,6 +153,10 @@ def fetch_bundle(case, work):
     return arch, case_root
 
 
+def fetch_bundle_only(case, work):
+    return fetch_bundle(case, work)
+
+
 def fetch(case, work):
     arch, _ = fetch_bundle(case, work)
     runtime = json.loads((ROOT / "cases/runtimes.json").read_text())[arch]
@@ -172,12 +176,17 @@ def main():
     matrix = commands.add_parser("matrix")
     matrix.add_argument("selection")
     matrix.add_argument("--release-assets", type=Path)
+    fetch_bundle = commands.add_parser("fetch-bundle")
+    fetch_bundle.add_argument("case")
+    fetch_bundle.add_argument("work", type=Path)
     fetch_case = commands.add_parser("fetch")
     fetch_case.add_argument("case")
     fetch_case.add_argument("work", type=Path)
     args = parser.parse_args()
     if args.command == "matrix":
         select(args.selection, args.release_assets)
+    elif args.command == "fetch-bundle":
+        fetch_bundle_only(args.case, args.work)
     else:
         fetch(args.case, args.work)
 

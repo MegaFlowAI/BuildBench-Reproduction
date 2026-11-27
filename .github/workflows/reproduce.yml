@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.cases.outputs.matrix }}
+      source_matrix: ${{ steps.cases.outputs.source_matrix }}
+      has_source: ${{ steps.cases.outputs.has_source }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,7 +34,9 @@ jobs:
             [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
             python3 -c 'import json,sys; m=json.loads(sys.argv[1]); sys.exit(0 if len(m["include"])==1 else 1)' "$matrix"
           fi
-          printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
+          printf 'matrix=%s\n' "$(jq -c . <<<"$matrix")" >> "$GITHUB_OUTPUT"
+          printf 'source_matrix=%s\n' "$(jq -c '{include:.source_include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
+          printf 'has_source=%s\n' "$(jq -r .has_source <<<"$matrix")" >> "$GITHUB_OUTPUT"
   build:
     name: build (${{ matrix.case }})
     needs: select
@@ -110,4 +114,48 @@ jobs:
             ${{ runner.temp }}/buildbench-work/result-baseline-*/build-output/build-*.json*
             ${{ runner.temp }}/buildbench-work/result-patched-*/build-output/build.log
             ${{ runner.temp }}/buildbench-work/result-patched-*/build-output/build-*.json*
+          retention-days: 7
+  source-arch:
+    name: source-arch (${{ matrix.case }})
+    needs: select
+    if: ${{ inputs.patch_pr != '' && needs.select.outputs.has_source == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.source_matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ matrix.case }}
+      PATCH_PR: ${{ inputs.patch_pr }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: 准备源码包
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
+        run: |
+          set -euo pipefail
+          python3 scripts/frozen_release.py fetch-bundle "$CASE_ID" "$BUNDLE"
+      - name: 源架构编译验证
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
+          sha=$(git rev-parse FETCH_HEAD)
+          patch_path="submissions/$CASE_ID/change.patch"
+          git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+          test -s "$RUNNER_TEMP/change.patch"
+          bash scripts/run_source_arch.sh "$CASE_ID" "$BUNDLE/$CASE_ID" "$RUNNER_TEMP/change.patch"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-arch-${{ matrix.case }}
+          path: |
+            ${{ runner.temp }}/buildbench-source-*/source-arch-*.log
+            ${{ runner.temp }}/buildbench-source-*/source-arch-*.exit
+            ${{ runner.temp }}/buildbench-source-*/source-arch-*.txt
           retention-days: 7
