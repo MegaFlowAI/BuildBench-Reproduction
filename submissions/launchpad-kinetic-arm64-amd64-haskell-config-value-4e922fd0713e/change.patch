@@ -1,0 +1,12 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,9 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# GHC's native code generator cannot be linked with LTO flags; disable LTO
++# so that haskell-devscripts does not pass -optl-flto=auto to GHC.
++export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
