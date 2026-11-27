@@ -1,0 +1,12 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,9 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# GHC's linker cannot handle the LTO flags injected by dpkg-buildflags on
++# amd64 (R_X86_64_PC32 relocations overflow); strip them for this package.
++export DEB_LDFLAGS_MAINT_STRIP = -flto=auto -ffat-lto-objects
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
