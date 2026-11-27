@@ -1,0 +1,13 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,10 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# GHC links shared objects with -Wl,-Bsymbolic; Ubuntu's default
++# -Wl,-Bsymbolic-functions overrides it and makes GHC closures interposable,
++# causing R_X86_64_PC32 relocation failures on amd64.
++export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
