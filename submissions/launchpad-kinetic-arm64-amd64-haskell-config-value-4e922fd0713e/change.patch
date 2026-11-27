@@ -1,0 +1,15 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,12 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# Ubuntu's default LDFLAGS contain -Wl,-Bsymbolic-functions. cdbs/hlibrary
++# passes LDFLAGS to GHC via -optl, and that flag overrides the -Bsymbolic
++# GHC uses when linking its shared objects, making GHC closures interposable
++# and breaking R_X86_64_PC32 relocations on amd64. Strip it from the build
++# flags; the library is still linked with the remaining hardening flags.
++export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
