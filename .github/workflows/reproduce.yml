@@ -1,5 +1,5 @@
 name: 原始构建与补丁验证
-run-name: 原始构建与补丁验证 / ${{ inputs.selection }}
+run-name: 原始构建与补丁验证 / ${{ inputs.selection }} / patch_pr=${{ inputs.patch_pr || '无' }}
 on:
   workflow_dispatch:
     inputs:
@@ -7,7 +7,7 @@ on:
         description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。"
         required: true
       patch_pr:
-        description: "可选：补丁 PR 编号（只填数字）。不填时只跑 target-arch 原始构建（复现历史失败日志）；填了同时跑 target-arch 与 source-arch。"
+        description: "可选：补丁 PR 编号（只填数字）。不填时只跑 target-arch 原始构建；填了同时跑 target-arch 与 source-arch。"
         type: string
         required: false
 permissions:
@@ -37,8 +37,28 @@ jobs:
           printf 'matrix=%s\n' "$(jq -c '{include:.include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
           printf 'source_matrix=%s\n' "$(jq -c '{include:.source_include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
           printf 'has_source=%s\n' "$(jq -r .has_source <<<"$matrix")" >> "$GITHUB_OUTPUT"
+      - name: 运行参数概览
+        env:
+          SELECTION: ${{ inputs.selection }}
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          target_matrix='${{ steps.cases.outputs.matrix }}'
+          source_matrix='${{ steps.cases.outputs.source_matrix }}'
+          {
+            echo "## 运行参数"
+            echo ""
+            echo "- **selection**：\`$SELECTION\`"
+            echo "- **patch_pr**：\`${PATCH_PR:-（未填写）}\`"
+            echo "- **target 矩阵**：\`$target_matrix\`"
+            echo "- **source 矩阵**：\`$source_matrix\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "selection=$SELECTION"
+          echo "patch_pr=${PATCH_PR:-none}"
+          echo "target_matrix=$target_matrix"
+          echo "source_matrix=$source_matrix"
   target-arch:
-    name: target-arch (${{ matrix.case }})
+    name: target-arch [${{ matrix.runner }}] (${{ matrix.case }})
     needs: select
     strategy:
       fail-fast: false
@@ -49,6 +69,13 @@ jobs:
       CASE_ID: ${{ matrix.case }}
       PATCH_PR: ${{ inputs.patch_pr }}
     steps:
+      - name: 运行环境与参数
+        run: |
+          set -euo pipefail
+          echo "case=$CASE_ID"
+          echo "patch_pr=${PATCH_PR:-none}"
+          echo "runner=${{ matrix.runner }}"
+          echo "arch=$(uname -m)"
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -66,6 +93,7 @@ jobs:
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
+          echo "case=$CASE_ID patch_pr=${PATCH_PR:-none} runner=${{ matrix.runner }}"
           patch=
           if [[ -n "$PATCH_PR" ]]; then
             patch_path="submissions/$CASE_ID/change.patch"
@@ -98,7 +126,7 @@ jobs:
           path: ${{ runner.temp }}/buildbench-work/logs/
           retention-days: 7
   source-arch:
-    name: source-arch (${{ matrix.case }})
+    name: source-arch [${{ matrix.runner }}] (${{ matrix.case }})
     needs: select
     if: ${{ inputs.patch_pr != '' && needs.select.outputs.has_source == 'true' }}
     strategy:
@@ -110,6 +138,13 @@ jobs:
       CASE_ID: ${{ matrix.case }}
       PATCH_PR: ${{ inputs.patch_pr }}
     steps:
+      - name: 运行环境与参数
+        run: |
+          set -euo pipefail
+          echo "case=$CASE_ID"
+          echo "patch_pr=${PATCH_PR:-none}"
+          echo "runner=${{ matrix.runner }}"
+          echo "arch=$(uname -m)"
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -126,6 +161,7 @@ jobs:
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
+          echo "case=$CASE_ID patch_pr=${PATCH_PR:-none} runner=${{ matrix.runner }}"
           git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
           sha=$(git rev-parse FETCH_HEAD)
           patch_path="submissions/$CASE_ID/change.patch"
