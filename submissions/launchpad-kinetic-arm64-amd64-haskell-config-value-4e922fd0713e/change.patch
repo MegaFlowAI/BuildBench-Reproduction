@@ -1,0 +1,23 @@
+--- a/debian/control
++++ b/debian/control
+@@ -11,6 +11,7 @@
+  ghc-prof,
+  alex,
+  happy (>= 1.19.12),
++ llvm,
+ Build-Depends-Indep: ghc-doc,
+ Standards-Version: 4.5.0
+ Homepage: https://github.com/glguy/config-value
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,10 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# Ubuntu's default LDFLAGS include -flto=auto, which makes the NCG backend
++# emit PC-relative relocations that ld rejects when linking shared objects.
++# Use GHC's LLVM backend instead (LP: #2144301).
++DEB_GHC_EXTRA_OPTS = -fllvm
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
