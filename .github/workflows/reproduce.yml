@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       selection:
-        description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。单个示例：launchpad-kinetic-arm64-amd64-haskell-config-value-4e922fd0713e"
+        description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。"
         required: true
       patch_pr:
-        description: "可选：公开 PR 编号（只填数字，例如 12），要求上面的 selection 只填一个 case ID。"
+        description: "可选：补丁 PR 编号（只填数字）。不填时只跑 source-arch 原始构建；填了同时跑 source-arch 与 target build。"
         type: string
         required: false
 permissions:
@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.cases.outputs.matrix }}
+      source_matrix: ${{ steps.cases.outputs.source_matrix }}
+      has_source: ${{ steps.cases.outputs.has_source }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,13 +34,63 @@ jobs:
             [[ "$PATCH_PR" =~ ^[1-9][0-9]*$ ]]
             python3 -c 'import json,sys; m=json.loads(sys.argv[1]); sys.exit(0 if len(m["include"])==1 else 1)' "$matrix"
           fi
-          printf 'matrix=%s\n' "$matrix" >> "$GITHUB_OUTPUT"
+          printf 'matrix=%s\n' "$(jq -c '{include:.include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
+          printf 'source_matrix=%s\n' "$(jq -c '{include:.source_include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
+          printf 'has_source=%s\n' "$(jq -r .has_source <<<"$matrix")" >> "$GITHUB_OUTPUT"
+  source-arch:
+    name: source-arch (${{ matrix.case }})
+    needs: select
+    if: ${{ needs.select.outputs.has_source == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.source_matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ matrix.case }}
+      PATCH_PR: ${{ inputs.patch_pr }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: 准备源码包
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
+        run: |
+          set -euo pipefail
+          python3 scripts/frozen_release.py fetch-bundle "$CASE_ID" "$BUNDLE"
+      - name: 源架构构建
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          patch=
+          if [[ -n "$PATCH_PR" ]]; then
+            git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
+            sha=$(git rev-parse FETCH_HEAD)
+            patch_path="submissions/$CASE_ID/change.patch"
+            git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+            test -s "$RUNNER_TEMP/change.patch"
+            patch="$RUNNER_TEMP/change.patch"
+          fi
+          bash scripts/run_source_arch.sh "$CASE_ID" "$BUNDLE/$CASE_ID" "$patch"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-arch-${{ matrix.case }}
+          path: |
+            ${{ runner.temp }}/buildbench-source-*/source-arch-build.log
+            ${{ runner.temp }}/buildbench-source-*/source-arch-build.exit
+            ${{ runner.temp }}/buildbench-source-*/source-arch-binary-packages.txt
+          retention-days: 7
   build:
     name: build (${{ matrix.case }})
     needs: select
+    if: ${{ inputs.patch_pr != '' }}
     strategy:
       fail-fast: false
-      max-parallel: 12
       matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 355
@@ -49,51 +101,40 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
+          fetch-depth: 0
       - name: 准备冻结环境（Release 资产 + 运行时镜像）
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
         run: |
           set -euo pipefail
           python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
-      - name: 原始构建（完整日志）与可选补丁验证
+      - name: 补丁后目标架构构建
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
           WORK: ${{ runner.temp }}/buildbench-work
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
-          patch=
-          if [[ -n "$PATCH_PR" ]]; then
-            patch_path="submissions/$CASE_ID/change.patch"
-            git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
-            sha=$(git rev-parse FETCH_HEAD)
-            git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
-            patch="$RUNNER_TEMP/change.patch"
-            test -s "$patch"
-            test "$(wc -c < "$patch")" -le 1048576
-          fi
+          patch_path="submissions/$CASE_ID/change.patch"
+          git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
+          sha=$(git rev-parse FETCH_HEAD)
+          git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+          patch="$RUNNER_TEMP/change.patch"
+          test -s "$patch"
           bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
       - name: 收集 build.log
         if: always()
         env:
           WORK: ${{ runner.temp }}/buildbench-work
-          PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
           mkdir -p "$WORK/logs"
-          if [[ -n "$PATCH_PR" ]]; then
-            latest=$(ls -t "$WORK"/result-patched-*/build-output/build.log 2>/dev/null | head -1 || true)
-          else
-            latest=$(ls -t "$WORK"/result-baseline-*/build-output/build.log 2>/dev/null | head -1 || true)
-          fi
-          if [[ -n "$latest" ]]; then
-            cp "$latest" "$WORK/logs/build.log"
-          fi
+          latest=$(ls -t "$WORK"/result-patched-*/build-output/build.log 2>/dev/null | head -1 || true)
+          test -n "$latest"
+          cp "$latest" "$WORK/logs/build.log"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: build-log-${{ matrix.case }}
           path: ${{ runner.temp }}/buildbench-work/logs/
-          if-no-files-found: warn
           retention-days: 7
