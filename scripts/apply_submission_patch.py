@@ -74,7 +74,9 @@ def main() -> int:
         run(["dpkg-source", "-x", str(dsc), str(work / "src")], cwd=work)
         source_dir = work / "src"
         pristine = work / "pristine"
-        copy_tree(source_dir, pristine)
+        # 源码解包目录必须使用独立文件。硬链接会让 apply_patch 同时修改 pristine，
+        # 之后整理 quilt 补丁时就会被 dpkg-source 识别成“反向补丁”。
+        shutil.copytree(source_dir, pristine, symlinks=True, copy_function=shutil.copy2)
         how = apply_patch(source_dir, patch_file, work)
         # 把本地改动整理成 quilt 补丁（3.0 (quilt) 不允许源码树里有未登记的修改）
         diff = subprocess.run(
@@ -94,7 +96,7 @@ def main() -> int:
         quilt = "\n".join(lines) + "\n"
         # 把源码树恢复成未修改状态，让 dpkg-source 认为只有 quilt 补丁变化
         shutil.rmtree(source_dir)
-        copy_tree(pristine, source_dir)
+        shutil.copytree(pristine, source_dir, symlinks=True, copy_function=shutil.copy2)
         patches = source_dir / "debian" / "patches"
         patches.mkdir(parents=True, exist_ok=True)
         (patches / "buildbench-submission.patch").write_text(quilt, encoding="utf-8")
