@@ -1,0 +1,16 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,13 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# Ubuntu's default hardening LDFLAGS include -Wl,-Bsymbolic-functions.
++# hlibrary.mk forwards LDFLAGS to GHC via -optl..., and on amd64 that
++# overrides GHC's own -Bsymbolic for the Template Haskell shared objects,
++# making GHC closure data symbols interposable and breaking the
++# R_X86_64_PC32 relocations in the .dyn_o objects. Strip it from the
++# Haskell library build.
++export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
