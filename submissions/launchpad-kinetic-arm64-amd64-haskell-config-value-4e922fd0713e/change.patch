@@ -1,0 +1,13 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -1,4 +1,10 @@
+ #!/usr/bin/make -f
++
++# Ubuntu's default LDFLAGS include -Wl,-Bsymbolic-functions. Passing that to
++# GHC's linker overrides the -Bsymbolic GHC uses for the shared objects it
++# builds for Template Haskell, making closures interposable and breaking the
++# native-code-generator relocations on amd64. Strip it from the Haskell build.
++export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
