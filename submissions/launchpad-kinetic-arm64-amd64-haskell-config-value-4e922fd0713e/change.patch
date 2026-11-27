@@ -1,0 +1,13 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -2,5 +2,10 @@
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
++# Ubuntu's default LDFLAGS include -flto=auto, which makes GHC's NCG-generated
++# dynamic objects fail to link with PC-relative relocations. Use the LLVM
++# backend to avoid that linker failure.
++DEB_GHC_EXTRA_OPTIONS = --ghc-option=-fllvm
++
+ include /usr/share/cdbs/1/rules/debhelper.mk
+ include /usr/share/cdbs/1/class/hlibrary.mk
