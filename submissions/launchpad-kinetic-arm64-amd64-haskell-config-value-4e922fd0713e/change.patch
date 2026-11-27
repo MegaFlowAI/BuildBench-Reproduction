@@ -1,0 +1,10 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -1,4 +1,7 @@
+ #!/usr/bin/make -f
++
++# GHC's native code generator cannot link objects built with Ubuntu's LTO flags.
++export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
