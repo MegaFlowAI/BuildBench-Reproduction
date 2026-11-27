@@ -1,0 +1,14 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -1,4 +1,11 @@
+ #!/usr/bin/make -f
++
++# Ubuntu's default LDFLAGS contain -Wl,-Bsymbolic-functions.  hlibrary.mk
++# passes them to GHC as -optl flags; that overrides the -Bsymbolic option GHC
++# uses when linking its shared objects, so GHC closures become interposable
++# and ld rejects the R_X86_64_PC32 relocations emitted by the native code
++# generator ("recompile with -fPIC").  Strip it from the Haskell build flags.
++export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
+ 
+ # DEB_ENABLE_TESTS = yes
+ 
