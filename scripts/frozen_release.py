@@ -197,12 +197,17 @@ def main():
     matrix = commands.add_parser("matrix")
     matrix.add_argument("selection")
     matrix.add_argument("--release-assets", type=Path)
+    fetch_bundle_cmd = commands.add_parser("fetch-bundle")
+    fetch_bundle_cmd.add_argument("case")
+    fetch_bundle_cmd.add_argument("work", type=Path)
     fetch_case = commands.add_parser("fetch")
     fetch_case.add_argument("case")
     fetch_case.add_argument("work", type=Path)
     args = parser.parse_args()
     if args.command == "matrix":
         select(args.selection, args.release_assets)
+    elif args.command == "fetch-bundle":
+        fetch_bundle(args.case, args.work)
     else:
         fetch(args.case, args.work)
 

@@ -7,7 +7,7 @@ on:
         description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。"
         required: true
       patch_pr:
-        description: "可选：补丁 PR 编号（只填数字）。不填时只跑 source-arch 原始构建；填了同时跑 source-arch 与 target build。"
+        description: "可选：补丁 PR 编号（只填数字）。不填时只跑 target-arch 原始构建（复现历史失败日志）；填了同时跑 target-arch 与 source-arch。"
         type: string
         required: false
 permissions:
@@ -37,10 +37,70 @@ jobs:
           printf 'matrix=%s\n' "$(jq -c '{include:.include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
           printf 'source_matrix=%s\n' "$(jq -c '{include:.source_include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
           printf 'has_source=%s\n' "$(jq -r .has_source <<<"$matrix")" >> "$GITHUB_OUTPUT"
+  target-arch:
+    name: target-arch (${{ matrix.case }})
+    needs: select
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 355
+    env:
+      CASE_ID: ${{ matrix.case }}
+      PATCH_PR: ${{ inputs.patch_pr }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: 准备冻结环境（Release 资产 + 运行时镜像）
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
+        run: |
+          set -euo pipefail
+          python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
+      - name: 目标架构构建（可选补丁）
+        env:
+          BUNDLE: ${{ runner.temp }}/buildbench-bundle
+          WORK: ${{ runner.temp }}/buildbench-work
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          patch=
+          if [[ -n "$PATCH_PR" ]]; then
+            patch_path="submissions/$CASE_ID/change.patch"
+            git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
+            sha=$(git rev-parse FETCH_HEAD)
+            git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+            patch="$RUNNER_TEMP/change.patch"
+            test -s "$patch"
+          fi
+          bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
+      - name: 收集 build.log
+        if: always()
+        env:
+          WORK: ${{ runner.temp }}/buildbench-work
+          PATCH_PR: ${{ inputs.patch_pr }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$WORK/logs"
+          if [[ -n "$PATCH_PR" ]]; then
+            latest=$(ls -t "$WORK"/result-patched-*/build-output/build.log 2>/dev/null | head -1 || true)
+          else
+            latest=$(ls -t "$WORK"/result-baseline-*/build-output/build.log 2>/dev/null | head -1 || true)
+          fi
+          test -n "$latest"
+          cp "$latest" "$WORK/logs/build.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-log-${{ matrix.case }}
+          path: ${{ runner.temp }}/buildbench-work/logs/
+          retention-days: 7
   source-arch:
     name: source-arch (${{ matrix.case }})
     needs: select
-    if: ${{ needs.select.outputs.has_source == 'true' }}
+    if: ${{ inputs.patch_pr != '' && needs.select.outputs.has_source == 'true' }}
     strategy:
       fail-fast: false
       matrix: ${{ fromJSON(needs.select.outputs.source_matrix) }}
@@ -66,16 +126,12 @@ jobs:
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
-          patch=
-          if [[ -n "$PATCH_PR" ]]; then
-            git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
-            sha=$(git rev-parse FETCH_HEAD)
-            patch_path="submissions/$CASE_ID/change.patch"
-            git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
-            test -s "$RUNNER_TEMP/change.patch"
-            patch="$RUNNER_TEMP/change.patch"
-          fi
-          bash scripts/run_source_arch.sh "$CASE_ID" "$BUNDLE/$CASE_ID" "$patch"
+          git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
+          sha=$(git rev-parse FETCH_HEAD)
+          patch_path="submissions/$CASE_ID/change.patch"
+          git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
+          test -s "$RUNNER_TEMP/change.patch"
+          bash scripts/run_source_arch.sh "$CASE_ID" "$BUNDLE/$CASE_ID" "$RUNNER_TEMP/change.patch"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -84,57 +140,4 @@ jobs:
             ${{ runner.temp }}/buildbench-source-*/source-arch-build.log
             ${{ runner.temp }}/buildbench-source-*/source-arch-build.exit
             ${{ runner.temp }}/buildbench-source-*/source-arch-binary-packages.txt
-          retention-days: 7
-  build:
-    name: build (${{ matrix.case }})
-    needs: select
-    if: ${{ inputs.patch_pr != '' }}
-    strategy:
-      fail-fast: false
-      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
-    runs-on: ${{ matrix.runner }}
-    timeout-minutes: 355
-    env:
-      CASE_ID: ${{ matrix.case }}
-      PATCH_PR: ${{ inputs.patch_pr }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - name: 准备冻结环境（Release 资产 + 运行时镜像）
-        env:
-          BUNDLE: ${{ runner.temp }}/buildbench-bundle
-        run: |
-          set -euo pipefail
-          python3 scripts/frozen_release.py fetch "$CASE_ID" "$BUNDLE"
-      - name: 补丁后目标架构构建
-        env:
-          BUNDLE: ${{ runner.temp }}/buildbench-bundle
-          WORK: ${{ runner.temp }}/buildbench-work
-          PATCH_PR: ${{ inputs.patch_pr }}
-        run: |
-          set -euo pipefail
-          patch_path="submissions/$CASE_ID/change.patch"
-          git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
-          sha=$(git rev-parse FETCH_HEAD)
-          git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
-          patch="$RUNNER_TEMP/change.patch"
-          test -s "$patch"
-          bash scripts/run_frozen_case.sh "$BUNDLE/$CASE_ID" "$WORK" "$(cat "$BUNDLE/runtime-image.txt")" "$patch"
-      - name: 收集 build.log
-        if: always()
-        env:
-          WORK: ${{ runner.temp }}/buildbench-work
-        run: |
-          set -euo pipefail
-          mkdir -p "$WORK/logs"
-          latest=$(ls -t "$WORK"/result-patched-*/build-output/build.log 2>/dev/null | head -1 || true)
-          test -n "$latest"
-          cp "$latest" "$WORK/logs/build.log"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: build-log-${{ matrix.case }}
-          path: ${{ runner.temp }}/buildbench-work/logs/
           retention-days: 7
