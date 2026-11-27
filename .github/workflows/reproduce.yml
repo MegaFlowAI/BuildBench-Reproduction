@@ -7,7 +7,7 @@ on:
         description: "必填：一个或多个 case ID，多个时用英文逗号分隔（逗号前后不要加空格）。"
         required: true
       patch_pr:
-        description: "可选：补丁 PR 编号（只填数字）。不填时只跑 target-arch 原始构建；填了同时跑 target-arch 与 source-arch。"
+        description: "可选：补丁 PR 编号（只填数字）。不填时跑 target-arch 原始构建（复现历史失败日志）；填写补丁 PR 时跑 target-arch 补丁构建。"
         type: string
         required: false
 permissions:
@@ -17,8 +17,6 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.cases.outputs.matrix }}
-      source_matrix: ${{ steps.cases.outputs.source_matrix }}
-      has_source: ${{ steps.cases.outputs.has_source }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,8 +33,6 @@ jobs:
             python3 -c 'import json,sys; m=json.loads(sys.argv[1]); sys.exit(0 if len(m["include"])==1 else 1)' "$matrix"
           fi
           printf 'matrix=%s\n' "$(jq -c '{include:.include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
-          printf 'source_matrix=%s\n' "$(jq -c '{include:.source_include}' <<<"$matrix")" >> "$GITHUB_OUTPUT"
-          printf 'has_source=%s\n' "$(jq -r .has_source <<<"$matrix")" >> "$GITHUB_OUTPUT"
       - name: 运行参数概览
         env:
           SELECTION: ${{ inputs.selection }}
@@ -44,19 +40,16 @@ jobs:
         run: |
           set -euo pipefail
           target_matrix='${{ steps.cases.outputs.matrix }}'
-          source_matrix='${{ steps.cases.outputs.source_matrix }}'
           {
             echo "## 运行参数"
             echo ""
             echo "- **selection**：\`$SELECTION\`"
             echo "- **patch_pr**：\`${PATCH_PR:-（未填写）}\`"
             echo "- **target 矩阵**：\`$target_matrix\`"
-            echo "- **source 矩阵**：\`$source_matrix\`"
           } >> "$GITHUB_STEP_SUMMARY"
           echo "selection=$SELECTION"
           echo "patch_pr=${PATCH_PR:-none}"
           echo "target_matrix=$target_matrix"
-          echo "source_matrix=$source_matrix"
   target-arch:
     name: target-arch [${{ matrix.runner }}] (${{ matrix.case }})
     needs: select
@@ -124,56 +117,4 @@ jobs:
         with:
           name: build-log-${{ matrix.case }}
           path: ${{ runner.temp }}/buildbench-work/logs/
-          retention-days: 7
-  source-arch:
-    name: source-arch [${{ matrix.runner }}] (${{ matrix.case }})
-    needs: select
-    if: ${{ inputs.patch_pr != '' && needs.select.outputs.has_source == 'true' }}
-    strategy:
-      fail-fast: false
-      matrix: ${{ fromJSON(needs.select.outputs.source_matrix) }}
-    runs-on: ${{ matrix.runner }}
-    timeout-minutes: 355
-    env:
-      CASE_ID: ${{ matrix.case }}
-      PATCH_PR: ${{ inputs.patch_pr }}
-    steps:
-      - name: 运行环境与参数
-        run: |
-          set -euo pipefail
-          echo "case=$CASE_ID"
-          echo "patch_pr=${PATCH_PR:-none}"
-          echo "runner=${{ matrix.runner }}"
-          echo "arch=$(uname -m)"
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - name: 准备源码包
-        env:
-          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
-        run: |
-          set -euo pipefail
-          python3 scripts/frozen_release.py fetch-bundle "$CASE_ID" "$BUNDLE"
-      - name: 源架构构建
-        env:
-          BUNDLE: ${{ runner.temp }}/buildbench-source-bundle
-          PATCH_PR: ${{ inputs.patch_pr }}
-        run: |
-          set -euo pipefail
-          echo "case=$CASE_ID patch_pr=${PATCH_PR:-none} runner=${{ matrix.runner }}"
-          git fetch --no-tags origin "refs/pull/$PATCH_PR/head"
-          sha=$(git rev-parse FETCH_HEAD)
-          patch_path="submissions/$CASE_ID/change.patch"
-          git show "$sha:$patch_path" > "$RUNNER_TEMP/change.patch"
-          test -s "$RUNNER_TEMP/change.patch"
-          bash scripts/run_source_arch.sh "$CASE_ID" "$BUNDLE/$CASE_ID" "$RUNNER_TEMP/change.patch"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: source-arch-${{ matrix.case }}
-          path: |
-            ${{ runner.temp }}/buildbench-source-*/source-arch-build.log
-            ${{ runner.temp }}/buildbench-source-*/source-arch-build.exit
-            ${{ runner.temp }}/buildbench-source-*/source-arch-binary-packages.txt
           retention-days: 7
