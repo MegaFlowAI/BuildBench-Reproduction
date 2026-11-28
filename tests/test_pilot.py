@@ -200,6 +200,26 @@ class InputTests(unittest.TestCase):
             self.assertEqual(pilot.read_json(runtime / "config/dependency-lock.json"), pilot.read_json(original / "config/dependency-lock.json"))
         self.assertEqual(pilot.digest(original / "manifest.json"), before)
 
+    def test_gnu_coreutils_transition_bootstraps_recorded_provider(self):
+        cid = "launchpad-questing-amd64-arm64-xmbmon-ad2ecb4e1183"
+        original = pilot.case_path(cid)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            case, runtime = root / "case", root / "runtime"
+            (case / "logs").mkdir(parents=True)
+            (runtime / "input").mkdir(parents=True)
+            (case / "logs/target-failure.log").write_bytes(pilot.reference_bytes(original / "logs/target-failure.log.gz"))
+            shutil.copyfile(original / "manifest.json", case / "manifest.json")
+            shutil.copytree(original / "config", runtime / "config")
+            before = pilot.read_json(runtime / "config/dependency-lock.json")
+            settings = root / "settings.json"
+            prepare_frozen_runtime.prepare(case, runtime, settings)
+            result = pilot.read_json(settings)
+            self.assertEqual(result["build_engine_override"], "none")
+            self.assertIn("coreutils-from-gnu", result["bootstrap_preinstall"])
+            self.assertIn("gnu-coreutils", result["bootstrap_preinstall"])
+            self.assertEqual(pilot.read_json(runtime / "config/dependency-lock.json"), before)
+
 
 if __name__ == "__main__":
     unittest.main()

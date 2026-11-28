@@ -41,6 +41,11 @@ elif selection == "repair-5":
         "launchpad-resolute-amd64-arm64-libelas-8f3152c7b0d2",
         "launchpad-resolute-amd64-arm64-gcc-mingw-w64-b0ed8efd1dee",
     }]
+elif selection == "repair-6":
+    ids = [case for case in CASES if case in {
+        "launchpad-questing-amd64-arm64-rocm-llvm-8e2801d0c140",
+        "launchpad-questing-amd64-arm64-xmbmon-ad2ecb4e1183",
+    }]
 else:
     ids = [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:

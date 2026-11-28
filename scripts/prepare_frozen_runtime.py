@@ -199,20 +199,22 @@ def prepare(case_dir, runtime, settings):
         "pkgconf": "pkg-config",
     }
     lock_packages = {item["package"] for item in read_json(runtime / build["dependency_lock"])["dependencies"]}
-    # Ubuntu's transition package contains links to rust-coreutils, not /bin/true.
+    # Ubuntu's transition package contains links to a provider, not /bin/true.
     # Old debootstrap only extracts its fixed required list and omits that provider.
-    # Keep OBS and the same historical packages; use OBS's native chroot bootstrap
-    # for these audited pilots, as already done for html-xml-utils.
+    # Keep OBS and the same historical packages; use OBS's native chroot bootstrap.
     bootstrap_reason = None
-    if historical["architecture"] == "arm64" and {"coreutils-from-uutils", "rust-coreutils"} <= lock_packages and build_engine is None:
-        for package in ("coreutils-from-uutils", "rust-coreutils"):
+    providers = (("coreutils-from-uutils", "rust-coreutils"),
+                 ("coreutils-from-gnu", "gnu-coreutils"))
+    provider = next((pair for pair in providers if set(pair) <= lock_packages), None)
+    if historical["architecture"] == "arm64" and provider and build_engine is None:
+        for package in provider:
             if package not in bootstrap:
                 bootstrap.append(package)
         config_text, count = re.subn(r"^buildengine: debootstrap$", "buildengine: none", config_text, flags=re.M)
         if count != 1:
             raise ValueError("Expected debootstrap engine before uutils bootstrap repair")
         build_engine = "none"
-        bootstrap_reason = "historical coreutils transition needs its rust-coreutils provider before chroot execution"
+        bootstrap_reason = f"historical coreutils transition needs its {provider[1]} provider before chroot execution"
     if case_id == "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b":
         # Fontconfig's fc-cache loads HarfBuzz through FreeType before OBS's
         # cyclic dependency ordering has installed it. Pre-extract the exact
