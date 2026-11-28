@@ -1,0 +1,12 @@
+--- a/setup.py
++++ b/setup.py
+@@ -61,7 +61,8 @@
+                     libraries = libs,
+                     library_dirs = additional_libs, 
+                     define_macros = defines,
+-                    include_dirs = include_dirs)
++                    include_dirs = include_dirs,
++                    extra_link_args = ['-Wl,-z,notext'])
+ 
+ setup(
+     ext_modules=[module1]
