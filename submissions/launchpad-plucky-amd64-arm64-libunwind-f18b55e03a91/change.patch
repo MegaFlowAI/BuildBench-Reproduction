@@ -1,0 +1,58 @@
+--- a/src/mi/Gaddress_validator.c
++++ b/src/mi/Gaddress_validator.c
+@@ -188,8 +188,8 @@
+ 
+ #else
+ // global, thread safe variant
+-static _Atomic unw_word_t last_good_addr[NLGA];
+-static _Atomic int lga_victim;
++static unw_word_t last_good_addr[NLGA];
++static int lga_victim;
+ 
+ 
+ static bool
+@@ -198,7 +198,7 @@
+   int i;
+   for (i = 0; i < NLGA; i++)
+     {
+-      if (page_addr == atomic_load(&last_good_addr[i]))
++      if (page_addr == last_good_addr[i])
+         return true;
+     }
+   return false;
+@@ -209,27 +209,27 @@
+  * Adds a known-valid page address to the cache.
+  *
+  * This implementation is racy as all get-out but the worst case is that cached
+- * address get lost, forcing extra unnecessary validation checks.  All of the
+- * atomic operations don't matter because of TOCTOU races.
++ * address get lost, forcing extra unnecessary validation checks.  The cache
++ * does not need atomic operations because of TOCTOU races.
+  */
+ static void
+ _cache_valid_mem(unw_word_t page_addr)
+ {
+-  unw_word_t zero = 0;
+-  int victim = atomic_load(&lga_victim);
++  int victim = lga_victim;
+   for (int i = 0; i < NLGA; i++)
+     {
+-      if (atomic_compare_exchange_strong(&last_good_addr[victim], &zero, page_addr))
+-        {
++      if (last_good_addr[victim] == 0)
++        {
++          last_good_addr[victim] = page_addr;
+           return;
+         }
+       victim = (victim + 1) % NLGA;
+     }
+ 
+   /* All slots full. Evict the victim. */
+-  atomic_store(&last_good_addr[victim], page_addr);
++  last_good_addr[victim] = page_addr;
+   victim = (victim + 1) % NLGA;
+-  atomic_store(&lga_victim, victim);
++  lga_victim = victim;
+ }
+ #endif
+ 
