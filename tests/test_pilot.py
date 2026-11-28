@@ -112,6 +112,17 @@ class InputTests(unittest.TestCase):
         self.assertIn("python3-falcon", omitted)
         self.assertIn("python3-pytest-cov", omitted)
         self.assertNotIn("python3-setuptools", omitted)
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / dsc.name
+            shutil.copyfile(dsc, target)
+            before = pilot.digest(dsc)
+            adjustment = prepare_frozen_runtime.arch_only_recipe(dsc, target)
+            self.assertEqual(pilot.digest(dsc), before)
+            self.assertEqual(adjustment["original_sha256"], before)
+            effective = target.read_text(encoding="utf-8")
+            self.assertNotIn("Build-Depends-Indep:", effective)
+            self.assertIn("Build-Depends: debhelper-compat", effective)
+            self.assertNotIn("-----BEGIN PGP", effective)
 
     def test_fontconfig_bootstrap_preserves_dependency_bytes(self):
         cid = "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b"

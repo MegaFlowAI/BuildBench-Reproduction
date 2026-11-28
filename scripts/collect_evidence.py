@@ -20,7 +20,7 @@ def write(path, value):
 def collect(case_id, work, bundle):
     dest = work / "evidence"
     dest.mkdir(exist_ok=True)
-    for pattern in ("*.json", "*.exit", "validator-*.log", "effective-buildconfig-*.txt"):
+    for pattern in ("*.json", "*.exit", "validator-*.log", "effective-buildconfig-*.txt", "effective-recipe-*.dsc"):
         for path in work.glob(pattern):
             shutil.copyfile(path, dest / path.name)
     for path in bundle.glob("dependency-*.json"):

@@ -21,6 +21,8 @@ elif selection == "repair-1":
         "launchpad-noble-amd64-arm64-ectrans-50e45e72102d",
         "launchpad-noble-amd64-arm64-ecmwflibs-d611bdd10253",
     }]
+elif selection == "repair-2":
+    ids = ["launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4"]
 else:
     ids = [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:

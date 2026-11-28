@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Apply the recorded build invocation to a disposable OBS work directory."""
 
+import hashlib
 import json
 import re
 import shlex
+import shutil
 import sys
 from pathlib import Path
 from pilot import case_path, pilots
@@ -64,6 +66,28 @@ def independent_build_deps(dsc):
                 for alternative in item.split("|")
                 if (match := re.match(r"\s*([a-z0-9][a-z0-9+.-]*)", alternative))}
     return sorted(names("Build-Depends-Indep") - names("Build-Depends") - names("Build-Depends-Arch"))
+
+
+def arch_only_recipe(source, target):
+    """Make an unsigned disposable dsc whose dependencies match dpkg -B."""
+    original = source.read_bytes()
+    text = original.decode("utf-8")
+    if text.startswith("-----BEGIN PGP SIGNED MESSAGE-----\n"):
+        text = text.split("\n\n", 1)[1].split("\n-----BEGIN PGP SIGNATURE-----", 1)[0]
+    text, removed = re.subn(r"(?m)^Build-Depends-Indep:.*(?:\n[ \t].*)*\n", "", text)
+    if removed != 1:
+        raise ValueError("Expected exactly one Build-Depends-Indep field")
+    adjusted = (text.rstrip() + "\n").encode("utf-8")
+    if target.is_file():
+        temporary = target.with_name(target.name + ".buildbench-temp")
+        temporary.write_bytes(adjusted)
+        temporary.replace(target)  # cp -al created a hardlink; never edit its inode.
+    else:
+        target.write_bytes(adjusted)
+    return {"reason": "OBS dsc parser includes Build-Depends-Indep despite recorded dpkg-buildpackage -B",
+            "original_sha256": hashlib.sha256(original).hexdigest(),
+            "effective_sha256": hashlib.sha256(adjusted).hexdigest(),
+            "recipe": target.name}
 
 
 def select_historical_versions(runtime, lock_path, build, versions):
@@ -197,13 +221,16 @@ def prepare(case_dir, runtime, settings):
         bootstrap.append("fakeroot")
     preferred = []
     ignored_indep = []
+    recipe_adjustment = None
     if historical["mode"] == "-B":
         recipe = case_dir / build["recipe"]
         if not recipe.is_file():
             recipe = case_path(case_id) / build["recipe"]
         ignored_indep = independent_build_deps(recipe)
-        if ignored_indep:
-            config_text = "Ignore: " + " ".join(ignored_indep) + "\n" + config_text
+        if case_id == "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4":
+            target = runtime / "input" / recipe.name
+            recipe_adjustment = arch_only_recipe(recipe, target)
+            shutil.copyfile(target, settings.parent / "effective-recipe-baseline-1.dsc")
     # Restoring the historical libjpeg-dev metapackage leaves two providers of
     # libjpeg-dev in OBS. Select the recorded real package, which depends on turbo.
     if "libjpeg-dev" in lock_packages and "libjpeg-dev" in historical["packages"]:
@@ -240,6 +267,7 @@ def prepare(case_dir, runtime, settings):
         "reproduction_conditions": conditions,
         "omitted_nonhistorical_duplicates": discarded,
         "omitted_independent_build_deps": ignored_indep,
+        "runtime_recipe_adjustment": recipe_adjustment,
     })
     build["jobs"] = jobs
     build["recipe"] = "input/" + Path(build["recipe"]).name
