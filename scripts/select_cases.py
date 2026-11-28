@@ -25,6 +25,13 @@ elif selection == "repair-2":
     ids = ["launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4"]
 elif selection == "repair-3":
     ids = ["launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4"]
+elif selection == "repair-4":
+    ids = [case for case in CASES if case in {
+        "launchpad-mantic-amd64-arm64-haskell-tldr-e08dd2db85e1",
+        "launchpad-noble-amd64-arm64-haskell-copilot-c99-1fb879daa3b8",
+        "launchpad-oracular-amd64-arm64-python-msgspec-6f918d331f35",
+        "launchpad-questing-amd64-arm64-kdsoap-95149c86d1d7",
+    }]
 else:
     ids = [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:
@@ -39,4 +46,3 @@ matrix = [
 if len(matrix) > 256:
     raise SystemExit("矩阵超过 GitHub Actions 256 个 job 的上限")
 print(json.dumps({"include": matrix}))
-

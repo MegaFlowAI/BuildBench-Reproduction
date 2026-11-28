@@ -17,6 +17,13 @@ COWSQL = "launchpad-noble-arm64-amd64-cowsql-cfbcbf2fa889"
 DNSCAP = "launchpad-resolute-arm64-amd64-dnscap-1198fcbd04b6"
 LIBMAUS2 = "launchpad-oracular-amd64-arm64-libmaus2-12ed4994dfc2"
 LIBAPACHE2 = "launchpad-oracular-amd64-arm64-libapache2-mod-auth-openidc-c9b2ba1cd30f"
+ARCH_ONLY_RECIPE_CASES = {
+    "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4",
+    "launchpad-mantic-amd64-arm64-haskell-tldr-e08dd2db85e1",
+    "launchpad-noble-amd64-arm64-haskell-copilot-c99-1fb879daa3b8",
+    "launchpad-oracular-amd64-arm64-python-msgspec-6f918d331f35",
+    "launchpad-questing-amd64-arm64-kdsoap-95149c86d1d7",
+}
 BUILD_COMMAND = re.compile(
     rb"Command: dpkg-buildpackage (?P<sanitize>--sanitize-env )?-us -uc "
     rb"-m(?P<maintainer>Launchpad Build Daemon <buildd@[a-z0-9-]+(?:\.buildd)?>) "
@@ -215,7 +222,7 @@ def prepare(case_dir, runtime, settings):
         bootstrap.append("libharfbuzz0b")
     if "libmd0" in lock_packages and "libmd0" not in bootstrap:
         bootstrap.append("libmd0")
-    if (historical["mode"] == "-b" or case_id == "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4") and "fakeroot" in lock_packages and "fakeroot" not in bootstrap:
+    if (historical["mode"] == "-b" or case_id in ARCH_ONLY_RECIPE_CASES) and "fakeroot" in lock_packages and "fakeroot" not in bootstrap:
         # The recorded command requires fakeroot even when OBS's resolver
         # does not select it from the source's build dependencies.
         bootstrap.append("fakeroot")
@@ -227,7 +234,7 @@ def prepare(case_dir, runtime, settings):
         if not recipe.is_file():
             recipe = case_path(case_id) / build["recipe"]
         ignored_indep = independent_build_deps(recipe)
-        if case_id == "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4":
+        if case_id in ARCH_ONLY_RECIPE_CASES:
             target = runtime / "input" / recipe.name
             recipe_adjustment = arch_only_recipe(recipe, target)
             shutil.copyfile(target, settings.parent / "effective-recipe-baseline-1.dsc")
@@ -277,4 +284,3 @@ def prepare(case_dir, runtime, settings):
 
 if __name__ == "__main__":
     prepare(*map(Path, sys.argv[1:]))
-
