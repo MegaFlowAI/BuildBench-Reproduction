@@ -1,0 +1,34 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -17,6 +17,31 @@
+ ### Find (optional) dependencies 
+ 
+ ecbuild_find_package( NAME fiat REQUIRED )
++
++# Debian's libfiat-dev CMake config can point at a compiler-specific Fortran
++# module directory that does not exist on the target architecture.  Drop such
++# paths and fall back to the Debian Fortran module directory.
++if( TARGET fiat )
++  get_target_property( _fiat_include_dirs fiat INTERFACE_INCLUDE_DIRECTORIES )
++  if( _fiat_include_dirs )
++    set( _fiat_valid_include_dirs "" )
++    foreach( _dir IN LISTS _fiat_include_dirs )
++      if( EXISTS "${_dir}" )
++        list( APPEND _fiat_valid_include_dirs "${_dir}" )
++      endif()
++    endforeach()
++    if( NOT _fiat_valid_include_dirs )
++      find_path( _fiat_module_dir NAMES fiat.mod
++                 PATHS /usr/lib/${CMAKE_LIBRARY_ARCHITECTURE}/fortran
++                 PATH_SUFFIXES gfortran-mod-15/fiat )
++      if( _fiat_module_dir )
++        set( _fiat_valid_include_dirs "${_fiat_module_dir}" )
++      endif()
++    endif()
++    set_target_properties( fiat PROPERTIES
++      INTERFACE_INCLUDE_DIRECTORIES "${_fiat_valid_include_dirs}" )
++  endif()
++endif()
+ 
+ ecbuild_add_option( FEATURE MPI 
+                     DESCRIPTION "Support for MPI distributed memory parallelism"
