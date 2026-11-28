@@ -1,0 +1,14 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -3,8 +3,10 @@
+ # Uncomment this to turn on verbose mode.
+ #export DH_VERBOSE=1
+ 
++CFLAGS ?=
++CFLAGS += -fno-lto
+ LDFLAGS ?=
+-LDFLAGS += -Wl,-z,defs
++LDFLAGS += -Wl,-z,defs -fno-lto
+ 
+ %:
+ 	dh $@
