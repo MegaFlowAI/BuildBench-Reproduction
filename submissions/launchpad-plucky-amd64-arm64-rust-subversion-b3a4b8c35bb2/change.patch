@@ -1,0 +1,49 @@
+--- a/src/client.rs
++++ b/src/client.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::dirent::AsCanonicalDirent;
+ use crate::generated::svn_error_t;
+ use crate::generated::{
+--- a/src/delta.rs
++++ b/src/delta.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::Revnum;
+ use apr::pool::Pool;
+ 
+--- a/src/dirent.rs
++++ b/src/dirent.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::uri::Uri;
+ use crate::Canonical;
+ use crate::Error;
+--- a/src/io.rs
++++ b/src/io.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::generated::svn_io_dirent2_t;
+ use crate::Error;
+ use std::ffi::OsStr;
+--- a/src/repos.rs
++++ b/src/repos.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::generated::{svn_repos_create, svn_repos_find_root_path, svn_repos_t};
+ use crate::{Error, Revnum};
+ use apr::pool::PooledPtr;
+--- a/src/string.rs
++++ b/src/string.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::generated::svn_string_t;
+ use apr::pool::PooledPtr;
+ 
+--- a/src/uri.rs
++++ b/src/uri.rs
+@@ -1,3 +1,4 @@
++use std::os::raw::c_char as i8;
+ use crate::dirent::Dirent;
+ use crate::Canonical;
+ use crate::Error;
