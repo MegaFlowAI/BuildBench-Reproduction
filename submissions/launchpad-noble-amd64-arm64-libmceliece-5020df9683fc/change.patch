@@ -1,0 +1,10 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -3,7 +3,6 @@
+ # export DH_VERBOSE=1
+ 
+ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+-export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,noexecstack
+ 
+ # crossbuild
+ ifneq  ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
