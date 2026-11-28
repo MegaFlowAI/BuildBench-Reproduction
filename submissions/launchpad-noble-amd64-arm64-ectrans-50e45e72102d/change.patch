@@ -1,0 +1,11 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -15,7 +15,7 @@
+ 
+ DEB_CFLAGS_MAINT_APPEND= -I$(CURDIR)/src -I$(CURDIR)/obj-$(DEB_HOST_MULTIARCH)/src
+ DEB_CXXFLAGS_MAINT_APPEND= -I$(CURDIR)/src -I$(CURDIR)/obj-$(DEB_HOST_MULTIARCH)/src
+-DEB_FFLAGS_MAINT_APPEND= -I$(FMODDIR)
++DEB_FFLAGS_MAINT_APPEND= -I$(FMODDIR) -I$(LIBDIR)/fortran/$(DEB_HOST_GNU_TYPE)-gfortran-13
+ 
+ #
+ # OMP Doesn't appear to work on these archs
