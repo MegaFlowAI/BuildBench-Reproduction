@@ -93,8 +93,26 @@ class VerdictTests(unittest.TestCase):
         self.assertEqual(len(signatures), 1)
         self.assertIn("RawImp.c:131:12", next(iter(signatures)))
 
+    def test_cmake_multiline_error_is_preserved(self):
+        self.cid = "launchpad-noble-amd64-arm64-ectrans-50e45e72102d"
+        (self.case / "case.json").write_text(json.dumps({"case_id": self.cid, "platform": {"target_arch": "aarch64"}}))
+        diagnostic = 'CMake Error in src/trans/CMakeLists.txt:\n  Imported target "fiat" includes non-existent path\n    "/missing/fiat"'
+        self.ref.write_text(diagnostic + "\n", encoding="utf-8")
+        self.lines = [*self.lines[:5], *diagnostic.splitlines(), *self.lines[6:]]
+        verdict = self.run_verdict()
+        self.assertGreater(verdict["reference_diagnostics"], 0)
+        self.assertEqual(verdict["category"], "historical_failure_reproduced")
+
 
 class InputTests(unittest.TestCase):
+    def test_binary_arch_build_omits_independent_dependencies(self):
+        cid = "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4"
+        dsc = next((pilot.case_path(cid) / "source/input").glob("*.dsc"))
+        omitted = prepare_frozen_runtime.independent_build_deps(dsc)
+        self.assertIn("python3-falcon", omitted)
+        self.assertIn("python3-pytest-cov", omitted)
+        self.assertNotIn("python3-setuptools", omitted)
+
     def test_fontconfig_bootstrap_preserves_dependency_bytes(self):
         cid = "launchpad-resolute-amd64-arm64-qmidiarp-273b2ab7f12b"
         original = pilot.case_path(cid)
@@ -161,3 +179,4 @@ class InputTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 
 from check_baseline import fingerprints
-from pilot import pilots, reference_bytes, root_matches
+from pilot import pilots, root_matches
 
 STAGES = {
     "chroot_or_root": re.compile(r"Using BUILD_ROOT|init_buildsystem|creating repository for debootstrap"),
@@ -29,39 +29,62 @@ TIMING = re.compile(r"^\[\s*\d+s\]\s?")
 INTERLEAVED_PROGRESS = re.compile(r"\[\s*\d+%\]")
 
 
-def clean_lines(path: Path) -> list[str]:
-    lines = []
+def iter_clean_lines(path: Path):
+    pending = []
     import gzip
     opener = gzip.open if path.suffix == ".gz" else open
     with opener(path, "rb") as handle:
         for chunk in iter(lambda: handle.readline(262144), b""):
             line = chunk.decode("utf-8", "replace")
-            line = TIMING.sub("", line).strip()
-            if not line:
+            # Keep CMake's indentation: its multiline diagnostics use leading
+            # spaces to distinguish the error body from subsequent output.
+            line = TIMING.sub("", line).rstrip()
+            if not line.strip():
                 continue
             match = INTERLEAVED_PROGRESS.search(line)
             if match and match.start() > 0:
                 prefix = line[: match.start()].strip()
                 suffix = line[match.start():].strip()
-                if prefix:
-                    lines.append(prefix)
-                if suffix:
-                    lines.append(suffix)
+                parts = [part for part in (prefix, suffix) if part]
             else:
-                lines.append(line)
-    repaired = []
-    for line in lines:
-        if line.startswith(":"):
-            for index in range(len(repaired) - 1, max(-1, len(repaired) - 4), -1):
-                candidate = repaired[index]
-                if "(.text+" in candidate and "undefined reference" not in candidate:
-                    repaired[index] = candidate.rstrip() + line
-                    break
-            else:
-                repaired.append(line)
-        else:
-            repaired.append(line)
-    return repaired
+                parts = [line]
+            for part in parts:
+                if part.startswith(":"):
+                    for index in range(len(pending) - 1, -1, -1):
+                        candidate = pending[index]
+                        if "(.text+" in candidate and "undefined reference" not in candidate:
+                            pending[index] = candidate.rstrip() + part
+                            break
+                    else:
+                        pending.append(part)
+                else:
+                    pending.append(part)
+                if len(pending) > 4:
+                    yield pending.pop(0)
+    yield from pending
+
+
+def clean_lines(path: Path) -> list[str]:
+    return list(iter_clean_lines(path))
+
+
+def clean_to_file(path: Path, dest: Path) -> int:
+    count = 0
+    with dest.open("w", encoding="utf-8") as output:
+        for line in iter_clean_lines(path):
+            output.write(line + "\n")
+            count += 1
+    return count
+
+
+def digest_file(path: Path, *, decompress=False) -> str:
+    import gzip
+    h = hashlib.sha256()
+    opener = gzip.open if decompress else open
+    with opener(path, "rb") as source:
+        for chunk in iter(lambda: source.read(8 * 1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def main() -> int:
@@ -88,23 +111,49 @@ def main() -> int:
     result = json.loads(result_file.read_text(encoding="utf-8"))
     case = json.loads((case_dir / "case.json").read_text(encoding="utf-8"))
     case_id = case["case_id"]
-    ref_lines = clean_lines(reference)
-    replay_lines = clean_lines(replay_log)
+    large = reference.stat().st_size > 5_000_000 or replay_log.stat().st_size > 100_000_000
     # Both inputs use identical normalization, including compressed Git references.
     reference_cleaned = output / "reference.log.normalized"
-    reference_cleaned.write_text("\n".join(ref_lines) + "\n", encoding="utf-8")
-    ref_diag = fingerprints(reference_cleaned, None, case_id=case_id)
-    # obs-build 会给每行加 [ 123s] 前缀；先剥掉再提取诊断，避免同一行被判成不同指纹。
     replay_cleaned = output / "build.log.normalized"
-    replay_cleaned.write_text("\n".join(replay_lines) + "\n", encoding="utf-8")
+    if large:
+        ref_count = clean_to_file(reference, reference_cleaned)
+        replay_count = clean_to_file(replay_log, replay_cleaned)
+        ref_lines = replay_lines = None
+    else:
+        ref_lines = clean_lines(reference)
+        replay_lines = clean_lines(replay_log)
+        ref_count, replay_count = len(ref_lines), len(replay_lines)
+        reference_cleaned.write_text("\n".join(ref_lines) + "\n", encoding="utf-8")
+        replay_cleaned.write_text("\n".join(replay_lines) + "\n", encoding="utf-8")
+    ref_diag = fingerprints(reference_cleaned, None, case_id=case_id)
     replay_diag = fingerprints(replay_cleaned, None, case_id=case_id)
     missing = ref_diag - replay_diag
     extra = replay_diag - ref_diag
-    replay_text = "\n".join(replay_lines)
-    stages = {name: bool(pattern.search(replay_text)) for name, pattern in STAGES.items()}
-    # OBS also prints '----- building' before chroot setup; that is not package execution.
-    stages["build_started"] = "dpkg-buildpackage: info: source package " in replay_text
-    ratio = (len(replay_lines) / len(ref_lines)) if ref_lines else 0
+    stages = {name: False for name in STAGES}
+    stage_events = []
+    expected = case["platform"]["target_arch"]
+    deb_arch = {"aarch64": "arm64", "x86_64": "amd64"}[expected]
+    host_arch_line = False
+    package_start_line = False
+    with replay_cleaned.open("r", encoding="utf-8") as replay:
+        for line in replay:
+            for name, pattern in STAGES.items():
+                if not stages[name] and pattern.search(line):
+                    stages[name] = True
+            # OBS may print '----- building' before chroot setup.
+            if "dpkg-buildpackage: info: source package " in line:
+                package_start_line = True
+            if f"dpkg-buildpackage: info: host architecture {deb_arch}" in line:
+                host_arch_line = True
+            if '[build-case] [event] ' in line:
+                try:
+                    event = json.loads(line.split('[build-case] [event] ', 1)[1])
+                    if event.get("event") == "stage" and event.get("state") == "failed":
+                        stage_events.append(event["stage"])
+                except (ValueError, KeyError):
+                    pass
+    stages["build_started"] = package_start_line
+    ratio = (replay_count / ref_count) if ref_count else 0
     failed_stages = result.get("failed_stages") or []
     package_failed = (
         result.get("status") == "failed"
@@ -112,20 +161,11 @@ def main() -> int:
         and stages["build_started"] and stages["build_failed"]
         and not result.get("timed_out", False)
     )
-    stage_events = []
-    for line in replay_lines:
-        if '[build-case] [event] ' in line:
-            try:
-                event = json.loads(line.split('[build-case] [event] ', 1)[1])
-                if event.get("event") == "stage" and event.get("state") == "failed":
-                    stage_events.append(event["stage"])
-            except (ValueError, KeyError):
-                pass
     if stage_events and stage_events[-1] != "package_build":
         package_failed = False
     verdict.update({
-        "reference_lines": len(ref_lines),
-        "replay_lines": len(replay_lines),
+        "reference_lines": ref_count,
+        "replay_lines": replay_count,
         "line_ratio": round(ratio, 3),
         "reference_diagnostics": sum(ref_diag.values()),
         "replay_diagnostics": sum(replay_diag.values()),
@@ -135,8 +175,8 @@ def main() -> int:
         "package_failed": package_failed,
         "build_exit_code": result.get("build_exit_code"),
         "failed_stages": stage_events or failed_stages,
-        "replay_sha256": hashlib.sha256(replay_log.read_bytes()).hexdigest(),
-        "reference_sha256": hashlib.sha256(reference_bytes(reference)).hexdigest(),
+        "replay_sha256": digest_file(replay_log),
+        "reference_sha256": digest_file(reference, decompress=reference.suffix == ".gz"),
     })
 
     if not package_failed:
@@ -158,13 +198,19 @@ def main() -> int:
     verdict["unexpected_diagnostics"] = unexpected
     if unexpected:
         reasons.append("出现官方日志以外的失败诊断，需要排查环境干扰")
-    expected = case["platform"]["target_arch"]
-    deb_arch = {"aarch64": "arm64", "x86_64": "amd64"}[expected]
-    if result.get("target_arch") != expected or f"dpkg-buildpackage: info: host architecture {deb_arch}" not in replay_text:
+    if result.get("target_arch") != expected or not host_arch_line:
         reasons.append("构建结果或实际包构建架构与目标不符")
     spec = pilots().get(case_id)
     if spec:
-        matches = root_matches(replay_lines, spec["root_patterns"])
+        if replay_lines is None:
+            matches = [False] * len(spec["root_patterns"])
+            with replay_cleaned.open(encoding="utf-8") as replay:
+                for line in replay:
+                    for i, pattern in enumerate(spec["root_patterns"]):
+                        if not matches[i] and re.search(pattern, line):
+                            matches[i] = True
+        else:
+            matches = root_matches(replay_lines, spec["root_patterns"])
         verdict["root_cause"] = spec["root_cause"]
         verdict["root_signature_matches"] = matches
         if not all(matches):

@@ -6,7 +6,7 @@ import re
 import shlex
 import sys
 from pathlib import Path
-from pilot import pilots
+from pilot import case_path, pilots
 
 
 MLMMJ = "launchpad-questing-amd64-arm64-mlmmj-67f08081ad07"
@@ -45,6 +45,25 @@ def build_flags(reference, mode):
             if line.startswith(b"dpkg-buildpackage: info: source package "):
                 break
     return ["-us", "-uc", mode, "-rfakeroot"], "catalog_build_mode"
+
+
+def independent_build_deps(dsc):
+    """Names listed only in Build-Depends-Indep, which -B must exclude."""
+    fields = {}
+    current = None
+    for line in dsc.read_text(encoding="utf-8").splitlines():
+        if line.startswith((" ", "\t")) and current:
+            fields[current] += " " + line.strip()
+        elif ": " in line:
+            current, value = line.split(": ", 1)
+            fields[current] = value
+        else:
+            current = None
+    def names(field):
+        return {match.group(1) for item in fields.get(field, "").split(",")
+                for alternative in item.split("|")
+                if (match := re.match(r"\s*([a-z0-9][a-z0-9+.-]*)", alternative))}
+    return sorted(names("Build-Depends-Indep") - names("Build-Depends") - names("Build-Depends-Arch"))
 
 
 def select_historical_versions(runtime, lock_path, build, versions):
@@ -172,7 +191,19 @@ def prepare(case_dir, runtime, settings):
         bootstrap.append("libharfbuzz0b")
     if "libmd0" in lock_packages and "libmd0" not in bootstrap:
         bootstrap.append("libmd0")
+    if historical["mode"] == "-b" and "fakeroot" in lock_packages and "fakeroot" not in bootstrap:
+        # OBS does not necessarily select fakeroot for the sole -b case,
+        # although its recorded dpkg-buildpackage command requires it.
+        bootstrap.append("fakeroot")
     preferred = []
+    ignored_indep = []
+    if historical["mode"] == "-B":
+        recipe = case_dir / build["recipe"]
+        if not recipe.is_file():
+            recipe = case_path(case_id) / build["recipe"]
+        ignored_indep = independent_build_deps(recipe)
+        if ignored_indep:
+            config_text = "Ignore: " + " ".join(ignored_indep) + "\n" + config_text
     # Restoring the historical libjpeg-dev metapackage leaves two providers of
     # libjpeg-dev in OBS. Select the recorded real package, which depends on turbo.
     if "libjpeg-dev" in lock_packages and "libjpeg-dev" in historical["packages"]:
@@ -208,6 +239,7 @@ def prepare(case_dir, runtime, settings):
         "bootstrap_reason": bootstrap_reason,
         "reproduction_conditions": conditions,
         "omitted_nonhistorical_duplicates": discarded,
+        "omitted_independent_build_deps": ignored_indep,
     })
     build["jobs"] = jobs
     build["recipe"] = "input/" + Path(build["recipe"]).name

@@ -14,6 +14,13 @@ if selection in {"pilot", "isa-10"}:
     ids = list(pilots())
 elif selection in {"arm64", "x86_64-to-aarch64"}:
     ids = [case for case, details in CASES.items() if details["architecture"] == "arm64"]
+elif selection == "repair-1":
+    ids = [case for case in CASES if case in {
+        "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4",
+        "launchpad-jammy-amd64-arm64-libqalculate-150db9c6c990",
+        "launchpad-noble-amd64-arm64-ectrans-50e45e72102d",
+        "launchpad-noble-amd64-arm64-ecmwflibs-d611bdd10253",
+    }]
 else:
     ids = [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:

@@ -1,5 +1,5 @@
 name: 原始构建与补丁验证
-run-name: 原始构建与补丁验证 / ${{ inputs.selection || (github.ref_name == 'codex/isa-100-20261128' && 'arm64' || 'pilot') }}
+run-name: 原始构建与补丁验证 / ${{ inputs.selection || (github.ref_name == 'codex/isa-100-20261128' && 'repair-1' || 'pilot') }}
 on:
   push:
     branches: [codex/isa-pilot-20261126, codex/isa-100-20261128]
@@ -27,7 +27,7 @@ jobs:
           persist-credentials: false
       - id: cases
         env:
-          SELECTION: ${{ inputs.selection || (github.ref_name == 'codex/isa-100-20261128' && 'arm64' || 'pilot') }}
+          SELECTION: ${{ inputs.selection || (github.ref_name == 'codex/isa-100-20261128' && 'repair-1' || 'pilot') }}
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
