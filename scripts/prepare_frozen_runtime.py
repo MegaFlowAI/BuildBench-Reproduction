@@ -215,9 +215,9 @@ def prepare(case_dir, runtime, settings):
         bootstrap.append("libharfbuzz0b")
     if "libmd0" in lock_packages and "libmd0" not in bootstrap:
         bootstrap.append("libmd0")
-    if historical["mode"] == "-b" and "fakeroot" in lock_packages and "fakeroot" not in bootstrap:
-        # OBS does not necessarily select fakeroot for the sole -b case,
-        # although its recorded dpkg-buildpackage command requires it.
+    if (historical["mode"] == "-b" or case_id == "launchpad-jammy-amd64-arm64-python-hug-c0ae7695bec4") and "fakeroot" in lock_packages and "fakeroot" not in bootstrap:
+        # The recorded command requires fakeroot even when OBS's resolver
+        # does not select it from the source's build dependencies.
         bootstrap.append("fakeroot")
     preferred = []
     ignored_indep = []
