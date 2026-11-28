@@ -32,6 +32,15 @@ elif selection == "repair-4":
         "launchpad-oracular-amd64-arm64-python-msgspec-6f918d331f35",
         "launchpad-questing-amd64-arm64-kdsoap-95149c86d1d7",
     }]
+elif selection == "repair-5":
+    ids = [case for case in CASES if case in {
+        "launchpad-oracular-amd64-arm64-lxqt-qtplugin-de887d7c53b9",
+        "launchpad-plucky-amd64-arm64-tinycbor-835bc0b749b6",
+        "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8",
+        "launchpad-questing-amd64-arm64-ktorrent-ee287a61e3d5",
+        "launchpad-resolute-amd64-arm64-libelas-8f3152c7b0d2",
+        "launchpad-resolute-amd64-arm64-gcc-mingw-w64-b0ed8efd1dee",
+    }]
 else:
     ids = [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:

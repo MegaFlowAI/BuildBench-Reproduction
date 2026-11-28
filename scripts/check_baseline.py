@@ -112,10 +112,10 @@ TERMINAL_DIAGNOSTICS = {
         r"^dpkg-buildpackage: error: debian/rules build subprocess returned exit status 2$"
     )),
     "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8": (9, re.compile(
-        r"^/usr/bin/ld: \S+\(hash-table\.o\).*: unresolvable R_AARCH64_ADR_PREL_PG_HI21 "
+        r"^/(?:usr/)?bin/ld: \S+\(hash-table\.o\).*: unresolvable R_AARCH64_ADR_PREL_PG_HI21 "
         r"relocation against symbol .stderr@@GLIBC_2\.17.$|"
-        r"^/usr/bin/ld: final link failed: bad value$|"
-        r"^gnatlink: error when calling /usr/bin/aarch64-linux-gnu-g\+\+-15$|"
+        r"^/(?:usr/)?bin/ld: final link failed: bad value$|"
+        r"^gnatlink: error when calling /(?:usr/)?bin/aarch64-linux-gnu-g\+\+-15$|"
         r"make(?:\[\d+\])?: \*\*\* \[[^\]]+: (?:gnatmake-re|gnattools-cross|all-gnattools|"
         r"stamp-dir/build-gcc.amd64)\] Error \d+$|"
         r"^dpkg-buildpackage: error: debian/rules build-arch subprocess returned exit status 2$"
@@ -133,6 +133,10 @@ EXIT = b"BUILD_BENCH_BUILD_EXIT="
 
 def normalize(line):
     line = line.translate(str.maketrans({chr(8216): chr(39), chr(8217): chr(39), chr(96): chr(39)}))
+    # Debian's /bin -> /usr/bin merged layout differs across the recorded and
+    # replayed chroots; both names invoke the same linker/compiler binary.
+    line = (line.replace("/usr/bin/ld:", "/bin/ld:")
+                .replace("/usr/bin/aarch64-linux-gnu-g++-15", "/bin/aarch64-linux-gnu-g++-15"))
     line = (line.replace("/work/source", "<source>")
                 .replace("/<<PKGBUILDDIR>>", "<source>")
                 .replace("/usr/src/packages/BUILD", "<source>")
@@ -208,7 +212,7 @@ def terminal_signature(path, pattern):
         return [
             normalize(match.group())
             for data in iter(lambda: log.readline(262144), b"")
-            if (match := pattern.search(data.decode("utf-8", "replace").strip()))
+            if (match := pattern.search(re.sub(r"^\[\s*\d+s\]\s?", "", data.decode("utf-8", "replace").strip())))
         ]
 
 
@@ -259,6 +263,7 @@ def projected_test_result(path, case_id):
             if len(data) > 1024:
                 continue
             line = ANSI_COLOR.sub("", data.decode("utf-8", "replace")).strip()
+            line = re.sub(r"^\[\s*\d+s\]\s?", "", line)
             if match := GTEST_FINISH.match(line):
                 result = {"total": int(match[1]), "suites": int(match[2]), "failed_tests": []}
             elif not result:

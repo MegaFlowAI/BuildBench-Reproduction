@@ -14,7 +14,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from check_baseline import fingerprints
+from check_baseline import TERMINAL_DIAGNOSTICS, TINYCBOR, fingerprints, qt_test_result, terminal_signature
 from pilot import pilots, root_matches
 
 STAGES = {
@@ -27,6 +27,7 @@ STAGES = {
 TIMING = re.compile(r"^\[\s*\d+s\]\s?")
 # obs-build 的并行构建会把进度行插到其他行中间；单独成行后再比对。
 INTERLEAVED_PROGRESS = re.compile(r"\[\s*\d+%\]")
+GCC_15_CROSS = "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8"
 
 
 def iter_clean_lines(path: Path):
@@ -49,6 +50,8 @@ def iter_clean_lines(path: Path):
             else:
                 parts = [line]
             for part in parts:
+                if "checking for suffix of object files... configure: error: in " in part:
+                    part = part[part.index("configure: error: in "):]
                 if part.startswith(":"):
                     for index in range(len(pending) - 1, -1, -1):
                         candidate = pending[index]
@@ -127,6 +130,32 @@ def main() -> int:
         replay_cleaned.write_text("\n".join(replay_lines) + "\n", encoding="utf-8")
     ref_diag = fingerprints(reference_cleaned, None, case_id=case_id)
     replay_diag = fingerprints(replay_cleaned, None, case_id=case_id)
+    if case_id == TINYCBOR:
+        historical_tests = qt_test_result(reference_cleaned)
+        actual_tests = qt_test_result(replay_cleaned)
+        test_match = historical_tests is not None and historical_tests == actual_tests
+        verdict["qt_test_signature"] = {"matched": test_match,
+                                         "historical": historical_tests,
+                                         "actual": actual_tests}
+        if test_match:
+            ref_diag = Counter(historical_tests["failures"] + historical_tests["totals"] + historical_tests["terminal"])
+            replay_diag = Counter(actual_tests["failures"] + actual_tests["totals"] + actual_tests["terminal"])
+    terminal_match = False
+    if case_id == GCC_15_CROSS:
+        # The backend treats the linker's "unresolvable R_AARCH64" relocation
+        # as a dependency resolution failure. Compare the full, ordered root
+        # signature before correcting that backend classification.
+        minimum, pattern = TERMINAL_DIAGNOSTICS[case_id]
+        reference_terminal = terminal_signature(reference_cleaned, pattern)
+        replay_terminal = terminal_signature(replay_cleaned, pattern)
+        terminal_match = (len(reference_terminal) >= minimum and
+                          reference_terminal == replay_terminal)
+        verdict["terminal_signature"] = {"matched": terminal_match,
+                                         "reference": reference_terminal,
+                                         "replay": replay_terminal}
+        if terminal_match:
+            ref_diag = Counter(reference_terminal)
+            replay_diag = Counter(replay_terminal)
     missing = ref_diag - replay_diag
     extra = replay_diag - ref_diag
     stages = {name: False for name in STAGES}
@@ -163,6 +192,14 @@ def main() -> int:
     )
     if stage_events and stage_events[-1] != "package_build":
         package_failed = False
+    if (case_id == GCC_15_CROSS and terminal_match and
+            result.get("status") == "unresolvable" and
+            stage_events == ["dependency_resolution"] and
+            result.get("build_exit_code") not in (None, 0) and
+            stages["build_started"] and stages["build_failed"] and
+            not result.get("timed_out", False)):
+        package_failed = True
+        verdict["backend_stage_correction"] = "linker relocation error misread as dependency resolution"
     verdict.update({
         "reference_lines": ref_count,
         "replay_lines": replay_count,
@@ -229,4 +266,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

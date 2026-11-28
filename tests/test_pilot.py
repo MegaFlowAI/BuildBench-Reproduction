@@ -103,6 +103,19 @@ class VerdictTests(unittest.TestCase):
         self.assertGreater(verdict["reference_diagnostics"], 0)
         self.assertEqual(verdict["category"], "historical_failure_reproduced")
 
+    def test_obs_timing_and_merged_usr_linker_path(self):
+        case_id = "launchpad-plucky-amd64-arm64-gcc-15-cross-26cf66d777b8"
+        _, pattern = check_baseline.TERMINAL_DIAGNOSTICS[case_id]
+        self.ref.write_text("/usr/bin/ld: final link failed: bad value\n")
+        replay = self.root / "replay.log"
+        replay.write_text("[ 1557s] /bin/ld: final link failed: bad value\n")
+        self.assertEqual(check_baseline.terminal_signature(self.ref, pattern),
+                         check_baseline.terminal_signature(replay, pattern))
+
+    def test_interleaved_configure_error_is_separated(self):
+        self.ref.write_text("checking for suffix of object files... configure: error: in `/tmp/build/libgcc':\n")
+        self.assertEqual(compare.clean_lines(self.ref), ["configure: error: in `/tmp/build/libgcc':"])
+
 
 class InputTests(unittest.TestCase):
     def test_binary_arch_build_omits_independent_dependencies(self):
@@ -190,4 +203,3 @@ class InputTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
