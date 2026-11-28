@@ -10,7 +10,12 @@ CASES = json.loads((ROOT / "cases.json").read_text(encoding="utf-8"))
 RUNNERS = {"arm64": "ubuntu-24.04-arm", "amd64": "ubuntu-24.04"}
 
 selection = sys.argv[1].strip() if len(sys.argv) > 1 else ""
-ids = list(pilots()) if selection in {"pilot", "isa-10"} else [item.strip() for item in selection.split(",") if item.strip()]
+if selection in {"pilot", "isa-10"}:
+    ids = list(pilots())
+elif selection in {"arm64", "x86_64-to-aarch64"}:
+    ids = [case for case, details in CASES.items() if details["architecture"] == "arm64"]
+else:
+    ids = [item.strip() for item in selection.split(",") if item.strip()]
 if not ids:
     raise SystemExit("selection 不能为空：请填一个或多个 case ID，用英文逗号分隔")
 unknown = [item for item in ids if item not in CASES]
@@ -23,3 +28,4 @@ matrix = [
 if len(matrix) > 256:
     raise SystemExit("矩阵超过 GitHub Actions 256 个 job 的上限")
 print(json.dumps({"include": matrix}))
+

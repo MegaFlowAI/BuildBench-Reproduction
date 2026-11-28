@@ -154,7 +154,7 @@ def prepare(case_dir, runtime, settings):
     # Keep OBS and the same historical packages; use OBS's native chroot bootstrap
     # for these audited pilots, as already done for html-xml-utils.
     bootstrap_reason = None
-    if case_id in pilots() and {"coreutils-from-uutils", "rust-coreutils"} <= lock_packages:
+    if historical["architecture"] == "arm64" and {"coreutils-from-uutils", "rust-coreutils"} <= lock_packages and build_engine is None:
         for package in ("coreutils-from-uutils", "rust-coreutils"):
             if package not in bootstrap:
                 bootstrap.append(package)
@@ -175,7 +175,7 @@ def prepare(case_dir, runtime, settings):
     preferred = []
     # Restoring the historical libjpeg-dev metapackage leaves two providers of
     # libjpeg-dev in OBS. Select the recorded real package, which depends on turbo.
-    if case_id in pilots() and "libjpeg-dev" in lock_packages and "libjpeg-dev" in historical["packages"]:
+    if "libjpeg-dev" in lock_packages and "libjpeg-dev" in historical["packages"]:
         preferred.append("libjpeg-dev")
     for line in config_text.splitlines():
         if line.startswith("Ignore:"):
@@ -217,3 +217,4 @@ def prepare(case_dir, runtime, settings):
 
 if __name__ == "__main__":
     prepare(*map(Path, sys.argv[1:]))
+

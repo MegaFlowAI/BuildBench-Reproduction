@@ -152,6 +152,16 @@ def main() -> int:
         reasons.append("重放日志缺少阶段: " + ", ".join(missing_stages))
     if ratio < 0.15:
         reasons.append(f"重放日志只有官方日志的 {ratio:.0%} 行，疑似未完整执行")
+    # A historical match is not valid when replay added failures absent from the
+    # official log, even for cases without a hand-audited ISA root signature.
+    unexpected = {key: value for key, value in replay_diag.items() if key not in ref_diag}
+    verdict["unexpected_diagnostics"] = unexpected
+    if unexpected:
+        reasons.append("出现官方日志以外的失败诊断，需要排查环境干扰")
+    expected = case["platform"]["target_arch"]
+    deb_arch = {"aarch64": "arm64", "x86_64": "amd64"}[expected]
+    if result.get("target_arch") != expected or f"dpkg-buildpackage: info: host architecture {deb_arch}" not in replay_text:
+        reasons.append("构建结果或实际包构建架构与目标不符")
     spec = pilots().get(case_id)
     if spec:
         matches = root_matches(replay_lines, spec["root_patterns"])
@@ -159,14 +169,6 @@ def main() -> int:
         verdict["root_signature_matches"] = matches
         if not all(matches):
             reasons.append("缺少试点的架构根因诊断")
-        unexpected = {key: value for key, value in replay_diag.items() if key not in ref_diag}
-        verdict["unexpected_diagnostics"] = unexpected
-        if unexpected:
-            reasons.append("出现官方日志以外的失败诊断，需要排查环境干扰")
-        expected = case["platform"]["target_arch"]
-        deb_arch = {"aarch64": "arm64", "x86_64": "amd64"}[expected]
-        if result.get("target_arch") != expected or f"dpkg-buildpackage: info: host architecture {deb_arch}" not in replay_text:
-            reasons.append("构建结果或实际包构建架构与目标不符")
     verdict["status"] = "matched" if not reasons else "mismatch"
     verdict["category"] = ("isa_failure_reproduced" if spec else "historical_failure_reproduced") if not reasons else (
         "infrastructure" if not stages["build_started"] or result.get("status") in {"unresolvable", "infrastructure_error"}
@@ -181,3 +183,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

@@ -1,13 +1,13 @@
 name: 原始构建与补丁验证
-run-name: 原始构建与补丁验证 / ${{ inputs.selection || 'pilot' }}
+run-name: 原始构建与补丁验证 / ${{ inputs.selection || (github.ref_name == 'codex/isa-100-20261128' && 'arm64' || 'pilot') }}
 on:
   push:
-    branches: [codex/isa-pilot-20261126]
+    branches: [codex/isa-pilot-20261126, codex/isa-100-20261128]
     paths: ['.github/workflows/reproduce.yml', 'scripts/**', 'pilots/**', 'tests/**']
   workflow_dispatch:
     inputs:
       selection:
-        description: "填 pilot 运行 10 个架构迁移试点，或填写用英文逗号分隔的 case ID。"
+        description: "填 pilot 运行 10 个试点，填 arm64 运行 100 个 ARM64 目标任务，或填写英文逗号分隔的 case ID。"
         required: true
         default: pilot
       patch_pr:
@@ -27,7 +27,7 @@ jobs:
           persist-credentials: false
       - id: cases
         env:
-          SELECTION: ${{ inputs.selection || 'pilot' }}
+          SELECTION: ${{ inputs.selection || (github.ref_name == 'codex/isa-100-20261128' && 'arm64' || 'pilot') }}
           PATCH_PR: ${{ inputs.patch_pr }}
         run: |
           set -euo pipefail
@@ -55,7 +55,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: ${{ inputs.patch_pr != '' && '0' || '1' }}
-      - name: 记录机器环境并校验官方试点输入
+      - name: 记录机器环境并校验官方输入
         env:
           BUNDLE: ${{ runner.temp }}/buildbench-bundle
           WORK: ${{ runner.temp }}/buildbench-work
@@ -123,7 +123,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
   report:
-    name: 试点复现汇总
+    name: 复现汇总
     if: always() && needs.select.result == 'success'
     needs: [select, build]
     runs-on: ubuntu-24.04
@@ -150,3 +150,4 @@ jobs:
           name: reproduction-summary
           path: results/
           retention-days: 30
+

@@ -42,7 +42,7 @@ def root_matches(lines, patterns):
 
 
 def audit(case_id):
-    spec = pilots()[case_id]
+    spec = pilots().get(case_id)
     root = case_path(case_id)
     case = read_json(root / "case.json")
     source_lock = read_json(root / "checksums/source-input.sha256.json")
@@ -55,10 +55,10 @@ def audit(case_id):
     if ref_sha != read_json(root / "checksums/frozen-environment.json")["reference_sha256"]:
         raise ValueError(f"Official reference integrity mismatch: {case_id}")
     text = ref.decode("utf-8", "replace")
-    if not all(root_matches(text.splitlines(), spec["root_patterns"])):
+    if spec and not all(root_matches(text.splitlines(), spec["root_patterns"])):
         raise ValueError(f"Root-cause signature absent from official log: {case_id}")
     evidence = []
-    for item in spec["source_checks"]:
+    for item in spec["source_checks"] if spec else []:
         with tarfile.open(root / "source/input" / item["archive"]) as archive:
             member = archive.getmember(item["member"])
             if not member.isfile() or member.size > 2_000_000:
@@ -97,3 +97,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

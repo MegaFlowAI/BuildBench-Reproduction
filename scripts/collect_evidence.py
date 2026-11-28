@@ -80,11 +80,11 @@ def main():
             "run_attempt": env.get("GITHUB_RUN_ATTEMPT"),
             "run_url": f"{env.get('GITHUB_SERVER_URL', '')}/{env.get('GITHUB_REPOSITORY', '')}/actions/runs/{env.get('GITHUB_RUN_ID', '')}"}
     write(args.work / "host.json", host)
-    if args.case_id in pilots():
-        write(args.work / "input-audit.json", audit(args.case_id))
+    write(args.work / "input-audit.json", audit(args.case_id))
     if shutil.which("lscpu"):
         (args.work / "host-lscpu.json").write_text(subprocess.check_output(["lscpu", "-J"], text=True), encoding="utf-8")
 
 
 if __name__ == "__main__":
     main()
+
